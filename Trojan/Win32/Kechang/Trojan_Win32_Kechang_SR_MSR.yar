@@ -1,0 +1,12 @@
+
+rule Trojan_Win32_Kechang_SR_MSR{
+	meta:
+		description = "Trojan:Win32/Kechang.SR!MSR,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_02_0 = {25 73 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 79 90 02 04 2e 64 61 74 90 00 } //01 00 
+		$a_02_1 = {56 57 68 58 92 41 00 68 e8 f1 63 00 c7 05 e4 f1 43 00 90 02 04 e8 6b 8f 00 00 83 c4 08 8d 44 24 08 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

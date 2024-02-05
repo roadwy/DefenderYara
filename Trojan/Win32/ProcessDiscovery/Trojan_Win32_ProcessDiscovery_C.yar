@@ -1,0 +1,14 @@
+
+rule Trojan_Win32_ProcessDiscovery_C{
+	meta:
+		description = "Trojan:Win32/ProcessDiscovery.C,SIGNATURE_TYPE_CMDHSTR_EXT,01 00 01 00 04 00 00 01 00 "
+		
+	strings :
+		$a_00_0 = {74 00 61 00 73 00 6b 00 6c 00 69 00 73 00 74 00 } //ff ff 
+		$a_00_1 = {2f 00 73 00 76 00 63 00 } //ff ff 
+		$a_00_2 = {2d 00 73 00 76 00 63 00 } //ff ff 
+		$a_00_3 = {64 00 65 00 76 00 65 00 6e 00 76 00 2e 00 65 00 78 00 65 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

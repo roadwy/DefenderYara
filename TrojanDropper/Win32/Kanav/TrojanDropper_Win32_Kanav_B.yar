@@ -1,0 +1,13 @@
+
+rule TrojanDropper_Win32_Kanav_B{
+	meta:
+		description = "TrojanDropper:Win32/Kanav.B,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {63 3a 5c 77 69 6e 64 6f 77 73 5c 63 61 6c 63 31 2e 65 78 65 } //01 00 
+		$a_01_1 = {25 73 5c 41 59 4c 61 75 6e 63 68 2e 65 78 65 } //01 00 
+		$a_01_2 = {25 73 5c 75 73 70 31 30 2e 64 6c 6c 2e 62 61 6b } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

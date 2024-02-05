@@ -1,0 +1,65 @@
+
+rule Trojan_Win32_Guloader_RPP_MTB{
+	meta:
+		description = "Trojan:Win32/Guloader.RPP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_02_0 = {09 1c 38 ff 45 38 ff 4d 38 fc 83 c7 04 ff 45 38 ff 4d 38 83 04 24 00 81 ff 90 01 04 75 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Guloader_RPP_MTB_2{
+	meta:
+		description = "Trojan:Win32/Guloader.RPP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_02_0 = {0f dc e5 ff 34 32 90 02 20 90 13 90 02 20 81 34 24 90 02 20 8f 04 30 90 02 20 83 de 90 02 20 90 13 90 02 20 83 d6 90 01 01 0f 8d 90 01 01 ff ff ff 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Guloader_RPP_MTB_3{
+	meta:
+		description = "Trojan:Win32/Guloader.RPP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 0b 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {48 69 6e 64 75 69 73 74 69 73 6b 5c 41 63 74 69 6e 69 6e 65 5c 45 6e 70 75 6b 6c 65 74 5c 55 6e 62 61 73 74 61 72 64 69 7a 65 64 } //01 00 
+		$a_01_1 = {55 6e 61 63 63 75 73 74 6f 6d 65 64 5c 4e 69 6e 6e 69 } //01 00 
+		$a_01_2 = {53 6f 66 74 77 61 72 65 5c 47 61 77 6b 73 } //01 00 
+		$a_01_3 = {53 6f 66 74 77 61 72 65 5c 75 64 62 75 64 } //01 00 
+		$a_01_4 = {64 69 63 74 79 6f 74 61 5c 53 74 69 70 6c 65 } //01 00 
+		$a_01_5 = {56 69 74 61 6c 69 7a 65 64 5c 54 6f 72 76 65 64 61 67 65 } //01 00 
+		$a_01_6 = {53 61 6d 74 69 64 65 6e } //01 00 
+		$a_01_7 = {57 68 69 70 63 72 61 63 6b 65 72 } //01 00 
+		$a_01_8 = {53 75 6c 70 68 6f 63 79 61 6e 61 74 65 2e 4b 6f 6c } //01 00 
+		$a_01_9 = {43 65 6e 74 72 61 6c 66 6f 72 65 6e 69 6e 67 65 72 73 2e 6d 75 74 } //01 00 
+		$a_01_10 = {68 6b 6c 69 6e 67 65 6e 2e 69 6e 69 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Guloader_RPP_MTB_4{
+	meta:
+		description = "Trojan:Win32/Guloader.RPP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {4c 00 79 00 73 00 6b 00 65 00 72 00 73 00 2e 00 4d 00 69 00 6c 00 } //01 00 
+		$a_01_1 = {55 00 6e 00 64 00 6c 00 62 00 2e 00 41 00 66 00 66 00 33 00 32 00 } //01 00 
+		$a_01_2 = {42 00 65 00 73 00 61 00 61 00 6e 00 69 00 6e 00 67 00 65 00 6e 00 73 00 2e 00 64 00 6c 00 6c 00 } //01 00 
+		$a_01_3 = {50 00 72 00 69 00 6e 00 74 00 65 00 72 00 6d 00 61 00 6e 00 75 00 61 00 6c 00 5c 00 43 00 61 00 77 00 71 00 75 00 61 00 77 00 5c 00 43 00 61 00 6c 00 69 00 70 00 68 00 73 00 32 00 } //01 00 
+		$a_01_4 = {53 00 6f 00 66 00 74 00 77 00 61 00 72 00 65 00 5c 00 53 00 70 00 69 00 6e 00 6f 00 66 00 66 00 5c 00 53 00 79 00 73 00 74 00 65 00 6d 00 74 00 61 00 73 00 74 00 5c 00 4e 00 61 00 76 00 69 00 67 00 65 00 72 00 69 00 6e 00 67 00 65 00 72 00 6e 00 65 00 73 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Guloader_RPP_MTB_5{
+	meta:
+		description = "Trojan:Win32/Guloader.RPP!MTB,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {4a 4a 4a 09 3c 01 de e0 de f7 eb 3f } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

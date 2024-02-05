@@ -1,0 +1,15 @@
+
+rule VirTool_Win32_Injector_gen_BD{
+	meta:
+		description = "VirTool:Win32/Injector.gen!BD,SIGNATURE_TYPE_PEHSTR_EXT,05 00 04 00 05 00 00 02 00 "
+		
+	strings :
+		$a_03_0 = {8b 44 24 08 8d 0c 06 8b c6 99 f7 3d 90 01 04 8a 82 90 01 04 30 01 46 3b 74 24 0c 7e e1 90 00 } //02 00 
+		$a_01_1 = {01 3e 8b 06 c6 00 e9 83 c4 0c ff 06 8b 06 8b cf 2b c8 8d 4c 19 fc 89 08 83 c8 ff 2b c7 01 06 } //01 00 
+		$a_03_2 = {c7 45 0c f8 00 00 00 a1 90 01 04 8b 90 01 01 3c 90 02 10 8b 90 01 01 0c 90 02 07 03 90 01 01 03 c7 90 00 } //01 00 
+		$a_01_3 = {8b 40 3c 03 45 0c 53 8d 84 38 f8 00 00 00 } //01 00 
+		$a_01_4 = {6b c0 28 8b 49 3c 05 f8 00 00 00 } //01 00 
+	condition:
+		any of ($a_*)
+ 
+}

@@ -1,0 +1,13 @@
+
+rule Backdoor_BAT_RemcosRAT_A_MTB{
+	meta:
+		description = "Backdoor:BAT/RemcosRAT.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 02 00 "
+		
+	strings :
+		$a_01_0 = {9a 1f 10 28 } //02 00 
+		$a_01_1 = {00 00 01 25 16 1f 27 9d 6f } //02 00 
+		$a_03_2 = {00 00 01 25 16 20 90 01 03 00 28 90 01 02 00 06 a2 14 14 28 90 01 01 00 00 0a 28 90 01 01 00 00 0a 13 01 38 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

@@ -1,0 +1,14 @@
+
+rule VirTool_Win32_CeeInject_CY{
+	meta:
+		description = "VirTool:Win32/CeeInject.CY,SIGNATURE_TYPE_PEHSTR_EXT,64 00 0c 00 04 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {53 76 6f 48 6a 69 76 75 79 7c 70 7f 80 50 84 76 77 77 85 00 } //01 00 
+		$a_01_1 = {75 5a 73 7c 3c 3b 58 7b 79 6e 71 80 81 00 } //01 00 
+		$a_01_2 = {4f 76 4a 69 79 49 76 76 7d 6f 83 80 61 76 81 75 72 76 00 } //0a 00 
+		$a_03_3 = {60 31 c0 40 0f a2 89 1d 90 01 02 40 00 89 15 90 01 02 40 00 61 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

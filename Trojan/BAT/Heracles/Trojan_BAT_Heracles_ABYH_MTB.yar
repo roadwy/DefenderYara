@@ -1,0 +1,11 @@
+
+rule Trojan_BAT_Heracles_ABYH_MTB{
+	meta:
+		description = "Trojan:BAT/Heracles.ABYH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {0b 06 16 73 90 01 01 00 00 0a 73 90 01 01 00 00 0a 0c 08 07 6f 90 01 01 00 00 0a 07 6f 90 01 01 00 00 0a 28 90 01 01 00 00 2b 28 90 01 01 00 00 2b 28 90 01 01 00 00 0a 72 90 01 01 00 00 70 6f 90 01 01 00 00 0a 0d d0 90 01 01 00 00 01 28 90 01 01 00 00 0a 09 72 90 01 01 00 00 70 28 90 01 01 00 00 0a 16 8d 90 01 01 00 00 01 6f 90 01 01 00 00 0a 26 de 1e 08 2c 06 08 6f 90 01 01 00 00 0a dc 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

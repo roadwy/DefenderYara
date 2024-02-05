@@ -1,0 +1,13 @@
+
+rule Trojan_Win32_Desurou_B{
+	meta:
+		description = "Trojan:Win32/Desurou.B,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {b9 00 01 00 00 99 f7 f9 8b 45 90 01 01 30 10 8b 45 90 01 01 40 3b 45 90 01 01 89 45 90 01 01 7c df 90 00 } //01 00 
+		$a_03_1 = {81 7d 0c fa 00 00 00 0f 85 90 01 02 00 00 83 7f 08 05 0f 82 90 00 } //01 00 
+		$a_01_2 = {00 63 73 79 73 2e 64 61 74 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

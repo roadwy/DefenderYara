@@ -1,0 +1,16 @@
+
+rule Backdoor_Win32_Daserf_A{
+	meta:
+		description = "Backdoor:Win32/Daserf.A,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 06 00 00 03 00 "
+		
+	strings :
+		$a_01_0 = {7e 1f 8a 45 10 b1 03 56 8b 75 0c f6 e9 8b 4d 08 2b ce 8a 14 31 32 55 10 2a d0 88 16 46 4f 75 f2 } //03 00 
+		$a_01_1 = {3b d7 76 11 81 3c 0e 33 c0 56 a3 8d 04 0e 74 05 46 3b f2 72 ef 8b 78 18 53 } //01 00 
+		$a_01_2 = {74 30 3d 25 73 26 74 31 3d } //01 00 
+		$a_01_3 = {70 69 6e 66 73 2e 64 61 74 } //01 00 
+		$a_01_4 = {2a 46 49 4c 45 4c 49 53 54 2a } //01 00 
+		$a_01_5 = {49 6e 6a 65 63 74 20 50 72 6f 63 65 73 73 3a 25 73 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

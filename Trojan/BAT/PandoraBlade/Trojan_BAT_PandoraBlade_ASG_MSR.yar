@@ -1,0 +1,19 @@
+
+rule Trojan_BAT_PandoraBlade_ASG_MSR{
+	meta:
+		description = "Trojan:BAT/PandoraBlade.ASG!MSR,SIGNATURE_TYPE_PEHSTR_EXT,7a 00 78 00 09 00 00 64 00 "
+		
+	strings :
+		$a_80_0 = {73 74 6e 65 6d 68 63 61 74 74 61 2f 6d 6f 63 2e 70 70 61 64 72 6f 63 73 69 64 2e 6e 64 63 } //stnemhcatta/moc.ppadrocsid.ndc  02 00 
+		$a_02_1 = {62 00 69 00 6e 00 5c 00 44 00 65 00 62 00 75 00 67 00 5c 00 53 00 4c 00 4e 00 90 02 30 6f 00 62 00 6a 00 5c 00 44 00 65 00 62 00 75 00 67 00 90 02 30 2e 00 70 00 64 00 62 00 90 00 } //02 00 
+		$a_02_2 = {62 69 6e 5c 44 65 62 75 67 5c 53 4c 4e 90 02 30 6f 62 6a 5c 44 65 62 75 67 90 02 30 2e 70 64 62 90 00 } //05 00 
+		$a_80_3 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //DownloadData  05 00 
+		$a_80_4 = {49 6e 76 6f 6b 65 } //Invoke  05 00 
+		$a_80_5 = {57 65 62 43 6c 69 65 6e 74 } //WebClient  05 00 
+		$a_80_6 = {53 79 73 74 65 6d 2e 4e 65 74 } //System.Net  01 00 
+		$a_80_7 = {4c 6f 67 69 6e } //Login  01 00 
+		$a_80_8 = {50 61 73 73 77 6f 72 64 } //Password  00 00 
+	condition:
+		any of ($a_*)
+ 
+}

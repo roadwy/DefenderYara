@@ -1,0 +1,11 @@
+
+rule Trojan_BAT_Zapchast_MBAT_MTB{
+	meta:
+		description = "Trojan:BAT/Zapchast.MBAT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {74 00 62 00 67 00 68 00 67 00 74 00 72 00 66 00 62 00 67 00 66 00 62 00 67 00 66 00 62 00 67 00 64 00 74 00 64 00 68 00 62 00 64 00 67 00 72 00 62 00 66 00 66 00 74 00 62 00 67 00 68 00 67 00 74 00 72 00 66 00 62 00 67 00 66 00 62 00 67 00 66 00 62 00 67 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

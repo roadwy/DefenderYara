@@ -1,0 +1,12 @@
+
+rule Trojan_Win32_Gepys_GNZ_MTB{
+	meta:
+		description = "Trojan:Win32/Gepys.GNZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 02 00 00 0a 00 "
+		
+	strings :
+		$a_03_0 = {d3 e2 89 50 08 89 ca 81 f2 90 01 04 85 c9 89 50 0c 8d 91 90 01 04 8d 1c 12 0f 45 d3 89 50 54 8b 15 90 01 04 8d 59 ff 89 5d f0 89 55 ec 8d 51 01 0f af 55 ec 89 50 50 31 d2 eb 1e 89 d6 89 d7 83 ce 01 0f af f1 29 f7 89 fe 8b 7d f0 21 d7 42 8a 9f 90 01 04 88 5c 30 10 3b 55 ec 90 00 } //01 00 
+		$a_01_1 = {73 73 20 78 68 72 75 72 72 3e 3d } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

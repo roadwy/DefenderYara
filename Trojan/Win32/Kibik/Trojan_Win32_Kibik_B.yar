@@ -1,0 +1,11 @@
+
+rule Trojan_Win32_Kibik_B{
+	meta:
+		description = "Trojan:Win32/Kibik.B,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_02_0 = {eb e5 89 45 fc ff 75 fc e8 90 01 02 00 00 03 45 fc 96 83 ee 34 4e 8a 06 3c 3e 75 05 e9 90 01 01 01 00 00 46 89 75 ec 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

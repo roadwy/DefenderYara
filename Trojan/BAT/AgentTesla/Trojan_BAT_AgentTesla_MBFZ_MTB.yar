@@ -1,0 +1,14 @@
+
+rule Trojan_BAT_AgentTesla_MBFZ_MTB{
+	meta:
+		description = "Trojan:BAT/AgentTesla.MBFZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0d 00 04 00 00 0a 00 "
+		
+	strings :
+		$a_01_0 = {24 39 62 32 34 34 36 64 61 2d 63 37 39 64 2d 34 33 30 61 2d 62 31 62 30 2d 64 30 31 63 30 32 61 35 38 65 63 31 } //01 00 
+		$a_01_1 = {43 72 65 61 74 65 44 65 63 72 79 70 74 6f 72 } //01 00 
+		$a_01_2 = {52 69 6a 6e 64 61 65 6c 4d 61 6e 61 67 65 64 } //01 00 
+		$a_01_3 = {54 72 61 6e 73 66 6f 72 6d 46 69 6e 61 6c 42 6c 6f 63 6b } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

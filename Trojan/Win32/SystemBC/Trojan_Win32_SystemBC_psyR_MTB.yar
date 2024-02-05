@@ -1,0 +1,11 @@
+
+rule Trojan_Win32_SystemBC_psyR_MTB{
+	meta:
+		description = "Trojan:Win32/SystemBC.psyR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 01 00 00 07 00 "
+		
+	strings :
+		$a_03_0 = {e2 89 85 30 fe ff ff 83 bd 30 fe ff ff 90 01 01 7d 20 6a 90 01 01 68 24 1b 40 00 ff b5 34 fe ff ff ff b5 30 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

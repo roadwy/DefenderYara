@@ -1,0 +1,11 @@
+
+rule Trojan_BAT_FormBook_ARA_MTB{
+	meta:
+		description = "Trojan:BAT/FormBook.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
+		
+	strings :
+		$a_03_0 = {11 06 07 8e 69 5d 91 08 11 06 1f 16 5d 91 61 28 90 01 03 0a 07 11 06 17 58 07 8e 69 5d 91 28 90 01 03 0a 59 20 00 01 00 00 58 20 00 01 00 00 5d d2 9c 00 11 06 15 58 13 06 11 06 16 fe 04 16 fe 01 13 07 11 07 2d b0 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

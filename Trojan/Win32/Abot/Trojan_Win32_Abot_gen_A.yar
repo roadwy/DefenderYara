@@ -1,0 +1,14 @@
+
+rule Trojan_Win32_Abot_gen_A{
+	meta:
+		description = "Trojan:Win32/Abot.gen!A,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {61 6c 64 69 62 6f 74 2d 62 79 2d 74 69 6c 6c 37 2e 63 68 } //01 00 
+		$a_03_1 = {6f 70 48 54 54 50 44 44 6f 53 90 09 02 00 53 74 90 00 } //01 00 
+		$a_03_2 = {6f 70 54 43 50 44 44 6f 53 90 09 02 00 53 74 90 00 } //01 00 
+		$a_03_3 = {6f 70 44 44 6f 53 90 09 02 00 53 74 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

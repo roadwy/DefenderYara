@@ -1,0 +1,46 @@
+
+rule Trojan_Win32_Gozi_RF_MTB{
+	meta:
+		description = "Trojan:Win32/Gozi.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {8b 4d d0 89 4d f0 8b 55 cc 89 55 f8 8b 45 cc 89 45 e0 8b 4d e0 8b 11 33 55 f0 8b 45 e0 89 10 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Gozi_RF_MTB_2{
+	meta:
+		description = "Trojan:Win32/Gozi.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {81 c1 18 00 00 00 89 45 fc 8b 45 fc 05 c0 00 00 00 05 e0 00 00 00 01 c8 89 45 f8 8b 45 f8 89 45 fc 8b 4d fc } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Gozi_RF_MTB_3{
+	meta:
+		description = "Trojan:Win32/Gozi.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {04 fe ff ff 0f b6 90 01 01 8b 85 04 fe ff ff 99 be 90 01 01 00 00 00 f7 fe 8b 85 64 fe ff ff 0f b6 14 10 33 ca 8b 85 90 01 01 fe ff ff 03 85 90 01 01 fe ff ff 88 08 eb aa 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Gozi_RF_MTB_4{
+	meta:
+		description = "Trojan:Win32/Gozi.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
+		
+	strings :
+		$a_81_0 = {43 54 24 79 68 72 74 67 66 64 72 34 68 65 72 79 } //01 00 
+		$a_01_1 = {76 00 65 00 72 00 79 00 44 00 61 00 54 00 73 00 69 00 67 00 6e 00 73 00 79 00 } //01 00 
+		$a_01_2 = {77 00 6f 00 6e 00 2e 00 74 00 6b 00 57 00 69 00 74 00 68 00 6f 00 75 00 74 00 54 00 77 00 6f 00 } //01 00 
+		$a_01_3 = {58 00 6d 00 61 00 6e 00 79 00 69 00 65 00 6c 00 64 00 69 00 6e 00 67 00 49 00 7a 00 74 00 6f 00 66 00 61 00 63 00 65 00 67 00 } //01 00 
+		$a_01_4 = {67 00 69 00 76 00 65 00 6e 00 69 00 6e 00 63 00 6f 00 66 00 36 00 41 00 70 00 } //01 00 
+		$a_01_5 = {41 00 6c 00 6c 00 37 00 75 00 6e 00 74 00 6f 00 67 00 48 00 6b 00 6c 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

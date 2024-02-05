@@ -1,0 +1,11 @@
+
+rule Trojan_BAT_CobaltStrikePacker_AL_MTB{
+	meta:
+		description = "Trojan:BAT/CobaltStrikePacker.AL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {00 0a 16 9a 72 90 01 03 70 18 17 8d 90 01 02 00 01 25 16 72 90 01 03 70 a2 28 90 01 02 00 0a 28 90 01 02 00 90 01 01 28 90 01 02 00 0a 72 90 01 03 70 18 18 8d 90 01 02 00 01 25 16 16 8c 90 01 02 00 01 a2 25 17 19 8d 90 01 02 00 01 25 16 28 90 01 02 00 06 16 9a a2 25 17 28 90 01 02 00 06 17 9a a2 25 18 72 90 01 03 70 a2 a2 28 90 01 02 00 90 01 01 26 38 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

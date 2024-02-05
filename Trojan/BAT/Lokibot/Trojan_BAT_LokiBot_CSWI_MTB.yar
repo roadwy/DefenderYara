@@ -1,0 +1,11 @@
+
+rule Trojan_BAT_LokiBot_CSWI_MTB{
+	meta:
+		description = "Trojan:BAT/LokiBot.CSWI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {0b 07 06 72 90 01 04 6f 90 01 04 74 90 01 04 6f 90 01 04 00 07 06 72 90 01 04 6f 90 01 04 74 90 01 04 6f 90 01 04 00 07 06 72 90 01 04 6f 90 01 04 74 90 01 04 6f 90 01 04 00 02 28 90 01 04 02 7b 90 01 04 6f 90 01 04 00 02 02 7b 90 01 04 28 90 01 04 00 07 6f 90 01 04 28 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

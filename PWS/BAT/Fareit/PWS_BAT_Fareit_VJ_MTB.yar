@@ -1,0 +1,11 @@
+
+rule PWS_BAT_Fareit_VJ_MTB{
+	meta:
+		description = "PWS:BAT/Fareit.VJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_02_0 = {a2 25 17 28 90 01 03 06 a2 25 18 28 90 01 03 06 a2 25 19 28 90 01 03 06 a2 25 1a 28 90 01 03 06 a2 25 1b 28 90 01 03 06 a2 25 1c 28 90 01 03 06 a2 20 90 01 03 00 20 90 01 03 00 28 90 01 03 06 28 90 01 03 06 28 90 01 03 0a 2a 90 09 07 00 25 16 28 90 01 03 06 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

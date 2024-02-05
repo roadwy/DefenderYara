@@ -1,0 +1,12 @@
+
+rule TrojanDropper_Win32_Dozmot_D{
+	meta:
+		description = "TrojanDropper:Win32/Dozmot.D,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {81 7d f4 00 10 40 00 0f 85 90 01 04 6a 02 6a 00 6a f8 90 00 } //01 00 
+		$a_03_1 = {8b ce 83 ee 08 d3 ea 48 89 75 90 01 01 88 90 90 90 01 04 79 e7 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

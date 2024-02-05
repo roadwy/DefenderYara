@@ -1,0 +1,11 @@
+
+rule Trojan_BAT_AgentTesla_DW_MTB{
+	meta:
+		description = "Trojan:BAT/AgentTesla.DW!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {11 05 11 05 11 05 72 90 01 03 70 28 90 01 03 06 72 90 01 03 70 28 90 01 03 06 28 0c 00 00 0a 6f 90 01 03 0a 6f 90 01 03 0a 7e 03 00 00 04 2d 11 14 fe 90 01 04 06 73 21 00 00 0a 80 03 00 00 04 7e 03 00 00 04 28 02 00 00 2b 28 03 00 00 2b 73 24 00 00 0a 28 90 01 03 06 6f 90 01 03 0a 13 05 11 05 72 90 01 03 70 28 90 01 03 06 72 90 01 03 70 28 90 01 03 06 28 0c 00 00 0a 6f 90 01 03 0a 3a 7a ff ff ff 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

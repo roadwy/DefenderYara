@@ -1,0 +1,12 @@
+
+rule Trojan_Win32_Redline_UN_MTB{
+	meta:
+		description = "Trojan:Win32/Redline.UN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 02 00 00 0a 00 "
+		
+	strings :
+		$a_01_0 = {8b 4d fc 03 4d 08 0f b6 11 33 d0 8b 45 fc 03 45 08 88 10 8b e5 5d c3 } //0a 00 
+		$a_03_1 = {7a 08 e3 2c c7 45 90 01 01 3e 75 03 10 c7 45 90 01 01 d4 44 89 40 c7 45 90 01 01 bd 6a 3f 79 c7 85 90 01 04 22 0b 95 10 c7 85 90 01 04 7a 62 23 1f ff 15 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

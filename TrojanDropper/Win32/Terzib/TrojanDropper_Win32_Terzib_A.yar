@@ -1,0 +1,12 @@
+
+rule TrojanDropper_Win32_Terzib_A{
+	meta:
+		description = "TrojanDropper:Win32/Terzib.A,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_02_0 = {33 c0 b1 85 8a 90 01 03 40 00 32 d1 88 90 01 03 40 00 40 3d 80 54 01 00 72 ea 56 68 80 54 01 00 6a 01 68 90 01 02 40 00 e8 90 01 01 00 00 00 90 00 } //01 00 
+		$a_01_1 = {00 77 62 00 00 25 73 5c 73 6d 63 67 75 69 2e 65 78 65 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

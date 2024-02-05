@@ -1,0 +1,11 @@
+
+rule Trojan_Win32_Raccoon_PA_MTB{
+	meta:
+		description = "Trojan:Win32/Raccoon.PA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {2b d8 6a 00 e8 90 01 04 03 d8 8b 45 90 01 01 89 18 6a 00 e8 90 01 04 8b 5d 90 01 01 03 5d 90 01 01 2b d8 6a 00 e8 90 01 04 03 d8 8b 45 90 01 01 31 18 83 45 ec 90 01 01 6a 00 e8 90 01 04 bb 04 00 00 00 2b d8 6a 00 e8 90 01 04 03 d8 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

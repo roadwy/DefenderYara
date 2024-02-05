@@ -1,0 +1,11 @@
+
+rule Trojan_BAT_Kryptik_GMBH_MTB{
+	meta:
+		description = "Trojan:BAT/Kryptik.GMBH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 0a 00 "
+		
+	strings :
+		$a_03_0 = {73 13 00 00 0a 0b 73 14 00 00 0a 0c 08 06 08 6f 90 01 03 0a 1e 5b 6f 90 01 03 0a 6f 90 01 03 0a 08 06 08 6f 90 01 03 0a 1e 5b 6f 90 01 03 0a 6f 90 01 03 0a 07 08 6f 90 01 03 0a 17 73 1b 00 00 0a 0d 09 02 16 02 8e 69 6f 90 01 03 0a 09 6f 90 01 03 0a 07 6f 90 01 03 0a 13 04 de 11 26 16 28 90 01 03 0a 16 8d 1b 00 00 01 13 04 de 00 11 04 2a 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
