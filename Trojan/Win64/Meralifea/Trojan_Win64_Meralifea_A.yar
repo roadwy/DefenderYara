@@ -9,7 +9,7 @@ rule Trojan_Win64_Meralifea_A{
 		$a_03_2 = {c7 44 24 28 10 00 00 00 48 89 6c 24 20 ff 15 90 01 04 f7 d8 1b c0 25 10 ff ed dc 05 cd cd cd cd 90 00 } //01 00 
 		$a_01_3 = {81 f9 8e 4e 0e ec 75 10 41 0f b7 00 8b 0c 83 49 03 cb 48 89 4e 08 eb 16 81 f9 aa fc 0d 7c 75 0e } //01 00 
 		$a_80_4 = {5c 52 45 47 49 53 54 52 59 5c 4d 61 63 68 69 6e 65 5c 53 59 53 54 45 4d 5c 73 65 72 76 69 63 65 5c 69 61 53 74 6f 72 } //\REGISTRY\Machine\SYSTEM\service\iaStor  00 00 
-		$a_00_5 = {78 1d } //01 00 
+		$a_00_5 = {78 1d } //01 00  ᵸ
 	condition:
 		any of ($a_*)
  

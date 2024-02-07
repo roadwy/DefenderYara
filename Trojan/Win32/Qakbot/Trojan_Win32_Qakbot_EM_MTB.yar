@@ -25,7 +25,7 @@ rule Trojan_Win32_Qakbot_EM_MTB_3{
 		
 	strings :
 		$a_01_0 = {55 8b ec 83 ec 08 89 4d fc 8b 45 fc 89 45 f8 6b 45 08 18 8b 4d f8 03 01 8b e5 5d } //01 00 
-		$a_01_1 = {64 65 73 6b 74 6f 70 2e 64 } //00 00 
+		$a_01_1 = {64 65 73 6b 74 6f 70 2e 64 } //00 00  desktop.d
 	condition:
 		any of ($a_*)
  
@@ -35,12 +35,12 @@ rule Trojan_Win32_Qakbot_EM_MTB_4{
 		description = "Trojan:Win32/Qakbot.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 06 00 00 0a 00 "
 		
 	strings :
-		$a_01_0 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //01 00 
-		$a_01_1 = {6a 50 55 4d 4f 4f 55 69 45 2e 64 6c 6c } //01 00 
-		$a_01_2 = {41 6d 58 58 36 69 31 57 78 68 } //01 00 
-		$a_01_3 = {44 33 67 34 67 43 68 32 } //01 00 
-		$a_01_4 = {4a 6b 44 70 7a 44 4f 52 56 55 } //01 00 
-		$a_01_5 = {43 53 4e 5a 34 7a } //00 00 
+		$a_01_0 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //01 00  DllRegisterServer
+		$a_01_1 = {6a 50 55 4d 4f 4f 55 69 45 2e 64 6c 6c } //01 00  jPUMOOUiE.dll
+		$a_01_2 = {41 6d 58 58 36 69 31 57 78 68 } //01 00  AmXX6i1Wxh
+		$a_01_3 = {44 33 67 34 67 43 68 32 } //01 00  D3g4gCh2
+		$a_01_4 = {4a 6b 44 70 7a 44 4f 52 56 55 } //01 00  JkDpzDORVU
+		$a_01_5 = {43 53 4e 5a 34 7a } //00 00  CSNZ4z
 	condition:
 		any of ($a_*)
  
@@ -50,12 +50,12 @@ rule Trojan_Win32_Qakbot_EM_MTB_5{
 		description = "Trojan:Win32/Qakbot.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 06 00 00 03 00 "
 		
 	strings :
-		$a_81_0 = {5a 48 78 62 45 54 6f 70 75 4f 49 } //03 00 
-		$a_81_1 = {67 55 6d 61 6d 58 50 } //03 00 
-		$a_81_2 = {6a 4b 75 45 6b 68 62 4d 6b 4d 68 59 4b 47 } //03 00 
-		$a_81_3 = {53 63 72 69 70 74 43 50 74 6f 58 } //03 00 
-		$a_81_4 = {53 63 72 69 70 74 41 70 70 6c 79 4c 6f 67 69 63 61 6c 57 69 64 74 68 } //03 00 
-		$a_81_5 = {43 6c 6f 73 65 45 6e 68 4d 65 74 61 46 69 6c 65 } //00 00 
+		$a_81_0 = {5a 48 78 62 45 54 6f 70 75 4f 49 } //03 00  ZHxbETopuOI
+		$a_81_1 = {67 55 6d 61 6d 58 50 } //03 00  gUmamXP
+		$a_81_2 = {6a 4b 75 45 6b 68 62 4d 6b 4d 68 59 4b 47 } //03 00  jKuEkhbMkMhYKG
+		$a_81_3 = {53 63 72 69 70 74 43 50 74 6f 58 } //03 00  ScriptCPtoX
+		$a_81_4 = {53 63 72 69 70 74 41 70 70 6c 79 4c 6f 67 69 63 61 6c 57 69 64 74 68 } //03 00  ScriptApplyLogicalWidth
+		$a_81_5 = {43 6c 6f 73 65 45 6e 68 4d 65 74 61 46 69 6c 65 } //00 00  CloseEnhMetaFile
 	condition:
 		any of ($a_*)
  

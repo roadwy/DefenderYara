@@ -5,7 +5,7 @@ rule Backdoor_BAT_CrimsonRat_A_MTB{
 		
 	strings :
 		$a_80_0 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 52 75 6e 7c } //SOFTWARE\Microsoft\Windows\CurrentVersion\Run|  0a 00 
-		$a_81_1 = {3c 46 49 4c 45 5f 41 55 54 4f 3c 7c } //01 00 
+		$a_81_1 = {3c 46 49 4c 45 5f 41 55 54 4f 3c 7c } //01 00  <FILE_AUTO<|
 		$a_80_2 = {73 65 74 5f 43 6c 69 65 6e 74 53 69 7a 65 } //set_ClientSize  01 00 
 		$a_80_3 = {63 73 63 72 65 65 6e } //cscreen  01 00 
 		$a_80_4 = {63 6c 70 69 6e 67 } //clping  01 00 

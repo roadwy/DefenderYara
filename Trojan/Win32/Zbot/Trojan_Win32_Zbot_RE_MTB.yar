@@ -15,7 +15,7 @@ rule Trojan_Win32_Zbot_RE_MTB_2{
 		
 	strings :
 		$a_01_0 = {0f be c9 89 cb 09 fb 31 c3 89 de c1 e6 0a 89 f7 } //01 00 
-		$a_01_1 = {70 69 6b 6d 6b 67 63 79 76 74 66 6b 79 68 65 69 71 67 68 67 } //00 00 
+		$a_01_1 = {70 69 6b 6d 6b 67 63 79 76 74 66 6b 79 68 65 69 71 67 68 67 } //00 00  pikmkgcyvtfkyheiqghg
 	condition:
 		any of ($a_*)
  

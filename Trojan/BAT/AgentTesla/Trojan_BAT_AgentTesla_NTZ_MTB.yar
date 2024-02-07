@@ -15,8 +15,8 @@ rule Trojan_BAT_AgentTesla_NTZ_MTB{
 		$a_80_8 = {56 53 5f 56 45 52 53 49 4f 4e 5f 49 4e 46 4f } //VS_VERSION_INFO  01 00 
 		$a_80_9 = {56 61 72 46 69 6c 65 49 6e 66 6f } //VarFileInfo  01 00 
 		$a_80_10 = {53 74 72 69 6e 67 46 69 6c 65 49 6e 66 6f } //StringFileInfo  01 00 
-		$a_81_11 = {47 65 74 4d 65 74 68 6f 64 73 } //01 00 
-		$a_81_12 = {47 65 74 54 79 70 65 73 } //00 00 
+		$a_81_11 = {47 65 74 4d 65 74 68 6f 64 73 } //01 00  GetMethods
+		$a_81_12 = {47 65 74 54 79 70 65 73 } //00 00  GetTypes
 	condition:
 		any of ($a_*)
  

@@ -9,8 +9,8 @@ rule Backdoor_Win32_Afcore_M{
 		$a_03_2 = {74 0a d1 e9 81 f1 90 01 04 eb 02 d1 e9 4e 75 90 00 } //01 00 
 		$a_01_3 = {ff ff 80 bd eb fe ff ff 61 72 06 6a 7a 6a 61 eb 04 6a 5a 6a 41 } //01 00 
 		$a_01_4 = {6a 40 ff 75 f0 ff d6 6a f1 ff 75 f4 ff d7 ff 75 f4 } //01 00 
-		$a_01_5 = {41 46 43 4f 52 45 5f 42 41 53 45 } //01 00 
-		$a_01_6 = {2a 5c 69 6e 74 65 72 6e 2a 5c 69 65 78 70 6c 6f 72 65 2e 65 78 65 } //00 00 
+		$a_01_5 = {41 46 43 4f 52 45 5f 42 41 53 45 } //01 00  AFCORE_BASE
+		$a_01_6 = {2a 5c 69 6e 74 65 72 6e 2a 5c 69 65 78 70 6c 6f 72 65 2e 65 78 65 } //00 00  *\intern*\iexplore.exe
 	condition:
 		any of ($a_*)
  

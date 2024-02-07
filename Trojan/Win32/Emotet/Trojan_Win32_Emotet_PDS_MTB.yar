@@ -5,7 +5,7 @@ rule Trojan_Win32_Emotet_PDS_MTB{
 		
 	strings :
 		$a_02_0 = {0f b6 cb 03 c1 99 b9 90 01 04 f7 f9 83 c5 01 0f b6 94 14 90 01 04 30 55 90 00 } //01 00 
-		$a_81_1 = {6a 49 70 4f 73 4a 36 6b 75 32 58 41 71 59 70 4f 47 77 36 37 5a 78 44 35 68 6c 66 30 6b 41 57 6f 63 70 36 6d } //00 00 
+		$a_81_1 = {6a 49 70 4f 73 4a 36 6b 75 32 58 41 71 59 70 4f 47 77 36 37 5a 78 44 35 68 6c 66 30 6b 41 57 6f 63 70 36 6d } //00 00  jIpOsJ6ku2XAqYpOGw67ZxD5hlf0kAWocp6m
 	condition:
 		any of ($a_*)
  

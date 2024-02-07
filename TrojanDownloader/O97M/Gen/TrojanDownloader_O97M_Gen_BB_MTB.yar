@@ -4,7 +4,7 @@ rule TrojanDownloader_O97M_Gen_BB_MTB{
 		description = "TrojanDownloader:O97M/Gen.BB!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {73 76 63 68 73 74 2e 65 78 65 } //01 00 
+		$a_01_0 = {73 76 63 68 73 74 2e 65 78 65 } //01 00  svchst.exe
 		$a_03_1 = {68 74 74 70 73 3a 2f 2f 90 02 40 2f 73 76 63 68 73 74 2e 65 78 00 90 00 } //00 00 
 	condition:
 		any of ($a_*)

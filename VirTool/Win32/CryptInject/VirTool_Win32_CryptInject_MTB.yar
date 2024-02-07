@@ -15,7 +15,7 @@ rule VirTool_Win32_CryptInject_MTB_2{
 		description = "VirTool:Win32/CryptInject!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00 
+		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00  MSVBVM60.DLL
 		$a_02_1 = {83 c1 04 0f 8d 90 01 02 ff ff 90 0a ff 00 ff 34 0f 90 02 30 5b 90 02 30 31 f3 90 02 30 89 1c 0a 90 02 40 83 e9 08 90 02 30 83 c1 04 0f 8d 90 01 02 ff ff 90 00 } //00 00 
 	condition:
 		any of ($a_*)
@@ -26,7 +26,7 @@ rule VirTool_Win32_CryptInject_MTB_3{
 		description = "VirTool:Win32/CryptInject!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00 
+		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00  MSVBVM60.DLL
 		$a_02_1 = {83 ff 00 0f 8d 90 01 02 ff ff 90 0a 50 00 29 df 90 0a 50 00 8f 04 38 90 0a 50 00 ff 75 34 90 0a 50 00 31 75 34 90 0a 50 00 8f 45 34 90 0a 50 00 ff 34 3a 90 00 } //00 00 
 	condition:
 		any of ($a_*)
@@ -48,7 +48,7 @@ rule VirTool_Win32_CryptInject_MTB_5{
 		description = "VirTool:Win32/CryptInject!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00 
+		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00  MSVBVM60.DLL
 		$a_02_1 = {66 0f 6e c6 90 02 10 66 0f 6e c9 90 02 10 c5 f0 57 c8 90 02 10 66 0f 7e c9 90 02 10 39 c1 90 13 0f 77 90 02 10 46 90 02 10 ff 37 90 02 10 59 90 00 } //01 00 
 		$a_02_2 = {66 0f 6e c6 90 02 10 66 0f 6e c9 90 02 10 66 0f ef c8 90 02 10 66 0f 7e c9 90 02 10 39 c1 90 13 0f 77 90 02 10 46 90 02 10 ff 37 90 02 10 59 90 00 } //00 00 
 	condition:

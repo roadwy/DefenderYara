@@ -14,7 +14,7 @@ rule Trojan_Win64_IcedID_EC_MTB_2{
 		description = "Trojan:Win64/IcedID.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 02 00 00 0a 00 "
 		
 	strings :
-		$a_01_0 = {67 79 75 61 73 68 6e 6a 68 73 79 66 68 6a 61 } //01 00 
+		$a_01_0 = {67 79 75 61 73 68 6e 6a 68 73 79 66 68 6a 61 } //01 00  gyuashnjhsyfhja
 		$a_01_1 = {10 00 00 00 00 00 80 01 00 00 00 00 10 00 00 00 02 00 00 06 } //00 00 
 	condition:
 		any of ($a_*)
@@ -35,9 +35,9 @@ rule Trojan_Win64_IcedID_EC_MTB_4{
 		description = "Trojan:Win64/IcedID.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 03 00 00 02 00 "
 		
 	strings :
-		$a_01_0 = {74 79 61 73 62 64 68 6e 61 68 73 64 79 75 61 6a 73 64 6b 61 } //02 00 
-		$a_01_1 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //01 00 
-		$a_01_2 = {78 63 61 6e 65 73 69 35 66 65 72 73 38 6c 6f 70 64 79 74 73 } //00 00 
+		$a_01_0 = {74 79 61 73 62 64 68 6e 61 68 73 64 79 75 61 6a 73 64 6b 61 } //02 00  tyasbdhnahsdyuajsdka
+		$a_01_1 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //01 00  VirtualAlloc
+		$a_01_2 = {78 63 61 6e 65 73 69 35 66 65 72 73 38 6c 6f 70 64 79 74 73 } //00 00  xcanesi5fers8lopdyts
 	condition:
 		any of ($a_*)
  
@@ -47,11 +47,11 @@ rule Trojan_Win64_IcedID_EC_MTB_5{
 		description = "Trojan:Win64/IcedID.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {4d 61 67 73 6a 64 62 61 68 73 64 6a 73 } //01 00 
-		$a_01_1 = {68 4a 6e 43 78 43 70 6a 64 45 47 49 54 65 75 } //01 00 
-		$a_01_2 = {6c 4b 6b 4b 62 63 57 69 4e 71 74 44 74 } //01 00 
-		$a_01_3 = {52 65 67 69 73 74 65 72 43 6c 61 73 73 45 78 57 } //01 00 
-		$a_01_4 = {47 65 74 46 6f 63 75 73 } //00 00 
+		$a_01_0 = {4d 61 67 73 6a 64 62 61 68 73 64 6a 73 } //01 00  Magsjdbahsdjs
+		$a_01_1 = {68 4a 6e 43 78 43 70 6a 64 45 47 49 54 65 75 } //01 00  hJnCxCpjdEGITeu
+		$a_01_2 = {6c 4b 6b 4b 62 63 57 69 4e 71 74 44 74 } //01 00  lKkKbcWiNqtDt
+		$a_01_3 = {52 65 67 69 73 74 65 72 43 6c 61 73 73 45 78 57 } //01 00  RegisterClassExW
+		$a_01_4 = {47 65 74 46 6f 63 75 73 } //00 00  GetFocus
 	condition:
 		any of ($a_*)
  
@@ -61,11 +61,11 @@ rule Trojan_Win64_IcedID_EC_MTB_6{
 		description = "Trojan:Win64/IcedID.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //01 00 
-		$a_01_1 = {52 65 63 6f 72 64 73 65 6e 74 65 6e 63 65 } //01 00 
-		$a_01_2 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //01 00 
-		$a_01_3 = {54 6f 74 61 6c 73 65 6e 73 65 5c 62 6f 64 79 2e 70 64 62 } //01 00 
-		$a_01_4 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //00 00 
+		$a_01_0 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //01 00  DllRegisterServer
+		$a_01_1 = {52 65 63 6f 72 64 73 65 6e 74 65 6e 63 65 } //01 00  Recordsentence
+		$a_01_2 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //01 00  VirtualAlloc
+		$a_01_3 = {54 6f 74 61 6c 73 65 6e 73 65 5c 62 6f 64 79 2e 70 64 62 } //01 00  Totalsense\body.pdb
+		$a_01_4 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //00 00  VirtualProtect
 	condition:
 		any of ($a_*)
  
@@ -75,11 +75,11 @@ rule Trojan_Win64_IcedID_EC_MTB_7{
 		description = "Trojan:Win64/IcedID.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {52 47 5a 6c 71 69 78 6f 63 74 50 67 57 43 42 63 } //01 00 
-		$a_01_1 = {55 61 58 56 42 53 64 76 6a 70 53 73 62 6f } //01 00 
-		$a_01_2 = {62 74 51 73 79 68 63 65 72 68 4e 4e 62 44 6d 7a } //01 00 
-		$a_01_3 = {68 4a 6a 44 4f 48 6c 57 42 6b 55 43 71 67 61 51 } //01 00 
-		$a_01_4 = {69 75 61 73 64 75 79 75 61 67 73 64 6a 61 73 61 73 73 } //00 00 
+		$a_01_0 = {52 47 5a 6c 71 69 78 6f 63 74 50 67 57 43 42 63 } //01 00  RGZlqixoctPgWCBc
+		$a_01_1 = {55 61 58 56 42 53 64 76 6a 70 53 73 62 6f } //01 00  UaXVBSdvjpSsbo
+		$a_01_2 = {62 74 51 73 79 68 63 65 72 68 4e 4e 62 44 6d 7a } //01 00  btQsyhcerhNNbDmz
+		$a_01_3 = {68 4a 6a 44 4f 48 6c 57 42 6b 55 43 71 67 61 51 } //01 00  hJjDOHlWBkUCqgaQ
+		$a_01_4 = {69 75 61 73 64 75 79 75 61 67 73 64 6a 61 73 61 73 73 } //00 00  iuasduyuagsdjasass
 	condition:
 		any of ($a_*)
  
@@ -89,12 +89,12 @@ rule Trojan_Win64_IcedID_EC_MTB_8{
 		description = "Trojan:Win64/IcedID.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {49 6e 69 74 69 61 6c 69 7a 65 43 72 69 74 69 63 61 6c 53 65 63 74 69 6f 6e 45 78 } //01 00 
-		$a_01_1 = {4c 43 4d 61 70 53 74 72 69 6e 67 45 78 } //01 00 
-		$a_01_2 = {4c 6f 63 61 6c 65 4e 61 6d 65 54 6f 4c 43 49 44 } //01 00 
-		$a_01_3 = {45 58 42 73 2e 64 6c 6c } //01 00 
-		$a_01_4 = {41 33 46 66 74 46 } //01 00 
-		$a_01_5 = {41 33 59 44 7a 66 62 43 54 } //00 00 
+		$a_01_0 = {49 6e 69 74 69 61 6c 69 7a 65 43 72 69 74 69 63 61 6c 53 65 63 74 69 6f 6e 45 78 } //01 00  InitializeCriticalSectionEx
+		$a_01_1 = {4c 43 4d 61 70 53 74 72 69 6e 67 45 78 } //01 00  LCMapStringEx
+		$a_01_2 = {4c 6f 63 61 6c 65 4e 61 6d 65 54 6f 4c 43 49 44 } //01 00  LocaleNameToLCID
+		$a_01_3 = {45 58 42 73 2e 64 6c 6c } //01 00  EXBs.dll
+		$a_01_4 = {41 33 46 66 74 46 } //01 00  A3FftF
+		$a_01_5 = {41 33 59 44 7a 66 62 43 54 } //00 00  A3YDzfbCT
 	condition:
 		any of ($a_*)
  
@@ -104,11 +104,11 @@ rule Trojan_Win64_IcedID_EC_MTB_9{
 		description = "Trojan:Win64/IcedID.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 05 00 00 05 00 "
 		
 	strings :
-		$a_01_0 = {69 68 61 73 75 6e 64 69 6a 64 73 75 68 79 67 62 68 6a 73 6b 64 66 73 69 75 66 6b 6a 64 73 61 69 73 6a 6f 61 73 } //05 00 
-		$a_01_1 = {67 79 75 61 73 69 66 69 69 73 64 79 67 61 69 73 6a 64 6f 69 66 67 75 68 79 75 67 61 73 6a 73 6a 75 68 } //01 00 
-		$a_01_2 = {4f 70 65 6e 50 72 6f 63 65 73 73 } //01 00 
-		$a_01_3 = {47 65 74 43 75 72 72 65 6e 74 50 72 6f 63 65 73 73 49 64 } //01 00 
-		$a_01_4 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //00 00 
+		$a_01_0 = {69 68 61 73 75 6e 64 69 6a 64 73 75 68 79 67 62 68 6a 73 6b 64 66 73 69 75 66 6b 6a 64 73 61 69 73 6a 6f 61 73 } //05 00  ihasundijdsuhygbhjskdfsiufkjdsaisjoas
+		$a_01_1 = {67 79 75 61 73 69 66 69 69 73 64 79 67 61 69 73 6a 64 6f 69 66 67 75 68 79 75 67 61 73 6a 73 6a 75 68 } //01 00  gyuasifiisdygaisjdoifguhyugasjsjuh
+		$a_01_2 = {4f 70 65 6e 50 72 6f 63 65 73 73 } //01 00  OpenProcess
+		$a_01_3 = {47 65 74 43 75 72 72 65 6e 74 50 72 6f 63 65 73 73 49 64 } //01 00  GetCurrentProcessId
+		$a_01_4 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //00 00  VirtualAlloc
 	condition:
 		any of ($a_*)
  

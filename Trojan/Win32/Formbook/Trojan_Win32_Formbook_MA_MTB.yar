@@ -5,7 +5,7 @@ rule Trojan_Win32_Formbook_MA_MTB{
 		
 	strings :
 		$a_01_0 = {8b c8 85 c9 74 1c 8b c7 2b c8 bb 05 1a 00 00 8b ff 8a 04 0f 88 07 8d 7f 01 4b 75 } //05 00 
-		$a_01_1 = {57 00 49 00 4f 00 53 00 4f 00 53 00 4f 00 53 00 4f 00 57 00 } //00 00 
+		$a_01_1 = {57 00 49 00 4f 00 53 00 4f 00 53 00 4f 00 53 00 4f 00 57 00 } //00 00  WIOSOSOSOW
 	condition:
 		any of ($a_*)
  

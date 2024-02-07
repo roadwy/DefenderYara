@@ -5,7 +5,7 @@ rule TrojanDownloader_Win32_Mytonel_A{
 		
 	strings :
 		$a_03_0 = {66 81 fd 00 fe 0f 90 02 10 81 90 01 01 00 17 00 00 90 00 } //01 00 
-		$a_00_1 = {33 64 69 6d 37 30 30 2e 44 4c 4c } //00 00 
+		$a_00_1 = {33 64 69 6d 37 30 30 2e 44 4c 4c } //00 00  3dim700.DLL
 	condition:
 		any of ($a_*)
  

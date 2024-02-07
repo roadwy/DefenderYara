@@ -5,7 +5,7 @@ rule Trojan_BAT_AgentTesla_CET_MTB{
 		
 	strings :
 		$a_03_0 = {11 02 18 d8 17 d6 11 00 8e 69 fe 04 13 03 38 90 01 03 00 00 00 11 02 17 d6 90 00 } //01 00 
-		$a_01_1 = {57 69 6e 64 6f 77 73 46 6f 72 6d 73 41 70 70 35 37 } //00 00 
+		$a_01_1 = {57 69 6e 64 6f 77 73 46 6f 72 6d 73 41 70 70 35 37 } //00 00  WindowsFormsApp57
 	condition:
 		any of ($a_*)
  

@@ -5,7 +5,7 @@ rule Trojan_BAT_AgentTesla_MBGP_MTB{
 		
 	strings :
 		$a_03_0 = {01 25 16 1f 2c 9d 6f 90 01 01 01 00 0a 16 9a 73 90 01 01 01 00 0a 2a 90 00 } //01 00 
-		$a_01_1 = {65 65 2d 37 33 66 62 36 36 37 38 63 64 62 65 } //00 00 
+		$a_01_1 = {65 65 2d 37 33 66 62 36 36 37 38 63 64 62 65 } //00 00  ee-73fb6678cdbe
 	condition:
 		any of ($a_*)
  
@@ -15,7 +15,7 @@ rule Trojan_BAT_AgentTesla_MBGP_MTB_2{
 		description = "Trojan:BAT/AgentTesla.MBGP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {52 2d 30 33 2d 52 2d 45 32 2d 52 2d 30 33 2d 52 2d 45 32 2d 52 2d 30 33 2d 52 2d 45 32 2d 52 2d 31 33 2d 52 2d 52 2d 52 2d 45 36 2d 52 2d 46 36 2d 52 2d 39 36 } //00 00 
+		$a_01_0 = {52 2d 30 33 2d 52 2d 45 32 2d 52 2d 30 33 2d 52 2d 45 32 2d 52 2d 30 33 2d 52 2d 45 32 2d 52 2d 31 33 2d 52 2d 52 2d 52 2d 45 36 2d 52 2d 46 36 2d 52 2d 39 36 } //00 00  R-03-R-E2-R-03-R-E2-R-03-R-E2-R-13-R-R-R-E6-R-F6-R-96
 	condition:
 		any of ($a_*)
  

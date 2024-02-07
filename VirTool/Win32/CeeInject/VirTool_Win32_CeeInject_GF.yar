@@ -7,7 +7,7 @@ rule VirTool_Win32_CeeInject_GF{
 		$a_01_0 = {80 38 e9 75 0b ba ff ff 00 00 66 39 50 03 74 07 40 41 83 f9 1e 7c e9 80 38 e9 } //01 00 
 		$a_01_1 = {c7 44 24 64 a9 dd e5 62 c7 44 24 68 86 00 c2 1b 8b 74 24 10 8d 74 b4 38 ff 36 57 e8 } //01 00 
 		$a_01_2 = {c7 84 3d e0 fe ff ff 2e 64 6c 6c c6 84 3d e4 fe ff ff 00 e8 } //00 00 
-		$a_00_3 = {78 67 } //00 00 
+		$a_00_3 = {78 67 } //00 00  xg
 	condition:
 		any of ($a_*)
  
@@ -30,7 +30,7 @@ rule VirTool_Win32_CeeInject_GF_3{
 	strings :
 		$a_03_0 = {83 c2 21 89 95 fc fe ff ff 6a 40 68 00 10 00 00 8b 85 00 ff ff ff 50 6a 00 ff 15 9c e0 40 00 a3 90 01 03 00 0f b7 8d 6c fd ff ff 83 c1 60 0f b6 95 f3 fe ff ff 33 ca 90 00 } //01 00 
 		$a_03_1 = {c7 85 fc fe ff ff 57 00 00 00 8b 95 e8 fe ff ff 2b 95 48 fe ff ff 83 ea 26 66 89 95 34 fe ff ff a1 90 01 04 50 ff 15 90 00 } //01 00 
-		$a_00_2 = {7e } //15 00 
+		$a_00_2 = {7e } //15 00  ~
 	condition:
 		any of ($a_*)
  

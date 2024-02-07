@@ -4,9 +4,9 @@ rule TrojanDownloader_O97M_Donoff_PV{
 		description = "TrojanDownloader:O97M/Donoff.PV,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {22 44 6f 77 6e 6c 6f 61 64 46 69 6c 65 22 20 26 20 5f } //01 00 
-		$a_01_1 = {6f 6c 75 79 61 6d 61 63 68 69 6e 65 2e 78 79 7a } //01 00 
-		$a_01_2 = {27 2c 27 25 74 65 6d 70 25 } //00 00 
+		$a_01_0 = {22 44 6f 77 6e 6c 6f 61 64 46 69 6c 65 22 20 26 20 5f } //01 00  "DownloadFile" & _
+		$a_01_1 = {6f 6c 75 79 61 6d 61 63 68 69 6e 65 2e 78 79 7a } //01 00  oluyamachine.xyz
+		$a_01_2 = {27 2c 27 25 74 65 6d 70 25 } //00 00  ','%temp%
 	condition:
 		any of ($a_*)
  

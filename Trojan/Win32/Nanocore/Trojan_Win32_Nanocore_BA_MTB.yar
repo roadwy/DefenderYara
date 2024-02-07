@@ -17,7 +17,7 @@ rule Trojan_Win32_Nanocore_BA_MTB{
 		$a_80_10 = {50 61 74 68 3d 25 74 65 6d 70 25 5c } //Path=%temp%\  0a 00 
 		$a_80_11 = {41 52 61 72 48 74 6d 6c 43 6c 61 73 73 4e 61 6d 65 } //ARarHtmlClassName  0a 00 
 		$a_80_12 = {43 72 79 70 74 50 72 6f 74 65 63 74 4d 65 6d 6f 72 79 20 66 61 69 6c 65 64 } //CryptProtectMemory failed  0a 00 
-		$a_81_13 = {2d 65 6c 20 2d 73 32 20 22 2d 64 25 73 22 20 22 2d 73 70 25 73 22 } //00 00 
+		$a_81_13 = {2d 65 6c 20 2d 73 32 20 22 2d 64 25 73 22 20 22 2d 73 70 25 73 22 } //00 00  -el -s2 "-d%s" "-sp%s"
 	condition:
 		any of ($a_*)
  

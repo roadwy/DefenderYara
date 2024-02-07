@@ -9,7 +9,7 @@ rule Trojan_Win64_IcedID_IH_MTB{
 		$a_01_2 = {88 04 0a e9 } //01 00 
 		$a_01_3 = {8b 44 24 44 e9 2a ff ff ff } //01 00 
 		$a_01_4 = {ff c0 89 44 24 44 e9 } //01 00 
-		$a_01_5 = {70 69 6e 67 } //00 00 
+		$a_01_5 = {70 69 6e 67 } //00 00  ping
 	condition:
 		any of ($a_*)
  

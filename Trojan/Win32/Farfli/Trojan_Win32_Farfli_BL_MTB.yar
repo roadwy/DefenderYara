@@ -5,7 +5,7 @@ rule Trojan_Win32_Farfli_BL_MTB{
 		
 	strings :
 		$a_01_0 = {8d 55 e8 b1 cc 03 d0 2a c8 40 32 0a 88 0c 13 83 f8 05 76 } //01 00 
-		$a_01_1 = {53 65 72 76 69 63 65 4d 61 69 6e } //00 00 
+		$a_01_1 = {53 65 72 76 69 63 65 4d 61 69 6e } //00 00  ServiceMain
 	condition:
 		any of ($a_*)
  

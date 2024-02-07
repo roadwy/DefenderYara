@@ -5,7 +5,7 @@ rule Trojan_Win32_Downloader_AL_MTB{
 		
 	strings :
 		$a_03_0 = {8a 10 80 f2 90 01 01 80 c2 90 01 01 88 10 83 c0 01 83 e9 01 75 e6 90 00 } //02 00 
-		$a_01_1 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //00 00 
+		$a_01_1 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //00 00  VirtualProtect
 	condition:
 		any of ($a_*)
  

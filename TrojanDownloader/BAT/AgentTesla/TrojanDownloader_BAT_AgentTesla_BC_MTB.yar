@@ -5,8 +5,8 @@ rule TrojanDownloader_BAT_AgentTesla_BC_MTB{
 		
 	strings :
 		$a_01_0 = {09 11 04 08 11 04 08 8e 69 5d 91 06 11 04 91 61 d2 } //01 00 
-		$a_01_1 = {44 65 62 75 67 67 65 72 4e 6f 6e 55 73 65 72 43 6f 64 65 41 74 74 72 69 62 75 74 65 } //01 00 
-		$a_01_2 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //00 00 
+		$a_01_1 = {44 65 62 75 67 67 65 72 4e 6f 6e 55 73 65 72 43 6f 64 65 41 74 74 72 69 62 75 74 65 } //01 00  DebuggerNonUserCodeAttribute
+		$a_01_2 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //00 00  DownloadData
 	condition:
 		any of ($a_*)
  

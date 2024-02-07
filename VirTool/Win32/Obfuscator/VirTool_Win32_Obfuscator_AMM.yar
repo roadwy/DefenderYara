@@ -10,7 +10,7 @@ rule VirTool_Win32_Obfuscator_AMM{
 		$a_01_3 = {c6 45 ab 56 c6 45 ac 69 c6 45 ad 72 c6 45 ae 74 c6 45 af 75 c6 45 b0 61 c6 45 b1 6c c6 45 b2 41 c6 45 b3 6c c6 45 b4 6c c6 45 b5 6f c6 45 b6 63 c6 45 b7 00 8d 45 ab 50 53 ff 55 e8 } //01 00 
 		$a_01_4 = {eb 28 ac d1 e8 74 4d 11 c9 eb 1c 91 48 c1 e0 08 ac e8 2c 00 00 00 3d 00 7d 00 00 73 0a 80 fc 05 73 06 83 f8 7f 77 02 } //01 00 
 		$a_01_5 = {8b 55 f4 0f b6 14 02 33 57 04 8b 4d f4 88 14 01 40 4e 75 ec 8b 07 89 45 ec e9 } //00 00 
-		$a_00_6 = {5d 04 } //00 00 
+		$a_00_6 = {5d 04 } //00 00  ѝ
 	condition:
 		any of ($a_*)
  

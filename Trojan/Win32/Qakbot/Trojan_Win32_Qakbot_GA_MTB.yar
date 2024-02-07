@@ -81,7 +81,7 @@ rule Trojan_Win32_Qakbot_GA_MTB_7{
 		$a_80_5 = {77 69 6e 73 74 61 30 5c 64 65 66 61 75 6c 74 } //winsta0\default  01 00 
 		$a_80_6 = {6d 65 6d 73 65 74 } //memset  01 00 
 		$a_80_7 = {47 65 74 55 73 65 72 50 72 6f 66 69 6c 65 44 69 72 65 63 74 6f 72 79 57 } //GetUserProfileDirectoryW  01 00 
-		$a_81_8 = {55 53 45 52 50 52 4f 46 49 4c 45 } //01 00 
+		$a_81_8 = {55 53 45 52 50 52 4f 46 49 4c 45 } //01 00  USERPROFILE
 		$a_80_9 = {4f 70 65 6e 50 72 6f 63 65 73 73 54 6f 6b 65 6e } //OpenProcessToken  00 00 
 		$a_00_10 = {78 f0 00 00 16 00 16 00 07 00 00 01 00 0c 80 01 56 69 72 74 75 61 6c } //41 6c 
 	condition:
@@ -110,7 +110,7 @@ rule Trojan_Win32_Qakbot_GA_MTB_9{
 		description = "Trojan:Win32/Qakbot.GA!MTB,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {72 3a 5c 6d 64 2d 70 72 6f 6a 5c 70 72 64 79 6a 66 5c 72 74 63 33 32 2e 70 64 62 } //01 00 
+		$a_01_0 = {72 3a 5c 6d 64 2d 70 72 6f 6a 5c 70 72 64 79 6a 66 5c 72 74 63 33 32 2e 70 64 62 } //01 00  r:\md-proj\prdyjf\rtc32.pdb
 		$a_01_1 = {d0 2d 6b 65 1c c0 d3 0b bd fd 13 89 21 41 72 eb 22 e1 79 03 b7 6d 0c 64 76 f4 3d c0 55 44 62 } //00 00 
 	condition:
 		any of ($a_*)

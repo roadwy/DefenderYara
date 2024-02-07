@@ -4,7 +4,7 @@ rule PWS_BAT_StormKitty_GB_MTB{
 		description = "PWS:BAT/StormKitty.GB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,11 00 0f 00 08 00 00 0a 00 "
 		
 	strings :
-		$a_81_0 = {68 74 74 70 73 3a 2f 2f 67 69 74 68 75 62 2e 63 6f 6d 2f 4c 69 6d 65 72 42 6f 79 2f 53 74 6f 72 6d 4b 69 74 74 79 } //01 00 
+		$a_81_0 = {68 74 74 70 73 3a 2f 2f 67 69 74 68 75 62 2e 63 6f 6d 2f 4c 69 6d 65 72 42 6f 79 2f 53 74 6f 72 6d 4b 69 74 74 79 } //01 00  https://github.com/LimerBoy/StormKitty
 		$a_80_1 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //VirtualProtect  01 00 
 		$a_80_2 = {63 61 70 43 72 65 61 74 65 43 61 70 74 75 72 65 57 69 6e 64 6f 77 41 } //capCreateCaptureWindowA  01 00 
 		$a_80_3 = {43 72 79 70 74 55 6e 70 72 6f 74 65 63 74 44 61 74 61 } //CryptUnprotectData  01 00 

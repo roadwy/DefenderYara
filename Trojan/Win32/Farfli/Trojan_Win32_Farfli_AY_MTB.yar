@@ -5,7 +5,7 @@ rule Trojan_Win32_Farfli_AY_MTB{
 		
 	strings :
 		$a_01_0 = {8b 45 08 8d 0c 02 0f b7 c6 8a 44 45 ec 30 01 46 42 3b d7 72 e3 } //02 00 
-		$a_01_1 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //00 00 
+		$a_01_1 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //00 00  VirtualAlloc
 	condition:
 		any of ($a_*)
  

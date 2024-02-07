@@ -47,7 +47,7 @@ rule Trojan_Win32_Glupteba_AV_MTB_5{
 	strings :
 		$a_01_0 = {3d cc 6b 84 00 75 03 83 c1 15 40 3d 45 74 8d 00 7c ee } //02 00 
 		$a_01_1 = {30 04 33 83 ff 19 75 2e 6a 00 8d 44 24 10 50 } //00 00 
-		$a_01_2 = {00 61 } //3d 00 
+		$a_01_2 = {00 61 } //3d 00  愀
 	condition:
 		any of ($a_*)
  

@@ -15,11 +15,11 @@ rule TrojanDownloader_Win32_Tenega_B_MTB_2{
 		description = "TrojanDownloader:Win32/Tenega.B!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		
 	strings :
-		$a_81_0 = {78 7a 2e 6a 75 7a 69 72 6c 2e 63 6f 6d } //01 00 
-		$a_81_1 = {64 6f 77 6e 6c 6f 61 64 5f 71 75 69 65 74 } //01 00 
-		$a_81_2 = {50 72 6f 78 79 45 6e 61 62 6c 65 } //01 00 
-		$a_81_3 = {63 72 65 61 74 69 6e 67 20 73 6f 63 6b 65 74 } //01 00 
-		$a_81_4 = {65 6d 70 74 79 20 68 6f 73 74 6e 61 6d 65 } //01 00 
+		$a_81_0 = {78 7a 2e 6a 75 7a 69 72 6c 2e 63 6f 6d } //01 00  xz.juzirl.com
+		$a_81_1 = {64 6f 77 6e 6c 6f 61 64 5f 71 75 69 65 74 } //01 00  download_quiet
+		$a_81_2 = {50 72 6f 78 79 45 6e 61 62 6c 65 } //01 00  ProxyEnable
+		$a_81_3 = {63 72 65 61 74 69 6e 67 20 73 6f 63 6b 65 74 } //01 00  creating socket
+		$a_81_4 = {65 6d 70 74 79 20 68 6f 73 74 6e 61 6d 65 } //01 00  empty hostname
 		$a_02_5 = {63 3a 5c 74 65 6d 70 5c 6e 73 90 02 0f 2e 74 6d 70 5c 90 02 0f 2e 64 6c 6c 90 00 } //00 00 
 	condition:
 		any of ($a_*)

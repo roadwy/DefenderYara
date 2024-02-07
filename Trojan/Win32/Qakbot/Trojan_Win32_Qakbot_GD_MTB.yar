@@ -77,7 +77,7 @@ rule Trojan_Win32_Qakbot_GD_MTB_8{
 	strings :
 		$a_02_0 = {c7 85 6c ff ff ff 90 01 04 c7 85 6c ff ff ff 90 01 04 c7 85 6c ff ff ff 90 01 04 c7 85 6c ff ff ff 90 01 04 c7 85 6c ff ff ff 90 01 04 c7 85 6c ff ff ff 90 01 04 c7 85 6c ff ff ff 90 01 04 c7 85 6c ff ff ff 90 00 } //0a 00 
 		$a_02_1 = {03 f0 8b 45 08 03 30 8b 4d 08 89 31 90 02 14 8b 55 08 8b 90 01 01 2b 90 01 01 8b 55 08 89 90 01 01 5e 8b e5 5d c3 90 00 } //0a 00 
-		$a_00_2 = {68 00 5a 00 54 00 44 00 4b 00 54 00 64 00 4a 00 4e 00 53 00 } //0a 00 
+		$a_00_2 = {68 00 5a 00 54 00 44 00 4b 00 54 00 64 00 4a 00 4e 00 53 00 } //0a 00  hZTDKTdJNS
 		$a_80_3 = {4c 6f 61 64 43 75 72 73 6f 72 46 72 6f 6d 46 69 6c 65 57 } //LoadCursorFromFileW  01 00 
 		$a_80_4 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //VirtualAlloc  01 00 
 		$a_80_5 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 45 78 } //VirtualAllocEx  00 00 

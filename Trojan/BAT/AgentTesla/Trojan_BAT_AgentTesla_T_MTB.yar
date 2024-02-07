@@ -14,8 +14,8 @@ rule Trojan_BAT_AgentTesla_T_MTB_2{
 		description = "Trojan:BAT/AgentTesla.T!MTB,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {4d 41 41 51 71 56 54 } //01 00 
-		$a_01_1 = {3d 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c } //00 00 
+		$a_01_0 = {4d 41 41 51 71 56 54 } //01 00  MAAQqVT
+		$a_01_1 = {3d 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c 2c } //00 00  =,,,,,,,,,,,,,,,,,,
 	condition:
 		any of ($a_*)
  

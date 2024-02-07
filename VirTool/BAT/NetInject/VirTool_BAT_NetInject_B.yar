@@ -14,10 +14,10 @@ rule VirTool_BAT_NetInject_B_2{
 		description = "VirTool:BAT/NetInject.B,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {64 67 4c 6f 61 64 65 72 } //01 00 
-		$a_01_1 = {6c 6f 61 64 65 72 5f 61 72 72 61 79 } //01 00 
-		$a_01_2 = {47 65 74 44 65 6c 65 67 61 74 65 46 6f 72 46 75 6e 63 74 69 6f 6e 50 6f 69 6e 74 65 72 } //00 00 
-		$a_00_3 = {5d 04 } //00 00 
+		$a_01_0 = {64 67 4c 6f 61 64 65 72 } //01 00  dgLoader
+		$a_01_1 = {6c 6f 61 64 65 72 5f 61 72 72 61 79 } //01 00  loader_array
+		$a_01_2 = {47 65 74 44 65 6c 65 67 61 74 65 46 6f 72 46 75 6e 63 74 69 6f 6e 50 6f 69 6e 74 65 72 } //00 00  GetDelegateForFunctionPointer
+		$a_00_3 = {5d 04 } //00 00  ѝ
 	condition:
 		any of ($a_*)
  

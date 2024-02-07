@@ -12,7 +12,7 @@ rule Backdoor_Win32_Unowvee_STC_{
 		$a_80_5 = {41 67 65 6e 74 5f 56 58 5f } //Agent_VX_  01 00 
 		$a_80_6 = {63 64 6e 2e 6e 76 62 63 6c 6f 75 64 2e 63 6f 6d } //cdn.nvbcloud.com  01 00 
 		$a_80_7 = {53 65 6c 65 63 74 20 2a 20 46 72 6f 6d 20 41 6e 74 69 56 69 72 75 73 50 72 6f 64 75 63 74 } //Select * From AntiVirusProduct  01 00 
-		$a_00_8 = {43 6f 6d 6d 61 6e 64 00 4e 45 57 00 54 41 53 4b } //00 00 
+		$a_00_8 = {43 6f 6d 6d 61 6e 64 00 4e 45 57 00 54 41 53 4b } //00 00  潃浭湡d䕎W䅔䭓
 	condition:
 		any of ($a_*)
  

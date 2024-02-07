@@ -14,10 +14,10 @@ rule Trojan_BAT_AgentTesla_NED_MTB_2{
 		description = "Trojan:BAT/AgentTesla.NED!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {43 6f 6c 6c 6f 72 20 50 61 6c 6c 65 74 65 73 } //01 00 
-		$a_01_1 = {76 34 2e 30 2e 33 30 33 31 39 } //01 00 
-		$a_01_2 = {72 65 6d 6f 76 65 5f 44 6f 57 6f 72 6b } //01 00 
-		$a_01_3 = {62 37 37 61 35 63 35 36 31 39 33 34 65 30 38 39 50 41 44 50 41 } //00 00 
+		$a_01_0 = {43 6f 6c 6c 6f 72 20 50 61 6c 6c 65 74 65 73 } //01 00  Collor Palletes
+		$a_01_1 = {76 34 2e 30 2e 33 30 33 31 39 } //01 00  v4.0.30319
+		$a_01_2 = {72 65 6d 6f 76 65 5f 44 6f 57 6f 72 6b } //01 00  remove_DoWork
+		$a_01_3 = {62 37 37 61 35 63 35 36 31 39 33 34 65 30 38 39 50 41 44 50 41 } //00 00  b77a5c561934e089PADPA
 	condition:
 		any of ($a_*)
  

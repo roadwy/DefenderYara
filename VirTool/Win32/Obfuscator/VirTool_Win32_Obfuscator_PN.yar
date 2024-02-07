@@ -26,7 +26,7 @@ rule VirTool_Win32_Obfuscator_PN_3{
 		description = "VirTool:Win32/Obfuscator.PN,SIGNATURE_TYPE_PEHSTR_EXT,64 00 02 00 04 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {55 73 61 72 74 79 73 61 69 64 } //01 00 
+		$a_01_0 = {55 73 61 72 74 79 73 61 69 64 } //01 00  Usartysaid
 		$a_01_1 = {2c 6a 0c 63 88 44 24 } //02 00 
 		$a_01_2 = {be d6 43 d2 7d 23 8f 55 04 93 5d e0 3b d3 95 94 } //02 00 
 		$a_03_3 = {8d 04 0a 8a d1 80 e2 03 c1 e8 04 f6 ea b2 fe 2a d0 00 14 0f ff 45 90 01 01 8b 55 90 01 01 eb 90 01 01 8b 45 90 01 01 83 c1 20 3b c8 72 90 01 01 8b 45 90 01 01 33 c9 85 c0 74 90 00 } //00 00 

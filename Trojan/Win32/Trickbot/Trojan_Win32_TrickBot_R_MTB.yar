@@ -25,9 +25,9 @@ rule Trojan_Win32_TrickBot_R_MTB_3{
 		description = "Trojan:Win32/TrickBot.R!MTB,SIGNATURE_TYPE_PEHSTR,03 00 03 00 05 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {56 47 71 4a 46 6b 59 65 4a 40 6f 4e 6b 71 37 00 } //01 00 
-		$a_01_1 = {48 4b 4e 44 51 5a 4b 50 67 62 53 51 53 77 50 00 } //01 00 
-		$a_01_2 = {35 77 35 45 7a 50 43 30 43 31 30 51 72 4b 77 28 } //01 00 
+		$a_01_0 = {56 47 71 4a 46 6b 59 65 4a 40 6f 4e 6b 71 37 00 } //01 00  䝖䩱歆教䁊乯煫7
+		$a_01_1 = {48 4b 4e 44 51 5a 4b 50 67 62 53 51 53 77 50 00 } //01 00  䭈䑎婑偋执兓睓P
+		$a_01_2 = {35 77 35 45 7a 50 43 30 43 31 30 51 72 4b 77 28 } //01 00  5w5EzPC0C10QrKw(
 		$a_01_3 = {8b 45 f8 8d 50 01 89 d0 c1 f8 1f c1 e8 18 01 c2 0f b6 d2 29 c2 89 d0 89 45 f8 8b 45 f8 8b 94 85 ec fb ff ff 8b 45 f4 01 c2 89 d0 c1 f8 1f c1 e8 18 01 c2 0f b6 d2 29 c2 89 d0 89 45 f4 8b 45 f8 8b 84 85 ec fb ff ff 88 45 ef 8b 45 f4 8b 94 85 ec fb ff ff 8b 45 f8 89 94 85 ec fb ff ff 0f b6 55 ef 8b 45 f4 89 94 85 ec fb ff ff 8b 45 f0 8b 55 08 8d 0c 02 8b 45 f0 8b 55 08 01 d0 0f b6 00 89 c3 8b 45 f8 8b 94 85 ec fb ff ff 8b 45 f4 8b 84 85 ec fb ff ff 01 c2 89 d0 c1 f8 1f c1 e8 18 01 c2 0f b6 d2 29 c2 89 d0 8b 84 85 ec fb ff ff 31 d8 88 01 83 45 f0 01 8b 45 f0 3b 45 10 0f 82 3c ff ff ff } //01 00 
 		$a_01_4 = {8b 45 f4 8d 50 01 89 d0 c1 f8 1f c1 e8 18 01 c2 81 e2 ff 00 00 00 89 d6 29 c6 89 f0 89 45 f4 8b 45 f4 8b 94 85 e8 fb ff ff 8b 45 f0 01 c2 89 d0 c1 f8 1f c1 e8 18 01 c2 81 e2 ff 00 00 00 89 d1 29 c1 89 c8 89 45 f0 8b 45 f4 8b 84 85 e8 fb ff ff 88 45 eb 8b 45 f0 8b 94 85 e8 fb ff ff 8b 45 f4 89 94 85 e8 fb ff ff 0f b6 55 eb 8b 45 f0 89 94 85 e8 fb ff ff 8b 45 ec 8b 55 08 8d 0c 02 8b 45 ec 8b 55 08 01 d0 0f b6 00 89 c3 8b 45 f4 8b 94 85 e8 fb ff ff 8b 45 f0 8b 84 85 e8 fb ff ff 01 c2 89 d0 c1 f8 1f c1 e8 18 01 c2 81 e2 ff 00 00 00 89 d6 29 c6 89 f0 8b 84 85 e8 fb ff ff 31 d8 88 01 83 45 ec 01 8b 45 ec 3b 45 10 0f 92 c0 84 c0 0f 85 28 ff ff ff } //00 00 
 	condition:

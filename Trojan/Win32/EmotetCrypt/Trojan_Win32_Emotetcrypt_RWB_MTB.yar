@@ -4,7 +4,7 @@ rule Trojan_Win32_Emotetcrypt_RWB_MTB{
 		description = "Trojan:Win32/Emotetcrypt.RWB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
-		$a_81_0 = {76 56 6a 51 4f 6b 50 4f 64 4b 3e 5e 46 4f 45 47 4b 6c 5e 30 51 40 7a 5f 6d 25 36 28 40 5a 76 75 65 46 5f 25 } //01 00 
+		$a_81_0 = {76 56 6a 51 4f 6b 50 4f 64 4b 3e 5e 46 4f 45 47 4b 6c 5e 30 51 40 7a 5f 6d 25 36 28 40 5a 76 75 65 46 5f 25 } //01 00  vVjQOkPOdK>^FOEGKl^0Q@z_m%6(@ZvueF_%
 		$a_03_1 = {03 cf 03 ce 2b ca 8b 45 90 01 01 2b c8 2b 0d 90 01 04 2b 0d 90 01 04 8b 55 90 01 01 8b 45 90 00 } //00 00 
 	condition:
 		any of ($a_*)

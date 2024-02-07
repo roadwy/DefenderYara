@@ -4,8 +4,8 @@ rule TrojanSpy_Win32_Stealer_ARA_MTB{
 		description = "TrojanSpy:Win32/Stealer.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,11 00 11 00 0f 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //01 00 
-		$a_01_1 = {43 72 65 61 74 65 46 69 6c 65 57 } //01 00 
+		$a_01_0 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //01 00  VirtualProtect
+		$a_01_1 = {43 72 65 61 74 65 46 69 6c 65 57 } //01 00  CreateFileW
 		$a_80_2 = {57 69 6e 64 44 62 67 } //WindDbg  01 00 
 		$a_80_3 = {6f 6c 6c 79 44 62 67 } //ollyDbg  01 00 
 		$a_80_4 = {78 36 34 64 62 67 } //x64dbg  01 00 

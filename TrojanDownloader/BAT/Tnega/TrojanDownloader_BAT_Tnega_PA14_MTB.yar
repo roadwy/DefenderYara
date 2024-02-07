@@ -9,8 +9,8 @@ rule TrojanDownloader_BAT_Tnega_PA14_MTB{
 		$a_80_2 = {6c 78 36 6b 57 55 74 39 51 73 2b 79 67 54 65 6c 63 4c 65 41 35 6c 53 37 31 50 68 58 31 49 4d 50 39 69 53 65 37 7a 41 39 43 38 7a 55 45 65 2b 38 4f 46 32 53 37 33 6a 78 4d 58 61 7a 42 51 66 4c 6d 2b 54 45 4e 4e 37 67 50 49 4b 6b 63 36 42 43 67 53 79 4a 56 } //lx6kWUt9Qs+ygTelcLeA5lS71PhX1IMP9iSe7zA9C8zUEe+8OF2S73jxMXazBQfLm+TENN7gPIKkc6BCgSyJV  01 00 
 		$a_80_3 = {2b 6e 35 31 68 44 6d 59 4f 39 79 61 57 50 31 79 69 46 47 41 64 75 2f 63 45 76 50 38 6f 6a 62 70 78 42 71 46 48 7a 6e 37 78 76 48 } //+n51hDmYO9yaWP1yiFGAdu/cEvP8ojbpxBqFHzn7xvH  01 00 
 		$a_80_4 = {6c 78 36 6b 57 55 74 39 51 73 2b 79 67 54 65 6c 63 4c 65 41 35 6c 53 37 31 50 68 58 31 49 4d 50 39 69 53 65 37 7a 41 39 43 38 7a 55 45 65 2b 38 4f 46 32 53 37 33 } //lx6kWUt9Qs+ygTelcLeA5lS71PhX1IMP9iSe7zA9C8zUEe+8OF2S73  01 00 
-		$a_01_5 = {44 6f 77 6e 6c 6f 61 64 46 69 6c 65 } //01 00 
-		$a_01_6 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //00 00 
+		$a_01_5 = {44 6f 77 6e 6c 6f 61 64 46 69 6c 65 } //01 00  DownloadFile
+		$a_01_6 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //00 00  FromBase64String
 	condition:
 		any of ($a_*)
  

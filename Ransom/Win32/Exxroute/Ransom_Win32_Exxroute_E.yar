@@ -4,8 +4,8 @@ rule Ransom_Win32_Exxroute_E{
 		description = "Ransom:Win32/Exxroute.E,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 0a 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {4d 65 6d 53 74 72 65 61 6d } //01 00 
-		$a_00_1 = {77 63 72 79 70 74 32 } //01 00 
+		$a_00_0 = {4d 65 6d 53 74 72 65 61 6d } //01 00  MemStream
+		$a_00_1 = {77 63 72 79 70 74 32 } //01 00  wcrypt2
 		$a_01_2 = {68 04 80 00 00 } //01 00 
 		$a_01_3 = {68 01 68 00 00 } //01 00 
 		$a_01_4 = {8b 4c 24 08 8b 44 24 04 83 c1 05 64 89 02 ff d1 c2 0c 00 } //01 00 

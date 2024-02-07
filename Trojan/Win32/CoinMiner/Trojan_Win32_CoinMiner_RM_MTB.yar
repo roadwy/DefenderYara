@@ -4,10 +4,10 @@ rule Trojan_Win32_CoinMiner_RM_MTB{
 		description = "Trojan:Win32/CoinMiner.RM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,16 00 16 00 04 00 00 0a 00 "
 		
 	strings :
-		$a_01_0 = {45 3a 5c 43 72 79 70 74 6f 4e 69 67 68 74 5c 62 69 74 6d 6f 6e 65 72 6f 2d 6d 61 73 74 65 72 5c 73 72 63 5c 6d 69 6e 65 72 5c 52 65 6c 65 61 73 65 5c 43 72 79 70 74 6f 2e 70 64 62 } //0a 00 
-		$a_01_1 = {62 79 6b 5c 3a 32 4c } //01 00 
-		$a_01_2 = {41 64 6a 75 73 74 54 6f 6b 65 6e 50 72 69 76 69 6c 65 67 65 73 } //01 00 
-		$a_01_3 = {4c 6f 61 64 4c 69 62 72 61 72 79 41 } //00 00 
+		$a_01_0 = {45 3a 5c 43 72 79 70 74 6f 4e 69 67 68 74 5c 62 69 74 6d 6f 6e 65 72 6f 2d 6d 61 73 74 65 72 5c 73 72 63 5c 6d 69 6e 65 72 5c 52 65 6c 65 61 73 65 5c 43 72 79 70 74 6f 2e 70 64 62 } //0a 00  E:\CryptoNight\bitmonero-master\src\miner\Release\Crypto.pdb
+		$a_01_1 = {62 79 6b 5c 3a 32 4c } //01 00  byk\:2L
+		$a_01_2 = {41 64 6a 75 73 74 54 6f 6b 65 6e 50 72 69 76 69 6c 65 67 65 73 } //01 00  AdjustTokenPrivileges
+		$a_01_3 = {4c 6f 61 64 4c 69 62 72 61 72 79 41 } //00 00  LoadLibraryA
 	condition:
 		any of ($a_*)
  

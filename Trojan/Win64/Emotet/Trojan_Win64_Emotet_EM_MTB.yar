@@ -64,11 +64,11 @@ rule Trojan_Win64_Emotet_EM_MTB_7{
 		description = "Trojan:Win64/Emotet.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {79 7a 6b 45 4e 54 6d 42 56 } //01 00 
-		$a_01_1 = {7a 51 6e 46 6b 45 73 67 6c 76 53 6d 59 74 4b 6c 6b 46 44 54 6d 65 } //01 00 
-		$a_01_2 = {7a 64 4d 68 59 77 } //01 00 
-		$a_01_3 = {4f 75 74 70 75 74 44 65 62 75 67 53 74 72 69 6e 67 57 } //01 00 
-		$a_01_4 = {43 72 65 61 74 65 46 69 6c 65 57 } //00 00 
+		$a_01_0 = {79 7a 6b 45 4e 54 6d 42 56 } //01 00  yzkENTmBV
+		$a_01_1 = {7a 51 6e 46 6b 45 73 67 6c 76 53 6d 59 74 4b 6c 6b 46 44 54 6d 65 } //01 00  zQnFkEsglvSmYtKlkFDTme
+		$a_01_2 = {7a 64 4d 68 59 77 } //01 00  zdMhYw
+		$a_01_3 = {4f 75 74 70 75 74 44 65 62 75 67 53 74 72 69 6e 67 57 } //01 00  OutputDebugStringW
+		$a_01_4 = {43 72 65 61 74 65 46 69 6c 65 57 } //00 00  CreateFileW
 	condition:
 		any of ($a_*)
  
@@ -78,11 +78,11 @@ rule Trojan_Win64_Emotet_EM_MTB_8{
 		description = "Trojan:Win64/Emotet.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 05 00 00 02 00 "
 		
 	strings :
-		$a_01_0 = {76 47 5a 6c 66 6b 6b 67 3f 55 5e 3e 2b 78 7a 55 35 25 51 5f 3e 38 53 79 31 32 50 77 53 44 74 30 4d 63 52 6e 71 } //01 00 
-		$a_01_1 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //01 00 
-		$a_01_2 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //01 00 
-		$a_01_3 = {43 72 65 61 74 65 54 6f 6f 6c 68 65 6c 70 33 32 53 6e 61 70 73 68 6f 74 } //01 00 
-		$a_01_4 = {4a 75 63 51 42 32 52 31 70 73 5a 6d 74 72 5a 77 3d 3d } //00 00 
+		$a_01_0 = {76 47 5a 6c 66 6b 6b 67 3f 55 5e 3e 2b 78 7a 55 35 25 51 5f 3e 38 53 79 31 32 50 77 53 44 74 30 4d 63 52 6e 71 } //01 00  vGZlfkkg?U^>+xzU5%Q_>8Sy12PwSDt0McRnq
+		$a_01_1 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //01 00  DllRegisterServer
+		$a_01_2 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //01 00  VirtualAlloc
+		$a_01_3 = {43 72 65 61 74 65 54 6f 6f 6c 68 65 6c 70 33 32 53 6e 61 70 73 68 6f 74 } //01 00  CreateToolhelp32Snapshot
+		$a_01_4 = {4a 75 63 51 42 32 52 31 70 73 5a 6d 74 72 5a 77 3d 3d } //00 00  JucQB2R1psZmtrZw==
 	condition:
 		any of ($a_*)
  

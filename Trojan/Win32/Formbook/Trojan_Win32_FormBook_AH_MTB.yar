@@ -24,12 +24,12 @@ rule Trojan_Win32_FormBook_AH_MTB_3{
 		description = "Trojan:Win32/FormBook.AH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 06 00 00 03 00 "
 		
 	strings :
-		$a_01_0 = {71 75 74 72 62 6c 76 68 6e 6f } //03 00 
-		$a_01_1 = {73 67 74 79 69 68 } //03 00 
-		$a_01_2 = {74 7a 67 79 6f 62 7a 66 71 } //03 00 
-		$a_01_3 = {49 6d 6d 52 65 67 69 73 74 65 72 57 6f 72 64 57 } //03 00 
-		$a_01_4 = {49 6d 6d 47 65 74 43 6f 6e 76 65 72 73 69 6f 6e 53 74 61 74 75 73 } //03 00 
-		$a_01_5 = {49 6d 6d 44 65 73 74 72 6f 79 43 6f 6e 74 65 78 74 } //00 00 
+		$a_01_0 = {71 75 74 72 62 6c 76 68 6e 6f } //03 00  qutrblvhno
+		$a_01_1 = {73 67 74 79 69 68 } //03 00  sgtyih
+		$a_01_2 = {74 7a 67 79 6f 62 7a 66 71 } //03 00  tzgyobzfq
+		$a_01_3 = {49 6d 6d 52 65 67 69 73 74 65 72 57 6f 72 64 57 } //03 00  ImmRegisterWordW
+		$a_01_4 = {49 6d 6d 47 65 74 43 6f 6e 76 65 72 73 69 6f 6e 53 74 61 74 75 73 } //03 00  ImmGetConversionStatus
+		$a_01_5 = {49 6d 6d 44 65 73 74 72 6f 79 43 6f 6e 74 65 78 74 } //00 00  ImmDestroyContext
 	condition:
 		any of ($a_*)
  

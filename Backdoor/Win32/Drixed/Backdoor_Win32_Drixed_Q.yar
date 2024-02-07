@@ -13,7 +13,7 @@ rule Backdoor_Win32_Drixed_Q{
 		$a_01_6 = {ba c6 0c 71 2d b9 2a 9f e2 75 e8 } //01 00 
 		$a_01_7 = {ba c9 e9 34 2b b9 f2 4f ed f4 e8 } //01 00 
 		$a_01_8 = {bf b1 f6 38 f8 bb f2 4f ed f4 } //01 00 
-		$a_01_9 = {64 6c 6c 20 6c 6f 61 64 65 64 2c 20 72 75 6e 3f } //00 00 
+		$a_01_9 = {64 6c 6c 20 6c 6f 61 64 65 64 2c 20 72 75 6e 3f } //00 00  dll loaded, run?
 		$a_00_10 = {7e 15 00 00 3c } //cf a3 
 	condition:
 		any of ($a_*)

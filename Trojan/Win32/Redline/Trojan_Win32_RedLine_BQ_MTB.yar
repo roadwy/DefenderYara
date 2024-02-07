@@ -5,7 +5,7 @@ rule Trojan_Win32_RedLine_BQ_MTB{
 		
 	strings :
 		$a_03_0 = {8b 75 dc 8b 5d d4 8b 7d d0 83 e7 03 8a 87 90 02 04 30 04 33 46 eb 90 00 } //01 00 
-		$a_01_1 = {6c 6f 67 67 69 6e 67 2e 62 69 6e } //00 00 
+		$a_01_1 = {6c 6f 67 67 69 6e 67 2e 62 69 6e } //00 00  logging.bin
 	condition:
 		any of ($a_*)
  

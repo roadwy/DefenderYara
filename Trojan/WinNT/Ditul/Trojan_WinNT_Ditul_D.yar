@@ -4,7 +4,7 @@ rule Trojan_WinNT_Ditul_D{
 		description = "Trojan:WinNT/Ditul.D,SIGNATURE_TYPE_PEHSTR_EXT,11 00 11 00 09 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {50 73 53 65 74 43 72 65 61 74 65 50 72 6f 63 65 73 73 4e 6f 74 69 66 79 52 6f 75 74 69 6e 65 } //02 00 
+		$a_01_0 = {50 73 53 65 74 43 72 65 61 74 65 50 72 6f 63 65 73 73 4e 6f 74 69 66 79 52 6f 75 74 69 6e 65 } //02 00  PsSetCreateProcessNotifyRoutine
 		$a_01_1 = {81 c3 ec 01 00 00 eb 2d 66 83 ff 03 75 25 } //02 00 
 		$a_01_2 = {01 00 00 6a 40 68 00 10 00 00 8d 45 f8 50 6a 00 8d 45 d8 50 ff 75 d4 ff 15 } //02 00 
 		$a_01_3 = {00 10 8b 42 0c 8d 14 24 cd 2e 83 c4 14 89 45 e0 83 7d e0 00 0f 8c } //02 00 

@@ -4,7 +4,7 @@ rule Backdoor_BAT_DCRat_GA_MTB{
 		description = "Backdoor:BAT/DCRat.GA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1a 00 1a 00 0d 00 00 0a 00 "
 		
 	strings :
-		$a_81_0 = {44 43 52 61 74 } //05 00 
+		$a_81_0 = {44 43 52 61 74 } //05 00  DCRat
 		$a_80_1 = {44 43 52 61 74 2e 43 6f 64 65 } //DCRat.Code  01 00 
 		$a_80_2 = {43 61 6d 65 72 61 } //Camera  01 00 
 		$a_80_3 = {53 45 4c 45 43 54 20 2a 20 46 52 4f 4d } //SELECT * FROM  01 00 

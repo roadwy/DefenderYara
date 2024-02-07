@@ -9,7 +9,7 @@ rule Ransom_MSIL_Filecoder_GER_MTB{
 		$a_80_2 = {73 65 6e 64 20 61 20 66 69 6c 65 20 74 6f 20 64 65 63 72 79 70 74 20 74 72 69 61 6c } //send a file to decrypt trial  01 00 
 		$a_80_3 = {44 65 63 72 79 70 74 69 6f 6e 2e 68 65 6c 70 65 72 40 61 6f 6c 2e 63 6f 6d } //Decryption.helper@aol.com  01 00 
 		$a_80_4 = {44 65 63 72 79 70 74 69 6f 6e 2e 68 65 6c 70 40 63 79 62 65 72 66 65 61 72 2e 63 6f 6d } //Decryption.help@cyberfear.com  01 00 
-		$a_01_5 = {67 65 74 5f 41 73 73 65 6d 62 6c 79 } //00 00 
+		$a_01_5 = {67 65 74 5f 41 73 73 65 6d 62 6c 79 } //00 00  get_Assembly
 	condition:
 		any of ($a_*)
  

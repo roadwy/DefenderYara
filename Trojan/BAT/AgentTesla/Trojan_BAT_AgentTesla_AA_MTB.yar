@@ -25,7 +25,7 @@ rule Trojan_BAT_AgentTesla_AA_MTB_3{
 		
 	strings :
 		$a_01_0 = {0c 07 08 28 15 00 00 0a 2c 28 07 08 17 28 16 00 00 0a 7e 17 00 00 0a 72 1b 00 00 70 6f 18 00 00 0a 08 28 } //01 00 
-		$a_01_1 = {47 65 74 45 78 65 63 75 74 69 6e 67 41 73 73 65 6d 62 6c 79 } //00 00 
+		$a_01_1 = {47 65 74 45 78 65 63 75 74 69 6e 67 41 73 73 65 6d 62 6c 79 } //00 00  GetExecutingAssembly
 	condition:
 		any of ($a_*)
  
@@ -35,10 +35,10 @@ rule Trojan_BAT_AgentTesla_AA_MTB_4{
 		description = "Trojan:BAT/AgentTesla.AA!MTB,SIGNATURE_TYPE_PEHSTR,04 00 04 00 04 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {63 79 73 74 75 6d 2e 53 75 63 75 72 79 74 79 2e 53 72 79 70 } //01 00 
-		$a_01_1 = {46 69 6c 75 53 74 72 75 61 6d } //01 00 
-		$a_01_2 = {50 72 6f 74 75 63 74 51 74 74 72 79 62 75 74 75 } //01 00 
-		$a_01_3 = {47 75 6e 65 72 71 74 65 64 53 6f 64 65 51 74 74 72 79 62 75 74 75 } //00 00 
+		$a_01_0 = {63 79 73 74 75 6d 2e 53 75 63 75 72 79 74 79 2e 53 72 79 70 } //01 00  cystum.Sucuryty.Sryp
+		$a_01_1 = {46 69 6c 75 53 74 72 75 61 6d } //01 00  FiluStruam
+		$a_01_2 = {50 72 6f 74 75 63 74 51 74 74 72 79 62 75 74 75 } //01 00  ProtuctQttrybutu
+		$a_01_3 = {47 75 6e 65 72 71 74 65 64 53 6f 64 65 51 74 74 72 79 62 75 74 75 } //00 00  GunerqtedSodeQttrybutu
 	condition:
 		any of ($a_*)
  
@@ -48,7 +48,7 @@ rule Trojan_BAT_AgentTesla_AA_MTB_5{
 		description = "Trojan:BAT/AgentTesla.AA!MTB,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {73 6f 75 72 63 65 5c 72 65 70 6f 73 5c 57 69 6e 64 6f 77 73 20 55 70 64 61 74 65 20 43 65 72 74 69 66 69 65 72 5c 57 69 6e 64 6f 77 73 20 55 70 64 61 74 65 20 43 65 72 74 69 66 69 65 72 5c 6f 62 6a 5c 44 65 62 75 67 5c 55 70 64 61 74 65 20 43 65 72 74 69 66 69 65 72 2e 70 64 62 } //00 00 
+		$a_01_0 = {73 6f 75 72 63 65 5c 72 65 70 6f 73 5c 57 69 6e 64 6f 77 73 20 55 70 64 61 74 65 20 43 65 72 74 69 66 69 65 72 5c 57 69 6e 64 6f 77 73 20 55 70 64 61 74 65 20 43 65 72 74 69 66 69 65 72 5c 6f 62 6a 5c 44 65 62 75 67 5c 55 70 64 61 74 65 20 43 65 72 74 69 66 69 65 72 2e 70 64 62 } //00 00  source\repos\Windows Update Certifier\Windows Update Certifier\obj\Debug\Update Certifier.pdb
 	condition:
 		any of ($a_*)
  

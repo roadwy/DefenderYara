@@ -4,12 +4,12 @@ rule Trojan_Win64_IcedID_MF_MTB{
 		description = "Trojan:Win64/IcedID.MF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 06 00 00 0a 00 "
 		
 	strings :
-		$a_01_0 = {44 6c 6c 4d 61 69 6e } //01 00 
-		$a_01_1 = {57 5a 53 4b 64 32 4e 45 42 49 2e 64 6c 6c } //01 00 
-		$a_01_2 = {46 5a 4b 6c 57 66 4e 57 4e } //01 00 
-		$a_01_3 = {52 50 72 57 56 42 77 } //01 00 
-		$a_01_4 = {6b 43 58 6b 64 4b 74 61 64 57 } //01 00 
-		$a_01_5 = {70 52 4e 41 55 } //00 00 
+		$a_01_0 = {44 6c 6c 4d 61 69 6e } //01 00  DllMain
+		$a_01_1 = {57 5a 53 4b 64 32 4e 45 42 49 2e 64 6c 6c } //01 00  WZSKd2NEBI.dll
+		$a_01_2 = {46 5a 4b 6c 57 66 4e 57 4e } //01 00  FZKlWfNWN
+		$a_01_3 = {52 50 72 57 56 42 77 } //01 00  RPrWVBw
+		$a_01_4 = {6b 43 58 6b 64 4b 74 61 64 57 } //01 00  kCXkdKtadW
+		$a_01_5 = {70 52 4e 41 55 } //00 00  pRNAU
 	condition:
 		any of ($a_*)
  
@@ -30,7 +30,7 @@ rule Trojan_Win64_IcedID_MF_MTB_3{
 		
 	strings :
 		$a_01_0 = {48 8b 44 24 20 48 83 c4 18 eb f4 48 83 7c 24 30 00 74 ed 48 8b 04 24 eb 4b 88 08 48 8b 04 24 66 3b ff 74 4b 48 8b 44 24 28 48 89 44 24 08 eb db 48 89 4c 24 08 48 83 ec 18 3a ff 74 0c } //05 00 
-		$a_01_1 = {75 69 66 6e 79 61 73 66 62 6a 61 75 69 6e 79 75 67 61 73 6a 61 73 } //00 00 
+		$a_01_1 = {75 69 66 6e 79 61 73 66 62 6a 61 75 69 6e 79 75 67 61 73 6a 61 73 } //00 00  uifnyasfbjauinyugasjas
 	condition:
 		any of ($a_*)
  

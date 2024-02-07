@@ -14,7 +14,7 @@ rule Trojan_Win64_IcedID_ED_MTB_2{
 		description = "Trojan:Win64/IcedID.ED!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 02 00 00 0a 00 "
 		
 	strings :
-		$a_01_0 = {79 61 72 65 74 64 6a 62 6b 61 73 76 64 61 6a 61 73 64 } //01 00 
+		$a_01_0 = {79 61 72 65 74 64 6a 62 6b 61 73 76 64 61 6a 61 73 64 } //01 00  yaretdjbkasvdajasd
 		$a_01_1 = {10 00 00 00 00 00 80 01 00 00 00 00 10 00 00 00 02 00 00 06 } //00 00 
 	condition:
 		any of ($a_*)

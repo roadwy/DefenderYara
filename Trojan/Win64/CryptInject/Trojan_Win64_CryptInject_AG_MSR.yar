@@ -42,7 +42,7 @@ rule Trojan_Win64_CryptInject_AG_MSR_3{
 	strings :
 		$a_80_0 = {48 57 67 75 6c 6c 4f 46 6b 5a } //HWgullOFkZ  05 00 
 		$a_80_1 = {72 73 6f 42 55 70 63 44 6a 57 } //rsoBUpcDjW  02 00 
-		$a_01_2 = {73 69 74 75 72 6f 37 30 31 7a 68 2e 64 6c 6c } //01 00 
+		$a_01_2 = {73 69 74 75 72 6f 37 30 31 7a 68 2e 64 6c 6c } //01 00  situro701zh.dll
 		$a_80_3 = {43 6f 6e 6e 65 63 74 4e 61 6d 65 64 50 69 70 65 } //ConnectNamedPipe  01 00 
 		$a_80_4 = {44 69 73 63 6f 6e 6e 65 63 74 4e 61 6d 65 64 50 69 70 65 } //DisconnectNamedPipe  01 00 
 		$a_80_5 = {49 6e 69 74 69 61 6c 69 7a 65 43 72 69 74 69 63 61 6c 53 65 63 74 69 6f 6e } //InitializeCriticalSection  01 00 

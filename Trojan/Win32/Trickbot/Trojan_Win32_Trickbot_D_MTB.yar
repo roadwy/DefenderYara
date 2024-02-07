@@ -5,7 +5,7 @@ rule Trojan_Win32_Trickbot_D_MTB{
 		
 	strings :
 		$a_01_0 = {80 f2 01 20 d4 08 e0 88 ca 80 f2 ff 88 c4 20 d4 88 c2 80 f2 ff 88 ce 20 d6 08 f4 88 ca 80 f2 ff 88 c6 80 f6 ff 88 eb 80 f3 00 88 d7 80 e7 00 20 d9 88 76 37 } //01 00 
-		$a_81_1 = {4c 6f 70 65 72 4e 75 74 57 } //00 00 
+		$a_81_1 = {4c 6f 70 65 72 4e 75 74 57 } //00 00  LoperNutW
 	condition:
 		any of ($a_*)
  

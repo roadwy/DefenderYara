@@ -4,9 +4,9 @@ rule Trojan_Win32_Wuprad_A{
 		description = "Trojan:Win32/Wuprad.A,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 09 00 00 02 00 "
 		
 	strings :
-		$a_01_0 = {7a 76 65 72 79 75 67 61 2e 63 6f 6d 2e 75 61 } //02 00 
-		$a_01_1 = {64 6f 77 6e 63 6f 6e 74 72 6f 6c 6c 65 72 2f 3f 61 66 66 69 64 3d 25 73 } //02 00 
-		$a_01_2 = {64 6f 77 6e 63 6f 6e 74 72 6f 6c 6c 65 72 2f 6d 61 72 6b 2e 70 68 70 } //01 00 
+		$a_01_0 = {7a 76 65 72 79 75 67 61 2e 63 6f 6d 2e 75 61 } //02 00  zveryuga.com.ua
+		$a_01_1 = {64 6f 77 6e 63 6f 6e 74 72 6f 6c 6c 65 72 2f 3f 61 66 66 69 64 3d 25 73 } //02 00  downcontroller/?affid=%s
+		$a_01_2 = {64 6f 77 6e 63 6f 6e 74 72 6f 6c 6c 65 72 2f 6d 61 72 6b 2e 70 68 70 } //01 00  downcontroller/mark.php
 		$a_01_3 = {64 6f 77 6e 73 00 00 00 ff ff ff ff 01 00 00 00 3b 00 00 00 6d 61 73 74 00 } //02 00 
 		$a_03_4 = {00 c2 cd c8 cc c0 cd c8 c5 21 20 c2 fb 90 09 03 00 44 00 90 00 } //01 00 
 		$a_03_5 = {6a 21 57 6a 01 53 68 90 01 04 51 ff d6 90 00 } //01 00 

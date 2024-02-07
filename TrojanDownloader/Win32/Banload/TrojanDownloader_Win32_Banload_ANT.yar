@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Banload_ANT{
 		description = "TrojanDownloader:Win32/Banload.ANT,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {0a 55 49 45 4d 6f 6e 69 74 6f 72 00 } //01 00 
+		$a_01_0 = {0a 55 49 45 4d 6f 6e 69 74 6f 72 00 } //01 00  唊䕉潍楮潴r
 		$a_01_1 = {6d 61 71 75 69 6e 61 3d 00 } //01 00 
 		$a_01_2 = {26 72 65 66 32 3d 00 } //01 00 
 		$a_01_3 = {26 70 6f 73 74 3d 00 } //01 00 

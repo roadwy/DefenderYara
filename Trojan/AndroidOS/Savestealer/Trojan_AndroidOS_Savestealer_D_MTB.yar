@@ -4,11 +4,11 @@ rule Trojan_AndroidOS_Savestealer_D_MTB{
 		description = "Trojan:AndroidOS/Savestealer.D!MTB,SIGNATURE_TYPE_DEXHSTR_EXT,04 00 04 00 05 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {76 70 6e 73 65 72 76 69 63 65 2e 56 68 6f 73 74 73 53 65 72 76 69 63 65 } //01 00 
-		$a_01_1 = {61 76 67 67 72 69 70 } //01 00 
-		$a_01_2 = {77 65 62 68 6f 6f 6b 75 72 6c } //01 00 
-		$a_01_3 = {61 6c 6c 6d 61 63 73 } //01 00 
-		$a_01_4 = {73 74 61 72 74 57 61 74 63 68 69 6e 67 } //00 00 
+		$a_01_0 = {76 70 6e 73 65 72 76 69 63 65 2e 56 68 6f 73 74 73 53 65 72 76 69 63 65 } //01 00  vpnservice.VhostsService
+		$a_01_1 = {61 76 67 67 72 69 70 } //01 00  avggrip
+		$a_01_2 = {77 65 62 68 6f 6f 6b 75 72 6c } //01 00  webhookurl
+		$a_01_3 = {61 6c 6c 6d 61 63 73 } //01 00  allmacs
+		$a_01_4 = {73 74 61 72 74 57 61 74 63 68 69 6e 67 } //00 00  startWatching
 	condition:
 		any of ($a_*)
  

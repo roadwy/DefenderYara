@@ -15,11 +15,11 @@ rule Trojan_Win32_Emotet_CA_MTB_2{
 		description = "Trojan:Win32/Emotet.CA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 05 00 00 03 00 "
 		
 	strings :
-		$a_81_0 = {30 43 6e 4f 28 57 4d 55 28 4b 63 35 53 51 78 6c 38 42 75 23 52 2a 6a 56 59 30 41 41 4b 53 67 39 73 39 4f 55 34 4e 5e 2b 78 43 36 5a 73 2b } //03 00 
-		$a_81_1 = {52 65 73 74 72 69 63 74 52 75 6e } //03 00 
-		$a_81_2 = {4e 6f 4e 65 74 43 6f 6e 6e 65 63 74 44 69 73 63 6f 6e 6e 65 63 74 } //03 00 
-		$a_81_3 = {4e 6f 52 65 63 65 6e 74 44 6f 63 73 48 69 73 74 6f 72 79 } //03 00 
-		$a_81_4 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //00 00 
+		$a_81_0 = {30 43 6e 4f 28 57 4d 55 28 4b 63 35 53 51 78 6c 38 42 75 23 52 2a 6a 56 59 30 41 41 4b 53 67 39 73 39 4f 55 34 4e 5e 2b 78 43 36 5a 73 2b } //03 00  0CnO(WMU(Kc5SQxl8Bu#R*jVY0AAKSg9s9OU4N^+xC6Zs+
+		$a_81_1 = {52 65 73 74 72 69 63 74 52 75 6e } //03 00  RestrictRun
+		$a_81_2 = {4e 6f 4e 65 74 43 6f 6e 6e 65 63 74 44 69 73 63 6f 6e 6e 65 63 74 } //03 00  NoNetConnectDisconnect
+		$a_81_3 = {4e 6f 52 65 63 65 6e 74 44 6f 63 73 48 69 73 74 6f 72 79 } //03 00  NoRecentDocsHistory
+		$a_81_4 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //00 00  DllRegisterServer
 	condition:
 		any of ($a_*)
  

@@ -5,7 +5,7 @@ rule PWS_Win32_Fareit_C_MTB{
 		
 	strings :
 		$a_03_0 = {8b cf b2 59 8a 03 90 18 32 c2 88 01 c3 90 00 } //01 00 
-		$a_01_1 = {47 43 4e 75 } //00 00 
+		$a_01_1 = {47 43 4e 75 } //00 00  GCNu
 	condition:
 		any of ($a_*)
  
@@ -28,7 +28,7 @@ rule PWS_Win32_Fareit_C_MTB_3{
 		description = "PWS:Win32/Fareit.C!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 0a 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00 
+		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00  MSVBVM60.DLL
 		$a_03_1 = {31 34 24 85 90 0a ff 00 ff 37 90 02 ff 31 34 24 90 02 ff 8b 0c 24 90 02 ff 90 03 01 01 01 11 0c 18 90 00 } //01 00 
 		$a_03_2 = {31 34 24 81 90 0a ff 00 ff 37 90 02 ff 31 34 24 90 02 ff 8b 0c 24 90 02 ff 90 03 01 01 01 11 0c 18 90 00 } //01 00 
 		$a_03_3 = {31 34 24 66 90 0a ff 00 ff 37 90 02 ff 31 34 24 90 02 ff 8b 0c 24 90 02 ff 90 03 01 01 01 11 0c 18 90 00 } //01 00 

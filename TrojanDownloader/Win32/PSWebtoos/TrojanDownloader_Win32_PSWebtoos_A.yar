@@ -10,7 +10,7 @@ rule TrojanDownloader_Win32_PSWebtoos_A{
 		$a_80_3 = {64 6f 77 6e 6c 6f 61 64 73 74 72 69 6e 67 } //downloadstring  01 00 
 		$a_80_4 = {64 6f 77 6e 6c 6f 61 64 66 69 6c 65 } //downloadfile  01 00 
 		$a_80_5 = {73 74 61 72 74 2d 70 72 6f 63 65 73 73 } //start-process  01 00 
-		$a_00_6 = {69 00 65 00 78 00 } //01 00 
+		$a_00_6 = {69 00 65 00 78 00 } //01 00  iex
 		$a_80_7 = {69 6e 76 6f 6b 65 2d 65 78 70 72 65 73 73 69 6f 6e } //invoke-expression  00 00 
 	condition:
 		any of ($a_*)

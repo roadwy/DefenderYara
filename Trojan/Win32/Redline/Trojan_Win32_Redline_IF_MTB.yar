@@ -5,7 +5,7 @@ rule Trojan_Win32_Redline_IF_MTB{
 		
 	strings :
 		$a_03_0 = {8b 5c 24 18 33 f6 39 74 24 20 76 17 ff d7 8b c6 83 e0 03 8a 80 90 01 04 30 04 1e 46 3b 74 24 20 72 e9 90 00 } //01 00 
-		$a_01_1 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //00 00 
+		$a_01_1 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //00 00  VirtualProtect
 	condition:
 		any of ($a_*)
  

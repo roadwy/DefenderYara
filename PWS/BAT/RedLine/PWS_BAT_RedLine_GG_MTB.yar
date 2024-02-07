@@ -4,7 +4,7 @@ rule PWS_BAT_RedLine_GG_MTB{
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 09 00 00 0f 00 "
 		
 	strings :
-		$a_81_0 = {52 65 64 4c 69 6e 65 2e 43 6c 69 65 6e 74 } //01 00 
+		$a_81_0 = {52 65 64 4c 69 6e 65 2e 43 6c 69 65 6e 74 } //01 00  RedLine.Client
 		$a_80_1 = {53 63 72 65 65 6e 73 68 6f 74 } //Screenshot  01 00 
 		$a_80_2 = {44 6f 77 6e 6c 6f 61 64 } //Download  01 00 
 		$a_80_3 = {43 72 65 64 69 74 43 61 72 64 } //CreditCard  01 00 
@@ -22,7 +22,7 @@ rule PWS_BAT_RedLine_GG_MTB_2{
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,16 00 16 00 0b 00 00 0f 00 "
 		
 	strings :
-		$a_81_0 = {52 65 64 4c 69 6e 65 2e } //01 00 
+		$a_81_0 = {52 65 64 4c 69 6e 65 2e } //01 00  RedLine.
 		$a_80_1 = {53 63 72 65 65 6e 73 68 6f 74 } //Screenshot  01 00 
 		$a_80_2 = {44 6f 77 6e 6c 6f 61 64 } //Download  01 00 
 		$a_80_3 = {47 72 61 62 46 54 50 } //GrabFTP  01 00 
@@ -81,7 +81,7 @@ rule PWS_BAT_RedLine_GG_MTB_5{
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,15 00 15 00 0c 00 00 0f 00 "
 		
 	strings :
-		$a_81_0 = {52 65 64 4c 69 6e 65 2e } //01 00 
+		$a_81_0 = {52 65 64 4c 69 6e 65 2e } //01 00  RedLine.
 		$a_80_1 = {53 63 72 65 65 6e 73 68 6f 74 } //Screenshot  01 00 
 		$a_80_2 = {44 6f 77 6e 6c 6f 61 64 } //Download  01 00 
 		$a_80_3 = {54 65 6c 65 67 72 61 6d } //Telegram  01 00 
@@ -148,7 +148,7 @@ rule PWS_BAT_RedLine_GG_MTB_8{
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,13 00 13 00 0c 00 00 0f 00 "
 		
 	strings :
-		$a_81_0 = {52 65 64 4c 69 6e 65 2e 43 6c 69 65 6e 74 } //01 00 
+		$a_81_0 = {52 65 64 4c 69 6e 65 2e 43 6c 69 65 6e 74 } //01 00  RedLine.Client
 		$a_80_1 = {44 6f 77 6e 6c 6f 61 64 } //Download  01 00 
 		$a_80_2 = {65 6e 63 72 79 70 74 65 64 50 61 73 73 77 6f 72 64 } //encryptedPassword  01 00 
 		$a_80_3 = {52 75 6e 50 45 } //RunPE  01 00 
@@ -269,7 +269,7 @@ rule PWS_BAT_RedLine_GG_MTB_13{
 	strings :
 		$a_80_0 = {5b 5e 5c 75 30 30 32 30 2d 5c 75 30 30 37 46 5d 55 4e 4b 4e 4f 57 4e } //[^\u0020-\u007F]UNKNOWN  14 00 
 		$a_80_1 = {49 44 3a 20 65 67 72 61 6d 2e 65 78 65 } //ID: egram.exe  14 00 
-		$a_01_2 = {4d 00 41 00 4e 00 47 00 4f 00 } //01 00 
+		$a_01_2 = {4d 00 41 00 4e 00 47 00 4f 00 } //01 00  MANGO
 		$a_80_3 = {44 69 73 63 6f 72 64 } //Discord  01 00 
 		$a_80_4 = {4f 70 65 6e 56 50 4e } //OpenVPN  01 00 
 		$a_80_5 = {4e 6f 72 64 56 50 4e } //NordVPN  01 00 

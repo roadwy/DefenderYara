@@ -4,7 +4,7 @@ rule Trojan_Win32_DataCompress_B_rar{
 		description = "Trojan:Win32/DataCompress.B!rar,SIGNATURE_TYPE_CMDHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {72 00 61 00 72 00 20 00 } //01 00 
+		$a_00_0 = {72 00 61 00 72 00 20 00 } //01 00  rar 
 	condition:
 		any of ($a_*)
  

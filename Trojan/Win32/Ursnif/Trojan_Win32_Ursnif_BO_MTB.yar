@@ -15,7 +15,7 @@ rule Trojan_Win32_Ursnif_BO_MTB_2{
 		
 	strings :
 		$a_03_0 = {0f af d1 8d 84 38 1c 04 ff ff 8b c8 6b c9 0b 03 d6 2b cf a3 90 01 04 89 15 90 01 04 03 f1 8b 0d 90 01 04 8b de c1 e3 04 2b 5c 24 10 03 cb 83 7c 24 10 06 90 00 } //01 00 
-		$a_81_1 = {53 74 75 64 79 6f 62 73 65 72 76 65 2e 70 64 62 } //00 00 
+		$a_81_1 = {53 74 75 64 79 6f 62 73 65 72 76 65 2e 70 64 62 } //00 00  Studyobserve.pdb
 	condition:
 		any of ($a_*)
  

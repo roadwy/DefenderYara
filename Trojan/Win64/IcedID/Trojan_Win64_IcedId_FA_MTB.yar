@@ -4,11 +4,11 @@ rule Trojan_Win64_IcedId_FA_MTB{
 		description = "Trojan:Win64/IcedId.FA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {74 38 79 6f 6f 5a } //01 00 
-		$a_01_1 = {76 4b 69 46 79 30 } //01 00 
-		$a_01_2 = {77 78 6c 79 69 42 68 70 57 } //01 00 
-		$a_01_3 = {78 53 73 6b 4d 47 79 } //01 00 
-		$a_01_4 = {79 67 61 73 62 66 67 74 66 68 6a 61 73 6b 66 79 61 73 } //00 00 
+		$a_01_0 = {74 38 79 6f 6f 5a } //01 00  t8yooZ
+		$a_01_1 = {76 4b 69 46 79 30 } //01 00  vKiFy0
+		$a_01_2 = {77 78 6c 79 69 42 68 70 57 } //01 00  wxlyiBhpW
+		$a_01_3 = {78 53 73 6b 4d 47 79 } //01 00  xSskMGy
+		$a_01_4 = {79 67 61 73 62 66 67 74 66 68 6a 61 73 6b 66 79 61 73 } //00 00  ygasbfgtfhjaskfyas
 	condition:
 		any of ($a_*)
  
@@ -18,11 +18,11 @@ rule Trojan_Win64_IcedId_FA_MTB_2{
 		description = "Trojan:Win64/IcedId.FA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {68 77 51 69 52 4d 68 63 53 50 4e } //01 00 
-		$a_01_1 = {6d 32 6b 56 4b 59 46 42 4f 61 76 39 35 61 50 6c } //01 00 
-		$a_01_2 = {6d 64 45 51 69 32 70 33 } //01 00 
-		$a_01_3 = {6d 66 6c 64 4b 37 35 36 73 35 6c 39 4a 74 } //01 00 
-		$a_01_4 = {6e 75 79 68 61 66 6a 73 68 79 67 66 61 73 66 6a 61 73 79 6a 61 73 } //00 00 
+		$a_01_0 = {68 77 51 69 52 4d 68 63 53 50 4e } //01 00  hwQiRMhcSPN
+		$a_01_1 = {6d 32 6b 56 4b 59 46 42 4f 61 76 39 35 61 50 6c } //01 00  m2kVKYFBOav95aPl
+		$a_01_2 = {6d 64 45 51 69 32 70 33 } //01 00  mdEQi2p3
+		$a_01_3 = {6d 66 6c 64 4b 37 35 36 73 35 6c 39 4a 74 } //01 00  mfldK756s5l9Jt
+		$a_01_4 = {6e 75 79 68 61 66 6a 73 68 79 67 66 61 73 66 6a 61 73 79 6a 61 73 } //00 00  nuyhafjshygfasfjasyjas
 	condition:
 		any of ($a_*)
  

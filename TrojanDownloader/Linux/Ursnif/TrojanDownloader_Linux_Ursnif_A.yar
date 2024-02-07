@@ -4,7 +4,7 @@ rule TrojanDownloader_Linux_Ursnif_A{
 		description = "TrojanDownloader:Linux/Ursnif.A,SIGNATURE_TYPE_MACROHSTR_EXT,07 00 07 00 03 00 00 05 00 "
 		
 	strings :
-		$a_01_0 = {67 6f 64 6d 6d 77 2f 70 68 22 29 } //01 00 
+		$a_01_0 = {67 6f 64 6d 6d 77 2f 70 68 22 29 } //01 00  godmmw/ph")
 		$a_01_1 = {3d 20 33 0d 0a 45 6e 64 20 46 75 6e 63 74 69 6f 6e } //01 00 
 		$a_03_2 = {28 29 20 41 73 20 56 61 72 69 61 6e 74 90 02 6b 3d 20 41 72 72 61 79 28 90 05 40 07 41 2d 5a 61 2d 7a 2e 28 22 90 05 80 04 20 2c 2d 7a 22 29 90 02 18 2c 20 90 1b 01 28 22 90 05 80 04 20 2c 2d 7a 22 29 2c 20 90 00 } //00 00 
 	condition:

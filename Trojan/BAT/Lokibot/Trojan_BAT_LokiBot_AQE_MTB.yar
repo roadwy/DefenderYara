@@ -9,7 +9,7 @@ rule Trojan_BAT_LokiBot_AQE_MTB{
 		$a_80_2 = {47 65 74 4d 65 74 68 6f 64 } //GetMethod  01 00 
 		$a_80_3 = {43 72 65 61 74 65 49 6e 73 74 61 6e 63 65 } //CreateInstance  01 00 
 		$a_80_4 = {54 6f 41 72 72 61 79 } //ToArray  01 00 
-		$a_81_5 = {54 6f 49 6e 74 33 32 } //00 00 
+		$a_81_5 = {54 6f 49 6e 74 33 32 } //00 00  ToInt32
 	condition:
 		any of ($a_*)
  

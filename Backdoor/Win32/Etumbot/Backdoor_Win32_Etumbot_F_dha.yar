@@ -10,7 +10,7 @@ rule Backdoor_Win32_Etumbot_F_dha{
 		$a_03_3 = {ef ff ff 57 c6 85 90 01 01 ef ff ff 49 c6 85 90 01 01 ef ff ff 4e c6 85 90 01 01 ef ff ff 44 c6 85 90 01 01 ef ff ff 4f c6 85 90 01 01 ef ff ff 57 c6 85 90 01 01 ef ff ff 53 c6 85 90 01 01 ef ff ff 20 c6 85 90 01 01 ef ff ff 43 c6 85 90 01 01 ef ff ff 4f c6 85 90 01 01 ef ff ff 4d c6 85 90 01 01 ef ff ff 4d c6 85 90 01 01 ef ff ff 41 c6 85 90 01 01 ef ff ff 4e c6 85 90 01 01 ef ff ff 44 c6 85 90 01 01 ef ff ff 20 c6 85 90 01 01 ef ff ff 53 c6 85 90 01 01 ef ff ff 48 c6 85 90 01 01 ef ff ff 45 c6 85 90 01 01 ef ff ff 4c c6 85 90 01 01 ef ff ff 4c 90 00 } //01 00 
 		$a_03_4 = {df ff ff 2f c6 85 90 01 01 df ff ff 53 c6 85 90 01 01 df ff ff 4c c6 85 90 01 01 df ff ff 45 c6 85 90 01 01 df ff ff 45 c6 85 90 01 01 df ff ff 50 c6 85 90 01 01 df ff ff 20 c6 85 90 01 01 df ff ff 25 c6 85 90 01 01 df ff ff 73 c6 85 90 01 01 df ff ff 0d c6 85 90 01 01 df ff ff 0a 90 00 } //01 00 
 		$a_01_5 = {c6 44 24 34 48 c6 44 24 35 49 c6 44 24 36 44 c6 44 24 37 45 c6 44 24 38 30 c6 44 24 3c 00 88 5c 24 0a c6 44 24 0d 73 88 5c 24 0f c6 44 24 12 73 88 5c 24 14 } //00 00 
-		$a_00_6 = {5d 04 } //00 00 
+		$a_00_6 = {5d 04 } //00 00  ѝ
 	condition:
 		any of ($a_*)
  

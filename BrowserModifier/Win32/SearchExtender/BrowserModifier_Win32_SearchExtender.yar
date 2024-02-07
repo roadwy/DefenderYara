@@ -9,7 +9,7 @@ rule BrowserModifier_Win32_SearchExtender{
 		$a_01_2 = {67 2d fa 54 25 d1 aa ad ae cd ae e2 f6 f8 dd c6 6e 5c 24 6d 67 70 23 ee cd 17 f0 ab 25 3b f6 8f 9b 26 b0 cf 7b 80 c5 b3 f9 63 3f d0 ee 5d 00 00 3d 5f 4c 3d 00 00 00 00 } //05 00 
 		$a_00_3 = {5b c9 c3 55 8b ec 81 ec 40 09 00 00 6a 00 8d 8d c0 f6 ff ff e8 75 fd ff ff 8d 45 d0 68 } //07 00 
 		$a_01_4 = {10 49 00 45 00 54 00 65 00 78 00 74 00 00 00 00 00 } //07 00 
-		$a_01_5 = {73 65 61 72 63 68 2d 70 69 6e 28 } //07 00 
+		$a_01_5 = {73 65 61 72 63 68 2d 70 69 6e 28 } //07 00  search-pin(
 		$a_01_6 = {29 2e 64 6c 6c 00 44 6c 6c 49 6e 73 74 61 6c 6c 00 } //00 00 
 	condition:
 		any of ($a_*)

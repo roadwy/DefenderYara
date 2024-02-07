@@ -5,7 +5,7 @@ rule Trojan_BAT_Convagent_PSRI_MTB{
 		
 	strings :
 		$a_01_0 = {02 28 04 00 00 0a 2a } //01 00 
-		$a_01_1 = {67 77 67 61 6c 67 30 6b } //00 00 
+		$a_01_1 = {67 77 67 61 6c 67 30 6b } //00 00  gwgalg0k
 	condition:
 		any of ($a_*)
  

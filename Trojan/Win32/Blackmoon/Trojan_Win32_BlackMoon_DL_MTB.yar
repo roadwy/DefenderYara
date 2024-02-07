@@ -4,7 +4,7 @@ rule Trojan_Win32_BlackMoon_DL_MTB{
 		description = "Trojan:Win32/BlackMoon.DL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {31 39 06 19 06 08 23 06 10 08 30 06 } //00 00 
+		$a_01_0 = {31 39 06 19 06 08 23 06 10 08 30 06 } //00 00  㤱ᤆࠆأࠐذ
 	condition:
 		any of ($a_*)
  

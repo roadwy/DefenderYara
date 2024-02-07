@@ -5,7 +5,7 @@ rule Trojan_BAT_DarkTortilla_F_MTB{
 		
 	strings :
 		$a_01_0 = {04 05 60 04 66 05 66 60 5f } //02 00 
-		$a_01_1 = {02 03 5d 0b } //00 00 
+		$a_01_1 = {02 03 5d 0b } //00 00  ̂ଢ଼
 	condition:
 		any of ($a_*)
  

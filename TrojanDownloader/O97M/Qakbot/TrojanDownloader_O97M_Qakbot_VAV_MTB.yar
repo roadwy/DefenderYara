@@ -4,11 +4,11 @@ rule TrojanDownloader_O97M_Qakbot_VAV_MTB{
 		description = "TrojanDownloader:O97M/Qakbot.VAV!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {4a 4a 43 43 43 4a 4a } //01 00 
-		$a_01_1 = {52 6f 75 74 } //01 00 
-		$a_01_2 = {65 54 68 65 43 61 6c 6c } //01 00 
-		$a_01_3 = {65 78 70 6c } //01 00 
-		$a_01_4 = {2e 78 79 7a 2f 69 6e 64 65 78 2e 70 68 70 } //00 00 
+		$a_01_0 = {4a 4a 43 43 43 4a 4a } //01 00  JJCCCJJ
+		$a_01_1 = {52 6f 75 74 } //01 00  Rout
+		$a_01_2 = {65 54 68 65 43 61 6c 6c } //01 00  eTheCall
+		$a_01_3 = {65 78 70 6c } //01 00  expl
+		$a_01_4 = {2e 78 79 7a 2f 69 6e 64 65 78 2e 70 68 70 } //00 00  .xyz/index.php
 	condition:
 		any of ($a_*)
  
@@ -18,11 +18,11 @@ rule TrojanDownloader_O97M_Qakbot_VAV_MTB_2{
 		description = "TrojanDownloader:O97M/Qakbot.VAV!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {43 3a 5c 69 73 6b 6e 65 } //01 00 
-		$a_01_1 = {5c 6f 73 6d 77 64 2e 65 78 65 } //01 00 
-		$a_01_2 = {4a 4a 43 43 43 4a 4a } //01 00 
-		$a_01_3 = {52 6f 75 74 } //01 00 
-		$a_01_4 = {65 78 70 6c 6f 72 65 72 } //00 00 
+		$a_01_0 = {43 3a 5c 69 73 6b 6e 65 } //01 00  C:\iskne
+		$a_01_1 = {5c 6f 73 6d 77 64 2e 65 78 65 } //01 00  \osmwd.exe
+		$a_01_2 = {4a 4a 43 43 43 4a 4a } //01 00  JJCCCJJ
+		$a_01_3 = {52 6f 75 74 } //01 00  Rout
+		$a_01_4 = {65 78 70 6c 6f 72 65 72 } //00 00  explorer
 	condition:
 		any of ($a_*)
  

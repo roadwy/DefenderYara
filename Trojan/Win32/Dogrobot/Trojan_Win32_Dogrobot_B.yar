@@ -5,7 +5,7 @@ rule Trojan_Win32_Dogrobot_B{
 		
 	strings :
 		$a_03_0 = {83 e1 03 50 68 10 30 00 10 6a 67 f3 a4 e8 90 01 02 ff ff 90 00 } //01 00 
-		$a_01_1 = {5c 64 72 69 76 65 72 73 5c 52 45 53 53 44 54 2e 73 79 73 } //00 00 
+		$a_01_1 = {5c 64 72 69 76 65 72 73 5c 52 45 53 53 44 54 2e 73 79 73 } //00 00  \drivers\RESSDT.sys
 	condition:
 		any of ($a_*)
  

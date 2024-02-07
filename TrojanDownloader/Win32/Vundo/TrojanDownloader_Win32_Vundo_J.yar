@@ -6,7 +6,7 @@ rule TrojanDownloader_Win32_Vundo_J{
 	strings :
 		$a_03_0 = {8a 14 01 80 fa 8b 74 05 80 fa 55 75 90 04 01 01 11 90 00 } //01 00 
 		$a_03_1 = {2b d9 0f b6 1b 0f b6 d2 2b d3 83 fa 12 74 90 04 01 01 3b 90 00 } //00 00 
-		$a_00_2 = {78 } //52 00 
+		$a_00_2 = {78 } //52 00  x
 	condition:
 		any of ($a_*)
  

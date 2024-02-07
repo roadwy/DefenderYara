@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Cutwail_gen_B{
 		description = "TrojanDownloader:Win32/Cutwail.gen!B,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 09 00 00 02 00 "
 		
 	strings :
-		$a_01_0 = {5c 5c 2e 5c 50 72 6f 74 33 00 } //01 00 
+		$a_01_0 = {5c 5c 2e 5c 50 72 6f 74 33 00 } //01 00  屜尮牐瑯3
 		$a_01_1 = {43 70 6c 33 32 76 65 72 2e 65 78 65 00 } //01 00 
 		$a_01_2 = {72 73 33 32 6e 65 74 2e 65 78 65 00 } //02 00 
 		$a_01_3 = {0f be 48 01 83 f9 6e 75 0a c7 05 } //02 00 

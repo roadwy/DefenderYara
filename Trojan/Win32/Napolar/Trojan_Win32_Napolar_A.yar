@@ -4,7 +4,7 @@ rule Trojan_Win32_Napolar_A{
 		description = "Trojan:Win32/Napolar.A,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {76 3d 25 64 2e 25 64 26 75 3d 25 73 26 63 3d 25 73 26 73 3d 25 73 26 77 3d 25 64 2e } //01 00 
+		$a_01_0 = {76 3d 25 64 2e 25 64 26 75 3d 25 73 26 63 3d 25 73 26 73 3d 25 73 26 77 3d 25 64 2e } //01 00  v=%d.%d&u=%s&c=%s&s=%s&w=%d.
 		$a_03_1 = {8b 10 81 fa 50 45 00 00 0f 85 90 01 04 89 85 90 01 02 ff ff 8b 95 90 01 02 ff ff 8b 42 78 03 85 90 01 02 ff ff 89 85 90 01 02 ff ff 8b 50 18 4a 90 00 } //00 00 
 	condition:
 		any of ($a_*)

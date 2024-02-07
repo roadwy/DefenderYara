@@ -5,7 +5,7 @@ rule Trojan_BAT_FormBook_AHDN_MTB{
 		
 	strings :
 		$a_03_0 = {07 11 07 06 11 07 9a 1f 10 28 90 01 03 0a 9c 11 07 17 58 13 07 90 00 } //01 00 
-		$a_01_1 = {52 00 75 00 6e 00 6f 00 } //00 00 
+		$a_01_1 = {52 00 75 00 6e 00 6f 00 } //00 00  Runo
 	condition:
 		any of ($a_*)
  

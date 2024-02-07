@@ -4,7 +4,7 @@ rule Backdoor_Win64_LilithRAT_GB_MTB{
 		description = "Backdoor:Win64/LilithRAT.GB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 10 00 0a 00 00 0a 00 "
 		
 	strings :
-		$a_81_0 = {5c 4c 69 6c 69 74 68 2d 6d 61 73 74 65 72 5c 78 36 34 5c 44 65 62 75 67 5c 4c 69 6c 69 74 68 2e 70 64 62 } //05 00 
+		$a_81_0 = {5c 4c 69 6c 69 74 68 2d 6d 61 73 74 65 72 5c 78 36 34 5c 44 65 62 75 67 5c 4c 69 6c 69 74 68 2e 70 64 62 } //05 00  \Lilith-master\x64\Debug\Lilith.pdb
 		$a_80_1 = {31 32 37 2e 30 2e 30 2e 31 } //127.0.0.1  01 00 
 		$a_80_2 = {6b 65 79 6c 6f 67 2e 74 78 74 } //keylog.txt  01 00 
 		$a_80_3 = {6c 6f 67 2e 74 78 74 } //log.txt  01 00 

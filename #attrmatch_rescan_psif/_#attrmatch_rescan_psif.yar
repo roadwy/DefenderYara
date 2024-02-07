@@ -15,7 +15,7 @@ rule _#attrmatch_rescan_psif_2{
 		
 	strings :
 		$a_03_0 = {8b 43 28 83 c0 90 01 01 66 8b 00 66 3b 45 e6 0f 84 4e 02 00 00 90 00 } //00 00 
-		$a_00_1 = {78 } //3a 00 
+		$a_00_1 = {78 } //3a 00  x
 	condition:
 		any of ($a_*)
  

@@ -5,7 +5,7 @@ rule Trojan_BAT_Remcos_DED_MTB{
 		
 	strings :
 		$a_03_0 = {2b 21 06 08 2b 09 06 18 6f 90 01 03 0a 2b 07 6f 90 01 03 0a 2b f0 72 90 00 } //01 00 
-		$a_01_1 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //00 00 
+		$a_01_1 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //00 00  DownloadData
 	condition:
 		any of ($a_*)
  

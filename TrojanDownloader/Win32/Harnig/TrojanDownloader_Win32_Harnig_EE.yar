@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Harnig_EE{
 		description = "TrojanDownloader:Win32/Harnig.EE,SIGNATURE_TYPE_PEHSTR_EXT,6f 00 6f 00 06 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {2f 70 72 6f 67 73 2f } //01 00 
+		$a_00_0 = {2f 70 72 6f 67 73 2f } //01 00  /progs/
 		$a_02_1 = {53 33 db 56 57 89 5d 90 01 01 c6 45 90 01 01 68 c6 45 90 01 01 74 c6 45 90 01 01 74 c6 45 90 01 01 70 c6 45 90 01 01 3a c6 45 90 01 01 2f c6 45 90 01 01 2f 90 00 } //0a 00 
 		$a_02_2 = {83 f8 ff 89 45 fc 0f 84 e7 00 00 00 8d 85 d4 fe ff ff c7 85 90 01 05 01 00 00 50 ff 75 fc e8 90 01 04 85 c0 0f 84 bd 00 00 00 53 56 8b 35 90 01 04 57 bf 00 01 00 00 ff 75 08 8d 85 f8 fe ff ff 50 90 00 } //0a 00 
 		$a_02_3 = {04 01 00 00 90 01 01 ff 90 01 01 bf 90 01 04 83 c9 ff 33 c0 90 02 05 f2 ae f7 d1 2b f9 90 00 } //32 00 

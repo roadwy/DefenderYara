@@ -10,7 +10,7 @@ rule VirTool_Win32_Injector_GG{
 		$a_01_3 = {c6 45 d8 6b c6 45 d9 65 c6 45 da 72 c6 45 db 6e c6 45 dc 65 c6 45 dd 6c c6 45 de 33 c6 45 df 32 c6 45 e0 2e c6 45 e1 64 c6 45 e2 6c c6 45 e3 6c 88 5d e4 } //01 00 
 		$a_01_4 = {3b 94 da 55 a3 a3 a3 73 5d 3b 94 da 57 a3 a3 a3 09 5d 3b 94 da 51 a3 a3 a3 12 5d 3b 94 da 53 a3 a3 a3 0d 5d 3b d6 c2 4d a3 a3 a3 a3 0a b5 d2 } //01 00 
 		$a_01_5 = {66 c7 85 08 ff ff ff 2e 00 66 c7 85 0a ff ff ff 54 00 66 c7 85 0c ff ff ff 4d 00 66 c7 85 0e ff ff ff 50 00 66 89 9d 10 ff ff ff ff 55 e8 } //01 00 
-		$a_00_6 = {5d 04 } //00 00 
+		$a_00_6 = {5d 04 } //00 00  ѝ
 	condition:
 		any of ($a_*)
  

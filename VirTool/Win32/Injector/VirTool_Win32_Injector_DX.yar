@@ -9,7 +9,7 @@ rule VirTool_Win32_Injector_DX{
 		$a_01_2 = {8b 4c 24 38 8b 54 24 14 51 52 ff d0 85 c0 74 2a 53 e8 } //01 00 
 		$a_01_3 = {d5 cf df d7 d7 95 df d7 d7 } //01 00 
 		$a_01_4 = {f5 cf ee d5 d6 da cb ed d2 de cc f4 dd e8 de d8 cf d2 d4 d5 } //00 00 
-		$a_00_5 = {5d 04 } //00 00 
+		$a_00_5 = {5d 04 } //00 00  ѝ
 	condition:
 		any of ($a_*)
  

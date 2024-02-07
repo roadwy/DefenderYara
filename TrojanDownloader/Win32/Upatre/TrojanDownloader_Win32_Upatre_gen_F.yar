@@ -11,7 +11,7 @@ rule TrojanDownloader_Win32_Upatre_gen_F{
 		$a_01_4 = {57 56 ad 33 c7 5f ab 8b f7 5f 4f 49 75 f2 } //01 00 
 		$a_01_5 = {66 3d 4c 5b 74 38 8b 45 e4 8b c8 8b 55 c4 c1 e0 02 03 d0 8b 02 83 f8 05 0f 87 1b 01 00 00 } //01 00 
 		$a_01_6 = {89 02 51 68 04 29 00 00 b9 0a 00 00 00 ff 55 78 6a 01 68 d0 07 00 00 ff 55 50 e9 c3 fc ff ff } //00 00 
-		$a_00_7 = {7e 15 } //00 00 
+		$a_00_7 = {7e 15 } //00 00  ᕾ
 	condition:
 		any of ($a_*)
  

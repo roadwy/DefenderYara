@@ -4,7 +4,7 @@ rule HackTool_Win64_Meterpreter_A_dll{
 		description = "HackTool:Win64/Meterpreter.A!dll,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {00 52 65 66 6c 65 63 74 69 76 65 4c 6f 61 64 65 72 00 } //01 00 
+		$a_01_0 = {00 52 65 66 6c 65 63 74 69 76 65 4c 6f 61 64 65 72 00 } //01 00  刀晥敬瑣癩䱥慯敤r
 		$a_01_1 = {81 f9 5b bc 4a 6a 0f 85 } //01 00 
 		$a_03_2 = {8e 4e 0e ec 74 90 02 04 aa fc 0d 7c 74 90 02 04 54 ca af 91 74 90 02 04 f2 32 f6 0e 75 90 00 } //01 00 
 		$a_03_3 = {81 f9 5d 68 fa 3c 0f 85 90 01 01 00 00 00 90 00 } //01 00 
@@ -20,7 +20,7 @@ rule HackTool_Win64_Meterpreter_A_dll_2{
 		description = "HackTool:Win64/Meterpreter.A!dll,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {00 52 65 66 6c 65 63 74 69 76 65 4c 6f 61 64 65 72 00 } //01 00 
+		$a_01_0 = {00 52 65 66 6c 65 63 74 69 76 65 4c 6f 61 64 65 72 00 } //01 00  刀晥敬瑣癩䱥慯敤r
 		$a_01_1 = {81 f9 5b bc 4a 6a 0f 85 } //01 00 
 		$a_03_2 = {8e 4e 0e ec 74 90 02 04 aa fc 0d 7c 74 90 02 04 54 ca af 91 74 90 02 04 f2 32 f6 0e 75 90 00 } //01 00 
 		$a_03_3 = {81 f9 5d 68 fa 3c 0f 85 90 01 01 00 00 00 90 00 } //01 00 

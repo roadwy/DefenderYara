@@ -4,7 +4,7 @@ rule Trojan_BAT_Bobik_ARA_MTB{
 		description = "Trojan:BAT/Bobik.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 06 00 00 02 00 "
 		
 	strings :
-		$a_01_0 = {5c 4f 6c 69 6d 70 6f 6b 73 31 30 2e 70 64 62 } //02 00 
+		$a_01_0 = {5c 4f 6c 69 6d 70 6f 6b 73 31 30 2e 70 64 62 } //02 00  \Olimpoks10.pdb
 		$a_80_1 = {43 3a 5c 53 79 73 74 65 6d 5c 66 69 6c 65 73 63 72 65 65 6e 73 68 6f 74 } //C:\System\filescreenshot  02 00 
 		$a_80_2 = {4c 6f 67 69 6e } //Login  02 00 
 		$a_80_3 = {50 61 73 73 77 6f 72 64 } //Password  02 00 

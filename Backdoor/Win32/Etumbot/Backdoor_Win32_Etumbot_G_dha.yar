@@ -19,7 +19,7 @@ rule Backdoor_Win32_Etumbot_G_dha{
 		$a_01_12 = {68 51 0f ef ff f5 26 85 11 fe ff ff 65 68 51 2f ef ff f6 36 85 13 fe ff ff 65 68 51 4f ef ff f6 96 85 15 fe ff ff 76 68 51 6f ef ff f6 56 85 17 fe ff ff 20 68 51 8f ef ff f4 36 85 19 fe ff ff 6f 68 51 af ef ff f6 d6 85 1b fe ff ff 6d 68 51 cf ef ff f6 16 85 1d fe ff ff 6e 68 51 ef ef ff f6 } //01 00 
 		$a_01_13 = {c6 85 30 ff ff ff 50 c6 85 31 ff ff ff 72 c6 85 32 ff ff ff 6f c6 85 33 ff ff ff 78 c6 85 34 ff ff ff 79 c6 85 35 ff ff ff 53 c6 85 36 ff ff ff 65 c6 85 37 ff ff ff 72 c6 85 38 ff ff ff 76 c6 85 39 ff ff ff 65 c6 85 3a ff ff ff 72 } //01 00 
 		$a_01_14 = {c6 45 e4 53 c6 45 e5 68 c6 45 e6 65 c6 45 e7 6c c6 45 e8 6c c6 45 e9 20 c6 45 ea 45 c6 45 eb 78 c6 45 ec 69 c6 45 ed 74 c6 45 ee 65 c6 45 ef 64 c6 45 f0 21 } //00 00 
-		$a_01_15 = {00 7e } //15 00 
+		$a_01_15 = {00 7e } //15 00  縀
 	condition:
 		any of ($a_*)
  

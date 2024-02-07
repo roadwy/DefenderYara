@@ -7,7 +7,7 @@ rule VirTool_BAT_Aikaantivm_GG_MTB{
 		$a_80_0 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 52 75 6e } //Software\Microsoft\Windows\CurrentVersion\Run  0a 00 
 		$a_80_1 = {53 65 6c 65 63 74 20 2a 20 66 72 6f 6d 20 57 69 6e 33 32 5f 43 6f 6d 70 75 74 65 72 53 79 73 74 65 6d } //Select * from Win32_ComputerSystem  0a 00 
 		$a_80_2 = {6d 69 63 72 6f 73 6f 66 74 20 63 6f 72 70 6f 72 61 74 69 6f 6e } //microsoft corporation  0a 00 
-		$a_81_3 = {56 49 52 54 55 41 4c } //0a 00 
+		$a_81_3 = {56 49 52 54 55 41 4c } //0a 00  VIRTUAL
 		$a_80_4 = {76 6d 77 61 72 65 } //vmware  0a 00 
 		$a_80_5 = {56 69 72 74 75 61 6c 42 6f 78 } //VirtualBox  0a 00 
 		$a_80_6 = {53 62 69 65 44 6c 6c 2e 64 6c 6c } //SbieDll.dll  01 00 
@@ -28,7 +28,7 @@ rule VirTool_BAT_Aikaantivm_GG_MTB_2{
 		$a_80_0 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 52 75 6e } //Software\Microsoft\Windows\CurrentVersion\Run  0a 00 
 		$a_80_1 = {53 65 6c 65 63 74 20 2a 20 66 72 6f 6d 20 57 69 6e 33 32 5f 43 6f 6d 70 75 74 65 72 53 79 73 74 65 6d } //Select * from Win32_ComputerSystem  0a 00 
 		$a_80_2 = {6d 69 63 72 6f 73 6f 66 74 20 63 6f 72 70 6f 72 61 74 69 6f 6e } //microsoft corporation  0a 00 
-		$a_81_3 = {56 49 52 54 55 41 4c } //0a 00 
+		$a_81_3 = {56 49 52 54 55 41 4c } //0a 00  VIRTUAL
 		$a_80_4 = {76 6d 77 61 72 65 } //vmware  0a 00 
 		$a_80_5 = {56 69 72 74 75 61 6c 42 6f 78 } //VirtualBox  01 00 
 		$a_80_6 = {49 73 44 65 62 75 67 67 65 72 50 72 65 73 65 6e 74 } //IsDebuggerPresent  01 00 

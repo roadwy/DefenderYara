@@ -4,7 +4,7 @@ rule Adware_Win32_Ndmser_A{
 		description = "Adware:Win32/Ndmser.A,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {68 74 74 70 3a 2f 2f 6e 74 68 6e 75 65 73 74 2e 63 6f 6d 3a 34 30 30 30 30 2f 74 69 63 6b 65 74 73 } //00 00 
+		$a_01_0 = {68 74 74 70 3a 2f 2f 6e 74 68 6e 75 65 73 74 2e 63 6f 6d 3a 34 30 30 30 30 2f 74 69 63 6b 65 74 73 } //00 00  http://nthnuest.com:40000/tickets
 	condition:
 		any of ($a_*)
  

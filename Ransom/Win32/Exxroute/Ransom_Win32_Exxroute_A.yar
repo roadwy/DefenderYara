@@ -12,7 +12,7 @@ rule Ransom_Win32_Exxroute_A{
 		$a_80_5 = {5c 43 72 79 70 74 50 72 6f 6a 65 63 74 58 58 58 5c 4c 6f 61 64 65 72 5c 44 44 65 74 6f 75 72 73 2e 70 61 73 00 } //\CryptProjectXXX\Loader\DDetours.pas  02 00 
 		$a_80_6 = {5c 43 72 79 70 74 50 72 6f 6a 65 63 74 58 58 58 5c 4c 6f 61 64 65 72 5c 49 6e 73 74 44 65 63 6f 64 65 2e 70 61 73 00 } //\CryptProjectXXX\Loader\InstDecode.pas  01 00 
 		$a_80_7 = {3a 34 34 33 20 48 54 54 50 00 } //:443 HTTP  00 00 
-		$a_00_8 = {7e 15 } //00 00 
+		$a_00_8 = {7e 15 } //00 00  ᕾ
 	condition:
 		any of ($a_*)
  

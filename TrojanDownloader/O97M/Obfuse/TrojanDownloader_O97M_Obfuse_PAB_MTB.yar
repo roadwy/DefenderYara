@@ -15,11 +15,11 @@ rule TrojanDownloader_O97M_Obfuse_PAB_MTB_2{
 		description = "TrojanDownloader:O97M/Obfuse.PAB!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {54 68 69 73 44 6f 63 75 6d 65 6e 74 2e 73 20 6c 6f 61 64 4c 6f 61 64 4b 61 72 6f 6c 2c 20 22 69 70 74 2e 73 68 22 } //01 00 
-		$a_01_1 = {2e 46 69 6e 64 2e 45 78 65 63 75 74 65 20 46 69 6e 64 54 65 78 74 3a 3d 22 5f 66 22 2c 20 52 65 70 6c 61 63 65 57 69 74 68 3a 3d 67 69 72 6c 4c 6f 76 65 4c 6f 76 65 2c 20 52 65 70 6c 61 63 65 3a 3d 77 64 52 65 70 6c 61 63 65 41 6c 6c } //01 00 
-		$a_01_2 = {3d 20 43 72 65 61 74 65 4f 62 6a 65 63 74 28 22 77 73 63 72 22 20 2b 20 64 6f 6f 72 4b 61 72 6f 6c 4e 65 78 74 20 2b 20 22 65 6c 6c 22 29 } //01 00 
-		$a_01_3 = {67 69 72 6c 4c 69 6b 65 4c 6f 76 65 2e 65 78 65 63 20 22 63 3a 5c 77 69 6e 64 6f 77 73 5c 65 78 70 6c 6f 72 65 72 20 22 20 26 20 6e 65 78 74 4b 61 72 6f 6c 4b 61 72 6f 6c } //01 00 
-		$a_01_4 = {6d 61 69 6e 2e 6b 61 72 6f 6c 69 6e 65 20 28 22 22 29 } //00 00 
+		$a_01_0 = {54 68 69 73 44 6f 63 75 6d 65 6e 74 2e 73 20 6c 6f 61 64 4c 6f 61 64 4b 61 72 6f 6c 2c 20 22 69 70 74 2e 73 68 22 } //01 00  ThisDocument.s loadLoadKarol, "ipt.sh"
+		$a_01_1 = {2e 46 69 6e 64 2e 45 78 65 63 75 74 65 20 46 69 6e 64 54 65 78 74 3a 3d 22 5f 66 22 2c 20 52 65 70 6c 61 63 65 57 69 74 68 3a 3d 67 69 72 6c 4c 6f 76 65 4c 6f 76 65 2c 20 52 65 70 6c 61 63 65 3a 3d 77 64 52 65 70 6c 61 63 65 41 6c 6c } //01 00  .Find.Execute FindText:="_f", ReplaceWith:=girlLoveLove, Replace:=wdReplaceAll
+		$a_01_2 = {3d 20 43 72 65 61 74 65 4f 62 6a 65 63 74 28 22 77 73 63 72 22 20 2b 20 64 6f 6f 72 4b 61 72 6f 6c 4e 65 78 74 20 2b 20 22 65 6c 6c 22 29 } //01 00  = CreateObject("wscr" + doorKarolNext + "ell")
+		$a_01_3 = {67 69 72 6c 4c 69 6b 65 4c 6f 76 65 2e 65 78 65 63 20 22 63 3a 5c 77 69 6e 64 6f 77 73 5c 65 78 70 6c 6f 72 65 72 20 22 20 26 20 6e 65 78 74 4b 61 72 6f 6c 4b 61 72 6f 6c } //01 00  girlLikeLove.exec "c:\windows\explorer " & nextKarolKarol
+		$a_01_4 = {6d 61 69 6e 2e 6b 61 72 6f 6c 69 6e 65 20 28 22 22 29 } //00 00  main.karoline ("")
 	condition:
 		any of ($a_*)
  

@@ -8,7 +8,7 @@ rule Trojan_Win32_Sryndort_A{
 		$a_01_1 = {8b 5d 08 83 c9 ff 8b fb 33 c0 f2 ae f7 d1 49 c6 45 fc 02 51 89 4d 08 e8 } //01 00 
 		$a_01_2 = {8b 44 b8 fc 8b 5c 24 2c 33 d2 89 44 24 28 8a 54 24 2a 0f be 1b 0f be 92 } //01 00 
 		$a_01_3 = {8b 44 24 30 c1 e2 08 33 d3 8b 18 33 da 89 18 8b 5c 24 2c 43 83 ff 08 89 5c 24 2c 74 2b } //00 00 
-		$a_00_4 = {5d 04 } //00 00 
+		$a_00_4 = {5d 04 } //00 00  ѝ
 	condition:
 		any of ($a_*)
  

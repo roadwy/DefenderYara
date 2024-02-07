@@ -9,7 +9,7 @@ rule TrojanProxy_Win32_Banker_AV{
 		$a_03_2 = {83 e3 03 0f b6 9b 90 01 02 40 00 30 58 02 0f b6 09 30 48 03 0f b6 0f 30 48 04 83 c0 06 8d 0c 02 83 f9 12 7c 8a 90 00 } //01 00 
 		$a_01_3 = {5a 71 ab b7 19 5d 84 d4 6e 49 9c f8 5d 61 b8 f6 } //01 00 
 		$a_01_4 = {19 7d bb e3 4b 2f e0 b8 0a 22 f8 b9 03 20 e1 ae 0d 3b fe a6 14 65 ae f4 15 65 a7 e7 19 } //00 00 
-		$a_00_5 = {5d } //04 00 
+		$a_00_5 = {5d } //04 00  ]
 	condition:
 		any of ($a_*)
  

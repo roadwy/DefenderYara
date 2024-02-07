@@ -10,8 +10,8 @@ rule Trojan_BAT_AgentTesla_NLV_MTB{
 		$a_80_3 = {42 61 63 6b 67 72 6f 75 6e 64 57 69 6e 64 6f 77 2e 78 61 6d 6c } //BackgroundWindow.xaml  01 00 
 		$a_80_4 = {49 52 65 6d 6f 74 69 6e 67 46 6f 72 6d 61 74 74 65 72 2e 43 6f 6e 74 69 6e 75 61 74 69 6f 6e 57 72 61 70 70 65 72 } //IRemotingFormatter.ContinuationWrapper  01 00 
 		$a_80_5 = {58 43 72 65 61 74 65 49 6e 73 74 61 6e 63 65 } //XCreateInstance  01 00 
-		$a_01_6 = {49 6e 76 6f 6b 65 4d 65 6d 62 65 72 } //01 00 
-		$a_01_7 = {4d 6f 74 69 76 61 74 65 44 65 73 6b 74 6f 70 2e 50 72 6f 70 65 72 74 69 65 73 2e 52 65 73 6f 75 72 63 65 73 2e 72 65 73 6f 75 72 63 65 73 } //01 00 
+		$a_01_6 = {49 6e 76 6f 6b 65 4d 65 6d 62 65 72 } //01 00  InvokeMember
+		$a_01_7 = {4d 6f 74 69 76 61 74 65 44 65 73 6b 74 6f 70 2e 50 72 6f 70 65 72 74 69 65 73 2e 52 65 73 6f 75 72 63 65 73 2e 72 65 73 6f 75 72 63 65 73 } //01 00  MotivateDesktop.Properties.Resources.resources
 		$a_80_8 = {56 61 6c 33 } //Val3  01 00 
 		$a_80_9 = {56 61 6c 31 } //Val1  00 00 
 	condition:

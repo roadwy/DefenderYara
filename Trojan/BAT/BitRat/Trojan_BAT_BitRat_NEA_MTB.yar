@@ -5,7 +5,7 @@ rule Trojan_BAT_BitRat_NEA_MTB{
 		
 	strings :
 		$a_03_0 = {09 03 08 17 28 90 01 01 00 00 0a 28 90 01 01 00 00 0a 58 0d 08 17 58 0c 2b de 90 00 } //01 00 
-		$a_01_1 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //00 00 
+		$a_01_1 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //00 00  DownloadData
 	condition:
 		any of ($a_*)
  

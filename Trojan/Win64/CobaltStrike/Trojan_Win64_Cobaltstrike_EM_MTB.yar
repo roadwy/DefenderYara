@@ -34,11 +34,11 @@ rule Trojan_Win64_Cobaltstrike_EM_MTB_4{
 		description = "Trojan:Win64/Cobaltstrike.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {50 65 74 6b 65 65 65 6d 79 73 65 63 } //01 00 
-		$a_01_1 = {74 6b 63 65 65 6d 79 73 65 63 72 65 74 6b 65 65 65 6d 79 73 65 63 72 65 74 6b 65 65 65 6d 79 73 65 63 72 65 74 6b } //01 00 
-		$a_01_2 = {79 73 65 63 72 65 74 6b 65 65 65 6d 79 70 65 } //01 00 
-		$a_01_3 = {74 65 74 6b 65 65 65 6d 79 73 65 63 72 65 74 6b 65 65 65 6d 79 73 65 63 72 65 74 45 } //01 00 
-		$a_01_4 = {5c 6b 61 70 6c 79 61 2e 70 64 62 } //00 00 
+		$a_01_0 = {50 65 74 6b 65 65 65 6d 79 73 65 63 } //01 00  Petkeeemysec
+		$a_01_1 = {74 6b 63 65 65 6d 79 73 65 63 72 65 74 6b 65 65 65 6d 79 73 65 63 72 65 74 6b 65 65 65 6d 79 73 65 63 72 65 74 6b } //01 00  tkceemysecretkeeemysecretkeeemysecretk
+		$a_01_2 = {79 73 65 63 72 65 74 6b 65 65 65 6d 79 70 65 } //01 00  ysecretkeeemype
+		$a_01_3 = {74 65 74 6b 65 65 65 6d 79 73 65 63 72 65 74 6b 65 65 65 6d 79 73 65 63 72 65 74 45 } //01 00  tetkeeemysecretkeeemysecretE
+		$a_01_4 = {5c 6b 61 70 6c 79 61 2e 70 64 62 } //00 00  \kaplya.pdb
 	condition:
 		any of ($a_*)
  

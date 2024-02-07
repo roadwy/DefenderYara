@@ -5,7 +5,7 @@ rule Trojan_Win32_Spynoon_DA_MTB{
 		
 	strings :
 		$a_01_0 = {f7 d9 88 4d ff 0f b6 55 ff 2b 55 f8 88 55 ff 0f b6 45 ff 33 45 f8 88 45 ff 0f b6 4d } //02 00 
-		$a_01_1 = {48 6b 63 6f 65 64 63 6c 78 66 6b 63 6b 64 6c } //00 00 
+		$a_01_1 = {48 6b 63 6f 65 64 63 6c 78 66 6b 63 6b 64 6c } //00 00  Hkcoedclxfkckdl
 	condition:
 		any of ($a_*)
  

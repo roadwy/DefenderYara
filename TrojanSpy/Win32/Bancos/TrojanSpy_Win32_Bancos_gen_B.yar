@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Bancos_gen_B{
 		description = "TrojanSpy:Win32/Bancos.gen!B,SIGNATURE_TYPE_PEHSTR_EXT,66 00 66 00 61 00 00 64 00 "
 		
 	strings :
-		$a_01_0 = {53 4f 46 54 57 41 52 45 5c 42 6f 72 6c 61 6e 64 5c 44 65 6c 70 68 69 } //01 00 
+		$a_01_0 = {53 4f 46 54 57 41 52 45 5c 42 6f 72 6c 61 6e 64 5c 44 65 6c 70 68 69 } //01 00  SOFTWARE\Borland\Delphi
 		$a_01_1 = {e9 bd 47 27 a7 e4 75 1a 6b 2e c5 c4 20 5c fd 7b fd 22 dd 36 bb d2 dd 5f ab ee df fa 5d ff 00 e9 7d 3a 7e ab b5 24 c0 1a 92 4c 00 02 55 5b 97 f6 7b db 53 6d fb 39 d8 72 76 b5 db 74 27 d0 f5 88 } //01 00 
 		$a_01_2 = {10 9b b9 2d e2 6d 9a 13 12 2d f6 d5 5d 64 3b 36 24 75 c6 41 00 a5 97 e4 36 d3 af 1f 06 90 a5 2c f8 27 51 d7 da 83 6d 5d 18 34 a3 9d 42 49 a5 05 0e 29 68 62 fb 95 c6 94 07 f6 4d 0d cd dd cc 53 } //01 00 
 		$a_01_3 = {69 1a e0 49 66 9a 69 0d 6b 25 18 31 e2 84 8f 03 44 d0 bf 65 ca ae 0e d3 9e af 56 2b bb dc b9 22 27 cc da 51 49 33 73 1c 52 1e 53 2f 12 6d bf 23 9d 70 b7 42 8d 70 ba 4a 8a f9 44 8b 14 12 f7 f6 } //01 00 

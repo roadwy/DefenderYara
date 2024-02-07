@@ -4,7 +4,7 @@ rule TrojanDropper_Win32_RedLeaves_C_dha{
 		description = "TrojanDropper:Win32/RedLeaves.C!dha,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 05 00 00 01 00 "
 		
 	strings :
-		$a_81_0 = {44 61 74 61 20 45 52 52 4f 52 21 21 21 20 20 20 20 20 50 6c 65 61 73 65 20 63 68 65 63 6b 20 79 6f 75 72 20 69 6e 70 75 74 21 } //01 00 
+		$a_81_0 = {44 61 74 61 20 45 52 52 4f 52 21 21 21 20 20 20 20 20 50 6c 65 61 73 65 20 63 68 65 63 6b 20 79 6f 75 72 20 69 6e 70 75 74 21 } //01 00  Data ERROR!!!     Please check your input!
 		$a_01_1 = {45 58 49 54 3f 00 00 00 cd cb b3 f6 00 00 00 00 00 } //01 00 
 		$a_03_2 = {55 8b ec 8b 55 0c 33 c0 85 d2 7e 0d 8b 4d 08 90 90 80 34 08 90 01 01 40 3b c2 7c f7 33 c0 5d c2 08 00 90 00 } //01 00 
 		$a_01_3 = {33 db 39 58 f4 0f 95 c3 89 18 33 db 39 58 08 0f 95 c3 89 58 14 33 db 39 58 1c 0f 95 c3 83 c0 3c 2b d1 89 58 ec 75 d9 89 95 d8 f5 ff ff 8d 9d 68 f8 ff ff } //01 00 

@@ -9,9 +9,9 @@ rule TrojanDownloader_BAT_AgentTesla_NPY_MTB{
 		$a_80_2 = {47 46 46 51 46 46 44 53 46 57 51 46 57 51 46 57 51 } //GFFQFFDSFWQFWQFWQ  01 00 
 		$a_80_3 = {44 57 51 44 57 51 44 51 57 44 51 57 44 57 51 44 51 57 } //DWQDWQDQWDQWDWQDQW  01 00 
 		$a_80_4 = {4e 6f 6e 6f 2e 4e 6f 6e 6f } //Nono.Nono  01 00 
-		$a_01_5 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //01 00 
-		$a_01_6 = {47 65 74 4d 65 74 68 6f 64 } //01 00 
-		$a_01_7 = {52 65 76 65 72 73 65 } //00 00 
+		$a_01_5 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //01 00  DownloadData
+		$a_01_6 = {47 65 74 4d 65 74 68 6f 64 } //01 00  GetMethod
+		$a_01_7 = {52 65 76 65 72 73 65 } //00 00  Reverse
 	condition:
 		any of ($a_*)
  

@@ -4,9 +4,9 @@ rule Trojan_Win32_Coinminer_SIB_MTB{
 		description = "Trojan:Win32/Coinminer.SIB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,4a 00 3f 00 07 00 00 32 00 "
 		
 	strings :
-		$a_00_0 = {73 74 72 61 74 75 6d 2b 74 63 70 3a 2f 2f } //0a 00 
-		$a_00_1 = {6d 69 6e 65 72 2e 66 65 65 2e 78 6d 72 69 67 2e 63 6f 6d } //0a 00 
-		$a_00_2 = {65 6d 65 72 67 65 6e 63 79 2e 66 65 65 2e 78 6d 72 69 67 2e 63 6f 6d } //01 00 
+		$a_00_0 = {73 74 72 61 74 75 6d 2b 74 63 70 3a 2f 2f } //0a 00  stratum+tcp://
+		$a_00_1 = {6d 69 6e 65 72 2e 66 65 65 2e 78 6d 72 69 67 2e 63 6f 6d } //0a 00  miner.fee.xmrig.com
+		$a_00_2 = {65 6d 65 72 67 65 6e 63 79 2e 66 65 65 2e 78 6d 72 69 67 2e 63 6f 6d } //01 00  emergency.fee.xmrig.com
 		$a_03_3 = {89 f5 8b 74 24 90 01 01 f7 d5 89 eb 89 fd 8b 7c 24 90 01 01 21 c3 f7 d5 89 e9 89 dd 8b 9c 24 90 01 04 21 d1 31 dd 89 ac 24 90 00 } //01 00 
 		$a_03_4 = {89 dd 8b 9c 24 90 01 04 f7 d5 f7 d6 89 ea 89 f0 8b b4 24 90 01 04 21 da 89 d5 8b 54 24 90 01 01 21 f0 33 44 24 90 01 01 f7 d6 31 d5 89 ac 24 90 00 } //01 00 
 		$a_03_5 = {89 d8 8b 5c 24 90 01 01 f7 d0 89 c2 89 f0 8b 74 24 90 01 01 21 da 8b 5c 24 90 01 01 f7 d0 23 44 24 90 01 01 89 d7 33 44 24 90 01 01 31 df 8b 5c 24 90 1b 00 89 7c 24 90 00 } //01 00 

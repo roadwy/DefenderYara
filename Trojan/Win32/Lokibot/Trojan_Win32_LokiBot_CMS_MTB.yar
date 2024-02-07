@@ -5,7 +5,7 @@ rule Trojan_Win32_LokiBot_CMS_MTB{
 		
 	strings :
 		$a_03_0 = {8b c1 99 6a 0c 5e f7 fe 8a 82 90 01 04 30 04 0b 41 3b cf 72 90 00 } //01 00 
-		$a_81_1 = {47 65 74 54 69 63 6b 43 6f 75 6e 74 } //00 00 
+		$a_81_1 = {47 65 74 54 69 63 6b 43 6f 75 6e 74 } //00 00  GetTickCount
 	condition:
 		any of ($a_*)
  

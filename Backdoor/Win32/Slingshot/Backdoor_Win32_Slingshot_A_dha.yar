@@ -4,7 +4,7 @@ rule Backdoor_Win32_Slingshot_A_dha{
 		description = "Backdoor:Win32/Slingshot.A!dha,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 08 00 00 02 00 "
 		
 	strings :
-		$a_00_0 = {00 63 68 6d 68 6c 70 72 2e 64 6c 6c 00 49 6e 69 74 00 64 6c 6c 5f 75 00 } //01 00 
+		$a_00_0 = {00 63 68 6d 68 6c 70 72 2e 64 6c 6c 00 49 6e 69 74 00 64 6c 6c 5f 75 00 } //01 00  挀浨汨牰搮汬䤀楮t汤彬u
 		$a_80_1 = {4c 69 6e 65 52 65 63 73 } //LineRecs  01 00 
 		$a_80_2 = {25 68 63 25 68 63 25 68 63 } //%hc%hc%hc  01 00 
 		$a_80_3 = {00 25 68 73 50 72 6f 78 79 2d 41 75 74 68 6f 72 69 7a 61 74 69 6f 6e 3a 20 42 61 73 69 63 20 25 68 73 0d 0a } //  01 00 

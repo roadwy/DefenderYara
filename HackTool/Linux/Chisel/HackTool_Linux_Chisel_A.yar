@@ -4,8 +4,8 @@ rule HackTool_Linux_Chisel_A{
 		description = "HackTool:Linux/Chisel.A,SIGNATURE_TYPE_CMDHSTR_EXT,0a 00 0a 00 02 00 00 0a 00 "
 		
 	strings :
-		$a_00_0 = {63 00 68 00 69 00 73 00 65 00 6c 00 20 00 73 00 65 00 72 00 76 00 65 00 72 00 } //0a 00 
-		$a_00_1 = {63 00 68 00 69 00 73 00 65 00 6c 00 20 00 63 00 6c 00 69 00 65 00 6e 00 74 00 } //00 00 
+		$a_00_0 = {63 00 68 00 69 00 73 00 65 00 6c 00 20 00 73 00 65 00 72 00 76 00 65 00 72 00 } //0a 00  chisel server
+		$a_00_1 = {63 00 68 00 69 00 73 00 65 00 6c 00 20 00 63 00 6c 00 69 00 65 00 6e 00 74 00 } //00 00  chisel client
 	condition:
 		any of ($a_*)
  

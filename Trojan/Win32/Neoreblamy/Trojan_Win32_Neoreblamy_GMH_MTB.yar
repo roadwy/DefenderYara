@@ -15,7 +15,7 @@ rule Trojan_Win32_Neoreblamy_GMH_MTB_2{
 		
 	strings :
 		$a_03_0 = {8b 45 ec 40 89 45 ec 83 7d ec 03 90 01 02 6a 01 8d 45 f8 50 6a 01 68 68 35 00 00 6a 00 68 32 2c 00 00 68 b9 38 00 00 e8 90 01 04 83 c4 1c 90 00 } //01 00 
-		$a_01_1 = {58 45 7a 4f 5a 44 55 54 58 66 74 45 55 42 48 6a 56 } //00 00 
+		$a_01_1 = {58 45 7a 4f 5a 44 55 54 58 66 74 45 55 42 48 6a 56 } //00 00  XEzOZDUTXftEUBHjV
 	condition:
 		any of ($a_*)
  

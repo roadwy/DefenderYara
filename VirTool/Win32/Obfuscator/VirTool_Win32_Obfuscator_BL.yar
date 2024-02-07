@@ -5,7 +5,7 @@ rule VirTool_Win32_Obfuscator_BL{
 		
 	strings :
 		$a_02_0 = {0f be c1 8a 4a 01 33 c6 42 84 c9 75 90 01 01 5e c2 04 00 90 00 } //01 00 
-		$a_00_1 = {68 34 33 32 31 54 } //01 00 
+		$a_00_1 = {68 34 33 32 31 54 } //01 00  h4321T
 		$a_00_2 = {6a 01 68 44 33 22 11 b8 dd cc bb aa ff d0 c3 } //00 00 
 	condition:
 		any of ($a_*)

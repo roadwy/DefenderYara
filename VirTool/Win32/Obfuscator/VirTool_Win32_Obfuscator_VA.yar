@@ -6,7 +6,7 @@ rule VirTool_Win32_Obfuscator_VA{
 	strings :
 		$a_01_0 = {83 f8 00 83 e8 2d ff e0 cc cc cc cc cc } //01 00 
 		$a_01_1 = {8b 95 f0 fd ff ff 8a 0c 4a 88 8c 28 e0 fc ff ff } //01 00 
-		$a_00_2 = {68 65 6c 70 2e 64 6c 6c } //00 00 
+		$a_00_2 = {68 65 6c 70 2e 64 6c 6c } //00 00  help.dll
 	condition:
 		any of ($a_*)
  

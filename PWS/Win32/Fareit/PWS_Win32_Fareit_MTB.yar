@@ -24,7 +24,7 @@ rule PWS_Win32_Fareit_MTB_3{
 		description = "PWS:Win32/Fareit!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00 
+		$a_01_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00  MSVBVM60.DLL
 		$a_02_1 = {83 fb 00 7f 90 0a c0 00 83 eb 04 90 02 20 ff 34 1f 90 02 20 8f 04 18 90 02 20 31 34 18 90 00 } //00 00 
 	condition:
 		any of ($a_*)
@@ -35,7 +35,7 @@ rule PWS_Win32_Fareit_MTB_4{
 		description = "PWS:Win32/Fareit!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00 
+		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00  MSVBVM60.DLL
 		$a_02_1 = {83 f9 00 7f 90 0a 20 00 09 1c 08 90 0a 50 00 31 f3 90 0a 30 00 8b 1c 0f 90 0a 10 00 49 90 0a 10 00 49 90 0a 10 00 49 90 0a 10 00 49 90 00 } //00 00 
 	condition:
 		any of ($a_*)
@@ -46,8 +46,8 @@ rule PWS_Win32_Fareit_MTB_5{
 		description = "PWS:Win32/Fareit!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00 
-		$a_00_1 = {54 00 70 00 4a 00 6d 00 62 00 65 00 71 00 32 00 5a 00 75 00 55 00 30 00 37 00 69 00 66 00 35 00 52 00 69 00 48 00 79 00 67 00 30 00 37 00 55 00 41 00 39 00 41 00 5a 00 36 00 73 00 68 00 6a 00 31 00 39 00 } //01 00 
+		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00  MSVBVM60.DLL
+		$a_00_1 = {54 00 70 00 4a 00 6d 00 62 00 65 00 71 00 32 00 5a 00 75 00 55 00 30 00 37 00 69 00 66 00 35 00 52 00 69 00 48 00 79 00 67 00 30 00 37 00 55 00 41 00 39 00 41 00 5a 00 36 00 73 00 68 00 6a 00 31 00 39 00 } //01 00  TpJmbeq2ZuU07if5RiHyg07UA9AZ6shj19
 		$a_02_2 = {83 fb 00 0f 85 90 01 02 ff ff 90 00 } //00 00 
 	condition:
 		any of ($a_*)
@@ -58,7 +58,7 @@ rule PWS_Win32_Fareit_MTB_6{
 		description = "PWS:Win32/Fareit!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00 
+		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00  MSVBVM60.DLL
 		$a_02_1 = {83 c7 04 85 90 0a ff 00 83 c2 04 90 0a ff 00 83 c4 04 90 0a ff 00 89 0c 18 90 0a ff 00 8b 0c 24 90 0a ff 00 31 34 24 90 0a ff 00 ff 37 90 00 } //01 00 
 		$a_02_2 = {83 c7 04 66 90 0a ff 00 83 c2 04 90 0a ff 00 83 c4 04 90 0a ff 00 89 0c 18 90 0a ff 00 8b 0c 24 90 0a ff 00 31 34 24 90 0a ff 00 ff 37 90 00 } //00 00 
 	condition:
@@ -70,7 +70,7 @@ rule PWS_Win32_Fareit_MTB_7{
 		description = "PWS:Win32/Fareit!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 04 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00 
+		$a_00_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00  MSVBVM60.DLL
 		$a_02_1 = {8f 04 18 66 90 0a ff 00 ff 31 90 02 ff 31 34 24 90 02 ff 8f 04 18 90 02 ff 83 c2 04 90 02 ff 83 c7 04 90 00 } //01 00 
 		$a_02_2 = {8f 04 18 81 90 0a ff 00 ff 31 90 02 ff 31 34 24 90 02 ff 8f 04 18 90 02 ff 83 c2 04 90 02 ff 83 c7 04 90 00 } //01 00 
 		$a_02_3 = {8f 04 18 85 90 0a ff 00 ff 31 90 02 ff 31 34 24 90 02 ff 8f 04 18 90 02 ff 83 c2 04 90 02 ff 83 c7 04 90 00 } //00 00 
@@ -83,7 +83,7 @@ rule PWS_Win32_Fareit_MTB_8{
 		description = "PWS:Win32/Fareit!MTB,SIGNATURE_TYPE_PEHSTR,05 00 05 00 07 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00 
+		$a_01_0 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //01 00  MSVBVM60.DLL
 		$a_01_1 = {b8 00 10 b0 01 } //01 00 
 		$a_01_2 = {b8 00 10 b0 02 } //01 00 
 		$a_01_3 = {2d 00 00 70 01 } //01 00 

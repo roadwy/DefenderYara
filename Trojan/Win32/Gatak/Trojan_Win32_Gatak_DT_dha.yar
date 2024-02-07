@@ -5,7 +5,7 @@ rule Trojan_Win32_Gatak_DT_dha{
 		
 	strings :
 		$a_03_0 = {31 c7 89 7d 90 01 01 29 f1 8b 45 90 01 01 8a 5d 90 01 01 80 cb 90 01 01 88 5d 90 01 01 89 4d 90 01 01 8a 5d 90 01 01 38 1c 10 90 00 } //00 00 
-		$a_00_1 = {78 } //44 00 
+		$a_00_1 = {78 } //44 00  x
 	condition:
 		any of ($a_*)
  
@@ -26,7 +26,7 @@ rule Trojan_Win32_Gatak_DT_dha_3{
 		description = "Trojan:Win32/Gatak.DT!dha,SIGNATURE_TYPE_PEHSTR_EXT,64 00 64 00 01 00 00 05 00 "
 		
 	strings :
-		$a_01_0 = {43 4d 44 20 2f 43 20 53 59 53 54 45 4d 49 4e 46 4f 20 26 26 20 53 59 53 54 45 4d 49 4e 46 4f 20 26 26 20 53 59 53 54 45 4d 49 4e 46 4f 20 26 26 20 53 59 53 54 45 4d 49 4e 46 4f 20 26 26 20 53 59 53 54 45 4d 49 4e 46 4f 20 26 26 20 44 45 4c } //00 00 
+		$a_01_0 = {43 4d 44 20 2f 43 20 53 59 53 54 45 4d 49 4e 46 4f 20 26 26 20 53 59 53 54 45 4d 49 4e 46 4f 20 26 26 20 53 59 53 54 45 4d 49 4e 46 4f 20 26 26 20 53 59 53 54 45 4d 49 4e 46 4f 20 26 26 20 53 59 53 54 45 4d 49 4e 46 4f 20 26 26 20 44 45 4c } //00 00  CMD /C SYSTEMINFO && SYSTEMINFO && SYSTEMINFO && SYSTEMINFO && SYSTEMINFO && DEL
 		$a_00_1 = {80 10 00 00 ad } //09 ad 
 	condition:
 		any of ($a_*)

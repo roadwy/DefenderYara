@@ -4,8 +4,8 @@ rule PWS_Win32_Wowsteal_gen_C{
 		description = "PWS:Win32/Wowsteal.gen!C,SIGNATURE_TYPE_PEHSTR_EXT,16 00 16 00 08 00 00 0a 00 "
 		
 	strings :
-		$a_00_0 = {49 6e 74 65 72 6e 65 74 52 65 61 64 46 69 6c 65 } //0a 00 
-		$a_00_1 = {49 6e 74 65 72 6e 65 74 4f 70 65 6e 55 72 6c 41 } //01 00 
+		$a_00_0 = {49 6e 74 65 72 6e 65 74 52 65 61 64 46 69 6c 65 } //0a 00  InternetReadFile
+		$a_00_1 = {49 6e 74 65 72 6e 65 74 4f 70 65 6e 55 72 6c 41 } //01 00  InternetOpenUrlA
 		$a_03_2 = {b8 65 78 65 00 8b 35 90 01 04 89 45 f8 89 45 c8 8d 45 f0 33 db 50 c7 45 f0 33 36 30 54 ff 75 08 c7 45 f4 72 61 79 2e 89 5d fc c7 45 c0 33 36 30 53 c7 45 c4 61 66 65 2e 89 5d cc ff d6 90 00 } //01 00 
 		$a_01_3 = {c7 45 d0 76 65 72 63 50 c7 45 d4 6c 73 69 64 ff 75 08 89 5d dc c7 45 e0 45 78 70 6c c7 45 e4 6f 72 65 72 89 5d ec ff d6 } //01 00 
 		$a_01_4 = {c7 85 3c ff ff ff 6e 5c 53 68 c7 85 40 ff ff ff 65 6c 6c 53 c7 85 44 ff ff ff 65 72 76 69 c7 85 48 ff ff ff 63 65 4f 62 c7 85 4c ff ff ff 6a 65 63 74 c7 85 50 ff ff ff 44 65 6c 61 c7 85 54 ff ff ff 79 4c 6f 61 c7 85 58 ff ff ff 64 00 00 00 } //01 00 

@@ -12,7 +12,7 @@ rule Backdoor_Win32_Plugx_O_dha{
 		$a_01_5 = {0f b7 4d e8 0f b7 55 ea 6b c9 64 0f b7 45 ee 03 ca 6b c9 64 03 c8 81 f9 } //01 00 
 		$a_01_6 = {2b c3 89 45 f0 c7 45 f4 08 00 00 00 6a 00 6a 00 6a 00 ff d6 8b 55 f0 8a 04 1a ff 05 00 30 00 10 2c 6b 6a 00 34 3f 6a 00 04 6b 6a 00 88 03 ff d6 } //01 00 
 		$a_01_7 = {8b 4d f8 8b 41 24 8b 55 fc 8b 49 1c 8d 14 50 8b 45 f4 0f b7 14 02 8d 14 91 8b 34 02 03 f0 eb 03 } //00 00 
-		$a_00_8 = {5d 04 } //00 00 
+		$a_00_8 = {5d 04 } //00 00  ѝ
 	condition:
 		any of ($a_*)
  

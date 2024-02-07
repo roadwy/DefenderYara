@@ -14,9 +14,9 @@ rule Trojan_Win32_Stelega_RT_MTB_2{
 		description = "Trojan:Win32/Stelega.RT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
 	strings :
-		$a_81_0 = {73 46 6b 44 69 40 73 40 67 40 68 48 6e 3c 71 40 6b 3c 74 3c 66 39 71 41 6b 48 65 3d 66 3a 72 } //01 00 
-		$a_81_1 = {6c 3c 74 3c 69 3d 71 42 68 3c 73 40 67 40 6a 42 72 41 6d 3c 73 39 70 3d 74 3c 68 43 6b 45 67 3e 68 47 6d } //01 00 
-		$a_81_2 = {6c 45 68 39 6a 45 65 40 72 40 71 44 65 46 6c } //00 00 
+		$a_81_0 = {73 46 6b 44 69 40 73 40 67 40 68 48 6e 3c 71 40 6b 3c 74 3c 66 39 71 41 6b 48 65 3d 66 3a 72 } //01 00  sFkDi@s@g@hHn<q@k<t<f9qAkHe=f:r
+		$a_81_1 = {6c 3c 74 3c 69 3d 71 42 68 3c 73 40 67 40 6a 42 72 41 6d 3c 73 39 70 3d 74 3c 68 43 6b 45 67 3e 68 47 6d } //01 00  l<t<i=qBh<s@g@jBrAm<s9p=t<hCkEg>hGm
+		$a_81_2 = {6c 45 68 39 6a 45 65 40 72 40 71 44 65 46 6c } //00 00  lEh9jEe@r@qDeFl
 	condition:
 		any of ($a_*)
  

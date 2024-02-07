@@ -4,10 +4,10 @@ rule TrojanDownloader_O97M_EncDoc_NJR_MTB{
 		description = "TrojanDownloader:O97M/EncDoc.NJR!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {68 74 74 70 73 3a 2f 2f 74 69 6e 79 75 72 6c 2e 63 6f 6d 2f 79 78 6a 63 71 75 78 79 } //01 00 
-		$a_01_1 = {43 3a 5c 50 52 4f 47 52 41 4d 44 41 54 41 5c 61 2e 76 62 73 } //01 00 
-		$a_01_2 = {4a 4a 43 43 4a 4a } //01 00 
-		$a_01_3 = {45 78 65 63 75 74 65 41 } //00 00 
+		$a_01_0 = {68 74 74 70 73 3a 2f 2f 74 69 6e 79 75 72 6c 2e 63 6f 6d 2f 79 78 6a 63 71 75 78 79 } //01 00  https://tinyurl.com/yxjcquxy
+		$a_01_1 = {43 3a 5c 50 52 4f 47 52 41 4d 44 41 54 41 5c 61 2e 76 62 73 } //01 00  C:\PROGRAMDATA\a.vbs
+		$a_01_2 = {4a 4a 43 43 4a 4a } //01 00  JJCCJJ
+		$a_01_3 = {45 78 65 63 75 74 65 41 } //00 00  ExecuteA
 	condition:
 		any of ($a_*)
  

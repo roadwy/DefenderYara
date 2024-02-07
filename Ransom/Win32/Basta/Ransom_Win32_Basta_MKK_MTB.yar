@@ -17,7 +17,7 @@ rule Ransom_Win32_Basta_MKK_MTB{
 		$a_01_10 = {8b d2 e9 85 3f f9 ff } //01 00 
 		$a_01_11 = {8b ed e9 ed ff ff ff } //01 00 
 		$a_01_12 = {49 e9 0b 34 05 00 } //01 00 
-		$a_01_13 = {56 69 73 69 62 6c 65 45 6e 74 72 79 } //00 00 
+		$a_01_13 = {56 69 73 69 62 6c 65 45 6e 74 72 79 } //00 00  VisibleEntry
 	condition:
 		any of ($a_*)
  

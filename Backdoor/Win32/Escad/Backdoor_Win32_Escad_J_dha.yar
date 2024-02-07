@@ -5,8 +5,8 @@ rule Backdoor_Win32_Escad_J_dha{
 		
 	strings :
 		$a_01_0 = {c1 e0 08 33 c7 83 c1 04 c1 e0 08 33 c3 c1 e0 08 8b d0 33 d5 8b c2 89 91 } //01 00 
-		$a_00_1 = {73 6b 69 6e 70 66 75 2e 64 61 74 } //01 00 
-		$a_00_2 = {73 6b 6d 73 76 78 64 2e 64 61 74 } //00 00 
+		$a_00_1 = {73 6b 69 6e 70 66 75 2e 64 61 74 } //01 00  skinpfu.dat
+		$a_00_2 = {73 6b 6d 73 76 78 64 2e 64 61 74 } //00 00  skmsvxd.dat
 	condition:
 		any of ($a_*)
  
@@ -39,8 +39,8 @@ rule Backdoor_Win32_Escad_J_dha_4{
 		description = "Backdoor:Win32/Escad.J!dha,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {63 6d 64 2e 65 78 65 20 2f 63 20 6e 65 74 20 75 73 65 72 20 41 64 6d 69 6e 69 73 74 72 61 74 6f 72 20 25 73 } //01 00 
-		$a_01_1 = {48 61 48 61 48 61 5f 25 64 25 64 25 64 25 64 } //00 00 
+		$a_01_0 = {63 6d 64 2e 65 78 65 20 2f 63 20 6e 65 74 20 75 73 65 72 20 41 64 6d 69 6e 69 73 74 72 61 74 6f 72 20 25 73 } //01 00  cmd.exe /c net user Administrator %s
+		$a_01_1 = {48 61 48 61 48 61 5f 25 64 25 64 25 64 25 64 } //00 00  HaHaHa_%d%d%d%d
 	condition:
 		any of ($a_*)
  
@@ -50,9 +50,9 @@ rule Backdoor_Win32_Escad_J_dha_5{
 		description = "Backdoor:Win32/Escad.J!dha,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {63 6d 64 2e 65 78 65 20 2f 63 20 6e 65 74 20 75 73 65 72 20 41 64 6d 69 6e 69 73 74 72 61 74 6f 72 20 25 73 } //01 00 
-		$a_01_1 = {48 61 48 61 48 61 5f 25 64 25 64 25 64 25 64 } //00 00 
-		$a_01_2 = {00 78 } //43 00 
+		$a_01_0 = {63 6d 64 2e 65 78 65 20 2f 63 20 6e 65 74 20 75 73 65 72 20 41 64 6d 69 6e 69 73 74 72 61 74 6f 72 20 25 73 } //01 00  cmd.exe /c net user Administrator %s
+		$a_01_1 = {48 61 48 61 48 61 5f 25 64 25 64 25 64 25 64 } //00 00  HaHaHa_%d%d%d%d
+		$a_01_2 = {00 78 } //43 00  砀
 	condition:
 		any of ($a_*)
  

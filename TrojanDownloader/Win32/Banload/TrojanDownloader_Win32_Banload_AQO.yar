@@ -9,7 +9,7 @@ rule TrojanDownloader_Win32_Banload_AQO{
 		$a_01_2 = {67 71 bd fe 4d 70 bd e4 67 72 ad e7 50 78 e1 e4 42 66 } //0a 00 
 		$a_01_3 = {0d 21 e1 a4 0a 3b fe a4 15 26 00 } //0a 00 
 		$a_01_4 = {5a 77 ac f3 5e 73 a8 ff 52 7f a4 fb 56 7b a0 e7 4a 67 bc e3 4e 63 b8 ef 42 6f ff a6 09 26 fb a2 } //00 00 
-		$a_00_5 = {5d } //04 00 
+		$a_00_5 = {5d } //04 00  ]
 	condition:
 		any of ($a_*)
  

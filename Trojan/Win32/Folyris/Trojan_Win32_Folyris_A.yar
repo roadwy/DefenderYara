@@ -4,7 +4,7 @@ rule Trojan_Win32_Folyris_A{
 		description = "Trojan:Win32/Folyris.A,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {75 69 64 3a 25 73 7c 74 61 73 6b 69 64 3a 25 69 } //01 00 
+		$a_01_0 = {75 69 64 3a 25 73 7c 74 61 73 6b 69 64 3a 25 69 } //01 00  uid:%s|taskid:%i
 		$a_01_1 = {c7 03 74 72 75 65 c6 43 04 00 eb 0c c7 03 66 61 6c 73 66 c7 43 04 65 00 } //00 00 
 	condition:
 		any of ($a_*)

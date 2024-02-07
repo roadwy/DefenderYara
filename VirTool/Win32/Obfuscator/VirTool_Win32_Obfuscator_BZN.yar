@@ -8,7 +8,7 @@ rule VirTool_Win32_Obfuscator_BZN{
 		$a_03_1 = {77 b5 7f b3 7e b1 61 e9 90 01 04 81 90 01 05 ff d6 90 00 } //01 00 
 		$a_01_2 = {3d 00 00 09 00 0f 87 2f 00 00 00 ba 00 50 02 00 3b c2 0f } //01 00 
 		$a_01_3 = {81 c6 f4 da ff ff ff d6 } //01 00 
-		$a_00_4 = {5d } //04 00 
+		$a_00_4 = {5d } //04 00  ]
 	condition:
 		any of ($a_*)
  

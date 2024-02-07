@@ -5,7 +5,7 @@ rule Trojan_Win32_Redline_GWB_MTB{
 		
 	strings :
 		$a_03_0 = {0f b6 02 33 c1 8b 0d 90 01 04 03 8d 90 01 04 88 01 83 3d 90 01 04 6b 75 10 90 00 } //01 00 
-		$a_01_1 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //00 00 
+		$a_01_1 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //00 00  VirtualAlloc
 	condition:
 		any of ($a_*)
  

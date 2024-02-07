@@ -6,7 +6,7 @@ rule VirTool_Win32_Obfuscator_AAC{
 	strings :
 		$a_03_0 = {83 f9 01 7e 13 8b c6 8d 51 ff 8b 78 fc 03 38 83 c0 04 4a 89 78 90 01 01 75 f2 90 00 } //01 00 
 		$a_03_1 = {f3 a5 89 45 90 01 01 8d 85 90 01 01 ff ff ff 8b 48 04 03 08 03 c3 01 4d fc 4a 75 90 00 } //00 00 
-		$a_00_2 = {78 } //4e 00 
+		$a_00_2 = {78 } //4e 00  x
 	condition:
 		any of ($a_*)
  

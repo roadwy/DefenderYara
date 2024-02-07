@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Adload_DG{
 		description = "TrojanDownloader:Win32/Adload.DG,SIGNATURE_TYPE_PEHSTR_EXT,15 00 14 00 08 00 00 05 00 "
 		
 	strings :
-		$a_01_0 = {64 00 5f 00 63 00 5f 00 62 00 5f 00 70 00 5f 00 5f 00 } //05 00 
+		$a_01_0 = {64 00 5f 00 63 00 5f 00 62 00 5f 00 70 00 5f 00 5f 00 } //05 00  d_c_b_p__
 		$a_01_1 = {5c 6b 69 6c 6c 61 2e 65 78 65 00 } //05 00 
 		$a_01_2 = {74 65 6d 70 25 30 32 64 2e 65 78 65 00 } //05 00 
 		$a_01_3 = {74 65 6d 70 25 30 33 64 2e 7a 69 70 00 } //01 00 

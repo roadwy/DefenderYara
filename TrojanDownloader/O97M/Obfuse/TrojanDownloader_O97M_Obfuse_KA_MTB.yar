@@ -4,7 +4,7 @@ rule TrojanDownloader_O97M_Obfuse_KA_MTB{
 		description = "TrojanDownloader:O97M/Obfuse.KA!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 06 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {2c 20 4e 75 6c 6c 2c 20 4e 75 6c 6c 2c 20 4e 75 6c 6c } //01 00 
+		$a_01_0 = {2c 20 4e 75 6c 6c 2c 20 4e 75 6c 6c 2c 20 4e 75 6c 6c } //01 00  , Null, Null, Null
 		$a_03_1 = {26 20 22 23 22 90 02 02 4e 65 78 74 90 00 } //01 00 
 		$a_03_2 = {28 53 68 65 65 74 73 28 90 02 12 29 2e 43 65 6c 6c 73 28 90 02 08 29 2e 56 61 6c 75 65 29 90 00 } //01 00 
 		$a_03_3 = {28 41 63 74 69 76 65 44 6f 63 75 6d 65 6e 74 2e 56 61 72 69 61 62 6c 65 73 28 90 02 15 29 2e 56 61 6c 75 65 29 90 00 } //01 00 

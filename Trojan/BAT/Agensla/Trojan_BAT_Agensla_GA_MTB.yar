@@ -17,7 +17,7 @@ rule Trojan_BAT_Agensla_GA_MTB_2{
 		description = "Trojan:BAT/Agensla.GA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		
 	strings :
-		$a_81_0 = {4d 41 52 43 55 53 2e 64 6c 6c } //01 00 
+		$a_81_0 = {4d 41 52 43 55 53 2e 64 6c 6c } //01 00  MARCUS.dll
 		$a_80_1 = {6a 61 72 69 63 6f } //jarico  01 00 
 		$a_80_2 = {62 75 74 61 } //buta  01 00 
 		$a_80_3 = {47 5a 69 70 53 74 72 65 61 6d } //GZipStream  01 00 

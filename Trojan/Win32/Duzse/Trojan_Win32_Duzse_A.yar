@@ -4,8 +4,8 @@ rule Trojan_Win32_Duzse_A{
 		description = "Trojan:Win32/Duzse.A,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {2a 00 56 00 49 00 52 00 54 00 55 00 41 00 4c 00 2a 00 } //01 00 
-		$a_01_1 = {2a 00 56 00 42 00 4f 00 58 00 2a 00 } //02 00 
+		$a_01_0 = {2a 00 56 00 49 00 52 00 54 00 55 00 41 00 4c 00 2a 00 } //01 00  *VIRTUAL*
+		$a_01_1 = {2a 00 56 00 42 00 4f 00 58 00 2a 00 } //02 00  *VBOX*
 		$a_03_2 = {8b 45 e4 03 85 90 01 01 ff ff ff 0f 80 7c 01 00 00 89 45 e4 8b 45 e4 3b 85 90 01 01 ff ff ff 0f 8f ad 00 00 00 8b 45 e8 89 85 90 01 01 ff ff ff c7 85 90 01 01 ff ff ff 08 00 00 00 c7 45 d8 01 00 00 00 c7 45 d0 02 00 00 00 90 00 } //00 00 
 	condition:
 		any of ($a_*)

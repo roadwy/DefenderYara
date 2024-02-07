@@ -4,7 +4,7 @@ rule VirTool_Win32_VBInject_gen_LE{
 		description = "VirTool:Win32/VBInject.gen!LE,SIGNATURE_TYPE_PEHSTR_EXT,10 00 0f 00 07 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {73 00 6e 00 78 00 68 00 6b 00 2e 00 64 00 6c 00 6c 00 } //01 00 
+		$a_01_0 = {73 00 6e 00 78 00 68 00 6b 00 2e 00 64 00 6c 00 6c 00 } //01 00  snxhk.dll
 		$a_03_1 = {64 a1 30 00 00 00 8a 40 68 24 70 3c 70 0f 84 90 01 04 b8 01 00 00 00 0f a2 90 00 } //01 00 
 		$a_01_2 = {64 a1 18 00 00 00 8b 40 30 80 78 02 01 0f 84 } //0c 00 
 		$a_03_3 = {81 38 55 8b ec 83 90 02 01 75 90 02 02 81 78 04 ec 0c 56 8d 90 00 } //01 00 

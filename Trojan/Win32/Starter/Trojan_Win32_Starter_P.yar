@@ -9,7 +9,7 @@ rule Trojan_Win32_Starter_P{
 		$a_01_2 = {66 c7 85 00 fd ff ff 73 00 66 c7 85 02 fd ff ff 68 00 66 c7 85 04 fd ff ff 65 00 } //01 00 
 		$a_03_3 = {32 84 95 00 90 02 01 ff ff 8b 95 4c ff ff ff 88 04 32 46 ff 8d 3c ff ff ff 75 90 00 } //01 00 
 		$a_01_4 = {c6 85 2f ff ff ff 61 c6 85 30 ff ff ff 64 c6 85 31 ff ff ff 76 } //00 00 
-		$a_00_5 = {7e 15 } //00 00 
+		$a_00_5 = {7e 15 } //00 00  ᕾ
 	condition:
 		any of ($a_*)
  

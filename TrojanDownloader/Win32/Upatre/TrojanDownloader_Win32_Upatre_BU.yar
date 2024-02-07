@@ -8,7 +8,7 @@ rule TrojanDownloader_Win32_Upatre_BU{
 		$a_01_1 = {81 c3 02 5e d9 ff 81 c7 ad 0b 40 00 55 5a 66 81 fa 00 ff 0f 86 89 01 00 00 } //01 00 
 		$a_01_2 = {83 e9 01 34 f1 c0 c0 05 2c 05 8a da fe cb 80 e3 01 32 c3 56 } //01 00 
 		$a_01_3 = {b9 00 62 00 00 66 85 d2 f7 d2 80 c9 db 8b 4d e0 83 e9 01 89 4d e0 85 c0 76 a0 } //00 00 
-		$a_00_4 = {5d 04 } //00 00 
+		$a_00_4 = {5d 04 } //00 00  ѝ
 	condition:
 		any of ($a_*)
  

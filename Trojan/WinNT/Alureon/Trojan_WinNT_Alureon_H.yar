@@ -4,7 +4,7 @@ rule Trojan_WinNT_Alureon_H{
 		description = "Trojan:WinNT/Alureon.H,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 06 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {68 54 44 4c 44 } //01 00 
+		$a_01_0 = {68 54 44 4c 44 } //01 00  hTDLD
 		$a_01_1 = {68 96 f7 de b5 } //01 00 
 		$a_03_2 = {57 01 00 c0 8b 90 01 02 68 1b 50 8a fd 90 00 } //01 00 
 		$a_03_3 = {54 44 4c 4e a1 08 03 df ff 90 09 02 00 c7 90 00 } //01 00 

@@ -177,12 +177,12 @@ rule Trojan_Win32_Qakbot_GP_MTB_15{
 		description = "Trojan:Win32/Qakbot.GP!MTB,SIGNATURE_TYPE_PEHSTR,06 00 06 00 06 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {44 72 61 77 54 68 65 6d 65 49 63 6f 6e } //01 00 
-		$a_01_1 = {5a 67 66 53 53 77 75 44 76 41 55 71 4a 47 64 4c 62 4f 58 52 53 43 70 42 45 57 63 72 56 57 45 76 48 4c 2e 64 6c 6c } //01 00 
-		$a_01_2 = {6c 47 56 75 45 75 5a 6d 4b 65 59 69 47 63 71 71 6b 41 2e 64 6c 6c } //01 00 
-		$a_01_3 = {73 6d 6d 61 69 61 2e 64 6c 6c } //01 00 
-		$a_01_4 = {50 7a 4f 56 75 6d 54 71 53 73 64 41 6a 41 72 5a 63 71 6e 2e 64 6c 6c } //01 00 
-		$a_01_5 = {59 69 78 63 50 4e 74 6a 74 65 54 49 74 78 77 79 4d 72 54 55 79 54 62 47 46 52 46 66 48 63 65 4c 52 4e 77 2e 64 6c 6c } //00 00 
+		$a_01_0 = {44 72 61 77 54 68 65 6d 65 49 63 6f 6e } //01 00  DrawThemeIcon
+		$a_01_1 = {5a 67 66 53 53 77 75 44 76 41 55 71 4a 47 64 4c 62 4f 58 52 53 43 70 42 45 57 63 72 56 57 45 76 48 4c 2e 64 6c 6c } //01 00  ZgfSSwuDvAUqJGdLbOXRSCpBEWcrVWEvHL.dll
+		$a_01_2 = {6c 47 56 75 45 75 5a 6d 4b 65 59 69 47 63 71 71 6b 41 2e 64 6c 6c } //01 00  lGVuEuZmKeYiGcqqkA.dll
+		$a_01_3 = {73 6d 6d 61 69 61 2e 64 6c 6c } //01 00  smmaia.dll
+		$a_01_4 = {50 7a 4f 56 75 6d 54 71 53 73 64 41 6a 41 72 5a 63 71 6e 2e 64 6c 6c } //01 00  PzOVumTqSsdAjArZcqn.dll
+		$a_01_5 = {59 69 78 63 50 4e 74 6a 74 65 54 49 74 78 77 79 4d 72 54 55 79 54 62 47 46 52 46 66 48 63 65 4c 52 4e 77 2e 64 6c 6c } //00 00  YixcPNtjteTItxwyMrTUyTbGFRFfHceLRNw.dll
 	condition:
 		any of ($a_*)
  

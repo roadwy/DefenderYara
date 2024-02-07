@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Renos_FU{
 		description = "TrojanDownloader:Win32/Renos.FU,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 02 00 "
 		
 	strings :
-		$a_00_0 = {5c 5c 2e 5c 43 3a } //02 00 
+		$a_00_0 = {5c 5c 2e 5c 43 3a } //02 00  \\.\C:
 		$a_03_1 = {68 00 14 2d 00 90 09 03 00 6a 0c 90 00 } //01 00 
 		$a_01_2 = {68 58 4d 56 0f 94 c0 } //01 00 
 		$a_01_3 = {68 4d 56 00 00 68 68 58 00 00 } //02 00 

@@ -4,7 +4,7 @@ rule _PseudoThreat_c0000b01{
 		description = "!PseudoThreat_c0000b01,SIGNATURE_TYPE_PEHSTR_EXT,06 00 05 00 08 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {20 69 73 20 69 6e 66 65 63 74 65 64 } //01 00 
+		$a_00_0 = {20 69 73 20 69 6e 66 65 63 74 65 64 } //01 00   is infected
 		$a_02_1 = {55 8b ec 81 c4 18 fe ff ff 90 02 03 e8 90 01 04 83 f8 00 0f 85 90 01 01 00 00 00 90 00 } //01 00 
 		$a_02_2 = {30 fe ff ff 00 8d 85 18 fe ff ff 50 6a 01 e8 90 01 04 90 02 04 0b c0 75 00 90 00 } //01 00 
 		$a_00_3 = {6a 06 6a 00 6a 00 6a 00 6a 00 6a ff ff 75 08 e8 } //01 00 

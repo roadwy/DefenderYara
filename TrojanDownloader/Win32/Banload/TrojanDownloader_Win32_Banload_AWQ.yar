@@ -9,7 +9,7 @@ rule TrojanDownloader_Win32_Banload_AWQ{
 		$a_01_2 = {00 32 41 46 31 30 45 45 33 32 32 33 39 } //01 00 
 		$a_01_3 = {00 36 45 42 35 34 32 44 37 33 45 31 44 } //01 00 
 		$a_03_4 = {33 db 8a 5c 38 ff 33 9d 90 01 02 ff ff 3b 9d f0 fe ff ff 7f 0e 81 c3 ff 00 00 00 2b 9d 90 01 02 ff ff eb 06 90 00 } //00 00 
-		$a_00_5 = {5d 04 } //00 00 
+		$a_00_5 = {5d 04 } //00 00  ѝ
 	condition:
 		any of ($a_*)
  

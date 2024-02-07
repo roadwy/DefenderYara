@@ -4,12 +4,12 @@ rule Ransom_Win32_WannaCrypt_A_rsm{
 		description = "Ransom:Win32/WannaCrypt.A!rsm,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 06 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {66 2e 77 6e 72 79 } //01 00 
-		$a_01_1 = {25 2e 31 66 20 42 54 43 } //01 00 
-		$a_01_2 = {40 57 61 6e 61 44 65 63 72 79 70 74 6f 72 40 2e 65 78 65 } //01 00 
-		$a_01_3 = {25 30 38 58 2e 65 6b 79 } //01 00 
-		$a_01_4 = {25 30 38 58 2e 70 6b 79 } //01 00 
-		$a_01_5 = {25 30 38 58 2e 72 65 73 } //00 00 
+		$a_01_0 = {66 2e 77 6e 72 79 } //01 00  f.wnry
+		$a_01_1 = {25 2e 31 66 20 42 54 43 } //01 00  %.1f BTC
+		$a_01_2 = {40 57 61 6e 61 44 65 63 72 79 70 74 6f 72 40 2e 65 78 65 } //01 00  @WanaDecryptor@.exe
+		$a_01_3 = {25 30 38 58 2e 65 6b 79 } //01 00  %08X.eky
+		$a_01_4 = {25 30 38 58 2e 70 6b 79 } //01 00  %08X.pky
+		$a_01_5 = {25 30 38 58 2e 72 65 73 } //00 00  %08X.res
 	condition:
 		any of ($a_*)
  
@@ -19,11 +19,11 @@ rule Ransom_Win32_WannaCrypt_A_rsm_2{
 		description = "Ransom:Win32/WannaCrypt.A!rsm,SIGNATURE_TYPE_PEHSTR_EXT,fffffff4 01 fffffff4 01 05 00 00 64 00 "
 		
 	strings :
-		$a_01_0 = {5f 5f 54 52 45 45 49 44 5f 5f 50 4c 41 43 45 48 4f 4c 44 45 52 5f 5f } //64 00 
-		$a_01_1 = {5f 5f 55 53 45 52 49 44 5f 5f 50 4c 41 43 45 48 4f 4c 44 45 52 5f 5f } //64 00 
-		$a_01_2 = {5f 5f 54 52 45 45 50 41 54 48 5f 52 45 50 4c 41 43 45 5f 5f } //64 00 
-		$a_01_3 = {74 61 73 6b 73 63 68 65 2e 65 78 65 } //64 00 
-		$a_01_4 = {71 65 72 69 75 77 6a 68 72 66 } //00 00 
+		$a_01_0 = {5f 5f 54 52 45 45 49 44 5f 5f 50 4c 41 43 45 48 4f 4c 44 45 52 5f 5f } //64 00  __TREEID__PLACEHOLDER__
+		$a_01_1 = {5f 5f 55 53 45 52 49 44 5f 5f 50 4c 41 43 45 48 4f 4c 44 45 52 5f 5f } //64 00  __USERID__PLACEHOLDER__
+		$a_01_2 = {5f 5f 54 52 45 45 50 41 54 48 5f 52 45 50 4c 41 43 45 5f 5f } //64 00  __TREEPATH_REPLACE__
+		$a_01_3 = {74 61 73 6b 73 63 68 65 2e 65 78 65 } //64 00  tasksche.exe
+		$a_01_4 = {71 65 72 69 75 77 6a 68 72 66 } //00 00  qeriuwjhrf
 	condition:
 		any of ($a_*)
  
@@ -52,7 +52,7 @@ rule Ransom_Win32_WannaCrypt_A_rsm_4{
 		description = "Ransom:Win32/WannaCrypt.A!rsm,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {6c 61 75 6e 63 68 65 72 2e 64 6c 6c 00 50 6c 61 79 47 61 6d 65 00 } //01 00 
+		$a_01_0 = {6c 61 75 6e 63 68 65 72 2e 64 6c 6c 00 50 6c 61 79 47 61 6d 65 00 } //01 00  慬湵档牥搮汬倀慬䝹浡e
 		$a_01_1 = {6d 73 73 65 63 73 76 63 2e 65 78 65 00 } //00 00 
 	condition:
 		any of ($a_*)

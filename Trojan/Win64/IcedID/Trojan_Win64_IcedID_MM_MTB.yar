@@ -34,13 +34,13 @@ rule Trojan_Win64_IcedID_MM_MTB_4{
 		description = "Trojan:Win64/IcedID.MM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {74 49 4f 5f 66 5f 73 73 6c } //01 00 
-		$a_01_1 = {74 49 4f 5f 6e 65 77 5f 62 75 66 66 65 72 5f 73 73 6c 5f 63 6f 6e 6e 65 63 74 } //01 00 
-		$a_01_2 = {74 49 4f 5f 73 73 6c 5f 63 6f 70 79 5f 73 65 73 73 69 6f 6e 5f 69 64 } //01 00 
-		$a_01_3 = {74 49 4f 5f 73 73 6c 5f 73 68 75 74 64 6f 77 6e } //01 00 
-		$a_01_4 = {74 54 4c 53 76 31 5f 32 5f 63 6c 69 65 6e 74 5f 6d 65 74 68 6f 64 } //01 00 
-		$a_01_5 = {74 45 4d 5f 72 65 61 64 5f 53 53 4c 5f 53 45 53 53 49 4f 4e } //01 00 
-		$a_01_6 = {74 45 4d 5f 77 72 69 74 65 5f 62 69 6f 5f 53 53 4c 5f 53 45 53 53 49 4f 4e } //00 00 
+		$a_01_0 = {74 49 4f 5f 66 5f 73 73 6c } //01 00  tIO_f_ssl
+		$a_01_1 = {74 49 4f 5f 6e 65 77 5f 62 75 66 66 65 72 5f 73 73 6c 5f 63 6f 6e 6e 65 63 74 } //01 00  tIO_new_buffer_ssl_connect
+		$a_01_2 = {74 49 4f 5f 73 73 6c 5f 63 6f 70 79 5f 73 65 73 73 69 6f 6e 5f 69 64 } //01 00  tIO_ssl_copy_session_id
+		$a_01_3 = {74 49 4f 5f 73 73 6c 5f 73 68 75 74 64 6f 77 6e } //01 00  tIO_ssl_shutdown
+		$a_01_4 = {74 54 4c 53 76 31 5f 32 5f 63 6c 69 65 6e 74 5f 6d 65 74 68 6f 64 } //01 00  tTLSv1_2_client_method
+		$a_01_5 = {74 45 4d 5f 72 65 61 64 5f 53 53 4c 5f 53 45 53 53 49 4f 4e } //01 00  tEM_read_SSL_SESSION
+		$a_01_6 = {74 45 4d 5f 77 72 69 74 65 5f 62 69 6f 5f 53 53 4c 5f 53 45 53 53 49 4f 4e } //00 00  tEM_write_bio_SSL_SESSION
 	condition:
 		any of ($a_*)
  

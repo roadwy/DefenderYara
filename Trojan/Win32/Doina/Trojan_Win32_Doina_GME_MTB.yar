@@ -17,7 +17,7 @@ rule Trojan_Win32_Doina_GME_MTB_2{
 	strings :
 		$a_01_0 = {c1 f8 07 03 d0 5f 8b c2 5b 5d c3 8b c1 c1 e8 04 0f b7 1c 45 b0 c7 18 10 8d 3c 45 b2 c7 18 10 f6 c3 10 74 43 f6 c1 02 74 3e 8b c3 83 e0 0f 56 0f } //01 00 
 		$a_80_1 = {47 41 32 52 5a 4e 62 6d } //GA2RZNbm  01 00 
-		$a_01_2 = {74 34 53 56 68 30 62 } //00 00 
+		$a_01_2 = {74 34 53 56 68 30 62 } //00 00  t4SVh0b
 	condition:
 		any of ($a_*)
  

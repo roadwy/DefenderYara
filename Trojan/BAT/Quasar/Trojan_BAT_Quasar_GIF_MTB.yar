@@ -9,7 +9,7 @@ rule Trojan_BAT_Quasar_GIF_MTB{
 		$a_80_2 = {53 6f 66 74 77 61 72 65 5c 50 6f 6c 69 63 69 65 73 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 53 79 73 74 65 6d } //Software\Policies\Microsoft\Windows\System  01 00 
 		$a_80_3 = {5c 50 72 6f 67 72 61 6d 44 61 74 61 5c 64 65 66 33 2e 65 78 65 } //\ProgramData\def3.exe  01 00 
 		$a_80_4 = {5c 50 72 6f 67 72 61 6d 44 61 74 61 5c 41 6b 72 6f 73 41 43 2e 65 78 65 } //\ProgramData\AkrosAC.exe  01 00 
-		$a_01_5 = {73 65 74 5f 55 73 65 53 68 65 6c 6c 45 78 65 63 75 74 65 } //00 00 
+		$a_01_5 = {73 65 74 5f 55 73 65 53 68 65 6c 6c 45 78 65 63 75 74 65 } //00 00  set_UseShellExecute
 	condition:
 		any of ($a_*)
  

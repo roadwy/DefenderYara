@@ -24,8 +24,8 @@ rule VirTool_Win32_Obfuscator_AKI_2{
 		$a_01_6 = {8b d0 c1 e2 10 } //01 00 
 		$a_01_7 = {8b f0 c1 e6 10 } //01 00 
 		$a_01_8 = {c1 c6 10 64 ff 31 } //01 00 
-		$a_00_9 = {6d 6d 63 6e 64 6d 67 72 2e 64 6c 6c } //01 00 
-		$a_00_10 = {6d 73 66 74 65 64 69 74 2e 64 6c 6c } //00 00 
+		$a_00_9 = {6d 6d 63 6e 64 6d 67 72 2e 64 6c 6c } //01 00  mmcndmgr.dll
+		$a_00_10 = {6d 73 66 74 65 64 69 74 2e 64 6c 6c } //00 00  msftedit.dll
 	condition:
 		any of ($a_*)
  

@@ -4,10 +4,10 @@ rule TrojanDownloader_Win32_Begseabug_A{
 		description = "TrojanDownloader:Win32/Begseabug.A,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {53 65 42 65 62 75 67 50 72 69 76 69 6c 65 67 65 } //01 00 
+		$a_01_0 = {53 65 42 65 62 75 67 50 72 69 76 69 6c 65 67 65 } //01 00  SeBebugPrivilege
 		$a_03_1 = {63 6f 6d 3a 38 30 38 30 90 02 06 2f 73 63 2e 70 6e 67 90 00 } //01 00 
 		$a_01_2 = {68 2d af 9c 4e } //01 00 
-		$a_01_3 = {53 59 53 54 45 4d 33 32 5c 73 79 73 74 65 6d 2e 65 78 65 } //00 00 
+		$a_01_3 = {53 59 53 54 45 4d 33 32 5c 73 79 73 74 65 6d 2e 65 78 65 } //00 00  SYSTEM32\system.exe
 	condition:
 		any of ($a_*)
  

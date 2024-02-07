@@ -5,7 +5,7 @@ rule Trojan_BAT_AgentTesla_LLP_MTB{
 		
 	strings :
 		$a_03_0 = {06 0b 07 28 90 01 03 2b 28 90 01 03 2b 0b 06 07 16 07 8e 69 6f 90 01 03 0a 06 0c de 0a 90 00 } //01 00 
-		$a_01_1 = {65 64 6f 6d 20 53 4f 44 20 6e 69 20 6e 75 72 20 65 62 20 74 6f 6e 6e 61 63 } //00 00 
+		$a_01_1 = {65 64 6f 6d 20 53 4f 44 20 6e 69 20 6e 75 72 20 65 62 20 74 6f 6e 6e 61 63 } //00 00  edom SOD ni nur eb tonnac
 	condition:
 		any of ($a_*)
  

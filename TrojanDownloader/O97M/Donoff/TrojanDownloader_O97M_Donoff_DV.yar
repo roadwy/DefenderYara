@@ -4,7 +4,7 @@ rule TrojanDownloader_O97M_Donoff_DV{
 		description = "TrojanDownloader:O97M/Donoff.DV,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 07 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {28 30 29 20 3d 20 22 63 6d } //01 00 
+		$a_00_0 = {28 30 29 20 3d 20 22 63 6d } //01 00  (0) = "cm
 		$a_02_1 = {29 20 3d 20 22 65 78 90 02 02 22 0d 0a 90 00 } //01 00 
 		$a_02_2 = {29 20 3d 20 22 2e 65 78 90 02 01 22 0d 0a 90 00 } //01 00 
 		$a_00_3 = {29 20 3d 20 22 65 27 22 22 22 0d 0a } //01 00 

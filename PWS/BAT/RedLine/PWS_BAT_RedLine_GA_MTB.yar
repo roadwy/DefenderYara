@@ -4,7 +4,7 @@ rule PWS_BAT_RedLine_GA_MTB{
 		description = "PWS:BAT/RedLine.GA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,23 00 23 00 0f 00 00 0a 00 "
 		
 	strings :
-		$a_81_0 = {52 75 6e 50 45 } //01 00 
+		$a_81_0 = {52 75 6e 50 45 } //01 00  RunPE
 		$a_80_1 = {54 65 6c 65 67 72 61 6d } //Telegram  0a 00 
 		$a_80_2 = {43 68 72 5f 30 5f 4d 5f 65 } //Chr_0_M_e  0a 00 
 		$a_80_3 = {3c 67 65 6f 70 6c 75 67 69 6e } //<geoplugin  01 00 

@@ -10,7 +10,7 @@ rule PWS_Win32_Zbot_AHQ{
 		$a_01_3 = {6f bb 1b b2 0d 8d b6 5f 40 2e 39 f7 8c 48 e2 f8 85 eb 03 0e 1d cb 07 aa b6 b7 } //01 00 
 		$a_01_4 = {3a 5a e8 92 29 1a 7c c1 58 ae 3b b0 47 6d cf df 76 01 8f ce 65 c1 22 fd 94 54 e2 ec 83 14 76 1b } //01 00 
 		$a_01_5 = {4a 5a a4 e2 79 d9 7c 8d 73 9e ed 95 2c 1f c0 fa 91 f2 40 b3 49 74 13 f9 90 4a 96 c9 60 c7 c7 17 } //00 00 
-		$a_00_6 = {5d 04 } //00 00 
+		$a_00_6 = {5d 04 } //00 00  ѝ
 	condition:
 		any of ($a_*)
  

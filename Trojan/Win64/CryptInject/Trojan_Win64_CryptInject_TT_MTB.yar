@@ -5,7 +5,7 @@ rule Trojan_Win64_CryptInject_TT_MTB{
 		
 	strings :
 		$a_00_0 = {65 48 8b 04 25 30 00 00 00 bb 01 00 00 00 48 8b 48 60 48 8b 69 10 } //01 00 
-		$a_01_1 = {48 75 61 6e 4c 6f 61 64 65 72 2e 70 64 62 } //00 00 
+		$a_01_1 = {48 75 61 6e 4c 6f 61 64 65 72 2e 70 64 62 } //00 00  HuanLoader.pdb
 	condition:
 		any of ($a_*)
  

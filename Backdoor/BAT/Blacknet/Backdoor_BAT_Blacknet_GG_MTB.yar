@@ -4,7 +4,7 @@ rule Backdoor_BAT_Blacknet_GG_MTB{
 		description = "Backdoor:BAT/Blacknet.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 10 00 00 0a 00 "
 		
 	strings :
-		$a_81_0 = {42 6c 61 63 6b 4e 45 54 } //01 00 
+		$a_81_0 = {42 6c 61 63 6b 4e 45 54 } //01 00  BlackNET
 		$a_80_1 = {53 74 61 72 74 4b 65 79 6c 6f 67 67 65 72 } //StartKeylogger  01 00 
 		$a_80_2 = {53 70 61 6d 45 6d 61 69 6c } //SpamEmail  01 00 
 		$a_80_3 = {41 74 74 61 63 6b } //Attack  01 00 

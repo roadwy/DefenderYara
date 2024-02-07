@@ -12,7 +12,7 @@ rule Virus_Win32_Nemim_gen_A{
 		$a_01_5 = {88 0a eb cd 8b 55 ec 83 c2 04 89 55 ec 8b 85 c4 fa ff ff 89 85 98 fa ff ff c7 85 9c fa ff ff 00 00 00 00 } //01 00 
 		$a_01_6 = {83 f9 36 75 20 8b 95 b8 fe ff ff 0f be 42 01 83 f8 2a 75 11 8b 8d b8 fe ff ff 0f be 51 02 83 fa 23 75 02 } //01 00 
 		$a_01_7 = {83 fa 3a 0f 84 ac 00 00 00 8b 85 d0 fe ff ff 8b 8d b8 fe ff ff 8a 11 88 94 05 e0 fe ff ff 8b 85 b8 fe ff ff 0f be 08 83 f9 2e 0f 85 80 00 00 00 } //00 00 
-		$a_00_8 = {5d 04 } //00 00 
+		$a_00_8 = {5d 04 } //00 00  ѝ
 	condition:
 		any of ($a_*)
  

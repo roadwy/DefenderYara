@@ -4,8 +4,8 @@ rule Trojan_Win32_Storup_D{
 		description = "Trojan:Win32/Storup.D,SIGNATURE_TYPE_PEHSTR_EXT,ffffffca 00 ffffffca 00 0a 00 00 64 00 "
 		
 	strings :
-		$a_01_0 = {00 25 2b 72 37 34 40 00 } //64 00 
-		$a_01_1 = {00 62 2d 79 34 2d 3d 00 } //01 00 
+		$a_01_0 = {00 25 2b 72 37 34 40 00 } //64 00  ─爫㐷@
+		$a_01_1 = {00 62 2d 79 34 2d 3d 00 } //01 00  戀礭ⴴ=
 		$a_01_2 = {2e 6a 70 67 00 } //01 00 
 		$a_03_3 = {80 00 f5 ff 45 fc 39 4d fc 72 e3 90 01 1a 80 00 2e ff 45 fc 39 4d fc 72 e3 90 00 } //01 00 
 		$a_03_4 = {74 04 80 04 90 01 01 f5 40 3b c1 72 e6 90 01 17 80 04 90 01 01 2e 40 3b c1 72 e6 90 00 } //01 00 

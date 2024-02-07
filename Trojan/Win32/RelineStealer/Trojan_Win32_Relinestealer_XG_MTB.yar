@@ -5,7 +5,7 @@ rule Trojan_Win32_Relinestealer_XG_MTB{
 		
 	strings :
 		$a_03_0 = {8d 59 bf 88 9d 90 01 04 80 bd 90 01 05 0f be d9 89 9d 90 01 06 83 c9 90 01 01 0f be c9 89 8d 90 01 04 8b 9d 90 01 04 33 9d 90 01 04 69 db 90 01 04 89 9d 90 01 04 eb 90 00 } //01 00 
-		$a_01_1 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //00 00 
+		$a_01_1 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //00 00  VirtualProtect
 	condition:
 		any of ($a_*)
  

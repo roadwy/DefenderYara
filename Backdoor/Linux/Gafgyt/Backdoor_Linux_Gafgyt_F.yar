@@ -4,9 +4,9 @@ rule Backdoor_Linux_Gafgyt_F{
 		description = "Backdoor:Linux/Gafgyt.F,SIGNATURE_TYPE_ELFHSTR_EXT,04 00 04 00 03 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {42 6f 61 74 6e 65 74 } //01 00 
-		$a_00_1 = {73 65 6c 66 20 72 65 70 20 6e 65 74 69 73 20 61 6e 64 20 6e 72 70 65 20 67 6f 74 } //02 00 
-		$a_00_2 = {38 30 2e 32 31 31 2e 37 35 2e 33 35 } //00 00 
+		$a_00_0 = {42 6f 61 74 6e 65 74 } //01 00  Boatnet
+		$a_00_1 = {73 65 6c 66 20 72 65 70 20 6e 65 74 69 73 20 61 6e 64 20 6e 72 70 65 20 67 6f 74 } //02 00  self rep netis and nrpe got
+		$a_00_2 = {38 30 2e 32 31 31 2e 37 35 2e 33 35 } //00 00  80.211.75.35
 	condition:
 		any of ($a_*)
  

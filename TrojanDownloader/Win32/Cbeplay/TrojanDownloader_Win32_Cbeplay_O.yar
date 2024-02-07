@@ -4,8 +4,8 @@ rule TrojanDownloader_Win32_Cbeplay_O{
 		description = "TrojanDownloader:Win32/Cbeplay.O,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {25 73 26 71 38 3d 25 64 26 70 61 79 6c 6f 61 64 3d 25 73 } //01 00 
-		$a_00_1 = {25 73 26 76 65 72 3d 25 75 2e 25 75 2e 25 75 2e 25 75 26 6f 73 3d 25 75 26 69 64 78 3d 25 75 } //01 00 
+		$a_00_0 = {25 73 26 71 38 3d 25 64 26 70 61 79 6c 6f 61 64 3d 25 73 } //01 00  %s&q8=%d&payload=%s
+		$a_00_1 = {25 73 26 76 65 72 3d 25 75 2e 25 75 2e 25 75 2e 25 75 26 6f 73 3d 25 75 26 69 64 78 3d 25 75 } //01 00  %s&ver=%u.%u.%u.%u&os=%u&idx=%u
 		$a_02_2 = {5c 5c 2e 5c 50 68 79 73 69 63 61 6c 44 72 69 76 65 25 64 90 02 05 73 76 63 68 6f 73 74 2e 65 78 65 90 00 } //00 00 
 	condition:
 		any of ($a_*)

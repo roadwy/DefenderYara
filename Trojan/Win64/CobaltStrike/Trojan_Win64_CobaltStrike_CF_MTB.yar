@@ -15,7 +15,7 @@ rule Trojan_Win64_CobaltStrike_CF_MTB_2{
 		
 	strings :
 		$a_03_0 = {48 8b 0b 48 8d 54 24 90 01 01 4c 8b c7 ff 15 90 01 04 3d 0d 00 00 c0 74 90 01 01 48 83 c7 90 01 01 48 83 c3 90 01 01 48 3b dd 7c 90 01 01 33 d2 48 8b ce ff 15 90 01 04 eb 90 00 } //01 00 
-		$a_01_1 = {2e 70 64 62 } //00 00 
+		$a_01_1 = {2e 70 64 62 } //00 00  .pdb
 	condition:
 		any of ($a_*)
  
