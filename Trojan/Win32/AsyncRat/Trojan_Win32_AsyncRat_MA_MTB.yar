@@ -1,6 +1,19 @@
 
 rule Trojan_Win32_AsyncRat_MA_MTB{
 	meta:
+		description = "Trojan:Win32/AsyncRat.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 04 00 00 05 00 "
+		
+	strings :
+		$a_01_0 = {c4 01 ed f7 db 4a 8e 52 a5 5a 0c 34 13 21 } //05 00 
+		$a_01_1 = {32 2d 41 39 46 43 44 6d 49 67 73 45 66 70 79 63 00 41 31 7d 23 } //01 00 
+		$a_01_2 = {63 68 6b 4c 6f 61 64 54 69 70 73 41 74 53 74 61 72 74 75 70 } //01 00  chkLoadTipsAtStartup
+		$a_01_3 = {4d 00 75 00 69 00 75 00 63 00 75 00 72 00 75 00 6f 00 75 00 73 00 75 00 6f 00 75 00 66 00 75 00 74 00 75 00 } //00 00  Muiucuruousuoufutu
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_AsyncRat_MA_MTB_2{
+	meta:
 		description = "Trojan:Win32/AsyncRat.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 03 00 00 0a 00 "
 		
 	strings :
@@ -11,7 +24,7 @@ rule Trojan_Win32_AsyncRat_MA_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_AsyncRat_MA_MTB_2{
+rule Trojan_Win32_AsyncRat_MA_MTB_3{
 	meta:
 		description = "Trojan:Win32/AsyncRat.MA!MTB,SIGNATURE_TYPE_PEHSTR,14 00 14 00 03 00 00 0a 00 "
 		

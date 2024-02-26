@@ -47,3 +47,23 @@ rule Trojan_Win32_FormBook_AM_MTB_4{
 		any of ($a_*)
  
 }
+rule Trojan_Win32_FormBook_AM_MTB_5{
+	meta:
+		description = "Trojan:Win32/FormBook.AM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 0b 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {46 74 70 43 72 65 61 74 65 44 69 72 65 63 74 6f 72 79 41 } //01 00  FtpCreateDirectoryA
+		$a_01_1 = {46 74 70 44 65 6c 65 74 65 46 69 6c 65 57 } //01 00  FtpDeleteFileW
+		$a_01_2 = {48 74 74 70 53 65 6e 64 52 65 71 75 65 73 74 57 } //01 00  HttpSendRequestW
+		$a_01_3 = {49 6e 74 65 72 6e 65 74 43 68 65 63 6b 43 6f 6e 6e 65 63 74 69 6f 6e 57 } //01 00  InternetCheckConnectionW
+		$a_01_4 = {52 65 73 55 74 69 6c 47 65 74 41 6c 6c 50 72 6f 70 65 72 74 69 65 73 } //01 00  ResUtilGetAllProperties
+		$a_01_5 = {52 65 73 55 74 69 6c 53 74 6f 70 53 65 72 76 69 63 65 } //01 00  ResUtilStopService
+		$a_01_6 = {43 65 72 74 41 64 64 45 6e 63 6f 64 65 64 43 65 72 74 69 66 69 63 61 74 65 54 6f 53 79 73 74 65 6d 53 74 6f 72 65 57 } //01 00  CertAddEncodedCertificateToSystemStoreW
+		$a_01_7 = {43 65 72 74 44 75 70 6c 69 63 61 74 65 43 65 72 74 69 66 69 63 61 74 65 43 6f 6e 74 65 78 74 } //01 00  CertDuplicateCertificateContext
+		$a_01_8 = {43 72 79 70 74 45 78 70 6f 72 74 50 75 62 6c 69 63 4b 65 79 49 6e 66 6f } //01 00  CryptExportPublicKeyInfo
+		$a_01_9 = {43 72 79 70 74 47 65 74 4f 49 44 46 75 6e 63 74 69 6f 6e 41 64 64 72 65 73 73 } //01 00  CryptGetOIDFunctionAddress
+		$a_01_10 = {43 72 79 70 74 4d 73 67 43 6f 75 6e 74 65 72 73 69 67 6e 45 6e 63 6f 64 65 64 } //00 00  CryptMsgCountersignEncoded
+	condition:
+		any of ($a_*)
+ 
+}

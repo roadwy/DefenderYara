@@ -10,3 +10,13 @@ rule Trojan_Win32_Redline_DD_MTB{
 		any of ($a_*)
  
 }
+rule Trojan_Win32_Redline_DD_MTB_2{
+	meta:
+		description = "Trojan:Win32/Redline.DD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {ff d7 80 b6 90 01 05 6a 00 ff d7 80 86 90 01 05 6a 00 ff d7 80 86 90 01 05 6a 00 ff d7 80 b6 90 01 05 6a 00 ff d7 80 86 90 01 05 6a 00 ff d7 80 86 90 01 05 6a 00 ff d7 80 86 90 01 05 6a 00 ff d7 80 86 90 01 05 6a 00 ff d7 80 b6 90 01 05 46 81 fe 00 6e 03 00 72 94 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

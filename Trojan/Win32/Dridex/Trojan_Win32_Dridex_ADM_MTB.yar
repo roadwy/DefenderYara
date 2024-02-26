@@ -15,3 +15,20 @@ rule Trojan_Win32_Dridex_ADM_MTB{
 		any of ($a_*)
  
 }
+rule Trojan_Win32_Dridex_ADM_MTB_2{
+	meta:
+		description = "Trojan:Win32/Dridex.ADM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,18 00 18 00 08 00 00 03 00 "
+		
+	strings :
+		$a_80_0 = {45 6e 75 6d 53 79 73 74 65 6d 4c 6f 63 61 6c 65 73 41 } //EnumSystemLocalesA  03 00 
+		$a_80_1 = {4d 61 67 6e 65 74 71 75 6f 74 69 65 6e 74 } //Magnetquotient  03 00 
+		$a_80_2 = {6e 6f 2e 70 64 62 } //no.pdb  03 00 
+		$a_80_3 = {47 65 74 57 69 6e 64 6f 77 73 44 69 72 65 63 74 6f 72 79 41 } //GetWindowsDirectoryA  03 00 
+		$a_80_4 = {46 6c 75 73 68 46 69 6c 65 42 75 66 66 65 72 73 } //FlushFileBuffers  03 00 
+		$a_80_5 = {53 65 74 43 6f 6e 73 6f 6c 65 43 74 72 6c 48 61 6e 64 6c 65 72 } //SetConsoleCtrlHandler  03 00 
+		$a_80_6 = {4f 75 74 70 75 74 44 65 62 75 67 53 74 72 69 6e 67 41 } //OutputDebugStringA  03 00 
+		$a_80_7 = {47 65 74 53 74 61 72 74 75 70 49 6e 66 6f 41 } //GetStartupInfoA  00 00 
+	condition:
+		any of ($a_*)
+ 
+}

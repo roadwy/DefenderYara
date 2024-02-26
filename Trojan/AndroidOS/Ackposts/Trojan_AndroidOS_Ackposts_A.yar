@@ -1,6 +1,17 @@
 
 rule Trojan_AndroidOS_Ackposts_A{
 	meta:
+		description = "Trojan:AndroidOS/Ackposts.A,SIGNATURE_TYPE_DEXHSTR_EXT,04 00 04 00 02 00 00 02 00 "
+		
+	strings :
+		$a_01_0 = {69 51 75 65 72 79 4d 69 73 73 4f 72 64 65 72 43 61 6c 6c 62 61 63 6b } //02 00  iQueryMissOrderCallback
+		$a_01_1 = {76 33 66 6d 68 72 70 31 35 } //00 00  v3fmhrp15
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_AndroidOS_Ackposts_A_2{
+	meta:
 		description = "Trojan:AndroidOS/Ackposts.A,SIGNATURE_TYPE_DEXHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
 	strings :

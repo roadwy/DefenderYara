@@ -12,6 +12,18 @@ rule Trojan_BAT_AveMaria_NAA_MTB{
 }
 rule Trojan_BAT_AveMaria_NAA_MTB_2{
 	meta:
+		description = "Trojan:BAT/AveMaria.NAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 03 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {28 9c 00 00 06 0d 7e 90 01 03 04 09 02 16 02 8e 69 28 90 01 03 06 2a 73 90 01 03 0a 38 90 01 03 ff 0a 38 90 01 03 ff 0b 38 90 01 03 ff 73 90 01 03 0a 38 90 01 03 ff 28 90 01 03 06 90 00 } //05 00 
+		$a_03_1 = {06 1f 20 02 7e 90 01 02 00 04 20 90 01 02 00 00 28 90 01 02 00 06 28 90 01 02 00 06 0a 02 7b 90 01 02 00 04 14 06 28 90 01 02 00 06 26 20 90 01 02 00 00 90 00 } //01 00 
+		$a_01_2 = {41 68 66 46 6c 6b 6b 41 53 } //00 00  AhfFlkkAS
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AveMaria_NAA_MTB_3{
+	meta:
 		description = "Trojan:BAT/AveMaria.NAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 05 00 "
 		
 	strings :

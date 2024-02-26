@@ -13,7 +13,7 @@ rule TrojanDownloader_Win32_Mavradoi_B{
 		$a_01_6 = {75 68 6a 56 7a 68 76 4a 44 65 39 48 42 77 75 } //02 00  uhjVzhvJDe9HBwu
 		$a_01_7 = {72 37 6a 71 74 66 76 68 73 75 33 } //02 00  r7jqtfvhsu3
 		$a_01_8 = {6b 49 4f 51 69 65 31 48 42 67 72 50 44 67 35 47 41 77 39 5a 44 67 66 53 79 77 72 56 69 63 4f 51 6b 47 } //00 00  kIOQie1HBgrPDg5GAw9ZDgfSywrVicOQkG
-		$a_00_9 = {87 10 00 00 15 } //db 5d 
+		$a_00_9 = {5d 04 00 00 f4 } //30 03 
 	condition:
 		any of ($a_*)
  

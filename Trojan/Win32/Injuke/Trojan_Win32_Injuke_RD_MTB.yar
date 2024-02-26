@@ -4,12 +4,22 @@ rule Trojan_Win32_Injuke_RD_MTB{
 		description = "Trojan:Win32/Injuke.RD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {8b c1 83 e0 03 8a 04 38 30 04 0a 41 8b 46 04 8b 16 2b c2 3b c8 72 e9 } //00 00 
+		$a_01_0 = {83 c4 08 8b 55 08 03 55 fc 0f b6 02 83 f0 6b 8b 4d 08 03 4d fc 88 01 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_Win32_Injuke_RD_MTB_2{
+	meta:
+		description = "Trojan:Win32/Injuke.RD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {8b c1 83 e0 03 8a 04 38 30 04 0a 41 8b 46 04 8b 16 2b c2 3b c8 72 e9 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Injuke_RD_MTB_3{
 	meta:
 		description = "Trojan:Win32/Injuke.RD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		

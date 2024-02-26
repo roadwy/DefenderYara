@@ -1,6 +1,17 @@
 
 rule Trojan_BAT_SnakeKeylogger_RPY_MTB{
 	meta:
+		description = "Trojan:BAT/SnakeKeylogger.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {03 8e 69 0a 03 04 17 58 06 5d 91 2a } //01 00 
+		$a_01_1 = {03 04 61 05 59 20 00 01 00 00 58 2a } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_SnakeKeylogger_RPY_MTB_2{
+	meta:
 		description = "Trojan:BAT/SnakeKeylogger.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
@@ -9,7 +20,7 @@ rule Trojan_BAT_SnakeKeylogger_RPY_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_SnakeKeylogger_RPY_MTB_2{
+rule Trojan_BAT_SnakeKeylogger_RPY_MTB_3{
 	meta:
 		description = "Trojan:BAT/SnakeKeylogger.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -20,7 +31,7 @@ rule Trojan_BAT_SnakeKeylogger_RPY_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_SnakeKeylogger_RPY_MTB_3{
+rule Trojan_BAT_SnakeKeylogger_RPY_MTB_4{
 	meta:
 		description = "Trojan:BAT/SnakeKeylogger.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 0f 00 00 01 00 "
 		

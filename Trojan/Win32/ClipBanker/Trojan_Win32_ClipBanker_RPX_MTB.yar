@@ -14,12 +14,22 @@ rule Trojan_Win32_ClipBanker_RPX_MTB_2{
 		description = "Trojan:Win32/ClipBanker.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_03_0 = {66 8b 16 3b e3 8d b6 02 00 00 00 81 c9 90 01 04 d3 f0 0f b6 4c 25 00 66 d3 f8 8d ad 01 00 00 00 66 0f b3 e8 32 cb 9f fe c1 0f bd c2 f6 d9 90 00 } //00 00 
+		$a_01_0 = {8b 4c 24 14 56 8b 51 f8 89 54 24 2c ff d3 8b 44 24 28 83 f8 22 8b 44 24 14 0f 85 60 02 00 00 80 38 54 0f 85 52 02 00 00 8b 4c 24 18 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_Win32_ClipBanker_RPX_MTB_3{
+	meta:
+		description = "Trojan:Win32/ClipBanker.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {66 8b 16 3b e3 8d b6 02 00 00 00 81 c9 90 01 04 d3 f0 0f b6 4c 25 00 66 d3 f8 8d ad 01 00 00 00 66 0f b3 e8 32 cb 9f fe c1 0f bd c2 f6 d9 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_ClipBanker_RPX_MTB_4{
 	meta:
 		description = "Trojan:Win32/ClipBanker.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
@@ -31,7 +41,7 @@ rule Trojan_Win32_ClipBanker_RPX_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_ClipBanker_RPX_MTB_4{
+rule Trojan_Win32_ClipBanker_RPX_MTB_5{
 	meta:
 		description = "Trojan:Win32/ClipBanker.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		

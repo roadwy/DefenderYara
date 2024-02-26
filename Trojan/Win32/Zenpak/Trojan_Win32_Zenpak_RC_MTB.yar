@@ -39,3 +39,13 @@ rule Trojan_Win32_Zenpak_RC_MTB_4{
 		any of ($a_*)
  
 }
+rule Trojan_Win32_Zenpak_RC_MTB_5{
+	meta:
+		description = "Trojan:Win32/Zenpak.RC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {48 b8 07 00 00 00 29 c2 8d 05 90 01 04 89 38 83 f0 04 42 89 c2 89 e8 50 8f 05 90 01 04 31 c2 48 31 35 90 01 04 89 d8 50 8f 05 90 01 04 e8 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

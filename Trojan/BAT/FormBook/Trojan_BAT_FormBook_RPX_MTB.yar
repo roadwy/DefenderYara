@@ -1,6 +1,26 @@
 
 rule Trojan_BAT_FormBook_RPX_MTB{
 	meta:
+		description = "Trojan:BAT/FormBook.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {1f 16 5d 91 13 0c 07 11 0a 91 11 07 58 13 0d 07 11 09 11 0b 11 0c 61 11 0d 11 07 5d 59 d2 9c 11 06 17 58 13 06 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_FormBook_RPX_MTB_2{
+	meta:
+		description = "Trojan:BAT/FormBook.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {0b 16 0c 2b 1a 00 07 08 18 5b 02 08 18 6f 70 00 00 0a 1f 10 28 71 00 00 0a 9c 00 08 18 58 0c 08 06 fe 04 0d 09 2d de } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_FormBook_RPX_MTB_3{
+	meta:
 		description = "Trojan:BAT/FormBook.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
@@ -10,7 +30,7 @@ rule Trojan_BAT_FormBook_RPX_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_FormBook_RPX_MTB_2{
+rule Trojan_BAT_FormBook_RPX_MTB_4{
 	meta:
 		description = "Trojan:BAT/FormBook.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		

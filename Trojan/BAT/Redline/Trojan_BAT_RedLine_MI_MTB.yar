@@ -27,3 +27,17 @@ rule Trojan_BAT_RedLine_MI_MTB_2{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_RedLine_MI_MTB_3{
+	meta:
+		description = "Trojan:BAT/RedLine.MI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 05 00 00 05 00 "
+		
+	strings :
+		$a_01_0 = {48 00 61 00 63 00 65 00 6b 00 2e 00 65 00 78 00 65 00 } //01 00  Hacek.exe
+		$a_01_1 = {47 61 74 65 77 61 79 49 50 41 64 64 72 65 73 73 49 6e 66 6f 72 6d 61 74 69 6f 6e 43 6f 6c 6c 65 63 74 69 6f 6e } //01 00  GatewayIPAddressInformationCollection
+		$a_01_2 = {47 65 74 44 65 66 61 75 6c 74 49 50 76 34 41 64 64 72 65 73 73 } //01 00  GetDefaultIPv4Address
+		$a_01_3 = {43 61 70 74 75 72 65 } //01 00  Capture
+		$a_01_4 = {42 43 52 59 50 54 5f 41 55 54 48 45 4e 54 49 43 41 54 45 44 5f 43 49 50 48 45 52 5f 4d 4f 44 45 5f 49 4e 46 4f } //00 00  BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO
+	condition:
+		any of ($a_*)
+ 
+}

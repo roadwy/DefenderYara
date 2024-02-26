@@ -1,6 +1,21 @@
 
 rule Trojan_BAT_SpySnake_MM_MTB{
 	meta:
+		description = "Trojan:BAT/SpySnake.MM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 06 00 00 0a 00 "
+		
+	strings :
+		$a_03_0 = {11 04 11 03 11 01 11 03 11 01 8e 69 5d 91 03 11 03 91 61 d2 9c 38 90 01 03 ff 11 04 2a 90 00 } //01 00 
+		$a_01_1 = {44 65 73 74 72 6f 79 50 75 62 6c 69 73 68 65 72 } //01 00  DestroyPublisher
+		$a_01_2 = {45 6e 61 62 6c 65 50 72 6f 78 79 } //01 00  EnableProxy
+		$a_01_3 = {4d 61 6e 61 67 65 50 75 62 6c 69 73 68 65 72 } //01 00  ManagePublisher
+		$a_01_4 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //01 00  DownloadData
+		$a_01_5 = {52 65 6d 6f 76 65 50 72 6f 78 79 } //00 00  RemoveProxy
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_SpySnake_MM_MTB_2{
+	meta:
 		description = "Trojan:BAT/SpySnake.MM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 05 00 00 0a 00 "
 		
 	strings :

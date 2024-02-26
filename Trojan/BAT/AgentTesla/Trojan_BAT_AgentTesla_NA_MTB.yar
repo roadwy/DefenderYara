@@ -1,6 +1,16 @@
 
 rule Trojan_BAT_AgentTesla_NA_MTB{
 	meta:
+		description = "Trojan:BAT/AgentTesla.NA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {25 47 11 0b 11 0f 11 0b 8e 69 5d 91 61 d2 52 00 90 01 02 17 58 13 0f 11 0f 11 0a 8e 69 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_NA_MTB_2{
+	meta:
 		description = "Trojan:BAT/AgentTesla.NA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 05 00 "
 		
 	strings :
@@ -11,7 +21,7 @@ rule Trojan_BAT_AgentTesla_NA_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_NA_MTB_2{
+rule Trojan_BAT_AgentTesla_NA_MTB_3{
 	meta:
 		description = "Trojan:BAT/AgentTesla.NA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
 		
@@ -22,7 +32,18 @@ rule Trojan_BAT_AgentTesla_NA_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_NA_MTB_3{
+rule Trojan_BAT_AgentTesla_NA_MTB_4{
+	meta:
+		description = "Trojan:BAT/AgentTesla.NA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {11 07 25 1a 58 13 07 4b 11 07 25 1a 58 13 07 4b 5a 13 11 11 11 20 90 01 03 dc 33 2d 08 07 2d 07 90 00 } //01 00 
+		$a_01_1 = {4d 4b 4d 4e 6e 4e 39 38 38 2e 50 72 6f 70 65 72 74 69 65 73 2e 52 65 73 6f 75 72 63 65 73 2e 72 65 73 6f 75 72 63 65 73 } //00 00  MKMNnN988.Properties.Resources.resources
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_NA_MTB_5{
 	meta:
 		description = "Trojan:BAT/AgentTesla.NA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
 		
@@ -33,7 +54,7 @@ rule Trojan_BAT_AgentTesla_NA_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_NA_MTB_4{
+rule Trojan_BAT_AgentTesla_NA_MTB_6{
 	meta:
 		description = "Trojan:BAT/AgentTesla.NA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
 		
@@ -44,7 +65,7 @@ rule Trojan_BAT_AgentTesla_NA_MTB_4{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_NA_MTB_5{
+rule Trojan_BAT_AgentTesla_NA_MTB_7{
 	meta:
 		description = "Trojan:BAT/AgentTesla.NA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,13 00 13 00 09 00 00 05 00 "
 		

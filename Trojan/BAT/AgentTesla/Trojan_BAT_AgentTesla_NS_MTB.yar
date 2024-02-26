@@ -16,6 +16,21 @@ rule Trojan_BAT_AgentTesla_NS_MTB{
 }
 rule Trojan_BAT_AgentTesla_NS_MTB_2{
 	meta:
+		description = "Trojan:BAT/AgentTesla.NS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 06 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {1f 30 8d c8 00 00 01 13 04 06 6f 90 01 03 0a 16 11 04 16 1f 20 28 90 01 03 0a 90 00 } //01 00 
+		$a_01_1 = {55 00 70 00 6c 00 6f 00 61 00 64 00 52 00 65 00 70 00 6f 00 72 00 74 00 4c 00 6f 00 67 00 69 00 6e 00 2e 00 61 00 73 00 6d 00 78 00 } //01 00  UploadReportLogin.asmx
+		$a_01_2 = {53 00 65 00 72 00 76 00 65 00 72 00 52 00 32 00 } //01 00  ServerR2
+		$a_01_3 = {73 65 74 5f 45 78 70 65 63 74 31 30 30 43 6f 6e 74 69 6e 75 65 } //01 00  set_Expect100Continue
+		$a_01_4 = {46 6f 72 6d 43 68 6f 6f 73 65 4c 61 6e 67 75 61 67 65 5f 4c 6f 61 64 } //01 00  FormChooseLanguage_Load
+		$a_01_5 = {43 6f 6e 63 61 74 } //00 00  Concat
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_NS_MTB_3{
+	meta:
 		description = "Trojan:BAT/AgentTesla.NS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 08 00 00 07 00 "
 		
 	strings :

@@ -1,6 +1,17 @@
 
 rule Trojan_BAT_NJRat_ARA_MTB{
 	meta:
+		description = "Trojan:BAT/NJRat.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 02 00 "
+		
+	strings :
+		$a_03_0 = {00 02 09 11 04 9a 28 90 01 03 0a 28 90 01 03 06 13 05 06 09 11 04 17 58 9a 28 90 01 03 0a 11 05 28 90 01 03 0a 00 06 09 11 04 17 58 9a 28 90 01 03 0a 28 90 01 03 0a 26 00 11 04 18 58 13 04 11 04 09 28 90 01 03 2b 17 59 fe 04 13 07 11 07 2d af 90 00 } //02 00 
+		$a_01_1 = {5c 6f 62 6a 5c 44 65 62 75 67 5c 53 74 75 62 42 69 6e 64 65 72 2e 70 64 62 } //00 00  \obj\Debug\StubBinder.pdb
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_NJRat_ARA_MTB_2{
+	meta:
 		description = "Trojan:BAT/NJRat.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 02 00 "
 		
 	strings :

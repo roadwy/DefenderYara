@@ -1,6 +1,18 @@
 
 rule TrojanDownloader_O97M_Obfuse_PHI_MTB{
 	meta:
+		description = "TrojanDownloader:O97M/Obfuse.PHI!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {53 6f 75 72 63 65 20 68 74 74 60 70 3a 2f 2f 31 38 2e 31 39 35 2e 31 34 33 2e 31 38 33 2f 90 02 1e 2e 65 60 78 65 90 00 } //01 00 
+		$a_03_1 = {2d 44 65 73 74 69 6e 61 74 69 6f 6e 20 43 3a 5c 55 73 65 72 73 5c 50 75 62 6c 69 63 5c 44 6f 63 75 6d 65 6e 74 73 5c 90 02 14 2e 65 60 78 65 90 00 } //01 00 
+		$a_01_2 = {3d 20 43 72 65 61 74 65 4f 62 6a 65 63 74 } //00 00  = CreateObject
+	condition:
+		any of ($a_*)
+ 
+}
+rule TrojanDownloader_O97M_Obfuse_PHI_MTB_2{
+	meta:
 		description = "TrojanDownloader:O97M/Obfuse.PHI!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,0c 00 0c 00 0c 00 00 01 00 "
 		
 	strings :

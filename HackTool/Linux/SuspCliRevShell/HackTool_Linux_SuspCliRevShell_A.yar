@@ -1,7 +1,7 @@
 
 rule HackTool_Linux_SuspCliRevShell_A{
 	meta:
-		description = "HackTool:Linux/SuspCliRevShell.A,SIGNATURE_TYPE_CMDHSTR_EXT,1e 00 1e 00 12 00 00 0a 00 "
+		description = "HackTool:Linux/SuspCliRevShell.A,SIGNATURE_TYPE_CMDHSTR_EXT,1e 00 1e 00 13 00 00 0a 00 "
 		
 	strings :
 		$a_00_0 = {73 00 6f 00 63 00 6b 00 65 00 74 00 2e 00 73 00 6f 00 63 00 6b 00 65 00 74 00 28 00 29 00 } //05 00  socket.socket()
@@ -21,7 +21,8 @@ rule HackTool_Linux_SuspCliRevShell_A{
 		$a_00_14 = {6f 00 70 00 65 00 6e 00 28 00 53 00 54 00 44 00 49 00 4e 00 2c 00 22 00 3e 00 } //05 00  open(STDIN,">
 		$a_00_15 = {6f 00 70 00 65 00 6e 00 28 00 53 00 54 00 44 00 4f 00 55 00 54 00 2c 00 22 00 3e 00 } //0a 00  open(STDOUT,">
 		$a_02_16 = {70 00 74 00 79 00 2e 00 73 00 70 00 61 00 77 00 6e 00 90 02 02 28 00 90 02 04 2f 00 62 00 69 00 6e 00 2f 00 90 02 04 73 00 68 00 90 00 } //0a 00 
-		$a_02_17 = {65 00 78 00 65 00 63 00 90 02 02 28 00 90 02 04 2f 00 62 00 69 00 6e 00 2f 00 90 02 04 73 00 68 00 90 00 } //00 00 
+		$a_02_17 = {70 00 74 00 79 00 2e 00 73 00 70 00 61 00 77 00 6e 00 90 02 02 28 00 90 02 04 73 00 68 00 90 02 01 29 00 90 00 } //0a 00 
+		$a_02_18 = {65 00 78 00 65 00 63 00 90 02 02 28 00 90 02 04 2f 00 62 00 69 00 6e 00 2f 00 90 02 04 73 00 68 00 90 00 } //00 00 
 	condition:
 		any of ($a_*)
  

@@ -1,6 +1,16 @@
 
 rule Trojan_Win32_Meterpreter_RPX_MTB{
 	meta:
+		description = "Trojan:Win32/Meterpreter.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {89 f9 89 de 8a 06 30 07 47 66 81 3f 90 01 02 74 08 46 80 3e 90 01 01 75 ee eb ea 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Meterpreter_RPX_MTB_2{
+	meta:
 		description = "Trojan:Win32/Meterpreter.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :

@@ -13,6 +13,29 @@ rule Trojan_BAT_Vidar_NV_MTB{
 }
 rule Trojan_BAT_Vidar_NV_MTB_2{
 	meta:
+		description = "Trojan:BAT/Vidar.NV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {d0 8f 02 00 04 28 90 01 02 00 0a 6f 90 01 02 00 0a 07 1f 10 8d 90 01 02 00 01 25 d0 90 01 02 00 04 28 90 01 02 00 0a 6f 90 01 02 00 0a 06 07 6f 90 01 02 00 0a 17 73 90 01 02 00 0a 0c 08 02 16 02 8e 69 6f 90 01 02 00 0a 90 00 } //01 00 
+		$a_01_1 = {69 6e 67 65 6e 69 6f 75 73 5f 69 6e 73 74 61 6c 6c 61 74 69 6f 6e 5f 73 6f 6c 75 74 69 6f 6e } //00 00  ingenious_installation_solution
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Vidar_NV_MTB_3{
+	meta:
+		description = "Trojan:BAT/Vidar.NV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {73 0c 00 00 0a 28 90 01 01 00 00 0a 6f 90 01 01 00 00 0a 28 90 01 01 00 00 0a 17 8d 90 01 01 00 00 01 0d 09 16 17 8d 90 01 01 00 00 01 25 13 04 11 04 16 7f 90 01 01 00 00 04 d3 16 58 47 69 20 90 01 01 00 00 00 61 9d 73 90 01 01 00 00 0a a2 09 16 6f 90 01 01 00 00 0a 90 00 } //01 00 
+		$a_01_1 = {75 72 63 68 69 6e 73 53 61 70 66 75 6c } //01 00  urchinsSapful
+		$a_01_2 = {73 61 70 66 75 6c 57 69 73 70 } //00 00  sapfulWisp
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Vidar_NV_MTB_4{
+	meta:
 		description = "Trojan:BAT/Vidar.NV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 05 00 "
 		
 	strings :

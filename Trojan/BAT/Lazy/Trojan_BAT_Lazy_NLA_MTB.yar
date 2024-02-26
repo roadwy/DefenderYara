@@ -1,6 +1,17 @@
 
 rule Trojan_BAT_Lazy_NLA_MTB{
 	meta:
+		description = "Trojan:BAT/Lazy.NLA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {62 20 ef 8c 77 72 58 20 90 01 03 fe 61 7d 90 01 03 04 20 90 01 03 00 38 90 01 03 ff 7e 90 01 03 04 20 90 01 03 09 65 20 90 01 03 fd 61 7d 90 01 03 04 20 90 01 03 00 28 90 01 03 06 90 00 } //01 00 
+		$a_01_1 = {4a 65 6f 64 70 74 71 70 73 77 63 } //00 00  Jeodptqpswc
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Lazy_NLA_MTB_2{
+	meta:
 		description = "Trojan:BAT/Lazy.NLA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 05 00 "
 		
 	strings :
@@ -11,7 +22,7 @@ rule Trojan_BAT_Lazy_NLA_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Lazy_NLA_MTB_2{
+rule Trojan_BAT_Lazy_NLA_MTB_3{
 	meta:
 		description = "Trojan:BAT/Lazy.NLA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 03 00 00 05 00 "
 		

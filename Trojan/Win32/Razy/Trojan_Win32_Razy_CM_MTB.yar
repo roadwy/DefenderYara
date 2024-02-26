@@ -9,14 +9,3 @@ rule Trojan_Win32_Razy_CM_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Razy_CM_MTB_2{
-	meta:
-		description = "Trojan:Win32/Razy.CM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 02 00 "
-		
-	strings :
-		$a_01_0 = {68 bb 03 cf b1 8b 34 24 83 c4 04 31 0b 89 f6 43 39 c3 75 e0 } //02 00 
-		$a_01_1 = {31 31 43 81 c3 5e be e3 40 81 c1 04 00 00 00 21 d3 81 c3 01 00 00 00 39 c1 75 e0 } //00 00 
-	condition:
-		any of ($a_*)
- 
-}

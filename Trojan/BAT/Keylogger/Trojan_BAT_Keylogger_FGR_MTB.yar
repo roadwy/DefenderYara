@@ -1,6 +1,21 @@
 
 rule Trojan_BAT_Keylogger_FGR_MTB{
 	meta:
+		description = "Trojan:BAT/Keylogger.FGR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 06 00 00 03 00 "
+		
+	strings :
+		$a_80_0 = {66 72 6d 73 70 6b 6c 67 72 5f 73 65 74 75 70 2e 72 65 73 6f 75 72 63 65 73 } //frmspklgr_setup.resources  03 00 
+		$a_80_1 = {45 53 50 49 45 52 20 4b 45 59 4c 4f 47 47 45 52 } //ESPIER KEYLOGGER  03 00 
+		$a_80_2 = {75 70 64 61 74 65 6b 65 79 } //updatekey  03 00 
+		$a_80_3 = {73 70 6b 6c 67 72 2e 6c 6e 6b } //spklgr.lnk  03 00 
+		$a_80_4 = {52 65 73 6f 75 72 63 65 73 2e 72 65 67 2e 64 65 73 2e 72 65 67 } //Resources.reg.des.reg  03 00 
+		$a_80_5 = {73 70 6b 6c 67 72 2e 4c 69 63 65 6e 63 69 61 2e 74 78 74 } //spklgr.Licencia.txt  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Keylogger_FGR_MTB_2{
+	meta:
 		description = "Trojan:BAT/Keylogger.FGR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,24 00 24 00 07 00 00 0a 00 "
 		
 	strings :

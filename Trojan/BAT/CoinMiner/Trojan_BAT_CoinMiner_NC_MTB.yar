@@ -1,6 +1,28 @@
 
 rule Trojan_BAT_CoinMiner_NC_MTB{
 	meta:
+		description = "Trojan:BAT/CoinMiner.NC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {72 96 04 00 70 80 90 01 03 04 20 01 00 00 00 16 39 90 01 03 ff 26 38 78 ff ff ff 72 90 01 03 70 80 01 00 00 04 38 d6 ff ff ff 90 00 } //01 00 
+		$a_01_1 = {6e 69 6d 71 65 46 41 48 38 } //00 00  nimqeFAH8
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_CoinMiner_NC_MTB_2{
+	meta:
+		description = "Trojan:BAT/CoinMiner.NC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {6f 28 00 00 0a 6f 90 01 02 00 0a 13 04 73 90 01 02 00 0a 13 05 11 05 11 04 28 90 01 02 00 06 73 90 01 02 00 0a 13 06 00 11 06 02 28 90 01 02 00 06 02 8e 69 6f 90 01 02 00 0a 00 11 06 6f 90 01 02 00 0a 00 11 05 6f 90 01 02 00 0a 13 07 de 4e 90 00 } //05 00 
+		$a_03_1 = {28 1b 00 00 0a 0a 73 90 01 01 00 00 0a 0b 06 02 6f 90 01 01 00 00 0a 0c 08 14 fe 01 13 05 11 05 2d 11 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_CoinMiner_NC_MTB_3{
+	meta:
 		description = "Trojan:BAT/CoinMiner.NC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 05 00 "
 		
 	strings :

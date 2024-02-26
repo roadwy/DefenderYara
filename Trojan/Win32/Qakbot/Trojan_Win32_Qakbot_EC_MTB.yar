@@ -1,6 +1,16 @@
 
 rule Trojan_Win32_Qakbot_EC_MTB{
 	meta:
+		description = "Trojan:Win32/Qakbot.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
+		
+	strings :
+		$a_01_0 = {8a d1 8b cb 2a d3 80 c2 1b 01 1e 0f b6 c2 83 56 04 00 2b c8 81 e9 71 51 01 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Qakbot_EC_MTB_2{
+	meta:
 		description = "Trojan:Win32/Qakbot.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 01 00 00 06 00 "
 		
 	strings :
@@ -9,7 +19,7 @@ rule Trojan_Win32_Qakbot_EC_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Qakbot_EC_MTB_2{
+rule Trojan_Win32_Qakbot_EC_MTB_3{
 	meta:
 		description = "Trojan:Win32/Qakbot.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 01 00 00 08 00 "
 		
@@ -19,7 +29,7 @@ rule Trojan_Win32_Qakbot_EC_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Qakbot_EC_MTB_3{
+rule Trojan_Win32_Qakbot_EC_MTB_4{
 	meta:
 		description = "Trojan:Win32/Qakbot.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 03 00 "
 		
@@ -30,7 +40,7 @@ rule Trojan_Win32_Qakbot_EC_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Qakbot_EC_MTB_4{
+rule Trojan_Win32_Qakbot_EC_MTB_5{
 	meta:
 		description = "Trojan:Win32/Qakbot.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -44,7 +54,7 @@ rule Trojan_Win32_Qakbot_EC_MTB_4{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Qakbot_EC_MTB_5{
+rule Trojan_Win32_Qakbot_EC_MTB_6{
 	meta:
 		description = "Trojan:Win32/Qakbot.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 06 00 00 0a 00 "
 		
@@ -59,7 +69,7 @@ rule Trojan_Win32_Qakbot_EC_MTB_5{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Qakbot_EC_MTB_6{
+rule Trojan_Win32_Qakbot_EC_MTB_7{
 	meta:
 		description = "Trojan:Win32/Qakbot.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -73,7 +83,7 @@ rule Trojan_Win32_Qakbot_EC_MTB_6{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Qakbot_EC_MTB_7{
+rule Trojan_Win32_Qakbot_EC_MTB_8{
 	meta:
 		description = "Trojan:Win32/Qakbot.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		

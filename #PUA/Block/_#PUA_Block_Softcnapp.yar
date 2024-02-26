@@ -94,6 +94,21 @@ rule _#PUA_Block_Softcnapp_7{
 }
 rule _#PUA_Block_Softcnapp_8{
 	meta:
+		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 06 00 00 02 00 "
+		
+	strings :
+		$a_80_0 = {58 69 6e 53 75 5a 69 70 2e 69 6e 69 } //XinSuZip.ini  02 00 
+		$a_80_1 = {74 6a 69 2e 7a 68 69 6c 69 6e 67 73 68 69 64 61 69 2e 63 6f 6d } //tji.zhilingshidai.com  01 00 
+		$a_80_2 = {64 6f 77 6e 2e 7a 68 69 6c 69 6e 67 73 68 69 64 61 69 2e 63 6f 6d } //down.zhilingshidai.com  01 00 
+		$a_80_3 = {55 73 65 49 6e 66 6f 2e 69 6e 69 } //UseInfo.ini  9c ff 
+		$a_80_4 = {55 6e 69 6e 73 74 2e 65 78 65 } //Uninst.exe  9c ff 
+		$a_80_5 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //Uninstall.exe  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_Softcnapp_9{
+	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 01 00 "
 		
 	strings :
@@ -106,7 +121,7 @@ rule _#PUA_Block_Softcnapp_8{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_9{
+rule _#PUA_Block_Softcnapp_10{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -120,7 +135,7 @@ rule _#PUA_Block_Softcnapp_9{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_10{
+rule _#PUA_Block_Softcnapp_11{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 06 00 00 01 00 "
 		
@@ -135,7 +150,24 @@ rule _#PUA_Block_Softcnapp_10{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_11{
+rule _#PUA_Block_Softcnapp_12{
+	meta:
+		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 08 00 00 02 00 "
+		
+	strings :
+		$a_80_0 = {58 73 50 69 63 49 6e 66 6f 2e 69 6e 69 } //XsPicInfo.ini  02 00 
+		$a_80_1 = {7a 79 63 75 6c 74 75 72 61 2e 63 6f 6d } //zycultura.com  01 00 
+		$a_80_2 = {58 73 50 69 63 56 69 65 77 } //XsPicView  01 00 
+		$a_02_3 = {58 00 73 00 50 00 69 00 63 00 90 02 0f 2e 00 65 00 78 00 65 00 90 00 } //01 00 
+		$a_02_4 = {58 73 50 69 63 90 02 0f 2e 65 78 65 90 00 } //9c ff 
+		$a_80_5 = {58 73 50 69 63 55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //XsPicUninstall.exe  9c ff 
+		$a_80_6 = {55 6e 69 6e 73 74 2e 65 78 65 } //Uninst.exe  9c ff 
+		$a_80_7 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //Uninstall.exe  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_Softcnapp_13{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -149,7 +181,7 @@ rule _#PUA_Block_Softcnapp_11{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_12{
+rule _#PUA_Block_Softcnapp_14{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		
@@ -164,7 +196,23 @@ rule _#PUA_Block_Softcnapp_12{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_13{
+rule _#PUA_Block_Softcnapp_15{
+	meta:
+		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {53 43 4d 75 74 75 61 6c 2e 65 78 65 } //SCMutual.exe  01 00 
+		$a_80_1 = {53 43 43 6f 6e 66 69 67 2e 65 78 65 } //SCConfig.exe  01 00 
+		$a_80_2 = {73 63 69 65 2e 65 78 65 } //scie.exe  01 00 
+		$a_80_3 = {55 73 65 56 65 73 74 69 67 65 2e 69 6e 69 } //UseVestige.ini  01 00 
+		$a_80_4 = {5c 54 72 75 6e 6b 50 59 5c 42 69 6e 5c 70 64 62 6d 61 70 5c 53 6d 61 72 74 43 6c 6f 75 64 5c 4d 6f 6e 69 74 65 72 33 32 2e 70 64 62 } //\TrunkPY\Bin\pdbmap\SmartCloud\Moniter32.pdb  01 00 
+		$a_80_5 = {68 68 63 74 72 6c 2e 6f 63 78 } //hhctrl.ocx  01 00 
+		$a_80_6 = {66 3a 5c 73 70 5c 76 63 74 6f 6f 6c 73 5c 76 63 37 6c 69 62 73 5c 73 68 69 70 5c 61 74 6c 6d 66 63 5c 73 72 63 5c 6d 66 63 5c 61 70 70 63 6f 72 65 2e 63 70 70 } //f:\sp\vctools\vc7libs\ship\atlmfc\src\mfc\appcore.cpp  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_Softcnapp_16{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 01 00 "
 		
@@ -182,7 +230,7 @@ rule _#PUA_Block_Softcnapp_13{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_14{
+rule _#PUA_Block_Softcnapp_17{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 0b 00 00 01 00 "
 		
@@ -202,7 +250,7 @@ rule _#PUA_Block_Softcnapp_14{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_15{
+rule _#PUA_Block_Softcnapp_18{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 0c 00 00 01 00 "
 		
@@ -223,7 +271,7 @@ rule _#PUA_Block_Softcnapp_15{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_16{
+rule _#PUA_Block_Softcnapp_19{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		
@@ -238,7 +286,7 @@ rule _#PUA_Block_Softcnapp_16{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_17{
+rule _#PUA_Block_Softcnapp_20{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 06 00 00 01 00 "
 		
@@ -253,7 +301,7 @@ rule _#PUA_Block_Softcnapp_17{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_18{
+rule _#PUA_Block_Softcnapp_21{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 02 00 "
 		
@@ -269,7 +317,7 @@ rule _#PUA_Block_Softcnapp_18{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_19{
+rule _#PUA_Block_Softcnapp_22{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR,01 00 01 00 02 00 00 01 00 "
 		
@@ -280,7 +328,7 @@ rule _#PUA_Block_Softcnapp_19{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_20{
+rule _#PUA_Block_Softcnapp_23{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR,03 00 03 00 03 00 00 01 00 "
 		
@@ -292,7 +340,7 @@ rule _#PUA_Block_Softcnapp_20{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_21{
+rule _#PUA_Block_Softcnapp_24{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR,04 00 04 00 05 00 00 01 00 "
 		
@@ -306,7 +354,7 @@ rule _#PUA_Block_Softcnapp_21{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_22{
+rule _#PUA_Block_Softcnapp_25{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR,04 00 04 00 04 00 00 01 00 "
 		

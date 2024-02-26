@@ -26,3 +26,13 @@ rule Trojan_Win32_Vidar_PB_MTB_2{
 		any of ($a_*)
  
 }
+rule Trojan_Win32_Vidar_PB_MTB_3{
+	meta:
+		description = "Trojan:Win32/Vidar.PB!MTB,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {8b d0 c1 ea 05 03 54 24 24 8b f8 c1 e7 04 03 7c 24 20 03 c1 33 d7 33 d0 2b f2 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

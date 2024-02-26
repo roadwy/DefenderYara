@@ -9,14 +9,3 @@ rule Trojan_Win32_Glupteba_AD_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Glupteba_AD_MTB_2{
-	meta:
-		description = "Trojan:Win32/Glupteba.AD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 02 00 "
-		
-	strings :
-		$a_01_0 = {40 21 c2 31 37 47 29 c2 01 d0 39 df 75 e5 } //02 00 
-		$a_03_1 = {31 11 81 e8 01 00 00 00 81 ee 90 02 04 81 c1 04 00 00 00 39 f9 75 e3 90 00 } //00 00 
-	condition:
-		any of ($a_*)
- 
-}

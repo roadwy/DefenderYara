@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_RPY_MTB{
 		description = "Trojan:BAT/AgentTesla.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {11 04 0d 11 05 17 58 13 05 11 05 04 3f de ff ff ff 16 13 06 38 1b 00 00 00 06 09 5a 07 58 08 5d 13 04 0e 04 11 04 } //00 00 
+		$a_01_0 = {08 11 14 1f 16 5d 91 61 07 11 16 11 04 5d 91 59 20 00 01 00 00 58 20 00 01 00 00 5d d2 } //00 00 
 	condition:
 		any of ($a_*)
  
@@ -14,12 +14,22 @@ rule Trojan_BAT_AgentTesla_RPY_MTB_2{
 		description = "Trojan:BAT/AgentTesla.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {00 06 1a 58 0a 00 11 07 17 58 13 07 11 07 07 fe 04 13 09 11 09 2d c7 00 11 06 17 58 13 06 11 06 07 fe 04 13 0a 11 0a 2d af } //00 00 
+		$a_01_0 = {11 04 0d 11 05 17 58 13 05 11 05 04 3f de ff ff ff 16 13 06 38 1b 00 00 00 06 09 5a 07 58 08 5d 13 04 0e 04 11 04 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_BAT_AgentTesla_RPY_MTB_3{
+	meta:
+		description = "Trojan:BAT/AgentTesla.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {00 06 1a 58 0a 00 11 07 17 58 13 07 11 07 07 fe 04 13 09 11 09 2d c7 00 11 06 17 58 13 06 11 06 07 fe 04 13 0a 11 0a 2d af } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_RPY_MTB_4{
 	meta:
 		description = "Trojan:BAT/AgentTesla.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -30,7 +40,7 @@ rule Trojan_BAT_AgentTesla_RPY_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_RPY_MTB_4{
+rule Trojan_BAT_AgentTesla_RPY_MTB_5{
 	meta:
 		description = "Trojan:BAT/AgentTesla.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -44,7 +54,7 @@ rule Trojan_BAT_AgentTesla_RPY_MTB_4{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_RPY_MTB_5{
+rule Trojan_BAT_AgentTesla_RPY_MTB_6{
 	meta:
 		description = "Trojan:BAT/AgentTesla.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 01 00 "
 		

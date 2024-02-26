@@ -14,21 +14,3 @@ rule Trojan_Win64_IcedID_AN_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win64_IcedID_AN_MTB_2{
-	meta:
-		description = "Trojan:Win64/IcedID.AN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 09 00 00 0a 00 "
-		
-	strings :
-		$a_01_0 = {45 52 4a 62 2e 64 6c 6c } //01 00  ERJb.dll
-		$a_01_1 = {41 56 31 48 45 69 73 61 31 } //01 00  AV1HEisa1
-		$a_01_2 = {47 5a 59 61 71 38 36 56 } //01 00  GZYaq86V
-		$a_01_3 = {47 68 62 78 35 41 6a } //01 00  Ghbx5Aj
-		$a_01_4 = {49 5a 50 44 36 37 5a 39 6d 6a 4f } //01 00  IZPD67Z9mjO
-		$a_01_5 = {64 37 4f 69 65 6d 50 54 41 71 } //01 00  d7OiemPTAq
-		$a_01_6 = {64 45 4a 56 78 44 5a 6c 74 4d } //01 00  dEJVxDZltM
-		$a_01_7 = {6e 6b 56 56 30 4e 77 76 66 4f } //01 00  nkVV0NwvfO
-		$a_01_8 = {70 72 61 73 30 77 31 4a 34 52 } //00 00  pras0w1J4R
-	condition:
-		any of ($a_*)
- 
-}

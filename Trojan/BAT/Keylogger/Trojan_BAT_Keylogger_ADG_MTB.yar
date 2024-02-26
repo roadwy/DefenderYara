@@ -13,3 +13,21 @@ rule Trojan_BAT_Keylogger_ADG_MTB{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_Keylogger_ADG_MTB_2{
+	meta:
+		description = "Trojan:BAT/Keylogger.ADG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 10 00 09 00 00 04 00 "
+		
+	strings :
+		$a_80_0 = {61 6e 74 69 53 61 6e 64 62 6f 78 69 65 } //antiSandboxie  04 00 
+		$a_80_1 = {41 64 64 54 6f 41 75 74 6f 72 75 6e } //AddToAutorun  04 00 
+		$a_80_2 = {41 6e 74 69 56 69 72 74 75 61 6c 42 6f 78 } //AntiVirtualBox  04 00 
+		$a_80_3 = {41 6e 74 69 56 6d 57 61 72 65 } //AntiVmWare  04 00 
+		$a_80_4 = {41 6e 74 69 57 69 72 65 53 68 61 72 6b } //AntiWireShark  03 00 
+		$a_80_5 = {47 65 74 41 73 79 6e 63 4b 65 79 53 74 61 74 65 } //GetAsyncKeyState  03 00 
+		$a_80_6 = {67 65 74 44 65 76 69 63 65 73 } //getDevices  03 00 
+		$a_80_7 = {43 41 50 53 4c 4f 43 4b 4f 4e } //CAPSLOCKON  03 00 
+		$a_80_8 = {4d 6f 75 73 65 45 6e 74 65 72 } //MouseEnter  00 00 
+	condition:
+		any of ($a_*)
+ 
+}

@@ -4,7 +4,7 @@ rule VirTool_Win32_Tetanus_A_MTB{
 		description = "VirTool:Win32/Tetanus.A!MTB,SIGNATURE_TYPE_PEHSTR,07 00 07 00 07 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {2e 63 61 72 67 6f 2f 72 65 67 69 73 74 72 79 2f 73 72 63 2f 67 69 74 68 75 62 2e 63 6f 6d 2d 31 65 63 63 36 32 39 39 64 62 39 65 63 38 32 33 } //01 00  .cargo/registry/src/github.com-1ecc6299db9ec823
+		$a_01_0 = {2e 63 61 72 67 6f 2f 72 65 67 69 73 74 72 79 2f 73 72 63 2f } //01 00  .cargo/registry/src/
 		$a_01_1 = {41 67 65 6e 74 54 61 73 6b 63 6f 6d 6d 61 6e 64 } //01 00  AgentTaskcommand
 		$a_01_2 = {62 61 63 6b 67 72 6f 75 6e 64 5f 74 61 73 6b 73 } //01 00  background_tasks
 		$a_01_3 = {6b 69 6c 6c 61 62 6c 65 } //01 00  killable

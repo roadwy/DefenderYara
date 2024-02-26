@@ -1,6 +1,19 @@
 
 rule TrojanDownloader_O97M_Obfuse_TRV_MTB{
 	meta:
+		description = "TrojanDownloader:O97M/Obfuse.TRV!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {53 68 65 6c 6c 20 22 65 78 70 6c 6f 72 65 72 20 90 02 0f 2e 68 74 61 22 2c 20 76 62 4e 6f 72 6d 61 6c 46 6f 63 75 73 90 00 } //01 00 
+		$a_03_1 = {4f 70 65 6e 20 22 90 02 0f 2e 68 74 61 22 20 26 20 62 75 74 74 6f 6e 52 65 66 65 72 65 6e 63 65 20 46 6f 72 20 4f 75 74 70 75 74 20 41 73 20 23 90 00 } //01 00 
+		$a_01_2 = {50 72 69 6e 74 20 23 31 2c 20 41 63 74 69 76 65 44 6f 63 75 6d 65 6e 74 2e 52 61 6e 67 65 2e 54 65 78 74 } //01 00  Print #1, ActiveDocument.Range.Text
+		$a_01_3 = {53 75 62 20 61 75 74 6f 6f 70 65 6e 28 29 } //00 00  Sub autoopen()
+	condition:
+		any of ($a_*)
+ 
+}
+rule TrojanDownloader_O97M_Obfuse_TRV_MTB_2{
+	meta:
 		description = "TrojanDownloader:O97M/Obfuse.TRV!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 06 00 00 01 00 "
 		
 	strings :

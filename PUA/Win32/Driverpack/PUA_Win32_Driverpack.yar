@@ -1,7 +1,7 @@
 
-rule PUA_Win32_Driverpack{
+rule PUA_Win32_DriverPack{
 	meta:
-		description = "PUA:Win32/Driverpack,SIGNATURE_TYPE_CMDHSTR_EXT,04 00 04 00 03 00 00 03 00 "
+		description = "PUA:Win32/DriverPack,SIGNATURE_TYPE_CMDHSTR_EXT,04 00 04 00 03 00 00 03 00 "
 		
 	strings :
 		$a_00_0 = {6d 00 73 00 68 00 74 00 61 00 2e 00 65 00 78 00 65 00 00 00 } //03 00 

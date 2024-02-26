@@ -13,6 +13,27 @@ rule Trojan_BAT_FormBook_NL_MTB{
 }
 rule Trojan_BAT_FormBook_NL_MTB_2{
 	meta:
+		description = "Trojan:BAT/FormBook.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
+		
+	strings :
+		$a_01_0 = {1f 10 28 e5 00 00 06 9c 11 05 20 05 60 ec 78 5a 20 9d 8b cb 32 61 38 50 ff ff ff 11 05 20 30 f3 e6 9a 5a 20 86 d2 1d 9c 61 38 3d ff ff ff 07 13 04 11 05 20 16 14 3e b6 5a 20 a8 fc db 2d 61 38 27 ff ff ff 08 18 58 0c 11 05 20 db 8e 0a 99 5a 20 73 be cb 32 61 38 10 ff ff ff 08 06 fe 04 0d 20 9d 6c 0b a0 38 01 ff ff ff 06 18 5b 8d 62 00 00 01 0b 11 05 20 df 10 fe 24 5a 20 cd 6f d2 94 61 38 e5 fe ff ff } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_FormBook_NL_MTB_3{
+	meta:
+		description = "Trojan:BAT/FormBook.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {1a 5e 45 04 00 00 00 32 00 00 00 02 00 00 00 dc ff ff ff 1d 00 00 00 2b 30 02 02 7b 41 00 00 04 28 a3 00 00 06 06 20 6f 2c ad 05 5a 20 33 be 5e 53 61 2b c4 } //01 00 
+		$a_01_1 = {20 b5 88 b2 41 61 25 0d 1a 5e 45 04 00 00 00 37 00 00 00 02 00 00 00 1f 00 00 00 dc ff ff ff 2b 35 07 08 30 08 20 16 b9 65 13 25 2b 06 20 fc 1f 01 55 25 26 09 20 ff 4e 0a 0b 5a 61 2b c2 06 16 07 28 6a 04 00 06 0a 09 20 46 7d 3d 58 5a 20 99 34 c6 7b 61 2b aa } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_FormBook_NL_MTB_4{
+	meta:
 		description = "Trojan:BAT/FormBook.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 06 00 00 0a 00 "
 		
 	strings :

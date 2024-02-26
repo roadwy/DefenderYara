@@ -53,6 +53,20 @@ rule Trojan_BAT_AgentTesla_ED_MTB_4{
 }
 rule Trojan_BAT_AgentTesla_ED_MTB_5{
 	meta:
+		description = "Trojan:BAT/AgentTesla.ED!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {fa 01 33 00 16 00 00 01 00 00 00 9f 00 00 00 5c 00 00 00 7f 02 00 00 c8 02 00 00 29 02 } //01 00 
+		$a_01_1 = {53 00 31 00 54 00 31 00 55 00 31 00 56 00 34 00 57 00 34 00 58 00 } //01 00  S1T1U1V4W4X
+		$a_01_2 = {53 00 61 00 6e 00 66 00 6f 00 72 00 64 00 2e 00 4d 00 75 00 6c 00 74 00 69 00 6d 00 65 00 64 00 69 00 61 00 2e 00 4d 00 69 00 64 00 69 00 2e 00 50 00 72 00 6f 00 70 00 65 00 72 00 74 00 69 00 65 00 73 00 2e 00 52 00 65 00 73 00 6f 00 75 00 72 00 63 00 65 00 73 00 } //01 00  Sanford.Multimedia.Midi.Properties.Resources
+		$a_01_3 = {4d 75 6c 74 69 6d 65 64 69 61 2e 4d 69 64 69 2e 55 49 2e 44 65 76 69 63 65 } //01 00  Multimedia.Midi.UI.Device
+		$a_01_4 = {45 6e 61 62 6c 65 56 69 73 75 61 6c 53 74 79 6c 65 73 } //00 00  EnableVisualStyles
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_ED_MTB_6{
+	meta:
 		description = "Trojan:BAT/AgentTesla.ED!MTB,SIGNATURE_TYPE_PEHSTR_EXT,24 00 24 00 0a 00 00 0a 00 "
 		
 	strings :
@@ -70,7 +84,7 @@ rule Trojan_BAT_AgentTesla_ED_MTB_5{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_ED_MTB_6{
+rule Trojan_BAT_AgentTesla_ED_MTB_7{
 	meta:
 		description = "Trojan:BAT/AgentTesla.ED!MTB,SIGNATURE_TYPE_PEHSTR_EXT,18 00 18 00 11 00 00 14 00 "
 		

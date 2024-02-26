@@ -1,7 +1,7 @@
 
-rule Trojan_Win32_zbot_B_MTB{
+rule Trojan_Win32_Zbot_B_MTB{
 	meta:
-		description = "Trojan:Win32/zbot.B!MTB,SIGNATURE_TYPE_PEHSTR,03 00 03 00 03 00 00 01 00 "
+		description = "Trojan:Win32/Zbot.B!MTB,SIGNATURE_TYPE_PEHSTR,03 00 03 00 03 00 00 01 00 "
 		
 	strings :
 		$a_01_0 = {b8 10 00 00 00 8a 0c 37 30 0e 46 48 75 f7 } //01 00 

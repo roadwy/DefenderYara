@@ -13,7 +13,7 @@ rule Trojan_Win32_Corebot_A{
 		$a_01_6 = {63 6f 72 65 2e 64 67 61 2e 75 72 6c 5f 70 61 74 68 } //01 00  core.dga.url_path
 		$a_01_7 = {63 6f 72 65 2e 73 65 72 76 65 72 5f 6b 65 79 } //01 00  core.server_key
 		$a_01_8 = {70 6f 77 65 72 73 68 65 6c 6c 2e 65 78 65 20 2d 4e 6f 6e 49 6e 74 65 72 61 63 74 69 76 65 20 2d 4e 6f 50 72 6f 66 69 6c 65 20 2d 4e 6f 4c 6f 67 6f 20 2d 45 78 65 63 75 74 69 6f 6e 50 6f 6c 69 63 79 20 55 6e 72 65 73 74 72 69 63 74 65 64 20 2d 46 69 6c 65 20 22 25 73 22 20 3e 20 22 25 73 22 } //00 00  powershell.exe -NonInteractive -NoProfile -NoLogo -ExecutionPolicy Unrestricted -File "%s" > "%s"
-		$a_00_9 = {87 10 00 00 } //e8 6e 
+		$a_00_9 = {5d 04 00 00 } //0e 6a 
 	condition:
 		any of ($a_*)
  

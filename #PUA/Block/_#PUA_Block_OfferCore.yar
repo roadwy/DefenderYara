@@ -48,6 +48,22 @@ rule _#PUA_Block_OfferCore_4{
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		
 	strings :
+		$a_80_0 = {53 6f 66 74 6f 6e 69 63 5f 44 4c 4d } //Softonic_DLM  01 00 
+		$a_80_1 = {47 45 54 41 44 53 45 52 56 45 52 52 45 53 50 4f 4e 53 45 } //GETADSERVERRESPONSE  01 00 
+		$a_80_2 = {50 41 47 45 4f 46 46 45 52 43 52 45 41 54 45 } //PAGEOFFERCREATE  01 00 
+		$a_80_3 = {50 41 47 45 4f 46 46 45 52 41 43 54 49 56 41 54 45 } //PAGEOFFERACTIVATE  01 00 
+		$a_80_4 = {47 45 54 4f 46 46 45 52 49 4e 44 45 58 42 59 50 41 47 45 } //GETOFFERINDEXBYPAGE  01 00 
+		$a_80_5 = {49 53 54 48 45 4c 41 53 54 4f 46 46 45 52 50 41 47 45 49 46 41 4e 59 } //ISTHELASTOFFERPAGEIFANY  01 00 
+		$a_80_6 = {50 41 47 45 4f 46 46 45 52 44 45 49 4e 49 54 49 41 4c 49 5a 45 } //PAGEOFFERDEINITIALIZE  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_OfferCore_5{
+	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
+		
+	strings :
 		$a_80_0 = {63 6f 6e 74 72 6f 6c 2e 6b 6f 63 68 61 76 61 2e 63 6f 6d 2f 76 31 2f 63 70 69 2f 63 6c 69 63 6b } //control.kochava.com/v1/cpi/click  01 00 
 		$a_80_1 = {64 31 70 71 6e 36 6d 35 79 77 6e 77 33 61 2e 63 6c 6f 75 64 66 72 6f 6e 74 2e 6e 65 74 } //d1pqn6m5ywnw3a.cloudfront.net  01 00 
 		$a_80_2 = {47 45 54 4f 46 46 45 52 53 41 52 52 41 59 } //GETOFFERSARRAY  01 00 
@@ -59,7 +75,7 @@ rule _#PUA_Block_OfferCore_4{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_OfferCore_5{
+rule _#PUA_Block_OfferCore_6{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 01 00 "
 		
@@ -77,7 +93,7 @@ rule _#PUA_Block_OfferCore_5{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_OfferCore_6{
+rule _#PUA_Block_OfferCore_7{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 01 00 "
 		
@@ -95,7 +111,7 @@ rule _#PUA_Block_OfferCore_6{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_OfferCore_7{
+rule _#PUA_Block_OfferCore_8{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 0a 00 00 01 00 "
 		

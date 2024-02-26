@@ -1,6 +1,16 @@
 
 rule Trojan_Win64_Cobaltstrike_DL_MTB{
 	meta:
+		description = "Trojan:Win64/Cobaltstrike.DL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
+		
+	strings :
+		$a_01_0 = {33 c9 4d 8d 40 01 49 83 fa 15 49 0f 45 ca 41 ff c1 42 0f b6 04 19 4c 8d 51 01 41 30 40 ff 41 81 f9 cc 01 00 00 72 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win64_Cobaltstrike_DL_MTB_2{
+	meta:
 		description = "Trojan:Win64/Cobaltstrike.DL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 03 00 00 0a 00 "
 		
 	strings :
@@ -11,7 +21,7 @@ rule Trojan_Win64_Cobaltstrike_DL_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win64_Cobaltstrike_DL_MTB_2{
+rule Trojan_Win64_Cobaltstrike_DL_MTB_3{
 	meta:
 		description = "Trojan:Win64/Cobaltstrike.DL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 01 00 "
 		

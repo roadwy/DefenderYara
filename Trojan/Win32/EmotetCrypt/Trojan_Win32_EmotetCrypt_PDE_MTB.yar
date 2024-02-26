@@ -9,3 +9,19 @@ rule Trojan_Win32_EmotetCrypt_PDE_MTB{
 		any of ($a_*)
  
 }
+rule Trojan_Win32_EmotetCrypt_PDE_MTB_2{
+	meta:
+		description = "Trojan:Win32/EmotetCrypt.PDE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
+		
+	strings :
+		$a_81_0 = {5a 6f 6d 62 69 66 79 41 63 74 43 74 78 } //01 00  ZombifyActCtx
+		$a_81_1 = {4a 65 74 52 6f 6c 6c 62 61 63 6b } //01 00  JetRollback
+		$a_81_2 = {42 79 62 69 67 43 74 49 58 54 65 34 35 34 74 } //01 00  BybigCtIXTe454t
+		$a_81_3 = {47 65 74 55 73 65 72 47 65 6f 49 44 } //01 00  GetUserGeoID
+		$a_81_4 = {50 6f 73 74 65 64 } //01 00  Posted
+		$a_81_5 = {6d 61 69 6c 63 6f 6d } //01 00  mailcom
+		$a_81_6 = {63 6f 6d 76 69 65 77 } //00 00  comview
+	condition:
+		any of ($a_*)
+ 
+}

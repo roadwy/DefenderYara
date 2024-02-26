@@ -85,7 +85,7 @@ rule Adware_Win32_WebCake_7{
 		$a_01_1 = {66 6a 6f 69 6a 64 61 6e 68 61 69 66 6c 68 69 62 6b 6c 6a 65 6b 6c 63 67 68 63 6d 6d 66 66 66 68 } //01 00  fjoijdanhaiflhibkljeklcghcmmfffh
 		$a_01_2 = {75 72 6c 73 5f 74 6f 5f 72 65 73 74 6f 72 65 5f 6f 6e 5f 73 74 61 72 74 75 70 22 3a 20 5b 20 22 68 74 74 70 3a 2f 2f 73 65 61 72 63 68 2e 67 65 74 77 65 62 63 61 6b 65 2e 63 6f 6d 2f 22 20 5d 7d } //01 00  urls_to_restore_on_startup": [ "http://search.getwebcake.com/" ]}
 		$a_01_3 = {57 65 62 43 61 6b 65 20 4c 6f 75 64 20 49 6e 73 74 61 6c 6c 65 72 20 28 4d 61 69 6e 29 5c 42 69 6e 61 72 69 65 73 5c 57 65 62 43 61 6b 65 43 68 72 6f 6d 65 57 61 74 63 68 2e 70 64 62 } //00 00  WebCake Loud Installer (Main)\Binaries\WebCakeChromeWatch.pdb
-		$a_00_4 = {60 09 } //00 00  ॠ
+		$a_00_4 = {7e 15 } //00 00  ᕾ
 	condition:
 		any of ($a_*)
  

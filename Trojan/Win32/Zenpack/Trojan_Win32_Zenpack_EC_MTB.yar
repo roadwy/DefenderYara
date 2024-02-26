@@ -1,10 +1,11 @@
 
 rule Trojan_Win32_Zenpack_EC_MTB{
 	meta:
-		description = "Trojan:Win32/Zenpack.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 01 00 00 07 00 "
+		description = "Trojan:Win32/Zenpack.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 03 00 "
 		
 	strings :
-		$a_03_0 = {66 6a 00 2d 83 11 00 00 50 ff 14 24 89 d9 89 0d 90 01 04 89 f1 89 0d 90 01 04 89 3d 90 01 04 39 3d 90 01 04 74 bb 90 00 } //00 00 
+		$a_01_0 = {89 20 83 f2 07 42 01 d0 eb 30 83 f0 04 42 } //02 00 
+		$a_03_1 = {31 18 83 e8 04 01 d0 8d 05 90 01 04 31 30 e9 ab fa ff ff c3 90 00 } //00 00 
 	condition:
 		any of ($a_*)
  
@@ -14,12 +15,22 @@ rule Trojan_Win32_Zenpack_EC_MTB_2{
 		description = "Trojan:Win32/Zenpack.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 01 00 00 07 00 "
 		
 	strings :
-		$a_03_0 = {83 ea 05 89 e8 50 8f 05 90 01 04 e9 e6 f5 ff ff c3 8d 05 90 01 04 31 18 01 d0 31 c2 89 f0 50 8f 05 90 01 04 31 3d 90 01 04 eb d1 90 00 } //00 00 
+		$a_03_0 = {66 6a 00 2d 83 11 00 00 50 ff 14 24 89 d9 89 0d 90 01 04 89 f1 89 0d 90 01 04 89 3d 90 01 04 39 3d 90 01 04 74 bb 90 00 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_Win32_Zenpack_EC_MTB_3{
+	meta:
+		description = "Trojan:Win32/Zenpack.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 01 00 00 07 00 "
+		
+	strings :
+		$a_03_0 = {83 ea 05 89 e8 50 8f 05 90 01 04 e9 e6 f5 ff ff c3 8d 05 90 01 04 31 18 01 d0 31 c2 89 f0 50 8f 05 90 01 04 31 3d 90 01 04 eb d1 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Zenpack_EC_MTB_4{
 	meta:
 		description = "Trojan:Win32/Zenpack.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		
@@ -34,7 +45,7 @@ rule Trojan_Win32_Zenpack_EC_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Zenpack_EC_MTB_4{
+rule Trojan_Win32_Zenpack_EC_MTB_5{
 	meta:
 		description = "Trojan:Win32/Zenpack.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		

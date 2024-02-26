@@ -1,6 +1,19 @@
 
 rule Trojan_BAT_AgentTesla_EA_MTB{
 	meta:
+		description = "Trojan:BAT/AgentTesla.EA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 04 00 00 03 00 "
+		
+	strings :
+		$a_01_0 = {01 57 94 02 28 09 02 00 00 00 fa 25 33 00 16 00 00 01 00 00 00 1b 00 00 00 04 } //01 00 
+		$a_01_1 = {41 70 70 44 6f 6d 61 69 6e } //01 00  AppDomain
+		$a_01_2 = {67 65 74 5f 43 75 72 72 65 6e 74 44 6f 6d 61 69 6e } //01 00  get_CurrentDomain
+		$a_01_3 = {67 65 74 5f 42 61 73 65 44 69 72 65 63 74 6f 72 79 } //00 00  get_BaseDirectory
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_EA_MTB_2{
+	meta:
 		description = "Trojan:BAT/AgentTesla.EA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 03 00 00 0a 00 "
 		
 	strings :
@@ -11,7 +24,7 @@ rule Trojan_BAT_AgentTesla_EA_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_EA_MTB_2{
+rule Trojan_BAT_AgentTesla_EA_MTB_3{
 	meta:
 		description = "Trojan:BAT/AgentTesla.EA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,21 00 21 00 0f 00 00 14 00 "
 		
@@ -35,7 +48,7 @@ rule Trojan_BAT_AgentTesla_EA_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_EA_MTB_3{
+rule Trojan_BAT_AgentTesla_EA_MTB_4{
 	meta:
 		description = "Trojan:BAT/AgentTesla.EA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,18 00 18 00 11 00 00 14 00 "
 		

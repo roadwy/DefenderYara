@@ -1,6 +1,16 @@
 
 rule Trojan_BAT_RedLine_MH_MTB{
 	meta:
+		description = "Trojan:BAT/RedLine.MH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {11 09 11 03 16 11 03 8e 69 6f 90 01 03 0a 13 06 38 90 01 04 14 13 06 20 01 00 00 00 28 90 01 03 06 3a 90 01 04 26 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_RedLine_MH_MTB_2{
+	meta:
 		description = "Trojan:BAT/RedLine.MH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 03 00 00 05 00 "
 		
 	strings :
@@ -11,7 +21,7 @@ rule Trojan_BAT_RedLine_MH_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_RedLine_MH_MTB_2{
+rule Trojan_BAT_RedLine_MH_MTB_3{
 	meta:
 		description = "Trojan:BAT/RedLine.MH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 06 00 00 0a 00 "
 		

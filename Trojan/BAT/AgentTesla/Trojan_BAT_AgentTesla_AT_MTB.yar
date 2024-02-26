@@ -45,6 +45,16 @@ rule Trojan_BAT_AgentTesla_AT_MTB_4{
 }
 rule Trojan_BAT_AgentTesla_AT_MTB_5{
 	meta:
+		description = "Trojan:BAT/AgentTesla.AT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {0b 2b 4b 07 06 8e 69 5d 13 05 07 11 04 6f 90 01 03 0a 5d 13 08 06 11 05 91 13 09 11 04 11 08 6f 90 01 03 0a 13 0a 02 06 07 28 90 01 03 06 13 0b 02 11 09 11 0a 11 0b 28 90 01 03 06 13 0c 06 11 05 02 11 0c 28 90 01 03 06 9c 07 17 59 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_AT_MTB_6{
+	meta:
 		description = "Trojan:BAT/AgentTesla.AT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 02 00 "
 		
 	strings :
@@ -54,7 +64,20 @@ rule Trojan_BAT_AgentTesla_AT_MTB_5{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_AT_MTB_6{
+rule Trojan_BAT_AgentTesla_AT_MTB_7{
+	meta:
+		description = "Trojan:BAT/AgentTesla.AT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {4c 69 6d 65 5f 44 72 6f 70 70 65 72 5f 31 } //01 00  Lime_Dropper_1
+		$a_01_1 = {4d 4e 4a 4b 6f 6c 4b 38 37 2e 70 64 62 } //01 00  MNJKolK87.pdb
+		$a_01_2 = {44 6f 77 6e 6c 6f 61 64 50 61 79 6c 6f 61 64 } //01 00  DownloadPayload
+		$a_01_3 = {66 36 66 61 38 38 36 64 2d 35 36 38 39 2d 34 32 34 33 2d 38 38 39 38 2d 36 32 37 61 37 39 62 34 35 36 36 31 } //00 00  f6fa886d-5689-4243-8898-627a79b45661
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_AT_MTB_8{
 	meta:
 		description = "Trojan:BAT/AgentTesla.AT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -65,7 +88,7 @@ rule Trojan_BAT_AgentTesla_AT_MTB_6{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_AT_MTB_7{
+rule Trojan_BAT_AgentTesla_AT_MTB_9{
 	meta:
 		description = "Trojan:BAT/AgentTesla.AT!MTB,SIGNATURE_TYPE_PEHSTR,03 00 03 00 03 00 00 01 00 "
 		

@@ -37,15 +37,14 @@ rule Trojan_Win64_IcedID_DG_MTB_3{
 }
 rule Trojan_Win64_IcedID_DG_MTB_4{
 	meta:
-		description = "Trojan:Win64/IcedID.DG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 06 00 00 03 00 "
+		description = "Trojan:Win64/IcedID.DG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 05 00 00 03 00 "
 		
 	strings :
 		$a_81_0 = {50 6c 75 67 69 6e 49 6e 69 74 } //03 00  PluginInit
 		$a_81_1 = {41 66 74 70 72 6f 71 73 43 68 70 70 61 6f 71 74 55 63 61 64 64 67 63 78 } //03 00  AftproqsChppaoqtUcaddgcx
 		$a_81_2 = {46 66 61 71 78 6a 71 78 74 46 7a 6c 6b 6a 66 78 68 6b 6d 62 6b 64 6b } //03 00  FfaqxjqxtFzlkjfxhkmbkdk
 		$a_81_3 = {4f 68 61 78 65 72 6f 41 73 65 76 76 71 61 64 } //03 00  OhaxeroAsevvqad
-		$a_81_4 = {5a 67 62 67 6f 66 6e 56 76 78 74 73 79 61 70 71 78 62 67 } //03 00  ZgbgofnVvxtsyapqxbg
-		$a_81_5 = {5c 52 65 67 69 73 74 72 79 5c 4d 61 63 68 69 6e 65 5c 53 79 73 74 65 6d 5c 43 75 72 72 65 6e 74 43 6f 6e 74 72 6f 6c 53 65 74 5c 53 65 72 76 69 63 65 73 5c 4d 70 44 72 69 76 65 72 } //00 00  \Registry\Machine\System\CurrentControlSet\Services\MpDriver
+		$a_81_4 = {5a 67 62 67 6f 66 6e 56 76 78 74 73 79 61 70 71 78 62 67 } //00 00  ZgbgofnVvxtsyapqxbg
 	condition:
 		any of ($a_*)
  

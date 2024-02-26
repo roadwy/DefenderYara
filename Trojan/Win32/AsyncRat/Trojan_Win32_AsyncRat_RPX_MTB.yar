@@ -4,12 +4,22 @@ rule Trojan_Win32_AsyncRat_RPX_MTB{
 		description = "Trojan:Win32/AsyncRat.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_03_0 = {6a 40 68 00 10 00 00 ff 74 24 10 6a 00 ff 15 90 01 04 8b f0 85 f6 74 21 ff 74 24 08 ff 74 24 10 56 e8 1f 12 00 00 83 c4 0c ff d6 68 00 80 00 00 6a 00 56 ff 15 90 01 04 ff 74 24 0c e8 90 00 } //00 00 
+		$a_01_0 = {ba bf c0 f6 2a 30 10 40 49 0f 85 f6 ff ff ff e9 04 00 00 00 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_Win32_AsyncRat_RPX_MTB_2{
+	meta:
+		description = "Trojan:Win32/AsyncRat.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {6a 40 68 00 10 00 00 ff 74 24 10 6a 00 ff 15 90 01 04 8b f0 85 f6 74 21 ff 74 24 08 ff 74 24 10 56 e8 1f 12 00 00 83 c4 0c ff d6 68 00 80 00 00 6a 00 56 ff 15 90 01 04 ff 74 24 0c e8 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_AsyncRat_RPX_MTB_3{
 	meta:
 		description = "Trojan:Win32/AsyncRat.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -22,7 +32,7 @@ rule Trojan_Win32_AsyncRat_RPX_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_AsyncRat_RPX_MTB_3{
+rule Trojan_Win32_AsyncRat_RPX_MTB_4{
 	meta:
 		description = "Trojan:Win32/AsyncRat.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 0b 00 00 0a 00 "
 		

@@ -4,6 +4,21 @@ rule Ransom_MSIL_CryptoLocker_DC_MTB{
 		description = "Ransom:MSIL/CryptoLocker.DC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		
 	strings :
+		$a_81_0 = {58 42 75 6e 64 6c 65 72 54 6c 73 48 65 6c 70 65 72 2e 70 64 62 } //01 00  XBundlerTlsHelper.pdb
+		$a_81_1 = {47 68 6f 73 74 2e 65 78 65 } //01 00  Ghost.exe
+		$a_81_2 = {54 68 65 6d 69 64 61 } //01 00  Themida
+		$a_81_3 = {73 68 6f 77 69 6e 73 74 61 6e 63 65 } //01 00  showinstance
+		$a_81_4 = {64 65 61 63 74 69 76 61 74 65 } //01 00  deactivate
+		$a_81_5 = {53 6c 65 65 70 } //00 00  Sleep
+	condition:
+		any of ($a_*)
+ 
+}
+rule Ransom_MSIL_CryptoLocker_DC_MTB_2{
+	meta:
+		description = "Ransom:MSIL/CryptoLocker.DC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
+		
+	strings :
 		$a_81_0 = {65 72 61 77 6f 73 6e 61 72 2e 65 78 65 } //01 00  erawosnar.exe
 		$a_81_1 = {65 72 61 77 6f 73 6e 61 72 2e 67 2e 72 65 73 6f 75 72 63 65 73 } //01 00  erawosnar.g.resources
 		$a_81_2 = {43 72 65 61 74 65 45 6e 63 72 79 70 74 6f 72 } //01 00  CreateEncryptor

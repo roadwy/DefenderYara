@@ -1,6 +1,17 @@
 
 rule Trojan_Win32_Redline_GNQ_MTB{
 	meta:
+		description = "Trojan:Win32/Redline.GNQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 02 00 00 0a 00 "
+		
+	strings :
+		$a_03_0 = {ff 80 34 1e 90 01 01 68 90 01 04 68 90 01 04 e8 90 01 04 50 e8 90 01 04 80 04 1e 90 00 } //0a 00 
+		$a_03_1 = {ff 80 04 1e 90 01 01 83 c4 30 46 3b f7 0f 82 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Redline_GNQ_MTB_2{
+	meta:
 		description = "Trojan:Win32/Redline.GNQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 0a 00 "
 		
 	strings :

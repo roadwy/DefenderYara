@@ -4,6 +4,33 @@ rule Trojan_BAT_Small_EC_MTB{
 		description = "Trojan:BAT/Small.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
+		$a_81_0 = {56 6d 74 6b 52 32 56 72 4f 56 68 57 62 6d 73 39 } //01 00  VmtkR2VrOVhWbms9
+		$a_81_1 = {34 39 66 37 37 30 36 35 38 63 36 62 32 37 61 37 } //01 00  49f770658c6b27a7
+		$a_81_2 = {70 61 79 6c 6f 61 64 } //01 00  payload
+		$a_81_3 = {52 69 6a 6e 64 61 65 6c 4d 61 6e 61 67 65 64 } //01 00  RijndaelManaged
+		$a_81_4 = {53 79 6d 6d 65 74 72 69 63 41 6c 67 6f 72 69 74 68 6d } //00 00  SymmetricAlgorithm
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Small_EC_MTB_2{
+	meta:
+		description = "Trojan:BAT/Small.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_81_0 = {2f 43 6f 6d 6d 6f 6e 2f 73 6e 63 6e 78 77 75 74 64 68 77 78 2e 61 73 70 78 } //01 00  /Common/sncnxwutdhwx.aspx
+		$a_81_1 = {38 65 64 62 32 33 31 36 30 64 31 35 37 31 61 30 } //01 00  8edb23160d1571a0
+		$a_81_2 = {2f 43 6f 6d 6d 6f 6e 2f 75 79 69 73 67 68 67 6f 66 77 66 66 2e 61 73 70 78 } //01 00  /Common/uyisghgofwff.aspx
+		$a_81_3 = {48 74 74 70 53 65 72 76 65 72 55 74 69 6c 69 74 79 } //00 00  HttpServerUtility
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Small_EC_MTB_3{
+	meta:
+		description = "Trojan:BAT/Small.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
 		$a_81_0 = {43 6f 6d 6d 6f 6e 2f 6f 64 73 66 64 72 6f 6d 6d 65 63 6b 2e 61 73 70 78 } //01 00  Common/odsfdrommeck.aspx
 		$a_81_1 = {38 65 64 62 32 33 31 36 30 64 31 35 37 31 61 30 } //01 00  8edb23160d1571a0
 		$a_81_2 = {43 6f 6d 6d 6f 6e 2f 65 74 67 61 70 61 62 62 74 67 62 65 2e 61 73 70 78 } //01 00  Common/etgapabbtgbe.aspx
@@ -13,7 +40,7 @@ rule Trojan_BAT_Small_EC_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Small_EC_MTB_2{
+rule Trojan_BAT_Small_EC_MTB_4{
 	meta:
 		description = "Trojan:BAT/Small.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		

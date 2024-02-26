@@ -12,3 +12,17 @@ rule Ransom_MSIL_Filecoder_ARAE_MTB{
 		any of ($a_*)
  
 }
+rule Ransom_MSIL_Filecoder_ARAE_MTB_2{
+	meta:
+		description = "Ransom:MSIL/Filecoder.ARAE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 05 00 00 02 00 "
+		
+	strings :
+		$a_80_0 = {68 69 20 79 6f 75 20 61 72 65 20 68 61 63 6b 65 64 } //hi you are hacked  02 00 
+		$a_80_1 = {41 6c 6c 20 79 6f 75 72 20 66 69 6c 65 73 20 61 72 65 20 65 6e 63 72 79 70 74 65 64 } //All your files are encrypted  02 00 
+		$a_80_2 = {46 69 6c 65 20 65 6e 63 72 79 70 74 69 6f 6e 20 73 75 63 63 65 73 73 66 75 6c 21 } //File encryption successful!  02 00 
+		$a_01_3 = {45 6e 63 72 79 70 74 46 69 6c 65 } //02 00  EncryptFile
+		$a_01_4 = {52 43 34 45 6e 63 72 79 70 74 } //00 00  RC4Encrypt
+	condition:
+		any of ($a_*)
+ 
+}

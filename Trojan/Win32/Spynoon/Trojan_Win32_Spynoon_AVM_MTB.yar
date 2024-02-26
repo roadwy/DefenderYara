@@ -45,7 +45,7 @@ rule Trojan_Win32_Spynoon_AVM_MTB_3{
 }
 rule Trojan_Win32_Spynoon_AVM_MTB_4{
 	meta:
-		description = "Trojan:Win32/Spynoon.AVM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 01 00 "
+		description = "Trojan:Win32/Spynoon.AVM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 0b 00 00 01 00 "
 		
 	strings :
 		$a_81_0 = {53 68 65 6c 6c 5f 4e 6f 74 69 66 79 49 63 6f 6e } //01 00  Shell_NotifyIcon
@@ -58,8 +58,7 @@ rule Trojan_Win32_Spynoon_AVM_MTB_4{
 		$a_81_7 = {52 65 67 69 73 74 65 72 44 72 61 67 44 72 6f 70 } //01 00  RegisterDragDrop
 		$a_81_8 = {72 65 78 65 63 } //01 00  rexec
 		$a_81_9 = {4e 50 4c 6f 61 64 4e 61 6d 65 53 70 61 63 65 73 } //01 00  NPLoadNameSpaces
-		$a_81_10 = {72 72 65 73 76 70 6f 72 74 } //01 00  rresvport
-		$a_00_11 = {52 00 65 00 67 00 69 00 73 00 74 00 72 00 79 00 5c 00 4d 00 61 00 63 00 68 00 69 00 6e 00 65 00 5c 00 53 00 79 00 73 00 74 00 65 00 6d 00 5c 00 43 00 75 00 72 00 72 00 65 00 6e 00 74 00 43 00 6f 00 6e 00 74 00 72 00 6f 00 6c 00 53 00 65 00 74 00 5c 00 53 00 65 00 72 00 76 00 69 00 63 00 65 00 73 00 5c 00 4d 00 70 00 44 00 72 00 69 00 76 00 65 00 72 00 } //00 00  Registry\Machine\System\CurrentControlSet\Services\MpDriver
+		$a_81_10 = {72 72 65 73 76 70 6f 72 74 } //00 00  rresvport
 	condition:
 		any of ($a_*)
  

@@ -1,6 +1,19 @@
 
 rule Trojan_Win64_Icedid_EK_MTB{
 	meta:
+		description = "Trojan:Win64/Icedid.EK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {0f b6 04 01 8b 4c 24 04 eb } //01 00 
+		$a_01_1 = {33 c8 8b c1 eb } //01 00 
+		$a_01_2 = {48 63 0c 24 48 8b 94 24 80 00 00 00 e9 } //01 00 
+		$a_01_3 = {88 04 0a e9 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win64_Icedid_EK_MTB_2{
+	meta:
 		description = "Trojan:Win64/Icedid.EK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 04 00 "
 		
 	strings :
@@ -10,7 +23,7 @@ rule Trojan_Win64_Icedid_EK_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win64_Icedid_EK_MTB_2{
+rule Trojan_Win64_Icedid_EK_MTB_3{
 	meta:
 		description = "Trojan:Win64/Icedid.EK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -24,7 +37,7 @@ rule Trojan_Win64_Icedid_EK_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win64_Icedid_EK_MTB_3{
+rule Trojan_Win64_Icedid_EK_MTB_4{
 	meta:
 		description = "Trojan:Win64/Icedid.EK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -38,7 +51,7 @@ rule Trojan_Win64_Icedid_EK_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_Win64_Icedid_EK_MTB_4{
+rule Trojan_Win64_Icedid_EK_MTB_5{
 	meta:
 		description = "Trojan:Win64/Icedid.EK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -51,7 +64,7 @@ rule Trojan_Win64_Icedid_EK_MTB_4{
 		any of ($a_*)
  
 }
-rule Trojan_Win64_Icedid_EK_MTB_5{
+rule Trojan_Win64_Icedid_EK_MTB_6{
 	meta:
 		description = "Trojan:Win64/Icedid.EK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -65,7 +78,7 @@ rule Trojan_Win64_Icedid_EK_MTB_5{
 		any of ($a_*)
  
 }
-rule Trojan_Win64_Icedid_EK_MTB_6{
+rule Trojan_Win64_Icedid_EK_MTB_7{
 	meta:
 		description = "Trojan:Win64/Icedid.EK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		

@@ -34,24 +34,13 @@ rule Trojan_BAT_Masslogger_VN_MTB_4{
 		description = "Trojan:BAT/Masslogger.VN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 01 00 "
 		
 	strings :
-		$a_03_0 = {01 25 16 7e 90 01 03 04 a2 25 17 7e 90 01 03 04 a2 25 18 72 90 01 03 70 a2 80 90 01 03 04 06 20 90 01 04 5a 20 90 01 04 61 2b 90 00 } //01 00 
-		$a_03_1 = {01 25 16 7e 90 01 03 04 a2 25 17 7e 90 01 03 04 a2 25 18 72 90 01 03 70 a2 80 90 01 03 04 2a 90 00 } //00 00 
-	condition:
-		any of ($a_*)
- 
-}
-rule Trojan_BAT_Masslogger_VN_MTB_5{
-	meta:
-		description = "Trojan:BAT/Masslogger.VN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 01 00 "
-		
-	strings :
 		$a_02_0 = {04 0b 19 8d 90 01 03 01 25 16 06 a2 25 17 07 a2 25 18 20 90 01 04 28 90 01 03 06 a2 73 90 01 03 06 26 2a 90 09 0a 00 7e 90 01 03 04 0a 7e 90 00 } //01 00 
 		$a_03_1 = {0b 14 0c 19 8d 90 01 03 01 25 16 06 a2 25 17 07 a2 25 18 72 90 01 03 70 a2 73 90 01 03 06 0d 2a 90 09 0b 00 7e 90 01 03 04 0a 7e 90 01 03 04 90 00 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Masslogger_VN_MTB_6{
+rule Trojan_BAT_Masslogger_VN_MTB_5{
 	meta:
 		description = "Trojan:BAT/Masslogger.VN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 06 00 00 01 00 "
 		

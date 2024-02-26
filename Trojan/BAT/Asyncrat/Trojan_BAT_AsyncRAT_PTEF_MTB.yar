@@ -1,0 +1,11 @@
+
+rule Trojan_BAT_AsyncRAT_PTEF_MTB{
+	meta:
+		description = "Trojan:BAT/AsyncRAT.PTEF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
+		
+	strings :
+		$a_03_0 = {38 ed fd ff ff 12 01 28 90 01 01 00 00 0a 28 90 01 01 03 00 06 13 0a 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

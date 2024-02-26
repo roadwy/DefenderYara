@@ -13,6 +13,18 @@ rule HackTool_Win32_Keygen{
 }
 rule HackTool_Win32_Keygen_2{
 	meta:
+		description = "HackTool:Win32/Keygen,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {43 6f 64 65 20 61 6e 64 20 4b 65 79 67 65 6e } //Code and Keygen  01 00 
+		$a_80_1 = {63 72 69 6d 69 6e 61 6c 6c 79 20 69 6e 73 61 6e 65 } //criminally insane  01 00 
+		$a_80_2 = {47 46 58 3a 20 6b 52 38 56 69 54 79 2f 43 52 4f } //GFX: kR8ViTy/CRO  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule HackTool_Win32_Keygen_3{
+	meta:
 		description = "HackTool:Win32/Keygen,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 05 00 00 02 00 "
 		
 	strings :
@@ -25,7 +37,7 @@ rule HackTool_Win32_Keygen_2{
 		any of ($a_*)
  
 }
-rule HackTool_Win32_Keygen_3{
+rule HackTool_Win32_Keygen_4{
 	meta:
 		description = "HackTool:Win32/Keygen,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 02 00 "
 		
@@ -39,7 +51,7 @@ rule HackTool_Win32_Keygen_3{
 		any of ($a_*)
  
 }
-rule HackTool_Win32_Keygen_4{
+rule HackTool_Win32_Keygen_5{
 	meta:
 		description = "HackTool:Win32/Keygen,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -53,7 +65,7 @@ rule HackTool_Win32_Keygen_4{
 		any of ($a_*)
  
 }
-rule HackTool_Win32_Keygen_5{
+rule HackTool_Win32_Keygen_6{
 	meta:
 		description = "HackTool:Win32/Keygen,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		
@@ -68,7 +80,7 @@ rule HackTool_Win32_Keygen_5{
 		any of ($a_*)
  
 }
-rule HackTool_Win32_Keygen_6{
+rule HackTool_Win32_Keygen_7{
 	meta:
 		description = "HackTool:Win32/Keygen,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 01 00 "
 		
@@ -84,7 +96,7 @@ rule HackTool_Win32_Keygen_6{
 		any of ($a_*)
  
 }
-rule HackTool_Win32_Keygen_7{
+rule HackTool_Win32_Keygen_8{
 	meta:
 		description = "HackTool:Win32/Keygen,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 06 00 00 01 00 "
 		
@@ -99,7 +111,7 @@ rule HackTool_Win32_Keygen_7{
 		any of ($a_*)
  
 }
-rule HackTool_Win32_Keygen_8{
+rule HackTool_Win32_Keygen_9{
 	meta:
 		description = "HackTool:Win32/Keygen,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 01 00 "
 		
@@ -113,7 +125,7 @@ rule HackTool_Win32_Keygen_8{
 		any of ($a_*)
  
 }
-rule HackTool_Win32_Keygen_9{
+rule HackTool_Win32_Keygen_10{
 	meta:
 		description = "HackTool:Win32/Keygen,SIGNATURE_TYPE_PEHSTR,04 00 04 00 03 00 00 03 00 "
 		
@@ -125,7 +137,7 @@ rule HackTool_Win32_Keygen_9{
 		any of ($a_*)
  
 }
-rule HackTool_Win32_Keygen_10{
+rule HackTool_Win32_Keygen_11{
 	meta:
 		description = "HackTool:Win32/Keygen,SIGNATURE_TYPE_PEHSTR,05 00 05 00 04 00 00 01 00 "
 		
@@ -138,7 +150,7 @@ rule HackTool_Win32_Keygen_10{
 		any of ($a_*)
  
 }
-rule HackTool_Win32_Keygen_11{
+rule HackTool_Win32_Keygen_12{
 	meta:
 		description = "HackTool:Win32/Keygen,SIGNATURE_TYPE_PEHSTR,05 00 05 00 05 00 00 01 00 "
 		
@@ -152,7 +164,7 @@ rule HackTool_Win32_Keygen_11{
 		any of ($a_*)
  
 }
-rule HackTool_Win32_Keygen_12{
+rule HackTool_Win32_Keygen_13{
 	meta:
 		description = "HackTool:Win32/Keygen,SIGNATURE_TYPE_PEHSTR,05 00 05 00 05 00 00 01 00 "
 		

@@ -9,3 +9,16 @@ rule Trojan_BAT_Dnoper_ADN_MTB{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_Dnoper_ADN_MTB_2{
+	meta:
+		description = "Trojan:BAT/Dnoper.ADN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 02 00 "
+		
+	strings :
+		$a_01_0 = {0b 07 72 21 9d 07 70 28 1d 00 00 0a 0b 07 72 ec 9d 07 70 28 1d 00 00 0a 0b 07 28 1e 00 00 0a 0a 1f 1a 28 1f 00 00 0a 72 9f 9e 07 70 28 1d 00 00 0a 0c 08 06 } //01 00 
+		$a_01_1 = {53 00 48 00 20 00 46 00 49 00 4c 00 45 00 2e 00 65 00 78 00 65 00 } //01 00  SH FILE.exe
+		$a_01_2 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //01 00  FromBase64String
+		$a_01_3 = {47 65 74 46 6f 6c 64 65 72 50 61 74 68 } //00 00  GetFolderPath
+	condition:
+		any of ($a_*)
+ 
+}

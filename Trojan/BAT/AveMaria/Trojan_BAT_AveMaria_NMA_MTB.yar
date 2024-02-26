@@ -21,3 +21,15 @@ rule Trojan_BAT_AveMaria_NMA_MTB_2{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_AveMaria_NMA_MTB_3{
+	meta:
+		description = "Trojan:BAT/AveMaria.NMA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {28 04 00 00 0a 6f 90 01 03 0a 20 90 01 03 00 7e 90 01 03 04 7b 90 01 03 04 3a 90 01 03 ff 26 20 90 01 03 00 38 90 01 03 ff 73 90 01 03 0a 13 0b 20 90 01 03 00 fe 90 01 02 00 38 90 01 03 ff 00 11 0b 11 01 17 73 90 01 03 0a 90 00 } //01 00 
+		$a_01_1 = {51 55 4f 54 41 54 49 4f 4e 4c 49 53 54 46 4f 52 54 55 52 4b 4d 45 4e 49 53 54 41 4e 2e 44 69 63 74 69 6f 6e 61 72 69 65 73 } //01 00  QUOTATIONLISTFORTURKMENISTAN.Dictionaries
+		$a_01_2 = {53 6c 7a 73 6d 71 61 72 2e 50 72 6f 70 65 72 74 69 65 73 2e 52 65 73 6f 75 72 63 65 73 2e 72 65 73 6f 75 72 63 65 73 } //00 00  Slzsmqar.Properties.Resources.resources
+	condition:
+		any of ($a_*)
+ 
+}

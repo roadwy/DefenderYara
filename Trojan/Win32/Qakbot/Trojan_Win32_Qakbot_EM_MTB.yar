@@ -1,10 +1,13 @@
 
 rule Trojan_Win32_Qakbot_EM_MTB{
 	meta:
-		description = "Trojan:Win32/Qakbot.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 01 00 00 06 00 "
+		description = "Trojan:Win32/Qakbot.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {8b cb 83 c6 04 0b cf 0b 4c 24 30 0b d1 8b cd 89 90 a8 00 00 00 2b 48 0c 69 c9 4c 03 00 00 3b f1 72 de } //00 00 
+		$a_01_0 = {8b 45 f4 0f b6 4c 05 } //01 00 
+		$a_01_1 = {f7 f6 0f b6 44 15 } //01 00 
+		$a_01_2 = {33 c8 8b 45 } //01 00 
+		$a_01_3 = {88 4c 05 a4 e9 } //00 00 
 	condition:
 		any of ($a_*)
  
@@ -14,12 +17,22 @@ rule Trojan_Win32_Qakbot_EM_MTB_2{
 		description = "Trojan:Win32/Qakbot.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 01 00 00 06 00 "
 		
 	strings :
-		$a_03_0 = {03 d8 6a 00 e8 90 01 04 2b d8 a1 90 01 04 33 18 89 1d 90 01 04 a1 90 01 04 8b 15 90 01 04 89 10 90 00 } //00 00 
+		$a_01_0 = {8b cb 83 c6 04 0b cf 0b 4c 24 30 0b d1 8b cd 89 90 a8 00 00 00 2b 48 0c 69 c9 4c 03 00 00 3b f1 72 de } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_Win32_Qakbot_EM_MTB_3{
+	meta:
+		description = "Trojan:Win32/Qakbot.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 01 00 00 06 00 "
+		
+	strings :
+		$a_03_0 = {03 d8 6a 00 e8 90 01 04 2b d8 a1 90 01 04 33 18 89 1d 90 01 04 a1 90 01 04 8b 15 90 01 04 89 10 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Qakbot_EM_MTB_4{
 	meta:
 		description = "Trojan:Win32/Qakbot.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
 		
@@ -30,7 +43,7 @@ rule Trojan_Win32_Qakbot_EM_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Qakbot_EM_MTB_4{
+rule Trojan_Win32_Qakbot_EM_MTB_5{
 	meta:
 		description = "Trojan:Win32/Qakbot.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 06 00 00 0a 00 "
 		
@@ -45,7 +58,7 @@ rule Trojan_Win32_Qakbot_EM_MTB_4{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Qakbot_EM_MTB_5{
+rule Trojan_Win32_Qakbot_EM_MTB_6{
 	meta:
 		description = "Trojan:Win32/Qakbot.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 06 00 00 03 00 "
 		

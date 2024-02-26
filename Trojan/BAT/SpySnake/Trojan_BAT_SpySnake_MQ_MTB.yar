@@ -15,6 +15,21 @@ rule Trojan_BAT_SpySnake_MQ_MTB{
 }
 rule Trojan_BAT_SpySnake_MQ_MTB_2{
 	meta:
+		description = "Trojan:BAT/SpySnake.MQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 06 00 00 05 00 "
+		
+	strings :
+		$a_01_0 = {55 62 d1 43 42 32 68 69 68 64 68 6f 90 9b 18 38 f9 43 41 32 68 69 6c 64 28 6f 6f 64 18 38 41 43 41 32 68 69 } //05 00 
+		$a_81_1 = {d0 98 d0 b8 d1 81 d1 83 d1 81 50 37 72 63 37 6e 74 61 67 37 2e 50 72 6f 70 65 72 74 69 65 73 } //01 00 
+		$a_01_2 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //01 00  VirtualProtect
+		$a_01_3 = {67 65 74 5f 41 63 63 65 73 73 5f 74 6f 6b 65 6e } //01 00  get_Access_token
+		$a_01_4 = {45 78 63 65 70 74 69 6f 6e 4c 6f 67 67 65 72 } //01 00  ExceptionLogger
+		$a_01_5 = {67 65 74 5f 44 61 74 61 44 69 73 6b 49 6d 61 67 65 73 } //00 00  get_DataDiskImages
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_SpySnake_MQ_MTB_3{
+	meta:
 		description = "Trojan:BAT/SpySnake.MQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0a 00 00 01 00 "
 		
 	strings :

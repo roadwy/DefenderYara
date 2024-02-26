@@ -1,0 +1,27 @@
+
+rule Trojan_Win32_DarkComet_ADK_MTB{
+	meta:
+		description = "Trojan:Win32/DarkComet.ADK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 02 00 "
+		
+	strings :
+		$a_01_0 = {50 6a 00 68 00 04 00 00 8d 84 24 78 02 00 00 50 ff 74 24 } //01 00 
+		$a_01_1 = {48 6f 6f 6b 20 70 72 6f 63 65 64 75 72 65 20 68 61 73 20 62 65 65 6e 20 69 6e 73 74 61 6c 6c 65 64 20 73 75 63 63 65 73 73 66 75 6c 6c 79 } //01 00  Hook procedure has been installed successfully
+		$a_01_2 = {4b 65 79 6c 6f 67 67 65 72 20 69 73 20 75 70 20 61 6e 64 20 72 75 6e 6e 69 6e 67 } //00 00  Keylogger is up and running
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_DarkComet_ADK_MTB_2{
+	meta:
+		description = "Trojan:Win32/DarkComet.ADK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 05 00 00 02 00 "
+		
+	strings :
+		$a_03_0 = {8b 4d cc 8d 45 d0 ba 2c 4e 48 00 e8 90 01 04 8b 45 d0 e8 90 01 04 eb 20 8d 45 c4 90 00 } //01 00 
+		$a_01_1 = {44 44 4f 53 48 54 54 50 46 4c 4f 4f 44 } //01 00  DDOSHTTPFLOOD
+		$a_01_2 = {42 54 52 45 53 55 4c 54 55 44 50 20 46 6c 6f 6f 64 7c 55 44 50 20 46 6c 6f 6f 64 20 74 61 73 6b 20 66 69 6e 69 73 68 65 64 } //01 00  BTRESULTUDP Flood|UDP Flood task finished
+		$a_01_3 = {42 54 52 45 53 55 4c 54 53 79 6e 20 46 6c 6f 6f 64 7c 53 79 6e 20 74 61 73 6b 20 66 69 6e 69 73 68 65 64 } //01 00  BTRESULTSyn Flood|Syn task finished
+		$a_01_4 = {42 54 52 45 53 55 4c 54 48 54 54 50 20 46 6c 6f 6f 64 7c 48 74 74 70 20 46 6c 6f 6f 64 20 74 61 73 6b 20 66 69 6e 69 73 68 65 64 } //00 00  BTRESULTHTTP Flood|Http Flood task finished
+	condition:
+		any of ($a_*)
+ 
+}

@@ -1,6 +1,17 @@
 
 rule Trojan_Win64_IcedID_DA_MTB{
 	meta:
+		description = "Trojan:Win64/IcedID.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {42 8a 0c 2a 88 0a 48 ff c2 83 c0 90 01 01 75 90 00 } //01 00 
+		$a_03_1 = {8b c2 ff c2 83 e0 90 01 01 42 8a 44 20 90 01 01 30 01 48 ff c1 3b d3 72 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win64_IcedID_DA_MTB_2{
+	meta:
 		description = "Trojan:Win64/IcedID.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 03 00 00 0a 00 "
 		
 	strings :
@@ -11,7 +22,7 @@ rule Trojan_Win64_IcedID_DA_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win64_IcedID_DA_MTB_2{
+rule Trojan_Win64_IcedID_DA_MTB_3{
 	meta:
 		description = "Trojan:Win64/IcedID.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
@@ -21,7 +32,7 @@ rule Trojan_Win64_IcedID_DA_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win64_IcedID_DA_MTB_3{
+rule Trojan_Win64_IcedID_DA_MTB_4{
 	meta:
 		description = "Trojan:Win64/IcedID.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,19 00 19 00 06 00 00 0a 00 "
 		
@@ -36,7 +47,7 @@ rule Trojan_Win64_IcedID_DA_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_Win64_IcedID_DA_MTB_4{
+rule Trojan_Win64_IcedID_DA_MTB_5{
 	meta:
 		description = "Trojan:Win64/IcedID.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -50,7 +61,7 @@ rule Trojan_Win64_IcedID_DA_MTB_4{
 		any of ($a_*)
  
 }
-rule Trojan_Win64_IcedID_DA_MTB_5{
+rule Trojan_Win64_IcedID_DA_MTB_6{
 	meta:
 		description = "Trojan:Win64/IcedID.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 0b 00 00 0a 00 "
 		

@@ -11,6 +11,19 @@ rule Trojan_Win64_CobaltStrike_MP_MTB{
 }
 rule Trojan_Win64_CobaltStrike_MP_MTB_2{
 	meta:
+		description = "Trojan:Win64/CobaltStrike.MP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {42 79 46 64 69 5a } //01 00  ByFdiZ
+		$a_01_1 = {56 73 58 43 7a 63 72 } //01 00  VsXCzcr
+		$a_01_2 = {56 4a 69 44 54 } //01 00  VJiDT
+		$a_01_3 = {77 65 65 75 6c 73 66 37 36 33 62 73 31 2e 64 6c 6c } //00 00  weeulsf763bs1.dll
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win64_CobaltStrike_MP_MTB_3{
+	meta:
 		description = "Trojan:Win64/CobaltStrike.MP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
 		
 	strings :

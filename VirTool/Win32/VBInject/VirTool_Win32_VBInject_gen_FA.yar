@@ -1,7 +1,7 @@
 
 rule VirTool_Win32_VBInject_gen_FA{
 	meta:
-		description = "VirTool:Win32/VBInject.gen!FA,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 13 00 00 0a 00 "
+		description = "VirTool:Win32/VBInject.gen!FA,SIGNATURE_TYPE_PEHSTR_EXT,15 00 15 00 14 00 00 0a 00 "
 		
 	strings :
 		$a_03_0 = {f5 f8 00 00 00 aa 90 03 02 05 f4 28 f5 28 00 00 00 90 01 03 90 02 03 90 03 02 01 b1 e7 b2 aa 90 00 } //0a 00 
@@ -22,7 +22,8 @@ rule VirTool_Win32_VBInject_gen_FA{
 		$a_03_15 = {f5 0a 00 00 00 04 90 01 02 9e aa f5 2c 00 00 00 04 90 01 02 a3 90 03 0e 0a 04 ec f9 04 dc f9 fb 94 48 ff fc f6 cc f9 90 02 10 1b 90 01 01 00 f4 6b 90 00 } //01 00 
 		$a_03_16 = {fb 12 fc 0d 6c 90 01 02 6c 90 01 02 fc a0 90 00 } //0a 00 
 		$a_03_17 = {fd f4 63 0b 90 01 04 23 90 01 02 2a 23 90 01 02 f4 65 0b 90 01 04 23 90 01 02 2a 23 90 01 02 f4 73 0b 90 01 04 23 90 01 02 2a 23 90 01 02 f4 73 0b 90 01 04 23 90 01 02 2a 23 90 01 02 f4 4d 0b 90 01 04 23 90 01 02 2a 23 90 01 02 f4 65 90 00 } //01 00 
-		$a_01_18 = {43 3a 5c 2f 62 65 62 72 74 54 42 74 64 65 20 70 72 6f 67 72 61 6d 61 5c } //01 00  C:\/bebrtTBtde programa\
+		$a_01_18 = {43 3a 5c 2f 62 65 62 72 74 54 42 74 64 65 20 70 72 6f 67 72 61 6d 61 5c } //9c ff  C:\/bebrtTBtde programa\
+		$a_00_19 = {4d 69 63 72 6f 73 6f 66 74 2e 43 6f 6e 66 69 67 75 72 61 74 69 6f 6e 4d 61 6e 61 67 65 72 2e 44 6d 70 43 6f 6e 6e 65 63 74 6f 72 2e 43 6f 6e 6e 65 63 74 6f 72 2e 70 64 62 } //01 00  Microsoft.ConfigurationManager.DmpConnector.Connector.pdb
 	condition:
 		any of ($a_*)
  

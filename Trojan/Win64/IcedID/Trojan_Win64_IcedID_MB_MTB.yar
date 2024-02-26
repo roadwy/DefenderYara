@@ -84,3 +84,19 @@ rule Trojan_Win64_IcedID_MB_MTB_6{
 		any of ($a_*)
  
 }
+rule Trojan_Win64_IcedID_MB_MTB_7{
+	meta:
+		description = "Trojan:Win64/IcedID.MB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {71 72 6f 74 6c 69 44 65 63 6f 64 65 72 43 72 65 61 74 65 49 6e 73 74 61 6e 63 65 } //01 00  qrotliDecoderCreateInstance
+		$a_01_1 = {71 72 6f 74 6c 69 45 6e 63 6f 64 65 72 43 6f 6d 70 72 65 73 73 53 74 72 65 61 6d } //01 00  qrotliEncoderCompressStream
+		$a_01_2 = {71 72 6f 74 6c 69 44 65 63 6f 64 65 72 44 65 63 6f 6d 70 72 65 73 73 } //01 00  qrotliDecoderDecompress
+		$a_01_3 = {71 72 6f 74 6c 69 45 6e 63 6f 64 65 72 48 61 73 4d 6f 72 65 4f 75 74 70 75 74 } //01 00  qrotliEncoderHasMoreOutput
+		$a_01_4 = {71 6f 6d 70 72 65 73 73 69 6f 6e 4e 61 74 69 76 65 5f 44 65 66 6c 61 74 65 } //01 00  qompressionNative_Deflate
+		$a_01_5 = {71 6f 6d 70 72 65 73 73 69 6f 6e 4e 61 74 69 76 65 5f 44 65 66 6c 61 74 65 45 6e 64 } //01 00  qompressionNative_DeflateEnd
+		$a_01_6 = {73 63 61 62 } //00 00  scab
+	condition:
+		any of ($a_*)
+ 
+}

@@ -1,6 +1,20 @@
 
 rule TrojanDownloader_O97M_Powdow_PV_MTB{
 	meta:
+		description = "TrojanDownloader:O97M/Powdow.PV!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
+		$a_00_0 = {61 73 64 2e 52 75 6e 20 28 5a 29 } //01 00  asd.Run (Z)
+		$a_00_1 = {61 73 64 20 3d 20 43 72 65 61 74 65 4f 62 6a 65 63 74 28 22 57 53 63 72 69 70 74 2e 53 68 65 6c 6c 22 29 } //01 00  asd = CreateObject("WScript.Shell")
+		$a_00_2 = {5a 20 3d 20 22 70 6f 77 65 72 73 68 65 6c 6c 20 2d 6e 6f 50 20 2d 73 74 61 20 2d 77 20 31 20 2d 65 6e 63 } //01 00  Z = "powershell -noP -sta -w 1 -enc
+		$a_00_3 = {55 77 42 46 41 48 51 41 4c 51 42 57 41 47 45 41 55 67 } //01 00  UwBFAHQALQBWAGEAUg
+		$a_00_4 = {3d 20 5a 20 2b 20 22 41 6e 41 46 67 41 4a 77 41 73 41 43 63 41 53 51 42 46 41 43 63 41 4b 51 41 3d } //00 00  = Z + "AnAFgAJwAsACcASQBFACcAKQA=
+	condition:
+		any of ($a_*)
+ 
+}
+rule TrojanDownloader_O97M_Powdow_PV_MTB_2{
+	meta:
 		description = "TrojanDownloader:O97M/Powdow.PV!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		
 	strings :

@@ -17,6 +17,35 @@ rule Trojan_Win32_Dridex_EM_MTB{
 }
 rule Trojan_Win32_Dridex_EM_MTB_2{
 	meta:
+		description = "Trojan:Win32/Dridex.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {75 63 61 6c 6c 65 64 4d 61 6e 6d 6f 76 65 64 61 66 74 65 72 76 6f 69 64 62 72 69 6e 67 } //01 00  ucalledManmovedaftervoidbring
+		$a_01_1 = {76 6c 6d 67 75 73 } //01 00  vlmgus
+		$a_01_2 = {7a 66 72 6f 6d 72 74 68 65 69 72 42 } //01 00  zfromrtheirB
+		$a_01_3 = {73 68 61 6c 6c 61 66 74 65 72 6f 73 69 78 74 68 59 6c 69 67 68 74 73 65 74 } //01 00  shallafterosixthYlightset
+		$a_01_4 = {69 65 76 65 6e 69 6e 67 72 65 70 6c 65 6e 69 73 68 61 6c 73 6f 50 36 6f 66 45 6d 75 6c 74 69 70 6c 79 } //01 00  ieveningreplenishalsoP6ofEmultiply
+		$a_01_5 = {66 61 63 65 4e 69 67 68 74 6f 66 2c 6a } //00 00  faceNightof,j
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Dridex_EM_MTB_3{
+	meta:
+		description = "Trojan:Win32/Dridex.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
+		$a_81_0 = {69 74 66 69 72 73 74 35 35 35 65 53 65 63 75 72 69 74 79 65 69 74 68 65 72 49 35 44 } //01 00  itfirst555eSecurityeitherI5D
+		$a_81_1 = {39 64 58 72 65 6c 65 61 73 65 2e 66 72 6f 6d 73 74 68 65 69 72 37 } //01 00  9dXrelease.fromstheir7
+		$a_81_2 = {74 68 69 73 68 61 76 65 63 6f 6d 6d 75 6e 69 63 61 74 69 6f 6e 44 65 76 65 6c 6f 70 65 72 66 61 6d 69 6c 79 57 71 50 4f 6d 6e 69 62 6f 78 } //01 00  thishavecommunicationDeveloperfamilyWqPOmnibox
+		$a_81_3 = {42 54 68 65 75 70 61 66 72 6f 6d } //01 00  BTheupafrom
+		$a_81_4 = {51 64 69 66 66 65 72 65 6e 74 66 30 43 68 72 6f 6d 65 } //00 00  Qdifferentf0Chrome
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Dridex_EM_MTB_4{
+	meta:
 		description = "Trojan:Win32/Dridex.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,15 00 15 00 07 00 00 03 00 "
 		
 	strings :
@@ -31,7 +60,21 @@ rule Trojan_Win32_Dridex_EM_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Dridex_EM_MTB_3{
+rule Trojan_Win32_Dridex_EM_MTB_5{
+	meta:
+		description = "Trojan:Win32/Dridex.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {61 00 62 00 6f 00 76 00 65 00 2e 00 34 00 42 00 6f 00 75 00 72 00 32 00 37 00 6e 00 45 00 } //01 00  above.4Bour27nE
+		$a_01_1 = {55 00 41 00 39 00 6c 00 69 00 76 00 69 00 6e 00 67 00 } //01 00  UA9living
+		$a_01_2 = {61 00 62 00 6f 00 76 00 65 00 50 00 46 00 65 00 6d 00 61 00 6c 00 65 00 78 00 43 00 30 00 50 00 30 00 } //01 00  abovePFemalexC0P0
+		$a_01_3 = {61 00 62 00 75 00 6e 00 64 00 61 00 6e 00 74 00 6c 00 79 00 2e 00 75 00 71 00 79 00 65 00 61 00 72 00 73 00 63 00 72 00 65 00 65 00 70 00 69 00 6e 00 67 00 6d 00 61 00 79 00 59 00 51 00 54 00 68 00 65 00 69 00 72 00 } //01 00  abundantly.uqyearscreepingmayYQTheir
+		$a_01_4 = {73 00 45 00 6c 00 66 00 2e 00 45 00 78 00 65 00 } //00 00  sElf.Exe
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Dridex_EM_MTB_6{
 	meta:
 		description = "Trojan:Win32/Dridex.EM!MTB,SIGNATURE_TYPE_PEHSTR,14 00 14 00 02 00 00 0a 00 "
 		
@@ -42,7 +85,7 @@ rule Trojan_Win32_Dridex_EM_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Dridex_EM_MTB_4{
+rule Trojan_Win32_Dridex_EM_MTB_7{
 	meta:
 		description = "Trojan:Win32/Dridex.EM!MTB,SIGNATURE_TYPE_PEHSTR,14 00 14 00 02 00 00 0a 00 "
 		
@@ -53,7 +96,7 @@ rule Trojan_Win32_Dridex_EM_MTB_4{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Dridex_EM_MTB_5{
+rule Trojan_Win32_Dridex_EM_MTB_8{
 	meta:
 		description = "Trojan:Win32/Dridex.EM!MTB,SIGNATURE_TYPE_PEHSTR,14 00 14 00 02 00 00 0a 00 "
 		

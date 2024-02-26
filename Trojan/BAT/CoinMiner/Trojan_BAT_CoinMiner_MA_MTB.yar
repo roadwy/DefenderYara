@@ -1,6 +1,18 @@
 
 rule Trojan_BAT_CoinMiner_MA_MTB{
 	meta:
+		description = "Trojan:BAT/CoinMiner.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_81_0 = {68 74 74 70 3a 2f 2f 31 38 35 2e 31 37 32 2e 31 32 38 2e 31 31 } //01 00  http://185.172.128.11
+		$a_01_1 = {31 31 65 61 66 31 37 32 2d 31 31 64 63 2d 34 35 32 32 2d 62 33 61 65 2d 62 39 37 32 37 38 35 64 65 32 64 62 } //00 00  11eaf172-11dc-4522-b3ae-b972785de2db
+		$a_00_2 = {78 } //6f 00  x
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_CoinMiner_MA_MTB_2{
+	meta:
 		description = "Trojan:BAT/CoinMiner.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 05 00 "
 		
 	strings :
@@ -12,7 +24,7 @@ rule Trojan_BAT_CoinMiner_MA_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_CoinMiner_MA_MTB_2{
+rule Trojan_BAT_CoinMiner_MA_MTB_3{
 	meta:
 		description = "Trojan:BAT/CoinMiner.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 01 00 "
 		

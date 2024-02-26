@@ -1,6 +1,23 @@
 
 rule Trojan_Win32_Stealer_AK_MTB{
 	meta:
+		description = "Trojan:Win32/Stealer.AK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {74 6d 5f 53 63 72 6f 6c 6c 42 6f 74 74 6f 6d 54 69 6d 65 72 } //01 00  tm_ScrollBottomTimer
+		$a_01_1 = {63 6b 5f 43 75 72 73 6f 72 52 65 63 6f 72 64 43 6c 69 63 6b } //01 00  ck_CursorRecordClick
+		$a_01_2 = {41 70 70 65 61 72 61 6e 63 65 2e 42 61 63 6b 47 72 6f 75 6e 64 46 69 6c 6c 2e 47 6c 6f 77 } //01 00  Appearance.BackGroundFill.Glow
+		$a_01_3 = {47 61 74 65 77 61 79 49 50 41 64 64 72 65 73 73 49 6e 66 6f 72 6d 61 74 69 6f 6e 43 6f 6c 6c 65 63 74 69 6f 6e } //01 00  GatewayIPAddressInformationCollection
+		$a_01_4 = {53 00 41 00 46 00 6c 00 61 00 73 00 68 00 50 00 6c 00 61 00 79 00 65 00 72 00 2e 00 65 00 78 00 65 00 } //01 00  SAFlashPlayer.exe
+		$a_01_5 = {73 00 65 00 2e 00 6b 00 65 00 79 00 } //01 00  se.key
+		$a_01_6 = {4f 00 62 00 73 00 69 00 64 00 69 00 75 00 6d 00 } //01 00  Obsidium
+		$a_01_7 = {54 00 54 00 41 00 42 00 4b 00 45 00 59 00 53 00 45 00 54 00 } //00 00  TTABKEYSET
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Stealer_AK_MTB_2{
+	meta:
 		description = "Trojan:Win32/Stealer.AK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		
 	strings :

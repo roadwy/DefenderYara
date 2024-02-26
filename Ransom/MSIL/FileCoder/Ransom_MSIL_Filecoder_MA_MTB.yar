@@ -1,6 +1,22 @@
 
 rule Ransom_MSIL_Filecoder_MA_MTB{
 	meta:
+		description = "Ransom:MSIL/Filecoder.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {11 17 06 17 72 90 01 03 70 28 90 01 03 06 11 17 72 e9 00 00 70 28 90 01 03 0a 13 18 16 13 19 2b 44 11 19 17 58 13 19 11 18 17 8d 90 01 03 01 25 16 1f 2e 9d 90 00 } //01 00 
+		$a_01_1 = {3a 00 5c 00 4b 00 46 00 2e 00 52 00 54 00 4b 00 } //01 00  :\KF.RTK
+		$a_01_2 = {45 6e 63 72 79 70 74 44 65 63 72 79 70 74 } //01 00  EncryptDecrypt
+		$a_01_3 = {57 72 69 74 65 4e 6f 74 65 } //01 00  WriteNote
+		$a_01_4 = {54 00 4f 00 44 00 4f 00 53 00 20 00 54 00 55 00 53 00 20 00 41 00 52 00 43 00 48 00 49 00 56 00 4f 00 53 00 20 00 46 00 55 00 45 00 52 00 4f 00 4e 00 20 00 43 00 49 00 46 00 52 00 41 00 44 00 4f 00 53 00 } //01 00  TODOS TUS ARCHIVOS FUERON CIFRADOS
+		$a_01_5 = {70 00 61 00 72 00 61 00 20 00 64 00 65 00 73 00 63 00 69 00 66 00 72 00 61 00 72 00 6c 00 6f 00 73 00 20 00 64 00 65 00 62 00 65 00 73 00 20 00 65 00 6e 00 76 00 69 00 61 00 72 00 20 00 75 00 6e 00 20 00 63 00 6f 00 72 00 72 00 65 00 6f 00 20 00 61 00 } //01 00  para descifrarlos debes enviar un correo a
+		$a_01_6 = {5c 00 6e 00 6f 00 74 00 65 00 2e 00 74 00 78 00 74 00 } //00 00  \note.txt
+	condition:
+		any of ($a_*)
+ 
+}
+rule Ransom_MSIL_Filecoder_MA_MTB_2{
+	meta:
 		description = "Ransom:MSIL/Filecoder.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0a 00 00 01 00 "
 		
 	strings :

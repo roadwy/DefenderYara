@@ -1,6 +1,16 @@
 
 rule Trojan_BAT_AgentTesla_NR_MTB{
 	meta:
+		description = "Trojan:BAT/AgentTesla.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
+		
+	strings :
+		$a_01_0 = {11 08 11 01 1a 62 11 01 1b 63 61 11 01 58 11 03 11 00 11 03 1f 0b 63 19 5f 94 58 61 59 13 08 20 13 00 00 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_NR_MTB_2{
+	meta:
 		description = "Trojan:BAT/AgentTesla.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 05 00 "
 		
 	strings :
@@ -11,7 +21,22 @@ rule Trojan_BAT_AgentTesla_NR_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_NR_MTB_2{
+rule Trojan_BAT_AgentTesla_NR_MTB_3{
+	meta:
+		description = "Trojan:BAT/AgentTesla.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 06 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {72 11 00 00 70 11 04 16 28 90 01 03 0a 28 90 01 03 0a 72 90 01 03 70 90 00 } //01 00 
+		$a_01_1 = {7a 00 75 00 6d 00 73 00 65 00 6c 00 } //01 00  zumsel
+		$a_01_2 = {32 30 31 39 20 41 31 20 48 65 6c 70 44 65 73 6b } //01 00  2019 A1 HelpDesk
+		$a_01_3 = {73 65 74 5f 55 73 65 53 68 65 6c 6c 45 78 65 63 75 74 65 } //01 00  set_UseShellExecute
+		$a_01_4 = {73 65 74 5f 43 72 65 61 74 65 4e 6f 57 69 6e 64 6f 77 } //01 00  set_CreateNoWindow
+		$a_01_5 = {47 65 74 53 63 72 69 70 74 42 6c 6f 63 6b } //00 00  GetScriptBlock
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_NR_MTB_4{
 	meta:
 		description = "Trojan:BAT/AgentTesla.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		

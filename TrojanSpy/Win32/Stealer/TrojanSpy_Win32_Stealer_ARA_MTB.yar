@@ -1,6 +1,25 @@
 
 rule TrojanSpy_Win32_Stealer_ARA_MTB{
 	meta:
+		description = "TrojanSpy:Win32/Stealer.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 0a 00 00 02 00 "
+		
+	strings :
+		$a_01_0 = {74 65 73 74 74 74 74 74 2e 70 73 31 } //02 00  testtttt.ps1
+		$a_01_1 = {50 6f 77 65 72 73 68 65 6c 6c 2e 65 78 65 20 2d 65 78 65 63 75 74 69 6f 6e 70 6f 6c 69 63 79 20 72 65 6d 6f 74 65 73 69 67 6e 65 64 20 2d 46 69 6c 65 } //02 00  Powershell.exe -executionpolicy remotesigned -File
+		$a_01_2 = {73 65 6e 64 73 20 74 68 65 20 75 73 65 72 6e 61 6d 65 2c 20 69 70 2c 20 63 75 72 72 65 6e 74 20 74 69 6d 65 2c 20 61 6e 64 20 64 61 74 65 20 6f 66 20 74 68 65 20 76 69 63 74 69 6d } //02 00  sends the username, ip, current time, and date of the victim
+		$a_01_3 = {4c 6f 67 69 6e 20 44 61 74 61 } //02 00  Login Data
+		$a_01_4 = {48 69 73 74 6f 72 79 } //02 00  History
+		$a_01_5 = {77 65 62 68 6f 6f 6b } //02 00  webhook
+		$a_01_6 = {53 79 73 74 65 6d 5f 49 4e 46 4f 2e 74 78 74 } //02 00  System_INFO.txt
+		$a_01_7 = {6e 65 74 73 74 61 74 2e 74 78 74 } //02 00  netstat.txt
+		$a_01_8 = {25 75 73 65 72 6e 61 6d 65 25 5f 43 61 70 74 75 72 65 2e 6a 70 67 } //02 00  %username%_Capture.jpg
+		$a_01_9 = {70 72 6f 67 72 61 6d 6d 73 2e 74 78 74 } //00 00  programms.txt
+	condition:
+		any of ($a_*)
+ 
+}
+rule TrojanSpy_Win32_Stealer_ARA_MTB_2{
+	meta:
 		description = "TrojanSpy:Win32/Stealer.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,11 00 11 00 0f 00 00 01 00 "
 		
 	strings :

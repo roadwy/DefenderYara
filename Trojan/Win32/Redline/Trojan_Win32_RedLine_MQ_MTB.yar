@@ -1,7 +1,18 @@
 
-rule Trojan_Win32_RedLine_MQ_MTB{
+rule Trojan_Win32_Redline_MQ_MTB{
 	meta:
-		description = "Trojan:Win32/RedLine.MQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,18 00 18 00 05 00 00 0a 00 "
+		description = "Trojan:Win32/Redline.MQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {8b 7d 08 8b 90 01 17 f6 17 90 01 12 80 2f 90 01 13 80 07 90 01 13 f6 2f 47 e2 ab 90 00 } //01 00 
+		$a_03_1 = {8b 7d 08 33 90 01 17 f6 17 90 01 12 80 2f 90 01 13 80 07 90 01 13 f6 2f 47 e2 ab 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Redline_MQ_MTB_2{
+	meta:
+		description = "Trojan:Win32/Redline.MQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,18 00 18 00 05 00 00 0a 00 "
 		
 	strings :
 		$a_01_0 = {47 6f 6f 64 20 68 41 4b 4a 62 31 37 20 78 68 56 67 73 32 37 } //05 00  Good hAKJb17 xhVgs27

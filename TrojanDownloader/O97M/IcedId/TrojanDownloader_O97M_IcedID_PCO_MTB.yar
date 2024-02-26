@@ -13,3 +13,19 @@ rule TrojanDownloader_O97M_IcedID_PCO_MTB{
 		any of ($a_*)
  
 }
+rule TrojanDownloader_O97M_IcedID_PCO_MTB_2{
+	meta:
+		description = "TrojanDownloader:O97M/IcedID.PCO!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,07 00 07 00 07 00 00 01 00 "
+		
+	strings :
+		$a_00_0 = {43 72 65 61 74 65 4f 62 6a 65 63 74 28 22 77 73 63 72 69 70 74 2e 73 68 65 6c 6c 22 29 } //01 00  CreateObject("wscript.shell")
+		$a_02_1 = {2e 65 78 65 63 20 28 90 02 0a 29 90 00 } //01 00 
+		$a_02_2 = {3d 20 53 70 6c 69 74 28 90 02 0a 2c 20 22 7c 22 29 90 00 } //01 00 
+		$a_00_3 = {2e 6a 70 67 22 } //01 00  .jpg"
+		$a_02_4 = {3d 20 53 74 72 43 6f 6e 76 28 90 02 0a 2c 20 76 62 55 6e 69 63 6f 64 65 29 90 00 } //01 00 
+		$a_00_5 = {2e 4f 70 65 6e 20 22 47 45 54 22 2c } //01 00  .Open "GET",
+		$a_00_6 = {28 30 29 20 2b 20 22 20 22 20 2b 20 } //00 00  (0) + " " + 
+	condition:
+		any of ($a_*)
+ 
+}

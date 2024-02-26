@@ -11,3 +11,14 @@ rule TrojanDownloader_O97M_Powdow_RVCG_MTB{
 		any of ($a_*)
  
 }
+rule TrojanDownloader_O97M_Powdow_RVCG_MTB_2{
+	meta:
+		description = "TrojanDownloader:O97M/Powdow.RVCG!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {63 6f 6e 74 65 75 64 6f 5f 65 78 65 63 75 74 65 6c 69 6e 6b 3d 22 2f 2f 77 77 77 2e 34 73 79 6e 63 2e 63 6f 6d 2f 77 65 62 2f 64 69 72 65 63 74 64 6f 77 6e 6c 6f 61 64 2f 90 01 08 2f 90 01 08 2e 90 01 20 22 63 6f 6e 74 65 75 64 6f 5f 65 78 65 63 75 74 65 31 30 3d 22 2d 6f 74 65 73 74 22 63 6f 6e 74 65 75 64 6f 5f 65 78 65 63 75 74 65 31 31 3d 22 2e 76 62 90 00 } //01 00 
+		$a_01_1 = {61 2e 72 75 6e 28 6a 6b 6c 65 29 2c 30 65 6e 64 73 75 62 } //00 00  a.run(jkle),0endsub
+	condition:
+		any of ($a_*)
+ 
+}

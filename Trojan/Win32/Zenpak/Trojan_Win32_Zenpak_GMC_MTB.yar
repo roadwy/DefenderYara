@@ -1,6 +1,16 @@
 
 rule Trojan_Win32_Zenpak_GMC_MTB{
 	meta:
+		description = "Trojan:Win32/Zenpak.GMC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 0a 00 "
+		
+	strings :
+		$a_03_0 = {89 e0 50 8f 05 90 01 04 83 e8 08 e8 90 01 04 42 89 e8 50 8f 05 90 01 04 01 d0 8d 05 90 01 04 01 18 e8 90 01 04 c3 48 48 89 35 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Zenpak_GMC_MTB_2{
+	meta:
 		description = "Trojan:Win32/Zenpak.GMC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0d 00 04 00 00 01 00 "
 		
 	strings :

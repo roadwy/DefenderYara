@@ -36,3 +36,15 @@ rule TrojanDownloader_O97M_Powdow_SSM_MTB_3{
 		any of ($a_*)
  
 }
+rule TrojanDownloader_O97M_Powdow_SSM_MTB_4{
+	meta:
+		description = "TrojanDownloader:O97M/Powdow.SSM!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {53 68 65 6c 6c 20 28 4d 5f 53 20 2b 20 4a 41 52 44 49 4e 4f 50 4f 4c 49 53 34 34 20 2b 20 4d 5f 53 31 20 2b 20 4d 5f 53 32 20 2b 20 4d 5f 53 33 29 2c 20 30 } //01 00  Shell (M_S + JARDINOPOLIS44 + M_S1 + M_S2 + M_S3), 0
+		$a_01_1 = {3d 20 22 68 74 74 70 73 3a 2f 2f 77 77 77 2e 34 73 79 6e 63 2e 63 6f 6d 2f 77 65 62 2f 64 69 72 65 63 74 44 6f 77 6e 6c 6f 61 64 2f 47 4f 47 4a 4b 79 79 6c 2f 2d 66 67 66 67 64 4b 53 2e 64 31 30 65 32 62 35 64 33 66 38 62 35 30 30 32 66 39 61 66 38 32 63 62 39 37 62 32 38 64 34 31 } //01 00  = "https://www.4sync.com/web/directDownload/GOGJKyyl/-fgfgdKS.d10e2b5d3f8b5002f9af82cb97b28d41
+		$a_01_2 = {55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 20 30 2c 20 49 6d 61 67 65 6d 53 69 6d 70 6c 65 73 43 44 54 2c 20 4a 55 52 55 4c 41 4e 44 49 41 31 32 20 26 20 22 64 6f 63 75 6d 65 6e 74 2e 65 78 65 22 2c 20 30 2c 20 30 } //00 00  URLDownloadToFile 0, ImagemSimplesCDT, JURULANDIA12 & "document.exe", 0, 0
+	condition:
+		any of ($a_*)
+ 
+}

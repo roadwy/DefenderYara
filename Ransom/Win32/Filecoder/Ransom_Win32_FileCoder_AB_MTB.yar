@@ -1,6 +1,19 @@
 
 rule Ransom_Win32_FileCoder_AB_MTB{
 	meta:
+		description = "Ransom:Win32/FileCoder.AB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {43 3a 5c 55 73 65 72 73 5c 50 75 62 6c 69 63 5c 4d 75 73 69 63 5c 6b 65 79 2e 74 78 74 } //01 00  C:\Users\Public\Music\key.txt
+		$a_01_1 = {59 6f 75 72 20 66 69 6c 65 73 20 68 61 76 65 20 62 65 65 6e 20 65 6e 63 72 79 70 74 65 64 21 } //01 00  Your files have been encrypted!
+		$a_01_2 = {44 65 63 72 79 70 74 69 6e 67 20 66 69 6c 65 73 } //01 00  Decrypting files
+		$a_01_3 = {49 66 20 79 6f 75 20 77 61 6e 74 20 74 6f 20 64 65 63 72 79 70 74 20 79 6f 75 72 20 66 69 6c 65 73 2c 20 73 65 6e 64 } //00 00  If you want to decrypt your files, send
+	condition:
+		any of ($a_*)
+ 
+}
+rule Ransom_Win32_FileCoder_AB_MTB_2{
+	meta:
 		description = "Ransom:Win32/FileCoder.AB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 09 00 00 01 00 "
 		
 	strings :

@@ -1,7 +1,18 @@
 
-rule Trojan_Win32_Delfinject_AG_MTB{
+rule Trojan_Win32_DelfInject_AG_MTB{
 	meta:
-		description = "Trojan:Win32/Delfinject.AG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 06 00 00 03 00 "
+		description = "Trojan:Win32/DelfInject.AG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {8b 6c 11 fc 01 c5 89 6c 13 04 83 c2 04 81 fa fc 4f 00 00 72 eb } //01 00 
+		$a_01_1 = {a1 60 ca 8d 00 89 43 08 56 ff 74 24 04 68 00 50 00 00 53 ff d7 a1 7c ca 8d 00 01 d8 03 43 0c 03 1d 7c ca 8d 00 53 ff d0 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_DelfInject_AG_MTB_2{
+	meta:
+		description = "Trojan:Win32/DelfInject.AG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 06 00 00 03 00 "
 		
 	strings :
 		$a_80_0 = {57 69 6e 48 74 74 70 43 72 61 63 6b 55 72 6c } //WinHttpCrackUrl  03 00 
@@ -14,9 +25,9 @@ rule Trojan_Win32_Delfinject_AG_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Delfinject_AG_MTB_2{
+rule Trojan_Win32_DelfInject_AG_MTB_3{
 	meta:
-		description = "Trojan:Win32/Delfinject.AG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 06 00 00 03 00 "
+		description = "Trojan:Win32/DelfInject.AG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 06 00 00 03 00 "
 		
 	strings :
 		$a_80_0 = {5a 63 65 64 6d 6a 6e 5a } //ZcedmjnZ  03 00 

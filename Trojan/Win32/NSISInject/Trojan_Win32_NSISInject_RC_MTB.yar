@@ -76,3 +76,16 @@ rule Trojan_Win32_NSISInject_RC_MTB_6{
 		any of ($a_*)
  
 }
+rule Trojan_Win32_NSISInject_RC_MTB_7{
+	meta:
+		description = "Trojan:Win32/NSISInject.RC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {73 00 79 00 6d 00 62 00 6f 00 6c 00 6f 00 67 00 72 00 61 00 70 00 68 00 79 00 20 00 70 00 72 00 6f 00 6a 00 65 00 6b 00 74 00 69 00 6f 00 6e 00 65 00 6e 00 73 00 20 00 6c 00 65 00 6f 00 70 00 61 00 72 00 64 00 69 00 6e 00 65 00 } //01 00  symbolography projektionens leopardine
+		$a_01_1 = {73 00 74 00 61 00 72 00 74 00 67 00 74 00 20 00 6b 00 72 00 79 00 62 00 73 00 6b 00 79 00 74 00 74 00 65 00 72 00 6e 00 65 00 2e 00 65 00 78 00 65 00 } //01 00  startgt krybskytterne.exe
+		$a_01_2 = {74 00 75 00 62 00 65 00 72 00 6f 00 73 00 65 00 20 00 69 00 76 00 72 00 6b 00 73 00 74 00 74 00 65 00 72 00 65 00 6e 00 73 00 20 00 73 00 74 00 76 00 6c 00 65 00 74 00 72 00 61 00 6d 00 70 00 73 00 } //01 00  tuberose ivrkstterens stvletramps
+		$a_01_3 = {64 00 69 00 73 00 70 00 61 00 70 00 61 00 6c 00 69 00 7a 00 65 00 20 00 6b 00 72 00 65 00 61 00 74 00 75 00 72 00 65 00 74 00 20 00 70 00 61 00 6c 00 69 00 75 00 72 00 75 00 73 00 } //00 00  dispapalize kreaturet paliurus
+	condition:
+		any of ($a_*)
+ 
+}

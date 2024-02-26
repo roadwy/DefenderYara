@@ -11,6 +11,20 @@ rule Trojan_BAT_SpySnake_MJ_MTB{
 }
 rule Trojan_BAT_SpySnake_MJ_MTB_2{
 	meta:
+		description = "Trojan:BAT/SpySnake.MJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 05 00 00 0a 00 "
+		
+	strings :
+		$a_03_0 = {0a 00 06 72 c8 03 00 70 7d 27 00 00 04 28 90 01 03 06 06 fe 06 30 00 00 06 73 1b 00 00 0a 28 90 01 03 2b 28 90 01 03 2b 0b 07 28 90 01 03 06 6f 90 01 03 0a 0c 12 02 28 90 01 03 0a 00 2a 90 00 } //01 00 
+		$a_01_1 = {24 00 50 00 41 00 53 00 53 00 57 00 4f 00 52 00 44 00 24 00 } //01 00  $PASSWORD$
+		$a_01_2 = {47 65 74 4c 6f 67 67 65 72 } //01 00  GetLogger
+		$a_01_3 = {53 63 33 65 65 6e } //01 00  Sc3een
+		$a_01_4 = {54 68 72 65 61 64 53 74 61 72 74 } //00 00  ThreadStart
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_SpySnake_MJ_MTB_3{
+	meta:
 		description = "Trojan:BAT/SpySnake.MJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
 	strings :

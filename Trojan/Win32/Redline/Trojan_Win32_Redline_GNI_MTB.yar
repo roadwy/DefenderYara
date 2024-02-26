@@ -11,6 +11,17 @@ rule Trojan_Win32_Redline_GNI_MTB{
 }
 rule Trojan_Win32_Redline_GNI_MTB_2{
 	meta:
+		description = "Trojan:Win32/Redline.GNI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 02 00 00 0a 00 "
+		
+	strings :
+		$a_03_0 = {6a 00 ff d6 80 04 2f 90 01 01 68 90 00 } //0a 00 
+		$a_03_1 = {6a 00 ff d6 80 34 2f 90 01 01 68 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Redline_GNI_MTB_3{
+	meta:
 		description = "Trojan:Win32/Redline.GNI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 0a 00 "
 		
 	strings :

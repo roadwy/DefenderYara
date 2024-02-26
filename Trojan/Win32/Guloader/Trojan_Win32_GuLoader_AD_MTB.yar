@@ -29,3 +29,18 @@ rule Trojan_Win32_GuLoader_AD_MTB_2{
 		any of ($a_*)
  
 }
+rule Trojan_Win32_GuLoader_AD_MTB_3{
+	meta:
+		description = "Trojan:Win32/GuLoader.AD!MTB,SIGNATURE_TYPE_PEHSTR,06 00 06 00 06 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {66 00 7a 00 73 00 68 00 65 00 6c 00 6c 00 65 00 78 00 74 00 2e 00 64 00 6c 00 6c 00 } //01 00  fzshellext.dll
+		$a_01_1 = {45 00 64 00 64 00 69 00 65 00 2d 00 53 00 65 00 72 00 76 00 69 00 63 00 65 00 2d 00 45 00 6c 00 65 00 76 00 61 00 74 00 65 00 64 00 2e 00 65 00 78 00 65 00 } //01 00  Eddie-Service-Elevated.exe
+		$a_01_2 = {4d 00 70 00 43 00 6d 00 64 00 52 00 75 00 6e 00 2e 00 65 00 78 00 65 00 } //01 00  MpCmdRun.exe
+		$a_01_3 = {43 00 6f 00 76 00 65 00 72 00 45 00 64 00 43 00 74 00 72 00 6c 00 2e 00 6d 00 61 00 6e 00 69 00 66 00 65 00 73 00 74 00 } //01 00  CoverEdCtrl.manifest
+		$a_01_4 = {50 00 53 00 52 00 65 00 61 00 64 00 6c 00 69 00 6e 00 65 00 2e 00 70 00 73 00 } //01 00  PSReadline.ps
+		$a_01_5 = {50 00 61 00 6e 00 65 00 6c 00 49 00 6e 00 66 00 6f 00 2e 00 64 00 6c 00 6c 00 } //00 00  PanelInfo.dll
+	condition:
+		any of ($a_*)
+ 
+}

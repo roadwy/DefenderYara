@@ -1,6 +1,19 @@
 
 rule Trojan_Win32_Dridex_EC_MTB{
 	meta:
+		description = "Trojan:Win32/Dridex.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {36 00 72 00 75 00 6c 00 65 00 39 00 61 00 62 00 75 00 6e 00 64 00 61 00 6e 00 74 00 6c 00 79 00 4d 00 61 00 64 00 65 00 6d 00 6f 00 76 00 65 00 74 00 68 00 2c 00 6e 00 } //01 00  6rule9abundantlyMademoveth,n
+		$a_01_1 = {32 00 68 00 69 00 6d 00 67 00 72 00 61 00 73 00 73 00 } //01 00  2himgrass
+		$a_01_2 = {39 00 6b 00 50 00 44 00 6f 00 6e 00 2e 00 74 00 62 00 65 00 61 00 73 00 74 00 7a 00 73 00 61 00 69 00 64 00 4f 00 } //01 00  9kPDon.tbeastzsaidO
+		$a_01_3 = {78 00 6c 00 65 00 74 00 2c 00 72 00 75 00 6c 00 65 00 74 00 34 00 } //00 00  xlet,rulet4
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Dridex_EC_MTB_2{
+	meta:
 		description = "Trojan:Win32/Dridex.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,18 00 18 00 08 00 00 03 00 "
 		
 	strings :
@@ -16,7 +29,7 @@ rule Trojan_Win32_Dridex_EC_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Dridex_EC_MTB_2{
+rule Trojan_Win32_Dridex_EC_MTB_3{
 	meta:
 		description = "Trojan:Win32/Dridex.EC!MTB,SIGNATURE_TYPE_PEHSTR,0a 00 0a 00 01 00 00 0a 00 "
 		

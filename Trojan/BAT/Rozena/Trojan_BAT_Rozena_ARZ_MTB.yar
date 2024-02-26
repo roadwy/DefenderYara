@@ -51,6 +51,27 @@ rule Trojan_BAT_Rozena_ARZ_MTB_5{
 }
 rule Trojan_BAT_Rozena_ARZ_MTB_6{
 	meta:
+		description = "Trojan:BAT/Rozena.ARZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {0c 16 08 8e 69 7e 90 01 01 00 00 04 7e 90 01 01 00 00 04 28 90 01 01 00 00 06 0d 08 16 09 6e 28 90 01 01 00 00 0a 08 8e 69 28 90 01 01 00 00 0a 16 16 09 07 16 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Rozena_ARZ_MTB_7{
+	meta:
+		description = "Trojan:BAT/Rozena.ARZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 02 00 "
+		
+	strings :
+		$a_03_0 = {16 13 07 2b 14 07 11 07 8f 90 01 01 00 00 01 25 47 08 61 d2 52 11 07 17 58 13 07 11 07 07 8e 69 32 e5 90 00 } //01 00 
+		$a_01_1 = {44 65 73 6b 74 6f 70 5c 63 6f 64 65 5c 45 6e 63 72 79 70 74 69 6f 6e 5c 45 6e 63 72 79 70 74 69 6f 6e 5c 6f 62 6a 5c 78 36 34 5c 52 65 6c 65 61 73 65 5c 45 6e 63 72 79 70 74 69 6f 6e 2e 70 64 62 } //00 00  Desktop\code\Encryption\Encryption\obj\x64\Release\Encryption.pdb
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Rozena_ARZ_MTB_8{
+	meta:
 		description = "Trojan:BAT/Rozena.ARZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 02 00 "
 		
 	strings :

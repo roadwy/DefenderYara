@@ -21,3 +21,15 @@ rule Trojan_BAT_Disstl_ADI_MTB_2{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_Disstl_ADI_MTB_3{
+	meta:
+		description = "Trojan:BAT/Disstl.ADI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 03 00 00 02 00 "
+		
+	strings :
+		$a_01_0 = {0d 07 09 16 11 05 6f 2c 00 00 0a 26 16 13 06 2b 11 09 11 06 09 11 06 91 04 61 d2 9c 11 06 17 58 13 06 11 06 09 8e 69 32 e8 } //02 00 
+		$a_03_1 = {08 1f 53 58 0c 00 73 90 01 01 00 00 0a 7e 90 01 01 00 00 0a 8e 20 91 d2 00 00 58 7e 90 01 01 00 00 0a 8e 20 aa d5 00 00 58 fe 1c 10 00 00 01 1f 41 58 28 90 00 } //01 00 
+		$a_01_2 = {44 00 69 00 73 00 63 00 6f 00 72 00 64 00 52 00 65 00 73 00 6f 00 6c 00 76 00 65 00 72 00 2e 00 65 00 78 00 65 00 } //00 00  DiscordResolver.exe
+	condition:
+		any of ($a_*)
+ 
+}

@@ -1,6 +1,29 @@
 
 rule Trojan_BAT_RedLineStealer_NL_MTB{
 	meta:
+		description = "Trojan:BAT/RedLineStealer.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 05 00 "
+		
+	strings :
+		$a_01_0 = {03 1f 55 61 d1 2a 3a 03 0f 02 28 29 00 00 0a 28 2a 00 00 0a 2a } //01 00 
+		$a_80_1 = {47 65 74 50 72 6f 63 41 64 64 72 65 73 73 } //GetProcAddress  01 00 
+		$a_80_2 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //VirtualProtect  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_RedLineStealer_NL_MTB_2{
+	meta:
+		description = "Trojan:BAT/RedLineStealer.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {00 02 06 8f 3f 90 01 03 25 4b 03 06 95 61 54 00 06 17 59 0a 06 16 fe 04 16 fe 01 0b 07 90 00 } //05 00 
+		$a_03_1 = {00 02 06 8f 2d 90 01 03 25 47 03 06 91 61 d2 52 00 06 17 59 0a 06 16 fe 04 16 fe 01 0b 07 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_RedLineStealer_NL_MTB_3{
+	meta:
 		description = "Trojan:BAT/RedLineStealer.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 01 00 "
 		
 	strings :

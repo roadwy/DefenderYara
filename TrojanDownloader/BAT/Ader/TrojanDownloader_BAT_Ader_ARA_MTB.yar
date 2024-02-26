@@ -4,12 +4,32 @@ rule TrojanDownloader_BAT_Ader_ARA_MTB{
 		description = "TrojanDownloader:BAT/Ader.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
 		
 	strings :
-		$a_03_0 = {06 09 06 09 8e 69 5d 91 08 06 91 61 d2 6f 90 01 03 0a 06 17 58 0a 06 08 8e 69 32 e2 90 00 } //00 00 
+		$a_01_0 = {11 04 06 09 06 09 8e 69 5d 91 08 06 91 61 d2 9c 06 17 58 0a 06 08 8e 69 32 e6 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule TrojanDownloader_BAT_Ader_ARA_MTB_2{
+	meta:
+		description = "TrojanDownloader:BAT/Ader.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
+		
+	strings :
+		$a_03_0 = {06 09 06 09 8e 69 5d 91 08 06 91 61 d2 6f 90 01 03 0a 06 17 58 0a 06 08 8e 69 32 e2 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule TrojanDownloader_BAT_Ader_ARA_MTB_3{
+	meta:
+		description = "TrojanDownloader:BAT/Ader.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
+		
+	strings :
+		$a_03_0 = {16 0d 2b 15 00 06 08 07 09 91 06 08 91 61 28 90 01 03 0a 9c 00 09 17 58 0d 09 07 8e 69 fe 04 13 05 11 05 2d df 00 08 17 58 0c 08 06 8e 69 fe 04 13 05 11 05 2d c9 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule TrojanDownloader_BAT_Ader_ARA_MTB_4{
 	meta:
 		description = "TrojanDownloader:BAT/Ader.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		

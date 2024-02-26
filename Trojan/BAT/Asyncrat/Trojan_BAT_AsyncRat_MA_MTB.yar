@@ -17,3 +17,20 @@ rule Trojan_BAT_AsyncRat_MA_MTB{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_AsyncRat_MA_MTB_2{
+	meta:
+		description = "Trojan:BAT/AsyncRat.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {13 20 03 11 1e 11 20 16 11 20 8e 69 28 90 01 03 0a 00 09 7b 90 01 03 04 11 0c 11 1c 58 11 20 11 20 8e 69 12 00 28 90 01 03 06 16 fe 01 13 21 11 21 2c 06 90 00 } //01 00 
+		$a_01_1 = {3a 00 2f 00 2f 00 34 00 35 00 2e 00 31 00 34 00 37 00 2e 00 32 00 33 00 30 00 2e 00 37 00 31 00 } //01 00  ://45.147.230.71
+		$a_01_2 = {47 65 74 54 68 72 65 61 64 43 6f 6e 74 65 78 74 } //01 00  GetThreadContext
+		$a_01_3 = {57 6f 77 36 34 47 65 74 54 68 72 65 61 64 43 6f 6e 74 65 78 74 } //01 00  Wow64GetThreadContext
+		$a_01_4 = {52 65 61 64 50 72 6f 63 65 73 73 4d 65 6d 6f 72 79 } //01 00  ReadProcessMemory
+		$a_01_5 = {57 72 69 74 65 50 72 6f 63 65 73 73 4d 65 6d 6f 72 79 } //01 00  WriteProcessMemory
+		$a_01_6 = {52 65 73 75 6d 65 54 68 72 65 61 64 } //01 00  ResumeThread
+		$a_01_7 = {47 65 74 42 79 74 65 73 } //00 00  GetBytes
+	condition:
+		any of ($a_*)
+ 
+}

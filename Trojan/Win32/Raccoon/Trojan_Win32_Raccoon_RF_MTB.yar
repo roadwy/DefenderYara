@@ -14,7 +14,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_2{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {8b c8 33 d2 8b c7 f7 f1 8b 45 0c 8b 4d 08 8a 04 02 32 04 31 47 88 06 3b 7d 10 72 d8 } //00 00 
+		$a_01_0 = {8b 45 c0 8b 55 e4 8d 4d f8 89 0c 24 8b 4d 14 8b 5d 0c 33 99 20 01 00 00 89 5c 24 04 } //00 00 
 	condition:
 		any of ($a_*)
  
@@ -24,7 +24,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_3{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {55 8b ec 8b 45 08 8b 4d 0c 29 08 5d c2 08 00 55 8b ec 51 83 65 fc 00 8b 45 0c 01 45 fc 8b 45 08 8b 4d fc 31 08 c9 c2 08 00 } //00 00 
+		$a_01_0 = {8b c8 33 d2 8b c7 f7 f1 8b 45 0c 8b 4d 08 8a 04 02 32 04 31 47 88 06 3b 7d 10 72 d8 } //00 00 
 	condition:
 		any of ($a_*)
  
@@ -34,7 +34,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_4{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {8b 44 24 04 8b 4c 24 08 29 08 c2 08 00 8b 44 24 04 8b 4c 24 08 29 08 c2 08 00 8b 44 24 08 33 44 24 0c 8b 4c 24 04 89 01 c2 0c 00 } //00 00 
+		$a_01_0 = {55 8b ec 8b 45 08 8b 4d 0c 29 08 5d c2 08 00 55 8b ec 51 83 65 fc 00 8b 45 0c 01 45 fc 8b 45 08 8b 4d fc 31 08 c9 c2 08 00 } //00 00 
 	condition:
 		any of ($a_*)
  
@@ -44,12 +44,22 @@ rule Trojan_Win32_Raccoon_RF_MTB_5{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_03_0 = {51 c7 04 24 00 00 00 00 8b 44 24 0c 89 04 24 8b 44 24 08 31 04 24 8b 04 24 89 01 59 c2 08 00 90 02 08 81 00 e1 34 ef c6 c3 90 00 } //00 00 
+		$a_01_0 = {8b 44 24 04 8b 4c 24 08 29 08 c2 08 00 8b 44 24 04 8b 4c 24 08 29 08 c2 08 00 8b 44 24 08 33 44 24 0c 8b 4c 24 04 89 01 c2 0c 00 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_Win32_Raccoon_RF_MTB_6{
+	meta:
+		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {51 c7 04 24 00 00 00 00 8b 44 24 0c 89 04 24 8b 44 24 08 31 04 24 8b 04 24 89 01 59 c2 08 00 90 02 08 81 00 e1 34 ef c6 c3 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Raccoon_RF_MTB_7{
 	meta:
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -60,7 +70,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_6{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Raccoon_RF_MTB_7{
+rule Trojan_Win32_Raccoon_RF_MTB_8{
 	meta:
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
@@ -70,7 +80,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_7{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Raccoon_RF_MTB_8{
+rule Trojan_Win32_Raccoon_RF_MTB_9{
 	meta:
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
@@ -80,7 +90,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_8{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Raccoon_RF_MTB_9{
+rule Trojan_Win32_Raccoon_RF_MTB_10{
 	meta:
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
@@ -90,7 +100,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_9{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Raccoon_RF_MTB_10{
+rule Trojan_Win32_Raccoon_RF_MTB_11{
 	meta:
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
@@ -100,7 +110,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_10{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Raccoon_RF_MTB_11{
+rule Trojan_Win32_Raccoon_RF_MTB_12{
 	meta:
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
@@ -110,7 +120,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_11{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Raccoon_RF_MTB_12{
+rule Trojan_Win32_Raccoon_RF_MTB_13{
 	meta:
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
@@ -120,7 +130,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_12{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Raccoon_RF_MTB_13{
+rule Trojan_Win32_Raccoon_RF_MTB_14{
 	meta:
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
@@ -130,7 +140,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_13{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Raccoon_RF_MTB_14{
+rule Trojan_Win32_Raccoon_RF_MTB_15{
 	meta:
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
@@ -140,7 +150,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_14{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Raccoon_RF_MTB_15{
+rule Trojan_Win32_Raccoon_RF_MTB_16{
 	meta:
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		

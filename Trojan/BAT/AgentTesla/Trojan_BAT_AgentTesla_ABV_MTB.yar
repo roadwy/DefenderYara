@@ -11,6 +11,20 @@ rule Trojan_BAT_AgentTesla_ABV_MTB{
 }
 rule Trojan_BAT_AgentTesla_ABV_MTB_2{
 	meta:
+		description = "Trojan:BAT/AgentTesla.ABV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 05 00 00 06 00 "
+		
+	strings :
+		$a_03_0 = {11 09 11 0e 8f 90 01 03 01 25 71 90 01 03 01 11 0c 11 0e 91 61 d2 81 90 01 03 01 11 0e 17 58 13 0e 11 0e 11 08 32 d9 90 00 } //01 00 
+		$a_01_1 = {47 65 74 54 65 6d 70 50 61 74 68 } //01 00  GetTempPath
+		$a_01_2 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //01 00  DownloadData
+		$a_01_3 = {47 65 74 44 72 69 76 65 73 } //01 00  GetDrives
+		$a_01_4 = {24 35 66 32 37 65 39 32 61 2d 36 31 31 38 2d 34 62 63 37 2d 61 63 39 34 2d 33 35 34 62 32 37 66 31 65 38 30 66 } //00 00  $5f27e92a-6118-4bc7-ac94-354b27f1e80f
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_ABV_MTB_3{
+	meta:
 		description = "Trojan:BAT/AgentTesla.ABV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		
 	strings :

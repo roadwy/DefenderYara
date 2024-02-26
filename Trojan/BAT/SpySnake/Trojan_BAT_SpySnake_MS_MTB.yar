@@ -1,6 +1,20 @@
 
 rule Trojan_BAT_SpySnake_MS_MTB{
 	meta:
+		description = "Trojan:BAT/SpySnake.MS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 05 00 00 0a 00 "
+		
+	strings :
+		$a_01_0 = {57 1f a2 0b 09 0f 00 00 00 fa 25 33 00 16 00 00 01 00 00 00 72 00 00 00 6c 00 00 00 10 01 00 00 2c 02 00 00 82 01 00 00 02 00 00 00 86 } //05 00 
+		$a_01_1 = {59 75 43 68 61 6e 67 2e 43 6f 72 65 2e 50 72 6f 70 65 72 74 69 65 73 } //01 00  YuChang.Core.Properties
+		$a_01_2 = {51 52 5f 53 43 45 4e 45 } //01 00  QR_SCENE
+		$a_01_3 = {70 6f 73 74 44 61 74 61 } //01 00  postData
+		$a_01_4 = {67 65 74 5f 4e 65 78 74 4f 70 65 6e 49 64 } //00 00  get_NextOpenId
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_SpySnake_MS_MTB_2{
+	meta:
 		description = "Trojan:BAT/SpySnake.MS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,23 00 23 00 05 00 00 0a 00 "
 		
 	strings :

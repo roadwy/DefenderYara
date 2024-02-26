@@ -928,6 +928,19 @@ rule _#ASRWin32ApiMacroExclusion_78{
 }
 rule _#ASRWin32ApiMacroExclusion_79{
 	meta:
+		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 04 00 00 01 00 "
+		
+	strings :
+		$a_00_0 = {43 72 65 61 74 65 64 20 62 79 20 2d 20 42 72 6f 63 68 65 74 20 6c 74 64 } //01 00  Created by - Brochet ltd
+		$a_00_1 = {77 77 77 2e 62 72 6f 63 68 65 74 2e 63 6f 2e 75 6b } //01 00  www.brochet.co.uk
+		$a_00_2 = {41 75 74 68 6f 72 3a 44 75 6e 63 61 6e 20 4d 69 6c 6e 65 73 20 2d 20 42 72 6f 63 68 65 74 } //01 00  Author:Duncan Milnes - Brochet
+		$a_00_3 = {50 75 62 6c 69 63 20 43 6f 6e 73 74 20 43 4f 4d 50 41 4e 59 5f 4e 41 4d 45 5f 53 48 4f 52 54 20 41 73 20 53 74 72 69 6e 67 20 3d 20 22 46 72 61 7a 65 72 2d 4e 61 73 68 22 } //00 00  Public Const COMPANY_NAME_SHORT As String = "Frazer-Nash"
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#ASRWin32ApiMacroExclusion_80{
+	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 04 00 00 02 00 "
 		
 	strings :
@@ -939,7 +952,7 @@ rule _#ASRWin32ApiMacroExclusion_79{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_80{
+rule _#ASRWin32ApiMacroExclusion_81{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -951,7 +964,7 @@ rule _#ASRWin32ApiMacroExclusion_80{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_81{
+rule _#ASRWin32ApiMacroExclusion_82{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -963,7 +976,7 @@ rule _#ASRWin32ApiMacroExclusion_81{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_82{
+rule _#ASRWin32ApiMacroExclusion_83{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -975,7 +988,7 @@ rule _#ASRWin32ApiMacroExclusion_82{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_83{
+rule _#ASRWin32ApiMacroExclusion_84{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
@@ -987,7 +1000,7 @@ rule _#ASRWin32ApiMacroExclusion_83{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_84{
+rule _#ASRWin32ApiMacroExclusion_85{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
@@ -999,7 +1012,7 @@ rule _#ASRWin32ApiMacroExclusion_84{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_85{
+rule _#ASRWin32ApiMacroExclusion_86{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 02 00 00 02 00 "
 		
@@ -1010,7 +1023,7 @@ rule _#ASRWin32ApiMacroExclusion_85{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_86{
+rule _#ASRWin32ApiMacroExclusion_87{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1022,7 +1035,7 @@ rule _#ASRWin32ApiMacroExclusion_86{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_87{
+rule _#ASRWin32ApiMacroExclusion_88{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 04 00 00 02 00 "
 		
@@ -1035,7 +1048,7 @@ rule _#ASRWin32ApiMacroExclusion_87{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_88{
+rule _#ASRWin32ApiMacroExclusion_89{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1047,7 +1060,7 @@ rule _#ASRWin32ApiMacroExclusion_88{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_89{
+rule _#ASRWin32ApiMacroExclusion_90{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1059,7 +1072,7 @@ rule _#ASRWin32ApiMacroExclusion_89{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_90{
+rule _#ASRWin32ApiMacroExclusion_91{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1071,7 +1084,7 @@ rule _#ASRWin32ApiMacroExclusion_90{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_91{
+rule _#ASRWin32ApiMacroExclusion_92{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1083,7 +1096,7 @@ rule _#ASRWin32ApiMacroExclusion_91{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_92{
+rule _#ASRWin32ApiMacroExclusion_93{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1095,7 +1108,7 @@ rule _#ASRWin32ApiMacroExclusion_92{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_93{
+rule _#ASRWin32ApiMacroExclusion_94{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1108,7 +1121,19 @@ rule _#ASRWin32ApiMacroExclusion_93{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_94{
+rule _#ASRWin32ApiMacroExclusion_95{
+	meta:
+		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
+		
+	strings :
+		$a_00_0 = {43 61 6c 6c 20 41 70 70 6c 69 63 61 74 69 6f 6e 2e 52 75 6e 28 22 43 50 50 6c 75 73 47 49 2e 43 72 65 61 74 65 45 64 69 74 5f 47 49 43 61 73 65 22 29 } //02 00  Call Application.Run("CPPlusGI.CreateEdit_GICase")
+		$a_00_1 = {4d 73 67 42 6f 78 20 4e 6f 77 20 26 20 76 62 43 72 4c 66 20 26 20 22 4d 69 74 6f 67 65 6e 2e 45 64 69 74 43 61 73 65 28 29 22 } //02 00  MsgBox Now & vbCrLf & "Mitogen.EditCase()"
+		$a_00_2 = {45 6e 64 20 49 66 20 27 47 65 74 56 61 72 69 61 62 6c 65 28 22 45 6e 61 62 6c 65 47 65 6e 65 49 6e 73 69 67 68 74 22 2c 20 64 44 6f 63 2e 4e 61 6d 65 29 } //00 00  End If 'GetVariable("EnableGeneInsight", dDoc.Name)
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#ASRWin32ApiMacroExclusion_96{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1120,7 +1145,7 @@ rule _#ASRWin32ApiMacroExclusion_94{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_95{
+rule _#ASRWin32ApiMacroExclusion_97{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -1134,7 +1159,7 @@ rule _#ASRWin32ApiMacroExclusion_95{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_96{
+rule _#ASRWin32ApiMacroExclusion_98{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,1e 00 1e 00 03 00 00 0a 00 "
 		
@@ -1146,7 +1171,7 @@ rule _#ASRWin32ApiMacroExclusion_96{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_97{
+rule _#ASRWin32ApiMacroExclusion_99{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1158,7 +1183,7 @@ rule _#ASRWin32ApiMacroExclusion_97{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_98{
+rule _#ASRWin32ApiMacroExclusion_100{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
@@ -1170,7 +1195,19 @@ rule _#ASRWin32ApiMacroExclusion_98{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_99{
+rule _#ASRWin32ApiMacroExclusion_101{
+	meta:
+		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
+		
+	strings :
+		$a_00_0 = {50 75 62 6c 69 63 20 46 75 6e 63 74 69 6f 6e 20 4c 4d 54 5f 47 65 74 45 71 75 69 76 61 6c 65 6e 74 52 61 74 69 6e 67 } //02 00  Public Function LMT_GetEquivalentRating
+		$a_00_1 = {50 75 62 6c 69 63 20 46 75 6e 63 74 69 6f 6e 20 4c 4d 54 5f 47 65 74 50 61 72 74 79 43 72 65 64 69 74 52 61 74 69 6e 67 } //02 00  Public Function LMT_GetPartyCreditRating
+		$a_00_2 = {53 65 74 20 64 62 73 44 61 74 61 62 61 73 65 5f 35 41 4d 20 3d 20 4f 70 65 6e 44 61 74 61 62 61 73 65 28 22 46 69 6e 64 75 72 5f 35 61 6d 22 2c 20 46 61 6c 73 65 2c 20 54 72 75 65 2c 20 22 4f 44 42 43 3b 22 29 } //00 00  Set dbsDatabase_5AM = OpenDatabase("Findur_5am", False, True, "ODBC;")
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#ASRWin32ApiMacroExclusion_102{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1182,7 +1219,7 @@ rule _#ASRWin32ApiMacroExclusion_99{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_100{
+rule _#ASRWin32ApiMacroExclusion_103{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1195,7 +1232,7 @@ rule _#ASRWin32ApiMacroExclusion_100{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_101{
+rule _#ASRWin32ApiMacroExclusion_104{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -1206,7 +1243,19 @@ rule _#ASRWin32ApiMacroExclusion_101{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_102{
+rule _#ASRWin32ApiMacroExclusion_105{
+	meta:
+		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_00_0 = {41 63 74 69 76 65 57 6f 72 6b 62 6f 6f 6b 2e 55 6e 70 72 6f 74 65 63 74 20 50 61 73 73 77 6f 72 64 3a 3d 22 48 52 53 53 53 41 22 } //01 00  ActiveWorkbook.Unprotect Password:="HRSSSA"
+		$a_00_1 = {41 63 74 69 76 65 57 6f 72 6b 62 6f 6f 6b 2e 53 61 76 65 43 6f 70 79 41 73 20 73 74 72 50 61 74 68 20 26 20 22 5c 48 52 2d 45 6d 70 6c 6f 79 6d 65 6e 74 2d 46 6f 72 6d 5f 4e 65 77 2e 78 6c 73 62 22 } //01 00  ActiveWorkbook.SaveCopyAs strPath & "\HR-Employment-Form_New.xlsb"
+		$a_00_2 = {77 73 50 61 72 61 6d 65 74 65 72 73 2e 52 61 6e 67 65 28 22 46 69 6c 65 4e 61 6d 65 32 22 29 20 3d 20 22 48 52 46 52 4d 47 4e 41 2e 63 73 76 22 } //00 00  wsParameters.Range("FileName2") = "HRFRMGNA.csv"
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#ASRWin32ApiMacroExclusion_106{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1219,7 +1268,7 @@ rule _#ASRWin32ApiMacroExclusion_102{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_103{
+rule _#ASRWin32ApiMacroExclusion_107{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0a 00 0a 00 05 00 00 02 00 "
 		
@@ -1233,7 +1282,7 @@ rule _#ASRWin32ApiMacroExclusion_103{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_104{
+rule _#ASRWin32ApiMacroExclusion_108{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
@@ -1245,7 +1294,7 @@ rule _#ASRWin32ApiMacroExclusion_104{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_105{
+rule _#ASRWin32ApiMacroExclusion_109{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1258,7 +1307,7 @@ rule _#ASRWin32ApiMacroExclusion_105{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_106{
+rule _#ASRWin32ApiMacroExclusion_110{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1270,7 +1319,7 @@ rule _#ASRWin32ApiMacroExclusion_106{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_107{
+rule _#ASRWin32ApiMacroExclusion_111{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
@@ -1282,7 +1331,7 @@ rule _#ASRWin32ApiMacroExclusion_107{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_108{
+rule _#ASRWin32ApiMacroExclusion_112{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 04 00 00 02 00 "
 		
@@ -1295,7 +1344,7 @@ rule _#ASRWin32ApiMacroExclusion_108{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_109{
+rule _#ASRWin32ApiMacroExclusion_113{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1308,7 +1357,7 @@ rule _#ASRWin32ApiMacroExclusion_109{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_110{
+rule _#ASRWin32ApiMacroExclusion_114{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1320,7 +1369,7 @@ rule _#ASRWin32ApiMacroExclusion_110{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_111{
+rule _#ASRWin32ApiMacroExclusion_115{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1333,7 +1382,7 @@ rule _#ASRWin32ApiMacroExclusion_111{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_112{
+rule _#ASRWin32ApiMacroExclusion_116{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1346,7 +1395,7 @@ rule _#ASRWin32ApiMacroExclusion_112{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_113{
+rule _#ASRWin32ApiMacroExclusion_117{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 06 00 00 03 00 "
 		
@@ -1361,7 +1410,7 @@ rule _#ASRWin32ApiMacroExclusion_113{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_114{
+rule _#ASRWin32ApiMacroExclusion_118{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1373,7 +1422,7 @@ rule _#ASRWin32ApiMacroExclusion_114{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_115{
+rule _#ASRWin32ApiMacroExclusion_119{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1386,7 +1435,7 @@ rule _#ASRWin32ApiMacroExclusion_115{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_116{
+rule _#ASRWin32ApiMacroExclusion_120{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1398,7 +1447,7 @@ rule _#ASRWin32ApiMacroExclusion_116{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_117{
+rule _#ASRWin32ApiMacroExclusion_121{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1410,7 +1459,7 @@ rule _#ASRWin32ApiMacroExclusion_117{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_118{
+rule _#ASRWin32ApiMacroExclusion_122{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -1424,7 +1473,7 @@ rule _#ASRWin32ApiMacroExclusion_118{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_119{
+rule _#ASRWin32ApiMacroExclusion_123{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
@@ -1436,7 +1485,7 @@ rule _#ASRWin32ApiMacroExclusion_119{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_120{
+rule _#ASRWin32ApiMacroExclusion_124{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1449,7 +1498,7 @@ rule _#ASRWin32ApiMacroExclusion_120{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_121{
+rule _#ASRWin32ApiMacroExclusion_125{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1462,7 +1511,7 @@ rule _#ASRWin32ApiMacroExclusion_121{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_122{
+rule _#ASRWin32ApiMacroExclusion_126{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 04 00 00 02 00 "
 		
@@ -1475,7 +1524,7 @@ rule _#ASRWin32ApiMacroExclusion_122{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_123{
+rule _#ASRWin32ApiMacroExclusion_127{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 04 00 00 02 00 "
 		
@@ -1488,7 +1537,7 @@ rule _#ASRWin32ApiMacroExclusion_123{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_124{
+rule _#ASRWin32ApiMacroExclusion_128{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1501,7 +1550,7 @@ rule _#ASRWin32ApiMacroExclusion_124{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_125{
+rule _#ASRWin32ApiMacroExclusion_129{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1513,7 +1562,7 @@ rule _#ASRWin32ApiMacroExclusion_125{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_126{
+rule _#ASRWin32ApiMacroExclusion_130{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
@@ -1525,20 +1574,7 @@ rule _#ASRWin32ApiMacroExclusion_126{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_127{
-	meta:
-		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
-		
-	strings :
-		$a_00_0 = {50 72 69 76 61 74 65 20 46 75 6e 63 74 69 6f 6e 20 42 6e 65 44 6f 63 75 6d 65 6e 74 5f 6f 6e 63 6c 69 63 6b 28 29 20 41 73 20 42 6f 6f 6c 65 61 6e } //01 00  Private Function BneDocument_onclick() As Boolean
-		$a_00_1 = {6f 62 6a 50 61 72 61 6d 73 2e 61 64 64 20 22 62 6e 65 3a 70 61 67 65 22 2c 20 22 42 6e 65 44 6f 77 6e 6c 6f 61 64 53 74 61 74 65 22 } //01 00  objParams.add "bne:page", "BneDownloadState"
-		$a_00_2 = {50 72 69 76 61 74 65 20 43 6f 6e 73 74 20 4c 4f 47 5f 53 48 45 45 54 20 3d 20 22 42 6e 65 4c 6f 67 22 } //01 00  Private Const LOG_SHEET = "BneLog"
-		$a_00_3 = {41 63 74 69 76 65 57 6f 72 6b 62 6f 6f 6b 2e 57 6f 72 6b 73 68 65 65 74 73 28 69 6e 74 43 6e 74 29 2e 42 6e 65 53 74 61 72 74 75 70 } //00 00  ActiveWorkbook.Worksheets(intCnt).BneStartup
-	condition:
-		any of ($a_*)
- 
-}
-rule _#ASRWin32ApiMacroExclusion_128{
+rule _#ASRWin32ApiMacroExclusion_131{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1550,7 +1586,7 @@ rule _#ASRWin32ApiMacroExclusion_128{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_129{
+rule _#ASRWin32ApiMacroExclusion_132{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,02 00 02 00 02 00 00 02 00 "
 		
@@ -1561,7 +1597,7 @@ rule _#ASRWin32ApiMacroExclusion_129{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_130{
+rule _#ASRWin32ApiMacroExclusion_133{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1574,7 +1610,7 @@ rule _#ASRWin32ApiMacroExclusion_130{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_131{
+rule _#ASRWin32ApiMacroExclusion_134{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1587,7 +1623,7 @@ rule _#ASRWin32ApiMacroExclusion_131{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_132{
+rule _#ASRWin32ApiMacroExclusion_135{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1599,7 +1635,7 @@ rule _#ASRWin32ApiMacroExclusion_132{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_133{
+rule _#ASRWin32ApiMacroExclusion_136{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0b 00 0b 00 04 00 00 05 00 "
 		
@@ -1612,7 +1648,7 @@ rule _#ASRWin32ApiMacroExclusion_133{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_134{
+rule _#ASRWin32ApiMacroExclusion_137{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1625,7 +1661,7 @@ rule _#ASRWin32ApiMacroExclusion_134{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_135{
+rule _#ASRWin32ApiMacroExclusion_138{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0b 00 0b 00 04 00 00 05 00 "
 		
@@ -1638,7 +1674,7 @@ rule _#ASRWin32ApiMacroExclusion_135{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_136{
+rule _#ASRWin32ApiMacroExclusion_139{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 05 00 00 02 00 "
 		
@@ -1652,7 +1688,19 @@ rule _#ASRWin32ApiMacroExclusion_136{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_137{
+rule _#ASRWin32ApiMacroExclusion_140{
+	meta:
+		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_00_0 = {47 6c 6f 62 61 6c 20 43 6f 6e 73 74 20 58 4c 53 54 41 52 54 5f 46 49 4c 45 5f 30 31 20 41 73 20 53 74 72 69 6e 67 20 3d 20 22 6d 65 69 6a 62 75 72 67 46 75 6e 63 74 69 65 73 2e 78 6c 61 6d 22 } //01 00  Global Const XLSTART_FILE_01 As String = "meijburgFuncties.xlam"
+		$a_00_1 = {47 6c 6f 62 61 6c 20 43 6f 6e 73 74 20 58 4c 53 54 41 52 54 5f 46 49 4c 45 5f 30 32 20 41 73 20 53 74 72 69 6e 67 20 3d 20 22 44 42 5f 53 74 6f 72 61 67 65 2e 78 6c 61 6d 22 } //01 00  Global Const XLSTART_FILE_02 As String = "DB_Storage.xlam"
+		$a_00_2 = {57 42 2e 43 65 6c 6c 73 2e 52 65 70 6c 61 63 65 20 77 68 61 74 3a 3d 22 6d 62 46 75 6e 63 74 69 65 73 2e 78 6c 61 6d 22 2c 20 52 65 70 6c 61 63 65 6d 65 6e 74 3a 3d 22 4d 4d 32 2e 30 2e 78 6c 61 6d 22 } //00 00  WB.Cells.Replace what:="mbFuncties.xlam", Replacement:="MM2.0.xlam"
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#ASRWin32ApiMacroExclusion_141{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1664,7 +1712,7 @@ rule _#ASRWin32ApiMacroExclusion_137{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_138{
+rule _#ASRWin32ApiMacroExclusion_142{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,02 00 02 00 03 00 00 02 00 "
 		
@@ -1676,7 +1724,7 @@ rule _#ASRWin32ApiMacroExclusion_138{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_139{
+rule _#ASRWin32ApiMacroExclusion_143{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1689,19 +1737,7 @@ rule _#ASRWin32ApiMacroExclusion_139{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_140{
-	meta:
-		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
-		
-	strings :
-		$a_00_0 = {50 72 69 76 61 74 65 20 50 72 6f 70 65 72 74 79 20 53 65 74 20 49 56 42 53 41 58 43 6f 6e 74 65 6e 74 48 61 6e 64 6c 65 72 5f 64 6f 63 75 6d 65 6e 74 4c 6f 63 61 74 6f 72 28 42 79 56 61 6c 20 52 48 53 20 41 73 20 4d 53 58 4d 4c 32 2e 49 56 42 53 41 58 4c 6f 63 61 74 6f 72 29 } //02 00  Private Property Set IVBSAXContentHandler_documentLocator(ByVal RHS As MSXML2.IVBSAXLocator)
-		$a_00_1 = {45 72 72 2e 52 61 69 73 65 20 33 32 30 30 31 2c 20 22 49 56 42 53 41 58 43 6f 6e 74 65 6e 74 48 61 6e 64 6c 65 72 5f 73 74 61 72 74 45 6c 65 6d 65 6e 74 22 } //02 00  Err.Raise 32001, "IVBSAXContentHandler_startElement"
-		$a_00_2 = {50 72 69 76 61 74 65 20 53 75 62 20 49 56 42 53 41 58 43 6f 6e 74 65 6e 74 48 61 6e 64 6c 65 72 5f 73 74 61 72 74 44 6f 63 75 6d 65 6e 74 28 29 } //00 00  Private Sub IVBSAXContentHandler_startDocument()
-	condition:
-		any of ($a_*)
- 
-}
-rule _#ASRWin32ApiMacroExclusion_141{
+rule _#ASRWin32ApiMacroExclusion_144{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1714,7 +1750,19 @@ rule _#ASRWin32ApiMacroExclusion_141{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_142{
+rule _#ASRWin32ApiMacroExclusion_145{
+	meta:
+		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_00_0 = {43 72 65 61 74 65 64 20 62 79 20 44 6f 75 67 20 52 6f 62 62 69 6e 73 20 2d 20 64 6b 72 40 6d 76 70 73 2e 6f 72 67 } //01 00  Created by Doug Robbins - dkr@mvps.org
+		$a_00_1 = {6c 6e 67 43 6f 75 6e 74 20 3d 20 56 61 6c 28 47 65 74 53 65 74 74 69 6e 67 28 22 41 6c 61 74 47 61 62 75 6e 67 6b 61 6e 22 2c 20 22 50 65 6d 61 6b 61 69 61 6e 22 2c 20 22 48 69 74 75 6e 67 22 29 29 } //01 00  lngCount = Val(GetSetting("AlatGabungkan", "Pemakaian", "Hitung"))
+		$a_00_2 = {53 65 74 20 6f 49 74 65 6d 20 3d 20 6f 4f 75 74 6c 6f 6f 6b 41 70 70 2e 43 72 65 61 74 65 49 74 65 6d 46 72 6f 6d 54 65 6d 70 6c 61 74 65 28 41 70 70 6c 69 63 61 74 69 6f 6e 2e 53 74 61 72 74 75 70 50 61 74 68 20 26 20 22 5c 4d 65 72 67 65 54 6f 6f 6c 73 2e 6f 66 74 22 29 } //00 00  Set oItem = oOutlookApp.CreateItemFromTemplate(Application.StartupPath & "\MergeTools.oft")
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#ASRWin32ApiMacroExclusion_146{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1726,7 +1774,7 @@ rule _#ASRWin32ApiMacroExclusion_142{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_143{
+rule _#ASRWin32ApiMacroExclusion_147{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1739,7 +1787,7 @@ rule _#ASRWin32ApiMacroExclusion_143{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_144{
+rule _#ASRWin32ApiMacroExclusion_148{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 04 00 00 02 00 "
 		
@@ -1752,21 +1800,21 @@ rule _#ASRWin32ApiMacroExclusion_144{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_145{
+rule _#ASRWin32ApiMacroExclusion_149{
 	meta:
-		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 05 00 00 02 00 "
+		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 05 00 00 01 00 "
 		
 	strings :
-		$a_00_0 = {50 75 62 6c 69 63 20 50 72 6f 70 65 72 74 79 20 47 65 74 20 49 74 65 6d 28 76 49 6e 64 65 78 20 41 73 20 56 61 72 69 61 6e 74 29 } //02 00  Public Property Get Item(vIndex As Variant)
-		$a_00_1 = {44 69 6d 20 6f 62 6a 50 72 6f 70 65 72 74 69 65 73 20 41 73 20 4e 65 77 20 42 6e 65 56 42 41 50 72 6f 70 65 72 74 69 65 73 } //02 00  Dim objProperties As New BneVBAProperties
-		$a_00_2 = {50 75 62 6c 69 63 20 54 79 70 65 20 54 49 4d 45 5f 5a 4f 4e 45 5f 49 4e 46 4f 52 4d 41 54 49 4f 4e } //01 00  Public Type TIME_ZONE_INFORMATION
-		$a_00_3 = {50 72 69 76 61 74 65 20 6d 5f 63 6f 6c 53 68 65 65 74 73 20 41 73 20 4e 65 77 20 43 6f 6c 6c 65 63 74 69 6f 6e } //01 00  Private m_colSheets As New Collection
-		$a_00_4 = {50 72 69 76 61 74 65 20 6d 63 50 61 72 61 6d 65 74 65 72 73 20 41 73 20 43 6f 6c 6c 65 63 74 69 6f 6e } //00 00  Private mcParameters As Collection
+		$a_00_0 = {70 6f 77 65 72 70 6f 69 6e 74 73 68 6f 72 74 63 75 74 6d 61 6e 61 67 65 72 5f 6d 61 6e 61 67 65 73 68 6f 72 74 63 75 74 73 } //01 00  powerpointshortcutmanager_manageshortcuts
+		$a_00_1 = {70 6f 77 65 72 70 6f 69 6e 74 73 68 6f 72 74 63 75 74 6d 61 6e 61 67 65 72 5f 73 65 74 74 69 6e 67 73 } //01 00  powerpointshortcutmanager_settings
+		$a_00_2 = {70 6f 77 65 72 70 6f 69 6e 74 73 68 6f 72 74 63 75 74 6d 61 6e 61 67 65 72 5f 76 69 73 69 74 74 69 70 73 70 61 67 65 } //01 00  powerpointshortcutmanager_visittipspage
+		$a_00_3 = {70 6f 77 65 72 70 6f 69 6e 74 73 68 6f 72 74 63 75 74 6d 61 6e 61 67 65 72 5f 61 62 6f 75 74 } //02 00  powerpointshortcutmanager_about
+		$a_00_4 = {64 65 73 63 72 69 70 74 69 6f 6e 3d 22 73 68 6f 72 74 63 75 74 20 6d 61 6e 61 67 65 72 20 66 6f 72 20 70 6f 77 65 72 70 6f 69 6e 74 22 } //00 00  description="shortcut manager for powerpoint"
 	condition:
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_146{
+rule _#ASRWin32ApiMacroExclusion_150{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1779,7 +1827,7 @@ rule _#ASRWin32ApiMacroExclusion_146{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_147{
+rule _#ASRWin32ApiMacroExclusion_151{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1791,7 +1839,7 @@ rule _#ASRWin32ApiMacroExclusion_147{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_148{
+rule _#ASRWin32ApiMacroExclusion_152{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1804,7 +1852,7 @@ rule _#ASRWin32ApiMacroExclusion_148{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_149{
+rule _#ASRWin32ApiMacroExclusion_153{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1817,7 +1865,7 @@ rule _#ASRWin32ApiMacroExclusion_149{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_150{
+rule _#ASRWin32ApiMacroExclusion_154{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
@@ -1829,7 +1877,7 @@ rule _#ASRWin32ApiMacroExclusion_150{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_151{
+rule _#ASRWin32ApiMacroExclusion_155{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1842,7 +1890,7 @@ rule _#ASRWin32ApiMacroExclusion_151{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_152{
+rule _#ASRWin32ApiMacroExclusion_156{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 05 00 00 02 00 "
 		
@@ -1856,7 +1904,7 @@ rule _#ASRWin32ApiMacroExclusion_152{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_153{
+rule _#ASRWin32ApiMacroExclusion_157{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1869,7 +1917,7 @@ rule _#ASRWin32ApiMacroExclusion_153{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_154{
+rule _#ASRWin32ApiMacroExclusion_158{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1882,7 +1930,7 @@ rule _#ASRWin32ApiMacroExclusion_154{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_155{
+rule _#ASRWin32ApiMacroExclusion_159{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 04 00 00 02 00 "
 		
@@ -1895,7 +1943,7 @@ rule _#ASRWin32ApiMacroExclusion_155{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_156{
+rule _#ASRWin32ApiMacroExclusion_160{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0a 00 0a 00 05 00 00 02 00 "
 		
@@ -1909,7 +1957,7 @@ rule _#ASRWin32ApiMacroExclusion_156{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_157{
+rule _#ASRWin32ApiMacroExclusion_161{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,09 00 09 00 0e 00 00 03 00 "
 		
@@ -1932,19 +1980,7 @@ rule _#ASRWin32ApiMacroExclusion_157{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_158{
-	meta:
-		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 03 00 00 02 00 "
-		
-	strings :
-		$a_01_0 = {50 61 74 74 65 72 6e 20 3d 20 78 6c 53 6f 6c 69 64 } //02 00  Pattern = xlSolid
-		$a_01_1 = {50 61 74 74 65 72 6e 43 6f 6c 6f 72 49 6e 64 65 78 20 3d 20 78 6c 41 75 74 6f 6d 61 74 69 63 } //ce ff  PatternColorIndex = xlAutomatic
-		$a_00_2 = {68 74 74 70 73 3a 2f 2f 73 69 74 65 73 2e 74 68 65 77 65 73 74 70 61 63 67 72 6f 75 70 2e 63 6f 6d 2e 61 75 2f 73 69 74 65 73 2f 54 53 36 35 37 2f 57 41 53 50 2f 50 75 62 6c 69 73 68 69 6e 67 49 6d 61 67 65 73 2f 57 41 53 50 25 32 30 46 54 45 25 32 30 46 6f 72 65 63 61 73 74 25 32 30 49 6d 70 6f 72 74 25 32 30 54 75 74 6f 72 69 61 6c 73 2f 57 41 53 50 25 32 30 46 54 45 25 32 30 46 6f 72 65 63 61 73 74 25 32 30 49 6d 70 6f 72 74 25 32 30 54 75 74 6f 72 69 61 6c 73 2e 6d 70 34 } //00 00  https://sites.thewestpacgroup.com.au/sites/TS657/WASP/PublishingImages/WASP%20FTE%20Forecast%20Import%20Tutorials/WASP%20FTE%20Forecast%20Import%20Tutorials.mp4
-	condition:
-		any of ($a_*)
- 
-}
-rule _#ASRWin32ApiMacroExclusion_159{
+rule _#ASRWin32ApiMacroExclusion_162{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -1956,7 +1992,7 @@ rule _#ASRWin32ApiMacroExclusion_159{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_160{
+rule _#ASRWin32ApiMacroExclusion_163{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 04 00 00 02 00 "
 		
@@ -1969,7 +2005,7 @@ rule _#ASRWin32ApiMacroExclusion_160{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_161{
+rule _#ASRWin32ApiMacroExclusion_164{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
@@ -1981,7 +2017,7 @@ rule _#ASRWin32ApiMacroExclusion_161{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_162{
+rule _#ASRWin32ApiMacroExclusion_165{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -1994,7 +2030,7 @@ rule _#ASRWin32ApiMacroExclusion_162{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_163{
+rule _#ASRWin32ApiMacroExclusion_166{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 05 00 00 02 00 "
 		
@@ -2008,7 +2044,7 @@ rule _#ASRWin32ApiMacroExclusion_163{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_164{
+rule _#ASRWin32ApiMacroExclusion_167{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -2020,7 +2056,7 @@ rule _#ASRWin32ApiMacroExclusion_164{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_165{
+rule _#ASRWin32ApiMacroExclusion_168{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -2032,7 +2068,7 @@ rule _#ASRWin32ApiMacroExclusion_165{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_166{
+rule _#ASRWin32ApiMacroExclusion_169{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2045,7 +2081,7 @@ rule _#ASRWin32ApiMacroExclusion_166{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_167{
+rule _#ASRWin32ApiMacroExclusion_170{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2058,7 +2094,7 @@ rule _#ASRWin32ApiMacroExclusion_167{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_168{
+rule _#ASRWin32ApiMacroExclusion_171{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2071,7 +2107,7 @@ rule _#ASRWin32ApiMacroExclusion_168{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_169{
+rule _#ASRWin32ApiMacroExclusion_172{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2084,7 +2120,7 @@ rule _#ASRWin32ApiMacroExclusion_169{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_170{
+rule _#ASRWin32ApiMacroExclusion_173{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2097,7 +2133,7 @@ rule _#ASRWin32ApiMacroExclusion_170{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_171{
+rule _#ASRWin32ApiMacroExclusion_174{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2110,7 +2146,7 @@ rule _#ASRWin32ApiMacroExclusion_171{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_172{
+rule _#ASRWin32ApiMacroExclusion_175{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -2124,7 +2160,7 @@ rule _#ASRWin32ApiMacroExclusion_172{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_173{
+rule _#ASRWin32ApiMacroExclusion_176{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0a 00 0a 00 05 00 00 05 00 "
 		
@@ -2138,7 +2174,7 @@ rule _#ASRWin32ApiMacroExclusion_173{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_174{
+rule _#ASRWin32ApiMacroExclusion_177{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 04 00 00 02 00 "
 		
@@ -2151,7 +2187,7 @@ rule _#ASRWin32ApiMacroExclusion_174{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_175{
+rule _#ASRWin32ApiMacroExclusion_178{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -2163,7 +2199,7 @@ rule _#ASRWin32ApiMacroExclusion_175{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_176{
+rule _#ASRWin32ApiMacroExclusion_179{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2176,7 +2212,7 @@ rule _#ASRWin32ApiMacroExclusion_176{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_177{
+rule _#ASRWin32ApiMacroExclusion_180{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -2188,7 +2224,7 @@ rule _#ASRWin32ApiMacroExclusion_177{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_178{
+rule _#ASRWin32ApiMacroExclusion_181{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2201,7 +2237,20 @@ rule _#ASRWin32ApiMacroExclusion_178{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_179{
+rule _#ASRWin32ApiMacroExclusion_182{
+	meta:
+		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_00_0 = {4f 75 74 70 75 74 54 78 74 20 3d 20 22 43 6f 6e 74 72 61 63 74 2c 20 44 61 74 65 2c 20 50 44 2c 20 4c 47 44 2c 20 64 4c 47 44 2e 22 } //01 00  OutputTxt = "Contract, Date, PD, LGD, dLGD."
+		$a_00_1 = {53 68 65 65 74 73 28 22 53 41 50 20 75 70 20 56 53 20 43 53 56 22 29 2e 43 65 6c 6c 73 28 32 2c 20 32 30 29 2e 56 61 6c 75 65 20 3d 20 43 4f 6e 64 69 } //01 00  Sheets("SAP up VS CSV").Cells(2, 20).Value = COndi
+		$a_00_2 = {66 75 6e 63 74 69 6f 6e 73 2e 43 6f 6e 6e 65 63 74 69 6f 6e 2e 41 70 70 6c 69 63 61 74 69 6f 6e 53 65 72 76 65 72 20 3d 20 22 70 72 65 6d 73 61 70 2e 69 74 2e 6e 65 64 6e 65 74 2e 63 6f 2e 7a 61 22 } //01 00  functions.Connection.ApplicationServer = "premsap.it.nednet.co.za"
+		$a_00_3 = {53 65 74 20 52 66 63 43 61 6c 6c 54 72 61 6e 73 61 63 74 69 6f 6e 20 3d 20 66 75 6e 63 74 69 6f 6e 73 2e 41 64 64 28 22 42 42 50 5f 52 46 43 5f 52 45 41 44 5f 54 41 42 4c 45 22 29 } //00 00  Set RfcCallTransaction = functions.Add("BBP_RFC_READ_TABLE")
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#ASRWin32ApiMacroExclusion_183{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2214,7 +2263,7 @@ rule _#ASRWin32ApiMacroExclusion_179{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_180{
+rule _#ASRWin32ApiMacroExclusion_184{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -2226,7 +2275,7 @@ rule _#ASRWin32ApiMacroExclusion_180{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_181{
+rule _#ASRWin32ApiMacroExclusion_185{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2239,7 +2288,7 @@ rule _#ASRWin32ApiMacroExclusion_181{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_182{
+rule _#ASRWin32ApiMacroExclusion_186{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -2251,7 +2300,7 @@ rule _#ASRWin32ApiMacroExclusion_182{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_183{
+rule _#ASRWin32ApiMacroExclusion_187{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -2263,7 +2312,7 @@ rule _#ASRWin32ApiMacroExclusion_183{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_184{
+rule _#ASRWin32ApiMacroExclusion_188{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2276,7 +2325,7 @@ rule _#ASRWin32ApiMacroExclusion_184{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_185{
+rule _#ASRWin32ApiMacroExclusion_189{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2289,7 +2338,7 @@ rule _#ASRWin32ApiMacroExclusion_185{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_186{
+rule _#ASRWin32ApiMacroExclusion_190{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2302,7 +2351,7 @@ rule _#ASRWin32ApiMacroExclusion_186{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_187{
+rule _#ASRWin32ApiMacroExclusion_191{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2315,7 +2364,7 @@ rule _#ASRWin32ApiMacroExclusion_187{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_188{
+rule _#ASRWin32ApiMacroExclusion_192{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2328,7 +2377,7 @@ rule _#ASRWin32ApiMacroExclusion_188{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_189{
+rule _#ASRWin32ApiMacroExclusion_193{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2341,7 +2390,7 @@ rule _#ASRWin32ApiMacroExclusion_189{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_190{
+rule _#ASRWin32ApiMacroExclusion_194{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 04 00 00 01 00 "
 		
@@ -2354,7 +2403,7 @@ rule _#ASRWin32ApiMacroExclusion_190{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_191{
+rule _#ASRWin32ApiMacroExclusion_195{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2367,7 +2416,7 @@ rule _#ASRWin32ApiMacroExclusion_191{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_192{
+rule _#ASRWin32ApiMacroExclusion_196{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2380,7 +2429,7 @@ rule _#ASRWin32ApiMacroExclusion_192{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_193{
+rule _#ASRWin32ApiMacroExclusion_197{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2393,7 +2442,7 @@ rule _#ASRWin32ApiMacroExclusion_193{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_194{
+rule _#ASRWin32ApiMacroExclusion_198{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2406,7 +2455,7 @@ rule _#ASRWin32ApiMacroExclusion_194{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_195{
+rule _#ASRWin32ApiMacroExclusion_199{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2419,7 +2468,7 @@ rule _#ASRWin32ApiMacroExclusion_195{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_196{
+rule _#ASRWin32ApiMacroExclusion_200{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -2433,7 +2482,7 @@ rule _#ASRWin32ApiMacroExclusion_196{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_197{
+rule _#ASRWin32ApiMacroExclusion_201{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2446,7 +2495,7 @@ rule _#ASRWin32ApiMacroExclusion_197{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_198{
+rule _#ASRWin32ApiMacroExclusion_202{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2459,7 +2508,7 @@ rule _#ASRWin32ApiMacroExclusion_198{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_199{
+rule _#ASRWin32ApiMacroExclusion_203{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0e 00 0e 00 07 00 00 02 00 "
 		
@@ -2475,7 +2524,7 @@ rule _#ASRWin32ApiMacroExclusion_199{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_200{
+rule _#ASRWin32ApiMacroExclusion_204{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 03 00 00 02 00 "
 		
@@ -2487,7 +2536,7 @@ rule _#ASRWin32ApiMacroExclusion_200{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_201{
+rule _#ASRWin32ApiMacroExclusion_205{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2500,7 +2549,7 @@ rule _#ASRWin32ApiMacroExclusion_201{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_202{
+rule _#ASRWin32ApiMacroExclusion_206{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2513,7 +2562,7 @@ rule _#ASRWin32ApiMacroExclusion_202{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_203{
+rule _#ASRWin32ApiMacroExclusion_207{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2526,7 +2575,7 @@ rule _#ASRWin32ApiMacroExclusion_203{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_204{
+rule _#ASRWin32ApiMacroExclusion_208{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2539,7 +2588,7 @@ rule _#ASRWin32ApiMacroExclusion_204{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_205{
+rule _#ASRWin32ApiMacroExclusion_209{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -2551,7 +2600,7 @@ rule _#ASRWin32ApiMacroExclusion_205{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_206{
+rule _#ASRWin32ApiMacroExclusion_210{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2564,7 +2613,7 @@ rule _#ASRWin32ApiMacroExclusion_206{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_207{
+rule _#ASRWin32ApiMacroExclusion_211{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2577,7 +2626,7 @@ rule _#ASRWin32ApiMacroExclusion_207{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_208{
+rule _#ASRWin32ApiMacroExclusion_212{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 05 00 00 02 00 "
 		
@@ -2591,7 +2640,7 @@ rule _#ASRWin32ApiMacroExclusion_208{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_209{
+rule _#ASRWin32ApiMacroExclusion_213{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2604,7 +2653,7 @@ rule _#ASRWin32ApiMacroExclusion_209{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_210{
+rule _#ASRWin32ApiMacroExclusion_214{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2617,7 +2666,7 @@ rule _#ASRWin32ApiMacroExclusion_210{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_211{
+rule _#ASRWin32ApiMacroExclusion_215{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2630,7 +2679,7 @@ rule _#ASRWin32ApiMacroExclusion_211{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_212{
+rule _#ASRWin32ApiMacroExclusion_216{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -2642,7 +2691,7 @@ rule _#ASRWin32ApiMacroExclusion_212{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_213{
+rule _#ASRWin32ApiMacroExclusion_217{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2655,7 +2704,7 @@ rule _#ASRWin32ApiMacroExclusion_213{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_214{
+rule _#ASRWin32ApiMacroExclusion_218{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2668,7 +2717,7 @@ rule _#ASRWin32ApiMacroExclusion_214{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_215{
+rule _#ASRWin32ApiMacroExclusion_219{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -2680,7 +2729,7 @@ rule _#ASRWin32ApiMacroExclusion_215{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_216{
+rule _#ASRWin32ApiMacroExclusion_220{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,09 00 09 00 06 00 00 05 00 "
 		
@@ -2695,7 +2744,7 @@ rule _#ASRWin32ApiMacroExclusion_216{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_217{
+rule _#ASRWin32ApiMacroExclusion_221{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2708,7 +2757,19 @@ rule _#ASRWin32ApiMacroExclusion_217{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_218{
+rule _#ASRWin32ApiMacroExclusion_222{
+	meta:
+		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_00_0 = {63 46 69 6c 65 20 3d 20 4d 61 6b 65 46 69 6c 65 4e 61 6d 65 28 57 6f 72 6b 73 68 65 65 74 73 28 22 53 65 6d 69 2d 61 6e 6e 75 61 6c 22 29 2e 52 61 6e 67 65 28 22 52 65 70 6f 72 74 5f 50 65 72 69 6f 64 22 29 2c 20 22 46 58 5f 54 75 72 6e 6f 76 65 72 5f 53 75 72 76 65 79 22 2c 20 57 6f 72 6b 73 68 65 65 74 73 28 22 53 65 6d 69 2d 61 6e 6e 75 61 6c 22 29 2e 52 61 6e 67 65 28 22 49 6e 73 74 69 74 75 74 69 6f 6e 5f 43 6f 64 65 22 29 2c 20 22 2e 78 6c 73 22 29 } //01 00  cFile = MakeFileName(Worksheets("Semi-annual").Range("Report_Period"), "FX_Turnover_Survey", Worksheets("Semi-annual").Range("Institution_Code"), ".xls")
+		$a_00_1 = {49 66 20 28 49 6e 53 74 72 28 31 2c 20 6e 2e 4e 61 6d 65 2c 20 22 4f 42 52 44 4c 55 53 44 48 4b 44 22 29 20 3e 3d 20 31 29 20 54 68 65 6e } //01 00  If (InStr(1, n.Name, "OBRDLUSDHKD") >= 1) Then
+		$a_00_2 = {77 73 2e 43 65 6c 6c 73 28 6e 52 6f 77 2c 20 69 29 2e 4e 61 6d 65 20 3d 20 22 46 58 43 5f 53 57 37 44 4c 22 20 2b 20 4c 65 66 74 28 77 73 2e 43 65 6c 6c 73 28 63 52 6f 77 2c 20 69 29 2e 56 61 6c 75 65 2c 20 33 29 } //00 00  ws.Cells(nRow, i).Name = "FXC_SW7DL" + Left(ws.Cells(cRow, i).Value, 3)
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#ASRWin32ApiMacroExclusion_223{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -2720,7 +2781,7 @@ rule _#ASRWin32ApiMacroExclusion_218{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_219{
+rule _#ASRWin32ApiMacroExclusion_224{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2733,7 +2794,7 @@ rule _#ASRWin32ApiMacroExclusion_219{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_220{
+rule _#ASRWin32ApiMacroExclusion_225{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2746,7 +2807,7 @@ rule _#ASRWin32ApiMacroExclusion_220{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_221{
+rule _#ASRWin32ApiMacroExclusion_226{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2759,7 +2820,7 @@ rule _#ASRWin32ApiMacroExclusion_221{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_222{
+rule _#ASRWin32ApiMacroExclusion_227{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 08 00 00 01 00 "
 		
@@ -2776,7 +2837,7 @@ rule _#ASRWin32ApiMacroExclusion_222{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_223{
+rule _#ASRWin32ApiMacroExclusion_228{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 05 00 00 01 00 "
 		
@@ -2790,7 +2851,7 @@ rule _#ASRWin32ApiMacroExclusion_223{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_224{
+rule _#ASRWin32ApiMacroExclusion_229{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2803,7 +2864,7 @@ rule _#ASRWin32ApiMacroExclusion_224{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_225{
+rule _#ASRWin32ApiMacroExclusion_230{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2816,7 +2877,7 @@ rule _#ASRWin32ApiMacroExclusion_225{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_226{
+rule _#ASRWin32ApiMacroExclusion_231{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -2830,7 +2891,7 @@ rule _#ASRWin32ApiMacroExclusion_226{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_227{
+rule _#ASRWin32ApiMacroExclusion_232{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -2842,7 +2903,7 @@ rule _#ASRWin32ApiMacroExclusion_227{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_228{
+rule _#ASRWin32ApiMacroExclusion_233{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2855,7 +2916,7 @@ rule _#ASRWin32ApiMacroExclusion_228{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_229{
+rule _#ASRWin32ApiMacroExclusion_234{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2868,7 +2929,7 @@ rule _#ASRWin32ApiMacroExclusion_229{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_230{
+rule _#ASRWin32ApiMacroExclusion_235{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 06 00 00 02 00 "
 		
@@ -2883,7 +2944,7 @@ rule _#ASRWin32ApiMacroExclusion_230{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_231{
+rule _#ASRWin32ApiMacroExclusion_236{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -2897,7 +2958,7 @@ rule _#ASRWin32ApiMacroExclusion_231{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_232{
+rule _#ASRWin32ApiMacroExclusion_237{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2910,7 +2971,7 @@ rule _#ASRWin32ApiMacroExclusion_232{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_233{
+rule _#ASRWin32ApiMacroExclusion_238{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2923,7 +2984,7 @@ rule _#ASRWin32ApiMacroExclusion_233{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_234{
+rule _#ASRWin32ApiMacroExclusion_239{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2936,7 +2997,7 @@ rule _#ASRWin32ApiMacroExclusion_234{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_235{
+rule _#ASRWin32ApiMacroExclusion_240{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2949,7 +3010,7 @@ rule _#ASRWin32ApiMacroExclusion_235{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_236{
+rule _#ASRWin32ApiMacroExclusion_241{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0d 00 0d 00 05 00 00 0a 00 "
 		
@@ -2963,7 +3024,7 @@ rule _#ASRWin32ApiMacroExclusion_236{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_237{
+rule _#ASRWin32ApiMacroExclusion_242{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2976,7 +3037,7 @@ rule _#ASRWin32ApiMacroExclusion_237{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_238{
+rule _#ASRWin32ApiMacroExclusion_243{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -2989,7 +3050,7 @@ rule _#ASRWin32ApiMacroExclusion_238{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_239{
+rule _#ASRWin32ApiMacroExclusion_244{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -3002,7 +3063,7 @@ rule _#ASRWin32ApiMacroExclusion_239{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_240{
+rule _#ASRWin32ApiMacroExclusion_245{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -3015,7 +3076,7 @@ rule _#ASRWin32ApiMacroExclusion_240{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_241{
+rule _#ASRWin32ApiMacroExclusion_246{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -3028,7 +3089,7 @@ rule _#ASRWin32ApiMacroExclusion_241{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_242{
+rule _#ASRWin32ApiMacroExclusion_247{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -3041,7 +3102,7 @@ rule _#ASRWin32ApiMacroExclusion_242{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_243{
+rule _#ASRWin32ApiMacroExclusion_248{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -3054,7 +3115,7 @@ rule _#ASRWin32ApiMacroExclusion_243{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_244{
+rule _#ASRWin32ApiMacroExclusion_249{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 08 00 00 03 00 "
 		
@@ -3071,7 +3132,7 @@ rule _#ASRWin32ApiMacroExclusion_244{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_245{
+rule _#ASRWin32ApiMacroExclusion_250{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 18 00 00 02 00 "
 		
@@ -3104,7 +3165,7 @@ rule _#ASRWin32ApiMacroExclusion_245{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_246{
+rule _#ASRWin32ApiMacroExclusion_251{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -3118,7 +3179,7 @@ rule _#ASRWin32ApiMacroExclusion_246{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_247{
+rule _#ASRWin32ApiMacroExclusion_252{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 0b 00 00 02 00 "
 		
@@ -3138,7 +3199,7 @@ rule _#ASRWin32ApiMacroExclusion_247{
 		any of ($a_*)
  
 }
-rule _#ASRWin32ApiMacroExclusion_248{
+rule _#ASRWin32ApiMacroExclusion_253{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 08 00 00 01 00 "
 		
