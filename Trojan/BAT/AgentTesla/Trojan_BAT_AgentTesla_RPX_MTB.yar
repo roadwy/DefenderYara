@@ -106,7 +106,24 @@ rule Trojan_BAT_AgentTesla_RPX_MTB_9{
 }
 rule Trojan_BAT_AgentTesla_RPX_MTB_10{
 	meta:
-		description = "Trojan:BAT/AgentTesla.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,13 00 13 00 13 00 00 01 00 "
+		description = "Trojan:BAT/AgentTesla.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {63 00 6c 00 65 00 61 00 72 00 72 00 65 00 70 00 40 00 6d 00 79 00 6d 00 6f 00 62 00 69 00 6c 00 65 00 6f 00 72 00 64 00 65 00 72 00 2e 00 63 00 6f 00 6d 00 } //01 00  clearrep@mymobileorder.com
+		$a_01_1 = {73 00 69 00 67 00 6e 00 6f 00 6e 00 73 00 33 00 2e 00 74 00 78 00 74 00 } //01 00  signons3.txt
+		$a_01_2 = {46 00 69 00 6c 00 65 00 5a 00 69 00 6c 00 6c 00 61 00 } //01 00  FileZilla
+		$a_01_3 = {46 00 54 00 50 00 20 00 4e 00 61 00 76 00 69 00 67 00 61 00 74 00 6f 00 72 00 5c 00 46 00 74 00 70 00 6c 00 69 00 73 00 74 00 2e 00 74 00 78 00 74 00 } //01 00  FTP Navigator\Ftplist.txt
+		$a_01_4 = {4e 00 65 00 74 00 77 00 6f 00 72 00 6b 00 5c 00 43 00 6f 00 6f 00 6b 00 69 00 65 00 73 00 } //01 00  Network\Cookies
+		$a_01_5 = {47 65 74 46 6f 72 65 67 72 6f 75 6e 64 57 69 6e 64 6f 77 } //01 00  GetForegroundWindow
+		$a_01_6 = {45 6e 61 62 6c 65 43 6c 69 70 62 6f 61 72 64 4c 6f 67 67 65 72 } //01 00  EnableClipboardLogger
+		$a_01_7 = {45 6e 61 62 6c 65 4b 65 79 6c 6f 67 67 65 72 } //00 00  EnableKeylogger
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_RPX_MTB_11{
+	meta:
+		description = "Trojan:BAT/AgentTesla.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,13 00 13 00 15 00 00 01 00 "
 		
 	strings :
 		$a_01_0 = {41 73 73 65 6d 62 6c 79 } //01 00  Assembly
@@ -127,24 +144,9 @@ rule Trojan_BAT_AgentTesla_RPX_MTB_10{
 		$a_01_15 = {67 65 74 5f 4c 65 6e 67 74 68 } //01 00  get_Length
 		$a_01_16 = {43 72 65 61 74 65 49 6e 73 74 61 6e 63 65 } //01 00  CreateInstance
 		$a_01_17 = {42 69 6e 61 72 79 52 65 61 64 65 72 } //01 00  BinaryReader
-		$a_01_18 = {54 6f 42 61 73 65 36 34 53 74 72 69 6e 67 } //00 00  ToBase64String
-	condition:
-		any of ($a_*)
- 
-}
-rule Trojan_BAT_AgentTesla_RPX_MTB_11{
-	meta:
-		description = "Trojan:BAT/AgentTesla.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 01 00 "
-		
-	strings :
-		$a_01_0 = {63 00 6c 00 65 00 61 00 72 00 72 00 65 00 70 00 40 00 6d 00 79 00 6d 00 6f 00 62 00 69 00 6c 00 65 00 6f 00 72 00 64 00 65 00 72 00 2e 00 63 00 6f 00 6d 00 } //01 00  clearrep@mymobileorder.com
-		$a_01_1 = {73 00 69 00 67 00 6e 00 6f 00 6e 00 73 00 33 00 2e 00 74 00 78 00 74 00 } //01 00  signons3.txt
-		$a_01_2 = {46 00 69 00 6c 00 65 00 5a 00 69 00 6c 00 6c 00 61 00 } //01 00  FileZilla
-		$a_01_3 = {46 00 54 00 50 00 20 00 4e 00 61 00 76 00 69 00 67 00 61 00 74 00 6f 00 72 00 5c 00 46 00 74 00 70 00 6c 00 69 00 73 00 74 00 2e 00 74 00 78 00 74 00 } //01 00  FTP Navigator\Ftplist.txt
-		$a_01_4 = {4e 00 65 00 74 00 77 00 6f 00 72 00 6b 00 5c 00 43 00 6f 00 6f 00 6b 00 69 00 65 00 73 00 } //01 00  Network\Cookies
-		$a_01_5 = {47 65 74 46 6f 72 65 67 72 6f 75 6e 64 57 69 6e 64 6f 77 } //01 00  GetForegroundWindow
-		$a_01_6 = {45 6e 61 62 6c 65 43 6c 69 70 62 6f 61 72 64 4c 6f 67 67 65 72 } //01 00  EnableClipboardLogger
-		$a_01_7 = {45 6e 61 62 6c 65 4b 65 79 6c 6f 67 67 65 72 } //00 00  EnableKeylogger
+		$a_01_18 = {54 6f 42 61 73 65 36 34 53 74 72 69 6e 67 } //9c ff  ToBase64String
+		$a_01_19 = {4d 69 63 72 6f 73 6f 66 74 2e 49 64 65 6e 74 69 74 79 4d 6f 64 65 6c 2e 43 6c 69 65 6e 74 73 2e 41 63 74 69 76 65 44 69 72 65 63 74 6f 72 79 } //9c ff  Microsoft.IdentityModel.Clients.ActiveDirectory
+		$a_01_20 = {4d 69 63 72 6f 73 6f 66 74 2e 49 64 65 6e 74 69 74 79 2e 43 6c 69 65 6e 74 } //00 00  Microsoft.Identity.Client
 	condition:
 		any of ($a_*)
  

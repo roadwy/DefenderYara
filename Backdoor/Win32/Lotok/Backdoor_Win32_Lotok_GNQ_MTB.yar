@@ -9,3 +9,13 @@ rule Backdoor_Win32_Lotok_GNQ_MTB{
 		any of ($a_*)
  
 }
+rule Backdoor_Win32_Lotok_GNQ_MTB_2{
+	meta:
+		description = "Backdoor:Win32/Lotok.GNQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 0a 00 "
+		
+	strings :
+		$a_03_0 = {b1 72 50 53 c6 44 24 90 01 01 56 c6 44 24 90 01 01 69 88 4c 24 90 01 01 c6 44 24 90 01 01 75 c6 44 24 90 01 01 61 c6 44 24 90 01 01 6c c6 44 24 90 01 01 50 88 4c 24 90 01 01 c6 44 24 90 01 01 6f c6 44 24 90 01 01 65 c6 44 24 90 01 01 63 c6 44 24 90 01 01 00 ff d7 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

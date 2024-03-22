@@ -1,6 +1,16 @@
 
 rule Trojan_BAT_AgentTesla_NG_MTB{
 	meta:
+		description = "Trojan:BAT/AgentTesla.NG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {07 11 08 91 11 90 01 01 61 13 0b 07 11 90 01 01 07 8e 69 5d 91 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AgentTesla_NG_MTB_2{
+	meta:
 		description = "Trojan:BAT/AgentTesla.NG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 03 00 00 0a 00 "
 		
 	strings :
@@ -11,7 +21,7 @@ rule Trojan_BAT_AgentTesla_NG_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_NG_MTB_2{
+rule Trojan_BAT_AgentTesla_NG_MTB_3{
 	meta:
 		description = "Trojan:BAT/AgentTesla.NG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 05 00 "
 		
@@ -23,7 +33,7 @@ rule Trojan_BAT_AgentTesla_NG_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_NG_MTB_3{
+rule Trojan_BAT_AgentTesla_NG_MTB_4{
 	meta:
 		description = "Trojan:BAT/AgentTesla.NG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 01 00 "
 		
@@ -39,7 +49,7 @@ rule Trojan_BAT_AgentTesla_NG_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_NG_MTB_4{
+rule Trojan_BAT_AgentTesla_NG_MTB_5{
 	meta:
 		description = "Trojan:BAT/AgentTesla.NG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 06 00 00 05 00 "
 		

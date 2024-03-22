@@ -67,6 +67,34 @@ rule _#PUA_Block_Softcnapp_5{
 }
 rule _#PUA_Block_Softcnapp_6{
 	meta:
+		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {52 61 63 63 6f 6f 6e 57 69 66 69 } //RaccoonWifi  01 00 
+		$a_80_1 = {49 6e 73 74 61 6c 6c 50 61 74 68 } //InstallPath  01 00 
+		$a_80_2 = {75 73 65 72 63 6f 6e 66 69 67 2e 69 6e 69 } //userconfig.ini  01 00 
+		$a_80_3 = {52 61 63 63 6f 6f 6e 57 69 66 69 2e 69 6e 69 } //RaccoonWifi.ini  01 00 
+		$a_80_4 = {52 61 63 63 6f 6f 6e 57 69 66 69 2e 63 66 67 } //RaccoonWifi.cfg  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_Softcnapp_7{
+	meta:
+		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {50 44 43 6f 6e 66 69 67 2e 65 78 65 } //PDConfig.exe  01 00 
+		$a_80_1 = {77 6e 69 65 2e 65 78 65 } //wnie.exe  01 00 
+		$a_80_2 = {73 6f 67 6f 75 65 78 70 6c 6f 72 65 72 2e 65 78 65 } //sogouexplorer.exe  01 00 
+		$a_80_3 = {55 73 65 56 65 73 74 69 67 65 2e 69 6e 69 } //UseVestige.ini  01 00 
+		$a_80_4 = {50 75 64 64 69 6e 67 44 65 73 6b 74 6f 70 2e 69 6e 69 } //PuddingDesktop.ini  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_Softcnapp_8{
+	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 02 00 "
 		
 	strings :
@@ -78,7 +106,7 @@ rule _#PUA_Block_Softcnapp_6{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_7{
+rule _#PUA_Block_Softcnapp_9{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 01 00 "
 		
@@ -92,7 +120,7 @@ rule _#PUA_Block_Softcnapp_7{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_8{
+rule _#PUA_Block_Softcnapp_10{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 06 00 00 02 00 "
 		
@@ -107,7 +135,7 @@ rule _#PUA_Block_Softcnapp_8{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_9{
+rule _#PUA_Block_Softcnapp_11{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 01 00 "
 		
@@ -121,7 +149,7 @@ rule _#PUA_Block_Softcnapp_9{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_10{
+rule _#PUA_Block_Softcnapp_12{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -135,7 +163,7 @@ rule _#PUA_Block_Softcnapp_10{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_11{
+rule _#PUA_Block_Softcnapp_13{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 06 00 00 01 00 "
 		
@@ -150,7 +178,7 @@ rule _#PUA_Block_Softcnapp_11{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_12{
+rule _#PUA_Block_Softcnapp_14{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 08 00 00 02 00 "
 		
@@ -167,7 +195,20 @@ rule _#PUA_Block_Softcnapp_12{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_13{
+rule _#PUA_Block_Softcnapp_15{
+	meta:
+		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {68 74 74 70 3a 2f 2f 6d 6d 74 6b 6d 2e 7a 73 69 6e 63 65 72 2e 63 6f 6d 2f 70 64 66 2f 6a 69 6b 65 2f 33 32 66 63 32 62 34 32 64 35 35 36 61 33 38 37 64 31 63 39 34 34 62 64 30 64 35 33 30 61 32 62 2e 64 65 64 } //http://mmtkm.zsincer.com/pdf/jike/32fc2b42d556a387d1c944bd0d530a2b.ded  01 00 
+		$a_80_1 = {4a 6b 52 74 72 6f 6e 2e 65 78 65 } //JkRtron.exe  01 00 
+		$a_80_2 = {48 6f 6c 6c 6f 6e 2e 69 6e 69 } //Hollon.ini  01 00 
+		$a_80_3 = {6d 69 6e 6b 65 72 6e 65 6c 5c 63 72 74 73 5c 75 63 72 74 5c 69 6e 63 5c 63 6f 72 65 63 72 74 5f 69 6e 74 65 72 6e 61 6c 5f 73 74 72 74 6f 78 2e 68 } //minkernel\crts\ucrt\inc\corecrt_internal_strtox.h  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_Softcnapp_16{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -181,7 +222,7 @@ rule _#PUA_Block_Softcnapp_13{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_14{
+rule _#PUA_Block_Softcnapp_17{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		
@@ -196,7 +237,7 @@ rule _#PUA_Block_Softcnapp_14{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_15{
+rule _#PUA_Block_Softcnapp_18{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		
@@ -212,7 +253,7 @@ rule _#PUA_Block_Softcnapp_15{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_16{
+rule _#PUA_Block_Softcnapp_19{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 01 00 "
 		
@@ -230,7 +271,7 @@ rule _#PUA_Block_Softcnapp_16{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_17{
+rule _#PUA_Block_Softcnapp_20{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 0b 00 00 01 00 "
 		
@@ -250,7 +291,7 @@ rule _#PUA_Block_Softcnapp_17{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_18{
+rule _#PUA_Block_Softcnapp_21{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 0c 00 00 01 00 "
 		
@@ -271,7 +312,7 @@ rule _#PUA_Block_Softcnapp_18{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_19{
+rule _#PUA_Block_Softcnapp_22{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		
@@ -286,7 +327,7 @@ rule _#PUA_Block_Softcnapp_19{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_20{
+rule _#PUA_Block_Softcnapp_23{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 06 00 00 01 00 "
 		
@@ -301,7 +342,7 @@ rule _#PUA_Block_Softcnapp_20{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_21{
+rule _#PUA_Block_Softcnapp_24{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 02 00 "
 		
@@ -317,7 +358,7 @@ rule _#PUA_Block_Softcnapp_21{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_22{
+rule _#PUA_Block_Softcnapp_25{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR,01 00 01 00 02 00 00 01 00 "
 		
@@ -328,7 +369,7 @@ rule _#PUA_Block_Softcnapp_22{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_23{
+rule _#PUA_Block_Softcnapp_26{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR,03 00 03 00 03 00 00 01 00 "
 		
@@ -340,7 +381,7 @@ rule _#PUA_Block_Softcnapp_23{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_24{
+rule _#PUA_Block_Softcnapp_27{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR,04 00 04 00 05 00 00 01 00 "
 		
@@ -354,7 +395,7 @@ rule _#PUA_Block_Softcnapp_24{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_Softcnapp_25{
+rule _#PUA_Block_Softcnapp_28{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR,04 00 04 00 04 00 00 01 00 "
 		

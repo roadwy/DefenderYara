@@ -14,6 +14,19 @@ rule _#PUA_Block_OfferCore{
 }
 rule _#PUA_Block_OfferCore_2{
 	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {2f 2f 72 69 73 65 63 6f 64 65 73 2e 63 6f 6d 2f 70 72 69 76 61 63 79 } ////risecodes.com/privacy  01 00 
+		$a_80_1 = {54 44 4f 57 4e 4c 4f 41 44 57 49 5a 41 52 44 50 41 47 45 } //TDOWNLOADWIZARDPAGE  01 00 
+		$a_80_2 = {48 49 44 45 44 4f 57 4e 4c 4f 41 44 50 41 47 45 } //HIDEDOWNLOADPAGE  01 00 
+		$a_80_3 = {4f 50 45 4e 4d 41 49 4e 43 41 52 52 49 45 52 49 4e 57 45 42 42 52 4f 57 53 45 52 } //OPENMAINCARRIERINWEBBROWSER  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_OfferCore_3{
+	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 06 00 00 05 00 "
 		
 	strings :
@@ -27,7 +40,22 @@ rule _#PUA_Block_OfferCore_2{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_OfferCore_3{
+rule _#PUA_Block_OfferCore_4{
+	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {2f 2f 72 69 73 65 63 6f 64 65 73 2e 63 6f 6d 2f 70 72 69 76 61 63 79 } ////risecodes.com/privacy  01 00 
+		$a_80_1 = {64 31 72 31 71 6f 75 32 38 63 37 63 71 67 2e 63 6c 6f 75 64 66 72 6f 6e 74 2e 6e 65 74 2f 7a 62 64 } //d1r1qou28c7cqg.cloudfront.net/zbd  01 00 
+		$a_80_2 = {47 45 54 49 4e 53 54 41 4c 4c 53 } //GETINSTALLS  01 00 
+		$a_80_3 = {44 4f 57 4e 4c 4f 41 44 54 45 4d 50 4f 52 41 52 59 46 49 4c 45 } //DOWNLOADTEMPORARYFILE  01 00 
+		$a_80_4 = {43 6f 6e 74 61 69 6e 73 4b 65 79 } //ContainsKey  01 00 
+		$a_80_5 = {41 76 69 6e 73 74 61 6c 6c 65 72 } //Avinstaller  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_OfferCore_5{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		
@@ -43,7 +71,7 @@ rule _#PUA_Block_OfferCore_3{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_OfferCore_4{
+rule _#PUA_Block_OfferCore_6{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		
@@ -59,7 +87,7 @@ rule _#PUA_Block_OfferCore_4{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_OfferCore_5{
+rule _#PUA_Block_OfferCore_7{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		
@@ -75,7 +103,7 @@ rule _#PUA_Block_OfferCore_5{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_OfferCore_6{
+rule _#PUA_Block_OfferCore_8{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 01 00 "
 		
@@ -93,7 +121,7 @@ rule _#PUA_Block_OfferCore_6{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_OfferCore_7{
+rule _#PUA_Block_OfferCore_9{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 01 00 "
 		
@@ -111,7 +139,7 @@ rule _#PUA_Block_OfferCore_7{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_OfferCore_8{
+rule _#PUA_Block_OfferCore_10{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 0a 00 00 01 00 "
 		

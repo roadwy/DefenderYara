@@ -11,6 +11,16 @@ rule Trojan_BAT_Dnoper_ADN_MTB{
 }
 rule Trojan_BAT_Dnoper_ADN_MTB_2{
 	meta:
+		description = "Trojan:BAT/Dnoper.ADN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {0a 00 16 28 90 01 01 00 00 0a 00 28 90 01 01 00 00 0a 72 90 01 01 00 00 70 28 90 01 01 00 00 0a 0a 06 28 90 01 01 00 00 06 28 90 01 01 00 00 0a 00 7e 90 01 01 00 00 0a 72 90 01 01 00 00 70 17 6f 90 01 01 00 00 0a 0b 00 07 72 90 01 01 00 00 70 06 6f 90 01 01 00 00 0a 00 00 de 10 07 14 fe 01 0c 08 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Dnoper_ADN_MTB_3{
+	meta:
 		description = "Trojan:BAT/Dnoper.ADN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 02 00 "
 		
 	strings :

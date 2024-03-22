@@ -21,6 +21,33 @@ rule _#PUA_Block_InstallCore_2{
 }
 rule _#PUA_Block_InstallCore_3{
 	meta:
+		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {2f 2f 77 77 77 2e 78 73 34 61 6c 6c 2e 6e 6c 2f 7e 70 65 74 65 72 6e 65 64 2f } ////www.xs4all.nl/~peterned/  01 00 
+		$a_80_1 = {2f 2f 72 70 2e 54 61 64 61 6e 61 64 61 6e 65 74 2e 63 6f 6d 2f } ////rp.Tadanadanet.com/  01 00 
+		$a_80_2 = {53 50 4f 4e 53 4f 52 45 44 5f 4f 46 46 45 52 3d } //SPONSORED_OFFER=  01 00 
+		$a_80_3 = {42 55 54 54 4f 4e 5f 49 4e 53 54 41 4c 4c 3d 49 6e 73 74 61 6c 6c 20 4e 6f 77 } //BUTTON_INSTALL=Install Now  01 00 
+		$a_80_4 = {49 57 65 62 42 72 6f 77 73 65 72 } //IWebBrowser  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_InstallCore_4{
+	meta:
+		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {2f 2f 73 63 69 74 65 72 2e 63 6f 6d 2f 64 6f 63 73 2f 63 6f 6e 74 65 6e 74 2f 73 63 72 69 70 74 2f 53 74 72 65 61 6d 2e 68 74 6d } ////sciter.com/docs/content/script/Stream.htm  01 00 
+		$a_80_1 = {49 43 30 30 31 2e 52 65 73 6f 75 72 63 65 73 2e 4f 66 66 65 72 50 61 67 65 2e 68 74 6d 6c } //IC001.Resources.OfferPage.html  01 00 
+		$a_80_2 = {47 65 6e 65 72 69 63 53 65 74 75 70 2e 65 78 65 2e 63 6f 6e 66 69 67 } //GenericSetup.exe.config  01 00 
+		$a_80_3 = {49 6e 73 74 61 6c 6c 43 61 70 69 74 61 6c } //InstallCapital  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_InstallCore_5{
+	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 01 00 "
 		
 	strings :

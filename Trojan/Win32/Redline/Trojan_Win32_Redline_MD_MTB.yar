@@ -45,3 +45,15 @@ rule Trojan_Win32_Redline_MD_MTB_4{
 		any of ($a_*)
  
 }
+rule Trojan_Win32_Redline_MD_MTB_5{
+	meta:
+		description = "Trojan:Win32/Redline.MD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {0f 42 c1 8b 4d 04 0f 42 c3 03 0c 24 52 50 ff 75 00 51 c5 f8 77 ff 15 90 01 04 8b 44 24 04 46 83 c5 28 0f b7 40 06 39 c6 72 90 00 } //01 00 
+		$a_01_1 = {66 72 41 51 42 63 38 57 73 61 31 78 56 50 66 76 4a 63 72 67 52 59 77 54 69 69 7a 73 32 74 72 51 46 36 39 41 7a 42 6c 61 78 33 43 46 33 45 44 4e 68 6d 33 73 6f 4c 42 50 68 37 31 59 65 78 75 69 } //01 00  frAQBc8Wsa1xVPfvJcrgRYwTiizs2trQF69AzBlax3CF3EDNhm3soLBPh71Yexui
+		$a_81_2 = {43 3a 5c 57 69 6e 64 6f 77 73 5c 4d 69 63 72 6f 73 6f 66 74 2e 4e 45 54 5c 46 72 61 6d 65 77 6f 72 6b 5c 76 34 2e 30 2e 33 30 33 31 39 5c 41 70 70 4c 61 75 6e 63 68 2e 65 78 65 } //00 00  C:\Windows\Microsoft.NET\Framework\v4.0.30319\AppLaunch.exe
+	condition:
+		any of ($a_*)
+ 
+}

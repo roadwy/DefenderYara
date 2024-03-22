@@ -19,3 +19,16 @@ rule Trojan_Win64_CobaltStrike_BO_MTB_2{
 		any of ($a_*)
  
 }
+rule Trojan_Win64_CobaltStrike_BO_MTB_3{
+	meta:
+		description = "Trojan:Win64/CobaltStrike.BO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_00_0 = {57 72 69 74 65 20 73 68 65 6c 6c 63 6f 64 65 20 74 6f 20 6d 65 6d 6f 72 79 20 73 75 63 63 65 65 64 65 64 } //01 00  Write shellcode to memory succeeded
+		$a_00_1 = {4d 65 6d 6f 72 79 20 70 65 72 6d 69 73 73 69 6f 6e 73 20 63 68 61 6e 67 65 64 20 73 75 63 63 65 73 73 66 75 6c 6c 79 3a 20 50 41 47 45 5f 45 58 45 43 55 54 45 } //01 00  Memory permissions changed successfully: PAGE_EXECUTE
+		$a_00_2 = {54 68 72 65 61 64 20 6f 70 65 6e 65 64 20 73 75 63 63 65 73 73 66 75 6c 6c 79 } //01 00  Thread opened successfully
+		$a_03_3 = {48 01 c8 88 10 8b 85 90 01 04 89 c2 8b 85 90 01 04 88 54 05 90 01 01 83 85 90 01 04 01 eb 90 0a 40 00 8b 95 90 01 04 8b 8d 90 01 04 48 8b 85 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

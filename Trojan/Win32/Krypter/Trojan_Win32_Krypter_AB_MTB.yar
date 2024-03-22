@@ -1,6 +1,16 @@
 
 rule Trojan_Win32_Krypter_AB_MTB{
 	meta:
+		description = "Trojan:Win32/Krypter.AB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
+		
+	strings :
+		$a_03_0 = {0f b7 d2 81 c2 90 01 04 66 c1 c2 90 01 01 0f b7 d2 8b 0c 85 90 01 04 03 ca 88 8c 05 90 01 04 40 0f b6 c0 0f b6 b5 90 01 04 3b c6 7c 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Krypter_AB_MTB_2{
+	meta:
 		description = "Trojan:Win32/Krypter.AB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
 		
 	strings :
