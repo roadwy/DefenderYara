@@ -21,3 +21,13 @@ rule Trojan_Win64_CobaltStrike_KK_MTB_2{
 		any of ($a_*)
  
 }
+rule Trojan_Win64_CobaltStrike_KK_MTB_3{
+	meta:
+		description = "Trojan:Win64/CobaltStrike.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {ff c0 89 44 24 90 01 01 8b 44 24 90 01 01 39 44 24 04 73 90 01 01 8b 44 24 90 01 01 99 81 e2 90 01 04 03 c2 25 90 01 04 2b c2 88 04 24 8b 44 24 90 01 01 0f b6 0c 24 48 8b 54 24 90 01 01 0f be 04 02 33 c1 8b 4c 24 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

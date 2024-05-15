@@ -14,6 +14,20 @@ rule Trojan_Win32_NSISInject_RPY_MTB_2{
 		description = "Trojan:Win32/NSISInject.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
+		$a_01_0 = {73 70 68 61 63 65 6c 75 73 5c 53 6e 6e 69 6b 65 72 } //01 00  sphacelus\Snniker
+		$a_01_1 = {6b 72 79 70 74 65 72 69 6e 67 73 70 6f 6c 69 74 69 6b } //01 00  krypteringspolitik
+		$a_01_2 = {74 69 70 70 65 6c 61 64 65 74 } //01 00  tippeladet
+		$a_01_3 = {53 70 72 79 64 73 74 61 67 65 72 6e 65 73 2e 69 6e 69 } //01 00  Sprydstagernes.ini
+		$a_01_4 = {70 6e 68 65 64 73 2e 45 75 72 } //00 00  pnheds.Eur
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_NSISInject_RPY_MTB_3{
+	meta:
+		description = "Trojan:Win32/NSISInject.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
 		$a_01_0 = {55 00 6e 00 64 00 65 00 72 00 76 00 69 00 73 00 6e 00 69 00 6e 00 67 00 73 00 73 00 79 00 73 00 74 00 65 00 6d 00 65 00 72 00 } //01 00  Undervisningssystemer
 		$a_01_1 = {53 00 6f 00 66 00 74 00 77 00 61 00 72 00 65 00 5c 00 52 00 65 00 6e 00 65 00 77 00 61 00 6c 00 73 00 31 00 32 00 38 00 5c 00 74 00 65 00 6d 00 6e 00 6f 00 73 00 70 00 6f 00 6e 00 64 00 79 00 6c 00 6f 00 75 00 73 00 5c 00 4c 00 64 00 72 00 65 00 70 00 6c 00 65 00 6a 00 65 00 6e 00 73 00 } //01 00  Software\Renewals128\temnospondylous\Ldreplejens
 		$a_01_2 = {53 00 75 00 6d 00 6d 00 61 00 74 00 69 00 6f 00 6e 00 65 00 6e 00 73 00 2e 00 53 00 74 00 76 00 } //01 00  Summationens.Stv

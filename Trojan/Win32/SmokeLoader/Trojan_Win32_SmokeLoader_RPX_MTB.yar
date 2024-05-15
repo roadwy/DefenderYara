@@ -14,7 +14,7 @@ rule Trojan_Win32_SmokeLoader_RPX_MTB_2{
 		description = "Trojan:Win32/SmokeLoader.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {8b 8d f8 fb ff ff 30 04 39 83 fb 0f 75 1f 56 8d 85 fc fb ff ff 50 56 56 56 56 } //00 00 
+		$a_01_0 = {30 14 33 83 ff 0f 75 4d 6a 00 6a 00 6a 00 ff d5 6a 2e 8d 44 24 10 6a 00 50 } //00 00 
 	condition:
 		any of ($a_*)
  
@@ -24,7 +24,7 @@ rule Trojan_Win32_SmokeLoader_RPX_MTB_3{
 		description = "Trojan:Win32/SmokeLoader.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {e8 00 00 00 00 75 05 74 03 e3 1c 2c 8b 1c 24 83 c4 04 eb 0a 08 81 eb dc 32 00 } //00 00 
+		$a_01_0 = {8b 8d f8 fb ff ff 30 04 39 83 fb 0f 75 1f 56 8d 85 fc fb ff ff 50 56 56 56 56 } //00 00 
 	condition:
 		any of ($a_*)
  
@@ -34,12 +34,22 @@ rule Trojan_Win32_SmokeLoader_RPX_MTB_4{
 		description = "Trojan:Win32/SmokeLoader.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {6a 00 6a 04 8d 8d 78 ff ff ff 51 8b 8f a4 00 00 00 83 c1 08 51 ff 75 90 ff d0 8b 45 ac 6a 40 68 00 30 00 00 8d 88 } //00 00 
+		$a_01_0 = {e8 00 00 00 00 75 05 74 03 e3 1c 2c 8b 1c 24 83 c4 04 eb 0a 08 81 eb dc 32 00 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_Win32_SmokeLoader_RPX_MTB_5{
+	meta:
+		description = "Trojan:Win32/SmokeLoader.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {6a 00 6a 04 8d 8d 78 ff ff ff 51 8b 8f a4 00 00 00 83 c1 08 51 ff 75 90 ff d0 8b 45 ac 6a 40 68 00 30 00 00 8d 88 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_SmokeLoader_RPX_MTB_6{
 	meta:
 		description = "Trojan:Win32/SmokeLoader.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -50,7 +60,7 @@ rule Trojan_Win32_SmokeLoader_RPX_MTB_5{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_SmokeLoader_RPX_MTB_6{
+rule Trojan_Win32_SmokeLoader_RPX_MTB_7{
 	meta:
 		description = "Trojan:Win32/SmokeLoader.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
@@ -60,7 +70,7 @@ rule Trojan_Win32_SmokeLoader_RPX_MTB_6{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_SmokeLoader_RPX_MTB_7{
+rule Trojan_Win32_SmokeLoader_RPX_MTB_8{
 	meta:
 		description = "Trojan:Win32/SmokeLoader.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
@@ -70,7 +80,7 @@ rule Trojan_Win32_SmokeLoader_RPX_MTB_7{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_SmokeLoader_RPX_MTB_8{
+rule Trojan_Win32_SmokeLoader_RPX_MTB_9{
 	meta:
 		description = "Trojan:Win32/SmokeLoader.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		

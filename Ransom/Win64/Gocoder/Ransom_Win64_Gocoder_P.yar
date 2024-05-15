@@ -10,7 +10,7 @@ rule Ransom_Win64_Gocoder_P{
 		$a_01_3 = {59 6f 75 20 63 61 6e 20 62 65 20 61 20 76 69 63 74 69 6d 20 6f 66 20 66 72 61 75 64 } //05 00  You can be a victim of fraud
 		$a_01_4 = {44 6f 20 6e 6f 74 20 72 65 6e 61 6d 65 20 65 6e 63 72 79 70 74 65 64 20 66 69 6c 65 73 2e 20 59 6f 75 20 6d 61 79 20 68 61 76 65 20 70 65 72 6d 61 6e 65 6e 74 20 64 61 74 61 20 6c 6f 73 73 } //01 00  Do not rename encrypted files. You may have permanent data loss
 		$a_01_5 = {57 72 69 74 65 20 6d 65 20 69 66 20 79 6f 75 20 77 61 6e 74 20 74 6f 20 72 65 74 75 72 6e 20 79 6f 75 72 20 66 69 6c 65 73 20 2d 20 49 20 63 61 6e 20 64 6f 20 69 74 20 76 65 72 79 20 71 75 69 63 6b 6c 79 } //00 00  Write me if you want to return your files - I can do it very quickly
-		$a_01_6 = {00 5d } //04 00  崀
+		$a_01_6 = {00 67 } //16 00  最
 	condition:
 		any of ($a_*)
  

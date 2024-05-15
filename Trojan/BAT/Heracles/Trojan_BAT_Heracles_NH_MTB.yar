@@ -1,6 +1,16 @@
 
 rule Trojan_BAT_Heracles_NH_MTB{
 	meta:
+		description = "Trojan:BAT/Heracles.NH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 0a 00 "
+		
+	strings :
+		$a_03_0 = {08 06 08 06 93 02 7b 90 01 01 01 00 04 07 91 04 60 61 d1 9d 2b 03 0b 2b e0 06 17 59 25 0a 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Heracles_NH_MTB_2{
+	meta:
 		description = "Trojan:BAT/Heracles.NH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
 		
 	strings :
@@ -10,7 +20,20 @@ rule Trojan_BAT_Heracles_NH_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Heracles_NH_MTB_2{
+rule Trojan_BAT_Heracles_NH_MTB_3{
+	meta:
+		description = "Trojan:BAT/Heracles.NH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 04 00 00 07 00 "
+		
+	strings :
+		$a_01_0 = {2b 1f 09 11 07 9a 08 28 24 00 00 0a 2c 0d 09 11 07 17 58 9a 13 04 16 } //01 00 
+		$a_81_1 = {61 73 70 6e 65 74 5f 77 70 2e 65 78 65 } //01 00  aspnet_wp.exe
+		$a_81_2 = {43 72 65 61 74 65 44 65 63 72 79 70 74 6f 72 } //01 00  CreateDecryptor
+		$a_81_3 = {43 72 65 61 74 65 45 6e 63 72 79 70 74 6f 72 } //00 00  CreateEncryptor
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Heracles_NH_MTB_4{
 	meta:
 		description = "Trojan:BAT/Heracles.NH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
 		
@@ -21,7 +44,7 @@ rule Trojan_BAT_Heracles_NH_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Heracles_NH_MTB_3{
+rule Trojan_BAT_Heracles_NH_MTB_5{
 	meta:
 		description = "Trojan:BAT/Heracles.NH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 04 00 00 05 00 "
 		

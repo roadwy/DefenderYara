@@ -4,12 +4,32 @@ rule Trojan_BAT_Tedy_ATD_MTB{
 		description = "Trojan:BAT/Tedy.ATD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {13 04 11 04 13 05 11 05 13 06 16 13 07 2b 19 00 09 06 07 11 07 91 06 8e 69 5d 93 6f 6d 00 00 0a 26 00 11 07 17 d6 13 07 11 07 11 06 fe 02 16 fe 01 13 08 11 08 2d d8 } //00 00 
+		$a_03_0 = {06 07 11 04 28 90 01 01 00 00 0a 28 90 01 01 00 00 0a 28 90 01 01 00 00 0a 0c 1f 0c 13 07 72 90 00 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_BAT_Tedy_ATD_MTB_2{
+	meta:
+		description = "Trojan:BAT/Tedy.ATD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {a2 25 17 28 13 00 00 0a a2 25 18 72 e5 00 00 70 a2 25 19 28 14 00 00 0a a2 25 1a 72 fb 00 00 70 a2 25 1b } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Tedy_ATD_MTB_3{
+	meta:
+		description = "Trojan:BAT/Tedy.ATD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {13 04 11 04 13 05 11 05 13 06 16 13 07 2b 19 00 09 06 07 11 07 91 06 8e 69 5d 93 6f 6d 00 00 0a 26 00 11 07 17 d6 13 07 11 07 11 06 fe 02 16 fe 01 13 08 11 08 2d d8 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Tedy_ATD_MTB_4{
 	meta:
 		description = "Trojan:BAT/Tedy.ATD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 02 00 "
 		
@@ -20,7 +40,7 @@ rule Trojan_BAT_Tedy_ATD_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Tedy_ATD_MTB_3{
+rule Trojan_BAT_Tedy_ATD_MTB_5{
 	meta:
 		description = "Trojan:BAT/Tedy.ATD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -31,7 +51,7 @@ rule Trojan_BAT_Tedy_ATD_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Tedy_ATD_MTB_4{
+rule Trojan_BAT_Tedy_ATD_MTB_6{
 	meta:
 		description = "Trojan:BAT/Tedy.ATD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 02 00 "
 		

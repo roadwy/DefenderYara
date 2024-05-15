@@ -26,3 +26,15 @@ rule Trojan_Win64_Zusy_NZ_MTB_2{
 		any of ($a_*)
  
 }
+rule Trojan_Win64_Zusy_NZ_MTB_3{
+	meta:
+		description = "Trojan:Win64/Zusy.NZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 02 00 "
+		
+	strings :
+		$a_01_0 = {48 69 76 65 4e 69 67 68 74 6d 61 72 65 2e 70 64 62 } //02 00  HiveNightmare.pdb
+		$a_01_1 = {6c 69 73 74 20 73 6e 61 70 73 68 6f 74 73 20 77 69 74 68 20 76 73 73 61 64 6d 69 6e 20 6c 69 73 74 20 73 68 61 64 6f 77 73 } //02 00  list snapshots with vssadmin list shadows
+		$a_01_2 = {70 65 72 6d 69 73 73 69 6f 6e 20 69 73 73 75 65 20 72 61 74 68 65 72 20 74 68 61 6e 20 76 75 6c 6e 65 72 61 62 69 6c 69 74 79 20 69 73 73 75 65 2c 20 6d 61 6b 65 20 73 75 72 65 20 79 6f 75 27 72 65 20 72 75 6e 6e 69 6e 67 20 66 72 6f 6d 20 61 20 66 6f 6c 64 65 72 20 77 68 65 72 65 20 79 6f 75 20 63 61 6e 20 77 72 69 74 65 20 74 6f } //00 00  permission issue rather than vulnerability issue, make sure you're running from a folder where you can write to
+	condition:
+		any of ($a_*)
+ 
+}

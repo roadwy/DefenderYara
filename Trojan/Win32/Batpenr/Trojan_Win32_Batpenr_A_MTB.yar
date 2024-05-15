@@ -9,7 +9,7 @@ rule Trojan_Win32_Batpenr_A_MTB{
 		$a_01_2 = {74 61 73 6b 6b 69 6c 6c 20 2f 66 20 2f 69 6d 20 74 61 73 6b 6d 67 72 2e 65 78 65 } //01 00  taskkill /f /im taskmgr.exe
 		$a_01_3 = {73 68 75 74 64 6f 77 6e 20 2f 66 20 2f 72 20 2f 74 20 30 } //01 00  shutdown /f /r /t 0
 		$a_01_4 = {64 65 6c 20 2f 66 20 2f 73 20 2f 71 20 25 75 73 65 72 70 72 6f 66 69 6c 65 25 5c 44 65 73 6b 74 6f 70 5c 2a } //00 00  del /f /s /q %userprofile%\Desktop\*
-		$a_01_5 = {00 5d 04 00 } //00 44 
+		$a_01_5 = {00 67 16 00 } //00 0e 
 	condition:
 		any of ($a_*)
  

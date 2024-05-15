@@ -1,6 +1,16 @@
 
 rule Trojan_BAT_AsyncRat_NE_MTB{
 	meta:
+		description = "Trojan:BAT/AsyncRat.NE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {11 08 2c 58 1c 13 0f 90 01 02 ff ff ff 08 11 08 08 11 08 91 11 04 11 08 09 5d 91 61 d2 9c 1f 09 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_AsyncRat_NE_MTB_2{
+	meta:
 		description = "Trojan:BAT/AsyncRat.NE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
 		
 	strings :
@@ -10,7 +20,7 @@ rule Trojan_BAT_AsyncRat_NE_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AsyncRat_NE_MTB_2{
+rule Trojan_BAT_AsyncRat_NE_MTB_3{
 	meta:
 		description = "Trojan:BAT/AsyncRat.NE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,13 00 13 00 06 00 00 04 00 "
 		

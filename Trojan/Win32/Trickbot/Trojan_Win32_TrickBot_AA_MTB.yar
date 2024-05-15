@@ -1,7 +1,7 @@
 
-rule Trojan_Win32_TrickBot_AA_MTB{
+rule Trojan_Win32_Trickbot_AA_MTB{
 	meta:
-		description = "Trojan:Win32/TrickBot.AA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		description = "Trojan:Win32/Trickbot.AA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
 		$a_01_0 = {8a 3c 38 03 fe 50 8b c1 30 38 41 58 } //01 00 
@@ -10,9 +10,9 @@ rule Trojan_Win32_TrickBot_AA_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_TrickBot_AA_MTB_2{
+rule Trojan_Win32_Trickbot_AA_MTB_2{
 	meta:
-		description = "Trojan:Win32/TrickBot.AA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		description = "Trojan:Win32/Trickbot.AA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
 	strings :
 		$a_03_0 = {b9 56 01 00 00 f7 f9 bf 56 01 00 00 0f b6 ea 0f b6 04 2e 8d 0c 2e 03 c3 88 54 24 12 99 f7 ff 0f b6 da 03 f3 8b c6 88 54 24 13 e8 90 01 04 0f b6 01 0f b6 16 03 c2 99 8b cf f7 f9 88 54 24 11 90 00 } //01 00 

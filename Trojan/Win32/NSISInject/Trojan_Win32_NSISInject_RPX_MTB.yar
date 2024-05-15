@@ -14,6 +14,20 @@ rule Trojan_Win32_NSISInject_RPX_MTB_2{
 		description = "Trojan:Win32/NSISInject.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
+		$a_01_0 = {76 61 72 65 69 6e 64 6b 62 65 6e 65 73 2e 54 69 6c } //01 00  vareindkbenes.Til
+		$a_01_1 = {73 69 64 65 6f 72 64 6e 65 74 2e 73 6c 69 } //01 00  sideordnet.sli
+		$a_01_2 = {70 61 6c 6c 69 61 74 65 73 5c 63 6f 6f 69 6e 67 } //01 00  palliates\cooing
+		$a_01_3 = {42 65 74 69 6e 67 65 6c 73 65 73 64 65 6c 65 6e 73 } //01 00  Betingelsesdelens
+		$a_01_4 = {41 75 74 6f 6b 6c 61 76 65 72 69 6e 67 65 72 } //00 00  Autoklaveringer
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_NSISInject_RPX_MTB_3{
+	meta:
+		description = "Trojan:Win32/NSISInject.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
 		$a_01_0 = {50 61 72 62 61 74 65 2e 52 65 61 } //01 00  Parbate.Rea
 		$a_01_1 = {46 69 65 72 63 65 6e 69 6e 67 5c 56 69 72 74 75 73 } //01 00  Fiercening\Virtus
 		$a_01_2 = {41 6e 67 72 65 62 73 6d 65 74 6f 64 65 72 31 36 35 2e 4c 6b 6b } //01 00  Angrebsmetoder165.Lkk
@@ -23,7 +37,7 @@ rule Trojan_Win32_NSISInject_RPX_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_NSISInject_RPX_MTB_3{
+rule Trojan_Win32_NSISInject_RPX_MTB_4{
 	meta:
 		description = "Trojan:Win32/NSISInject.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -36,7 +50,7 @@ rule Trojan_Win32_NSISInject_RPX_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_NSISInject_RPX_MTB_4{
+rule Trojan_Win32_NSISInject_RPX_MTB_5{
 	meta:
 		description = "Trojan:Win32/NSISInject.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		

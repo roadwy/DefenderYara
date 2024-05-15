@@ -20,3 +20,14 @@ rule Trojan_BAT_Ursu_AUR_MTB_2{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_Ursu_AUR_MTB_3{
+	meta:
+		description = "Trojan:BAT/Ursu.AUR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {0a 06 16 72 1b 00 00 70 a2 06 17 28 90 01 01 00 00 06 a2 06 18 72 5f 00 00 70 a2 06 19 28 90 01 01 00 00 06 a2 06 1a 72 77 00 00 70 a2 06 1b 28 90 01 01 00 00 06 a2 06 1c 72 83 00 00 70 a2 06 1d 28 90 00 } //01 00 
+		$a_01_1 = {0b 07 16 72 fb 00 00 70 a2 07 17 7e 01 00 00 04 a2 07 18 72 35 01 00 70 a2 07 19 7e 02 00 00 04 a2 07 1a 72 61 01 00 70 a2 07 1b 02 28 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

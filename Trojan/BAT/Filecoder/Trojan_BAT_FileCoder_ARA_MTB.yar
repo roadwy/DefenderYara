@@ -13,6 +13,16 @@ rule Trojan_BAT_FileCoder_ARA_MTB{
 }
 rule Trojan_BAT_FileCoder_ARA_MTB_2{
 	meta:
+		description = "Trojan:BAT/FileCoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
+		
+	strings :
+		$a_01_0 = {3a 5c 55 73 65 72 73 5c 57 6f 72 6d 5c 73 6f 75 72 63 65 5c 72 65 70 6f 73 5c 42 53 4f 44 5c 42 53 4f 44 5c 6f 62 6a 5c 44 65 62 75 67 5c 42 53 4f 44 2e 70 64 62 } //00 00  :\Users\Worm\source\repos\BSOD\BSOD\obj\Debug\BSOD.pdb
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_FileCoder_ARA_MTB_3{
+	meta:
 		description = "Trojan:BAT/FileCoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 02 00 "
 		
 	strings :
@@ -22,7 +32,7 @@ rule Trojan_BAT_FileCoder_ARA_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_FileCoder_ARA_MTB_3{
+rule Trojan_BAT_FileCoder_ARA_MTB_4{
 	meta:
 		description = "Trojan:BAT/FileCoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
 		

@@ -22,6 +22,17 @@ rule Trojan_Win32_Smokeloader_F_MTB_2{
 }
 rule Trojan_Win32_Smokeloader_F_MTB_3{
 	meta:
+		description = "Trojan:Win32/Smokeloader.F!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {b0 15 31 01 8b 0a 01 ad c2 15 f1 7b } //01 00 
+		$a_01_1 = {26 08 01 01 7b 3e 8a db 01 8b 0e 01 ad c2 b9 15 66 01 8b 0a 01 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Smokeloader_F_MTB_4{
+	meta:
 		description = "Trojan:Win32/Smokeloader.F!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 02 00 00 0a 00 "
 		
 	strings :

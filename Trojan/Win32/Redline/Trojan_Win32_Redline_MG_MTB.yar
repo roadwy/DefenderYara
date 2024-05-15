@@ -1,6 +1,16 @@
 
 rule Trojan_Win32_Redline_MG_MTB{
 	meta:
+		description = "Trojan:Win32/Redline.MG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {0f b6 08 8b 55 f4 8b 45 08 01 d0 0f b6 55 e7 31 ca 88 10 83 45 f4 01 8b 45 f4 3b 45 0c 7c ac } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Redline_MG_MTB_2{
+	meta:
 		description = "Trojan:Win32/Redline.MG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 02 00 00 05 00 "
 		
 	strings :
@@ -10,7 +20,7 @@ rule Trojan_Win32_Redline_MG_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Redline_MG_MTB_2{
+rule Trojan_Win32_Redline_MG_MTB_3{
 	meta:
 		description = "Trojan:Win32/Redline.MG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,13 00 13 00 05 00 00 05 00 "
 		
@@ -24,7 +34,7 @@ rule Trojan_Win32_Redline_MG_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Redline_MG_MTB_3{
+rule Trojan_Win32_Redline_MG_MTB_4{
 	meta:
 		description = "Trojan:Win32/Redline.MG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 08 00 00 05 00 "
 		

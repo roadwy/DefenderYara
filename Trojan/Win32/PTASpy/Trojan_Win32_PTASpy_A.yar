@@ -9,7 +9,7 @@ rule Trojan_Win32_PTASpy_A{
 		$a_01_2 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //01 00  VirtualProtect
 		$a_01_3 = {47 65 74 43 75 72 72 65 6e 74 50 72 6f 63 65 73 73 } //01 00  GetCurrentProcess
 		$a_01_4 = {43 72 79 70 74 42 69 6e 61 72 79 54 6f 53 74 72 69 6e 67 57 } //00 00  CryptBinaryToStringW
-		$a_01_5 = {00 5d 04 00 00 } //39 49 
+		$a_01_5 = {00 67 16 00 00 } //cd d4 
 	condition:
 		any of ($a_*)
  

@@ -1,6 +1,18 @@
 
 rule Trojan_Win32_Dridex_EC_MTB{
 	meta:
+		description = "Trojan:Win32/Dridex.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {03 74 21 65 21 21 7c 6a 74 85 6a 45 04 68 57 64 63 66 6a 74 40 75 cf 68 04 74 03 21 6a 78 64 64 8b 63 6a 74 68 05 78 85 6a 20 8b 66 } //01 00 
+		$a_01_1 = {50 45 43 32 4e 4f } //01 00  PEC2NO
+		$a_01_2 = {67 00 6f 00 6c 00 66 00 69 00 6e 00 66 00 6f 00 2e 00 69 00 6e 00 69 00 } //00 00  golfinfo.ini
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Dridex_EC_MTB_2{
+	meta:
 		description = "Trojan:Win32/Dridex.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
 	strings :
@@ -12,7 +24,7 @@ rule Trojan_Win32_Dridex_EC_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Dridex_EC_MTB_2{
+rule Trojan_Win32_Dridex_EC_MTB_3{
 	meta:
 		description = "Trojan:Win32/Dridex.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,18 00 18 00 08 00 00 03 00 "
 		
@@ -29,7 +41,7 @@ rule Trojan_Win32_Dridex_EC_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Dridex_EC_MTB_3{
+rule Trojan_Win32_Dridex_EC_MTB_4{
 	meta:
 		description = "Trojan:Win32/Dridex.EC!MTB,SIGNATURE_TYPE_PEHSTR,0a 00 0a 00 01 00 00 0a 00 "
 		

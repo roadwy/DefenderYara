@@ -1,16 +1,6 @@
 
 rule Trojan_Win32_Fragtor_NFA_MTB{
 	meta:
-		description = "Trojan:Win32/Fragtor.NFA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
-		
-	strings :
-		$a_03_0 = {a1 30 29 46 00 31 45 fc 33 c5 50 89 65 e8 ff 75 f8 8b 45 fc c7 45 fc 90 01 04 89 45 f8 8d 45 90 00 } //00 00 
-	condition:
-		any of ($a_*)
- 
-}
-rule Trojan_Win32_Fragtor_NFA_MTB_2{
-	meta:
 		description = "Trojan:Win32/Fragtor.NFA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
 		
 	strings :
@@ -20,7 +10,7 @@ rule Trojan_Win32_Fragtor_NFA_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Fragtor_NFA_MTB_3{
+rule Trojan_Win32_Fragtor_NFA_MTB_2{
 	meta:
 		description = "Trojan:Win32/Fragtor.NFA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		

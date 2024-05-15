@@ -1,6 +1,16 @@
 
 rule Trojan_BAT_Marsilia_NA_MTB{
 	meta:
+		description = "Trojan:BAT/Marsilia.NA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 0a 00 "
+		
+	strings :
+		$a_01_0 = {13 07 11 07 2c 0c 00 11 05 1a 5a 11 06 58 13 04 } //00 00  ܓܑబᄀᨅᅚ堆Г
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Marsilia_NA_MTB_2{
+	meta:
 		description = "Trojan:BAT/Marsilia.NA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 01 00 "
 		
 	strings :

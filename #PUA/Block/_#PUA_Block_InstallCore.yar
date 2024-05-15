@@ -21,6 +21,18 @@ rule _#PUA_Block_InstallCore_2{
 }
 rule _#PUA_Block_InstallCore_3{
 	meta:
+		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 02 00 "
+		
+	strings :
+		$a_80_0 = {49 6e 73 74 61 6c 6c 43 6f 72 65 } //InstallCore  01 00 
+		$a_80_1 = {49 6e 73 74 61 6c 6c 65 72 20 50 6f 77 65 72 65 64 20 62 79 20 69 6e 73 74 61 6c 6c 63 6f 72 65 2e 63 6f 6d } //Installer Powered by installcore.com  01 00 
+		$a_80_2 = {74 65 61 6d 40 69 6e 73 74 61 6c 6c 63 6f 72 65 2e 63 6f 6d } //team@installcore.com  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_InstallCore_4{
+	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
@@ -33,7 +45,7 @@ rule _#PUA_Block_InstallCore_3{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_InstallCore_4{
+rule _#PUA_Block_InstallCore_5{
 	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -46,7 +58,21 @@ rule _#PUA_Block_InstallCore_4{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_InstallCore_5{
+rule _#PUA_Block_InstallCore_6{
+	meta:
+		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {44 4f 57 4e 4c 4f 41 44 45 52 5f 4d 4f 44 45 3d 45 58 45 5f 49 4e 4a 45 43 54 45 44 5f 44 41 54 41 } //DOWNLOADER_MODE=EXE_INJECTED_DATA  01 00 
+		$a_80_1 = {69 72 73 6f 49 73 4f 70 65 72 61 49 6e 73 74 61 6c 6c 65 64 } //irsoIsOperaInstalled  01 00 
+		$a_80_2 = {49 6e 73 74 61 6c 6c 43 6f 72 65 } //InstallCore  01 00 
+		$a_80_3 = {63 68 72 6f 6d 65 2e 65 78 65 } //chrome.exe  01 00 
+		$a_80_4 = {53 6f 66 74 77 61 72 65 5c 4d 61 63 72 6f 6d 65 64 69 61 5c 46 6c 61 73 68 50 6c 61 79 65 72 } //Software\Macromedia\FlashPlayer  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_InstallCore_7{
 	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 01 00 "
 		
@@ -58,6 +84,23 @@ rule _#PUA_Block_InstallCore_5{
 		$a_80_4 = {6f 70 65 72 61 70 72 65 66 73 2e 69 6e 69 } //operaprefs.ini  9c ff 
 		$a_80_5 = {55 6e 69 6e 73 74 2e 65 78 65 } //Uninst.exe  9c ff 
 		$a_80_6 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //Uninstall.exe  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_InstallCore_8{
+	meta:
+		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {78 73 34 61 6c 6c 2e 6e 6c 2f 7e 70 65 74 65 72 6e 65 64 2f } //xs4all.nl/~peterned/  01 00 
+		$a_80_1 = {72 70 2e 62 61 69 78 61 6b 69 61 6c 74 63 64 6e 32 2e 63 6f 6d 2f } //rp.baixakialtcdn2.com/  01 00 
+		$a_80_2 = {44 45 46 41 55 4c 54 5f 4f 46 52 5f 43 4f 44 45 31 3d 64 65 66 61 75 6c 74 4f 66 66 65 72 2f 6f 66 66 65 72 5f 63 6f 64 65 2e 68 74 6d 6c } //DEFAULT_OFR_CODE1=defaultOffer/offer_code.html  01 00 
+		$a_80_3 = {49 6e 73 74 61 6c 6c 43 6f 72 65 3a 20 76 35 2e 36 36 } //InstallCore: v5.66  01 00 
+		$a_80_4 = {6f 70 65 72 61 2e 65 78 65 } //opera.exe  01 00 
+		$a_80_5 = {63 68 72 6f 6d 65 2e 65 78 65 } //chrome.exe  01 00 
+		$a_80_6 = {54 6f 6f 6c 42 61 72 } //ToolBar  01 00 
+		$a_80_7 = {54 61 73 6b 62 61 72 43 72 65 61 74 65 64 } //TaskbarCreated  00 00 
 	condition:
 		any of ($a_*)
  

@@ -35,7 +35,7 @@ rule VirTool_BAT_Subti_A_2{
 		$a_01_8 = {5f 73 74 61 72 74 55 70 50 65 72 73 69 73 74 65 6e 63 65 } //01 00  _startUpPersistence
 		$a_01_9 = {5f 62 69 6e 64 65 72 52 75 6e 46 69 72 73 74 } //01 00  _binderRunFirst
 		$a_01_10 = {5f 64 6f 77 6e 6c 6f 61 64 65 72 } //00 00  _downloader
-		$a_01_11 = {00 5d 04 00 } //00 a6 
+		$a_01_11 = {00 67 16 00 } //00 94 
 	condition:
 		any of ($a_*)
  

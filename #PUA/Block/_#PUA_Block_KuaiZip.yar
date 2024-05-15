@@ -39,6 +39,19 @@ rule _#PUA_Block_KuaiZip_3{
 }
 rule _#PUA_Block_KuaiZip_4{
 	meta:
+		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {64 6f 77 6e 31 2e 37 36 35 34 2e 63 6f 6d } //down1.7654.com  01 00 
+		$a_80_1 = {69 2e 6b 70 7a 69 70 2e 63 6f 6d } //i.kpzip.com  01 00 
+		$a_80_2 = {6b 75 61 69 79 61 6d 69 6e 69 } //kuaiyamini  01 00 
+		$a_80_3 = {77 77 77 2e 38 38 79 73 67 2e 63 6f 6d 2f 74 65 6d 70 6c 65 74 73 2f 38 38 79 73 67 2f 63 65 73 68 69 33 2e 68 74 6d } //www.88ysg.com/templets/88ysg/ceshi3.htm  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_KuaiZip_5{
+	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
@@ -51,7 +64,7 @@ rule _#PUA_Block_KuaiZip_4{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_5{
+rule _#PUA_Block_KuaiZip_6{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -65,7 +78,7 @@ rule _#PUA_Block_KuaiZip_5{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_6{
+rule _#PUA_Block_KuaiZip_7{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		
@@ -80,7 +93,7 @@ rule _#PUA_Block_KuaiZip_6{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_7{
+rule _#PUA_Block_KuaiZip_8{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -94,7 +107,23 @@ rule _#PUA_Block_KuaiZip_7{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_8{
+rule _#PUA_Block_KuaiZip_9{
+	meta:
+		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {74 69 70 73 2e 6e 61 6e 6a 69 6e 67 63 68 65 6e 78 69 2e 63 6f 6d } //tips.nanjingchenxi.com  01 00 
+		$a_80_1 = {6b 75 61 69 7a 69 70 } //kuaizip  01 00 
+		$a_80_2 = {32 33 34 35 63 68 72 6f 6d 65 2e 65 78 65 } //2345chrome.exe  01 00 
+		$a_80_3 = {33 36 30 53 45 2e 65 78 65 } //360SE.exe  01 00 
+		$a_80_4 = {6f 70 65 72 61 2e 65 78 65 } //opera.exe  01 00 
+		$a_80_5 = {32 33 34 35 65 78 70 6c 6f 72 65 72 2e 65 78 65 } //2345explorer.exe  01 00 
+		$a_80_6 = {71 71 62 72 6f 77 73 65 72 2e 65 78 65 } //qqbrowser.exe  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_KuaiZip_10{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -108,7 +137,7 @@ rule _#PUA_Block_KuaiZip_8{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_9{
+rule _#PUA_Block_KuaiZip_11{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 01 00 "
 		
@@ -121,7 +150,21 @@ rule _#PUA_Block_KuaiZip_9{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_10{
+rule _#PUA_Block_KuaiZip_12{
+	meta:
+		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {53 6f 66 74 77 61 72 65 5c 6c 73 7a 69 70 5c 73 75 62 6d 69 74 5c 74 75 72 6e 6f 66 66 } //Software\lszip\submit\turnoff  01 00 
+		$a_80_1 = {53 6f 66 74 77 61 72 65 5c 78 69 6e 6e 6f 74 65 5c 72 65 70 6f 72 74 5c 6f 66 66 6c 69 6e 65 } //Software\xinnote\report\offline  01 00 
+		$a_80_2 = {4d 69 6e 69 44 75 6d 70 57 72 69 74 65 44 75 6d 70 } //MiniDumpWriteDump  01 00 
+		$a_80_3 = {54 61 73 6b 62 61 72 43 72 65 61 74 65 64 } //TaskbarCreated  01 00 
+		$a_80_4 = {53 6f 66 74 77 61 72 65 5c 51 69 6e 67 4a 69 65 50 64 66 5c 52 65 70 6f 72 74 } //Software\QingJiePdf\Report  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_KuaiZip_13{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
@@ -134,7 +177,22 @@ rule _#PUA_Block_KuaiZip_10{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_11{
+rule _#PUA_Block_KuaiZip_14{
+	meta:
+		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {69 2e 6b 70 7a 69 70 2e 63 6f 6d } //i.kpzip.com  01 00 
+		$a_80_1 = {53 6f 66 74 77 61 72 65 5c 4b 75 61 69 5a 69 70 5c 49 6e 73 74 61 6c 6c } //Software\KuaiZip\Install  01 00 
+		$a_80_2 = {63 68 72 6f 6d 65 2e 65 78 65 } //chrome.exe  01 00 
+		$a_80_3 = {6b 75 61 69 7a 69 70 5c 74 72 75 6e 6b 5c 62 69 6e 5c 52 65 6c 65 61 73 65 5c 58 38 36 5c 55 70 64 61 74 65 43 68 65 63 6b 65 72 2e 70 64 62 } //kuaizip\trunk\bin\Release\X86\UpdateChecker.pdb  01 00 
+		$a_80_4 = {6f 70 65 72 61 2e 65 78 65 } //opera.exe  01 00 
+		$a_80_5 = {53 6f 66 74 77 61 72 65 5c 4b 75 61 69 5a 69 70 5c 55 70 64 61 74 65 43 68 65 63 6b 65 72 } //Software\KuaiZip\UpdateChecker  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule _#PUA_Block_KuaiZip_15{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 0a 00 00 01 00 "
 		
@@ -153,7 +211,7 @@ rule _#PUA_Block_KuaiZip_11{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_12{
+rule _#PUA_Block_KuaiZip_16{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 01 00 "
 		
@@ -169,7 +227,7 @@ rule _#PUA_Block_KuaiZip_12{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_13{
+rule _#PUA_Block_KuaiZip_17{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 01 00 "
 		
@@ -185,7 +243,7 @@ rule _#PUA_Block_KuaiZip_13{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_14{
+rule _#PUA_Block_KuaiZip_18{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		
@@ -201,7 +259,7 @@ rule _#PUA_Block_KuaiZip_14{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_15{
+rule _#PUA_Block_KuaiZip_19{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
@@ -215,7 +273,7 @@ rule _#PUA_Block_KuaiZip_15{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_16{
+rule _#PUA_Block_KuaiZip_20{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 09 00 00 02 00 "
 		
@@ -233,7 +291,7 @@ rule _#PUA_Block_KuaiZip_16{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_17{
+rule _#PUA_Block_KuaiZip_21{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 06 00 00 01 00 "
 		
@@ -248,7 +306,7 @@ rule _#PUA_Block_KuaiZip_17{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_18{
+rule _#PUA_Block_KuaiZip_22{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,05 00 05 00 06 00 00 01 00 "
 		
@@ -263,7 +321,7 @@ rule _#PUA_Block_KuaiZip_18{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_19{
+rule _#PUA_Block_KuaiZip_23{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,05 00 05 00 05 00 00 01 00 "
 		
@@ -277,7 +335,7 @@ rule _#PUA_Block_KuaiZip_19{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_20{
+rule _#PUA_Block_KuaiZip_24{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,03 00 03 00 02 00 00 02 00 "
 		
@@ -288,7 +346,7 @@ rule _#PUA_Block_KuaiZip_20{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_21{
+rule _#PUA_Block_KuaiZip_25{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,07 00 07 00 06 00 00 02 00 "
 		
@@ -303,7 +361,7 @@ rule _#PUA_Block_KuaiZip_21{
 		any of ($a_*)
  
 }
-rule _#PUA_Block_KuaiZip_22{
+rule _#PUA_Block_KuaiZip_26{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,05 00 05 00 05 00 00 03 00 "
 		

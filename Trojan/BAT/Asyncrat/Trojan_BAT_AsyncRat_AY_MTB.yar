@@ -9,3 +9,18 @@ rule Trojan_BAT_AsyncRat_AY_MTB{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_AsyncRat_AY_MTB_2{
+	meta:
+		description = "Trojan:BAT/AsyncRat.AY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 06 00 00 02 00 "
+		
+	strings :
+		$a_01_0 = {56 69 72 74 75 61 6c 4d 61 63 68 69 6e 65 44 65 74 65 63 74 6f 72 } //02 00  VirtualMachineDetector
+		$a_01_1 = {49 6e 73 74 61 6c 6c 61 74 69 6f 6e 43 6c 61 73 73 } //02 00  InstallationClass
+		$a_01_2 = {45 6e 63 72 79 70 74 69 6f 6e 43 6c 61 73 73 } //02 00  EncryptionClass
+		$a_01_3 = {46 61 6b 65 4d 65 73 73 61 67 65 43 6c 61 73 73 } //02 00  FakeMessageClass
+		$a_01_4 = {5a 6f 6e 65 49 64 65 6e 74 69 66 69 65 72 43 6c 61 73 73 } //02 00  ZoneIdentifierClass
+		$a_01_5 = {49 57 73 68 52 75 6e 74 69 6d 65 4c 69 62 72 61 72 79 } //00 00  IWshRuntimeLibrary
+	condition:
+		any of ($a_*)
+ 
+}

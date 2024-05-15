@@ -12,3 +12,19 @@ rule Ransom_Win64_Knight_ZA_MTB{
 		any of ($a_*)
  
 }
+rule Ransom_Win64_Knight_ZA_MTB_2{
+	meta:
+		description = "Ransom:Win64/Knight.ZA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {59 6f 75 72 20 64 61 74 61 20 69 73 20 73 74 6f 6c 65 6e 20 61 6e 64 20 65 6e 63 72 79 70 74 65 64 } //01 00  Your data is stolen and encrypted
+		$a_01_1 = {22 6e 6f 74 65 5f 66 69 6c 65 5f 6e 61 6d 65 22 3a 20 22 52 45 41 44 4d 45 5f } //01 00  "note_file_name": "README_
+		$a_01_2 = {68 74 74 70 3a 2f 2f 72 61 6e 73 6f 6d } //01 00  http://ransom
+		$a_01_3 = {63 6d 64 2e 65 78 65 20 2f 63 20 76 73 73 61 64 6d 69 6e 2e 65 78 65 20 44 65 6c 65 74 65 } //01 00  cmd.exe /c vssadmin.exe Delete
+		$a_01_4 = {22 6b 69 6c 6c 5f 73 65 72 76 69 63 65 73 22 3a 20 5b 22 } //01 00  "kill_services": ["
+		$a_01_5 = {22 77 68 69 74 65 5f 66 69 6c 65 73 22 3a 20 5b 22 4e 54 55 53 45 52 2e 44 41 54 22 } //01 00  "white_files": ["NTUSER.DAT"
+		$a_01_6 = {4f 6e 6c 79 20 70 72 6f 63 65 73 73 20 73 6d 62 20 68 6f 73 74 73 20 69 6e 73 69 64 65 20 64 65 66 69 6e 65 64 20 68 6f 73 74 2e 20 2d 68 6f 73 74 } //00 00  Only process smb hosts inside defined host. -host
+	condition:
+		any of ($a_*)
+ 
+}

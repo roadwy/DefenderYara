@@ -31,49 +31,6 @@ rule TrojanDownloader_Win32_Renos_2{
 }
 rule TrojanDownloader_Win32_Renos_3{
 	meta:
-		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR_EXT,1f 00 1f 00 04 00 00 0a 00 "
-		
-	strings :
-		$a_00_0 = {57 69 6e 64 6f 77 73 5c 78 70 75 70 64 61 74 65 2e 65 78 65 } //0a 00  Windows\xpupdate.exe
-		$a_02_1 = {4e 6f 43 68 61 6e 67 69 6e 67 57 61 6c 6c 70 61 70 65 72 90 02 10 53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 50 6f 6c 69 63 69 65 73 5c 41 63 74 69 76 65 44 65 73 6b 74 6f 70 90 00 } //0a 00 
-		$a_02_2 = {46 6f 72 63 65 41 63 74 69 76 65 44 65 73 6b 74 6f 70 4f 6e 90 02 10 53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 50 6f 6c 69 63 69 65 73 5c 45 78 70 6c 6f 72 65 72 90 00 } //01 00 
-		$a_00_3 = {36 39 2e 35 30 2e 31 } //00 00  69.50.1
-	condition:
-		any of ($a_*)
- 
-}
-rule TrojanDownloader_Win32_Renos_4{
-	meta:
-		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 01 00 "
-		
-	strings :
-		$a_00_0 = {48 6f 73 74 3a 20 64 6f 77 6e 6c 6f 61 64 2e 25 73 2e 63 6f 6d } //01 00  Host: download.%s.com
-		$a_00_1 = {43 3a 5c 57 69 6e 64 6f 77 73 5c 78 70 75 70 64 61 74 65 2e 65 78 65 } //01 00  C:\Windows\xpupdate.exe
-		$a_01_2 = {57 69 6e 64 6f 77 73 20 75 70 64 61 74 65 20 6c 6f 61 64 65 72 } //01 00  Windows update loader
-		$a_00_3 = {43 3a 5c 49 6e 73 74 61 6c 6c } //01 00  C:\Install
-		$a_01_4 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 49 6e 74 65 72 6e 65 74 20 45 78 70 6c 6f 72 65 72 5c 44 65 73 6b 74 6f 70 5c 47 65 6e 65 72 61 6c } //01 00  SOFTWARE\Microsoft\Internet Explorer\Desktop\General
-		$a_02_5 = {47 45 54 20 2f 90 02 08 2e 70 68 70 3f 26 61 64 76 69 64 3d 90 00 } //01 00 
-		$a_02_6 = {47 45 54 20 68 74 74 70 3a 2f 2f 64 6f 77 6e 6c 6f 61 64 2e 25 73 2e 63 6f 6d 2f 90 02 08 2e 70 68 70 3f 26 61 64 76 69 64 3d 90 00 } //00 00 
-	condition:
-		any of ($a_*)
- 
-}
-rule TrojanDownloader_Win32_Renos_5{
-	meta:
-		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR_EXT,29 00 29 00 05 00 00 0a 00 "
-		
-	strings :
-		$a_02_0 = {47 45 54 20 2f 90 02 08 2e 70 68 70 3f 26 61 64 76 69 64 3d 90 00 } //0a 00 
-		$a_01_1 = {57 69 6e 64 6f 77 73 20 75 70 64 61 74 65 20 6c 6f 61 64 65 72 } //0a 00  Windows update loader
-		$a_02_2 = {4e 6f 43 68 61 6e 67 69 6e 67 57 61 6c 6c 70 61 70 65 72 90 02 10 53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 50 6f 6c 69 63 69 65 73 5c 41 63 74 69 76 65 44 65 73 6b 74 6f 70 90 00 } //0a 00 
-		$a_02_3 = {46 6f 72 63 65 41 63 74 69 76 65 44 65 73 6b 74 6f 70 4f 6e 90 02 10 53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 50 6f 6c 69 63 69 65 73 5c 45 78 70 6c 6f 72 65 72 90 00 } //01 00 
-		$a_00_4 = {36 39 2e 35 30 2e 31 } //00 00  69.50.1
-	condition:
-		any of ($a_*)
- 
-}
-rule TrojanDownloader_Win32_Renos_6{
-	meta:
 		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR_EXT,6b 00 6a 00 07 00 00 64 00 "
 		
 	strings :
@@ -88,7 +45,7 @@ rule TrojanDownloader_Win32_Renos_6{
 		any of ($a_*)
  
 }
-rule TrojanDownloader_Win32_Renos_7{
+rule TrojanDownloader_Win32_Renos_4{
 	meta:
 		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 09 00 00 01 00 "
 		
@@ -106,26 +63,7 @@ rule TrojanDownloader_Win32_Renos_7{
 		any of ($a_*)
  
 }
-rule TrojanDownloader_Win32_Renos_8{
-	meta:
-		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR_EXT,ffffffd7 00 ffffffd7 00 0a 00 00 64 00 "
-		
-	strings :
-		$a_01_0 = {64 6f 77 6e 6c 6f 61 64 2e 70 68 70 3f 26 61 64 76 69 64 3d } //32 00  download.php?&advid=
-		$a_00_1 = {43 3a 5c 57 69 6e 64 6f 77 73 5c 78 70 75 70 64 61 74 65 2e 65 78 65 } //0a 00  C:\Windows\xpupdate.exe
-		$a_01_2 = {46 6f 72 63 65 41 63 74 69 76 65 44 65 73 6b 74 6f 70 4f 6e } //0a 00  ForceActiveDesktopOn
-		$a_01_3 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 49 6e 74 65 72 6e 65 74 20 45 78 70 6c 6f 72 65 72 5c 44 65 73 6b 74 6f 70 5c 47 65 6e 65 72 61 6c } //0a 00  SOFTWARE\Microsoft\Internet Explorer\Desktop\General
-		$a_01_4 = {57 61 6c 6c 70 61 70 65 72 46 69 6c 65 54 69 6d 65 } //0a 00  WallpaperFileTime
-		$a_01_5 = {57 69 6e 64 6f 77 73 20 75 70 64 61 74 65 20 6c 6f 61 64 65 72 } //0a 00  Windows update loader
-		$a_01_6 = {53 4f 46 54 57 41 52 45 5c 49 6e 73 74 61 6c 6c } //05 00  SOFTWARE\Install
-		$a_01_7 = {50 72 6f 78 79 53 65 72 76 65 72 } //05 00  ProxyServer
-		$a_01_8 = {50 72 6f 78 79 45 6e 61 62 6c 65 } //05 00  ProxyEnable
-		$a_00_9 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 49 6e 74 65 72 6e 65 74 20 53 65 74 74 69 6e 67 73 } //00 00  Software\Microsoft\Windows\CurrentVersion\Internet Settings
-	condition:
-		any of ($a_*)
- 
-}
-rule TrojanDownloader_Win32_Renos_9{
+rule TrojanDownloader_Win32_Renos_5{
 	meta:
 		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR_EXT,1d 00 1a 00 09 00 00 0a 00 "
 		
@@ -143,44 +81,31 @@ rule TrojanDownloader_Win32_Renos_9{
 		any of ($a_*)
  
 }
-rule TrojanDownloader_Win32_Renos_10{
+rule TrojanDownloader_Win32_Renos_6{
 	meta:
-		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR_EXT,46 00 44 00 0d 00 00 0a 00 "
+		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0f 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {7b 41 42 43 44 45 43 46 30 2d 34 42 31 35 2d 31 31 44 31 2d 41 42 45 44 2d 37 30 39 35 34 39 43 31 30 30 30 30 7d } //0a 00  {ABCDECF0-4B15-11D1-ABED-709549C10000}
-		$a_01_1 = {7b 33 39 33 39 32 31 2d 65 39 33 39 33 39 31 2d 33 39 31 39 31 33 39 2d 33 64 33 61 37 33 38 2d 31 31 7d } //0a 00  {393921-e939391-3919139-3d3a738-11}
-		$a_00_2 = {53 59 53 54 45 4d 5c 43 75 72 72 65 6e 74 43 6f 6e 74 72 6f 6c 53 65 74 5c 53 65 72 76 69 63 65 73 5c 53 68 61 72 65 64 41 63 63 65 73 73 5c 50 61 72 61 6d 65 74 65 72 73 5c 46 69 72 65 77 61 6c 6c 50 6f 6c 69 63 79 5c 53 74 61 6e 64 61 72 64 50 72 6f 66 69 6c 65 5c 41 75 74 68 6f 72 69 7a 65 64 41 70 70 6c 69 63 61 74 69 6f 6e 73 5c 4c 69 73 74 } //0a 00  SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile\AuthorizedApplications\List
-		$a_01_3 = {44 69 73 61 62 6c 65 52 65 67 69 73 74 72 79 54 6f 6f 6c 73 } //0a 00  DisableRegistryTools
-		$a_01_4 = {45 6e 61 62 6c 65 42 61 6c 6c 6f 6f 6e 54 69 70 73 } //05 00  EnableBalloonTips
-		$a_00_5 = {5c 64 72 69 76 65 72 73 5c 65 74 63 5c 68 6f 73 74 73 } //03 00  \drivers\etc\hosts
-		$a_01_6 = {77 69 6e 64 6f 77 73 75 70 64 61 74 65 2e 6d 69 63 72 6f 73 6f 66 74 2e 63 6f 6d } //03 00  windowsupdate.microsoft.com
-		$a_01_7 = {6b 61 73 70 65 72 73 6b 79 2e 63 6f 6d } //03 00  kaspersky.com
-		$a_01_8 = {6d 63 61 66 65 65 2e 63 6f 6d } //03 00  mcafee.com
-		$a_01_9 = {73 79 6d 61 6e 74 65 63 2e 63 6f 6d } //01 00  symantec.com
-		$a_01_10 = {31 39 32 2e 31 36 38 2e 32 30 30 2e 33 } //01 00  192.168.200.3
-		$a_01_11 = {57 61 72 6e 69 6e 67 21 20 50 6f 74 65 6e 74 69 61 6c 20 53 70 79 77 61 72 65 20 4f 70 65 72 61 74 69 6f 6e 21 } //01 00  Warning! Potential Spyware Operation!
-		$a_01_12 = {59 6f 75 72 20 63 6f 6d 70 75 74 65 72 20 69 73 20 6d 61 6b 69 6e 67 20 75 6e 61 75 74 68 6f 72 69 7a 65 64 20 63 6f 70 69 65 73 20 6f 66 20 79 6f 75 72 20 73 79 73 74 65 6d 20 61 6e 64 } //00 00  Your computer is making unauthorized copies of your system and
+		$a_00_0 = {53 70 79 77 61 72 65 4c 6f 63 6b 65 64 } //02 00  SpywareLocked
+		$a_00_1 = {73 70 79 6c 6f 63 6b 65 64 2e 63 6f 6d 2f 3f 61 66 66 3d } //03 00  spylocked.com/?aff=
+		$a_00_2 = {6b 65 72 61 74 6f 6d 69 72 32 2e 62 69 7a 2f 67 65 74 2e 70 68 70 3f 70 61 72 74 6e 65 72 3d } //03 00  keratomir2.biz/get.php?partner=
+		$a_00_3 = {6b 65 72 61 74 6f 6d 69 72 2e 62 69 7a 2f 67 65 74 2e 70 68 70 3f 70 61 72 74 6e 65 72 3d } //01 00  keratomir.biz/get.php?partner=
+		$a_00_4 = {70 6f 72 6e 6d 61 67 2e 63 6f 6d 2f 69 6e 73 74 61 6c 6c 2f } //02 00  pornmag.com/install/
+		$a_00_5 = {59 6f 75 72 20 73 79 73 74 65 6d 20 69 73 20 69 6e 66 65 63 74 65 64 } //01 00  Your system is infected
+		$a_00_6 = {41 72 65 20 79 6f 75 20 66 75 63 6b 69 6e 67 20 63 72 61 7a 79 20 6d 61 6e 3f } //01 00  Are you fucking crazy man?
+		$a_00_7 = {41 6c 6c 20 70 6f 72 6e 20 6c 69 6e 6b 73 20 77 68 61 74 20 61 72 65 20 77 6f 72 74 68 20 79 6f 75 72 20 76 69 73 69 74 2e } //05 00  All porn links what are worth your visit.
+		$a_02_8 = {68 74 74 70 3a 2f 2f 6b 65 72 61 74 6f 6d 69 72 90 02 02 2e 62 69 7a 2f 67 65 74 2e 70 68 70 3f 70 61 72 74 6e 65 72 3d 90 02 04 53 70 79 77 61 72 65 4c 6f 63 6b 65 64 90 00 } //05 00 
+		$a_02_9 = {68 74 74 70 3a 2f 2f 6b 65 72 61 74 6f 6d 69 72 90 02 02 2e 62 69 7a 2f 67 65 74 2e 70 68 70 3f 70 61 72 74 6e 65 72 3d 90 02 04 53 70 79 6c 6f 63 6b 65 64 90 00 } //05 00 
+		$a_02_10 = {68 74 74 70 3a 2f 2f 6b 65 72 61 74 6f 6d 69 72 90 02 02 2e 62 69 7a 2f 67 65 74 2e 70 68 70 3f 70 61 72 74 6e 65 72 3d 90 02 04 6b 48 41 74 77 5b 53 5d 90 00 } //05 00 
+		$a_01_11 = {50 4c 4c 48 02 17 17 53 5d 4a 59 4c 57 55 51 4a } //05 00  䱐䡌ᜂ北䩝䱙啗䩑
+		$a_02_12 = {81 7d 14 03 02 00 00 74 20 81 7d 14 04 02 00 00 74 17 81 7d 14 01 02 00 00 74 0e 81 7d 14 05 04 00 00 74 05 e9 8e 00 00 00 e8 90 02 05 83 f8 01 75 07 e8 90 02 05 eb 2d 80 3d 90 00 } //05 00 
+		$a_02_13 = {81 7d 14 03 02 00 00 74 1d 81 7d 14 04 02 00 00 74 14 81 7d 14 01 02 00 00 74 0b 81 7d 14 05 04 00 00 74 02 eb 6b e8 90 02 05 83 f8 01 75 07 e8 90 00 } //04 00 
+		$a_02_14 = {8b ec 83 c4 f8 6a 01 6a 00 ff 75 08 8d 05 90 02 04 50 8d 05 90 02 04 50 6a 00 ff 15 90 02 04 b8 01 00 00 00 c9 90 00 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
-rule TrojanDownloader_Win32_Renos_11{
-	meta:
-		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
-		
-	strings :
-		$a_02_0 = {4e 6f 52 65 6d 6f 76 65 20 41 70 70 49 44 90 01 08 27 25 41 50 50 49 44 25 27 20 3d 20 73 20 27 53 70 79 53 68 72 65 64 64 65 72 27 90 01 04 27 77 65 62 69 6e 73 74 2e 64 6c 6c 27 90 00 } //01 00 
-		$a_02_1 = {53 70 79 53 68 72 65 64 64 65 72 2e 57 65 62 49 6e 73 74 61 6c 6c 2e 31 20 3d 20 73 20 27 57 65 62 49 6e 73 74 61 6c 6c 20 43 6c 61 73 73 27 90 01 08 43 4c 53 49 44 20 3d 20 73 20 27 7b 33 34 33 43 45 32 31 34 2d 39 39 39 38 2d 34 42 32 31 2d 41 31 35 31 2d 46 46 45 39 37 30 31 36 37 32 39 37 7d 27 90 00 } //01 00 
-		$a_02_2 = {53 70 79 53 68 72 65 64 64 65 72 2e 57 65 62 49 6e 73 74 61 6c 6c 20 3d 20 73 20 27 57 65 62 49 6e 73 74 61 6c 6c 20 43 6c 61 73 73 27 90 01 08 43 4c 53 49 44 20 3d 20 73 20 27 7b 33 34 33 43 45 32 31 34 2d 39 39 39 38 2d 34 42 32 31 2d 41 31 35 31 2d 46 46 45 39 37 30 31 36 37 32 39 37 7d 27 90 00 } //01 00 
-		$a_02_3 = {43 75 72 56 65 72 20 3d 20 73 20 27 53 70 79 53 68 72 65 64 64 65 72 2e 57 65 62 49 6e 73 74 61 6c 6c 2e 31 27 90 01 07 4e 6f 52 65 6d 6f 76 65 20 43 4c 53 49 44 90 01 08 46 6f 72 63 65 52 65 6d 6f 76 65 20 7b 33 34 33 43 45 32 31 34 2d 39 39 39 38 2d 34 42 32 31 2d 41 31 35 31 2d 46 46 45 39 37 30 31 36 37 32 39 37 7d 20 3d 20 73 20 27 57 65 62 49 6e 73 74 61 6c 6c 20 43 6c 61 73 73 27 90 00 } //01 00 
-		$a_02_4 = {50 72 6f 67 49 44 20 3d 20 73 20 27 53 70 79 53 68 72 65 64 64 65 72 2e 57 65 62 49 6e 73 74 61 6c 6c 2e 31 27 90 01 05 56 65 72 73 69 6f 6e 49 6e 64 65 70 65 6e 64 65 6e 74 50 72 6f 67 49 44 20 3d 20 73 20 27 53 70 79 53 68 72 65 64 64 65 72 2e 57 65 62 49 6e 73 74 61 6c 6c 27 90 00 } //01 00 
-		$a_00_5 = {27 54 79 70 65 4c 69 62 27 20 3d 20 73 20 27 7b 44 32 34 33 36 35 33 33 2d 33 33 46 39 2d 34 39 35 43 2d 39 43 44 39 2d 44 41 46 32 31 45 36 37 46 46 45 42 7d 27 } //00 00  'TypeLib' = s '{D2436533-33F9-495C-9CD9-DAF21E67FFEB}'
-	condition:
-		any of ($a_*)
- 
-}
-rule TrojanDownloader_Win32_Renos_12{
+rule TrojanDownloader_Win32_Renos_7{
 	meta:
 		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR,08 00 08 00 05 00 00 03 00 "
 		
@@ -194,7 +119,7 @@ rule TrojanDownloader_Win32_Renos_12{
 		any of ($a_*)
  
 }
-rule TrojanDownloader_Win32_Renos_13{
+rule TrojanDownloader_Win32_Renos_8{
 	meta:
 		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR,08 00 08 00 05 00 00 03 00 "
 		
@@ -208,7 +133,7 @@ rule TrojanDownloader_Win32_Renos_13{
 		any of ($a_*)
  
 }
-rule TrojanDownloader_Win32_Renos_14{
+rule TrojanDownloader_Win32_Renos_9{
 	meta:
 		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR,19 00 19 00 07 00 00 0a 00 "
 		
@@ -224,7 +149,7 @@ rule TrojanDownloader_Win32_Renos_14{
 		any of ($a_*)
  
 }
-rule TrojanDownloader_Win32_Renos_15{
+rule TrojanDownloader_Win32_Renos_10{
 	meta:
 		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR,2b 00 2b 00 07 00 00 0a 00 "
 		
@@ -240,7 +165,7 @@ rule TrojanDownloader_Win32_Renos_15{
 		any of ($a_*)
  
 }
-rule TrojanDownloader_Win32_Renos_16{
+rule TrojanDownloader_Win32_Renos_11{
 	meta:
 		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR,ffffffd0 00 ffffffd0 00 0f 00 00 64 00 "
 		
@@ -264,7 +189,7 @@ rule TrojanDownloader_Win32_Renos_16{
 		any of ($a_*)
  
 }
-rule TrojanDownloader_Win32_Renos_17{
+rule TrojanDownloader_Win32_Renos_12{
 	meta:
 		description = "TrojanDownloader:Win32/Renos,SIGNATURE_TYPE_PEHSTR,19 00 14 00 2c 00 00 05 00 "
 		

@@ -26,3 +26,15 @@ rule Trojan_BAT_PsDownload_MA_MTB_2{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_PsDownload_MA_MTB_3{
+	meta:
+		description = "Trojan:BAT/PsDownload.MA!MTB,SIGNATURE_TYPE_PEHSTR,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {50 6f 77 65 72 73 68 65 6c 6c 20 2d 45 78 65 63 75 74 69 6f 6e 50 6f 6c 69 63 79 20 55 6e 72 65 73 74 72 69 63 74 65 64 20 2d 43 6f 6d 6d 61 6e 64 20 22 49 6e 76 6f 6b 65 2d 57 65 62 72 65 71 75 65 73 74 20 27 68 74 74 70 3a 2f 2f 31 32 34 2e 31 30 36 2e 31 39 37 2e 31 36 37 } //01 00  Powershell -ExecutionPolicy Unrestricted -Command "Invoke-Webrequest 'http://124.106.197.167
+		$a_01_1 = {41 64 64 2d 4d 70 50 72 65 66 65 72 65 6e 63 65 20 2d 45 78 63 6c 75 73 69 6f 6e 50 61 74 68 20 27 43 3a 5c 50 65 72 66 4c 6f 67 73 27 } //01 00  Add-MpPreference -ExclusionPath 'C:\PerfLogs'
+		$a_01_2 = {42 79 70 61 73 73 20 2d 43 6f 6e 66 69 72 6d 3a 24 66 61 6c 73 65 20 2d 46 6f 72 63 65 } //00 00  Bypass -Confirm:$false -Force
+	condition:
+		any of ($a_*)
+ 
+}

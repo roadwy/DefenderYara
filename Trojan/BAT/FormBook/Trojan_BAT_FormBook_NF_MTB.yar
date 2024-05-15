@@ -1,6 +1,27 @@
 
 rule Trojan_BAT_FormBook_NF_MTB{
 	meta:
+		description = "Trojan:BAT/FormBook.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {14 91 08 11 90 01 01 08 8e 69 5d 91 61 d2 9c 00 11 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_FormBook_NF_MTB_2{
+	meta:
+		description = "Trojan:BAT/FormBook.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 05 00 "
+		
+	strings :
+		$a_01_0 = {2f 40 08 11 06 58 16 32 39 08 11 06 58 02 } //05 00  䀯ᄈ堆㈖࠹ؑɘ
+		$a_03_1 = {1f 09 2e 32 03 07 59 28 90 01 01 00 00 0a 17 30 0b 04 08 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_FormBook_NF_MTB_3{
+	meta:
 		description = "Trojan:BAT/FormBook.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
 		
 	strings :
@@ -10,7 +31,7 @@ rule Trojan_BAT_FormBook_NF_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_FormBook_NF_MTB_2{
+rule Trojan_BAT_FormBook_NF_MTB_4{
 	meta:
 		description = "Trojan:BAT/FormBook.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 05 00 "
 		

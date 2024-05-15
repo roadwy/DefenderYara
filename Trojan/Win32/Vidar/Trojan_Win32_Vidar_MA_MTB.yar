@@ -11,6 +11,16 @@ rule Trojan_Win32_Vidar_MA_MTB{
 }
 rule Trojan_Win32_Vidar_MA_MTB_2{
 	meta:
+		description = "Trojan:Win32/Vidar.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {8b 44 24 0c 69 d2 fd 43 03 00 81 c2 c3 9e 26 00 89 15 14 90 01 01 45 00 8a 0d 16 90 01 01 45 00 30 0c 30 83 ff 0f 75 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Vidar_MA_MTB_3{
+	meta:
 		description = "Trojan:Win32/Vidar.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 0a 00 "
 		
 	strings :
@@ -19,7 +29,7 @@ rule Trojan_Win32_Vidar_MA_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Vidar_MA_MTB_3{
+rule Trojan_Win32_Vidar_MA_MTB_4{
 	meta:
 		description = "Trojan:Win32/Vidar.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,15 00 15 00 07 00 00 01 00 "
 		
@@ -36,7 +46,7 @@ rule Trojan_Win32_Vidar_MA_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Vidar_MA_MTB_4{
+rule Trojan_Win32_Vidar_MA_MTB_5{
 	meta:
 		description = "Trojan:Win32/Vidar.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 06 00 00 02 00 "
 		

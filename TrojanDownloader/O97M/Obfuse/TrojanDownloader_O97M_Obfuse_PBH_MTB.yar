@@ -1,6 +1,18 @@
 
 rule TrojanDownloader_O97M_Obfuse_PBH_MTB{
 	meta:
+		description = "TrojanDownloader:O97M/Obfuse.PBH!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {41 63 74 69 76 65 53 68 65 65 74 2e 52 61 6e 67 65 28 22 90 02 06 22 2c 20 22 90 02 08 22 29 2e 4c 6f 63 6b 65 64 20 3d 20 54 72 75 65 90 00 } //01 00 
+		$a_03_1 = {2e 4f 70 65 6e 20 22 47 45 54 22 2c 20 22 68 74 74 70 3a 2f 2f 65 63 32 2d 31 38 2d 31 38 34 2d 31 37 2d 31 32 2e 65 75 2d 63 65 6e 74 72 61 6c 2d 31 2e 63 6f 6d 70 75 74 65 2e 61 6d 61 7a 6f 6e 61 77 73 2e 63 6f 6d 2f 73 74 61 6e 64 61 72 64 63 68 61 72 74 65 72 65 64 2f 90 02 15 2f 31 38 30 38 32 31 2f 90 00 } //01 00 
+		$a_01_2 = {3d 20 45 6e 76 69 72 6f 6e 28 22 54 65 6d 70 22 29 20 26 20 22 5c 6c 65 61 6b 64 65 74 61 69 6c 73 2e 6c 6f 67 } //00 00  = Environ("Temp") & "\leakdetails.log
+	condition:
+		any of ($a_*)
+ 
+}
+rule TrojanDownloader_O97M_Obfuse_PBH_MTB_2{
+	meta:
 		description = "TrojanDownloader:O97M/Obfuse.PBH!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 01 00 "
 		
 	strings :

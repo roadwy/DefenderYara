@@ -9,3 +9,25 @@ rule Trojan_BAT_Redline_GZZ_MTB{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_Redline_GZZ_MTB_2{
+	meta:
+		description = "Trojan:BAT/Redline.GZZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 02 00 00 0a 00 "
+		
+	strings :
+		$a_03_0 = {07 11 40 18 5b 06 11 40 18 6f 90 01 03 0a 1f 10 28 90 01 03 0a 9c 00 11 40 18 58 13 40 11 40 06 6f 90 01 03 0a fe 04 13 41 11 41 2d d2 90 00 } //01 00 
+		$a_01_1 = {46 75 6e 6e 79 54 68 69 6e 67 41 62 6f 75 74 54 68 61 74 } //00 00  FunnyThingAboutThat
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Redline_GZZ_MTB_3{
+	meta:
+		description = "Trojan:BAT/Redline.GZZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 02 00 00 0a 00 "
+		
+	strings :
+		$a_03_0 = {73 04 00 00 0a 0a 06 28 90 01 03 0a 03 50 6f 90 01 03 0a 6f 90 01 03 0a 0b 73 08 00 00 0a 0c 08 07 6f 90 01 03 0a 08 18 6f 0a 90 01 02 0a 08 6f 90 01 03 0a 02 50 16 02 50 8e 69 6f 90 01 03 0a 2a 90 00 } //01 00 
+		$a_01_1 = {54 72 69 70 6c 65 44 45 53 43 72 79 70 74 6f 53 65 72 76 69 63 65 50 72 6f 76 69 64 65 72 } //00 00  TripleDESCryptoServiceProvider
+	condition:
+		any of ($a_*)
+ 
+}

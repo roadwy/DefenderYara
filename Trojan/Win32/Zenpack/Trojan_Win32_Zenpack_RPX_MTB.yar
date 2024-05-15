@@ -24,7 +24,7 @@ rule Trojan_Win32_Zenpack_RPX_MTB_3{
 		description = "Trojan:Win32/Zenpack.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_03_0 = {89 c2 eb 1b 89 f8 50 8f 05 90 01 04 40 42 01 c2 31 35 90 01 04 8d 05 90 01 04 ff e0 40 89 d8 50 8f 05 90 00 } //00 00 
+		$a_01_0 = {89 4d a8 8b 4d ac 89 48 0c 89 58 04 8b 4d a8 89 08 c7 40 08 04 00 00 00 89 7d a4 89 55 a0 89 75 9c ff d2 } //00 00 
 	condition:
 		any of ($a_*)
  
@@ -34,7 +34,7 @@ rule Trojan_Win32_Zenpack_RPX_MTB_4{
 		description = "Trojan:Win32/Zenpack.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_03_0 = {33 f6 8d 9b 00 00 00 00 83 3d 90 01 03 00 0b 75 0e 8d 8c 24 2c 01 00 00 51 6a 00 6a 00 ff d7 81 fe 4c 13 00 00 0f 85 19 0b 00 00 90 00 } //00 00 
+		$a_03_0 = {89 c2 eb 1b 89 f8 50 8f 05 90 01 04 40 42 01 c2 31 35 90 01 04 8d 05 90 01 04 ff e0 40 89 d8 50 8f 05 90 00 } //00 00 
 	condition:
 		any of ($a_*)
  
@@ -44,12 +44,32 @@ rule Trojan_Win32_Zenpack_RPX_MTB_5{
 		description = "Trojan:Win32/Zenpack.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {89 85 80 fc ff ff ff d1 83 ec 0c 8b 8d cc fc ff ff 66 81 39 45 00 0f 94 c3 8b 95 bc fc ff ff 66 81 3a 4c 00 0f 94 c7 20 fb 8b b5 b8 fc ff ff } //00 00 
+		$a_03_0 = {33 f6 8d 9b 00 00 00 00 83 3d 90 01 03 00 0b 75 0e 8d 8c 24 2c 01 00 00 51 6a 00 6a 00 ff d7 81 fe 4c 13 00 00 0f 85 19 0b 00 00 90 00 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_Win32_Zenpack_RPX_MTB_6{
+	meta:
+		description = "Trojan:Win32/Zenpack.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {89 85 80 fc ff ff ff d1 83 ec 0c 8b 8d cc fc ff ff 66 81 39 45 00 0f 94 c3 8b 95 bc fc ff ff 66 81 3a 4c 00 0f 94 c7 20 fb 8b b5 b8 fc ff ff } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Zenpack_RPX_MTB_7{
+	meta:
+		description = "Trojan:Win32/Zenpack.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {b8 5e a8 66 32 f7 64 24 1c 8b 44 24 1c 81 6c 24 0c 00 02 32 55 81 44 24 34 9f 12 a5 12 b8 bf 91 2a 1d f7 64 24 10 8b 44 24 10 81 6c 24 3c fa 7a 76 1f } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Zenpack_RPX_MTB_8{
 	meta:
 		description = "Trojan:Win32/Zenpack.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		

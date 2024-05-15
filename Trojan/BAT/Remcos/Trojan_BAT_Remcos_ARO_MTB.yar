@@ -4,12 +4,22 @@ rule Trojan_BAT_Remcos_ARO_MTB{
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {7e 06 00 00 04 02 7e 06 00 00 04 02 91 7e 05 00 00 04 7e 1d 00 00 04 1f 7f 7e 1d 00 00 04 1f 7f 91 02 60 20 a0 00 00 00 5f 9c 59 7e 07 00 00 04 59 d2 9c } //00 00 
+		$a_03_0 = {0a 02 06 03 17 59 28 90 01 01 00 00 06 0b 02 06 03 28 90 01 01 00 00 06 0c 02 07 06 8e 69 58 28 90 01 01 00 00 2b 08 07 59 06 8e 69 59 28 90 00 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_BAT_Remcos_ARO_MTB_2{
+	meta:
+		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {7e 06 00 00 04 02 7e 06 00 00 04 02 91 7e 05 00 00 04 7e 1d 00 00 04 1f 7f 7e 1d 00 00 04 1f 7f 91 02 60 20 a0 00 00 00 5f 9c 59 7e 07 00 00 04 59 d2 9c } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Remcos_ARO_MTB_3{
 	meta:
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
 		
@@ -19,7 +29,7 @@ rule Trojan_BAT_Remcos_ARO_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Remcos_ARO_MTB_3{
+rule Trojan_BAT_Remcos_ARO_MTB_4{
 	meta:
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -30,7 +40,7 @@ rule Trojan_BAT_Remcos_ARO_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Remcos_ARO_MTB_4{
+rule Trojan_BAT_Remcos_ARO_MTB_5{
 	meta:
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 02 00 "
 		
@@ -41,7 +51,7 @@ rule Trojan_BAT_Remcos_ARO_MTB_4{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Remcos_ARO_MTB_5{
+rule Trojan_BAT_Remcos_ARO_MTB_6{
 	meta:
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -52,7 +62,7 @@ rule Trojan_BAT_Remcos_ARO_MTB_5{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Remcos_ARO_MTB_6{
+rule Trojan_BAT_Remcos_ARO_MTB_7{
 	meta:
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -63,7 +73,7 @@ rule Trojan_BAT_Remcos_ARO_MTB_6{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Remcos_ARO_MTB_7{
+rule Trojan_BAT_Remcos_ARO_MTB_8{
 	meta:
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -74,7 +84,7 @@ rule Trojan_BAT_Remcos_ARO_MTB_7{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_Remcos_ARO_MTB_8{
+rule Trojan_BAT_Remcos_ARO_MTB_9{
 	meta:
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		

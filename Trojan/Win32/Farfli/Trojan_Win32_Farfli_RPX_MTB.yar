@@ -24,7 +24,7 @@ rule Trojan_Win32_Farfli_RPX_MTB_3{
 		description = "Trojan:Win32/Farfli.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {8b 45 f8 83 c0 01 89 45 f8 8b 4d ff 81 e1 ff 00 00 00 8b 55 fe 81 e2 ff 00 00 00 0b ca 85 c9 } //00 00 
+		$a_03_0 = {5a 57 5b 01 fb e8 90 01 01 00 00 00 81 ef 01 00 00 00 21 df 31 11 90 00 } //00 00 
 	condition:
 		any of ($a_*)
  
@@ -34,12 +34,22 @@ rule Trojan_Win32_Farfli_RPX_MTB_4{
 		description = "Trojan:Win32/Farfli.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_01_0 = {8b d8 89 5c 24 50 85 db 74 78 33 c0 80 34 30 63 40 3d 8c 03 00 00 72 f4 8d 44 24 14 50 6a 00 6a 00 56 } //00 00 
+		$a_01_0 = {8b 45 f8 83 c0 01 89 45 f8 8b 4d ff 81 e1 ff 00 00 00 8b 55 fe 81 e2 ff 00 00 00 0b ca 85 c9 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_Win32_Farfli_RPX_MTB_5{
+	meta:
+		description = "Trojan:Win32/Farfli.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {8b d8 89 5c 24 50 85 db 74 78 33 c0 80 34 30 63 40 3d 8c 03 00 00 72 f4 8d 44 24 14 50 6a 00 6a 00 56 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Farfli_RPX_MTB_6{
 	meta:
 		description = "Trojan:Win32/Farfli.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -50,7 +60,7 @@ rule Trojan_Win32_Farfli_RPX_MTB_5{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Farfli_RPX_MTB_6{
+rule Trojan_Win32_Farfli_RPX_MTB_7{
 	meta:
 		description = "Trojan:Win32/Farfli.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		

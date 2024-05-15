@@ -1,6 +1,17 @@
 
 rule Trojan_Win64_LummaStealer_NL_MTB{
 	meta:
+		description = "Trojan:Win64/LummaStealer.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {74 29 8b 05 90 01 04 65 48 8b 0c 25 90 01 04 48 8b 04 c1 4c 8b 80 90 01 04 48 8b 0d 46 b0 2e 00 31 d2 90 00 } //01 00 
+		$a_01_1 = {6d 61 6e 69 6e 74 65 72 6e 6d 65 6e 74 73 72 69 6a 69 62 6d 61 6e 69 6e 74 65 72 6e 6d 65 6e 74 } //00 00  maninternmentsrijibmaninternment
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win64_LummaStealer_NL_MTB_2{
+	meta:
 		description = "Trojan:Win64/LummaStealer.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :

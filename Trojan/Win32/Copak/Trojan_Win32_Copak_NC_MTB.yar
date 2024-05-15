@@ -12,6 +12,17 @@ rule Trojan_Win32_Copak_NC_MTB{
 }
 rule Trojan_Win32_Copak_NC_MTB_2{
 	meta:
+		description = "Trojan:Win32/Copak.NC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 03 00 "
+		
+	strings :
+		$a_03_0 = {8d 3c 3b 8b 3f 21 c0 81 e7 90 01 04 89 d0 43 42 21 c2 81 fb f4 01 00 00 75 05 90 00 } //03 00 
+		$a_03_1 = {81 ee 45 af a2 a7 81 c3 90 01 04 db 81 c1 01 00 00 00 21 db 89 db 81 f9 f4 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Copak_NC_MTB_3{
+	meta:
 		description = "Trojan:Win32/Copak.NC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 05 00 "
 		
 	strings :

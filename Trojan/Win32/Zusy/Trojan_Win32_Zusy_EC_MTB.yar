@@ -37,3 +37,20 @@ rule Trojan_Win32_Zusy_EC_MTB_3{
 		any of ($a_*)
  
 }
+rule Trojan_Win32_Zusy_EC_MTB_4{
+	meta:
+		description = "Trojan:Win32/Zusy.EC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 01 00 "
+		
+	strings :
+		$a_81_0 = {46 75 6e 46 75 6e 46 75 6e } //01 00  FunFunFun
+		$a_81_1 = {73 68 61 6d 70 6c 65 2e 72 75 } //01 00  shample.ru
+		$a_81_2 = {53 68 61 6d 70 6c 65 2e 70 64 62 } //01 00  Shample.pdb
+		$a_81_3 = {47 65 74 54 65 6d 70 50 61 74 68 57 } //01 00  GetTempPathW
+		$a_81_4 = {43 3a 5c 54 45 4d 50 5c 73 79 73 74 65 6d 2e 65 78 65 } //01 00  C:\TEMP\system.exe
+		$a_81_5 = {43 3a 5c 54 45 4d 50 5c 53 48 41 4d 70 6c 65 2e 64 61 74 } //01 00  C:\TEMP\SHAMple.dat
+		$a_81_6 = {53 6f 66 74 77 61 72 65 5c 53 48 41 4d 70 6c 65 } //01 00  Software\SHAMple
+		$a_81_7 = {57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 52 75 6e } //00 00  Windows\CurrentVersion\Run
+	condition:
+		any of ($a_*)
+ 
+}

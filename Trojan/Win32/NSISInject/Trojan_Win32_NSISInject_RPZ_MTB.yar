@@ -18,6 +18,20 @@ rule Trojan_Win32_NSISInject_RPZ_MTB_2{
 		description = "Trojan:Win32/NSISInject.RPZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		
 	strings :
+		$a_01_0 = {6b 00 6c 00 6f 00 61 00 6b 00 65 00 72 00 69 00 6e 00 67 00 73 00 62 00 65 00 73 00 6c 00 75 00 74 00 6e 00 69 00 6e 00 67 00 73 00 } //01 00  kloakeringsbeslutnings
+		$a_01_1 = {49 00 6e 00 64 00 6c 00 6f 00 64 00 73 00 65 00 64 00 65 00 73 00 31 00 39 00 36 00 } //01 00  Indlodsedes196
+		$a_01_2 = {6f 00 70 00 70 00 6f 00 73 00 69 00 74 00 69 00 6f 00 6e 00 61 00 6c 00 2e 00 53 00 68 00 65 00 } //01 00  oppositional.She
+		$a_01_3 = {64 00 69 00 76 00 65 00 72 00 73 00 69 00 66 00 6f 00 72 00 6d 00 5c 00 72 00 65 00 73 00 75 00 62 00 6c 00 69 00 6d 00 61 00 74 00 69 00 6e 00 67 00 } //01 00  diversiform\resublimating
+		$a_01_4 = {6f 00 70 00 62 00 79 00 67 00 6e 00 69 00 6e 00 67 00 73 00 66 00 61 00 73 00 65 00 72 00 73 00 } //00 00  opbygningsfasers
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_NSISInject_RPZ_MTB_3{
+	meta:
+		description = "Trojan:Win32/NSISInject.RPZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
+		
+	strings :
 		$a_01_0 = {46 00 69 00 6c 00 6d 00 76 00 69 00 64 00 65 00 6e 00 73 00 6b 00 61 00 62 00 73 00 5c 00 4c 00 69 00 6d 00 62 00 6d 00 65 00 61 00 6c 00 } //01 00  Filmvidenskabs\Limbmeal
 		$a_01_1 = {53 00 6f 00 66 00 74 00 77 00 61 00 72 00 65 00 5c 00 55 00 70 00 63 00 6c 00 69 00 6d 00 62 00 65 00 72 00 31 00 38 00 33 00 } //01 00  Software\Upclimber183
 		$a_01_2 = {49 00 72 00 72 00 69 00 64 00 65 00 2e 00 4d 00 61 00 6e 00 } //01 00  Irride.Man
@@ -27,7 +41,7 @@ rule Trojan_Win32_NSISInject_RPZ_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_NSISInject_RPZ_MTB_3{
+rule Trojan_Win32_NSISInject_RPZ_MTB_4{
 	meta:
 		description = "Trojan:Win32/NSISInject.RPZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 01 00 "
 		

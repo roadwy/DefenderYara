@@ -1,6 +1,26 @@
 
 rule Trojan_Win32_DarkComet_ADK_MTB{
 	meta:
+		description = "Trojan:Win32/DarkComet.ADK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {50 6a 00 53 68 4c 28 1c 13 6a 00 6a 00 e8 dd 4f f8 ff db 6d e8 d8 25 24 2b 1c 13 db 7d e8 9b db 6d e8 d8 1d 1c 2b 1c 13 9b df e0 9e } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_DarkComet_ADK_MTB_2{
+	meta:
+		description = "Trojan:Win32/DarkComet.ADK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {8b ee 33 eb 23 e9 33 ee 03 fd 03 c7 8b f8 c1 e7 0c c1 e8 14 0b f8 03 f9 8b c7 8b 7a 08 03 3d 98 17 49 00 8b eb 33 e9 23 e8 33 eb 03 fd 03 f7 8b fe c1 e7 11 c1 ee 0f 0b fe 03 f8 8b f7 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_DarkComet_ADK_MTB_3{
+	meta:
 		description = "Trojan:Win32/DarkComet.ADK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 02 00 "
 		
 	strings :
@@ -11,7 +31,7 @@ rule Trojan_Win32_DarkComet_ADK_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_DarkComet_ADK_MTB_2{
+rule Trojan_Win32_DarkComet_ADK_MTB_4{
 	meta:
 		description = "Trojan:Win32/DarkComet.ADK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 05 00 00 02 00 "
 		

@@ -1,6 +1,18 @@
 
 rule Trojan_BAT_CryptInject_PD_MTB{
 	meta:
+		description = "Trojan:BAT/CryptInject.PD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {4d 00 41 00 43 00 48 00 49 00 4e 00 45 00 5c 00 4d 00 69 00 63 00 72 00 6f 00 73 00 6f 00 66 00 74 00 5c 00 50 00 61 00 79 00 2e 00 74 00 78 00 74 00 } //01 00  MACHINE\Microsoft\Pay.txt
+		$a_01_1 = {53 00 74 00 61 00 67 00 65 00 32 00 2e 00 65 00 78 00 65 00 } //01 00  Stage2.exe
+		$a_01_2 = {54 00 68 00 69 00 73 00 49 00 73 00 53 00 74 00 61 00 67 00 65 00 31 00 } //00 00  ThisIsStage1
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_CryptInject_PD_MTB_2{
+	meta:
 		description = "Trojan:BAT/CryptInject.PD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 01 00 "
 		
 	strings :

@@ -17,7 +17,7 @@ rule Trojan_Linux_Remaiten_DS_MTB{
 		$a_00_10 = {48 54 54 50 20 46 6c 6f 6f 64 } //01 00  HTTP Flood
 		$a_00_11 = {42 6f 74 20 75 6e 73 69 6c 65 6e 63 65 64 } //01 00  Bot unsilenced
 		$a_00_12 = {53 59 4e 20 66 6c 6f 6f 64 65 72 20 66 72 6f 6d 20 74 68 65 20 6f 72 69 67 69 6e 61 6c 20 4b 54 4e } //00 00  SYN flooder from the original KTN
-		$a_00_13 = {5d 04 00 00 04 c7 04 80 5c } //26 00 
+		$a_00_13 = {5d 04 00 00 04 c7 04 80 5c } //2e 00 
 	condition:
 		any of ($a_*)
  

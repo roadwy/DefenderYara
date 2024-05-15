@@ -12,3 +12,15 @@ rule Trojan_BAT_FileCoder_ARAQ_MTB{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_FileCoder_ARAQ_MTB_2{
+	meta:
+		description = "Trojan:BAT/FileCoder.ARAQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 03 00 00 04 00 "
+		
+	strings :
+		$a_01_0 = {5c 42 79 74 65 5c 6f 62 6a 5c 44 65 62 75 67 5c 42 79 74 65 2e 70 64 62 } //02 00  \Byte\obj\Debug\Byte.pdb
+		$a_80_1 = {46 69 6c 65 73 20 65 6e 63 72 79 70 74 65 64 3a 20 7b 30 7d 20 7c 20 50 61 79 6d 65 6e 74 3a 20 7b 31 7d 20 7c 20 53 74 61 74 75 73 3a 20 7b 32 7d } //Files encrypted: {0} | Payment: {1} | Status: {2}  02 00 
+		$a_80_2 = {50 61 69 64 20 62 75 74 20 77 61 69 74 69 6e 67 20 66 6f 72 20 31 20 63 6f 6e 66 69 72 6d 61 74 69 6f 6e } //Paid but waiting for 1 confirmation  00 00 
+	condition:
+		any of ($a_*)
+ 
+}

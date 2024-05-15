@@ -29,3 +29,20 @@ rule HackTool_Win32_Patcher_MTB_2{
 		any of ($a_*)
  
 }
+rule HackTool_Win32_Patcher_MTB_3{
+	meta:
+		description = "HackTool:Win32/Patcher!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {44 6f 73 52 41 52 } //DosRAR  01 00 
+		$a_80_1 = {41 70 70 6c 79 20 72 65 67 69 73 74 72 61 74 69 6f 6e 2d 6e 61 6d 65 } //Apply registration-name  01 00 
+		$a_80_2 = {4c 69 71 36 39 65 72 73 } //Liq69ers  01 00 
+		$a_80_3 = {50 6f 6c 69 73 68 20 4d 65 64 69 63 61 6c 20 4d 61 69 6c 69 6e 67 20 53 70 2e 20 7a 20 6f 2e 6f 2e } //Polish Medical Mailing Sp. z o.o.  01 00 
+		$a_80_4 = {43 72 61 63 6b } //Crack  01 00 
+		$a_80_5 = {77 72 69 74 65 20 6f 66 20 69 6c 6c 65 67 61 6c 20 61 75 74 68 65 6e 74 69 63 79 20 69 6e 66 6f 72 6d 61 74 69 6f 6e } //write of illegal authenticy information  01 00 
+		$a_80_6 = {57 69 6e 52 41 52 20 43 72 61 63 6b 65 72 20 45 64 69 74 69 6f 6e 20 50 61 74 63 68 } //WinRAR Cracker Edition Patch  01 00 
+		$a_80_7 = {50 61 74 63 68 20 73 75 63 63 65 65 64 65 64 21 } //Patch succeeded!  00 00 
+	condition:
+		any of ($a_*)
+ 
+}

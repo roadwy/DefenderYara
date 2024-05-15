@@ -1,7 +1,7 @@
 
 rule Backdoor_Win32_Trochil_A_dll{
 	meta:
-		description = "Backdoor:Win32/Trochil.A.dll!dha,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 2e 00 00 01 00 "
+		description = "Backdoor:Win32/Trochil.A.dll!dha,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 30 00 00 01 00 "
 		
 	strings :
 		$a_80_0 = {63 6f 6d 70 75 74 65 72 2e 73 65 63 75 72 69 74 79 2d 63 65 6e 74 65 72 73 2e 63 6f 6d } //computer.security-centers.com  01 00 
@@ -49,7 +49,9 @@ rule Backdoor_Win32_Trochil_A_dll{
 		$a_80_42 = {53 76 74 53 68 65 6c 6c 2e 63 70 70 } //SvtShell.cpp  01 00 
 		$a_80_43 = {74 72 79 20 74 6f 20 63 6c 65 61 6e 20 25 73 } //try to clean %s  01 00 
 		$a_80_44 = {74 72 79 20 74 6f 20 72 65 6d 6f 76 65 5b 25 73 5d } //try to remove[%s]  01 00 
-		$a_80_45 = {58 4c 53 65 72 76 61 6e 74 } //XLServant  00 00 
+		$a_80_45 = {58 4c 53 65 72 76 61 6e 74 } //XLServant  f6 ff 
+		$a_80_46 = {43 3a 5c 64 65 76 5c 50 61 6c 61 64 69 6e 5c 50 61 6c 61 64 69 6e 5c 74 61 72 67 65 74 5c 72 65 6c 65 61 73 65 5c 64 65 70 73 5c 50 61 6c 61 64 69 6e 2e 70 64 62 } //C:\dev\Paladin\Paladin\target\release\deps\Paladin.pdb  f6 ff 
+		$a_80_47 = {43 3a 5c 50 72 6f 67 72 61 6d 20 46 69 6c 65 73 5c 50 61 6c 61 64 69 6e 5c 4c 6f 67 73 5c 4c 6f 67 2e 70 61 6c 61 64 69 6e } //C:\Program Files\Paladin\Logs\Log.paladin  00 00 
 	condition:
 		any of ($a_*)
  

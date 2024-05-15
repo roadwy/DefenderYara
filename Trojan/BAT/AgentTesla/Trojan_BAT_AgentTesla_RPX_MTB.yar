@@ -123,36 +123,6 @@ rule Trojan_BAT_AgentTesla_RPX_MTB_10{
 }
 rule Trojan_BAT_AgentTesla_RPX_MTB_11{
 	meta:
-		description = "Trojan:BAT/AgentTesla.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,13 00 13 00 15 00 00 01 00 "
-		
-	strings :
-		$a_01_0 = {41 73 73 65 6d 62 6c 79 } //01 00  Assembly
-		$a_01_1 = {52 65 70 6c 61 63 65 } //01 00  Replace
-		$a_01_2 = {43 6f 6e 76 65 72 74 } //01 00  Convert
-		$a_01_3 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //01 00  FromBase64String
-		$a_01_4 = {47 65 74 54 79 70 65 } //01 00  GetType
-		$a_01_5 = {49 6e 76 6f 6b 65 4d 65 6d 62 65 72 } //01 00  InvokeMember
-		$a_01_6 = {42 69 6e 64 69 6e 67 46 6c 61 67 73 } //01 00  BindingFlags
-		$a_01_7 = {42 69 74 43 6f 6e 76 65 72 74 65 72 } //01 00  BitConverter
-		$a_01_8 = {45 6e 63 6f 64 69 6e 67 } //01 00  Encoding
-		$a_01_9 = {47 65 74 53 74 72 69 6e 67 } //01 00  GetString
-		$a_01_10 = {41 72 72 61 79 } //01 00  Array
-		$a_01_11 = {42 6c 6f 63 6b 43 6f 70 79 } //01 00  BlockCopy
-		$a_01_12 = {52 65 76 65 72 73 65 } //01 00  Reverse
-		$a_01_13 = {47 65 74 42 79 74 65 73 } //01 00  GetBytes
-		$a_01_14 = {54 6f 41 72 72 61 79 } //01 00  ToArray
-		$a_01_15 = {67 65 74 5f 4c 65 6e 67 74 68 } //01 00  get_Length
-		$a_01_16 = {43 72 65 61 74 65 49 6e 73 74 61 6e 63 65 } //01 00  CreateInstance
-		$a_01_17 = {42 69 6e 61 72 79 52 65 61 64 65 72 } //01 00  BinaryReader
-		$a_01_18 = {54 6f 42 61 73 65 36 34 53 74 72 69 6e 67 } //9c ff  ToBase64String
-		$a_01_19 = {4d 69 63 72 6f 73 6f 66 74 2e 49 64 65 6e 74 69 74 79 4d 6f 64 65 6c 2e 43 6c 69 65 6e 74 73 2e 41 63 74 69 76 65 44 69 72 65 63 74 6f 72 79 } //9c ff  Microsoft.IdentityModel.Clients.ActiveDirectory
-		$a_01_20 = {4d 69 63 72 6f 73 6f 66 74 2e 49 64 65 6e 74 69 74 79 2e 43 6c 69 65 6e 74 } //00 00  Microsoft.Identity.Client
-	condition:
-		any of ($a_*)
- 
-}
-rule Trojan_BAT_AgentTesla_RPX_MTB_12{
-	meta:
 		description = "Trojan:BAT/AgentTesla.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 01 00 "
 		
 	strings :
@@ -172,7 +142,7 @@ rule Trojan_BAT_AgentTesla_RPX_MTB_12{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_AgentTesla_RPX_MTB_13{
+rule Trojan_BAT_AgentTesla_RPX_MTB_12{
 	meta:
 		description = "Trojan:BAT/AgentTesla.RPX!MTB,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 01 00 "
 		

@@ -1,6 +1,16 @@
 
 rule Trojan_Win32_Ekstak_RI_MTB{
 	meta:
+		description = "Trojan:Win32/Ekstak.RI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {55 8b ec 83 ec 08 56 e8 c4 6d fb ff e9 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Ekstak_RI_MTB_2{
+	meta:
 		description = "Trojan:Win32/Ekstak.RI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
 		
 	strings :
@@ -10,7 +20,7 @@ rule Trojan_Win32_Ekstak_RI_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Ekstak_RI_MTB_2{
+rule Trojan_Win32_Ekstak_RI_MTB_3{
 	meta:
 		description = "Trojan:Win32/Ekstak.RI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
@@ -20,7 +30,7 @@ rule Trojan_Win32_Ekstak_RI_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Ekstak_RI_MTB_3{
+rule Trojan_Win32_Ekstak_RI_MTB_4{
 	meta:
 		description = "Trojan:Win32/Ekstak.RI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		

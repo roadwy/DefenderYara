@@ -4,12 +4,22 @@ rule Trojan_Win32_Filecoder_ARA_MTB{
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
 		
 	strings :
-		$a_03_0 = {51 52 8b 4d 08 8b 55 0c 81 31 90 01 04 f7 11 83 c1 04 4a 75 f2 5a 59 90 00 } //00 00 
+		$a_01_0 = {99 f7 fd 8d 42 7f 99 f7 fd 88 54 34 27 46 83 fe 38 72 dc } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_Win32_Filecoder_ARA_MTB_2{
+	meta:
+		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
+		
+	strings :
+		$a_03_0 = {51 52 8b 4d 08 8b 55 0c 81 31 90 01 04 f7 11 83 c1 04 4a 75 f2 5a 59 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Filecoder_ARA_MTB_3{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -21,7 +31,7 @@ rule Trojan_Win32_Filecoder_ARA_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_3{
+rule Trojan_Win32_Filecoder_ARA_MTB_4{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -33,7 +43,7 @@ rule Trojan_Win32_Filecoder_ARA_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_4{
+rule Trojan_Win32_Filecoder_ARA_MTB_5{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -45,7 +55,7 @@ rule Trojan_Win32_Filecoder_ARA_MTB_4{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_5{
+rule Trojan_Win32_Filecoder_ARA_MTB_6{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
@@ -57,7 +67,20 @@ rule Trojan_Win32_Filecoder_ARA_MTB_5{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_6{
+rule Trojan_Win32_Filecoder_ARA_MTB_7{
+	meta:
+		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 02 00 "
+		
+	strings :
+		$a_01_0 = {4d 61 6c 69 63 69 6f 75 73 20 63 6f 64 65 20 65 78 65 63 75 74 65 64 } //02 00  Malicious code executed
+		$a_01_1 = {45 6e 63 72 79 70 74 69 6e 67 20 66 69 6c 65 73 20 6f 6e 20 64 65 76 69 63 65 20 77 69 74 68 20 49 50 } //02 00  Encrypting files on device with IP
+		$a_01_2 = {49 6e 6a 65 63 74 69 6f 6e 20 73 75 63 63 65 65 64 65 64 20 69 6e 20 70 72 6f 63 65 73 73 } //02 00  Injection succeeded in process
+		$a_01_3 = {56 79 70 65 72 20 52 61 6e 73 6f 6d 77 61 72 65 } //00 00  Vyper Ransomware
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_Filecoder_ARA_MTB_8{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 02 00 "
 		
@@ -70,7 +93,7 @@ rule Trojan_Win32_Filecoder_ARA_MTB_6{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_7{
+rule Trojan_Win32_Filecoder_ARA_MTB_9{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 05 00 00 02 00 "
 		
@@ -84,7 +107,7 @@ rule Trojan_Win32_Filecoder_ARA_MTB_7{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_8{
+rule Trojan_Win32_Filecoder_ARA_MTB_10{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 02 00 "
 		
