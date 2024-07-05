@@ -1,0 +1,11 @@
+
+rule Trojan_Win32_Redline_GXQ_MTB{
+	meta:
+		description = "Trojan:Win32/Redline.GXQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 0a 00 "
+		
+	strings :
+		$a_03_0 = {8a 04 37 34 90 01 01 2c 90 01 01 6a 00 88 04 37 ff 15 90 01 04 8a 04 37 2c 90 01 01 34 90 01 01 04 90 01 01 34 90 01 01 2c 90 01 01 34 90 01 01 2c 90 01 01 34 90 01 01 88 04 37 46 3b 74 24 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

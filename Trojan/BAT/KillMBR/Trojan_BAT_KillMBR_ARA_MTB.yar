@@ -14,6 +14,20 @@ rule Trojan_BAT_KillMBR_ARA_MTB{
 }
 rule Trojan_BAT_KillMBR_ARA_MTB_2{
 	meta:
+		description = "Trojan:BAT/KillMBR.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 05 00 00 02 00 "
+		
+	strings :
+		$a_01_0 = {5c 50 73 79 63 68 6f 6d 65 6d 65 2e 70 64 62 } //02 00  \Psychomeme.pdb
+		$a_01_1 = {44 65 73 74 72 6f 79 42 6f 6f 74 4c 6f 61 64 65 72 } //02 00  DestroyBootLoader
+		$a_01_2 = {44 65 73 74 72 6f 79 46 6f 6c 64 65 72 } //02 00  DestroyFolder
+		$a_01_3 = {44 65 73 74 72 6f 79 46 69 6c 65 } //02 00  DestroyFile
+		$a_01_4 = {54 61 6b 65 4f 77 6e 65 72 53 68 69 70 4f 66 46 69 6c 65 } //00 00  TakeOwnerShipOfFile
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_KillMBR_ARA_MTB_3{
+	meta:
 		description = "Trojan:BAT/KillMBR.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 02 00 "
 		
 	strings :
@@ -23,7 +37,7 @@ rule Trojan_BAT_KillMBR_ARA_MTB_2{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_KillMBR_ARA_MTB_3{
+rule Trojan_BAT_KillMBR_ARA_MTB_4{
 	meta:
 		description = "Trojan:BAT/KillMBR.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 02 00 "
 		
@@ -36,7 +50,7 @@ rule Trojan_BAT_KillMBR_ARA_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_KillMBR_ARA_MTB_4{
+rule Trojan_BAT_KillMBR_ARA_MTB_5{
 	meta:
 		description = "Trojan:BAT/KillMBR.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 08 00 00 01 00 "
 		

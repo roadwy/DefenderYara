@@ -4,12 +4,22 @@ rule Trojan_BAT_LokiBot_RPX_MTB{
 		description = "Trojan:BAT/LokiBot.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
-		$a_03_0 = {00 07 11 04 07 8e 69 5d 07 11 04 07 8e 69 5d 91 08 11 04 1f 16 5d 90 01 02 00 00 0a 61 90 01 02 00 00 0a 07 11 04 17 58 07 8e 69 5d 91 90 01 02 00 00 0a 59 20 00 01 00 00 58 20 00 01 00 00 5d d2 9c 00 11 04 15 58 13 04 11 04 16 fe 04 16 fe 01 13 05 11 05 2d ac 90 00 } //00 00 
+		$a_01_0 = {00 06 08 0e 04 08 91 07 08 07 8e 69 5d 91 61 d2 9c 00 08 17 58 0c 08 04 8e 69 fe 04 0d 09 2d e0 } //00 00 
 	condition:
 		any of ($a_*)
  
 }
 rule Trojan_BAT_LokiBot_RPX_MTB_2{
+	meta:
+		description = "Trojan:BAT/LokiBot.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {00 07 11 04 07 8e 69 5d 07 11 04 07 8e 69 5d 91 08 11 04 1f 16 5d 90 01 02 00 00 0a 61 90 01 02 00 00 0a 07 11 04 17 58 07 8e 69 5d 91 90 01 02 00 00 0a 59 20 00 01 00 00 58 20 00 01 00 00 5d d2 9c 00 11 04 15 58 13 04 11 04 16 fe 04 16 fe 01 13 05 11 05 2d ac 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_LokiBot_RPX_MTB_3{
 	meta:
 		description = "Trojan:BAT/LokiBot.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 01 00 "
 		

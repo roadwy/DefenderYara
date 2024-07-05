@@ -23,6 +23,17 @@ rule Trojan_BAT_LummaStealer_NL_MTB_2{
 }
 rule Trojan_BAT_LummaStealer_NL_MTB_3{
 	meta:
+		description = "Trojan:BAT/LummaStealer.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
+		
+	strings :
+		$a_03_0 = {03 7e 65 03 00 04 28 90 01 02 00 06 80 66 03 00 04 28 90 01 02 00 06 28 a9 13 00 06 28 90 01 02 00 06 61 28 90 01 02 00 06 33 11 28 90 01 02 00 06 80 66 03 00 04 90 00 } //01 00 
+		$a_01_1 = {4c 6f 61 64 65 72 56 31 2e 46 6f 72 6d 31 2e 72 65 73 6f 75 72 63 65 73 } //00 00  LoaderV1.Form1.resources
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_LummaStealer_NL_MTB_4{
+	meta:
 		description = "Trojan:BAT/LummaStealer.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 03 00 "
 		
 	strings :
@@ -32,7 +43,7 @@ rule Trojan_BAT_LummaStealer_NL_MTB_3{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_LummaStealer_NL_MTB_4{
+rule Trojan_BAT_LummaStealer_NL_MTB_5{
 	meta:
 		description = "Trojan:BAT/LummaStealer.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
 		
@@ -43,7 +54,7 @@ rule Trojan_BAT_LummaStealer_NL_MTB_4{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_LummaStealer_NL_MTB_5{
+rule Trojan_BAT_LummaStealer_NL_MTB_6{
 	meta:
 		description = "Trojan:BAT/LummaStealer.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 05 00 "
 		

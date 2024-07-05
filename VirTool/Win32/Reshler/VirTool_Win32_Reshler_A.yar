@@ -13,7 +13,7 @@ rule VirTool_Win32_Reshler_A{
 		$a_01_6 = {2f 6d 65 74 65 72 70 72 65 74 65 72 2e 72 65 76 65 72 73 65 54 43 50 } //01 00  /meterpreter.reverseTCP
 		$a_01_7 = {2f 6d 65 74 65 72 70 72 65 74 65 72 2e 72 65 76 65 72 73 65 48 54 54 50 } //01 00  /meterpreter.reverseHTTP
 		$a_01_8 = {2f 73 68 65 6c 6c 2f 73 68 65 6c 6c 5f 77 69 6e 64 6f 77 73 } //00 00  /shell/shell_windows
-		$a_01_9 = {00 5d 04 00 } //00 4f 
+		$a_01_9 = {00 67 16 00 } //00 0f 
 	condition:
 		any of ($a_*)
  

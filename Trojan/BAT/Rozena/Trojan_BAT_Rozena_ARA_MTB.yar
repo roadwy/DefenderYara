@@ -57,3 +57,15 @@ rule Trojan_BAT_Rozena_ARA_MTB_5{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_Rozena_ARA_MTB_6{
+	meta:
+		description = "Trojan:BAT/Rozena.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 02 00 "
+		
+	strings :
+		$a_03_0 = {00 08 11 0a 08 11 0a 91 19 8d 90 01 03 01 25 d0 90 01 03 04 28 90 01 03 0a 11 0a 19 5d 91 61 d2 9c 00 11 0a 17 58 13 0a 11 0a 08 8e 69 fe 04 13 0b 11 0b 2d cb 90 00 } //02 00 
+		$a_00_1 = {53 00 45 00 4c 00 45 00 43 00 54 00 20 00 2a 00 20 00 46 00 52 00 4f 00 4d 00 20 00 41 00 6e 00 74 00 69 00 76 00 69 00 72 00 75 00 73 00 50 00 72 00 6f 00 64 00 75 00 63 00 74 00 } //02 00  SELECT * FROM AntivirusProduct
+		$a_00_2 = {57 00 69 00 6e 00 64 00 6f 00 77 00 73 00 20 00 44 00 65 00 66 00 65 00 6e 00 64 00 65 00 72 00 } //00 00  Windows Defender
+	condition:
+		any of ($a_*)
+ 
+}

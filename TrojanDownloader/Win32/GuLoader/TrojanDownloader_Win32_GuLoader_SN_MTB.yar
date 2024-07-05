@@ -31,7 +31,7 @@ rule TrojanDownloader_Win32_GuLoader_SN_MTB_2{
 		$a_01_8 = {55 6e 73 69 73 74 69 6e 67 } //01 00  Unsisting
 		$a_01_9 = {53 41 4e 54 49 4e 4f 4d 45 4c 4d 4f 5a 44 } //01 00  SANTINOMELMOZD
 		$a_01_10 = {4d 69 75 73 79 4c 61 54 72 6f 69 6f } //00 00  MiusyLaTroio
-		$a_00_11 = {5d 04 00 00 73 3d 04 80 5c 39 00 00 75 3d 04 } //80 00 
+		$a_00_11 = {5d 04 00 00 73 3d 04 80 5c 28 00 00 74 3d 04 } //80 00 
 	condition:
 		any of ($a_*)
  

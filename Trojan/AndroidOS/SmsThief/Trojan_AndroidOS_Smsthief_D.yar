@@ -1,6 +1,17 @@
 
 rule Trojan_AndroidOS_Smsthief_D{
 	meta:
+		description = "Trojan:AndroidOS/Smsthief.D,SIGNATURE_TYPE_DEXHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {44 69 73 63 6f 75 6e 74 20 33 30 25 3a 20 28 69 6c 6f 76 65 72 65 64 39 39 29 20 52 4d } //01 00  Discount 30%: (ilovered99) RM
+		$a_01_1 = {3f 70 61 73 73 3d 61 70 70 31 36 38 26 63 6d 64 3d 73 6d 73 26 73 69 64 3d 25 31 24 73 26 73 6d 73 3d 25 32 24 73 } //00 00  ?pass=app168&cmd=sms&sid=%1$s&sms=%2$s
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_AndroidOS_Smsthief_D_2{
+	meta:
 		description = "Trojan:AndroidOS/Smsthief.D,SIGNATURE_TYPE_DEXHSTR_EXT,06 00 06 00 03 00 00 02 00 "
 		
 	strings :

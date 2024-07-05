@@ -1,0 +1,11 @@
+
+rule Trojan_BAT_Blocker_SPFM_MTB{
+	meta:
+		description = "Trojan:BAT/Blocker.SPFM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 01 00 00 04 00 "
+		
+	strings :
+		$a_03_0 = {11 07 12 08 28 90 01 03 0a 11 05 11 04 11 06 18 6f 90 01 03 0a 1f 10 28 90 01 03 0a 6f 90 01 03 0a dd 0f 00 00 00 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}

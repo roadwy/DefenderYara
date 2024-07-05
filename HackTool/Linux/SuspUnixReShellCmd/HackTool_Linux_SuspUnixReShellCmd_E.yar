@@ -1,7 +1,7 @@
 
 rule HackTool_Linux_SuspUnixReShellCmd_E{
 	meta:
-		description = "HackTool:Linux/SuspUnixReShellCmd.E,SIGNATURE_TYPE_CMDHSTR_EXT,1a 00 1a 00 0a 00 00 0a 00 "
+		description = "HackTool:Linux/SuspUnixReShellCmd.E,SIGNATURE_TYPE_CMDHSTR_EXT,1a 00 1a 00 0b 00 00 0a 00 "
 		
 	strings :
 		$a_02_0 = {70 00 65 00 72 00 6c 00 90 02 20 2d 00 65 00 90 02 20 75 00 73 00 65 00 90 00 } //0a 00 
@@ -13,7 +13,8 @@ rule HackTool_Linux_SuspUnixReShellCmd_E{
 		$a_00_6 = {69 00 6e 00 65 00 74 00 5f 00 61 00 74 00 6f 00 6e 00 } //01 00  inet_aton
 		$a_00_7 = {6f 00 70 00 65 00 6e 00 } //b0 ff  open
 		$a_00_8 = {31 00 32 00 37 00 2e 00 30 00 2e 00 30 00 2e 00 31 00 } //b0 ff  127.0.0.1
-		$a_00_9 = {30 00 2e 00 30 00 2e 00 30 00 2e 00 30 00 } //00 00  0.0.0.0
+		$a_00_9 = {6c 00 6f 00 63 00 61 00 6c 00 68 00 6f 00 73 00 74 00 } //b0 ff  localhost
+		$a_00_10 = {30 00 2e 00 30 00 2e 00 30 00 2e 00 30 00 } //00 00  0.0.0.0
 	condition:
 		any of ($a_*)
  

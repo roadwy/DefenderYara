@@ -1,6 +1,17 @@
 
 rule Trojan_Win32_ClipBanker_GZZ_MTB{
 	meta:
+		description = "Trojan:Win32/ClipBanker.GZZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 05 00 "
+		
+	strings :
+		$a_01_0 = {5b b3 cb 64 0a 6d ef 30 76 01 fb b5 8a 3d 27 19 0e e9 } //05 00 
+		$a_01_1 = {48 19 5a aa 31 36 12 58 3e 5f 1c b4 2f 50 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_ClipBanker_GZZ_MTB_2{
+	meta:
 		description = "Trojan:Win32/ClipBanker.GZZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 02 00 00 0a 00 "
 		
 	strings :
@@ -10,7 +21,7 @@ rule Trojan_Win32_ClipBanker_GZZ_MTB{
 		any of ($a_*)
  
 }
-rule Trojan_Win32_ClipBanker_GZZ_MTB_2{
+rule Trojan_Win32_ClipBanker_GZZ_MTB_3{
 	meta:
 		description = "Trojan:Win32/ClipBanker.GZZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 04 00 00 0a 00 "
 		

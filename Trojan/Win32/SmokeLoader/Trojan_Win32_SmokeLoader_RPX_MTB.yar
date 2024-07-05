@@ -85,6 +85,16 @@ rule Trojan_Win32_SmokeLoader_RPX_MTB_9{
 		description = "Trojan:Win32/SmokeLoader.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
 		
 	strings :
+		$a_03_0 = {01 44 24 20 8b 44 24 20 89 44 24 18 8b 4c 24 28 8b c7 d3 e8 89 44 24 14 8b 44 24 90 01 01 01 44 24 14 8b 44 24 14 33 44 24 18 31 44 24 10 8b 44 24 10 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_Win32_SmokeLoader_RPX_MTB_10{
+	meta:
+		description = "Trojan:Win32/SmokeLoader.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
 		$a_01_0 = {8b 45 d4 01 45 fc 83 65 f0 00 8b 45 e8 01 45 f0 8b 45 e4 90 01 45 f0 8b 45 f0 89 45 ec 8b 4d f4 8b c7 d3 e8 03 45 d0 89 45 f8 8b 45 ec 31 45 fc 8b 45 fc 33 45 f8 } //00 00 
 	condition:
 		any of ($a_*)

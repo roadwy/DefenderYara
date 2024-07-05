@@ -89,3 +89,14 @@ rule Trojan_BAT_DarkComet_ADK_MTB_9{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_DarkComet_ADK_MTB_10{
+	meta:
+		description = "Trojan:BAT/DarkComet.ADK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 02 00 "
+		
+	strings :
+		$a_03_0 = {17 da 13 06 13 05 2b 34 09 11 05 02 11 05 91 11 04 61 08 07 91 61 9c 08 28 90 01 03 0a 00 07 08 8e b7 17 da fe 01 13 07 11 07 2c 04 16 0b 2b 05 00 07 17 d6 90 00 } //01 00 
+		$a_01_1 = {6f 00 6d 00 65 00 75 00 73 00 65 00 67 00 75 00 6e 00 64 00 6f 00 2e 00 50 00 72 00 6f 00 70 00 65 00 72 00 74 00 69 00 65 00 73 00 2e 00 50 00 72 00 6f 00 70 00 65 00 72 00 74 00 69 00 65 00 73 00 2e 00 52 00 65 00 73 00 6f 00 75 00 72 00 63 00 65 00 73 00 } //00 00  omeusegundo.Properties.Properties.Resources
+	condition:
+		any of ($a_*)
+ 
+}

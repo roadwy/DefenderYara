@@ -43,3 +43,16 @@ rule Trojan_BAT_Heracles_AHR_MTB_4{
 		any of ($a_*)
  
 }
+rule Trojan_BAT_Heracles_AHR_MTB_5{
+	meta:
+		description = "Trojan:BAT/Heracles.AHR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 02 00 "
+		
+	strings :
+		$a_01_0 = {49 00 6e 00 74 00 65 00 67 00 72 00 61 00 74 00 69 00 6f 00 6e 00 20 00 6c 00 69 00 62 00 72 00 61 00 72 00 79 00 20 00 66 00 6f 00 72 00 20 00 4d 00 61 00 6c 00 77 00 61 00 72 00 65 00 42 00 79 00 74 00 65 00 73 00 20 00 61 00 6e 00 74 00 69 00 76 00 69 00 72 00 75 00 73 00 20 00 73 00 65 00 72 00 76 00 69 00 63 00 65 00 } //01 00  Integration library for MalwareBytes antivirus service
+		$a_01_1 = {4d 00 61 00 6c 00 77 00 61 00 72 00 65 00 42 00 79 00 74 00 65 00 73 00 20 00 49 00 6e 00 74 00 65 00 67 00 72 00 61 00 74 00 69 00 6f 00 6e 00 20 00 53 00 6f 00 6c 00 75 00 74 00 69 00 6f 00 6e 00 73 00 } //01 00  MalwareBytes Integration Solutions
+		$a_01_2 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //01 00  FromBase64String
+		$a_01_3 = {64 35 38 65 30 38 63 64 2d 33 62 39 62 2d 34 65 39 62 2d 62 30 34 61 2d 32 63 39 65 66 38 66 61 61 62 37 35 } //00 00  d58e08cd-3b9b-4e9b-b04a-2c9ef8faab75
+	condition:
+		any of ($a_*)
+ 
+}

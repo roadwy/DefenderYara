@@ -11,7 +11,7 @@ rule Trojan_Win32_DarkTrack_PA_MTB{
 		$a_01_4 = {5c 43 6f 6d 6f 64 6f 5c 44 72 61 67 6f 6e 5c 55 73 65 72 20 44 61 74 61 5c 44 65 66 61 75 6c 74 5c 4c 6f 67 69 6e 20 44 61 74 61 } //01 00  \Comodo\Dragon\User Data\Default\Login Data
 		$a_01_5 = {5c 47 6f 6f 67 6c 65 5c 43 68 72 6f 6d 65 5c 55 73 65 72 20 44 61 74 61 5c 44 65 66 61 75 6c 74 5c 4c 6f 67 69 6e 20 44 61 74 61 } //01 00  \Google\Chrome\User Data\Default\Login Data
 		$a_01_6 = {5c 53 6b 79 70 65 5c } //00 00  \Skype\
-		$a_01_7 = {00 5d 04 00 00 } //38 26 
+		$a_01_7 = {00 67 16 00 00 } //45 b9 
 	condition:
 		any of ($a_*)
  

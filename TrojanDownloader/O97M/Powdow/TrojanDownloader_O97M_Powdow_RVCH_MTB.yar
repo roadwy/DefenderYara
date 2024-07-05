@@ -23,3 +23,15 @@ rule TrojanDownloader_O97M_Powdow_RVCH_MTB_2{
 		any of ($a_*)
  
 }
+rule TrojanDownloader_O97M_Powdow_RVCH_MTB_3{
+	meta:
+		description = "TrojanDownloader:O97M/Powdow.RVCH!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		
+	strings :
+		$a_01_0 = {77 6f 72 6b 62 6f 6f 6b 5f 6f 70 65 6e 28 29 63 61 6c 6c 64 6f 77 6e 6c 6f 61 64 65 78 65 66 69 6c 65 61 6e 64 65 78 65 63 75 74 65 73 69 6c 65 6e 74 } //01 00  workbook_open()calldownloadexefileandexecutesilent
+		$a_01_1 = {65 6e 76 69 72 6f 6e 28 22 74 65 6d 70 22 29 73 74 72 66 69 6c 65 70 61 74 68 3d 73 74 72 75 73 65 72 66 6f 6c 64 65 72 26 22 5c 22 26 63 68 72 77 28 31 31 32 29 26 63 68 72 77 28 31 31 32 29 26 63 68 72 77 28 34 36 29 26 63 68 72 77 28 31 30 31 29 26 63 68 72 77 28 31 32 30 29 26 63 68 72 77 28 31 30 31 29 } //01 00  environ("temp")strfilepath=struserfolder&"\"&chrw(112)&chrw(112)&chrw(46)&chrw(101)&chrw(120)&chrw(101)
+		$a_01_2 = {73 68 65 6c 6c 28 63 6f 6d 6d 61 6e 64 2c 76 62 6e 6f 72 6d 61 6c 66 6f 63 75 73 29 } //00 00  shell(command,vbnormalfocus)
+	condition:
+		any of ($a_*)
+ 
+}

@@ -56,13 +56,24 @@ rule Trojan_BAT_FormBook_AFO_MTB_6{
 		description = "Trojan:BAT/FormBook.AFO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 02 00 "
 		
 	strings :
+		$a_03_0 = {17 58 08 5d 13 0d 02 07 11 0a 91 11 0c 61 07 11 0d 91 59 28 90 01 03 06 13 0e 07 11 0a 11 0e 28 90 01 03 0a d2 9c 00 11 0a 17 58 90 00 } //01 00 
+		$a_01_1 = {64 00 65 00 74 00 65 00 63 00 74 00 56 00 69 00 64 00 65 00 6f 00 41 00 70 00 70 00 } //00 00  detectVideoApp
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_FormBook_AFO_MTB_7{
+	meta:
+		description = "Trojan:BAT/FormBook.AFO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 02 00 "
+		
+	strings :
 		$a_01_0 = {07 8e 69 5d 91 13 07 08 11 05 1f 16 5d 91 13 08 07 11 05 07 11 05 91 11 08 61 11 07 59 20 00 01 00 00 58 20 ff 00 00 00 5f d2 9c 00 11 05 17 58 } //01 00 
 		$a_01_1 = {44 00 69 00 73 00 74 00 72 00 69 00 62 00 75 00 69 00 64 00 6f 00 72 00 61 00 } //00 00  Distribuidora
 	condition:
 		any of ($a_*)
  
 }
-rule Trojan_BAT_FormBook_AFO_MTB_7{
+rule Trojan_BAT_FormBook_AFO_MTB_8{
 	meta:
 		description = "Trojan:BAT/FormBook.AFO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 02 00 "
 		
@@ -73,7 +84,7 @@ rule Trojan_BAT_FormBook_AFO_MTB_7{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_FormBook_AFO_MTB_8{
+rule Trojan_BAT_FormBook_AFO_MTB_9{
 	meta:
 		description = "Trojan:BAT/FormBook.AFO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
 		
@@ -84,7 +95,18 @@ rule Trojan_BAT_FormBook_AFO_MTB_8{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_FormBook_AFO_MTB_9{
+rule Trojan_BAT_FormBook_AFO_MTB_10{
+	meta:
+		description = "Trojan:BAT/FormBook.AFO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {0b 16 0c 2b 14 07 08 02 7b 90 01 03 04 08 91 28 90 01 03 0a 9d 08 17 58 0c 08 06 fe 04 0d 09 2d e4 90 00 } //01 00 
+		$a_03_1 = {26 2b 1c 00 02 7b 90 01 01 00 00 04 07 6f 90 01 01 00 00 0a 6f 90 01 01 00 00 06 26 1f 64 28 90 01 01 00 00 0a 00 00 07 6f 90 01 01 00 00 0a 16 fe 01 0c 08 2d d7 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_FormBook_AFO_MTB_11{
 	meta:
 		description = "Trojan:BAT/FormBook.AFO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 02 00 "
 		
@@ -95,7 +117,7 @@ rule Trojan_BAT_FormBook_AFO_MTB_9{
 		any of ($a_*)
  
 }
-rule Trojan_BAT_FormBook_AFO_MTB_10{
+rule Trojan_BAT_FormBook_AFO_MTB_12{
 	meta:
 		description = "Trojan:BAT/FormBook.AFO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 01 00 "
 		

@@ -1,6 +1,16 @@
 
 rule Trojan_BAT_Formbook_AMAA_MTB{
 	meta:
+		description = "Trojan:BAT/Formbook.AMAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		
+	strings :
+		$a_03_0 = {17 58 08 5d 13 90 01 01 07 11 90 01 01 02 07 11 90 01 01 91 11 90 01 01 61 07 11 90 01 01 91 59 28 90 01 02 00 06 28 90 01 02 00 90 01 01 9c 90 02 01 11 90 01 01 17 58 13 90 00 } //00 00 
+	condition:
+		any of ($a_*)
+ 
+}
+rule Trojan_BAT_Formbook_AMAA_MTB_2{
+	meta:
 		description = "Trojan:BAT/Formbook.AMAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
 		
 	strings :

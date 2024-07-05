@@ -158,3 +158,23 @@ rule _#PUA_Block_OfferCore_10{
 		any of ($a_*)
  
 }
+rule _#PUA_Block_OfferCore_11{
+	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 0b 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {53 45 54 42 55 4e 44 4c 45 4f 46 46 45 52 45 44 } //SETBUNDLEOFFERED  01 00 
+		$a_80_1 = {44 4f 57 4e 4c 4f 41 44 42 55 4e 44 4c 45 } //DOWNLOADBUNDLE  01 00 
+		$a_80_2 = {49 4e 53 54 41 4c 4c 42 55 4e 44 4c 45 } //INSTALLBUNDLE  01 00 
+		$a_80_3 = {49 4e 53 54 41 4c 4c 41 43 43 45 50 54 45 44 42 55 4e 44 4c 45 53 } //INSTALLACCEPTEDBUNDLES  01 00 
+		$a_80_4 = {4f 50 45 52 41 5f 4c 49 4e 4b 54 45 52 4d 53 43 4c 49 43 4b 45 44 } //OPERA_LINKTERMSCLICKED  01 00 
+		$a_80_5 = {4f 50 45 52 41 5f 4c 49 4e 4b 50 4f 4c 49 43 59 43 4c 49 43 4b 45 44 } //OPERA_LINKPOLICYCLICKED  01 00 
+		$a_80_6 = {43 52 45 41 54 45 4f 50 45 52 41 50 41 47 45 } //CREATEOPERAPAGE  01 00 
+		$a_80_7 = {41 56 33 36 30 5f 4c 49 4e 4b 54 45 52 4d 53 43 4c 49 43 4b 45 44 } //AV360_LINKTERMSCLICKED  01 00 
+		$a_80_8 = {41 56 33 36 30 5f 4c 49 4e 4b 50 4f 4c 49 43 59 43 4c 49 43 4b 45 44 } //AV360_LINKPOLICYCLICKED  01 00 
+		$a_80_9 = {43 52 45 41 54 45 41 56 33 36 30 50 41 47 45 } //CREATEAV360PAGE  01 00 
+		$a_80_10 = {6d 65 6e 74 61 6c 6d 65 6e 74 6f 72 2e 65 78 65 } //mentalmentor.exe  00 00 
+	condition:
+		any of ($a_*)
+ 
+}

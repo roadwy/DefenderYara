@@ -14,3 +14,20 @@ rule TrojanDownloader_O97M_Obfuse_AB_MTB{
 		any of ($a_*)
  
 }
+rule TrojanDownloader_O97M_Obfuse_AB_MTB_2{
+	meta:
+		description = "TrojanDownloader:O97M/Obfuse.AB!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 08 00 00 01 00 "
+		
+	strings :
+		$a_80_0 = {43 61 6c 6c 20 53 68 65 6c 6c 28 6d 61 72 72 73 65 6c 6c 20 2b 20 73 64 65 6d 6f 6d 20 26 20 64 61 62 73 61 } //Call Shell(marrsell + sdemom & dabsa  01 00 
+		$a_80_1 = {53 74 72 20 3d 20 22 7b 31 32 7d 7b 31 36 7d 7b 31 35 7d 7b 32 31 7d 7b 31 34 7d 7b 39 7d 7b 32 30 7d 7b 31 30 7d 7b 37 7d 7b 31 39 7d 7b 32 32 7d 7b 31 7d 7b 36 7d 7b 33 7d 7b 32 7d 7b 31 37 7d 7b 34 7d 7b 32 33 7d 7b 31 33 7d 7b 30 7d 7b 32 34 7d 7b 32 35 7d 7b 31 31 7d 7b 38 7d 7b 35 7d 7b 31 38 7d 3b 2e 28 55 43 41 7b 31 7d } //Str = "{12}{16}{15}{21}{14}{9}{20}{10}{7}{19}{22}{1}{6}{3}{2}{17}{4}{23}{13}{0}{24}{25}{11}{8}{5}{18};.(UCA{1}  01 00 
+		$a_80_2 = {53 74 72 20 3d 20 73 53 72 74 20 2b 20 22 30 7d 28 5b 63 48 41 52 5d 38 35 2b 5b 63 48 41 52 5d 36 37 2b 5b 63 48 41 52 5d 36 35 29 2c 5b 63 48 41 52 5d 33 34 29 29 } //Str = sSrt + "0}([cHAR]85+[cHAR]67+[cHAR]65),[cHAR]34))  01 00 
+		$a_80_3 = {46 75 6e 63 74 69 6f 6e 20 73 65 74 74 6c 65 72 28 29 } //Function settler()  01 00 
+		$a_80_4 = {73 65 74 74 6c 65 72 20 3d 20 22 43 4d 44 2e 45 78 65 } //settler = "CMD.Exe  01 00 
+		$a_80_5 = {46 75 6e 63 74 69 6f 6e 20 63 6f 6d 6d 64 65 28 29 } //Function commde()  01 00 
+		$a_80_6 = {46 75 6e 63 74 69 6f 6e 20 63 72 73 73 73 28 29 } //Function crsss()  01 00 
+		$a_80_7 = {41 6e 64 50 6c 75 73 20 3d 20 73 65 74 74 6c 65 72 20 2b 20 64 6f 75 62 6c 65 63 68 65 63 6b 20 2b 20 66 6f 72 6d 73 61 6e 64 73 20 2b 20 63 6c 65 61 72 64 61 74 61 73 20 2b 20 63 6f 6d 6d 64 65 20 2b 20 63 72 73 73 73 } //AndPlus = settler + doublecheck + formsands + cleardatas + commde + crsss  00 00 
+	condition:
+		any of ($a_*)
+ 
+}
