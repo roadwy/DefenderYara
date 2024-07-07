@@ -39,7 +39,7 @@ rule Spyware_Win32_Look2Me_3{
 		description = "Spyware:Win32/Look2Me,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 09 00 00 "
 		
 	strings :
-		$a_01_0 = {5c 53 69 6d 70 6c 79 20 53 75 70 65 72 20 53 6f 66 74 77 61 72 65 5c 54 72 6f 6a 61 6e 20 52 65 6d 6f 76 65 72 5c } //65436 \Simply Super Software\Trojan Remover\
+		$a_01_0 = {5c 53 69 6d 70 6c 79 20 53 75 70 65 72 20 53 6f 66 74 77 61 72 65 5c 54 72 6f 6a 61 6e 20 52 65 6d 6f 76 65 72 5c } //-100 \Simply Super Software\Trojan Remover\
 		$a_00_1 = {53 4f 46 54 57 41 52 45 5c 42 6f 72 6c 61 6e 64 5c 44 65 6c 70 68 69 5c 52 54 4c } //1 SOFTWARE\Borland\Delphi\RTL
 		$a_00_2 = {61 64 2d 77 2d 61 2d 72 2d 65 2e 63 6f 6d } //1 ad-w-a-r-e.com
 		$a_00_3 = {72 6d 76 74 72 6a 61 6e 2e 65 78 65 } //1 rmvtrjan.exe
@@ -49,7 +49,7 @@ rule Spyware_Win32_Look2Me_3{
 		$a_00_7 = {43 72 65 61 74 65 4d 75 74 65 78 41 } //1 CreateMutexA
 		$a_00_8 = {55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 43 61 63 68 65 46 69 6c 65 41 } //1 URLDownloadToCacheFileA
 	condition:
-		((#a_01_0  & 1)*65436+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_00_8  & 1)*1) >=8
+		((#a_01_0  & 1)*-100+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_00_8  & 1)*1) >=8
  
 }
 rule Spyware_Win32_Look2Me_4{

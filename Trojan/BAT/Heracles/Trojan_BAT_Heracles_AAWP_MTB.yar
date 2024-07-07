@@ -8,8 +8,8 @@ rule Trojan_BAT_Heracles_AAWP_MTB{
 		$a_01_1 = {47 65 74 54 65 6d 70 50 61 74 68 } //1 GetTempPath
 		$a_01_2 = {57 72 69 74 65 41 6c 6c 42 79 74 65 73 } //1 WriteAllBytes
 		$a_01_3 = {43 00 3a 00 5c 00 54 00 45 00 4d 00 50 00 5c 00 } //1 C:\TEMP\
-		$a_01_4 = {5c 49 57 42 5c 70 61 63 6b 61 67 69 6e 67 5c 54 70 6d 49 6e 69 74 69 61 6c 69 7a 65 72 5c 54 70 6d 45 4b 50 75 62 6c 69 63 4b 65 79 45 78 70 6f 72 74 65 72 5c 54 70 6d 45 4b 50 75 62 6c 69 63 4b 65 79 45 78 70 6f 72 74 65 72 5c 6f 62 6a 5c 52 65 6c 65 61 73 65 5c 54 70 6d 45 4b 50 75 62 6c 69 63 4b 65 79 45 78 70 6f 72 74 65 72 2e 70 64 62 } //65531 \IWB\packaging\TpmInitializer\TpmEKPublicKeyExporter\TpmEKPublicKeyExporter\obj\Release\TpmEKPublicKeyExporter.pdb
+		$a_01_4 = {5c 49 57 42 5c 70 61 63 6b 61 67 69 6e 67 5c 54 70 6d 49 6e 69 74 69 61 6c 69 7a 65 72 5c 54 70 6d 45 4b 50 75 62 6c 69 63 4b 65 79 45 78 70 6f 72 74 65 72 5c 54 70 6d 45 4b 50 75 62 6c 69 63 4b 65 79 45 78 70 6f 72 74 65 72 5c 6f 62 6a 5c 52 65 6c 65 61 73 65 5c 54 70 6d 45 4b 50 75 62 6c 69 63 4b 65 79 45 78 70 6f 72 74 65 72 2e 70 64 62 } //-5 \IWB\packaging\TpmInitializer\TpmEKPublicKeyExporter\TpmEKPublicKeyExporter\obj\Release\TpmEKPublicKeyExporter.pdb
 	condition:
-		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*65531) >=8
+		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*-5) >=8
  
 }

@@ -4,7 +4,7 @@ rule Spammer_Win32_Rlsloup_A{
 		description = "Spammer:Win32/Rlsloup.A,SIGNATURE_TYPE_PEHSTR_EXT,12 00 11 00 0a 00 00 "
 		
 	strings :
-		$a_01_0 = {5c 53 69 6d 70 6c 79 20 53 75 70 65 72 20 53 6f 66 74 77 61 72 65 5c 54 72 6f 6a 61 6e 20 52 65 6d 6f 76 65 72 5c } //65436 \Simply Super Software\Trojan Remover\
+		$a_01_0 = {5c 53 69 6d 70 6c 79 20 53 75 70 65 72 20 53 6f 66 74 77 61 72 65 5c 54 72 6f 6a 61 6e 20 52 65 6d 6f 76 65 72 5c } //-100 \Simply Super Software\Trojan Remover\
 		$a_00_1 = {73 6d 74 70 2d 63 6c 69 65 6e 74 2d 72 6c 73 2e 64 6c 6c } //10 smtp-client-rls.dll
 		$a_00_2 = {44 65 76 69 63 65 49 6f 43 6f 6e 74 72 6f 6c } //1 DeviceIoControl
 		$a_00_3 = {44 65 6c 65 74 65 46 69 6c 65 41 } //1 DeleteFileA
@@ -15,7 +15,7 @@ rule Spammer_Win32_Rlsloup_A{
 		$a_00_8 = {47 65 74 4d 61 69 6c 73 6c 6f 74 49 6e 66 6f } //1 GetMailslotInfo
 		$a_00_9 = {57 53 32 5f 33 32 2e 64 6c 6c } //1 WS2_32.dll
 	condition:
-		((#a_01_0  & 1)*65436+(#a_00_1  & 1)*10+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_00_8  & 1)*1+(#a_00_9  & 1)*1) >=17
+		((#a_01_0  & 1)*-100+(#a_00_1  & 1)*10+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_00_8  & 1)*1+(#a_00_9  & 1)*1) >=17
  
 }
 rule Spammer_Win32_Rlsloup_A_2{
