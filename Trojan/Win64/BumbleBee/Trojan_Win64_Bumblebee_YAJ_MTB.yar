@@ -1,11 +1,11 @@
 
 rule Trojan_Win64_Bumblebee_YAJ_MTB{
 	meta:
-		description = "Trojan:Win64/Bumblebee.YAJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		description = "Trojan:Win64/Bumblebee.YAJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {09 83 ac 00 00 00 48 8b 05 90 01 04 8b 0d 90 01 04 41 8b d0 2b 48 6c 81 e9 90 01 04 c1 ea 08 31 8b 40 01 00 00 48 8b 05 da 55 11 00 90 00 } //00 00 
+		$a_03_0 = {09 83 ac 00 00 00 48 8b 05 90 01 04 8b 0d 90 01 04 41 8b d0 2b 48 6c 81 e9 90 01 04 c1 ea 08 31 8b 40 01 00 00 48 8b 05 da 55 11 00 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1) >=1
  
 }

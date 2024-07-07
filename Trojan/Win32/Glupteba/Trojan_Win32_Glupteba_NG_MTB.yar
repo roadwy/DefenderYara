@@ -1,34 +1,34 @@
 
 rule Trojan_Win32_Glupteba_NG_MTB{
 	meta:
-		description = "Trojan:Win32/Glupteba.NG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 0a 00 "
+		description = "Trojan:Win32/Glupteba.NG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {31 0f 81 ea 90 01 04 81 c7 90 01 04 89 d6 89 da 39 c7 75 e5 c3 09 d6 90 01 02 81 c2 90 01 04 21 d2 c3 90 00 } //00 00 
+		$a_03_0 = {31 0f 81 ea 90 01 04 81 c7 90 01 04 89 d6 89 da 39 c7 75 e5 c3 09 d6 90 01 02 81 c2 90 01 04 21 d2 c3 90 00 } //10
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*10) >=10
  
 }
 rule Trojan_Win32_Glupteba_NG_MTB_2{
 	meta:
-		description = "Trojan:Win32/Glupteba.NG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 03 00 "
+		description = "Trojan:Win32/Glupteba.NG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {75 24 e0 bf eb 0b 26 3e 75 1e 35 90 01 04 d8 cc f3 63 90 00 } //03 00 
-		$a_03_1 = {71 1e d1 4c 72 90 01 01 4d 73 5b e0 5a bb 90 01 04 72 3a 4d d7 90 00 } //00 00 
+		$a_03_0 = {75 24 e0 bf eb 0b 26 3e 75 1e 35 90 01 04 d8 cc f3 63 90 00 } //3
+		$a_03_1 = {71 1e d1 4c 72 90 01 01 4d 73 5b e0 5a bb 90 01 04 72 3a 4d d7 90 00 } //3
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*3+(#a_03_1  & 1)*3) >=6
  
 }
 rule Trojan_Win32_Glupteba_NG_MTB_3{
 	meta:
-		description = "Trojan:Win32/Glupteba.NG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 02 00 "
+		description = "Trojan:Win32/Glupteba.NG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_02_0 = {33 d1 31 55 90 01 01 8b 4d 90 01 01 8d 85 90 01 04 e8 90 01 04 81 3d 90 02 04 26 04 00 00 75 90 00 } //01 00 
-		$a_02_1 = {33 d1 31 55 90 01 01 8b 4d 90 01 01 8d 85 90 01 04 90 18 29 08 c3 90 00 } //01 00 
-		$a_02_2 = {8b c6 d3 e0 8b 8d 90 01 04 89 45 90 01 01 8d 45 90 01 01 e8 90 00 } //00 00 
+		$a_02_0 = {33 d1 31 55 90 01 01 8b 4d 90 01 01 8d 85 90 01 04 e8 90 01 04 81 3d 90 02 04 26 04 00 00 75 90 00 } //2
+		$a_02_1 = {33 d1 31 55 90 01 01 8b 4d 90 01 01 8d 85 90 01 04 90 18 29 08 c3 90 00 } //1
+		$a_02_2 = {8b c6 d3 e0 8b 8d 90 01 04 89 45 90 01 01 8d 45 90 01 01 e8 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_02_0  & 1)*2+(#a_02_1  & 1)*1+(#a_02_2  & 1)*1) >=3
  
 }

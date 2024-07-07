@@ -1,12 +1,12 @@
 
 rule Trojan_Win64_CobaltStrike_ZI_MTB{
 	meta:
-		description = "Trojan:Win64/CobaltStrike.ZI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		description = "Trojan:Win64/CobaltStrike.ZI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {01 c3 48 8d 0d 90 01 04 e8 a7 ab 00 00 01 d8 31 45 90 01 01 8b 55 90 01 01 48 8b 45 90 01 01 48 01 d0 0f b6 00 84 c0 0f 85 90 00 } //01 00 
-		$a_03_1 = {01 d8 66 89 45 90 01 01 0f b7 45 90 01 01 8b 55 90 01 01 c1 ca 90 01 01 8d 1c 10 48 8d 0d 90 01 04 e8 90 00 } //00 00 
+		$a_03_0 = {01 c3 48 8d 0d 90 01 04 e8 a7 ab 00 00 01 d8 31 45 90 01 01 8b 55 90 01 01 48 8b 45 90 01 01 48 01 d0 0f b6 00 84 c0 0f 85 90 00 } //1
+		$a_03_1 = {01 d8 66 89 45 90 01 01 0f b7 45 90 01 01 8b 55 90 01 01 c1 ca 90 01 01 8d 1c 10 48 8d 0d 90 01 04 e8 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
 }

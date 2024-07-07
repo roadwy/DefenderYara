@@ -1,13 +1,13 @@
 
 rule Trojan_Win32_Krypter_AG_MTB{
 	meta:
-		description = "Trojan:Win32/Krypter.AG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1e 00 1e 00 03 00 00 0a 00 "
+		description = "Trojan:Win32/Krypter.AG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1e 00 1e 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {55 8b ec 51 c7 45 90 01 05 8b 45 90 01 01 8b 4d 90 01 01 d3 e8 8b 4d 90 01 01 89 01 8b 55 90 01 01 8b 02 03 45 90 01 01 8b 4d 90 01 01 89 01 8b e5 5d c2 90 00 } //0a 00 
-		$a_01_1 = {56 69 73 75 61 6c 20 43 2b 2b } //0a 00  Visual C++
-		$a_03_2 = {55 8b ec 51 c7 45 90 01 05 8b 45 90 01 01 01 45 90 01 01 8b 45 90 01 01 8b 08 03 4d 90 01 01 8b 55 90 01 01 89 0a 8b e5 5d c2 90 00 } //00 00 
+		$a_03_0 = {55 8b ec 51 c7 45 90 01 05 8b 45 90 01 01 8b 4d 90 01 01 d3 e8 8b 4d 90 01 01 89 01 8b 55 90 01 01 8b 02 03 45 90 01 01 8b 4d 90 01 01 89 01 8b e5 5d c2 90 00 } //10
+		$a_01_1 = {56 69 73 75 61 6c 20 43 2b 2b } //10 Visual C++
+		$a_03_2 = {55 8b ec 51 c7 45 90 01 05 8b 45 90 01 01 01 45 90 01 01 8b 45 90 01 01 8b 08 03 4d 90 01 01 8b 55 90 01 01 89 0a 8b e5 5d c2 90 00 } //10
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*10+(#a_01_1  & 1)*10+(#a_03_2  & 1)*10) >=30
  
 }

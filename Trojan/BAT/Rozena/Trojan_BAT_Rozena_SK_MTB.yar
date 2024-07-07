@@ -1,11 +1,11 @@
 
 rule Trojan_BAT_Rozena_SK_MTB{
 	meta:
-		description = "Trojan:BAT/Rozena.SK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
+		description = "Trojan:BAT/Rozena.SK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 "
 		
 	strings :
-		$a_01_0 = {02 06 8f 01 00 00 01 25 47 03 06 03 8e 69 5d 91 61 d2 52 06 17 58 0a 06 02 8e 69 3f e0 ff ff ff } //00 00 
+		$a_01_0 = {02 06 8f 01 00 00 01 25 47 03 06 03 8e 69 5d 91 61 d2 52 06 17 58 0a 06 02 8e 69 3f e0 ff ff ff } //2
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*2) >=2
  
 }

@@ -1,13 +1,13 @@
 
 rule Trojan_BAT_RevengeRat_RPY_MTB{
 	meta:
-		description = "Trojan:BAT/RevengeRat.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		description = "Trojan:BAT/RevengeRat.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_01_0 = {46 61 6c 61 73 74 69 6e } //01 00  Falastin
-		$a_03_1 = {a2 0b 05 18 d6 0c 14 0d 09 90 01 05 13 04 03 4a 04 4a d8 1f 58 d8 08 d6 16 d8 16 d6 13 05 02 90 00 } //01 00 
-		$a_03_2 = {00 03 8e 69 1f 11 da 17 d6 90 01 05 13 04 03 1f 10 11 04 16 03 8e 69 1f 10 da 90 00 } //00 00 
+		$a_01_0 = {46 61 6c 61 73 74 69 6e } //1 Falastin
+		$a_03_1 = {a2 0b 05 18 d6 0c 14 0d 09 90 01 05 13 04 03 4a 04 4a d8 1f 58 d8 08 d6 16 d8 16 d6 13 05 02 90 00 } //1
+		$a_03_2 = {00 03 8e 69 1f 11 da 17 d6 90 01 05 13 04 03 1f 10 11 04 16 03 8e 69 1f 10 da 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1) >=3
  
 }

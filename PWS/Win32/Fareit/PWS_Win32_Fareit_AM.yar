@@ -1,11 +1,11 @@
 
 rule PWS_Win32_Fareit_AM{
 	meta:
-		description = "PWS:Win32/Fareit.AM,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		description = "PWS:Win32/Fareit.AM,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {54 6a 40 68 78 59 00 00 57 e8 aa 2e fa ff 90 02 04 33 d2 33 c0 89 04 24 b8 90 02 05 8b f7 03 f2 90 02 03 8a 08 90 02 03 80 f1 4e 90 02 03 88 0e 90 02 0d ff 04 24 40 81 3c 24 79 59 00 00 75 d5 90 00 } //00 00 
+		$a_02_0 = {54 6a 40 68 78 59 00 00 57 e8 aa 2e fa ff 90 02 04 33 d2 33 c0 89 04 24 b8 90 02 05 8b f7 03 f2 90 02 03 8a 08 90 02 03 80 f1 4e 90 02 03 88 0e 90 02 0d ff 04 24 40 81 3c 24 79 59 00 00 75 d5 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_02_0  & 1)*1) >=1
  
 }

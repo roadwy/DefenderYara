@@ -1,11 +1,11 @@
 
 rule TrojanDownloader_O97M_EncDoc_RPQ0212_MTB{
 	meta:
-		description = "TrojanDownloader:O97M/EncDoc.RPQ0212!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		description = "TrojanDownloader:O97M/EncDoc.RPQ0212!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {2e 74 65 78 74 3d 22 63 90 02 0a 6d 64 2f 90 1b 00 63 73 90 1b 00 74 61 72 90 1b 00 74 2f 90 1b 00 62 22 90 02 1f 2e 90 02 5f 90 1b 05 90 02 1f 3d 72 65 70 6c 61 63 65 28 90 1b 05 2e 90 02 1f 2c 22 90 1b 00 22 2c 22 22 29 6f 70 65 6e 90 00 } //00 00 
+		$a_03_0 = {2e 74 65 78 74 3d 22 63 90 02 0a 6d 64 2f 90 1b 00 63 73 90 1b 00 74 61 72 90 1b 00 74 2f 90 1b 00 62 22 90 02 1f 2e 90 02 5f 90 1b 05 90 02 1f 3d 72 65 70 6c 61 63 65 28 90 1b 05 2e 90 02 1f 2c 22 90 1b 00 22 2c 22 22 29 6f 70 65 6e 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1) >=1
  
 }

@@ -1,12 +1,12 @@
 
 rule TrojanClicker_Win32_VB_ZK_bit{
 	meta:
-		description = "TrojanClicker:Win32/VB.ZK!bit,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		description = "TrojanClicker:Win32/VB.ZK!bit,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_01_0 = {68 00 74 00 74 00 70 00 3a 00 2f 00 2f 00 76 00 69 00 70 00 39 00 36 00 34 00 36 00 2e 00 63 00 6f 00 6d 00 } //01 00  http://vip9646.com
-		$a_01_1 = {63 00 6d 00 64 00 20 00 2f 00 63 00 20 00 73 00 74 00 61 00 72 00 74 00 20 00 69 00 65 00 78 00 70 00 6c 00 6f 00 72 00 65 00 2e 00 65 00 78 00 65 00 } //00 00  cmd /c start iexplore.exe
+		$a_01_0 = {68 00 74 00 74 00 70 00 3a 00 2f 00 2f 00 76 00 69 00 70 00 39 00 36 00 34 00 36 00 2e 00 63 00 6f 00 6d 00 } //1 http://vip9646.com
+		$a_01_1 = {63 00 6d 00 64 00 20 00 2f 00 63 00 20 00 73 00 74 00 61 00 72 00 74 00 20 00 69 00 65 00 78 00 70 00 6c 00 6f 00 72 00 65 00 2e 00 65 00 78 00 65 00 } //1 cmd /c start iexplore.exe
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }

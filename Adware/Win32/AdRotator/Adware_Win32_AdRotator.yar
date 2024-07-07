@@ -1,743 +1,801 @@
 
 rule Adware_Win32_AdRotator{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 03 00 00 "
 		
 	strings :
-		$a_01_0 = {62 00 72 00 77 00 73 00 72 00 5f 00 } //01 00  brwsr_
-		$a_01_1 = {66 00 72 00 6f 00 6d 00 61 00 74 00 65 00 64 00 } //03 00  fromated
-		$a_01_2 = {64 72 63 74 00 00 00 00 65 6e 63 00 65 6e 62 6c } //00 00 
+		$a_01_0 = {62 00 72 00 77 00 73 00 72 00 5f 00 } //1 brwsr_
+		$a_01_1 = {66 00 72 00 6f 00 6d 00 61 00 74 00 65 00 64 00 } //1 fromated
+		$a_01_2 = {64 72 63 74 00 00 00 00 65 6e 63 00 65 6e 62 6c } //3
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*3) >=5
  
 }
 rule Adware_Win32_AdRotator_2{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {eb 15 8b 15 90 01 04 0f be cb 83 e9 28 8a 0c 0a 88 0f 90 00 } //01 00 
-		$a_03_1 = {eb 19 8b 15 90 01 04 0f be cb 83 e9 28 8a 0c 0a 8b 54 24 14 88 0a 90 00 } //0a 00 
-		$a_03_2 = {80 fb 28 7c 90 01 01 80 fb 7e 7f 90 01 01 85 c0 75 14 90 00 } //00 00 
+		$a_03_0 = {eb 15 8b 15 90 01 04 0f be cb 83 e9 28 8a 0c 0a 88 0f 90 00 } //1
+		$a_03_1 = {eb 19 8b 15 90 01 04 0f be cb 83 e9 28 8a 0c 0a 8b 54 24 14 88 0a 90 00 } //1
+		$a_03_2 = {80 fb 28 7c 90 01 01 80 fb 7e 7f 90 01 01 85 c0 75 14 90 00 } //10
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*10) >=11
  
 }
 rule Adware_Win32_AdRotator_3{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_01_0 = {44 69 73 70 6c 61 79 4e 61 6d 65 00 52 4f 4e 20 54 6f 6f 31 } //01 00  楄灳慬乹浡e佒⁎潔ㅯ
-		$a_01_1 = {4e 75 6c 6c 73 6f 66 74 20 49 6e 73 74 61 6c 6c 20 53 79 73 74 65 6d } //01 00  Nullsoft Install System
-		$a_03_2 = {61 66 66 5f 69 64 90 02 06 62 32 73 65 61 72 63 68 00 64 65 66 61 75 6c 74 90 00 } //00 00 
+		$a_01_0 = {44 69 73 70 6c 61 79 4e 61 6d 65 00 52 4f 4e 20 54 6f 6f 31 } //1 楄灳慬乹浡e佒⁎潔ㅯ
+		$a_01_1 = {4e 75 6c 6c 73 6f 66 74 20 49 6e 73 74 61 6c 6c 20 53 79 73 74 65 6d } //1 Nullsoft Install System
+		$a_03_2 = {61 66 66 5f 69 64 90 02 06 62 32 73 65 61 72 63 68 00 64 65 66 61 75 6c 74 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_4{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {33 c0 83 4d fc ff a3 90 01 04 8b 30 57 ff 15 90 01 04 ff 75 0c ff 75 08 56 50 ff 15 90 01 04 ff d0 90 00 } //01 00 
-		$a_03_1 = {0f b6 55 0b 33 d0 8b 46 08 2b c1 88 55 0b 8a 55 0b 83 c0 0b 32 10 8b 06 88 14 01 41 83 f9 0b 72 90 01 01 ff 76 08 90 00 } //00 00 
+		$a_03_0 = {33 c0 83 4d fc ff a3 90 01 04 8b 30 57 ff 15 90 01 04 ff 75 0c ff 75 08 56 50 ff 15 90 01 04 ff d0 90 00 } //1
+		$a_03_1 = {0f b6 55 0b 33 d0 8b 46 08 2b c1 88 55 0b 8a 55 0b 83 c0 0b 32 10 8b 06 88 14 01 41 83 f9 0b 72 90 01 01 ff 76 08 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
 }
 rule Adware_Win32_AdRotator_5{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {8d 4d ec e8 90 01 04 8b f8 8d 4d ec 81 e7 f0 00 00 00 e8 90 01 04 83 e0 0f 0b c7 04 90 01 01 88 45 f3 8d 45 f3 50 8b c6 e8 90 01 04 8b 45 ec 80 38 00 75 cb 90 00 } //01 00 
-		$a_01_1 = {2d 30 30 30 30 2d 30 30 30 30 30 30 30 30 30 30 31 32 46 38 36 38 7d 00 } //00 00  〭〰ⴰ〰〰〰〰〰㈱㡆㠶}
+		$a_03_0 = {8d 4d ec e8 90 01 04 8b f8 8d 4d ec 81 e7 f0 00 00 00 e8 90 01 04 83 e0 0f 0b c7 04 90 01 01 88 45 f3 8d 45 f3 50 8b c6 e8 90 01 04 8b 45 ec 80 38 00 75 cb 90 00 } //1
+		$a_01_1 = {2d 30 30 30 30 2d 30 30 30 30 30 30 30 30 30 30 31 32 46 38 36 38 7d 00 } //1 〭〰ⴰ〰〰〰〰〰㈱㡆㠶}
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
 rule Adware_Win32_AdRotator_6{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_01_0 = {43 37 44 44 45 45 39 46 2d 43 44 34 42 2d 34 30 66 62 2d 39 30 33 30 2d 45 31 37 30 39 36 34 34 46 34 42 44 7d } //01 00  C7DDEE9F-CD4B-40fb-9030-E1709644F4BD}
-		$a_01_1 = {77 61 76 65 2e 53 68 44 6c 20 3d 20 73 20 27 77 61 76 65 } //01 00  wave.ShDl = s 'wave
-		$a_01_2 = {70 69 6f 31 32 00 00 70 6f 74 79 00 00 00 00 71 75 69 70 } //00 00 
+		$a_01_0 = {43 37 44 44 45 45 39 46 2d 43 44 34 42 2d 34 30 66 62 2d 39 30 33 30 2d 45 31 37 30 39 36 34 34 46 34 42 44 7d } //1 C7DDEE9F-CD4B-40fb-9030-E1709644F4BD}
+		$a_01_1 = {77 61 76 65 2e 53 68 44 6c 20 3d 20 73 20 27 77 61 76 65 } //1 wave.ShDl = s 'wave
+		$a_01_2 = {70 69 6f 31 32 00 00 70 6f 74 79 00 00 00 00 71 75 69 70 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_7{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
 	strings :
-		$a_01_0 = {7a c3 3f 19 c7 45 d6 29 4d aa 57 c7 45 da 1a cd 87 c2 66 c7 45 de 6b 66 } //01 00 
-		$a_01_1 = {74 09 8b 06 53 57 56 ff 10 eb 54 } //01 00 
-		$a_03_2 = {8b 44 24 04 eb 04 80 00 90 01 01 40 3b 44 24 08 75 f6 c2 08 00 90 00 } //01 00 
-		$a_01_3 = {66 8b 34 01 66 33 70 fe 66 89 30 83 c0 02 4a 75 ef } //00 00 
+		$a_01_0 = {7a c3 3f 19 c7 45 d6 29 4d aa 57 c7 45 da 1a cd 87 c2 66 c7 45 de 6b 66 } //1
+		$a_01_1 = {74 09 8b 06 53 57 56 ff 10 eb 54 } //1
+		$a_03_2 = {8b 44 24 04 eb 04 80 00 90 01 01 40 3b 44 24 08 75 f6 c2 08 00 90 00 } //1
+		$a_01_3 = {66 8b 34 01 66 33 70 fe 66 89 30 83 c0 02 4a 75 ef } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1+(#a_01_3  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_8{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_00_0 = {62 72 6f 77 73 65 72 20 65 6e 68 61 6e 63 65 72 } //01 00  browser enhancer
-		$a_03_1 = {8a 04 3e 3c 28 7c 90 01 01 3c 7e 7f 90 02 04 0f be d0 a1 90 01 04 8a 54 02 90 01 01 88 11 eb 02 90 00 } //01 00 
-		$a_03_2 = {8b f0 ff d5 2b f0 83 ee 90 01 01 eb 0e 90 09 10 00 74 19 68 90 01 04 57 ff d5 68 90 01 04 57 90 00 } //00 00 
+		$a_00_0 = {62 72 6f 77 73 65 72 20 65 6e 68 61 6e 63 65 72 } //1 browser enhancer
+		$a_03_1 = {8a 04 3e 3c 28 7c 90 01 01 3c 7e 7f 90 02 04 0f be d0 a1 90 01 04 8a 54 02 90 01 01 88 11 eb 02 90 00 } //1
+		$a_03_2 = {8b f0 ff d5 2b f0 83 ee 90 01 01 eb 0e 90 09 10 00 74 19 68 90 01 04 57 ff d5 68 90 01 04 57 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_00_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_9{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_01_0 = {46 36 30 35 34 38 34 31 2d 35 35 35 36 2d 34 37 34 38 2d 38 46 36 45 2d 41 41 44 33 37 44 42 34 41 30 36 43 7d } //01 00  F6054841-5556-4748-8F6E-AAD37DB4A06C}
-		$a_01_1 = {46 61 73 74 52 58 2e 43 75 73 74 6f 6d 52 58 20 3d 20 73 20 27 43 75 73 74 6f 6d 52 58 } //01 00  FastRX.CustomRX = s 'CustomRX
-		$a_01_2 = {66 61 73 74 72 78 00 6d 6d 70 00 62 79 61 7a 6f 6d 79 61 7a 6f } //00 00 
+		$a_01_0 = {46 36 30 35 34 38 34 31 2d 35 35 35 36 2d 34 37 34 38 2d 38 46 36 45 2d 41 41 44 33 37 44 42 34 41 30 36 43 7d } //1 F6054841-5556-4748-8F6E-AAD37DB4A06C}
+		$a_01_1 = {46 61 73 74 52 58 2e 43 75 73 74 6f 6d 52 58 20 3d 20 73 20 27 43 75 73 74 6f 6d 52 58 } //1 FastRX.CustomRX = s 'CustomRX
+		$a_01_2 = {66 61 73 74 72 78 00 6d 6d 70 00 62 79 61 7a 6f 6d 79 61 7a 6f } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_10{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_00_0 = {44 6c 6c 41 63 74 69 6f 6e } //01 00  DllAction
-		$a_00_1 = {44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 } //01 00  DllCanUnloadNow
-		$a_02_2 = {b8 32 00 00 00 66 a3 90 01 04 b9 79 00 00 00 66 89 0d 90 01 04 b8 52 00 00 00 66 a3 90 01 04 ba 44 00 00 00 66 89 15 90 01 04 b9 5c 00 00 00 66 89 0d 90 01 04 33 c9 b8 49 00 00 00 66 a3 90 00 } //00 00 
+		$a_00_0 = {44 6c 6c 41 63 74 69 6f 6e } //1 DllAction
+		$a_00_1 = {44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 } //1 DllCanUnloadNow
+		$a_02_2 = {b8 32 00 00 00 66 a3 90 01 04 b9 79 00 00 00 66 89 0d 90 01 04 b8 52 00 00 00 66 a3 90 01 04 ba 44 00 00 00 66 89 15 90 01 04 b9 5c 00 00 00 66 89 0d 90 01 04 33 c9 b8 49 00 00 00 66 a3 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_02_2  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_11{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_01_0 = {41 41 31 41 34 46 38 33 2d 42 34 41 43 2d 34 38 35 39 2d 38 43 39 31 2d 32 31 44 42 45 36 43 35 36 32 35 42 7d } //01 00  AA1A4F83-B4AC-4859-8C91-21DBE6C5625B}
-		$a_01_1 = {63 6f 72 65 2e 49 63 6f 6e 69 7a 65 72 20 3d 20 73 20 27 49 63 6f 6e 69 7a 65 72 } //01 00  core.Iconizer = s 'Iconizer
-		$a_01_2 = {61 64 76 65 72 74 3a 2f 2f 61 64 76 65 72 74 73 65 72 76 65 72 2e 63 6f 6d 2f 25 64 } //00 00  advert://advertserver.com/%d
+		$a_01_0 = {41 41 31 41 34 46 38 33 2d 42 34 41 43 2d 34 38 35 39 2d 38 43 39 31 2d 32 31 44 42 45 36 43 35 36 32 35 42 7d } //1 AA1A4F83-B4AC-4859-8C91-21DBE6C5625B}
+		$a_01_1 = {63 6f 72 65 2e 49 63 6f 6e 69 7a 65 72 20 3d 20 73 20 27 49 63 6f 6e 69 7a 65 72 } //1 core.Iconizer = s 'Iconizer
+		$a_01_2 = {61 64 76 65 72 74 3a 2f 2f 61 64 76 65 72 74 73 65 72 76 65 72 2e 63 6f 6d 2f 25 64 } //1 advert://advertserver.com/%d
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_12{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_01_0 = {44 69 73 70 6c 61 79 4e 61 6d 65 00 42 72 6f 77 73 65 72 20 4f 70 74 69 6d 69 7a 65 72 20 41 64 73 73 69 74 65 } //01 00 
-		$a_01_1 = {4e 75 6c 6c 73 6f 66 74 20 49 6e 73 74 61 6c 6c 20 53 79 73 74 65 6d } //01 00  Nullsoft Install System
-		$a_03_2 = {46 72 69 65 6e 64 6c 79 41 64 77 61 72 65 20 90 01 03 20 69 6e 73 74 61 6c 6c 65 64 21 00 90 00 } //00 00 
+		$a_01_0 = {44 69 73 70 6c 61 79 4e 61 6d 65 00 42 72 6f 77 73 65 72 20 4f 70 74 69 6d 69 7a 65 72 20 41 64 73 73 69 74 65 } //1
+		$a_01_1 = {4e 75 6c 6c 73 6f 66 74 20 49 6e 73 74 61 6c 6c 20 53 79 73 74 65 6d } //1 Nullsoft Install System
+		$a_03_2 = {46 72 69 65 6e 64 6c 79 41 64 77 61 72 65 20 90 01 03 20 69 6e 73 74 61 6c 6c 65 64 21 00 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_13{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
 	strings :
-		$a_01_0 = {66 8b 34 01 66 33 70 fe 66 89 30 83 c0 02 4a 75 ef } //01 00 
-		$a_01_1 = {74 15 89 7d 0c 66 8b 38 66 33 3c 02 ff 4d 0c 8b 19 66 89 3c 1e 75 ee } //01 00 
-		$a_01_2 = {0f b6 54 10 03 8d 4c 01 02 8b 0e 30 54 01 03 8b 56 04 0f b6 54 10 04 8d 4c 01 03 } //01 00 
-		$a_00_3 = {c6 45 fc 06 8b 45 f0 89 07 89 75 f0 c6 45 fc 05 c7 45 ec 01 00 00 00 c6 45 fc 02 } //00 00 
+		$a_01_0 = {66 8b 34 01 66 33 70 fe 66 89 30 83 c0 02 4a 75 ef } //1
+		$a_01_1 = {74 15 89 7d 0c 66 8b 38 66 33 3c 02 ff 4d 0c 8b 19 66 89 3c 1e 75 ee } //1
+		$a_01_2 = {0f b6 54 10 03 8d 4c 01 02 8b 0e 30 54 01 03 8b 56 04 0f b6 54 10 04 8d 4c 01 03 } //1
+		$a_00_3 = {c6 45 fc 06 8b 45 f0 89 07 89 75 f0 c6 45 fc 05 c7 45 ec 01 00 00 00 c6 45 fc 02 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_00_3  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_14{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {8d 4d ec e8 90 01 04 8b f8 8d 4d ec 81 e7 f0 00 00 00 e8 90 01 04 83 e0 0f 0b c7 04 90 01 01 88 45 f3 56 8d 45 f3 50 8b 45 e8 e8 90 01 04 8b 45 ec 80 38 00 75 c9 90 00 } //01 00 
-		$a_01_1 = {4e 53 5f 46 72 65 65 00 78 70 63 6f 6d 2e 64 6c 6c 00 } //01 00 
-		$a_01_2 = {50 52 5f 41 74 6f 6d 69 63 44 65 63 72 65 6d 65 6e 74 00 00 6e 73 70 72 34 2e 64 6c 6c 00 } //00 00 
+		$a_03_0 = {8d 4d ec e8 90 01 04 8b f8 8d 4d ec 81 e7 f0 00 00 00 e8 90 01 04 83 e0 0f 0b c7 04 90 01 01 88 45 f3 56 8d 45 f3 50 8b 45 e8 e8 90 01 04 8b 45 ec 80 38 00 75 c9 90 00 } //1
+		$a_01_1 = {4e 53 5f 46 72 65 65 00 78 70 63 6f 6d 2e 64 6c 6c 00 } //1
+		$a_01_2 = {50 52 5f 41 74 6f 6d 69 63 44 65 63 72 65 6d 65 6e 74 00 00 6e 73 70 72 34 2e 64 6c 6c 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_15{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_01_0 = {4e 75 6c 6c 73 6f 66 74 20 49 6e 73 74 61 6c 6c 20 53 79 73 74 65 6d } //01 00  Nullsoft Install System
-		$a_01_1 = {44 69 73 70 6c 61 79 4e 61 6d 65 00 54 61 67 67 69 6e 67 20 53 79 73 74 65 6d 20 52 65 76 65 6e 75 65 62 75 73 74 65 72 } //01 00 
-		$a_01_2 = {3a 3a 44 6c 6c 44 69 73 70 61 74 63 68 28 69 20 39 2c 20 74 20 27 72 65 76 65 6e 75 65 62 75 73 74 65 72 27 2c 20 74 20 2e 72 39 29 } //00 00  ::DllDispatch(i 9, t 'revenuebuster', t .r9)
+		$a_01_0 = {4e 75 6c 6c 73 6f 66 74 20 49 6e 73 74 61 6c 6c 20 53 79 73 74 65 6d } //1 Nullsoft Install System
+		$a_01_1 = {44 69 73 70 6c 61 79 4e 61 6d 65 00 54 61 67 67 69 6e 67 20 53 79 73 74 65 6d 20 52 65 76 65 6e 75 65 62 75 73 74 65 72 } //1
+		$a_01_2 = {3a 3a 44 6c 6c 44 69 73 70 61 74 63 68 28 69 20 39 2c 20 74 20 27 72 65 76 65 6e 75 65 62 75 73 74 65 72 27 2c 20 74 20 2e 72 39 29 } //1 ::DllDispatch(i 9, t 'revenuebuster', t .r9)
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_16{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
 	strings :
-		$a_00_0 = {62 72 6f 77 73 65 72 20 65 6e 68 61 6e 63 65 72 } //01 00  browser enhancer
-		$a_01_1 = {61 64 53 70 6f 74 57 6e 64 } //01 00  adSpotWnd
-		$a_03_2 = {0f 8c c3 00 00 00 3b 6e f8 0f 8f ba 00 00 00 68 90 01 04 89 6e f4 57 c6 04 2e 00 ff d3 8b e8 68 90 01 04 2b ef 57 89 44 24 30 90 00 } //01 00 
-		$a_03_3 = {8a 0f 80 f9 28 7c 12 80 f9 7e 7f 0d 8b 1d 90 01 04 0f be c9 8a 4c 19 90 01 01 88 0a 42 47 48 75 e0 90 00 } //00 00 
+		$a_00_0 = {62 72 6f 77 73 65 72 20 65 6e 68 61 6e 63 65 72 } //1 browser enhancer
+		$a_01_1 = {61 64 53 70 6f 74 57 6e 64 } //1 adSpotWnd
+		$a_03_2 = {0f 8c c3 00 00 00 3b 6e f8 0f 8f ba 00 00 00 68 90 01 04 89 6e f4 57 c6 04 2e 00 ff d3 8b e8 68 90 01 04 2b ef 57 89 44 24 30 90 00 } //1
+		$a_03_3 = {8a 0f 80 f9 28 7c 12 80 f9 7e 7f 0d 8b 1d 90 01 04 0f be c9 8a 4c 19 90 01 01 88 0a 42 47 48 75 e0 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_00_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_17{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_01_0 = {39 43 38 41 35 36 38 45 2d 34 32 30 31 2d 34 37 38 61 2d 38 35 33 36 2d 35 32 36 43 46 33 37 31 44 32 45 32 7d } //01 00  9C8A568E-4201-478a-8536-526CF371D2E2}
-		$a_01_1 = {6f 70 74 69 6d 69 7a 65 72 2e 61 64 73 73 69 74 65 32 20 3d 20 73 20 27 61 64 73 5f 6f 70 74 69 6d 69 7a 65 72 } //01 00  optimizer.adssite2 = s 'ads_optimizer
-		$a_01_2 = {68 65 78 61 35 20 2e 63 33 7b 70 61 64 64 69 6e 67 2d 6c 65 66 74 3a 35 33 2e 35 25 7d 2e 69 6d 67 6c 69 6e 6b 6c 69 73 74 31 } //00 00  hexa5 .c3{padding-left:53.5%}.imglinklist1
+		$a_01_0 = {39 43 38 41 35 36 38 45 2d 34 32 30 31 2d 34 37 38 61 2d 38 35 33 36 2d 35 32 36 43 46 33 37 31 44 32 45 32 7d } //1 9C8A568E-4201-478a-8536-526CF371D2E2}
+		$a_01_1 = {6f 70 74 69 6d 69 7a 65 72 2e 61 64 73 73 69 74 65 32 20 3d 20 73 20 27 61 64 73 5f 6f 70 74 69 6d 69 7a 65 72 } //1 optimizer.adssite2 = s 'ads_optimizer
+		$a_01_2 = {68 65 78 61 35 20 2e 63 33 7b 70 61 64 64 69 6e 67 2d 6c 65 66 74 3a 35 33 2e 35 25 7d 2e 69 6d 67 6c 69 6e 6b 6c 69 73 74 31 } //1 hexa5 .c3{padding-left:53.5%}.imglinklist1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_18{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,08 00 05 00 04 00 00 03 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,08 00 05 00 04 00 00 "
 		
 	strings :
-		$a_00_0 = {52 00 4f 00 4e 00 20 00 61 00 64 00 73 00 20 00 62 00 79 00 20 00 73 00 6e 00 61 00 70 00 70 00 79 00 61 00 64 00 73 00 } //01 00  RON ads by snappyads
-		$a_00_1 = {2f 00 62 00 63 00 2f 00 32 00 6e 00 64 00 74 00 69 00 65 00 72 00 2e 00 70 00 68 00 70 00 } //02 00  /bc/2ndtier.php
-		$a_01_2 = {2e 3f 41 56 43 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 40 40 } //02 00  .?AVCBannerRotator@@
-		$a_00_3 = {61 00 66 00 78 00 5f 00 63 00 70 00 63 00 78 00 64 00 52 00 74 00 } //00 00  afx_cpcxdRt
+		$a_00_0 = {52 00 4f 00 4e 00 20 00 61 00 64 00 73 00 20 00 62 00 79 00 20 00 73 00 6e 00 61 00 70 00 70 00 79 00 61 00 64 00 73 00 } //3 RON ads by snappyads
+		$a_00_1 = {2f 00 62 00 63 00 2f 00 32 00 6e 00 64 00 74 00 69 00 65 00 72 00 2e 00 70 00 68 00 70 00 } //1 /bc/2ndtier.php
+		$a_01_2 = {2e 3f 41 56 43 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 40 40 } //2 .?AVCBannerRotator@@
+		$a_00_3 = {61 00 66 00 78 00 5f 00 63 00 70 00 63 00 78 00 64 00 52 00 74 00 } //2 afx_cpcxdRt
 	condition:
-		any of ($a_*)
+		((#a_00_0  & 1)*3+(#a_00_1  & 1)*1+(#a_01_2  & 1)*2+(#a_00_3  & 1)*2) >=5
  
 }
 rule Adware_Win32_AdRotator_19{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {c6 45 fc 07 8b 45 f0 89 90 03 01 01 06 07 89 90 03 01 01 5d 75 f0 c6 45 fc 06 c7 45 e8 01 00 00 00 c6 45 fc 02 90 00 } //01 00 
-		$a_01_1 = {c6 45 fc 07 8b 45 ec 89 06 89 7d ec c6 45 fc 06 c7 45 e4 01 00 00 00 c6 45 fc 02 } //01 00 
-		$a_01_2 = {89 55 08 83 65 fc 00 8b 4d 0c 8b 39 89 3a 83 21 00 83 4d fc ff } //01 00 
-		$a_03_3 = {66 33 3c 02 ff 90 03 01 01 4d 6d 0c 8b 19 66 89 3c 1e 75 ee 66 8b 3c 02 66 33 38 90 00 } //00 00 
+		$a_03_0 = {c6 45 fc 07 8b 45 f0 89 90 03 01 01 06 07 89 90 03 01 01 5d 75 f0 c6 45 fc 06 c7 45 e8 01 00 00 00 c6 45 fc 02 90 00 } //1
+		$a_01_1 = {c6 45 fc 07 8b 45 ec 89 06 89 7d ec c6 45 fc 06 c7 45 e4 01 00 00 00 c6 45 fc 02 } //1
+		$a_01_2 = {89 55 08 83 65 fc 00 8b 4d 0c 8b 39 89 3a 83 21 00 83 4d fc ff } //1
+		$a_03_3 = {66 33 3c 02 ff 90 03 01 01 4d 6d 0c 8b 19 66 89 3c 1e 75 ee 66 8b 3c 02 66 33 38 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_03_3  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_20{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,17 00 17 00 07 00 00 0a 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,17 00 17 00 07 00 00 "
 		
 	strings :
-		$a_01_0 = {2e 3f 41 56 4d 61 70 69 6b 61 70 69 74 61 70 69 74 6f 6f 6f 40 40 } //0a 00  .?AVMapikapitapitooo@@
-		$a_01_1 = {2e 3f 41 56 43 53 68 6f 6f 70 61 64 6f 6f 70 40 40 } //01 00  .?AVCShoopadoop@@
-		$a_01_2 = {2e 3f 41 56 48 6c 6f 77 65 6b 6f 70 40 40 } //01 00  .?AVHlowekop@@
-		$a_01_3 = {2e 3f 41 56 50 61 74 69 70 61 74 69 40 40 } //01 00  .?AVPatipati@@
-		$a_01_4 = {2e 3f 41 56 44 6a 6b 65 6a 64 6b 65 68 73 40 40 } //01 00  .?AVDjkejdkehs@@
-		$a_01_5 = {2e 3f 41 56 43 6b 6c 6f 70 65 78 40 40 } //01 00  .?AVCklopex@@
-		$a_01_6 = {2e 3f 41 56 4e 75 6a 69 74 72 61 40 40 } //00 00  .?AVNujitra@@
+		$a_01_0 = {2e 3f 41 56 4d 61 70 69 6b 61 70 69 74 61 70 69 74 6f 6f 6f 40 40 } //10 .?AVMapikapitapitooo@@
+		$a_01_1 = {2e 3f 41 56 43 53 68 6f 6f 70 61 64 6f 6f 70 40 40 } //10 .?AVCShoopadoop@@
+		$a_01_2 = {2e 3f 41 56 48 6c 6f 77 65 6b 6f 70 40 40 } //1 .?AVHlowekop@@
+		$a_01_3 = {2e 3f 41 56 50 61 74 69 70 61 74 69 40 40 } //1 .?AVPatipati@@
+		$a_01_4 = {2e 3f 41 56 44 6a 6b 65 6a 64 6b 65 68 73 40 40 } //1 .?AVDjkejdkehs@@
+		$a_01_5 = {2e 3f 41 56 43 6b 6c 6f 70 65 78 40 40 } //1 .?AVCklopex@@
+		$a_01_6 = {2e 3f 41 56 4e 75 6a 69 74 72 61 40 40 } //1 .?AVNujitra@@
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*10+(#a_01_1  & 1)*10+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=23
  
 }
 rule Adware_Win32_AdRotator_21{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {68 96 00 00 00 6a 64 e8 90 01 04 83 c4 08 50 ff 15 90 01 04 6a 1c 8d 54 24 4c 52 6a 01 ff d6 8b 44 24 0c 8b 4c 24 08 50 51 ff 15 90 00 } //01 00 
-		$a_03_1 = {6a 0a 6a 00 e8 90 01 04 8b 4c 24 1c 6a 0a 6a 00 8d 74 08 55 e8 90 01 04 8b 54 24 20 8d 44 10 6e 56 50 e8 90 00 } //01 00 
-		$a_00_2 = {61 00 66 00 66 00 5f 00 69 00 64 00 3d 00 } //01 00  aff_id=
-		$a_00_3 = {67 00 6c 00 6f 00 62 00 5f 00 63 00 6c 00 69 00 63 00 6b 00 5f 00 6c 00 69 00 6d 00 69 00 74 00 } //00 00  glob_click_limit
+		$a_03_0 = {68 96 00 00 00 6a 64 e8 90 01 04 83 c4 08 50 ff 15 90 01 04 6a 1c 8d 54 24 4c 52 6a 01 ff d6 8b 44 24 0c 8b 4c 24 08 50 51 ff 15 90 00 } //1
+		$a_03_1 = {6a 0a 6a 00 e8 90 01 04 8b 4c 24 1c 6a 0a 6a 00 8d 74 08 55 e8 90 01 04 8b 54 24 20 8d 44 10 6e 56 50 e8 90 00 } //1
+		$a_00_2 = {61 00 66 00 66 00 5f 00 69 00 64 00 3d 00 } //1 aff_id=
+		$a_00_3 = {67 00 6c 00 6f 00 62 00 5f 00 63 00 6c 00 69 00 63 00 6b 00 5f 00 6c 00 69 00 6d 00 69 00 74 00 } //1 glob_click_limit
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
 rule Adware_Win32_AdRotator_22{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
 	strings :
-		$a_01_0 = {41 72 65 20 79 6f 75 20 73 75 72 65 20 79 6f 75 20 77 6f 75 6c 64 20 6c 69 6b 65 20 74 6f 20 75 6e 69 6e 73 74 61 6c 6c } //01 00  Are you sure you would like to uninstall
-		$a_01_1 = {6e 6f 74 20 72 75 6e 20 65 78 61 63 74 6c 79 20 74 68 65 20 73 61 6d 65 20 61 73 20 62 65 66 6f 72 65 29 3f } //01 00  not run exactly the same as before)?
-		$a_01_2 = {4e 75 6c 6c 73 6f 66 74 20 49 6e 73 74 61 6c 6c 20 53 79 73 74 65 6d } //01 00  Nullsoft Install System
-		$a_01_3 = {fd 80 80 5f 61 75 74 6f 72 75 6e } //01 00 
-		$a_01_4 = {69 6e 73 74 61 6c 6c 5f 69 64 00 61 66 66 5f 69 64 } //00 00 
+		$a_01_0 = {41 72 65 20 79 6f 75 20 73 75 72 65 20 79 6f 75 20 77 6f 75 6c 64 20 6c 69 6b 65 20 74 6f 20 75 6e 69 6e 73 74 61 6c 6c } //1 Are you sure you would like to uninstall
+		$a_01_1 = {6e 6f 74 20 72 75 6e 20 65 78 61 63 74 6c 79 20 74 68 65 20 73 61 6d 65 20 61 73 20 62 65 66 6f 72 65 29 3f } //1 not run exactly the same as before)?
+		$a_01_2 = {4e 75 6c 6c 73 6f 66 74 20 49 6e 73 74 61 6c 6c 20 53 79 73 74 65 6d } //1 Nullsoft Install System
+		$a_01_3 = {fd 80 80 5f 61 75 74 6f 72 75 6e } //1
+		$a_01_4 = {69 6e 73 74 61 6c 6c 5f 69 64 00 61 66 66 5f 69 64 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=4
  
 }
 rule Adware_Win32_AdRotator_23{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_01_0 = {39 37 31 43 33 33 38 34 2d 46 37 35 45 2d 34 35 36 32 2d 39 35 42 33 2d 43 42 45 37 34 31 37 35 32 39 42 43 7d } //01 00  971C3384-F75E-4562-95B3-CBE7417529BC}
-		$a_01_1 = {52 6f 74 61 74 6f 72 2e 47 69 7a 6d 6f 35 20 3d 20 73 20 27 72 69 67 68 74 6f 6e 61 64 7a 20 62 72 6f 77 73 65 72 20 6f 70 74 69 6d 69 7a 65 72 } //01 00  Rotator.Gizmo5 = s 'rightonadz browser optimizer
-		$a_01_2 = {26 00 69 00 64 00 3d 00 00 00 00 00 26 00 72 00 6e 00 64 00 3d 00 00 00 26 00 76 00 65 00 72 00 73 00 69 00 6f 00 6e 00 3d 00 00 00 26 00 63 00 6c 00 69 00 63 00 6b 00 65 00 64 00 3d 00 } //00 00 
+		$a_01_0 = {39 37 31 43 33 33 38 34 2d 46 37 35 45 2d 34 35 36 32 2d 39 35 42 33 2d 43 42 45 37 34 31 37 35 32 39 42 43 7d } //1 971C3384-F75E-4562-95B3-CBE7417529BC}
+		$a_01_1 = {52 6f 74 61 74 6f 72 2e 47 69 7a 6d 6f 35 20 3d 20 73 20 27 72 69 67 68 74 6f 6e 61 64 7a 20 62 72 6f 77 73 65 72 20 6f 70 74 69 6d 69 7a 65 72 } //1 Rotator.Gizmo5 = s 'rightonadz browser optimizer
+		$a_01_2 = {26 00 69 00 64 00 3d 00 00 00 00 00 26 00 72 00 6e 00 64 00 3d 00 00 00 26 00 76 00 65 00 72 00 73 00 69 00 6f 00 6e 00 3d 00 00 00 26 00 63 00 6c 00 69 00 63 00 6b 00 65 00 64 00 3d 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_24{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 05 00 00 05 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {68 96 00 00 00 6a 64 e8 90 01 04 59 59 50 ff 15 90 01 04 57 8d 45 a0 50 53 ff d6 ff 75 f8 ff 75 f4 ff 15 90 00 } //01 00 
-		$a_01_1 = {67 00 6c 00 6f 00 62 00 5f 00 63 00 6c 00 69 00 63 00 6b 00 5f 00 6c 00 69 00 6d 00 69 00 74 00 } //01 00  glob_click_limit
-		$a_01_2 = {49 00 73 00 52 00 6f 00 74 00 61 00 74 00 6f 00 72 00 50 00 6f 00 70 00 75 00 70 00 } //01 00  IsRotatorPopup
-		$a_01_3 = {63 00 6c 00 69 00 63 00 6b 00 00 00 63 00 6c 00 69 00 63 00 6b 00 6c 00 69 00 6d 00 69 00 74 00 } //01 00 
-		$a_01_4 = {26 00 63 00 6c 00 69 00 63 00 6b 00 65 00 64 00 3d 00 } //00 00  &clicked=
+		$a_03_0 = {68 96 00 00 00 6a 64 e8 90 01 04 59 59 50 ff 15 90 01 04 57 8d 45 a0 50 53 ff d6 ff 75 f8 ff 75 f4 ff 15 90 00 } //5
+		$a_01_1 = {67 00 6c 00 6f 00 62 00 5f 00 63 00 6c 00 69 00 63 00 6b 00 5f 00 6c 00 69 00 6d 00 69 00 74 00 } //1 glob_click_limit
+		$a_01_2 = {49 00 73 00 52 00 6f 00 74 00 61 00 74 00 6f 00 72 00 50 00 6f 00 70 00 75 00 70 00 } //1 IsRotatorPopup
+		$a_01_3 = {63 00 6c 00 69 00 63 00 6b 00 00 00 63 00 6c 00 69 00 63 00 6b 00 6c 00 69 00 6d 00 69 00 74 00 } //1
+		$a_01_4 = {26 00 63 00 6c 00 69 00 63 00 6b 00 65 00 64 00 3d 00 } //1 &clicked=
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=7
  
 }
 rule Adware_Win32_AdRotator_25{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
 	strings :
-		$a_01_0 = {c7 44 24 24 7a c3 3f 19 c6 44 24 2c aa c6 44 24 2d 57 c6 44 24 2e 1a c6 44 24 2f cd c6 44 24 30 87 c6 44 24 31 c2 c6 44 24 32 6b c6 44 24 33 66 8b 10 8b 12 } //01 00 
-		$a_01_1 = {66 89 44 24 40 89 5c 24 48 c6 84 24 88 01 00 00 0e 8b 4c 24 40 8b 54 24 44 8b 7c 24 48 8b 6c 24 4c } //01 00 
-		$a_03_2 = {33 d1 8b 4e 08 88 54 24 08 0f b6 54 24 08 2b c8 8a 49 90 01 01 32 d1 8b 0e 88 14 08 90 00 } //01 00 
-		$a_03_3 = {66 33 14 01 03 c8 66 89 51 02 8b 4e 08 0f b7 90 03 01 01 54 7c 08 02 83 c0 04 83 f8 90 01 01 72 cf 33 c0 b9 90 00 } //00 00 
+		$a_01_0 = {c7 44 24 24 7a c3 3f 19 c6 44 24 2c aa c6 44 24 2d 57 c6 44 24 2e 1a c6 44 24 2f cd c6 44 24 30 87 c6 44 24 31 c2 c6 44 24 32 6b c6 44 24 33 66 8b 10 8b 12 } //1
+		$a_01_1 = {66 89 44 24 40 89 5c 24 48 c6 84 24 88 01 00 00 0e 8b 4c 24 40 8b 54 24 44 8b 7c 24 48 8b 6c 24 4c } //1
+		$a_03_2 = {33 d1 8b 4e 08 88 54 24 08 0f b6 54 24 08 2b c8 8a 49 90 01 01 32 d1 8b 0e 88 14 08 90 00 } //1
+		$a_03_3 = {66 33 14 01 03 c8 66 89 51 02 8b 4e 08 0f b7 90 03 01 01 54 7c 08 02 83 c0 04 83 f8 90 01 01 72 cf 33 c0 b9 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_26{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 08 00 00 05 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 08 00 00 "
 		
 	strings :
-		$a_01_0 = {c7 44 24 28 7a c3 3f 19 c6 44 24 30 aa c6 44 24 31 57 c6 44 24 32 1a c6 44 24 33 cd c6 44 24 34 87 c6 44 24 35 c2 c6 44 24 36 6b c6 44 24 37 66 } //05 00 
-		$a_03_1 = {74 0c 8d 64 24 00 80 00 90 01 01 40 3b c1 75 f8 90 00 } //01 00 
-		$a_01_2 = {fe c9 8a d0 fe c0 3a d1 } //01 00 
-		$a_01_3 = {8a c8 fe c0 8a 14 32 3a d1 a2 } //01 00 
-		$a_03_4 = {fe c8 fe c9 a2 90 01 04 88 0d 90 01 04 3a c1 90 00 } //01 00 
-		$a_03_5 = {fe c0 fe c9 3a c1 a2 90 01 04 88 0d 90 00 } //01 00 
-		$a_01_6 = {2a d0 2a d9 3a da a2 } //01 00 
-		$a_03_7 = {fe c0 fe c9 fe c8 fe c9 a2 90 01 04 88 0d 90 00 } //00 00 
+		$a_01_0 = {c7 44 24 28 7a c3 3f 19 c6 44 24 30 aa c6 44 24 31 57 c6 44 24 32 1a c6 44 24 33 cd c6 44 24 34 87 c6 44 24 35 c2 c6 44 24 36 6b c6 44 24 37 66 } //5
+		$a_03_1 = {74 0c 8d 64 24 00 80 00 90 01 01 40 3b c1 75 f8 90 00 } //5
+		$a_01_2 = {fe c9 8a d0 fe c0 3a d1 } //1
+		$a_01_3 = {8a c8 fe c0 8a 14 32 3a d1 a2 } //1
+		$a_03_4 = {fe c8 fe c9 a2 90 01 04 88 0d 90 01 04 3a c1 90 00 } //1
+		$a_03_5 = {fe c0 fe c9 3a c1 a2 90 01 04 88 0d 90 00 } //1
+		$a_01_6 = {2a d0 2a d9 3a da a2 } //1
+		$a_03_7 = {fe c0 fe c9 fe c8 fe c9 a2 90 01 04 88 0d 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*5+(#a_03_1  & 1)*5+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1+(#a_01_6  & 1)*1+(#a_03_7  & 1)*1) >=11
  
 }
 rule Adware_Win32_AdRotator_27{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 06 00 00 02 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 06 00 00 "
 		
 	strings :
-		$a_00_0 = {42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 } //02 00  BannerRotator
-		$a_00_1 = {49 00 73 00 52 00 6f 00 74 00 61 00 74 00 6f 00 72 00 50 00 6f 00 70 00 75 00 70 00 } //02 00  IsRotatorPopup
-		$a_00_2 = {61 00 64 00 73 00 20 00 62 00 79 00 20 00 6f 00 66 00 66 00 65 00 72 00 73 00 66 00 6f 00 72 00 74 00 6f 00 64 00 61 00 79 00 00 00 } //01 00 
-		$a_00_3 = {61 00 66 00 78 00 5f 00 63 00 70 00 63 00 78 00 64 00 52 00 74 00 } //01 00  afx_cpcxdRt
-		$a_02_4 = {68 61 72 76 65 73 74 90 02 04 2e 64 6c 6c 00 44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 90 00 } //01 00 
-		$a_00_5 = {63 00 6c 00 69 00 63 00 6b 00 00 00 66 00 65 00 65 00 64 00 5f 00 63 00 61 00 70 00 } //00 00 
+		$a_00_0 = {42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 } //2 BannerRotator
+		$a_00_1 = {49 00 73 00 52 00 6f 00 74 00 61 00 74 00 6f 00 72 00 50 00 6f 00 70 00 75 00 70 00 } //2 IsRotatorPopup
+		$a_00_2 = {61 00 64 00 73 00 20 00 62 00 79 00 20 00 6f 00 66 00 66 00 65 00 72 00 73 00 66 00 6f 00 72 00 74 00 6f 00 64 00 61 00 79 00 00 00 } //2
+		$a_00_3 = {61 00 66 00 78 00 5f 00 63 00 70 00 63 00 78 00 64 00 52 00 74 00 } //1 afx_cpcxdRt
+		$a_02_4 = {68 61 72 76 65 73 74 90 02 04 2e 64 6c 6c 00 44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 90 00 } //1
+		$a_00_5 = {63 00 6c 00 69 00 63 00 6b 00 00 00 66 00 65 00 65 00 64 00 5f 00 63 00 61 00 70 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*1+(#a_02_4  & 1)*1+(#a_00_5  & 1)*1) >=5
  
 }
 rule Adware_Win32_AdRotator_28{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,33 00 33 00 06 00 00 0a 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,33 00 33 00 06 00 00 "
 		
 	strings :
-		$a_00_0 = {53 00 6f 00 66 00 74 00 77 00 61 00 72 00 65 00 5c 00 4d 00 69 00 63 00 72 00 6f 00 73 00 6f 00 66 00 74 00 5c 00 49 00 6e 00 74 00 65 00 72 00 6e 00 65 00 74 00 20 00 45 00 78 00 70 00 6c 00 6f 00 72 00 65 00 72 00 5c 00 4e 00 65 00 77 00 20 00 57 00 69 00 6e 00 64 00 6f 00 77 00 73 00 } //0a 00  Software\Microsoft\Internet Explorer\New Windows
-		$a_00_1 = {63 00 6c 00 69 00 63 00 6b 00 6c 00 69 00 6d 00 69 00 74 00 } //0a 00  clicklimit
-		$a_00_2 = {75 00 70 00 64 00 61 00 74 00 65 00 5f 00 75 00 72 00 6c 00 } //0a 00  update_url
-		$a_00_3 = {50 00 6f 00 70 00 75 00 70 00 4d 00 67 00 72 00 } //0a 00  PopupMgr
-		$a_00_4 = {47 65 74 4c 61 73 74 41 63 74 69 76 65 50 6f 70 75 70 } //01 00  GetLastActivePopup
-		$a_80_5 = {72 6f 74 61 74 6f 72 } //rotator  00 00 
+		$a_00_0 = {53 00 6f 00 66 00 74 00 77 00 61 00 72 00 65 00 5c 00 4d 00 69 00 63 00 72 00 6f 00 73 00 6f 00 66 00 74 00 5c 00 49 00 6e 00 74 00 65 00 72 00 6e 00 65 00 74 00 20 00 45 00 78 00 70 00 6c 00 6f 00 72 00 65 00 72 00 5c 00 4e 00 65 00 77 00 20 00 57 00 69 00 6e 00 64 00 6f 00 77 00 73 00 } //10 Software\Microsoft\Internet Explorer\New Windows
+		$a_00_1 = {63 00 6c 00 69 00 63 00 6b 00 6c 00 69 00 6d 00 69 00 74 00 } //10 clicklimit
+		$a_00_2 = {75 00 70 00 64 00 61 00 74 00 65 00 5f 00 75 00 72 00 6c 00 } //10 update_url
+		$a_00_3 = {50 00 6f 00 70 00 75 00 70 00 4d 00 67 00 72 00 } //10 PopupMgr
+		$a_00_4 = {47 65 74 4c 61 73 74 41 63 74 69 76 65 50 6f 70 75 70 } //10 GetLastActivePopup
+		$a_80_5 = {72 6f 74 61 74 6f 72 } //rotator  1
 	condition:
-		any of ($a_*)
+		((#a_00_0  & 1)*10+(#a_00_1  & 1)*10+(#a_00_2  & 1)*10+(#a_00_3  & 1)*10+(#a_00_4  & 1)*10+(#a_80_5  & 1)*1) >=51
  
 }
 rule Adware_Win32_AdRotator_29{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 06 00 00 0a 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 06 00 00 "
 		
 	strings :
-		$a_00_0 = {42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 2e 44 4c 4c 00 44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 } //02 00 
-		$a_01_1 = {00 00 49 00 73 00 52 00 6f 00 74 00 61 00 74 00 6f 00 72 00 50 00 6f 00 70 00 75 00 70 00 00 00 } //01 00 
-		$a_00_2 = {64 6f 77 6e 6c 6f 61 64 00 64 6f 77 6e 6c 6f 61 64 5f 71 75 69 65 74 } //01 00 
-		$a_00_3 = {43 6f 6e 6e 65 63 74 69 6e 67 20 2e 2e 2e 00 00 44 6f 77 6e 6c 6f 61 64 69 6e 67 20 25 73 } //01 00 
-		$a_00_4 = {54 69 6d 65 64 20 6f 75 74 20 6f 6e 20 63 6f 6e 6e 65 63 74 69 6e 67 2e } //01 00  Timed out on connecting.
-		$a_00_5 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 49 6e 74 65 72 6e 65 74 20 53 65 74 74 69 6e 67 73 } //00 00  Software\Microsoft\Windows\CurrentVersion\Internet Settings
+		$a_00_0 = {42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 2e 44 4c 4c 00 44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 } //10
+		$a_01_1 = {00 00 49 00 73 00 52 00 6f 00 74 00 61 00 74 00 6f 00 72 00 50 00 6f 00 70 00 75 00 70 00 00 00 } //2
+		$a_00_2 = {64 6f 77 6e 6c 6f 61 64 00 64 6f 77 6e 6c 6f 61 64 5f 71 75 69 65 74 } //1
+		$a_00_3 = {43 6f 6e 6e 65 63 74 69 6e 67 20 2e 2e 2e 00 00 44 6f 77 6e 6c 6f 61 64 69 6e 67 20 25 73 } //1
+		$a_00_4 = {54 69 6d 65 64 20 6f 75 74 20 6f 6e 20 63 6f 6e 6e 65 63 74 69 6e 67 2e } //1 Timed out on connecting.
+		$a_00_5 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 49 6e 74 65 72 6e 65 74 20 53 65 74 74 69 6e 67 73 } //1 Software\Microsoft\Windows\CurrentVersion\Internet Settings
 	condition:
-		any of ($a_*)
+		((#a_00_0  & 1)*10+(#a_01_1  & 1)*2+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1) >=14
  
 }
 rule Adware_Win32_AdRotator_30{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,ffffffcd 00 ffffffcb 00 08 00 00 64 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,ffffffcd 00 ffffffcb 00 08 00 00 "
 		
 	strings :
-		$a_01_0 = {27 42 72 6f 77 73 65 72 20 48 65 6c 70 65 72 20 4f 62 6a 65 63 74 73 27 } //64 00  'Browser Helper Objects'
-		$a_02_1 = {77 00 77 00 77 00 2e 00 74 00 72 00 61 00 66 00 66 00 69 00 63 00 90 02 20 2e 00 62 00 69 00 7a 00 2f 00 61 00 64 00 73 90 00 } //01 00 
-		$a_00_2 = {70 00 6f 00 70 00 75 00 70 00 73 00 5f 00 64 00 65 00 6c 00 61 00 79 00 } //01 00  popups_delay
-		$a_00_3 = {70 00 6f 00 70 00 75 00 70 00 5f 00 64 00 65 00 6c 00 61 00 79 00 } //01 00  popup_delay
-		$a_00_4 = {70 00 6f 00 70 00 75 00 70 00 73 00 5f 00 65 00 6e 00 61 00 62 00 6c 00 65 00 64 00 } //01 00  popups_enabled
-		$a_02_5 = {6e 00 65 00 78 00 74 00 74 00 69 00 6d 00 65 00 5f 00 90 02 0a 70 00 6f 00 70 00 75 00 70 00 73 90 00 } //01 00 
-		$a_00_6 = {64 00 65 00 6e 00 69 00 65 00 64 00 5f 00 70 00 6f 00 70 00 } //01 00  denied_pop
-		$a_00_7 = {73 00 68 00 6f 00 77 00 5f 00 70 00 6f 00 70 00 } //00 00  show_pop
+		$a_01_0 = {27 42 72 6f 77 73 65 72 20 48 65 6c 70 65 72 20 4f 62 6a 65 63 74 73 27 } //100 'Browser Helper Objects'
+		$a_02_1 = {77 00 77 00 77 00 2e 00 74 00 72 00 61 00 66 00 66 00 69 00 63 00 90 02 20 2e 00 62 00 69 00 7a 00 2f 00 61 00 64 00 73 90 00 } //100
+		$a_00_2 = {70 00 6f 00 70 00 75 00 70 00 73 00 5f 00 64 00 65 00 6c 00 61 00 79 00 } //1 popups_delay
+		$a_00_3 = {70 00 6f 00 70 00 75 00 70 00 5f 00 64 00 65 00 6c 00 61 00 79 00 } //1 popup_delay
+		$a_00_4 = {70 00 6f 00 70 00 75 00 70 00 73 00 5f 00 65 00 6e 00 61 00 62 00 6c 00 65 00 64 00 } //1 popups_enabled
+		$a_02_5 = {6e 00 65 00 78 00 74 00 74 00 69 00 6d 00 65 00 5f 00 90 02 0a 70 00 6f 00 70 00 75 00 70 00 73 90 00 } //1
+		$a_00_6 = {64 00 65 00 6e 00 69 00 65 00 64 00 5f 00 70 00 6f 00 70 00 } //1 denied_pop
+		$a_00_7 = {73 00 68 00 6f 00 77 00 5f 00 70 00 6f 00 70 00 } //1 show_pop
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*100+(#a_02_1  & 1)*100+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_02_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1) >=203
  
 }
 rule Adware_Win32_AdRotator_31{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 09 00 00 02 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 09 00 00 "
 		
 	strings :
-		$a_01_0 = {44 6c 6c 57 6f 72 6b 65 72 } //02 00  DllWorker
-		$a_01_1 = {b8 44 65 00 00 66 89 46 1c b8 74 6f 00 00 66 89 46 1e b8 75 72 00 00 66 89 46 20 b8 73 21 00 00 66 89 46 22 } //01 00 
-		$a_03_2 = {58 6a 69 66 a3 90 01 04 58 90 00 } //01 00 
-		$a_03_3 = {58 6a 6f 66 a3 90 01 04 58 90 00 } //01 00 
-		$a_03_4 = {58 6a 5f 66 a3 90 01 04 58 90 00 } //01 00 
-		$a_03_5 = {58 6a 65 66 a3 90 01 04 58 90 00 } //02 00 
-		$a_03_6 = {6a 01 68 00 00 10 00 90 0a 80 00 b9 90 01 01 00 00 00 66 89 0d 90 01 04 ba 90 01 01 00 00 00 b8 90 01 01 00 00 00 b9 90 01 01 00 00 00 66 89 15 90 01 04 66 a3 90 01 04 66 89 0d 90 00 } //02 00 
-		$a_03_7 = {6a 01 68 00 00 10 00 90 0a a0 00 66 89 15 90 01 04 66 a3 90 01 04 66 89 0d 90 01 04 ba 90 01 01 00 00 00 66 89 15 90 01 04 b8 90 01 01 00 00 00 66 a3 90 01 04 b9 90 01 01 00 00 00 66 89 0d 90 01 04 ba 90 01 01 00 00 00 90 00 } //02 00 
-		$a_03_8 = {6a 01 68 00 00 10 00 90 0a 50 00 66 89 15 90 01 04 66 89 15 90 01 04 66 a3 90 01 04 66 89 0d 90 00 } //00 00 
+		$a_01_0 = {44 6c 6c 57 6f 72 6b 65 72 } //2 DllWorker
+		$a_01_1 = {b8 44 65 00 00 66 89 46 1c b8 74 6f 00 00 66 89 46 1e b8 75 72 00 00 66 89 46 20 b8 73 21 00 00 66 89 46 22 } //2
+		$a_03_2 = {58 6a 69 66 a3 90 01 04 58 90 00 } //1
+		$a_03_3 = {58 6a 6f 66 a3 90 01 04 58 90 00 } //1
+		$a_03_4 = {58 6a 5f 66 a3 90 01 04 58 90 00 } //1
+		$a_03_5 = {58 6a 65 66 a3 90 01 04 58 90 00 } //1
+		$a_03_6 = {6a 01 68 00 00 10 00 90 0a 80 00 b9 90 01 01 00 00 00 66 89 0d 90 01 04 ba 90 01 01 00 00 00 b8 90 01 01 00 00 00 b9 90 01 01 00 00 00 66 89 15 90 01 04 66 a3 90 01 04 66 89 0d 90 00 } //2
+		$a_03_7 = {6a 01 68 00 00 10 00 90 0a a0 00 66 89 15 90 01 04 66 a3 90 01 04 66 89 0d 90 01 04 ba 90 01 01 00 00 00 66 89 15 90 01 04 b8 90 01 01 00 00 00 66 a3 90 01 04 b9 90 01 01 00 00 00 66 89 0d 90 01 04 ba 90 01 01 00 00 00 90 00 } //2
+		$a_03_8 = {6a 01 68 00 00 10 00 90 0a 50 00 66 89 15 90 01 04 66 89 15 90 01 04 66 a3 90 01 04 66 89 0d 90 00 } //2
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1+(#a_03_6  & 1)*2+(#a_03_7  & 1)*2+(#a_03_8  & 1)*2) >=6
  
 }
 rule Adware_Win32_AdRotator_32{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,62 00 62 00 12 00 00 0a 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,62 00 62 00 12 00 00 "
 		
 	strings :
-		$a_01_0 = {44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 } //0a 00  DllCanUnloadNow
-		$a_01_1 = {44 6c 6c 47 65 74 43 6c 61 73 73 4f 62 6a 65 63 74 } //0a 00  DllGetClassObject
-		$a_01_2 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //0a 00  DllRegisterServer
-		$a_01_3 = {44 6c 6c 55 6e 72 65 67 69 73 74 65 72 53 65 72 76 65 72 } //0a 00  DllUnregisterServer
-		$a_01_4 = {44 00 65 00 6c 00 65 00 74 00 65 00 } //0a 00  Delete
-		$a_01_5 = {4e 00 6f 00 52 00 65 00 6d 00 6f 00 76 00 65 00 } //0a 00  NoRemove
-		$a_01_6 = {46 00 6f 00 72 00 63 00 65 00 52 00 65 00 6d 00 6f 00 76 00 65 00 } //0a 00  ForceRemove
-		$a_01_7 = {2e 3f 41 56 43 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 40 40 } //0a 00  .?AVCBannerRotator@@
-		$a_01_8 = {2e 3f 41 56 43 4c 69 74 65 42 48 4f 40 40 } //01 00  .?AVCLiteBHO@@
-		$a_01_9 = {61 66 66 5f 69 64 } //01 00  aff_id
-		$a_01_10 = {63 6c 69 63 6b 5f 63 6f 75 6e 74 65 72 } //01 00  click_counter
-		$a_01_11 = {63 6c 69 63 6b 5f 73 74 61 74 } //01 00  click_stat
-		$a_01_12 = {66 65 65 64 5f 63 61 70 73 } //01 00  feed_caps
-		$a_01_13 = {66 65 65 64 5f 73 74 61 74 73 } //01 00  feed_stats
-		$a_01_14 = {69 6d 70 72 65 73 73 5f 73 74 61 74 } //01 00  impress_stat
-		$a_01_15 = {6c 61 73 74 5f 75 70 64 61 74 65 5f 61 74 74 65 6d 70 74 } //01 00  last_update_attempt
-		$a_01_16 = {6d 61 78 5f 69 6d 70 72 65 73 73 } //01 00  max_impress
-		$a_01_17 = {74 69 6d 65 73 74 61 6d 70 } //00 00  timestamp
+		$a_01_0 = {44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 } //10 DllCanUnloadNow
+		$a_01_1 = {44 6c 6c 47 65 74 43 6c 61 73 73 4f 62 6a 65 63 74 } //10 DllGetClassObject
+		$a_01_2 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //10 DllRegisterServer
+		$a_01_3 = {44 6c 6c 55 6e 72 65 67 69 73 74 65 72 53 65 72 76 65 72 } //10 DllUnregisterServer
+		$a_01_4 = {44 00 65 00 6c 00 65 00 74 00 65 00 } //10 Delete
+		$a_01_5 = {4e 00 6f 00 52 00 65 00 6d 00 6f 00 76 00 65 00 } //10 NoRemove
+		$a_01_6 = {46 00 6f 00 72 00 63 00 65 00 52 00 65 00 6d 00 6f 00 76 00 65 00 } //10 ForceRemove
+		$a_01_7 = {2e 3f 41 56 43 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 40 40 } //10 .?AVCBannerRotator@@
+		$a_01_8 = {2e 3f 41 56 43 4c 69 74 65 42 48 4f 40 40 } //10 .?AVCLiteBHO@@
+		$a_01_9 = {61 66 66 5f 69 64 } //1 aff_id
+		$a_01_10 = {63 6c 69 63 6b 5f 63 6f 75 6e 74 65 72 } //1 click_counter
+		$a_01_11 = {63 6c 69 63 6b 5f 73 74 61 74 } //1 click_stat
+		$a_01_12 = {66 65 65 64 5f 63 61 70 73 } //1 feed_caps
+		$a_01_13 = {66 65 65 64 5f 73 74 61 74 73 } //1 feed_stats
+		$a_01_14 = {69 6d 70 72 65 73 73 5f 73 74 61 74 } //1 impress_stat
+		$a_01_15 = {6c 61 73 74 5f 75 70 64 61 74 65 5f 61 74 74 65 6d 70 74 } //1 last_update_attempt
+		$a_01_16 = {6d 61 78 5f 69 6d 70 72 65 73 73 } //1 max_impress
+		$a_01_17 = {74 69 6d 65 73 74 61 6d 70 } //1 timestamp
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*10+(#a_01_1  & 1)*10+(#a_01_2  & 1)*10+(#a_01_3  & 1)*10+(#a_01_4  & 1)*10+(#a_01_5  & 1)*10+(#a_01_6  & 1)*10+(#a_01_7  & 1)*10+(#a_01_8  & 1)*10+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1+(#a_01_12  & 1)*1+(#a_01_13  & 1)*1+(#a_01_14  & 1)*1+(#a_01_15  & 1)*1+(#a_01_16  & 1)*1+(#a_01_17  & 1)*1) >=98
  
 }
 rule Adware_Win32_AdRotator_33{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 10 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 10 00 00 "
 		
 	strings :
-		$a_00_0 = {61 64 64 65 73 74 69 6e 61 74 69 6f 6e } //01 00  addestination
-		$a_00_1 = {61 64 73 6f 6e 6d 65 64 69 61 } //01 00  adsonmedia
-		$a_00_2 = {62 61 6e 6e 65 72 61 64 73 67 61 6c 6f 72 65 } //01 00  banneradsgalore
-		$a_00_3 = {62 6c 61 7a 69 6e 67 61 64 73 } //01 00  blazingads
-		$a_00_4 = {67 6f 6f 6f 63 68 69 } //01 00  gooochi
-		$a_00_5 = {68 6f 72 69 7a 6f 6e 61 64 73 } //01 00  horizonads
-		$a_00_6 = {6d 69 6c 65 68 69 67 68 61 64 73 } //01 00  milehighads
-		$a_00_7 = {6e 65 78 74 61 64 73 } //01 00  nextads
-		$a_00_8 = {72 69 67 68 74 6f 6e 61 64 7a } //01 00  rightonadz
-		$a_00_9 = {73 75 70 65 72 69 6f 72 61 64 73 } //01 00  superiorads
-		$a_00_10 = {67 69 61 6e 74 61 64 73 } //01 00  giantads
-		$a_00_11 = {66 75 6e 78 79 } //01 00  funxy
-		$a_00_12 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 45 78 70 6c 6f 72 65 72 5c 42 72 6f 77 73 65 72 20 48 65 6c 70 65 72 20 4f 62 6a 65 63 74 73 5c } //01 00  SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\
-		$a_00_13 = {4e 6f 50 72 6f 74 65 63 74 65 64 4d 6f 64 65 42 61 6e 6e 65 72 } //01 00  NoProtectedModeBanner
-		$a_00_14 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //01 00  DllRegisterServer
-		$a_03_15 = {2f 62 63 2f 6e 73 69 5f 69 6e 73 74 61 6c 6c 2e 70 68 70 3f 61 66 66 5f 69 64 3d 90 02 10 26 69 6e 73 74 5f 72 65 73 75 6c 74 3d 90 00 } //00 00 
+		$a_00_0 = {61 64 64 65 73 74 69 6e 61 74 69 6f 6e } //1 addestination
+		$a_00_1 = {61 64 73 6f 6e 6d 65 64 69 61 } //1 adsonmedia
+		$a_00_2 = {62 61 6e 6e 65 72 61 64 73 67 61 6c 6f 72 65 } //1 banneradsgalore
+		$a_00_3 = {62 6c 61 7a 69 6e 67 61 64 73 } //1 blazingads
+		$a_00_4 = {67 6f 6f 6f 63 68 69 } //1 gooochi
+		$a_00_5 = {68 6f 72 69 7a 6f 6e 61 64 73 } //1 horizonads
+		$a_00_6 = {6d 69 6c 65 68 69 67 68 61 64 73 } //1 milehighads
+		$a_00_7 = {6e 65 78 74 61 64 73 } //1 nextads
+		$a_00_8 = {72 69 67 68 74 6f 6e 61 64 7a } //1 rightonadz
+		$a_00_9 = {73 75 70 65 72 69 6f 72 61 64 73 } //1 superiorads
+		$a_00_10 = {67 69 61 6e 74 61 64 73 } //1 giantads
+		$a_00_11 = {66 75 6e 78 79 } //1 funxy
+		$a_00_12 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 45 78 70 6c 6f 72 65 72 5c 42 72 6f 77 73 65 72 20 48 65 6c 70 65 72 20 4f 62 6a 65 63 74 73 5c } //1 SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\
+		$a_00_13 = {4e 6f 50 72 6f 74 65 63 74 65 64 4d 6f 64 65 42 61 6e 6e 65 72 } //1 NoProtectedModeBanner
+		$a_00_14 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //1 DllRegisterServer
+		$a_03_15 = {2f 62 63 2f 6e 73 69 5f 69 6e 73 74 61 6c 6c 2e 70 68 70 3f 61 66 66 5f 69 64 3d 90 02 10 26 69 6e 73 74 5f 72 65 73 75 6c 74 3d 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_00_8  & 1)*1+(#a_00_9  & 1)*1+(#a_00_10  & 1)*1+(#a_00_11  & 1)*1+(#a_00_12  & 1)*1+(#a_00_13  & 1)*1+(#a_00_14  & 1)*1+(#a_03_15  & 1)*1) >=16
  
 }
 rule Adware_Win32_AdRotator_34{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,68 00 68 00 0f 00 00 0a 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,68 00 68 00 0f 00 00 "
 		
 	strings :
-		$a_01_0 = {44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 } //0a 00  DllCanUnloadNow
-		$a_01_1 = {44 6c 6c 47 65 74 43 6c 61 73 73 4f 62 6a 65 63 74 } //0a 00  DllGetClassObject
-		$a_01_2 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //0a 00  DllRegisterServer
-		$a_01_3 = {44 6c 6c 55 6e 72 65 67 69 73 74 65 72 53 65 72 76 65 72 } //0a 00  DllUnregisterServer
-		$a_01_4 = {44 00 65 00 6c 00 65 00 74 00 65 00 } //0a 00  Delete
-		$a_01_5 = {4e 00 6f 00 52 00 65 00 6d 00 6f 00 76 00 65 00 } //0a 00  NoRemove
-		$a_01_6 = {46 00 6f 00 72 00 63 00 65 00 52 00 65 00 6d 00 6f 00 76 00 65 00 } //0a 00  ForceRemove
-		$a_01_7 = {49 00 73 00 52 00 6f 00 74 00 61 00 74 00 6f 00 72 00 50 00 6f 00 70 00 75 00 70 00 } //0a 00  IsRotatorPopup
-		$a_01_8 = {2e 3f 41 56 43 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 40 40 } //0a 00  .?AVCBannerRotator@@
-		$a_01_9 = {2e 3f 41 56 43 4c 69 74 65 42 48 4f 40 40 } //01 00  .?AVCLiteBHO@@
-		$a_01_10 = {45 00 4d 00 42 00 45 00 44 00 } //01 00  EMBED
-		$a_01_11 = {4f 00 42 00 4a 00 45 00 43 00 54 00 } //01 00  OBJECT
-		$a_01_12 = {49 00 46 00 52 00 41 00 4d 00 45 00 } //01 00  IFRAME
-		$a_01_13 = {66 00 65 00 65 00 64 00 5f 00 63 00 61 00 70 00 } //01 00  feed_cap
-		$a_01_14 = {49 00 6e 00 74 00 65 00 72 00 6e 00 65 00 74 00 20 00 45 00 78 00 70 00 6c 00 6f 00 72 00 65 00 72 00 5f 00 53 00 65 00 72 00 76 00 65 00 72 00 } //00 00  Internet Explorer_Server
+		$a_01_0 = {44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 } //10 DllCanUnloadNow
+		$a_01_1 = {44 6c 6c 47 65 74 43 6c 61 73 73 4f 62 6a 65 63 74 } //10 DllGetClassObject
+		$a_01_2 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //10 DllRegisterServer
+		$a_01_3 = {44 6c 6c 55 6e 72 65 67 69 73 74 65 72 53 65 72 76 65 72 } //10 DllUnregisterServer
+		$a_01_4 = {44 00 65 00 6c 00 65 00 74 00 65 00 } //10 Delete
+		$a_01_5 = {4e 00 6f 00 52 00 65 00 6d 00 6f 00 76 00 65 00 } //10 NoRemove
+		$a_01_6 = {46 00 6f 00 72 00 63 00 65 00 52 00 65 00 6d 00 6f 00 76 00 65 00 } //10 ForceRemove
+		$a_01_7 = {49 00 73 00 52 00 6f 00 74 00 61 00 74 00 6f 00 72 00 50 00 6f 00 70 00 75 00 70 00 } //10 IsRotatorPopup
+		$a_01_8 = {2e 3f 41 56 43 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 40 40 } //10 .?AVCBannerRotator@@
+		$a_01_9 = {2e 3f 41 56 43 4c 69 74 65 42 48 4f 40 40 } //10 .?AVCLiteBHO@@
+		$a_01_10 = {45 00 4d 00 42 00 45 00 44 00 } //1 EMBED
+		$a_01_11 = {4f 00 42 00 4a 00 45 00 43 00 54 00 } //1 OBJECT
+		$a_01_12 = {49 00 46 00 52 00 41 00 4d 00 45 00 } //1 IFRAME
+		$a_01_13 = {66 00 65 00 65 00 64 00 5f 00 63 00 61 00 70 00 } //1 feed_cap
+		$a_01_14 = {49 00 6e 00 74 00 65 00 72 00 6e 00 65 00 74 00 20 00 45 00 78 00 70 00 6c 00 6f 00 72 00 65 00 72 00 5f 00 53 00 65 00 72 00 76 00 65 00 72 00 } //1 Internet Explorer_Server
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*10+(#a_01_1  & 1)*10+(#a_01_2  & 1)*10+(#a_01_3  & 1)*10+(#a_01_4  & 1)*10+(#a_01_5  & 1)*10+(#a_01_6  & 1)*10+(#a_01_7  & 1)*10+(#a_01_8  & 1)*10+(#a_01_9  & 1)*10+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1+(#a_01_12  & 1)*1+(#a_01_13  & 1)*1+(#a_01_14  & 1)*1) >=104
  
 }
 rule Adware_Win32_AdRotator_35{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,20 00 20 00 3c 00 00 1e 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,20 00 20 00 3c 00 00 "
 		
 	strings :
-		$a_11_0 = {70 6d 73 6b 79 5f 61 75 74 6f 72 75 6e 1e } //00 0f  浰歳役畡潴畲Ṯ
-		$a_67_1 = {6f 6f 63 68 69 5f 61 75 74 6f 72 75 6e 1e 00 0e 11 } //61 67 
-		$a_64_2 = {6f 5f 61 75 74 6f 72 75 6e 1e 00 13 11 73 75 70 65 72 69 6f 72 61 64 73 5f 61 75 74 6f 72 75 6e 1e 00 11 11 72 61 64 62 61 6e 6e 65 72 5f 61 75 74 6f 72 75 6e 1e 00 16 11 70 72 69 6d 65 61 64 73 65 72 76 69 6e 67 5f 61 75 74 6f 72 75 6e 1e 00 11 11 76 6f 67 75 65 63 61 73 68 5f 61 75 74 6f } //72 75 
-		$a_1e_3 = {11 11 70 72 65 63 69 73 65 61 64 5f 61 75 74 6f 72 75 6e 1e 00 13 11 6d 69 6c 65 68 69 67 68 61 64 73 5f 61 75 74 6f 72 75 6e 1e 00 11 11 64 75 2d 6c 69 74 74 6c 65 5f 61 75 74 6f 72 75 6e 1e 00 13 11 61 64 73 65 72 76 65 66 61 73 74 5f 61 75 74 6f 72 75 6e 1e 00 12 11 72 69 67 68 74 6f 6e 61 64 7a 5f 61 75 74 6f 72 75 6e 1e 00 } //13 11 
-		$a_61_4 = {6e 65 72 73 74 79 6c 65 5f 61 75 74 6f 72 75 6e 1e 00 15 11 61 64 64 65 73 74 69 6e 61 74 69 6f 6e 5f 61 75 74 6f 72 75 6e 1e 00 17 11 62 61 6e 6e 65 72 61 64 73 67 61 6c 6f 72 65 5f 61 75 74 6f 72 75 6e 1e 00 12 11 62 6c 61 7a 69 6e 67 61 64 73 5f 61 75 74 6f 72 75 6e 1e 00 16 11 74 61 72 67 } //65 74 
-		$a_64_5 = {61 6e 6e 65 72 5f 61 75 74 6f 72 75 6e 1e 00 14 11 62 61 6e 6e 65 72 73 74 79 6c 65 73 5f 61 75 74 6f 72 75 6e 1e 00 12 11 68 6f 72 69 7a 6f 6e 61 64 73 5f 61 75 74 6f 72 75 6e 1e 00 18 11 63 68 61 72 67 65 79 6f 75 72 70 72 6f 66 69 74 5f 61 75 74 6f 72 75 6e 1e 00 13 11 74 68 65 73 75 70 65 72 61 64 } //73 5f 
-		$a_75_6 = {6f 72 75 6e 1e 00 14 11 70 72 6f 66 69 74 68 61 72 62 6f 72 5f 61 75 74 6f 72 75 6e 1e 00 12 11 68 6f 74 72 65 76 65 6e 75 65 5f 61 75 74 6f 72 75 6e 1e 00 0e 11 73 6f 6c 61 64 73 5f 61 75 74 6f 72 75 6e 1e 00 11 11 73 6e 61 70 70 79 61 64 73 5f 61 75 74 6f 72 75 6e 1e 00 17 11 62 6c 75 65 } //73 6b 
-		$a_61_7 = {61 67 65 6e 63 79 5f 61 75 74 6f 72 75 6e 1e 00 1a 11 77 6f 72 6c 64 61 64 6d 61 72 6b 65 74 70 6c 61 63 65 5f 61 75 74 6f 72 75 6e 1e 00 13 11 72 65 73 73 72 65 76 65 6e 75 65 5f 61 75 74 6f 72 75 6e 1e 00 15 11 73 74 72 65 61 6d 72 65 76 65 6e 75 65 5f 61 75 74 6f 72 75 6e 1e 00 12 11 69 6e 63 6f 6d 65 6c 61 6e 64 5f 61 75 74 6f 72 75 6e 1e 00 12 11 65 61 72 } //6e 66 
-		$a_72_8 = {75 6e 5f 61 75 74 6f 72 75 6e 1e 00 13 11 70 72 6f 66 69 74 69 7a 65 6d 65 5f 61 75 74 6f 72 75 6e 1e 00 11 11 63 61 73 68 74 69 74 61 6e 5f 61 75 74 6f 72 75 6e 1e 00 18 11 72 65 76 65 6e 75 65 73 74 72 65 61 6d 69 6e 67 5f 61 75 74 6f 72 75 6e 1e 00 14 11 6d 6f 6e 65 79 63 68 61 72 67 65 72 5f 61 75 74 6f 72 75 6e 01 00 13 01 2e } //3f 41 
-		$a_3f_9 = {4f 6e 65 31 40 56 47 75 65 73 73 40 40 01 00 10 01 2e 3f 41 56 48 73 74 73 48 6f 6c 64 65 72 40 40 01 00 0d 01 2e 3f 41 56 43 42 61 6e 52 6f 74 40 40 01 00 0e 01 2e 3f 41 56 43 42 48 4f 4c 69 74 65 40 40 01 00 11 01 2e 3f 41 56 41 64 76 65 72 74 47 6e 6f 6d } //65 40 
-		$a_01_10 = {00 0e 01 2e 3f 41 56 50 69 6b 61 50 69 6b 61 40 40 01 00 18 01 2e 3f 41 56 43 44 6f 6d 61 69 6e 4e 61 6d 65 43 68 61 6e 67 65 72 40 40 01 00 14 01 2e 3f 41 56 43 51 75 69 63 6b 52 65 6c 6f 61 } //64 65 
-		$a_40_11 = {01 00 14 01 2e 3f 41 56 43 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 40 40 01 00 0e 01 2e 3f 41 56 43 4c 69 74 65 42 48 4f 40 40 01 00 11 01 2e 3f 41 56 43 53 68 6f 6f 70 61 64 6f 6f 70 40 40 01 00 16 01 2e 3f 41 56 4d 61 70 69 6b 61 70 69 74 61 70 69 74 6f 6f 6f 40 40 01 00 10 01 2e 3f 41 56 43 4b 6f 6f 70 61 62 6f 6f 70 40 40 01 00 0f 01 2e } //3f 41 
-		$a_43_12 = {61 70 69 74 61 70 69 40 40 01 00 0c 01 2e 3f 41 56 42 6e 6e 65 6a 33 40 40 01 00 0e 01 2e 3f 41 56 50 6f 6c 65 6f 65 69 38 40 40 01 00 0c 01 2e 3f 41 56 50 6f 65 69 72 75 40 40 01 00 10 01 2e 3f 41 56 4d 75 71 70 6f 74 72 6f 70 6f 40 40 01 00 0e 01 2e 3f 41 } //56 44 
-		$a_6b_13 = {6a 78 74 74 40 40 01 00 0b 01 2e 3f 41 56 43 73 73 63 73 40 40 01 00 0f 01 2e 3f 41 56 49 6f 6c 65 6d 69 6d 69 6f 40 40 01 00 12 01 2e 3f 41 56 4c 6f 70 65 72 74 6f 70 69 6e 6f 6d 40 40 01 00 0c 01 2e 3f 41 56 56 6f 6f 70 73 79 40 40 01 00 0c 01 2e 3f 41 56 4b 6f 70 79 70 6f 40 40 01 00 0e 01 2e 3f 41 } //56 41 
-		$a_71_14 = {64 75 71 69 40 40 00 00 78 d8 05 00 40 03 40 03 3d 00 00 20 03 0e 11 61 00 75 00 74 00 6f 00 72 00 75 00 6e 00 1e 00 0e 11 63 00 70 00 6d 00 73 00 6b 00 79 00 5f 00 1e 00 10 11 67 00 6f 00 6f 00 6f 00 63 00 68 00 69 00 5f 00 1e 00 0e 11 61 00 67 00 61 00 64 00 6f 00 6f 00 5f 00 1e 00 18 11 73 00 75 00 70 00 65 00 72 00 69 00 6f 00 72 00 61 00 } //64 00 
+		$a_11_0 = {70 6d 73 6b 79 5f 61 75 74 6f 72 75 6e 1e } //30 浰歳役畡潴畲Ṯ
+		$a_67_1 = {6f 6f 63 68 69 5f 61 75 74 6f 72 75 6e 1e 00 0e 11 } //3840
+		$a_64_2 = {6f 5f 61 75 74 6f 72 75 6e 1e 00 13 11 73 75 70 65 72 69 6f 72 61 64 73 5f 61 75 74 6f 72 75 6e 1e 00 11 11 72 61 64 62 61 6e 6e 65 72 5f 61 75 74 6f 72 75 6e 1e 00 16 11 70 72 69 6d 65 61 64 73 65 72 76 69 6e 67 5f 61 75 74 6f 72 75 6e 1e 00 11 11 76 6f 67 75 65 63 61 73 68 5f 61 75 74 6f } //26465
+		$a_1e_3 = {11 11 70 72 65 63 69 73 65 61 64 5f 61 75 74 6f 72 75 6e 1e 00 13 11 6d 69 6c 65 68 69 67 68 61 64 73 5f 61 75 74 6f 72 75 6e 1e 00 11 11 64 75 2d 6c 69 74 74 6c 65 5f 61 75 74 6f 72 75 6e 1e 00 13 11 61 64 73 65 72 76 65 66 61 73 74 5f 61 75 74 6f 72 75 6e 1e 00 12 11 72 69 67 68 74 6f 6e 61 64 7a 5f 61 75 74 6f 72 75 6e 1e 00 } //30066
+		$a_61_4 = {6e 65 72 73 74 79 6c 65 5f 61 75 74 6f 72 75 6e 1e 00 15 11 61 64 64 65 73 74 69 6e 61 74 69 6f 6e 5f 61 75 74 6f 72 75 6e 1e 00 17 11 62 61 6e 6e 65 72 61 64 73 67 61 6c 6f 72 65 5f 61 75 74 6f 72 75 6e 1e 00 12 11 62 6c 61 7a 69 6e 67 61 64 73 5f 61 75 74 6f 72 75 6e 1e 00 16 11 74 61 72 67 } //4371
+		$a_64_5 = {61 6e 6e 65 72 5f 61 75 74 6f 72 75 6e 1e 00 14 11 62 61 6e 6e 65 72 73 74 79 6c 65 73 5f 61 75 74 6f 72 75 6e 1e 00 12 11 68 6f 72 69 7a 6f 6e 61 64 73 5f 61 75 74 6f 72 75 6e 1e 00 18 11 63 68 61 72 67 65 79 6f 75 72 70 72 6f 66 69 74 5f 61 75 74 6f 72 75 6e 1e 00 13 11 74 68 65 73 75 70 65 72 61 64 } //29797
+		$a_75_6 = {6f 72 75 6e 1e 00 14 11 70 72 6f 66 69 74 68 61 72 62 6f 72 5f 61 75 74 6f 72 75 6e 1e 00 12 11 68 6f 74 72 65 76 65 6e 75 65 5f 61 75 74 6f 72 75 6e 1e 00 0e 11 73 6f 6c 61 64 73 5f 61 75 74 6f 72 75 6e 1e 00 11 11 73 6e 61 70 70 79 61 64 73 5f 61 75 74 6f 72 75 6e 1e 00 17 11 62 6c 75 65 } //24435
+		$a_61_7 = {61 67 65 6e 63 79 5f 61 75 74 6f 72 75 6e 1e 00 1a 11 77 6f 72 6c 64 61 64 6d 61 72 6b 65 74 70 6c 61 63 65 5f 61 75 74 6f 72 75 6e 1e 00 13 11 72 65 73 73 72 65 76 65 6e 75 65 5f 61 75 74 6f 72 75 6e 1e 00 15 11 73 74 72 65 61 6d 72 65 76 65 6e 75 65 5f 61 75 74 6f 72 75 6e 1e 00 12 11 69 6e 63 6f 6d 65 6c 61 6e 64 5f 61 75 74 6f 72 75 6e 1e 00 12 11 65 61 72 } //27507
+		$a_72_8 = {75 6e 5f 61 75 74 6f 72 75 6e 1e 00 13 11 70 72 6f 66 69 74 69 7a 65 6d 65 5f 61 75 74 6f 72 75 6e 1e 00 11 11 63 61 73 68 74 69 74 61 6e 5f 61 75 74 6f 72 75 6e 1e 00 18 11 72 65 76 65 6e 75 65 73 74 72 65 61 6d 69 6e 67 5f 61 75 74 6f 72 75 6e 1e 00 14 11 6d 6f 6e 65 79 63 68 61 72 67 65 72 5f 61 75 74 6f 72 75 6e 01 00 13 01 2e } //26222
+		$a_3f_9 = {4f 6e 65 31 40 56 47 75 65 73 73 40 40 01 00 10 01 2e 3f 41 56 48 73 74 73 48 6f 6c 64 65 72 40 40 01 00 0d 01 2e 3f 41 56 43 42 61 6e 52 6f 74 40 40 01 00 0e 01 2e 3f 41 56 43 42 48 4f 4c 69 74 65 40 40 01 00 11 01 2e 3f 41 56 41 64 76 65 72 74 47 6e 6f 6d } //16703
+		$a_01_10 = {00 0e 01 2e 3f 41 56 50 69 6b 61 50 69 6b 61 40 40 01 00 18 01 2e 3f 41 56 43 44 6f 6d 61 69 6e 4e 61 6d 65 43 68 61 6e 67 65 72 40 40 01 00 14 01 2e 3f 41 56 43 51 75 69 63 6b 52 65 6c 6f 61 } //16485
+		$a_40_11 = {01 00 14 01 2e 3f 41 56 43 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 40 40 01 00 0e 01 2e 3f 41 56 43 4c 69 74 65 42 48 4f 40 40 01 00 11 01 2e 3f 41 56 43 53 68 6f 6f 70 61 64 6f 6f 70 40 40 01 00 16 01 2e 3f 41 56 4d 61 70 69 6b 61 70 69 74 61 70 69 74 6f 6f 6f 40 40 01 00 10 01 2e 3f 41 56 43 4b 6f 6f 70 61 62 6f 6f 70 40 40 01 00 0f 01 2e } //25956
+		$a_43_12 = {61 70 69 74 61 70 69 40 40 01 00 0c 01 2e 3f 41 56 42 6e 6e 65 6a 33 40 40 01 00 0e 01 2e 3f 41 56 50 6f 6c 65 6f 65 69 38 40 40 01 00 0c 01 2e 3f 41 56 50 6f 65 69 72 75 40 40 01 00 10 01 2e 3f 41 56 4d 75 71 70 6f 74 72 6f 70 6f 40 40 01 00 0e 01 2e 3f 41 } //16703
+		$a_6b_13 = {6a 78 74 74 40 40 01 00 0b 01 2e 3f 41 56 43 73 73 63 73 40 40 01 00 0f 01 2e 3f 41 56 49 6f 6c 65 6d 69 6d 69 6f 40 40 01 00 12 01 2e 3f 41 56 4c 6f 70 65 72 74 6f 70 69 6e 6f 6d 40 40 01 00 0c 01 2e 3f 41 56 56 6f 6f 70 73 79 40 40 01 00 0c 01 2e 3f 41 56 4b 6f 70 79 70 6f 40 40 01 00 0e 01 2e 3f 41 } //17494
+		$a_71_14 = {64 75 71 69 40 40 00 00 78 d8 05 00 40 03 40 03 3d 00 00 20 03 0e 11 61 00 75 00 74 00 6f 00 72 00 75 00 6e 00 1e 00 0e 11 63 00 70 00 6d 00 73 00 6b 00 79 00 5f 00 1e 00 10 11 67 00 6f 00 6f 00 6f 00 63 00 68 00 69 00 5f 00 1e 00 0e 11 61 00 67 00 61 00 64 00 6f 00 6f 00 5f 00 1e 00 18 11 73 00 75 00 70 00 65 00 72 00 69 00 6f 00 72 00 61 00 } //16726
+		$a_00_15 = {5f 00 1e 00 14 11 72 00 61 00 64 00 62 00 61 00 6e 00 6e 00 65 00 72 00 5f 00 1e 00 1e 11 70 00 72 00 69 00 6d 00 65 00 61 00 64 00 73 00 65 00 72 00 76 00 69 00 6e 00 67 00 5f 00 1e 00 14 11 76 00 6f 00 67 00 75 00 65 00 63 00 61 00 73 00 68 00 5f 00 1e 00 14 11 70 00 72 00 65 00 63 00 69 00 73 00 65 00 61 00 64 00 5f 00 1e 00 18 11 6d 00 69 } //100
+		$a_00_17 = {67 00 68 00 61 00 64 00 73 00 5f 00 1e 00 14 11 64 00 75 00 2d 00 6c 00 69 00 74 00 74 00 6c 00 65 00 5f 00 1e 00 18 11 61 00 64 00 73 00 65 00 72 00 76 00 65 00 66 00 61 00 73 00 74 00 5f 00 1e 00 16 11 72 00 69 00 67 00 68 00 74 00 6f 00 6e 00 61 00 64 00 7a 00 5f 00 1e 00 18 11 62 00 61 00 6e 00 6e 00 65 00 72 } //104
+		$a_00_19 = {65 00 5f 00 1e 00 1c 11 61 00 64 00 64 00 65 00 73 00 74 00 69 00 6e 00 61 00 74 00 69 00 6f 00 6e 00 5f 00 1e 00 20 11 62 00 61 00 6e 00 6e 00 65 00 72 00 61 00 64 00 73 00 67 00 61 00 6c 00 6f 00 72 00 65 00 5f 00 1e 00 16 11 62 00 6c 00 61 00 7a 00 69 00 6e 00 67 00 61 00 64 00 73 00 5f 00 1e 00 1e 11 74 00 61 00 72 00 } //121
+		$a_00_20 = {74 00 65 00 64 00 62 00 61 00 6e 00 6e 00 65 00 72 00 5f 00 1e 00 1a 11 62 00 61 00 6e 00 6e 00 65 00 72 00 73 00 74 00 79 00 6c 00 65 00 73 00 5f 00 1e 00 16 11 68 00 6f 00 72 00 69 00 7a 00 6f 00 6e 00 61 00 64 00 73 00 5f 00 1e 00 22 11 63 00 68 00 61 00 72 00 67 00 65 00 79 00 6f 00 75 00 72 00 70 } //103
+		$a_00_22 = {74 00 5f 00 1e 00 18 11 74 00 68 00 65 00 73 00 75 00 70 00 65 00 72 00 61 00 64 00 73 00 5f 00 1e 00 1a 11 70 00 72 00 6f 00 66 00 69 00 74 00 68 00 61 00 72 00 62 00 6f 00 72 00 5f 00 1e 00 14 11 68 00 6f 00 74 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 1e 00 0e 11 73 00 6f 00 6c 00 61 00 64 00 73 00 5f 00 1e } //102
+		$a_73_23 = {6e 00 61 00 70 00 70 00 79 00 61 00 64 00 73 00 5f } //5120
+		$a_00_25 = {75 00 65 00 73 00 6b 00 79 00 61 00 64 00 61 00 67 00 65 00 6e 00 63 00 79 00 5f 00 1e 00 26 11 77 00 6f 00 72 00 6c 00 64 00 61 00 64 00 6d 00 61 00 72 00 6b 00 65 00 74 00 70 00 6c 00 61 00 63 00 65 00 5f 00 1e 00 18 11 72 00 65 00 73 00 73 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 5f 00 1e 00 1c 11 73 00 74 00 72 00 } //98
+		$a_00_26 = {6d 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 5f 00 1e 00 16 11 69 00 6e 00 63 00 6f 00 6d 00 65 00 6c 00 61 00 6e 00 64 00 5f 00 1e 00 16 11 65 00 61 00 72 00 6e 00 66 00 6f 00 72 00 66 00 75 00 6e 00 5f 00 1e 00 18 11 70 00 72 00 6f 00 66 00 69 00 74 00 69 00 7a 00 65 00 6d 00 65 00 5f } //101
+		$a_00_28 = {73 00 68 00 74 00 69 00 74 00 61 00 6e 00 5f 00 1e 00 20 11 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 73 00 74 00 72 00 65 00 61 00 6d 00 69 00 6e 00 67 00 1e 00 1a 11 6d 00 6f 00 6e 00 65 00 79 00 63 00 68 00 61 00 72 00 67 00 65 00 72 00 5f 00 01 00 13 01 2e 3f 41 56 3f 24 4f 6e 65 31 40 } //99
+		$a_65_29 = {73 40 40 01 00 10 01 2e 3f 41 56 48 73 74 73 48 6f 6c 64 65 72 40 40 01 00 0d 01 2e 3f 41 56 43 42 61 6e 52 6f 74 40 40 01 00 0e 01 2e 3f 41 56 43 42 48 4f 4c 69 74 65 40 40 01 00 11 01 2e 3f 41 56 41 64 76 65 72 74 47 6e 6f 6d 65 40 40 01 00 0e 01 2e 3f 41 56 50 69 6b 61 50 69 6b 61 40 40 01 00 18 01 2e 3f 41 56 43 44 6f 6d 61 69 6e 4e 61 6d 65 43 } //18262
+		$a_67_30 = {72 40 40 01 00 14 01 2e 3f 41 56 43 51 75 69 63 6b 52 65 6c 6f 61 64 65 72 40 40 01 00 14 01 2e 3f 41 56 43 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 40 40 01 00 0e 01 2e 3f 41 56 43 4c 69 74 65 42 48 4f 40 40 01 00 11 01 2e 3f 41 56 43 53 68 6f 6f 70 61 64 6f 6f 70 40 40 01 00 16 01 2e 3f 41 56 4d 61 70 69 6b 61 70 69 74 61 70 69 } //24936
+		$a_6f_31 = {40 01 00 10 01 2e 3f 41 56 43 4b 6f 6f 70 61 62 6f 6f 70 40 40 01 00 0f 01 2e 3f 41 56 43 6b 61 70 69 74 61 70 69 40 40 01 00 0c 01 2e 3f 41 56 42 6e 6e 65 6a 33 40 40 01 00 0e 01 2e 3f 41 56 50 6f 6c 65 6f 65 69 38 40 40 01 00 0c 01 2e 3f 41 56 50 6f 65 69 72 75 40 40 01 00 10 01 2e 3f 41 56 4d 75 71 70 6f 74 72 6f 70 6f 40 40 01 } //28532
+		$a_2e_32 = {41 } //3584 A
+		$a_6b_33 = {6a 78 74 74 40 40 01 00 0b 01 2e 3f 41 56 43 73 73 63 73 40 40 01 00 0f 01 2e 3f 41 56 49 6f 6c 65 6d 69 6d 69 6f 40 40 01 00 12 01 2e 3f 41 56 4c 6f 70 65 72 74 6f 70 69 6e 6f 6d 40 40 01 00 0c 01 2e 3f 41 56 56 6f 6f 70 73 79 40 40 01 00 0c 01 2e 3f 41 56 4b 6f 70 79 70 6f 40 40 01 00 0e 01 2e 3f 41 } //17494
+		$a_71_34 = {64 75 71 69 40 40 00 00 78 57 07 00 03 00 03 00 3f 00 00 01 00 1c 01 56 00 4d 00 77 00 61 00 72 00 65 00 5f 00 56 00 69 00 72 00 74 00 75 00 61 00 6c 00 01 00 12 01 69 00 72 00 74 00 75 00 61 00 6c 00 5f 00 48 00 44 00 01 00 16 01 56 00 69 00 72 00 74 00 75 00 61 00 6c 00 5f 00 48 00 44 00 44 00 01 00 16 01 56 00 4d 00 77 00 61 00 72 00 65 00 } //16726
+		$a_00_35 = {56 00 47 00 41 00 01 00 14 01 56 00 69 00 72 00 74 00 75 00 61 00 6c 00 20 00 50 00 43 00 01 00 40 01 7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 66 00 6f 00 72 00 62 00 69 00 64 00 2e 00 70 00 68 00 70 00 3f 00 6e 00 65 00 74 00 3d 00 7b 00 31 } //32
+		$a_00_37 = {7b 00 32 00 7d 00 01 00 5a 01 7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 6e 00 6f 00 74 00 69 00 66 00 79 00 2e 00 70 00 68 00 70 00 3f 00 72 00 65 00 73 00 3d 00 73 00 75 00 63 } //118
+		$a_00_39 = {26 00 61 00 66 00 66 00 3d 00 7b 00 31 00 7d 00 26 00 68 00 77 00 3d 00 7b 00 32 00 7d 00 01 00 44 01 7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 75 00 6e 00 6f 00 74 00 69 00 66 00 79 00 2e 00 70 00 68 00 70 00 3f 00 61 00 66 00 66 00 3d 00 7b 00 31 00 7d 00 26 00 68 00 77 00 3d 00 7b 00 32 00 7d 00 01 00 44 01 7b 00 30 00 7d 00 2f 00 6d } //115
+		$a_00_41 = {6b 00 64 00 6d 00 5f 00 64 00 62 00 32 00 2e 00 70 00 68 00 70 00 3f 00 6e 00 65 00 74 00 3d 00 7b 00 31 00 7d 00 26 00 76 00 3d 00 7b 00 32 00 7d 00 01 00 16 01 7b 00 30 00 7d 00 20 00 7b 00 31 00 7d 00 5f 00 7b 00 32 00 7d 00 01 00 38 01 54 00 65 00 6d 00 70 00 6f 00 72 00 61 00 72 00 79 00 20 00 49 00 } //47
+		$a_00_42 = {65 00 72 00 6e 00 65 00 74 00 20 00 46 00 69 00 6c 00 65 00 73 00 00 00 6c 00 6f 00 77 00 01 00 19 01 33 d8 8b 46 08 03 c2 66 89 5d 08 66 8b 5d 08 66 33 18 8b 06 4a 66 89 1c 01 01 00 18 01 33 d8 66 89 5d 08 8b 46 08 66 8b 5d 08 03 c2 66 33 18 8b 06 66 89 1c 48 01 00 1f 03 33 c3 88 45 ff 0f b6 45 ff 83 90 01 02 88 45 ff 8a 45 ff 32 01 8b 5e 90 01 } //110
+		$a_1a_43 = {00 01 00 1e } //34817 ĀḀ
+		$a_8b_44 = {08 88 54 24 08 0f b6 54 24 08 2b c8 8a 49 90 01 01 32 d1 8b 0e 88 14 08 90 00 01 00 12 01 8b 4b 10 66 8b 0c 01 66 33 4b 08 8b 53 0c 66 89 0c 10 01 00 14 01 eb 09 8b 4c 24 04 8a 09 30 08 40 3b 44 24 08 75 f1 c2 08 00 01 00 12 01 8a 4c 24 04 3b c2 74 0a 30 08 0f be 08 40 3b c2 75 f6 01 00 12 01 74 10 8a 4c 24 0c 30 08 0f be 08 40 3b 44 24 08 75 f4 01 00 0e 01 eb 06 30 08 0f be 08 40 3b 44 24 04 75 f4 01 00 13 01 8b 44 24 04 eb 04 80 00 8f 40 3b 44 24 08 75 f6 c2 08 00 01 00 1d 03 66 33 3c 02 ff 90 03 01 01 4d 6d 0c 8b 19 66 89 3c 1e 75 ee 66 8b 3c 02 66 33 38 90 00 01 00 20 01 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 73 } //13059
+		$a_00_46 = {6d 00 69 00 6e 00 67 00 01 00 16 01 63 00 6c 00 69 00 63 00 6b 00 62 00 75 00 73 00 74 00 65 00 72 00 01 00 14 01 65 00 61 00 72 00 6e 00 66 00 6f 00 72 00 66 00 75 00 6e 00 01 00 1c 01 65 00 78 00 70 00 72 00 65 00 73 00 73 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 01 00 12 01 63 00 61 } //101
+		$a_00_48 = {74 00 61 00 6e 00 01 00 14 01 68 00 6f 00 74 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 01 00 18 01 74 00 6f 00 70 00 67 00 65 00 61 00 72 00 6d 00 6f 00 6e 00 65 00 79 00 01 00 12 01 76 00 6f 00 67 00 75 00 65 00 63 00 61 00 73 00 68 00 01 00 10 01 62 00 72 00 69 00 6e 00 63 00 6f 00 6d 00 65 00 01 00 1c 01 79 } //116
+		$a_00_50 = {72 00 6f 00 66 00 69 00 74 00 63 00 6c 00 75 00 62 00 01 00 22 01 66 00 69 00 6e 00 64 00 79 00 6f 00 75 00 72 00 70 00 72 00 6f 00 66 00 69 00 74 00 73 00 6b 00 79 00 01 00 14 01 70 00 72 00 6f 00 66 00 69 00 74 00 68 00 61 00 6e 00 64 00 01 00 18 01 70 00 72 00 6f 00 66 00 69 00 74 00 61 00 63 00 74 00 69 00 6f 00 6e 00 01 00 20 01 } //114
+		$a_00_51 = {67 00 68 00 74 00 73 00 70 00 65 00 65 00 64 00 69 00 6e 00 63 00 6f 00 6d 00 65 00 01 00 18 01 79 00 6f 00 75 00 72 00 6d 00 6f 00 6e 00 65 00 79 00 62 00 6f 00 78 00 01 00 14 01 71 00 75 00 61 00 6c 00 69 00 74 00 79 00 61 00 64 00 73 00 01 00 14 01 69 00 6e 00 63 00 72 00 65 00 64 00 69 00 61 00 64 00 73 00 01 } //108
+		$a_76_52 = {61 } //6656 a
+		$a_00_54 = {61 00 63 00 6c 00 69 00 63 00 6b 00 73 00 01 00 14 01 75 00 62 00 65 00 72 00 63 00 6c 00 69 00 63 00 6b 00 73 00 01 00 16 01 61 00 64 00 76 00 65 00 72 00 74 00 7a 00 69 00 6c 00 6c 00 61 00 01 00 12 01 65 00 78 00 74 00 72 00 61 00 66 00 69 00 6e 00 64 00 01 00 2a 01 73 00 65 00 61 00 72 00 63 00 68 00 65 00 6e 00 67 00 } //108
+		$a_00_55 = {65 00 73 00 75 00 67 00 67 00 65 00 73 00 74 00 6f 00 72 00 01 00 20 01 6b 00 65 00 79 00 77 00 6f 00 72 00 64 00 73 00 75 00 67 00 67 00 65 00 73 00 74 00 6f 00 72 00 01 00 0e 01 61 00 64 00 73 00 66 00 6c 00 6f 00 77 00 01 00 1e 01 69 00 6e 00 74 00 65 00 72 00 6e 00 65 00 74 00 73 00 70 00 6f 00 6f 00 6c 00 65 00 72 00 01 00 } //105
+		$a_00_56 = {64 00 76 00 65 00 72 00 74 00 7a 00 69 00 6c 00 31 00 61 00 01 00 12 01 2e 3f 41 56 4c 6f 70 65 72 74 6f 70 69 6e 6f 6d 40 40 01 00 0c 01 2e 3f 41 56 56 6f 6f 70 73 79 40 40 01 00 0c 01 2e 3f 41 } //278
+		$a_70_57 = {70 6f 40 40 01 00 0e 01 2e 3f 41 56 41 73 71 65 64 75 71 69 40 40 01 00 0f 01 2e 3f 41 56 4e 6f 65 70 77 6b 73 64 71 40 40 01 00 12 01 2e 3f 41 56 50 65 6f 73 6c 6b 77 73 6c 31 31 32 40 40 01 00 13 01 2e 3f 41 56 43 65 6f 70 64 69 65 6a 6b 6c 65 6c 77 40 40 01 00 11 01 2e 3f 41 56 4d 6d 65 6b 6a 64 6b 65 6f 62 78 40 40 01 00 13 01 } //19286
+		$a_56_58 = {64 6e 6f 70 6f 70 70 6f 70 6f 70 6f 40 40 01 00 0f 01 2e 3f 41 56 4c 6f 65 70 77 6b 73 78 6d 40 40 01 00 0e 01 2e 3f 41 56 50 71 71 72 70 72 74 75 40 40 01 00 17 03 8b 54 24 04 8a 14 10 8b 4e 04 } //16174
+		$a_40_59 = {f8 90 01 01 76 ed 90 00 } //5256
 	condition:
-		any of ($a_*)
+		((#a_11_0  & 1)*30+(#a_67_1  & 1)*3840+(#a_64_2  & 1)*26465+(#a_1e_3  & 1)*30066+(#a_61_4  & 1)*4371+(#a_64_5  & 1)*29797+(#a_75_6  & 1)*24435+(#a_61_7  & 1)*27507+(#a_72_8  & 1)*26222+(#a_3f_9  & 1)*16703+(#a_01_10  & 1)*16485+(#a_40_11  & 1)*25956+(#a_43_12  & 1)*16703+(#a_6b_13  & 1)*17494+(#a_71_14  & 1)*16726+(#a_00_15  & 1)*100+(#a_00_17  & 1)*104+(#a_00_19  & 1)*121+(#a_00_20  & 1)*103+(#a_00_22  & 1)*102+(#a_73_23  & 1)*5120+(#a_00_25  & 1)*98+(#a_00_26  & 1)*101+(#a_00_28  & 1)*99+(#a_65_29  & 1)*18262+(#a_67_30  & 1)*24936+(#a_6f_31  & 1)*28532+(#a_2e_32  & 1)*3584+(#a_6b_33  & 1)*17494+(#a_71_34  & 1)*16726+(#a_00_35  & 1)*32+(#a_00_37  & 1)*118+(#a_00_39  & 1)*115+(#a_00_41  & 1)*47+(#a_00_42  & 1)*110+(#a_1a_43  & 1)*34817+(#a_8b_44  & 1)*13059+(#a_00_46  & 1)*101+(#a_00_48  & 1)*116+(#a_00_50  & 1)*114+(#a_00_51  & 1)*108+(#a_76_52  & 1)*6656+(#a_00_54  & 1)*108+(#a_00_55  & 1)*105+(#a_00_56  & 1)*278+(#a_70_57  & 1)*19286+(#a_56_58  & 1)*16174+(#a_40_59  & 1)*5256) >=32
  
 }
 rule Adware_Win32_AdRotator_36{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,40 03 40 03 3d 00 00 20 03 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,40 03 40 03 3d 00 00 "
 		
 	strings :
-		$a_11_0 = {00 75 00 74 00 6f 00 72 00 75 00 6e 00 1e } //00 0e  甀琀漀爀甀渀Ḁ
-		$a_63_1 = {70 00 6d 00 73 00 6b 00 79 00 5f 00 1e 00 10 11 67 } //00 6f 
-		$a_00_3 = {68 00 69 00 5f 00 1e 00 0e 11 61 00 67 00 61 00 64 00 6f 00 6f 00 5f 00 1e 00 18 11 73 00 75 00 70 00 65 00 72 00 69 00 6f 00 72 00 61 00 64 00 73 00 5f 00 1e 00 14 11 72 00 61 00 64 00 62 00 61 00 6e 00 6e 00 65 00 72 00 5f 00 1e 00 1e 11 70 00 72 00 69 00 6d 00 65 00 61 00 64 00 73 00 65 00 72 } //00 76 
-		$a_00_5 = {5f 00 1e 00 14 11 76 00 6f 00 67 00 75 00 65 00 63 00 61 00 73 00 68 00 5f 00 1e 00 14 11 70 00 72 00 65 00 63 00 69 00 73 00 65 00 61 00 64 00 5f 00 1e 00 18 11 6d 00 69 00 6c 00 65 00 68 00 69 00 67 00 68 00 61 00 64 00 73 00 5f 00 1e 00 14 11 64 00 75 00 2d 00 6c 00 69 00 74 00 74 00 6c 00 65 00 5f 00 1e } //00 18 
-		$a_61_6 = {64 00 73 00 65 00 72 00 76 00 65 00 66 00 61 00 73 } //00 74 
-		$a_11_8 = {00 69 00 67 00 68 00 74 00 6f 00 6e 00 61 00 64 00 7a 00 5f 00 1e } //00 18  椀最栀琀漀渀愀搀稀开Ḁ
-		$a_62_9 = {61 00 6e 00 6e 00 65 00 72 00 73 00 74 00 79 00 6c } //00 65 
-		$a_11_11 = {00 64 00 64 00 65 00 73 00 74 00 69 00 6e 00 61 00 74 00 69 00 6f 00 6e 00 5f 00 1e } //00 20  搀搀攀猀琀椀渀愀琀椀漀渀开Ḁ
-		$a_62_12 = {61 00 6e 00 6e 00 65 00 72 00 61 00 64 00 73 00 67 } //00 61 
-		$a_00_14 = {65 00 5f 00 1e 00 16 11 62 00 6c 00 61 00 7a 00 69 00 6e 00 67 00 61 00 64 00 73 00 5f 00 1e 00 1e 11 74 00 61 00 72 00 67 00 65 00 74 00 65 00 64 00 62 00 61 00 6e 00 6e 00 65 00 72 00 5f 00 1e 00 1a 11 62 00 61 00 6e 00 6e 00 65 00 72 00 73 00 74 00 79 00 6c 00 65 00 73 00 5f 00 1e 00 16 11 68 00 6f 00 72 00 69 00 7a 00 6f 00 6e 00 61 00 } //64 00 
-		$a_00_15 = {5f 00 1e 00 22 11 63 00 68 00 61 00 72 00 67 00 65 00 79 00 6f 00 75 00 72 00 70 00 72 00 6f 00 66 00 69 00 74 00 5f 00 1e 00 18 11 74 00 68 00 65 00 73 00 75 00 70 00 65 00 72 00 61 00 64 00 73 00 5f 00 1e 00 1a 11 70 00 72 00 6f 00 66 00 69 00 74 00 68 00 61 00 72 00 62 00 6f 00 72 00 5f 00 1e 00 14 11 68 00 6f 00 74 00 72 00 65 00 76 00 65 } //00 6e 
-		$a_00_17 = {0e 11 73 00 6f 00 6c 00 61 00 64 00 73 00 5f 00 1e 00 14 11 73 00 6e 00 61 00 70 00 70 00 } //79 00 
-		$a_00_18 = {64 00 73 00 5f 00 1e 00 20 11 62 00 6c 00 75 00 65 00 73 00 6b 00 79 00 61 00 64 00 61 00 67 00 65 00 6e 00 63 00 79 00 5f 00 1e 00 26 11 77 00 6f 00 72 00 6c 00 64 00 61 00 64 00 6d 00 61 00 72 00 6b 00 65 00 74 00 70 00 6c 00 61 00 63 00 65 00 5f 00 1e 00 18 11 72 00 65 00 73 00 73 00 72 } //00 65 
-		$a_00_20 = {75 00 65 00 5f 00 1e 00 1c 11 73 00 74 00 72 00 65 00 61 00 6d 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 5f 00 1e 00 16 11 69 00 6e 00 63 00 6f 00 6d 00 65 00 6c 00 61 00 6e 00 64 00 5f 00 1e 00 16 11 65 00 61 00 72 00 6e 00 66 00 6f 00 72 00 66 00 75 00 6e 00 5f 00 1e 00 18 11 70 00 72 00 6f 00 66 00 69 00 74 00 69 00 7a 00 } //65 00 
-		$a_00_21 = {65 00 5f 00 1e 00 14 11 63 00 61 00 73 00 68 00 74 00 69 00 74 00 61 00 6e 00 5f 00 1e 00 20 11 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 73 00 74 00 72 00 65 00 61 00 6d 00 69 00 6e 00 67 00 1e 00 1a 11 6d 00 6f 00 6e 00 65 00 79 00 63 00 68 00 61 00 72 00 67 00 65 00 72 00 5f 00 01 00 13 01 2e 3f 41 56 3f 24 4f 6e 65 31 40 } //56 47 
-		$a_65_22 = {73 40 40 01 00 10 01 2e 3f 41 56 48 73 74 73 48 6f 6c 64 65 72 40 40 01 00 0d 01 2e 3f 41 56 43 42 61 6e 52 6f 74 40 40 01 00 0e 01 2e 3f 41 56 43 42 48 4f 4c 69 74 65 40 40 01 00 11 01 2e 3f 41 56 41 64 76 65 72 74 47 6e 6f 6d 65 40 40 01 00 0e 01 2e 3f 41 56 50 69 6b 61 50 69 6b 61 40 40 01 00 18 01 2e 3f 41 56 43 44 6f 6d 61 69 6e 4e 61 6d 65 43 } //68 61 
-		$a_67_23 = {72 40 40 01 00 14 01 2e 3f 41 56 43 51 75 69 63 6b 52 65 6c 6f 61 64 65 72 40 40 01 00 14 01 2e 3f 41 56 43 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 40 40 01 00 0e 01 2e 3f 41 56 43 4c 69 74 65 42 48 4f 40 40 01 00 11 01 2e 3f 41 56 43 53 68 6f 6f 70 61 64 6f 6f 70 40 40 01 00 16 01 2e 3f 41 56 4d 61 70 69 6b 61 70 69 74 61 70 69 } //74 6f 
-		$a_6f_24 = {40 01 00 10 01 2e 3f 41 56 43 4b 6f 6f 70 61 62 6f 6f 70 40 40 01 00 0f 01 2e 3f 41 56 43 6b 61 70 69 74 61 70 69 40 40 01 00 0c 01 2e 3f 41 56 42 6e 6e 65 6a 33 40 40 01 00 0e 01 2e 3f 41 56 50 6f 6c 65 6f 65 69 38 40 40 01 00 0c 01 2e 3f 41 56 50 6f 65 69 72 75 40 40 01 00 10 01 2e 3f 41 56 4d 75 71 70 6f 74 72 6f 70 6f 40 40 01 } //00 0e 
-		$a_2e_25 = {41 } //56 44  A
-		$a_6b_26 = {6a 78 74 74 40 40 01 00 0b 01 2e 3f 41 56 43 73 73 63 73 40 40 01 00 0f 01 2e 3f 41 56 49 6f 6c 65 6d 69 6d 69 6f 40 40 01 00 12 01 2e 3f 41 56 4c 6f 70 65 72 74 6f 70 69 6e 6f 6d 40 40 01 00 0c 01 2e 3f 41 56 56 6f 6f 70 73 79 40 40 01 00 0c 01 2e 3f 41 56 4b 6f 70 79 70 6f 40 40 01 00 0e 01 2e 3f 41 } //56 41 
-		$a_71_27 = {64 75 71 69 40 40 00 00 78 57 07 00 03 00 03 00 3f 00 00 01 00 1c 01 56 00 4d 00 77 00 61 00 72 00 65 00 5f 00 56 00 69 00 72 00 74 00 75 00 61 00 6c 00 01 00 12 01 69 00 72 00 74 00 75 00 61 00 6c 00 5f 00 48 00 44 00 01 00 16 01 56 00 69 00 72 00 74 00 75 00 61 00 6c 00 5f 00 48 00 44 00 44 00 01 00 16 01 56 00 4d 00 77 00 61 00 72 00 65 00 } //20 00 
+		$a_11_0 = {00 75 00 74 00 6f 00 72 00 75 00 6e 00 1e } //800 甀琀漀爀甀渀Ḁ
+		$a_63_1 = {70 00 6d 00 73 00 6b 00 79 00 5f 00 1e 00 10 11 67 } //3584
+		$a_00_3 = {68 00 69 00 5f 00 1e 00 0e 11 61 00 67 00 61 00 64 00 6f 00 6f 00 5f 00 1e 00 18 11 73 00 75 00 70 00 65 00 72 00 69 00 6f 00 72 00 61 00 64 00 73 00 5f 00 1e 00 14 11 72 00 61 00 64 00 62 00 61 00 6e 00 6e 00 65 00 72 00 5f 00 1e 00 1e 11 70 00 72 00 69 00 6d 00 65 00 61 00 64 00 73 00 65 00 72 } //111
+		$a_00_5 = {5f 00 1e 00 14 11 76 00 6f 00 67 00 75 00 65 00 63 00 61 00 73 00 68 00 5f 00 1e 00 14 11 70 00 72 00 65 00 63 00 69 00 73 00 65 00 61 00 64 00 5f 00 1e 00 18 11 6d 00 69 00 6c 00 65 00 68 00 69 00 67 00 68 00 61 00 64 00 73 00 5f 00 1e 00 14 11 64 00 75 00 2d 00 6c 00 69 00 74 00 74 00 6c 00 65 00 5f 00 1e } //110
+		$a_61_6 = {64 00 73 00 65 00 72 00 76 00 65 00 66 00 61 00 73 } //6144
+		$a_11_8 = {00 69 00 67 00 68 00 74 00 6f 00 6e 00 61 00 64 00 7a 00 5f 00 1e } //30 椀最栀琀漀渀愀搀稀开Ḁ
+		$a_62_9 = {61 00 6e 00 6e 00 65 00 72 00 73 00 74 00 79 00 6c } //6144
+		$a_11_11 = {00 64 00 64 00 65 00 73 00 74 00 69 00 6e 00 61 00 74 00 69 00 6f 00 6e 00 5f 00 1e } //30 搀搀攀猀琀椀渀愀琀椀漀渀开Ḁ
+		$a_62_12 = {61 00 6e 00 6e 00 65 00 72 00 61 00 64 00 73 00 67 } //8192
+		$a_00_14 = {65 00 5f 00 1e 00 16 11 62 00 6c 00 61 00 7a 00 69 00 6e 00 67 00 61 00 64 00 73 00 5f 00 1e 00 1e 11 74 00 61 00 72 00 67 00 65 00 74 00 65 00 64 00 62 00 61 00 6e 00 6e 00 65 00 72 00 5f 00 1e 00 1a 11 62 00 61 00 6e 00 6e 00 65 00 72 00 73 00 74 00 79 00 6c 00 65 00 73 00 5f 00 1e 00 16 11 68 00 6f 00 72 00 69 00 7a 00 6f 00 6e 00 61 00 } //111
+		$a_00_15 = {5f 00 1e 00 22 11 63 00 68 00 61 00 72 00 67 00 65 00 79 00 6f 00 75 00 72 00 70 00 72 00 6f 00 66 00 69 00 74 00 5f 00 1e 00 18 11 74 00 68 00 65 00 73 00 75 00 70 00 65 00 72 00 61 00 64 00 73 00 5f 00 1e 00 1a 11 70 00 72 00 6f 00 66 00 69 00 74 00 68 00 61 00 72 00 62 00 6f 00 72 00 5f 00 1e 00 14 11 68 00 6f 00 74 00 72 00 65 00 76 00 65 } //100
+		$a_00_17 = {0e 11 73 00 6f 00 6c 00 61 00 64 00 73 00 5f 00 1e 00 14 11 73 00 6e 00 61 00 70 00 70 00 } //101
+		$a_00_18 = {64 00 73 00 5f 00 1e 00 20 11 62 00 6c 00 75 00 65 00 73 00 6b 00 79 00 61 00 64 00 61 00 67 00 65 00 6e 00 63 00 79 00 5f 00 1e 00 26 11 77 00 6f 00 72 00 6c 00 64 00 61 00 64 00 6d 00 61 00 72 00 6b 00 65 00 74 00 70 00 6c 00 61 00 63 00 65 00 5f 00 1e 00 18 11 72 00 65 00 73 00 73 00 72 } //121
+		$a_00_20 = {75 00 65 00 5f 00 1e 00 1c 11 73 00 74 00 72 00 65 00 61 00 6d 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 5f 00 1e 00 16 11 69 00 6e 00 63 00 6f 00 6d 00 65 00 6c 00 61 00 6e 00 64 00 5f 00 1e 00 16 11 65 00 61 00 72 00 6e 00 66 00 6f 00 72 00 66 00 75 00 6e 00 5f 00 1e 00 18 11 70 00 72 00 6f 00 66 00 69 00 74 00 69 00 7a 00 } //101
+		$a_00_21 = {65 00 5f 00 1e 00 14 11 63 00 61 00 73 00 68 00 74 00 69 00 74 00 61 00 6e 00 5f 00 1e 00 20 11 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 73 00 74 00 72 00 65 00 61 00 6d 00 69 00 6e 00 67 00 1e 00 1a 11 6d 00 6f 00 6e 00 65 00 79 00 63 00 68 00 61 00 72 00 67 00 65 00 72 00 5f 00 01 00 13 01 2e 3f 41 56 3f 24 4f 6e 65 31 40 } //101
+		$a_65_22 = {73 40 40 01 00 10 01 2e 3f 41 56 48 73 74 73 48 6f 6c 64 65 72 40 40 01 00 0d 01 2e 3f 41 56 43 42 61 6e 52 6f 74 40 40 01 00 0e 01 2e 3f 41 56 43 42 48 4f 4c 69 74 65 40 40 01 00 11 01 2e 3f 41 56 41 64 76 65 72 74 47 6e 6f 6d 65 40 40 01 00 0e 01 2e 3f 41 56 50 69 6b 61 50 69 6b 61 40 40 01 00 18 01 2e 3f 41 56 43 44 6f 6d 61 69 6e 4e 61 6d 65 43 } //18262
+		$a_67_23 = {72 40 40 01 00 14 01 2e 3f 41 56 43 51 75 69 63 6b 52 65 6c 6f 61 64 65 72 40 40 01 00 14 01 2e 3f 41 56 43 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 40 40 01 00 0e 01 2e 3f 41 56 43 4c 69 74 65 42 48 4f 40 40 01 00 11 01 2e 3f 41 56 43 53 68 6f 6f 70 61 64 6f 6f 70 40 40 01 00 16 01 2e 3f 41 56 4d 61 70 69 6b 61 70 69 74 61 70 69 } //24936
+		$a_6f_24 = {40 01 00 10 01 2e 3f 41 56 43 4b 6f 6f 70 61 62 6f 6f 70 40 40 01 00 0f 01 2e 3f 41 56 43 6b 61 70 69 74 61 70 69 40 40 01 00 0c 01 2e 3f 41 56 42 6e 6e 65 6a 33 40 40 01 00 0e 01 2e 3f 41 56 50 6f 6c 65 6f 65 69 38 40 40 01 00 0c 01 2e 3f 41 56 50 6f 65 69 72 75 40 40 01 00 10 01 2e 3f 41 56 4d 75 71 70 6f 74 72 6f 70 6f 40 40 01 } //28532
+		$a_2e_25 = {41 } //3584 A
+		$a_6b_26 = {6a 78 74 74 40 40 01 00 0b 01 2e 3f 41 56 43 73 73 63 73 40 40 01 00 0f 01 2e 3f 41 56 49 6f 6c 65 6d 69 6d 69 6f 40 40 01 00 12 01 2e 3f 41 56 4c 6f 70 65 72 74 6f 70 69 6e 6f 6d 40 40 01 00 0c 01 2e 3f 41 56 56 6f 6f 70 73 79 40 40 01 00 0c 01 2e 3f 41 56 4b 6f 70 79 70 6f 40 40 01 00 0e 01 2e 3f 41 } //17494
+		$a_71_27 = {64 75 71 69 40 40 00 00 78 57 07 00 03 00 03 00 3f 00 00 01 00 1c 01 56 00 4d 00 77 00 61 00 72 00 65 00 5f 00 56 00 69 00 72 00 74 00 75 00 61 00 6c 00 01 00 12 01 69 00 72 00 74 00 75 00 61 00 6c 00 5f 00 48 00 44 00 01 00 16 01 56 00 69 00 72 00 74 00 75 00 61 00 6c 00 5f 00 48 00 44 00 44 00 01 00 16 01 56 00 4d 00 77 00 61 00 72 00 65 00 } //16726
+		$a_00_28 = {56 00 47 00 41 00 01 00 14 01 56 00 69 00 72 00 74 00 75 00 61 00 6c 00 20 00 50 00 43 00 01 00 40 01 7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 66 00 6f 00 72 00 62 00 69 00 64 00 2e 00 70 00 68 00 70 00 3f 00 6e 00 65 00 74 00 3d 00 7b 00 31 } //32
+		$a_00_30 = {7b 00 32 00 7d 00 01 00 5a 01 7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 6e 00 6f 00 74 00 69 00 66 00 79 00 2e 00 70 00 68 00 70 00 3f 00 72 00 65 00 73 00 3d 00 73 00 75 00 63 } //118
+		$a_00_32 = {26 00 61 00 66 00 66 00 3d 00 7b 00 31 00 7d 00 26 00 68 00 77 00 3d 00 7b 00 32 00 7d 00 01 00 44 01 7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 75 00 6e 00 6f 00 74 00 69 00 66 00 79 00 2e 00 70 00 68 00 70 00 3f 00 61 00 66 00 66 00 3d 00 7b 00 31 00 7d 00 26 00 68 00 77 00 3d 00 7b 00 32 00 7d 00 01 00 44 01 7b 00 30 00 7d 00 2f 00 6d } //115
+		$a_00_34 = {6b 00 64 00 6d 00 5f 00 64 00 62 00 32 00 2e 00 70 00 68 00 70 00 3f 00 6e 00 65 00 74 00 3d 00 7b 00 31 00 7d 00 26 00 76 00 3d 00 7b 00 32 00 7d 00 01 00 16 01 7b 00 30 00 7d 00 20 00 7b 00 31 00 7d 00 5f 00 7b 00 32 00 7d 00 01 00 38 01 54 00 65 00 6d 00 70 00 6f 00 72 00 61 00 72 00 79 00 20 00 49 00 } //47
+		$a_00_35 = {65 00 72 00 6e 00 65 00 74 00 20 00 46 00 69 00 6c 00 65 00 73 00 00 00 6c 00 6f 00 77 00 01 00 19 01 33 d8 8b 46 08 03 c2 66 89 5d 08 66 8b 5d 08 66 33 18 8b 06 4a 66 89 1c 01 01 00 18 01 33 d8 66 89 5d 08 8b 46 08 66 8b 5d 08 03 c2 66 33 18 8b 06 66 89 1c 48 01 00 1f 03 33 c3 88 45 ff 0f b6 45 ff 83 90 01 02 88 45 ff 8a 45 ff 32 01 8b 5e 90 01 } //110
+		$a_1a_36 = {00 01 00 1e } //34817 ĀḀ
+		$a_8b_37 = {08 88 54 24 08 0f b6 54 24 08 2b c8 8a 49 90 01 01 32 d1 8b 0e 88 14 08 90 00 01 00 12 01 8b 4b 10 66 8b 0c 01 66 33 4b 08 8b 53 0c 66 89 0c 10 01 00 14 01 eb 09 8b 4c 24 04 8a 09 30 08 40 3b 44 24 08 75 f1 c2 08 00 01 00 12 01 8a 4c 24 04 3b c2 74 0a 30 08 0f be 08 40 3b c2 75 f6 01 00 12 01 74 10 8a 4c 24 0c 30 08 0f be 08 40 3b 44 24 08 75 f4 01 00 0e 01 eb 06 30 08 0f be 08 40 3b 44 24 04 75 f4 01 00 13 01 8b 44 24 04 eb 04 80 00 8f 40 3b 44 24 08 75 f6 c2 08 00 01 00 1d 03 66 33 3c 02 ff 90 03 01 01 4d 6d 0c 8b 19 66 89 3c 1e 75 ee 66 8b 3c 02 66 33 38 90 00 01 00 20 01 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 73 } //13059
+		$a_00_39 = {6d 00 69 00 6e 00 67 00 01 00 16 01 63 00 6c 00 69 00 63 00 6b 00 62 00 75 00 73 00 74 00 65 00 72 00 01 00 14 01 65 00 61 00 72 00 6e 00 66 00 6f 00 72 00 66 00 75 00 6e 00 01 00 1c 01 65 00 78 00 70 00 72 00 65 00 73 00 73 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 01 00 12 01 63 00 61 } //101
+		$a_00_41 = {74 00 61 00 6e 00 01 00 14 01 68 00 6f 00 74 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 01 00 18 01 74 00 6f 00 70 00 67 00 65 00 61 00 72 00 6d 00 6f 00 6e 00 65 00 79 00 01 00 12 01 76 00 6f 00 67 00 75 00 65 00 63 00 61 00 73 00 68 00 01 00 10 01 62 00 72 00 69 00 6e 00 63 00 6f 00 6d 00 65 00 01 00 1c 01 79 } //116
+		$a_00_43 = {72 00 6f 00 66 00 69 00 74 00 63 00 6c 00 75 00 62 00 01 00 22 01 66 00 69 00 6e 00 64 00 79 00 6f 00 75 00 72 00 70 00 72 00 6f 00 66 00 69 00 74 00 73 00 6b 00 79 00 01 00 14 01 70 00 72 00 6f 00 66 00 69 00 74 00 68 00 61 00 6e 00 64 00 01 00 18 01 70 00 72 00 6f 00 66 00 69 00 74 00 61 00 63 00 74 00 69 00 6f 00 6e 00 01 00 20 01 } //114
+		$a_00_44 = {67 00 68 00 74 00 73 00 70 00 65 00 65 00 64 00 69 00 6e 00 63 00 6f 00 6d 00 65 00 01 00 18 01 79 00 6f 00 75 00 72 00 6d 00 6f 00 6e 00 65 00 79 00 62 00 6f 00 78 00 01 00 14 01 71 00 75 00 61 00 6c 00 69 00 74 00 79 00 61 00 64 00 73 00 01 00 14 01 69 00 6e 00 63 00 72 00 65 00 64 00 69 00 61 00 64 00 73 00 01 } //108
+		$a_76_45 = {61 } //6656 a
+		$a_00_47 = {61 00 63 00 6c 00 69 00 63 00 6b 00 73 00 01 00 14 01 75 00 62 00 65 00 72 00 63 00 6c 00 69 00 63 00 6b 00 73 00 01 00 16 01 61 00 64 00 76 00 65 00 72 00 74 00 7a 00 69 00 6c 00 6c 00 61 00 01 00 12 01 65 00 78 00 74 00 72 00 61 00 66 00 69 00 6e 00 64 00 01 00 2a 01 73 00 65 00 61 00 72 00 63 00 68 00 65 00 6e 00 67 00 } //108
+		$a_00_48 = {65 00 73 00 75 00 67 00 67 00 65 00 73 00 74 00 6f 00 72 00 01 00 20 01 6b 00 65 00 79 00 77 00 6f 00 72 00 64 00 73 00 75 00 67 00 67 00 65 00 73 00 74 00 6f 00 72 00 01 00 0e 01 61 00 64 00 73 00 66 00 6c 00 6f 00 77 00 01 00 1e 01 69 00 6e 00 74 00 65 00 72 00 6e 00 65 00 74 00 73 00 70 00 6f 00 6f 00 6c 00 65 00 72 00 01 00 } //105
+		$a_00_49 = {64 00 76 00 65 00 72 00 74 00 7a 00 69 00 6c 00 31 00 61 00 01 00 12 01 2e 3f 41 56 4c 6f 70 65 72 74 6f 70 69 6e 6f 6d 40 40 01 00 0c 01 2e 3f 41 56 56 6f 6f 70 73 79 40 40 01 00 0c 01 2e 3f 41 } //278
+		$a_70_50 = {70 6f 40 40 01 00 0e 01 2e 3f 41 56 41 73 71 65 64 75 71 69 40 40 01 00 0f 01 2e 3f 41 56 4e 6f 65 70 77 6b 73 64 71 40 40 01 00 12 01 2e 3f 41 56 50 65 6f 73 6c 6b 77 73 6c 31 31 32 40 40 01 00 13 01 2e 3f 41 56 43 65 6f 70 64 69 65 6a 6b 6c 65 6c 77 40 40 01 00 11 01 2e 3f 41 56 4d 6d 65 6b 6a 64 6b 65 6f 62 78 40 40 01 00 13 01 } //19286
+		$a_56_51 = {64 6e 6f 70 6f 70 70 6f 70 6f 70 6f 40 40 01 00 0f 01 2e 3f 41 56 4c 6f 65 70 77 6b 73 78 6d 40 40 01 00 0e 01 2e 3f 41 56 50 71 71 72 70 72 74 75 40 40 01 00 17 03 8b 54 24 04 8a 14 10 8b 4e 04 } //16174
+		$a_40_52 = {f8 90 01 01 76 ed 90 00 } //5256
+		$a_01_53 = {83 ef 28 b8 67 66 66 66 f7 ef c1 fa 04 8b c2 c1 e8 1f 03 c2 83 c4 08 83 ee 28 83 f8 01 } //1
+		$a_01_54 = {89 55 08 83 65 fc 00 8b 4d 0c 8b 39 89 3a 83 21 00 83 4d fc ff } //1
+		$a_03_55 = {8a 14 1a 8a c2 02 c0 02 d0 c0 e2 90 01 01 80 fa 90 01 01 7d 90 00 } //1
+		$a_10_56 = {00 00 e6 49 f8 07 33 da e1 fe 39 ca b5 e4 00 04 00 80 80 10 00 00 1b 8c 77 12 57 d0 9a 83 ec 0f 7c a9 30 04 00 80 80 10 00 00 ff 53 0d 1b 60 93 84 fb 37 d2 fe 7f 00 04 00 80 80 10 00 00 8c b4 5a 2f dc 72 d7 a2 b5 f1 dd f4 00 10 00 80 80 10 00 00 ad ab 04 3a 63 34 6f c9 ed e9 10 79 00 10 00 80 80 10 00 00 6c 99 0d 52 a0 27 79 5f 04 c1 49 1d 00 10 00 80 80 10 00 00 a0 3d 6a 6a ec 2e } //0
+		$a_56_57 = {8d 00 04 00 80 80 10 00 00 dc 1e 8f 6b 91 1c 2c bb 54 cd a2 1b 00 04 00 80 80 10 00 00 1f 1a c7 85 1f 9c 2a a2 39 bd 7f ae 00 04 00 80 80 10 00 00 f3 f9 4c 90 8c 7b 56 b7 b0 be d5 f1 00 04 00 80 80 10 00 00 f3 f9 4c 90 8c 7b 56 b7 f2 4d d1 72 00 04 00 80 80 10 00 00 3e 78 ea a3 fc e6 e1 68 36 93 81 ad 00 04 00 80 80 10 00 00 d0 6f 08 bc 6f 6c 94 50 62 b7 b9 5a 00 10 00 80 80 10 00 00 26 81 e5 be ec 2f 8b 68 93 c9 b3 e8 00 20 00 00 80 10 00 00 3f 17 7f c6 1f 4a 60 f5 98 e8 5b 97 00 20 00 00 80 10 00 00 a8 76 8a cd 3b f1 cc 5b f8 f1 2d 7c 00 10 00 80 80 10 00 00 c5 c4 e4 d4 6b 09 92 5f 4c aa 16 99 00 04 00 80 80 10 00 00 dd 07 b8 e9 73 ca ce 62 54 69 4a a4 00 04 00 80 } //17418
+		$a_ef_59 = {0b ee 71 6f 1d d0 c5 00 10 00 80 80 10 00 00 1e fe 7c f6 21 ed 48 88 54 24 ca 00 00 20 00 00 80 10 00 00 db dc b1 fc ca aa c7 fc 9f fd aa d2 20 04 00 80 87 10 00 00 a4 11 d7 2f 34 21 df b8 8b 3e 35 1f 3f e6 01 00 87 10 00 00 db 48 ae 35 18 99 ac 41 e7 d3 d9 fb 3a a5 02 00 87 10 00 00 91 fe 42 3a fc 8c 0e 5a 73 73 48 17 b9 f7 14 00 87 10 00 00 5c 2f 2d 48 52 39 86 f5 70 3b a7 26 e2 bb 04 00 87 10 } //51304
+		$a_ca_60 = {4b e7 f0 a4 74 } //0
 	condition:
-		any of ($a_*)
+		((#a_11_0  & 1)*800+(#a_63_1  & 1)*3584+(#a_00_3  & 1)*111+(#a_00_5  & 1)*110+(#a_61_6  & 1)*6144+(#a_11_8  & 1)*30+(#a_62_9  & 1)*6144+(#a_11_11  & 1)*30+(#a_62_12  & 1)*8192+(#a_00_14  & 1)*111+(#a_00_15  & 1)*100+(#a_00_17  & 1)*101+(#a_00_18  & 1)*121+(#a_00_20  & 1)*101+(#a_00_21  & 1)*101+(#a_65_22  & 1)*18262+(#a_67_23  & 1)*24936+(#a_6f_24  & 1)*28532+(#a_2e_25  & 1)*3584+(#a_6b_26  & 1)*17494+(#a_71_27  & 1)*16726+(#a_00_28  & 1)*32+(#a_00_30  & 1)*118+(#a_00_32  & 1)*115+(#a_00_34  & 1)*47+(#a_00_35  & 1)*110+(#a_1a_36  & 1)*34817+(#a_8b_37  & 1)*13059+(#a_00_39  & 1)*101+(#a_00_41  & 1)*116+(#a_00_43  & 1)*114+(#a_00_44  & 1)*108+(#a_76_45  & 1)*6656+(#a_00_47  & 1)*108+(#a_00_48  & 1)*105+(#a_00_49  & 1)*278+(#a_70_50  & 1)*19286+(#a_56_51  & 1)*16174+(#a_40_52  & 1)*5256+(#a_01_53  & 1)*1+(#a_01_54  & 1)*1+(#a_03_55  & 1)*1+(#a_10_56  & 1)*0+(#a_56_57  & 1)*17418+(#a_ef_59  & 1)*51304+(#a_ca_60  & 1)*0) >=832
  
 }
 rule Adware_Win32_AdRotator_37{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 3f 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 3f 00 00 "
 		
 	strings :
-		$a_01_0 = {56 00 4d 00 77 00 61 00 72 00 65 00 5f 00 56 00 69 00 72 00 74 00 75 00 61 00 6c 00 } //01 00  VMware_Virtual
-		$a_01_1 = {69 00 72 00 74 00 75 00 61 00 6c 00 5f 00 48 00 44 00 } //01 00  irtual_HD
-		$a_01_2 = {56 00 69 00 72 00 74 00 75 00 61 00 6c 00 5f 00 48 00 44 00 44 00 } //01 00  Virtual_HDD
-		$a_01_3 = {56 00 4d 00 77 00 61 00 72 00 65 00 20 00 53 00 56 00 47 00 41 00 } //01 00  VMware SVGA
-		$a_01_4 = {56 00 69 00 72 00 74 00 75 00 61 00 6c 00 20 00 50 00 43 00 } //01 00  Virtual PC
-		$a_01_5 = {7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 66 00 6f 00 72 00 62 00 69 00 64 00 2e 00 70 00 68 00 70 00 3f 00 6e 00 65 00 74 00 3d 00 7b 00 31 00 7d 00 26 00 76 00 3d 00 7b 00 32 00 7d 00 } //01 00  {0}/mod/forbid.php?net={1}&v={2}
-		$a_01_6 = {7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 6e 00 6f 00 74 00 69 00 66 00 79 00 2e 00 70 00 68 00 70 00 3f 00 72 00 65 00 73 00 3d 00 73 00 75 00 63 00 63 00 65 00 73 00 73 00 26 00 61 00 66 00 66 00 3d 00 7b 00 31 00 7d 00 26 00 68 00 77 00 3d 00 7b 00 32 00 7d 00 } //01 00  {0}/mod/notify.php?res=success&aff={1}&hw={2}
-		$a_01_7 = {7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 75 00 6e 00 6f 00 74 00 69 00 66 00 79 00 2e 00 70 00 68 00 70 00 3f 00 61 00 66 00 66 00 3d 00 7b 00 31 00 7d 00 26 00 68 00 77 00 3d 00 7b 00 32 00 7d 00 } //01 00  {0}/mod/unotify.php?aff={1}&hw={2}
-		$a_01_8 = {7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 66 00 6b 00 64 00 6d 00 5f 00 64 00 62 00 32 00 2e 00 70 00 68 00 70 00 3f 00 6e 00 65 00 74 00 3d 00 7b 00 31 00 7d 00 26 00 76 00 3d 00 7b 00 32 00 7d 00 } //01 00  {0}/mod/fkdm_db2.php?net={1}&v={2}
-		$a_01_9 = {7b 00 30 00 7d 00 20 00 7b 00 31 00 7d 00 5f 00 7b 00 32 00 7d 00 } //01 00  {0} {1}_{2}
-		$a_01_10 = {54 00 65 00 6d 00 70 00 6f 00 72 00 61 00 72 00 79 00 20 00 49 00 6e 00 74 00 65 00 72 00 6e 00 65 00 74 00 20 00 46 00 69 00 6c 00 65 00 73 00 00 00 6c 00 6f 00 77 00 } //01 00 
-		$a_01_11 = {33 d8 8b 46 08 03 c2 66 89 5d 08 66 8b 5d 08 66 33 18 8b 06 4a 66 89 1c 01 } //01 00 
-		$a_01_12 = {33 d8 66 89 5d 08 8b 46 08 66 8b 5d 08 03 c2 66 33 18 8b 06 66 89 1c 48 } //01 00 
-		$a_03_13 = {33 c3 88 45 ff 0f b6 45 ff 83 90 01 02 88 45 ff 8a 45 ff 32 01 8b 5e 90 01 01 88 04 1a 90 00 } //01 00 
-		$a_03_14 = {33 d1 8b 4e 08 88 54 24 08 0f b6 54 24 08 2b c8 8a 49 90 01 01 32 d1 8b 0e 88 14 08 90 00 } //01 00 
-		$a_01_15 = {8b 4b 10 66 8b 0c 01 66 33 4b 08 8b 53 0c 66 89 0c 10 } //01 00 
-		$a_01_16 = {eb 09 8b 4c 24 04 8a 09 30 08 40 3b 44 24 08 75 f1 c2 08 00 } //01 00 
-		$a_01_17 = {8a 4c 24 04 3b c2 74 0a 30 08 0f be 08 40 3b c2 75 f6 } //01 00 
-		$a_01_18 = {74 10 8a 4c 24 0c 30 08 0f be 08 40 3b 44 24 08 75 f4 } //01 00 
-		$a_01_19 = {eb 06 30 08 0f be 08 40 3b 44 24 04 75 f4 } //01 00 
-		$a_01_20 = {8b 44 24 04 eb 04 80 00 8f 40 3b 44 24 08 75 f6 c2 08 00 } //01 00 
-		$a_03_21 = {66 33 3c 02 ff 90 03 01 01 4d 6d 0c 8b 19 66 89 3c 1e 75 ee 66 8b 3c 02 66 33 38 90 00 } //01 00 
-		$a_01_22 = {72 00 65 00 76 00 65 00 6e 00 75 00 65 00 73 00 74 00 72 00 65 00 61 00 6d 00 69 00 6e 00 67 00 } //01 00  revenuestreaming
-		$a_01_23 = {63 00 6c 00 69 00 63 00 6b 00 62 00 75 00 73 00 74 00 65 00 72 00 } //01 00  clickbuster
-		$a_01_24 = {65 00 61 00 72 00 6e 00 66 00 6f 00 72 00 66 00 75 00 6e 00 } //01 00  earnforfun
-		$a_01_25 = {65 00 78 00 70 00 72 00 65 00 73 00 73 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 } //01 00  expressrevenue
-		$a_01_26 = {63 00 61 00 73 00 68 00 74 00 69 00 74 00 61 00 6e 00 } //01 00  cashtitan
-		$a_01_27 = {68 00 6f 00 74 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 } //01 00  hotrevenue
-		$a_01_28 = {74 00 6f 00 70 00 67 00 65 00 61 00 72 00 6d 00 6f 00 6e 00 65 00 79 00 } //01 00  topgearmoney
-		$a_01_29 = {76 00 6f 00 67 00 75 00 65 00 63 00 61 00 73 00 68 00 } //01 00  voguecash
-		$a_01_30 = {62 00 72 00 69 00 6e 00 63 00 6f 00 6d 00 65 00 } //01 00  brincome
-		$a_01_31 = {79 00 6f 00 75 00 72 00 70 00 72 00 6f 00 66 00 69 00 74 00 63 00 6c 00 75 00 62 00 } //01 00  yourprofitclub
-		$a_01_32 = {66 00 69 00 6e 00 64 00 79 00 6f 00 75 00 72 00 70 00 72 00 6f 00 66 00 69 00 74 00 73 00 6b 00 79 00 } //01 00  findyourprofitsky
-		$a_01_33 = {70 00 72 00 6f 00 66 00 69 00 74 00 68 00 61 00 6e 00 64 00 } //01 00  profithand
-		$a_01_34 = {70 00 72 00 6f 00 66 00 69 00 74 00 61 00 63 00 74 00 69 00 6f 00 6e 00 } //01 00  profitaction
-		$a_01_35 = {6c 00 69 00 67 00 68 00 74 00 73 00 70 00 65 00 65 00 64 00 69 00 6e 00 63 00 6f 00 6d 00 65 00 } //01 00  lightspeedincome
-		$a_01_36 = {79 00 6f 00 75 00 72 00 6d 00 6f 00 6e 00 65 00 79 00 62 00 6f 00 78 00 } //01 00  yourmoneybox
-		$a_01_37 = {71 00 75 00 61 00 6c 00 69 00 74 00 79 00 61 00 64 00 73 00 } //01 00  qualityads
-		$a_01_38 = {69 00 6e 00 63 00 72 00 65 00 64 00 69 00 61 00 64 00 73 00 } //01 00  incrediads
-		$a_01_39 = {76 00 61 00 6e 00 69 00 6c 00 6c 00 61 00 63 00 6c 00 69 00 63 00 6b 00 73 00 } //01 00  vanillaclicks
-		$a_01_40 = {75 00 62 00 65 00 72 00 63 00 6c 00 69 00 63 00 6b 00 73 00 } //01 00  uberclicks
-		$a_01_41 = {61 00 64 00 76 00 65 00 72 00 74 00 7a 00 69 00 6c 00 6c 00 61 00 } //01 00  advertzilla
-		$a_01_42 = {65 00 78 00 74 00 72 00 61 00 66 00 69 00 6e 00 64 00 } //01 00  extrafind
-		$a_01_43 = {73 00 65 00 61 00 72 00 63 00 68 00 65 00 6e 00 67 00 69 00 6e 00 65 00 73 00 75 00 67 00 67 00 65 00 73 00 74 00 6f 00 72 00 } //01 00  searchenginesuggestor
-		$a_01_44 = {6b 00 65 00 79 00 77 00 6f 00 72 00 64 00 73 00 75 00 67 00 67 00 65 00 73 00 74 00 6f 00 72 00 } //01 00  keywordsuggestor
-		$a_01_45 = {61 00 64 00 73 00 66 00 6c 00 6f 00 77 00 } //01 00  adsflow
-		$a_01_46 = {69 00 6e 00 74 00 65 00 72 00 6e 00 65 00 74 00 73 00 70 00 6f 00 6f 00 6c 00 65 00 72 00 } //01 00  internetspooler
-		$a_01_47 = {41 00 64 00 76 00 65 00 72 00 74 00 7a 00 69 00 6c 00 31 00 61 00 } //01 00  Advertzil1a
-		$a_01_48 = {2e 3f 41 56 4c 6f 70 65 72 74 6f 70 69 6e 6f 6d 40 40 } //01 00  .?AVLopertopinom@@
-		$a_01_49 = {2e 3f 41 56 56 6f 6f 70 73 79 40 40 } //01 00  .?AVVoopsy@@
-		$a_01_50 = {2e 3f 41 56 4b 6f 70 79 70 6f 40 40 } //01 00  .?AVKopypo@@
-		$a_01_51 = {2e 3f 41 56 41 73 71 65 64 75 71 69 40 40 } //01 00  .?AVAsqeduqi@@
-		$a_01_52 = {2e 3f 41 56 4e 6f 65 70 77 6b 73 64 71 40 40 } //01 00  .?AVNoepwksdq@@
-		$a_01_53 = {2e 3f 41 56 50 65 6f 73 6c 6b 77 73 6c 31 31 32 40 40 } //01 00  .?AVPeoslkwsl112@@
-		$a_01_54 = {2e 3f 41 56 43 65 6f 70 64 69 65 6a 6b 6c 65 6c 77 40 40 } //01 00  .?AVCeopdiejklelw@@
-		$a_01_55 = {2e 3f 41 56 4d 6d 65 6b 6a 64 6b 65 6f 62 78 40 40 } //01 00  .?AVMmekjdkeobx@@
-		$a_01_56 = {2e 3f 41 56 4b 64 6e 6f 70 6f 70 70 6f 70 6f 70 6f 40 40 } //01 00  .?AVKdnopoppopopo@@
-		$a_01_57 = {2e 3f 41 56 4c 6f 65 70 77 6b 73 78 6d 40 40 } //01 00  .?AVLoepwksxm@@
-		$a_01_58 = {2e 3f 41 56 50 71 71 72 70 72 74 75 40 40 } //01 00  .?AVPqqrprtu@@
-		$a_03_59 = {8b 54 24 04 8a 14 10 8b 4e 04 88 14 08 40 83 f8 90 01 01 76 ed 90 00 } //01 00 
-		$a_01_60 = {83 ef 28 b8 67 66 66 66 f7 ef c1 fa 04 8b c2 c1 e8 1f 03 c2 83 c4 08 83 ee 28 83 f8 01 } //01 00 
-		$a_01_61 = {89 55 08 83 65 fc 00 8b 4d 0c 8b 39 89 3a 83 21 00 83 4d fc ff } //01 00 
-		$a_03_62 = {8a 14 1a 8a c2 02 c0 02 d0 c0 e2 90 01 01 80 fa 90 01 01 7d 90 00 } //00 00 
+		$a_01_0 = {56 00 4d 00 77 00 61 00 72 00 65 00 5f 00 56 00 69 00 72 00 74 00 75 00 61 00 6c 00 } //1 VMware_Virtual
+		$a_01_1 = {69 00 72 00 74 00 75 00 61 00 6c 00 5f 00 48 00 44 00 } //1 irtual_HD
+		$a_01_2 = {56 00 69 00 72 00 74 00 75 00 61 00 6c 00 5f 00 48 00 44 00 44 00 } //1 Virtual_HDD
+		$a_01_3 = {56 00 4d 00 77 00 61 00 72 00 65 00 20 00 53 00 56 00 47 00 41 00 } //1 VMware SVGA
+		$a_01_4 = {56 00 69 00 72 00 74 00 75 00 61 00 6c 00 20 00 50 00 43 00 } //1 Virtual PC
+		$a_01_5 = {7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 66 00 6f 00 72 00 62 00 69 00 64 00 2e 00 70 00 68 00 70 00 3f 00 6e 00 65 00 74 00 3d 00 7b 00 31 00 7d 00 26 00 76 00 3d 00 7b 00 32 00 7d 00 } //1 {0}/mod/forbid.php?net={1}&v={2}
+		$a_01_6 = {7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 6e 00 6f 00 74 00 69 00 66 00 79 00 2e 00 70 00 68 00 70 00 3f 00 72 00 65 00 73 00 3d 00 73 00 75 00 63 00 63 00 65 00 73 00 73 00 26 00 61 00 66 00 66 00 3d 00 7b 00 31 00 7d 00 26 00 68 00 77 00 3d 00 7b 00 32 00 7d 00 } //1 {0}/mod/notify.php?res=success&aff={1}&hw={2}
+		$a_01_7 = {7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 75 00 6e 00 6f 00 74 00 69 00 66 00 79 00 2e 00 70 00 68 00 70 00 3f 00 61 00 66 00 66 00 3d 00 7b 00 31 00 7d 00 26 00 68 00 77 00 3d 00 7b 00 32 00 7d 00 } //1 {0}/mod/unotify.php?aff={1}&hw={2}
+		$a_01_8 = {7b 00 30 00 7d 00 2f 00 6d 00 6f 00 64 00 2f 00 66 00 6b 00 64 00 6d 00 5f 00 64 00 62 00 32 00 2e 00 70 00 68 00 70 00 3f 00 6e 00 65 00 74 00 3d 00 7b 00 31 00 7d 00 26 00 76 00 3d 00 7b 00 32 00 7d 00 } //1 {0}/mod/fkdm_db2.php?net={1}&v={2}
+		$a_01_9 = {7b 00 30 00 7d 00 20 00 7b 00 31 00 7d 00 5f 00 7b 00 32 00 7d 00 } //1 {0} {1}_{2}
+		$a_01_10 = {54 00 65 00 6d 00 70 00 6f 00 72 00 61 00 72 00 79 00 20 00 49 00 6e 00 74 00 65 00 72 00 6e 00 65 00 74 00 20 00 46 00 69 00 6c 00 65 00 73 00 00 00 6c 00 6f 00 77 00 } //1
+		$a_01_11 = {33 d8 8b 46 08 03 c2 66 89 5d 08 66 8b 5d 08 66 33 18 8b 06 4a 66 89 1c 01 } //1
+		$a_01_12 = {33 d8 66 89 5d 08 8b 46 08 66 8b 5d 08 03 c2 66 33 18 8b 06 66 89 1c 48 } //1
+		$a_03_13 = {33 c3 88 45 ff 0f b6 45 ff 83 90 01 02 88 45 ff 8a 45 ff 32 01 8b 5e 90 01 01 88 04 1a 90 00 } //1
+		$a_03_14 = {33 d1 8b 4e 08 88 54 24 08 0f b6 54 24 08 2b c8 8a 49 90 01 01 32 d1 8b 0e 88 14 08 90 00 } //1
+		$a_01_15 = {8b 4b 10 66 8b 0c 01 66 33 4b 08 8b 53 0c 66 89 0c 10 } //1
+		$a_01_16 = {eb 09 8b 4c 24 04 8a 09 30 08 40 3b 44 24 08 75 f1 c2 08 00 } //1
+		$a_01_17 = {8a 4c 24 04 3b c2 74 0a 30 08 0f be 08 40 3b c2 75 f6 } //1
+		$a_01_18 = {74 10 8a 4c 24 0c 30 08 0f be 08 40 3b 44 24 08 75 f4 } //1
+		$a_01_19 = {eb 06 30 08 0f be 08 40 3b 44 24 04 75 f4 } //1
+		$a_01_20 = {8b 44 24 04 eb 04 80 00 8f 40 3b 44 24 08 75 f6 c2 08 00 } //1
+		$a_03_21 = {66 33 3c 02 ff 90 03 01 01 4d 6d 0c 8b 19 66 89 3c 1e 75 ee 66 8b 3c 02 66 33 38 90 00 } //1
+		$a_01_22 = {72 00 65 00 76 00 65 00 6e 00 75 00 65 00 73 00 74 00 72 00 65 00 61 00 6d 00 69 00 6e 00 67 00 } //1 revenuestreaming
+		$a_01_23 = {63 00 6c 00 69 00 63 00 6b 00 62 00 75 00 73 00 74 00 65 00 72 00 } //1 clickbuster
+		$a_01_24 = {65 00 61 00 72 00 6e 00 66 00 6f 00 72 00 66 00 75 00 6e 00 } //1 earnforfun
+		$a_01_25 = {65 00 78 00 70 00 72 00 65 00 73 00 73 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 } //1 expressrevenue
+		$a_01_26 = {63 00 61 00 73 00 68 00 74 00 69 00 74 00 61 00 6e 00 } //1 cashtitan
+		$a_01_27 = {68 00 6f 00 74 00 72 00 65 00 76 00 65 00 6e 00 75 00 65 00 } //1 hotrevenue
+		$a_01_28 = {74 00 6f 00 70 00 67 00 65 00 61 00 72 00 6d 00 6f 00 6e 00 65 00 79 00 } //1 topgearmoney
+		$a_01_29 = {76 00 6f 00 67 00 75 00 65 00 63 00 61 00 73 00 68 00 } //1 voguecash
+		$a_01_30 = {62 00 72 00 69 00 6e 00 63 00 6f 00 6d 00 65 00 } //1 brincome
+		$a_01_31 = {79 00 6f 00 75 00 72 00 70 00 72 00 6f 00 66 00 69 00 74 00 63 00 6c 00 75 00 62 00 } //1 yourprofitclub
+		$a_01_32 = {66 00 69 00 6e 00 64 00 79 00 6f 00 75 00 72 00 70 00 72 00 6f 00 66 00 69 00 74 00 73 00 6b 00 79 00 } //1 findyourprofitsky
+		$a_01_33 = {70 00 72 00 6f 00 66 00 69 00 74 00 68 00 61 00 6e 00 64 00 } //1 profithand
+		$a_01_34 = {70 00 72 00 6f 00 66 00 69 00 74 00 61 00 63 00 74 00 69 00 6f 00 6e 00 } //1 profitaction
+		$a_01_35 = {6c 00 69 00 67 00 68 00 74 00 73 00 70 00 65 00 65 00 64 00 69 00 6e 00 63 00 6f 00 6d 00 65 00 } //1 lightspeedincome
+		$a_01_36 = {79 00 6f 00 75 00 72 00 6d 00 6f 00 6e 00 65 00 79 00 62 00 6f 00 78 00 } //1 yourmoneybox
+		$a_01_37 = {71 00 75 00 61 00 6c 00 69 00 74 00 79 00 61 00 64 00 73 00 } //1 qualityads
+		$a_01_38 = {69 00 6e 00 63 00 72 00 65 00 64 00 69 00 61 00 64 00 73 00 } //1 incrediads
+		$a_01_39 = {76 00 61 00 6e 00 69 00 6c 00 6c 00 61 00 63 00 6c 00 69 00 63 00 6b 00 73 00 } //1 vanillaclicks
+		$a_01_40 = {75 00 62 00 65 00 72 00 63 00 6c 00 69 00 63 00 6b 00 73 00 } //1 uberclicks
+		$a_01_41 = {61 00 64 00 76 00 65 00 72 00 74 00 7a 00 69 00 6c 00 6c 00 61 00 } //1 advertzilla
+		$a_01_42 = {65 00 78 00 74 00 72 00 61 00 66 00 69 00 6e 00 64 00 } //1 extrafind
+		$a_01_43 = {73 00 65 00 61 00 72 00 63 00 68 00 65 00 6e 00 67 00 69 00 6e 00 65 00 73 00 75 00 67 00 67 00 65 00 73 00 74 00 6f 00 72 00 } //1 searchenginesuggestor
+		$a_01_44 = {6b 00 65 00 79 00 77 00 6f 00 72 00 64 00 73 00 75 00 67 00 67 00 65 00 73 00 74 00 6f 00 72 00 } //1 keywordsuggestor
+		$a_01_45 = {61 00 64 00 73 00 66 00 6c 00 6f 00 77 00 } //1 adsflow
+		$a_01_46 = {69 00 6e 00 74 00 65 00 72 00 6e 00 65 00 74 00 73 00 70 00 6f 00 6f 00 6c 00 65 00 72 00 } //1 internetspooler
+		$a_01_47 = {41 00 64 00 76 00 65 00 72 00 74 00 7a 00 69 00 6c 00 31 00 61 00 } //1 Advertzil1a
+		$a_01_48 = {2e 3f 41 56 4c 6f 70 65 72 74 6f 70 69 6e 6f 6d 40 40 } //1 .?AVLopertopinom@@
+		$a_01_49 = {2e 3f 41 56 56 6f 6f 70 73 79 40 40 } //1 .?AVVoopsy@@
+		$a_01_50 = {2e 3f 41 56 4b 6f 70 79 70 6f 40 40 } //1 .?AVKopypo@@
+		$a_01_51 = {2e 3f 41 56 41 73 71 65 64 75 71 69 40 40 } //1 .?AVAsqeduqi@@
+		$a_01_52 = {2e 3f 41 56 4e 6f 65 70 77 6b 73 64 71 40 40 } //1 .?AVNoepwksdq@@
+		$a_01_53 = {2e 3f 41 56 50 65 6f 73 6c 6b 77 73 6c 31 31 32 40 40 } //1 .?AVPeoslkwsl112@@
+		$a_01_54 = {2e 3f 41 56 43 65 6f 70 64 69 65 6a 6b 6c 65 6c 77 40 40 } //1 .?AVCeopdiejklelw@@
+		$a_01_55 = {2e 3f 41 56 4d 6d 65 6b 6a 64 6b 65 6f 62 78 40 40 } //1 .?AVMmekjdkeobx@@
+		$a_01_56 = {2e 3f 41 56 4b 64 6e 6f 70 6f 70 70 6f 70 6f 70 6f 40 40 } //1 .?AVKdnopoppopopo@@
+		$a_01_57 = {2e 3f 41 56 4c 6f 65 70 77 6b 73 78 6d 40 40 } //1 .?AVLoepwksxm@@
+		$a_01_58 = {2e 3f 41 56 50 71 71 72 70 72 74 75 40 40 } //1 .?AVPqqrprtu@@
+		$a_03_59 = {8b 54 24 04 8a 14 10 8b 4e 04 88 14 08 40 83 f8 90 01 01 76 ed 90 00 } //1
+		$a_01_60 = {83 ef 28 b8 67 66 66 66 f7 ef c1 fa 04 8b c2 c1 e8 1f 03 c2 83 c4 08 83 ee 28 83 f8 01 } //1
+		$a_01_61 = {89 55 08 83 65 fc 00 8b 4d 0c 8b 39 89 3a 83 21 00 83 4d fc ff } //1
+		$a_03_62 = {8a 14 1a 8a c2 02 c0 02 d0 c0 e2 90 01 01 80 fa 90 01 01 7d 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1+(#a_01_12  & 1)*1+(#a_03_13  & 1)*1+(#a_03_14  & 1)*1+(#a_01_15  & 1)*1+(#a_01_16  & 1)*1+(#a_01_17  & 1)*1+(#a_01_18  & 1)*1+(#a_01_19  & 1)*1+(#a_01_20  & 1)*1+(#a_03_21  & 1)*1+(#a_01_22  & 1)*1+(#a_01_23  & 1)*1+(#a_01_24  & 1)*1+(#a_01_25  & 1)*1+(#a_01_26  & 1)*1+(#a_01_27  & 1)*1+(#a_01_28  & 1)*1+(#a_01_29  & 1)*1+(#a_01_30  & 1)*1+(#a_01_31  & 1)*1+(#a_01_32  & 1)*1+(#a_01_33  & 1)*1+(#a_01_34  & 1)*1+(#a_01_35  & 1)*1+(#a_01_36  & 1)*1+(#a_01_37  & 1)*1+(#a_01_38  & 1)*1+(#a_01_39  & 1)*1+(#a_01_40  & 1)*1+(#a_01_41  & 1)*1+(#a_01_42  & 1)*1+(#a_01_43  & 1)*1+(#a_01_44  & 1)*1+(#a_01_45  & 1)*1+(#a_01_46  & 1)*1+(#a_01_47  & 1)*1+(#a_01_48  & 1)*1+(#a_01_49  & 1)*1+(#a_01_50  & 1)*1+(#a_01_51  & 1)*1+(#a_01_52  & 1)*1+(#a_01_53  & 1)*1+(#a_01_54  & 1)*1+(#a_01_55  & 1)*1+(#a_01_56  & 1)*1+(#a_01_57  & 1)*1+(#a_01_58  & 1)*1+(#a_03_59  & 1)*1+(#a_01_60  & 1)*1+(#a_01_61  & 1)*1+(#a_03_62  & 1)*1) >=3
  
 }
 rule Adware_Win32_AdRotator_38{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,06 00 06 00 06 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_01_0 = {37 44 39 33 36 32 46 38 2d 37 37 44 38 2d 34 62 32 39 2d 39 37 42 35 2d 36 32 31 44 35 35 30 38 39 30 43 30 } //01 00  7D9362F8-77D8-4b29-97B5-621D550890C0
-		$a_01_1 = {72 69 67 68 74 6f 6e 61 64 73 20 6f 70 74 69 6d 69 7a 65 72 } //01 00  rightonads optimizer
-		$a_01_2 = {46 75 6b 75 72 75 6b 75 2e 44 4c 4c } //01 00  Fukuruku.DLL
-		$a_01_3 = {43 72 65 61 74 65 4d 75 74 65 78 57 } //01 00  CreateMutexW
-		$a_01_4 = {49 6e 74 65 72 6e 65 74 52 65 61 64 46 69 6c 65 } //01 00  InternetReadFile
-		$a_01_5 = {49 6e 74 65 72 6e 65 74 43 6c 6f 73 65 48 61 6e 64 6c 65 } //00 00  InternetCloseHandle
+		$a_01_0 = {37 44 39 33 36 32 46 38 2d 37 37 44 38 2d 34 62 32 39 2d 39 37 42 35 2d 36 32 31 44 35 35 30 38 39 30 43 30 } //1 7D9362F8-77D8-4b29-97B5-621D550890C0
+		$a_01_1 = {72 69 67 68 74 6f 6e 61 64 73 20 6f 70 74 69 6d 69 7a 65 72 } //1 rightonads optimizer
+		$a_01_2 = {46 75 6b 75 72 75 6b 75 2e 44 4c 4c } //1 Fukuruku.DLL
+		$a_01_3 = {43 72 65 61 74 65 4d 75 74 65 78 57 } //1 CreateMutexW
+		$a_01_4 = {49 6e 74 65 72 6e 65 74 52 65 61 64 46 69 6c 65 } //1 InternetReadFile
+		$a_01_5 = {49 6e 74 65 72 6e 65 74 43 6c 6f 73 65 48 61 6e 64 6c 65 } //1 InternetCloseHandle
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=6
  
 }
 rule Adware_Win32_AdRotator_39{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,06 00 06 00 06 00 00 01 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_01_0 = {4d 69 63 72 6f 73 6f 66 74 20 56 69 73 75 61 6c 20 43 2b 2b 20 52 75 6e 74 69 6d 65 20 4c 69 62 72 61 72 79 } //01 00  Microsoft Visual C++ Runtime Library
-		$a_01_1 = {66 69 62 6b 69 63 6b 75 70 64 2e 65 78 65 } //01 00  fibkickupd.exe
-		$a_01_2 = {66 69 62 75 6c 61 74 69 63 6b 65 72 2e 63 6f 6d } //01 00  fibulaticker.com
-		$a_01_3 = {6d 75 6c 74 69 2d 70 6f 70 73 2e 63 6f 6d 2f 61 64 73 44 69 72 65 63 74 2e 70 68 70 3f } //01 00  multi-pops.com/adsDirect.php?
-		$a_01_4 = {49 6e 74 65 72 6e 65 74 4f 70 65 6e 55 72 6c 41 } //01 00  InternetOpenUrlA
-		$a_01_5 = {48 74 74 70 51 75 65 72 79 49 6e 66 6f 41 } //00 00  HttpQueryInfoA
+		$a_01_0 = {4d 69 63 72 6f 73 6f 66 74 20 56 69 73 75 61 6c 20 43 2b 2b 20 52 75 6e 74 69 6d 65 20 4c 69 62 72 61 72 79 } //1 Microsoft Visual C++ Runtime Library
+		$a_01_1 = {66 69 62 6b 69 63 6b 75 70 64 2e 65 78 65 } //1 fibkickupd.exe
+		$a_01_2 = {66 69 62 75 6c 61 74 69 63 6b 65 72 2e 63 6f 6d } //1 fibulaticker.com
+		$a_01_3 = {6d 75 6c 74 69 2d 70 6f 70 73 2e 63 6f 6d 2f 61 64 73 44 69 72 65 63 74 2e 70 68 70 3f } //1 multi-pops.com/adsDirect.php?
+		$a_01_4 = {49 6e 74 65 72 6e 65 74 4f 70 65 6e 55 72 6c 41 } //1 InternetOpenUrlA
+		$a_01_5 = {48 74 74 70 51 75 65 72 79 49 6e 66 6f 41 } //1 HttpQueryInfoA
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=6
  
 }
 rule Adware_Win32_AdRotator_40{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,0e 00 0e 00 07 00 00 0a 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,0e 00 0e 00 07 00 00 "
 		
 	strings :
-		$a_01_0 = {42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 } //02 00  BannerRotator
-		$a_01_1 = {44 6c 6c 41 75 78 45 6e 74 72 79 50 6f 69 6e 74 00 44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 } //01 00  汄䅬硵湅牴偹楯瑮䐀汬慃啮汮慯乤睯
-		$a_01_2 = {6c 61 73 74 5f 75 70 64 61 74 65 5f 61 74 74 65 6d 70 74 00 } //01 00  慬瑳畟摰瑡彥瑡整灭t
-		$a_01_3 = {66 65 65 64 5f 73 74 61 74 73 00 } //01 00 
-		$a_01_4 = {66 65 65 64 5f 63 61 70 73 00 } //01 00  敦摥损灡s
-		$a_01_5 = {63 6c 69 63 6b 5f 63 6f 75 6e 74 65 72 00 00 74 69 6d 65 73 74 61 6d 70 } //01 00  汣捩彫潣湵整r琀浩獥慴灭
-		$a_01_6 = {69 6d 70 72 65 73 73 5f 73 74 61 74 00 } //00 00 
+		$a_01_0 = {42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 } //10 BannerRotator
+		$a_01_1 = {44 6c 6c 41 75 78 45 6e 74 72 79 50 6f 69 6e 74 00 44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 } //2 汄䅬硵湅牴偹楯瑮䐀汬慃啮汮慯乤睯
+		$a_01_2 = {6c 61 73 74 5f 75 70 64 61 74 65 5f 61 74 74 65 6d 70 74 00 } //1 慬瑳畟摰瑡彥瑡整灭t
+		$a_01_3 = {66 65 65 64 5f 73 74 61 74 73 00 } //1
+		$a_01_4 = {66 65 65 64 5f 63 61 70 73 00 } //1 敦摥损灡s
+		$a_01_5 = {63 6c 69 63 6b 5f 63 6f 75 6e 74 65 72 00 00 74 69 6d 65 73 74 61 6d 70 } //1 汣捩彫潣湵整r琀浩獥慴灭
+		$a_01_6 = {69 6d 70 72 65 73 73 5f 73 74 61 74 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*10+(#a_01_1  & 1)*2+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=14
  
 }
 rule Adware_Win32_AdRotator_41{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,33 00 32 00 07 00 00 0a 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,33 00 32 00 07 00 00 "
 		
 	strings :
-		$a_01_0 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 45 78 70 6c 6f 72 65 72 5c 42 72 6f 77 73 65 72 20 48 65 6c 70 65 72 20 4f 62 6a 65 63 74 73 5c } //0a 00  SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\
-		$a_01_1 = {4e 6f 50 72 6f 74 65 63 74 65 64 4d 6f 64 65 42 61 6e 6e 65 72 } //0a 00  NoProtectedModeBanner
-		$a_01_2 = {54 61 67 67 69 6e 67 20 53 79 73 74 65 6d 20 53 74 72 65 61 6d 72 65 76 65 6e 75 65 } //0a 00  Tagging System Streamrevenue
-		$a_01_3 = {25 25 5c 72 65 67 73 76 72 33 32 2e 65 78 65 22 20 2f 73 20 22 } //0a 00  %%\regsvr32.exe" /s "
-		$a_01_4 = {2f 61 66 66 3d } //01 00  /aff=
-		$a_01_5 = {75 72 6c 6d 6f 6e 3a 3a 55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 41 } //01 00  urlmon::URLDownloadToFileA
-		$a_01_6 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 49 6e 74 65 72 6e 65 74 20 45 78 70 6c 6f 72 65 72 5c 4c 6f 77 20 52 69 67 68 74 73 5c 45 6c 65 76 61 74 69 6f 6e 50 6f 6c 69 63 79 5c } //00 00  Software\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\
+		$a_01_0 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 45 78 70 6c 6f 72 65 72 5c 42 72 6f 77 73 65 72 20 48 65 6c 70 65 72 20 4f 62 6a 65 63 74 73 5c } //10 SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\
+		$a_01_1 = {4e 6f 50 72 6f 74 65 63 74 65 64 4d 6f 64 65 42 61 6e 6e 65 72 } //10 NoProtectedModeBanner
+		$a_01_2 = {54 61 67 67 69 6e 67 20 53 79 73 74 65 6d 20 53 74 72 65 61 6d 72 65 76 65 6e 75 65 } //10 Tagging System Streamrevenue
+		$a_01_3 = {25 25 5c 72 65 67 73 76 72 33 32 2e 65 78 65 22 20 2f 73 20 22 } //10 %%\regsvr32.exe" /s "
+		$a_01_4 = {2f 61 66 66 3d } //10 /aff=
+		$a_01_5 = {75 72 6c 6d 6f 6e 3a 3a 55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 41 } //1 urlmon::URLDownloadToFileA
+		$a_01_6 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 49 6e 74 65 72 6e 65 74 20 45 78 70 6c 6f 72 65 72 5c 4c 6f 77 20 52 69 67 68 74 73 5c 45 6c 65 76 61 74 69 6f 6e 50 6f 6c 69 63 79 5c } //1 Software\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*10+(#a_01_1  & 1)*10+(#a_01_2  & 1)*10+(#a_01_3  & 1)*10+(#a_01_4  & 1)*10+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=50
  
 }
 rule Adware_Win32_AdRotator_42{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,1f 00 1e 00 05 00 00 0a 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,1f 00 1e 00 05 00 00 "
 		
 	strings :
-		$a_01_0 = {22 00 68 00 74 00 74 00 70 00 3a 00 2f 00 2f 00 69 00 65 00 73 00 65 00 74 00 74 00 69 00 6e 00 67 00 73 00 75 00 70 00 64 00 61 00 74 00 65 00 22 00 } //0a 00  "http://iesettingsupdate"
-		$a_01_1 = {53 00 6f 00 66 00 74 00 77 00 61 00 72 00 65 00 5c 00 4d 00 69 00 63 00 72 00 6f 00 73 00 6f 00 66 00 74 00 5c 00 52 00 6f 00 74 00 61 00 74 00 6f 00 72 00 } //0a 00  Software\Microsoft\Rotator
-		$a_01_2 = {62 00 61 00 6e 00 6e 00 65 00 72 00 72 00 6f 00 74 00 61 00 74 00 6f 00 72 00 5f 00 73 00 74 00 61 00 72 00 74 00 75 00 70 00 } //01 00  bannerrotator_startup
-		$a_01_3 = {68 00 74 00 74 00 70 00 3a 00 2f 00 2f 00 62 00 61 00 6e 00 6e 00 65 00 72 00 63 00 70 00 6d 00 2e 00 63 00 6f 00 6d 00 2f 00 62 00 63 00 } //01 00  http://bannercpm.com/bc
-		$a_01_4 = {74 00 72 00 61 00 66 00 66 00 69 00 63 00 73 00 6f 00 6c 00 75 00 74 00 69 00 6f 00 6e 00 2e 00 63 00 6f 00 6d 00 2f 00 62 00 63 00 2f 00 61 00 64 00 72 00 6f 00 74 00 61 00 74 00 6f 00 72 00 2e 00 70 00 68 00 70 00 } //00 00  trafficsolution.com/bc/adrotator.php
+		$a_01_0 = {22 00 68 00 74 00 74 00 70 00 3a 00 2f 00 2f 00 69 00 65 00 73 00 65 00 74 00 74 00 69 00 6e 00 67 00 73 00 75 00 70 00 64 00 61 00 74 00 65 00 22 00 } //10 "http://iesettingsupdate"
+		$a_01_1 = {53 00 6f 00 66 00 74 00 77 00 61 00 72 00 65 00 5c 00 4d 00 69 00 63 00 72 00 6f 00 73 00 6f 00 66 00 74 00 5c 00 52 00 6f 00 74 00 61 00 74 00 6f 00 72 00 } //10 Software\Microsoft\Rotator
+		$a_01_2 = {62 00 61 00 6e 00 6e 00 65 00 72 00 72 00 6f 00 74 00 61 00 74 00 6f 00 72 00 5f 00 73 00 74 00 61 00 72 00 74 00 75 00 70 00 } //10 bannerrotator_startup
+		$a_01_3 = {68 00 74 00 74 00 70 00 3a 00 2f 00 2f 00 62 00 61 00 6e 00 6e 00 65 00 72 00 63 00 70 00 6d 00 2e 00 63 00 6f 00 6d 00 2f 00 62 00 63 00 } //1 http://bannercpm.com/bc
+		$a_01_4 = {74 00 72 00 61 00 66 00 66 00 69 00 63 00 73 00 6f 00 6c 00 75 00 74 00 69 00 6f 00 6e 00 2e 00 63 00 6f 00 6d 00 2f 00 62 00 63 00 2f 00 61 00 64 00 72 00 6f 00 74 00 61 00 74 00 6f 00 72 00 2e 00 70 00 68 00 70 00 } //1 trafficsolution.com/bc/adrotator.php
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*10+(#a_01_1  & 1)*10+(#a_01_2  & 1)*10+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=30
  
 }
 rule Adware_Win32_AdRotator_43{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,0d 00 0d 00 06 00 00 0a 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,0d 00 0d 00 06 00 00 "
 		
 	strings :
-		$a_01_0 = {00 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 2e 44 4c 4c 00 44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 00 } //01 00 
-		$a_01_1 = {00 00 00 00 49 00 73 00 52 00 6f 00 74 00 61 00 74 00 6f 00 72 00 50 00 6f 00 70 00 75 00 70 00 00 00 00 00 } //01 00 
-		$a_01_2 = {72 00 65 00 66 00 72 00 65 00 73 00 68 00 5f 00 74 00 69 00 6d 00 65 00 00 00 00 00 63 00 6c 00 69 00 63 00 6b 00 00 00 63 00 6c 00 69 00 63 00 6b 00 6c 00 69 00 6d 00 69 00 74 00 } //01 00 
-		$a_01_3 = {26 00 6e 00 65 00 74 00 5f 00 69 00 64 00 3d 00 00 00 00 00 26 00 61 00 66 00 66 00 5f 00 69 00 64 00 3d 00 00 00 00 00 26 00 74 00 6d 00 3d 00 } //01 00 
-		$a_01_4 = {6d 00 61 00 78 00 5f 00 69 00 6d 00 70 00 72 00 65 00 73 00 73 00 00 00 75 00 70 00 64 00 61 00 74 00 65 00 5f 00 75 00 72 00 6c 00 } //01 00 
-		$a_01_5 = {26 00 76 00 65 00 72 00 73 00 69 00 6f 00 6e 00 3d 00 00 00 26 00 63 00 6c 00 69 00 63 00 6b 00 65 00 64 00 3d 00 00 00 73 00 68 00 6f 00 77 00 65 00 64 00 3d 00 } //00 00 
+		$a_01_0 = {00 42 61 6e 6e 65 72 52 6f 74 61 74 6f 72 2e 44 4c 4c 00 44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 00 } //10
+		$a_01_1 = {00 00 00 00 49 00 73 00 52 00 6f 00 74 00 61 00 74 00 6f 00 72 00 50 00 6f 00 70 00 75 00 70 00 00 00 00 00 } //1
+		$a_01_2 = {72 00 65 00 66 00 72 00 65 00 73 00 68 00 5f 00 74 00 69 00 6d 00 65 00 00 00 00 00 63 00 6c 00 69 00 63 00 6b 00 00 00 63 00 6c 00 69 00 63 00 6b 00 6c 00 69 00 6d 00 69 00 74 00 } //1
+		$a_01_3 = {26 00 6e 00 65 00 74 00 5f 00 69 00 64 00 3d 00 00 00 00 00 26 00 61 00 66 00 66 00 5f 00 69 00 64 00 3d 00 00 00 00 00 26 00 74 00 6d 00 3d 00 } //1
+		$a_01_4 = {6d 00 61 00 78 00 5f 00 69 00 6d 00 70 00 72 00 65 00 73 00 73 00 00 00 75 00 70 00 64 00 61 00 74 00 65 00 5f 00 75 00 72 00 6c 00 } //1
+		$a_01_5 = {26 00 76 00 65 00 72 00 73 00 69 00 6f 00 6e 00 3d 00 00 00 26 00 63 00 6c 00 69 00 63 00 6b 00 65 00 64 00 3d 00 00 00 73 00 68 00 6f 00 77 00 65 00 64 00 3d 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*10+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=13
  
 }
 rule Adware_Win32_AdRotator_44{
 	meta:
-		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,19 00 19 00 1e 00 00 14 00 "
+		description = "Adware:Win32/AdRotator,SIGNATURE_TYPE_PEHSTR,19 00 19 00 1e 00 00 "
 		
 	strings :
-		$a_01_0 = {2f 62 63 2f 6e 73 69 5f 69 6e 73 74 61 6c 6c 2e 70 68 70 3f 61 66 66 5f 69 64 } //01 00  /bc/nsi_install.php?aff_id
-		$a_01_1 = {4e 6f 50 72 6f 74 65 63 74 65 64 4d 6f 64 65 42 61 6e 6e 65 72 } //01 00  NoProtectedModeBanner
-		$a_01_2 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 49 6e 74 65 72 6e 65 74 20 53 65 74 74 69 6e 67 73 5c 5a 6f 6e 65 73 5c } //01 00  Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\
-		$a_01_3 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 49 6e 74 65 72 6e 65 74 20 45 78 70 6c 6f 72 65 72 5c 4c 6f 77 20 52 69 67 68 74 73 5c 45 6c 65 76 61 74 69 6f 6e 50 6f 6c 69 63 79 5c } //01 00  Software\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\
-		$a_01_4 = {61 63 74 69 76 61 74 69 6f 6e 5f 6b 65 79 } //01 00  activation_key
-		$a_01_5 = {52 4f 4e 20 54 6f 6f 6c } //01 00  RON Tool
-		$a_01_6 = {00 6f 66 66 65 72 73 66 6f 72 74 6f 64 61 79 00 } //01 00  漀晦牥晳牯潴慤y
-		$a_01_7 = {00 61 64 64 65 73 74 69 6e 61 74 69 6f 6e 00 } //01 00 
-		$a_01_8 = {00 61 64 73 6f 6e 6d 65 64 69 61 00 } //01 00  愀獤湯敭楤a
-		$a_01_9 = {00 74 61 72 67 65 74 65 64 62 61 6e 6e 65 72 00 } //01 00  琀牡敧整扤湡敮r
-		$a_01_10 = {00 62 6c 61 7a 69 6e 67 61 64 73 00 } //01 00  戀慬楺杮摡s
-		$a_01_11 = {00 63 70 6d 73 6b 79 00 } //01 00  挀浰歳y
-		$a_01_12 = {00 67 6f 6f 6f 63 68 69 00 } //01 00 
-		$a_01_13 = {00 68 6f 72 69 7a 6f 6e 61 64 73 00 } //01 00  栀牯穩湯摡s
-		$a_01_14 = {00 6d 69 6c 65 68 69 67 68 61 64 73 00 } //01 00 
-		$a_01_15 = {00 6e 65 78 74 61 64 73 00 } //01 00 
-		$a_01_16 = {00 72 69 67 68 74 6f 6e 61 64 7a 00 } //01 00  爀杩瑨湯摡z
-		$a_01_17 = {00 73 75 70 65 72 69 6f 72 61 64 73 00 } //01 00 
-		$a_01_18 = {00 67 69 61 6e 74 61 64 73 00 } //01 00  最慩瑮摡s
-		$a_01_19 = {00 6d 78 6c 69 76 65 6d 65 64 69 61 00 } //01 00 
-		$a_01_20 = {00 61 67 61 64 6f 6f 00 } //01 00  愀慧潤o
-		$a_01_21 = {00 62 61 6e 6e 65 72 73 74 79 6c 65 00 } //01 00 
-		$a_01_22 = {00 62 61 6e 6e 65 72 73 74 79 6c 65 73 00 } //01 00  戀湡敮獲祴敬s
-		$a_01_23 = {00 62 61 6e 6e 65 72 61 64 73 67 61 6c 6f 72 65 00 } //01 00 
-		$a_01_24 = {00 6f 69 6e 61 64 73 65 72 76 69 6e 67 00 } //01 00  漀湩摡敳癲湩g
-		$a_01_25 = {00 66 75 6e 78 79 00 } //01 00 
-		$a_01_26 = {00 72 61 64 62 61 6e 6e 65 72 00 } //01 00 
-		$a_01_27 = {00 61 64 73 65 72 76 65 66 61 73 74 00 } //01 00 
-		$a_01_28 = {00 74 61 6e 67 6f 6d 61 74 00 } //01 00  琀湡潧慭t
-		$a_01_29 = {00 70 72 65 63 69 73 65 61 64 00 } //00 00 
+		$a_01_0 = {2f 62 63 2f 6e 73 69 5f 69 6e 73 74 61 6c 6c 2e 70 68 70 3f 61 66 66 5f 69 64 } //20 /bc/nsi_install.php?aff_id
+		$a_01_1 = {4e 6f 50 72 6f 74 65 63 74 65 64 4d 6f 64 65 42 61 6e 6e 65 72 } //1 NoProtectedModeBanner
+		$a_01_2 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 49 6e 74 65 72 6e 65 74 20 53 65 74 74 69 6e 67 73 5c 5a 6f 6e 65 73 5c } //1 Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\
+		$a_01_3 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 49 6e 74 65 72 6e 65 74 20 45 78 70 6c 6f 72 65 72 5c 4c 6f 77 20 52 69 67 68 74 73 5c 45 6c 65 76 61 74 69 6f 6e 50 6f 6c 69 63 79 5c } //1 Software\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\
+		$a_01_4 = {61 63 74 69 76 61 74 69 6f 6e 5f 6b 65 79 } //1 activation_key
+		$a_01_5 = {52 4f 4e 20 54 6f 6f 6c } //1 RON Tool
+		$a_01_6 = {00 6f 66 66 65 72 73 66 6f 72 74 6f 64 61 79 00 } //1 漀晦牥晳牯潴慤y
+		$a_01_7 = {00 61 64 64 65 73 74 69 6e 61 74 69 6f 6e 00 } //1
+		$a_01_8 = {00 61 64 73 6f 6e 6d 65 64 69 61 00 } //1 愀獤湯敭楤a
+		$a_01_9 = {00 74 61 72 67 65 74 65 64 62 61 6e 6e 65 72 00 } //1 琀牡敧整扤湡敮r
+		$a_01_10 = {00 62 6c 61 7a 69 6e 67 61 64 73 00 } //1 戀慬楺杮摡s
+		$a_01_11 = {00 63 70 6d 73 6b 79 00 } //1 挀浰歳y
+		$a_01_12 = {00 67 6f 6f 6f 63 68 69 00 } //1
+		$a_01_13 = {00 68 6f 72 69 7a 6f 6e 61 64 73 00 } //1 栀牯穩湯摡s
+		$a_01_14 = {00 6d 69 6c 65 68 69 67 68 61 64 73 00 } //1
+		$a_01_15 = {00 6e 65 78 74 61 64 73 00 } //1
+		$a_01_16 = {00 72 69 67 68 74 6f 6e 61 64 7a 00 } //1 爀杩瑨湯摡z
+		$a_01_17 = {00 73 75 70 65 72 69 6f 72 61 64 73 00 } //1
+		$a_01_18 = {00 67 69 61 6e 74 61 64 73 00 } //1 最慩瑮摡s
+		$a_01_19 = {00 6d 78 6c 69 76 65 6d 65 64 69 61 00 } //1
+		$a_01_20 = {00 61 67 61 64 6f 6f 00 } //1 愀慧潤o
+		$a_01_21 = {00 62 61 6e 6e 65 72 73 74 79 6c 65 00 } //1
+		$a_01_22 = {00 62 61 6e 6e 65 72 73 74 79 6c 65 73 00 } //1 戀湡敮獲祴敬s
+		$a_01_23 = {00 62 61 6e 6e 65 72 61 64 73 67 61 6c 6f 72 65 00 } //1
+		$a_01_24 = {00 6f 69 6e 61 64 73 65 72 76 69 6e 67 00 } //1 漀湩摡敳癲湩g
+		$a_01_25 = {00 66 75 6e 78 79 00 } //1
+		$a_01_26 = {00 72 61 64 62 61 6e 6e 65 72 00 } //1
+		$a_01_27 = {00 61 64 73 65 72 76 65 66 61 73 74 00 } //1
+		$a_01_28 = {00 74 61 6e 67 6f 6d 61 74 00 } //1 琀湡潧慭t
+		$a_01_29 = {00 70 72 65 63 69 73 65 61 64 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*20+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1+(#a_01_12  & 1)*1+(#a_01_13  & 1)*1+(#a_01_14  & 1)*1+(#a_01_15  & 1)*1+(#a_01_16  & 1)*1+(#a_01_17  & 1)*1+(#a_01_18  & 1)*1+(#a_01_19  & 1)*1+(#a_01_20  & 1)*1+(#a_01_21  & 1)*1+(#a_01_22  & 1)*1+(#a_01_23  & 1)*1+(#a_01_24  & 1)*1+(#a_01_25  & 1)*1+(#a_01_26  & 1)*1+(#a_01_27  & 1)*1+(#a_01_28  & 1)*1+(#a_01_29  & 1)*1) >=25
  
 }

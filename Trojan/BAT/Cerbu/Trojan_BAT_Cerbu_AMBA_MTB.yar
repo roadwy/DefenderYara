@@ -1,12 +1,12 @@
 
 rule Trojan_BAT_Cerbu_AMBA_MTB{
 	meta:
-		description = "Trojan:BAT/Cerbu.AMBA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		description = "Trojan:BAT/Cerbu.AMBA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {04 02 91 20 90 01 01 ff ff ff 5f 1f 18 62 0a 20 90 01 01 00 00 00 16 39 90 00 } //01 00 
-		$a_01_1 = {04 02 17 58 91 1f 10 62 60 0a } //00 00 
+		$a_03_0 = {04 02 91 20 90 01 01 ff ff ff 5f 1f 18 62 0a 20 90 01 01 00 00 00 16 39 90 00 } //1
+		$a_01_1 = {04 02 17 58 91 1f 10 62 60 0a } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }

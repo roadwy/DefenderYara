@@ -1,11 +1,11 @@
 
 rule Trojan_Win32_XWormRAT_A_MTB{
 	meta:
-		description = "Trojan:Win32/XWormRAT.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
+		description = "Trojan:Win32/XWormRAT.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {2b 72 14 8b 55 90 01 01 8b 52 0c 8a 04 08 32 04 32 8b 4d 90 00 } //00 00 
+		$a_03_0 = {2b 72 14 8b 55 90 01 01 8b 52 0c 8a 04 08 32 04 32 8b 4d 90 00 } //2
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*2) >=2
  
 }

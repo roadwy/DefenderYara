@@ -1,11 +1,11 @@
 
 rule Trojan_Win32_Sednit_LK_MTB{
 	meta:
-		description = "Trojan:Win32/Sednit.LK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		description = "Trojan:Win32/Sednit.LK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8a 04 02 32 44 39 90 01 01 32 90 01 02 88 04 1f 4f 8b 0e 83 ff ff 7f 90 00 } //00 00 
+		$a_03_0 = {8a 04 02 32 44 39 90 01 01 32 90 01 02 88 04 1f 4f 8b 0e 83 ff ff 7f 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1) >=1
  
 }

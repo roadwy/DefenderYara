@@ -1,11 +1,11 @@
 
 rule Trojan_Win64_Alureon_gen_F{
 	meta:
-		description = "Trojan:Win64/Alureon.gen!F,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		description = "Trojan:Win64/Alureon.gen!F,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {41 b9 00 02 00 00 b2 28 44 89 64 24 90 01 12 b8 53 44 00 00 66 39 45 90 00 } //00 00 
+		$a_03_0 = {41 b9 00 02 00 00 b2 28 44 89 64 24 90 01 12 b8 53 44 00 00 66 39 45 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1) >=1
  
 }

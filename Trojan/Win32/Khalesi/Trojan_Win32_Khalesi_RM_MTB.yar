@@ -1,11 +1,11 @@
 
 rule Trojan_Win32_Khalesi_RM_MTB{
 	meta:
-		description = "Trojan:Win32/Khalesi.RM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		description = "Trojan:Win32/Khalesi.RM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {99 83 e2 03 03 c2 c1 f8 02 89 45 90 01 01 8b 4d 90 01 01 81 c1 c6 04 00 00 89 4d 90 01 01 8b 55 90 01 01 81 3a 72 f3 01 00 75 90 00 } //00 00 
+		$a_03_0 = {99 83 e2 03 03 c2 c1 f8 02 89 45 90 01 01 8b 4d 90 01 01 81 c1 c6 04 00 00 89 4d 90 01 01 8b 55 90 01 01 81 3a 72 f3 01 00 75 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1) >=1
  
 }

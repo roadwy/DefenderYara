@@ -1,11 +1,11 @@
 
 rule Trojan_Win32_Gandcrab_CQS_MTB{
 	meta:
-		description = "Trojan:Win32/Gandcrab.CQS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		description = "Trojan:Win32/Gandcrab.CQS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {0a 44 3a 02 80 e4 fc c0 e3 90 01 01 0a 1c 3a c0 e4 90 01 01 0a 64 3a 01 83 c7 90 01 01 88 1c 31 88 64 31 01 88 44 31 02 83 c1 03 90 00 } //00 00 
+		$a_02_0 = {0a 44 3a 02 80 e4 fc c0 e3 90 01 01 0a 1c 3a c0 e4 90 01 01 0a 64 3a 01 83 c7 90 01 01 88 1c 31 88 64 31 01 88 44 31 02 83 c1 03 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_02_0  & 1)*1) >=1
  
 }

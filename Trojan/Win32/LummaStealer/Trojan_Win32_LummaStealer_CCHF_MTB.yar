@@ -1,11 +1,11 @@
 
 rule Trojan_Win32_LummaStealer_CCHF_MTB{
 	meta:
-		description = "Trojan:Win32/LummaStealer.CCHF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		description = "Trojan:Win32/LummaStealer.CCHF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {33 d2 8b c6 f7 f1 8b 45 90 01 01 46 8a 0c 02 8b 55 90 01 01 32 0c 3a 88 0f 8b 7d 90 01 01 3b f3 72 90 00 } //00 00 
+		$a_03_0 = {33 d2 8b c6 f7 f1 8b 45 90 01 01 46 8a 0c 02 8b 55 90 01 01 32 0c 3a 88 0f 8b 7d 90 01 01 3b f3 72 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1) >=1
  
 }

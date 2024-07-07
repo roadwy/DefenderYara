@@ -1,12 +1,12 @@
 
 rule Trojan_Win32_Razy_CG_MTB{
 	meta:
-		description = "Trojan:Win32/Razy.CG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 02 00 "
+		description = "Trojan:Win32/Razy.CG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {39 f6 74 01 ea 31 38 81 c1 90 02 04 81 c0 04 00 00 00 49 39 d8 75 e8 90 00 } //02 00 
-		$a_03_1 = {31 1a 83 ec 04 c7 04 24 90 02 04 5f 29 c1 81 c2 04 00 00 00 39 f2 75 e2 90 00 } //00 00 
+		$a_03_0 = {39 f6 74 01 ea 31 38 81 c1 90 02 04 81 c0 04 00 00 00 49 39 d8 75 e8 90 00 } //2
+		$a_03_1 = {31 1a 83 ec 04 c7 04 24 90 02 04 5f 29 c1 81 c2 04 00 00 00 39 f2 75 e2 90 00 } //2
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*2+(#a_03_1  & 1)*2) >=2
  
 }

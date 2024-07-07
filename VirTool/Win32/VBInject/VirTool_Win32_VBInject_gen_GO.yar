@@ -1,12 +1,12 @@
 
 rule VirTool_Win32_VBInject_gen_GO{
 	meta:
-		description = "VirTool:Win32/VBInject.gen!GO,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 01 00 "
+		description = "VirTool:Win32/VBInject.gen!GO,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {6c 68 ff f5 28 00 00 00 aa 5e 90 01 04 aa f5 2c 00 00 00 04 0c ff a3 90 00 } //01 00 
-		$a_03_1 = {fb 12 fc 0d 6c 6c ff 80 0c 00 fc a0 90 02 03 6c 6c ff 6c 5c ff e0 1c 90 00 } //01 00 
+		$a_03_0 = {6c 68 ff f5 28 00 00 00 aa 5e 90 01 04 aa f5 2c 00 00 00 04 0c ff a3 90 00 } //1
+		$a_03_1 = {fb 12 fc 0d 6c 6c ff 80 0c 00 fc a0 90 02 03 6c 6c ff 6c 5c ff e0 1c 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
 }

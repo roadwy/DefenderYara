@@ -1,11 +1,11 @@
 
 rule VirTool_Win32_Obfuscator_AL{
 	meta:
-		description = "VirTool:Win32/Obfuscator.AL,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		description = "VirTool:Win32/Obfuscator.AL,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {eb 06 56 52 55 4c 5a 00 90 05 20 01 90 8b 04 24 83 e8 4f 68 90 01 04 ff d0 90 02 ff c3 90 00 } //00 00 
+		$a_03_0 = {eb 06 56 52 55 4c 5a 00 90 05 20 01 90 8b 04 24 83 e8 4f 68 90 01 04 ff d0 90 02 ff c3 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*1) >=1
  
 }

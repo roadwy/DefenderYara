@@ -1,15 +1,14 @@
 
 rule Trojan_Win32_Startpage_VM{
 	meta:
-		description = "Trojan:Win32/Startpage.VM,SIGNATURE_TYPE_PEHSTR_EXT,05 00 04 00 04 00 00 03 00 "
+		description = "Trojan:Win32/Startpage.VM,SIGNATURE_TYPE_PEHSTR_EXT,05 00 04 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 01 51 3c 05 b9 90 01 04 8b c4 77 90 01 01 89 a5 90 01 02 ff ff 50 e8 90 01 04 51 8b cc c7 45 90 01 01 00 00 00 00 89 a5 90 01 02 ff ff 51 b9 90 01 04 e8 90 01 04 51 c6 45 90 01 01 01 8b d4 89 a5 90 01 02 ff ff 52 8d 8d 90 01 02 ff ff e8 90 01 04 c7 45 90 01 01 ff ff ff ff e8 90 01 04 83 c4 10 eb 90 01 01 89 a5 90 01 04 50 e8 90 01 04 51 8b cc c7 45 90 01 01 02 00 00 00 89 a5 90 01 02 ff ff 51 b9 90 01 04 e8 90 00 } //01 00 
-		$a_00_1 = {48 00 6f 00 6d 00 65 00 20 00 50 00 61 00 67 00 65 00 20 00 70 00 6c 00 75 00 67 00 69 00 6e 00 20 00 75 00 70 00 64 00 61 00 74 00 65 00 72 00 } //01 00  Home Page plugin updater
-		$a_00_2 = {5c 00 48 00 6f 00 6d 00 65 00 20 00 50 00 61 00 67 00 65 00 5c 00 55 00 70 00 64 00 61 00 74 00 65 00 72 00 } //01 00  \Home Page\Updater
-		$a_00_3 = {44 3a 5c 50 6c 75 67 69 6e 73 20 66 6f 72 20 42 72 6f 77 73 65 72 73 5c 48 6f 6d 65 50 61 67 65 73 5c 69 6e 73 74 61 6c 6c 65 72 73 5c 5f 48 6f 6d 65 50 61 67 65 5c 48 6f 6d 65 50 61 67 65 49 6e 73 74 61 6c 6c 65 72 5c 52 65 6c 65 61 73 65 5c 48 6f 6d 65 50 61 67 65 49 6e 73 74 61 6c 6c 65 72 2e 70 64 62 } //00 00  D:\Plugins for Browsers\HomePages\installers\_HomePage\HomePageInstaller\Release\HomePageInstaller.pdb
-		$a_00_4 = {5d 04 00 } //00 83 
+		$a_03_0 = {6a 01 51 3c 05 b9 90 01 04 8b c4 77 90 01 01 89 a5 90 01 02 ff ff 50 e8 90 01 04 51 8b cc c7 45 90 01 01 00 00 00 00 89 a5 90 01 02 ff ff 51 b9 90 01 04 e8 90 01 04 51 c6 45 90 01 01 01 8b d4 89 a5 90 01 02 ff ff 52 8d 8d 90 01 02 ff ff e8 90 01 04 c7 45 90 01 01 ff ff ff ff e8 90 01 04 83 c4 10 eb 90 01 01 89 a5 90 01 04 50 e8 90 01 04 51 8b cc c7 45 90 01 01 02 00 00 00 89 a5 90 01 02 ff ff 51 b9 90 01 04 e8 90 00 } //3
+		$a_00_1 = {48 00 6f 00 6d 00 65 00 20 00 50 00 61 00 67 00 65 00 20 00 70 00 6c 00 75 00 67 00 69 00 6e 00 20 00 75 00 70 00 64 00 61 00 74 00 65 00 72 00 } //1 Home Page plugin updater
+		$a_00_2 = {5c 00 48 00 6f 00 6d 00 65 00 20 00 50 00 61 00 67 00 65 00 5c 00 55 00 70 00 64 00 61 00 74 00 65 00 72 00 } //1 \Home Page\Updater
+		$a_00_3 = {44 3a 5c 50 6c 75 67 69 6e 73 20 66 6f 72 20 42 72 6f 77 73 65 72 73 5c 48 6f 6d 65 50 61 67 65 73 5c 69 6e 73 74 61 6c 6c 65 72 73 5c 5f 48 6f 6d 65 50 61 67 65 5c 48 6f 6d 65 50 61 67 65 49 6e 73 74 61 6c 6c 65 72 5c 52 65 6c 65 61 73 65 5c 48 6f 6d 65 50 61 67 65 49 6e 73 74 61 6c 6c 65 72 2e 70 64 62 } //1 D:\Plugins for Browsers\HomePages\installers\_HomePage\HomePageInstaller\Release\HomePageInstaller.pdb
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*3+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }

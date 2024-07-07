@@ -1,12 +1,12 @@
 
 rule Trojan_BAT_ScnabrCrypt_A_MTB{
 	meta:
-		description = "Trojan:BAT/ScnabrCrypt.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 02 00 "
+		description = "Trojan:BAT/ScnabrCrypt.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {00 00 0a 72 03 00 00 70 7e 90 01 01 00 00 0a 6f 90 01 01 00 00 0a 28 90 09 0a 00 00 00 0a 90 01 01 16 90 01 01 8e 69 6f 90 00 } //02 00 
-		$a_03_1 = {03 8e 69 8d 90 01 01 00 00 01 13 04 09 11 04 16 11 04 8e 69 6f 90 00 } //00 00 
+		$a_03_0 = {00 00 0a 72 03 00 00 70 7e 90 01 01 00 00 0a 6f 90 01 01 00 00 0a 28 90 09 0a 00 00 00 0a 90 01 01 16 90 01 01 8e 69 6f 90 00 } //2
+		$a_03_1 = {03 8e 69 8d 90 01 01 00 00 01 13 04 09 11 04 16 11 04 8e 69 6f 90 00 } //2
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*2+(#a_03_1  & 1)*2) >=4
  
 }

@@ -1,12 +1,12 @@
 
 rule Trojan_Win32_PrivateLoader_GFH_MTB{
 	meta:
-		description = "Trojan:Win32/PrivateLoader.GFH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 02 00 00 0a 00 "
+		description = "Trojan:Win32/PrivateLoader.GFH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 02 00 00 "
 		
 	strings :
-		$a_01_0 = {2b 45 dc c6 45 fe 45 33 c1 69 c0 00 b3 ff ff 66 89 45 f0 eb 2f } //0a 00 
-		$a_03_1 = {99 8b f0 a1 90 01 04 33 d1 33 f0 2b c6 8b 75 e0 1b ca 8b 15 90 01 04 a3 90 00 } //00 00 
+		$a_01_0 = {2b 45 dc c6 45 fe 45 33 c1 69 c0 00 b3 ff ff 66 89 45 f0 eb 2f } //10
+		$a_03_1 = {99 8b f0 a1 90 01 04 33 d1 33 f0 2b c6 8b 75 e0 1b ca 8b 15 90 01 04 a3 90 00 } //10
 	condition:
-		any of ($a_*)
+		((#a_01_0  & 1)*10+(#a_03_1  & 1)*10) >=20
  
 }

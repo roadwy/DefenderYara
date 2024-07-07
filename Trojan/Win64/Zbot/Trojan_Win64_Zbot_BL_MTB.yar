@@ -1,11 +1,11 @@
 
 rule Trojan_Win64_Zbot_BL_MTB{
 	meta:
-		description = "Trojan:Win64/Zbot.BL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
+		description = "Trojan:Win64/Zbot.BL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {f7 f1 8b c2 8b c0 48 8b 4c 24 90 01 01 0f be 04 01 48 8b 4c 24 90 01 01 48 8b 54 24 90 01 01 0f b6 0c 11 33 c8 8b c1 8b 0c 24 48 8b 54 24 90 01 01 88 04 0a eb 90 00 } //00 00 
+		$a_03_0 = {f7 f1 8b c2 8b c0 48 8b 4c 24 90 01 01 0f be 04 01 48 8b 4c 24 90 01 01 48 8b 54 24 90 01 01 0f b6 0c 11 33 c8 8b c1 8b 0c 24 48 8b 54 24 90 01 01 88 04 0a eb 90 00 } //2
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*2) >=2
  
 }

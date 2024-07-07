@@ -1,11 +1,11 @@
 
 rule Trojan_BAT_AgentTesla_PSJF_MTB{
 	meta:
-		description = "Trojan:BAT/AgentTesla.PSJF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 02 00 "
+		description = "Trojan:BAT/AgentTesla.PSJF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {00 03 6f 89 00 00 0a 0a 02 73 90 01 03 0a 0b 07 06 16 73 90 01 03 0a 0c 00 02 8e 69 8d 4b 00 00 01 0d 08 09 16 90 00 } //00 00 
+		$a_03_0 = {00 03 6f 89 00 00 0a 0a 02 73 90 01 03 0a 0b 07 06 16 73 90 01 03 0a 0c 00 02 8e 69 8d 4b 00 00 01 0d 08 09 16 90 00 } //2
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*2) >=2
  
 }

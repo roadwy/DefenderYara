@@ -1,11 +1,11 @@
 
 rule Trojan_Win32_Glupteba_MLAA_MTB{
 	meta:
-		description = "Trojan:Win32/Glupteba.MLAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 05 00 "
+		description = "Trojan:Win32/Glupteba.MLAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {83 c0 64 89 44 24 10 83 6c 24 10 64 8a 4c 24 10 8b 44 24 90 01 01 30 0c 30 83 bc 24 90 01 04 0f 75 90 00 } //00 00 
+		$a_03_0 = {83 c0 64 89 44 24 10 83 6c 24 10 64 8a 4c 24 10 8b 44 24 90 01 01 30 0c 30 83 bc 24 90 01 04 0f 75 90 00 } //5
 	condition:
-		any of ($a_*)
+		((#a_03_0  & 1)*5) >=5
  
 }

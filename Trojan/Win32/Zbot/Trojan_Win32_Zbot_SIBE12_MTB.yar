@@ -1,11 +1,11 @@
 
 rule Trojan_Win32_Zbot_SIBE12_MTB{
 	meta:
-		description = "Trojan:Win32/Zbot.SIBE12!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 01 00 "
+		description = "Trojan:Win32/Zbot.SIBE12!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {8b d8 53 85 c0 75 90 01 01 90 90 58 2b f0 8b d8 50 51 8b c7 90 13 57 8b 08 5f e8 90 01 04 90 13 33 c1 8b 06 fe cd 33 c1 90 13 8b c8 46 88 0f 90 00 } //00 00 
+		$a_02_0 = {8b d8 53 85 c0 75 90 01 01 90 90 58 2b f0 8b d8 50 51 8b c7 90 13 57 8b 08 5f e8 90 01 04 90 13 33 c1 8b 06 fe cd 33 c1 90 13 8b c8 46 88 0f 90 00 } //1
 	condition:
-		any of ($a_*)
+		((#a_02_0  & 1)*1) >=1
  
 }
