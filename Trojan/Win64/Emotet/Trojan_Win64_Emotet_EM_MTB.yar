@@ -24,7 +24,7 @@ rule Trojan_Win64_Emotet_EM_MTB_3{
 		description = "Trojan:Win64/Emotet.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {f7 e1 c1 ea 04 89 55 90 01 01 81 45 90 01 05 81 75 90 01 05 c7 45 90 01 05 c1 65 90 01 02 81 75 90 00 } //5
+		$a_03_0 = {f7 e1 c1 ea 04 89 55 ?? 81 45 ?? ?? ?? ?? ?? 81 75 ?? ?? ?? ?? ?? c7 45 ?? ?? ?? ?? ?? c1 65 ?? ?? 81 75 } //5
 	condition:
 		((#a_03_0  & 1)*5) >=5
  

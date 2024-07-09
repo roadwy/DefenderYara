@@ -44,7 +44,7 @@ rule TrojanSpy_Win32_Swisyn_A_2{
 		$a_00_6 = {45 72 72 6f 72 20 6f 6e 20 46 46 46 46 46 46 46 46 46 } //1 Error on FFFFFFFFF
 		$a_00_7 = {00 2f 31 73 74 65 6d 00 } //1 ⼀猱整m
 		$a_00_8 = {00 6c 2e 70 68 70 00 } //1
-		$a_03_9 = {ff b5 c8 fe ff ff 68 90 01 04 ff b5 ec fe ff ff ff b5 ec fe ff ff ff b5 ec fe ff ff 68 90 01 04 ff b5 d0 fe ff ff ff b5 d4 fe ff ff ff b5 d0 fe ff ff ff b5 d0 fe ff ff ff b5 d8 fe ff ff 68 90 01 04 ff b5 cc fe ff ff ff b5 dc fe ff ff ff b5 e4 fe ff ff ff b5 e0 fe ff ff 68 90 01 04 ff b5 f4 fe ff ff ff b5 cc fe ff ff 68 90 00 } //3
+		$a_03_9 = {ff b5 c8 fe ff ff 68 ?? ?? ?? ?? ff b5 ec fe ff ff ff b5 ec fe ff ff ff b5 ec fe ff ff 68 ?? ?? ?? ?? ff b5 d0 fe ff ff ff b5 d4 fe ff ff ff b5 d0 fe ff ff ff b5 d0 fe ff ff ff b5 d8 fe ff ff 68 ?? ?? ?? ?? ff b5 cc fe ff ff ff b5 dc fe ff ff ff b5 e4 fe ff ff ff b5 e0 fe ff ff 68 ?? ?? ?? ?? ff b5 f4 fe ff ff ff b5 cc fe ff ff 68 } //3
 	condition:
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_00_8  & 1)*1+(#a_03_9  & 1)*3) >=7
  

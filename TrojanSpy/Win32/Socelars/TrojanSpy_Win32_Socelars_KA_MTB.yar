@@ -4,8 +4,8 @@ rule TrojanSpy_Win32_Socelars_KA_MTB{
 		description = "TrojanSpy:Win32/Socelars.KA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1a 00 1a 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 42 04 83 e8 70 8b 4d fc 8b 51 90 90 8b 4a 04 8b 55 fc 89 44 0a 8c 8b 4d fc 83 e9 60 e8 90 01 02 ff ff 8b 4d fc 83 e9 58 e8 90 00 } //5
-		$a_03_1 = {83 e8 70 8b 4d f0 8b 11 8b 4a 04 8b 55 f0 89 44 0a fc 6a 00 8b 4d f0 83 c1 10 e8 90 01 02 ff ff c6 45 fc 02 90 00 } //5
+		$a_03_0 = {8b 42 04 83 e8 70 8b 4d fc 8b 51 90 90 8b 4a 04 8b 55 fc 89 44 0a 8c 8b 4d fc 83 e9 60 e8 ?? ?? ff ff 8b 4d fc 83 e9 58 e8 } //5
+		$a_03_1 = {83 e8 70 8b 4d f0 8b 11 8b 4a 04 8b 55 f0 89 44 0a fc 6a 00 8b 4d f0 83 c1 10 e8 ?? ?? ff ff c6 45 fc 02 } //5
 		$a_00_2 = {68 74 74 70 5c 73 68 65 6c 6c 5c 6f 70 65 6e 5c 63 6f 6d 6d 61 6e 64 } //1 http\shell\open\command
 		$a_00_3 = {6e 67 64 61 74 61 73 2e 70 77 } //1 ngdatas.pw
 		$a_00_4 = {69 70 63 6f 64 65 2e 70 77 } //3 ipcode.pw

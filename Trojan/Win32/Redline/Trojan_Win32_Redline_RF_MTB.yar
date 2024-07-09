@@ -4,7 +4,7 @@ rule Trojan_Win32_Redline_RF_MTB{
 		description = "Trojan:Win32/Redline.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b c1 c1 e8 18 33 c1 69 c8 90 01 04 33 f1 3b d5 7c df 90 09 0e 00 69 0c 93 90 01 04 42 69 f6 90 00 } //1
+		$a_03_0 = {8b c1 c1 e8 18 33 c1 69 c8 ?? ?? ?? ?? 33 f1 3b d5 7c df 90 09 0e 00 69 0c 93 ?? ?? ?? ?? 42 69 f6 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -24,7 +24,7 @@ rule Trojan_Win32_Redline_RF_MTB_3{
 		description = "Trojan:Win32/Redline.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b c6 83 e0 03 8a 88 90 01 04 32 0c 37 0f b6 1c 37 8d 04 19 88 04 37 68 90 01 04 6a 00 e8 90 02 30 28 1c 37 46 8b 45 90 01 01 eb 90 00 } //1
+		$a_03_0 = {8b c6 83 e0 03 8a 88 ?? ?? ?? ?? 32 0c 37 0f b6 1c 37 8d 04 19 88 04 37 68 ?? ?? ?? ?? 6a 00 e8 [0-30] 28 1c 37 46 8b 45 ?? eb } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

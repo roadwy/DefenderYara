@@ -4,7 +4,7 @@ rule Trojan_Win32_Zenpak_ASAC_MTB{
 		description = "Trojan:Win32/Zenpak.ASAC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {55 89 e5 8a 45 0c 8a 4d 08 8b 15 90 01 04 81 c2 90 01 04 89 15 90 01 04 c7 05 90 01 06 00 00 30 c8 0f b6 c0 5d c3 90 00 } //5
+		$a_03_0 = {55 89 e5 8a 45 0c 8a 4d 08 8b 15 ?? ?? ?? ?? 81 c2 ?? ?? ?? ?? 89 15 ?? ?? ?? ?? c7 05 ?? ?? ?? ?? ?? ?? 00 00 30 c8 0f b6 c0 5d c3 } //5
 	condition:
 		((#a_03_0  & 1)*5) >=5
  

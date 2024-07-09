@@ -36,7 +36,7 @@ rule Trojan_BAT_DarkComet_AD_MTB_4{
 		description = "Trojan:BAT/DarkComet.AD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {13 04 11 04 14 19 8d 90 01 03 01 13 05 11 05 16 06 8c 90 01 03 01 a2 11 05 17 28 90 00 } //2
+		$a_03_0 = {13 04 11 04 14 19 8d ?? ?? ?? 01 13 05 11 05 16 06 8c ?? ?? ?? 01 a2 11 05 17 28 } //2
 		$a_01_1 = {53 00 68 00 61 00 72 00 70 00 69 00 65 00 63 00 6c 00 61 00 73 00 73 00 } //1 Sharpieclass
 		$a_01_2 = {69 00 6e 00 76 00 6f 00 6b 00 65 00 73 00 68 00 69 00 74 00 74 00 79 00 66 00 75 00 6e 00 63 00 74 00 69 00 6f 00 6e 00 } //1 invokeshittyfunction
 	condition:

@@ -4,7 +4,7 @@ rule Trojan_BAT_RedLineStealer_MK_MTB{
 		description = "Trojan:BAT/RedLineStealer.MK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {13 04 03 8e 69 17 da 13 05 16 13 08 2b 1b 90 02 04 11 04 11 08 08 11 08 08 8e 69 5d 91 03 11 08 91 61 b4 9c 90 02 04 11 08 17 d6 13 08 11 08 11 05 fe 02 16 fe 01 13 09 11 09 2d d6 11 04 13 0a 2b 00 11 0a 2a 90 00 } //1
+		$a_03_0 = {13 04 03 8e 69 17 da 13 05 16 13 08 2b 1b [0-04] 11 04 11 08 08 11 08 08 8e 69 5d 91 03 11 08 91 61 b4 9c [0-04] 11 08 17 d6 13 08 11 08 11 05 fe 02 16 fe 01 13 09 11 09 2d d6 11 04 13 0a 2b 00 11 0a 2a } //1
 		$a_01_1 = {43 72 65 61 74 65 49 6e 73 74 61 6e 63 65 } //1 CreateInstance
 		$a_01_2 = {44 61 6e 67 65 72 6f 75 73 47 65 74 48 61 6e 64 6c 65 } //1 DangerousGetHandle
 		$a_01_3 = {44 65 62 75 67 67 61 62 6c 65 41 74 74 72 69 62 75 74 65 } //1 DebuggableAttribute

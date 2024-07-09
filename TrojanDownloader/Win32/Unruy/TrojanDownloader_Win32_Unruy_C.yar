@@ -4,9 +4,9 @@ rule TrojanDownloader_Win32_Unruy_C{
 		description = "TrojanDownloader:Win32/Unruy.C,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {0f b6 00 83 f8 58 0f 85 90 01 04 a1 90 01 04 03 85 90 01 04 0f b6 40 ff 83 f8 50 75 78 a1 90 01 04 03 85 90 01 04 0f b6 40 fe 83 f8 55 75 64 90 00 } //1
-		$a_03_1 = {8b 48 50 51 8b 55 90 01 01 8b 42 34 90 00 } //1
-		$a_03_2 = {eb 0d 8b 85 fc fb ff ff 40 89 85 fc fb ff ff 8b 85 fc fb ff ff 3b 85 f0 fb ff ff 73 3b 90 01 1c 32 9c 0d 00 fc ff ff 90 00 } //2
+		$a_03_0 = {0f b6 00 83 f8 58 0f 85 ?? ?? ?? ?? a1 ?? ?? ?? ?? 03 85 ?? ?? ?? ?? 0f b6 40 ff 83 f8 50 75 78 a1 ?? ?? ?? ?? 03 85 ?? ?? ?? ?? 0f b6 40 fe 83 f8 55 75 64 } //1
+		$a_03_1 = {8b 48 50 51 8b 55 ?? 8b 42 34 } //1
+		$a_03_2 = {eb 0d 8b 85 fc fb ff ff 40 89 85 fc fb ff ff 8b 85 fc fb ff ff 3b 85 f0 fb ff ff 73 3b ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 32 9c 0d 00 fc ff ff } //2
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*2) >=2
  

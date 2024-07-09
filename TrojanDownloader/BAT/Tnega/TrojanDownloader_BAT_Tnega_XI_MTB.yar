@@ -4,7 +4,7 @@ rule TrojanDownloader_BAT_Tnega_XI_MTB{
 		description = "TrojanDownloader:BAT/Tnega.XI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {61 d2 9c 1f 90 01 01 13 90 01 01 38 90 01 03 ff 90 0a 1b 00 08 11 90 01 01 08 11 90 01 01 91 11 90 01 01 11 90 01 01 09 5d 91 90 00 } //1
+		$a_03_0 = {61 d2 9c 1f ?? 13 ?? 38 ?? ?? ?? ff 90 0a 1b 00 08 11 ?? 08 11 ?? 91 11 ?? 11 ?? 09 5d 91 } //1
 		$a_01_1 = {65 64 6f 6d 20 53 4f 44 20 6e 69 20 6e 75 72 20 65 62 20 74 6f 6e 6e 61 63 20 6d 61 72 67 6f 72 70 20 73 69 68 54 } //1 edom SOD ni nur eb tonnac margorp sihT
 		$a_01_2 = {57 65 62 52 65 73 70 6f 6e 73 65 } //1 WebResponse
 		$a_01_3 = {73 65 74 5f 4b 65 79 53 69 7a 65 } //1 set_KeySize

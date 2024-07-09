@@ -4,7 +4,7 @@ rule TrojanDownloader_O97M_Donoff_BP{
 		description = "TrojanDownloader:O97M/Donoff.BP,SIGNATURE_TYPE_MACROHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {72 65 67 73 76 72 33 32 20 2f 73 20 2f 6e 20 2f 75 20 2f 69 3a 68 74 74 70 3a 2f 2f 90 02 2d 2e 73 63 74 20 73 63 72 6f 62 6a 2e 64 6c 6c 90 00 } //1
+		$a_02_0 = {72 65 67 73 76 72 33 32 20 2f 73 20 2f 6e 20 2f 75 20 2f 69 3a 68 74 74 70 3a 2f 2f [0-2d] 2e 73 63 74 20 73 63 72 6f 62 6a 2e 64 6c 6c } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

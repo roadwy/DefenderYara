@@ -4,7 +4,7 @@ rule Trojan_Win32_Dridex_AH_MTB{
 		description = "Trojan:Win32/Dridex.AH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 02 00 00 "
 		
 	strings :
-		$a_02_0 = {8d 04 dd 00 00 00 00 2b c3 03 c0 03 c0 0f b7 c0 8a 0d 90 01 04 2a c8 80 e9 4c 02 d1 66 0f b6 c2 66 03 c3 66 83 c0 09 0f b7 c8 8b 06 90 00 } //10
+		$a_02_0 = {8d 04 dd 00 00 00 00 2b c3 03 c0 03 c0 0f b7 c0 8a 0d ?? ?? ?? ?? 2a c8 80 e9 4c 02 d1 66 0f b6 c2 66 03 c3 66 83 c0 09 0f b7 c8 8b 06 } //10
 		$a_00_1 = {02 c1 2c 61 02 d0 83 c6 04 83 ef 01 } //10
 	condition:
 		((#a_02_0  & 1)*10+(#a_00_1  & 1)*10) >=20
@@ -16,7 +16,7 @@ rule Trojan_Win32_Dridex_AH_MTB_2{
 		
 	strings :
 		$a_00_0 = {8d 14 01 8d 7c 17 17 8b d0 2b d1 03 d3 8d 0c 12 81 c6 94 3c 0a 01 8b d7 89 75 00 2b d1 } //10
-		$a_02_1 = {8b c1 6b c9 05 2b c6 83 c0 2c 03 ca 0f b7 15 90 01 04 8b 75 00 2b d7 03 15 90 01 04 8d 9c 01 d0 55 00 00 8b fa 8b d3 6b d2 05 03 d1 90 00 } //10
+		$a_02_1 = {8b c1 6b c9 05 2b c6 83 c0 2c 03 ca 0f b7 15 ?? ?? ?? ?? 8b 75 00 2b d7 03 15 ?? ?? ?? ?? 8d 9c 01 d0 55 00 00 8b fa 8b d3 6b d2 05 03 d1 } //10
 	condition:
 		((#a_00_0  & 1)*10+(#a_02_1  & 1)*10) >=20
  

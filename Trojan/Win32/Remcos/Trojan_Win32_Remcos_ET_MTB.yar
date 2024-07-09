@@ -7,7 +7,7 @@ rule Trojan_Win32_Remcos_ET_MTB{
 		$a_81_0 = {49 78 6b 64 6f 63 } //20 Ixkdoc
 		$a_81_1 = {48 66 6b 65 6f 63 } //20 Hfkeoc
 		$a_81_2 = {64 69 65 6a 63 2e 64 6c 6c } //20 diejc.dll
-		$a_03_3 = {43 3a 5c 54 45 4d 50 5c 6e 73 90 01 05 2e 74 6d 70 90 00 } //1
+		$a_03_3 = {43 3a 5c 54 45 4d 50 5c 6e 73 ?? ?? ?? ?? ?? 2e 74 6d 70 } //1
 		$a_81_4 = {4e 75 6c 6c 73 6f 66 74 49 6e 73 74 } //1 NullsoftInst
 		$a_81_5 = {47 65 74 54 65 6d 70 46 69 6c 65 4e 61 6d 65 41 } //1 GetTempFileNameA
 		$a_81_6 = {46 69 6e 64 46 69 72 73 74 46 69 6c 65 41 } //1 FindFirstFileA

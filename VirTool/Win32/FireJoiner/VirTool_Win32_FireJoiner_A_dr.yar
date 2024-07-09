@@ -4,7 +4,7 @@ rule VirTool_Win32_FireJoiner_A_dr{
 		description = "VirTool:Win32/FireJoiner.A!dr,SIGNATURE_TYPE_PEHSTR_EXT,ffffff96 00 ffffff96 00 19 00 00 "
 		
 	strings :
-		$a_02_0 = {6a 22 8d 4d 94 51 ff d7 c7 85 7c ff ff ff 90 01 04 bb 08 00 00 00 89 9d 74 ff ff ff 90 00 } //100
+		$a_02_0 = {6a 22 8d 4d 94 51 ff d7 c7 85 7c ff ff ff ?? ?? ?? ?? bb 08 00 00 00 89 9d 74 ff ff ff } //100
 		$a_00_1 = {5c 00 6e 00 75 00 52 00 5c 00 6e 00 6f 00 69 00 73 00 72 00 65 00 56 00 74 00 6e 00 65 00 72 00 72 00 75 00 43 00 5c 00 73 00 77 00 6f 00 64 00 6e 00 69 00 57 00 5c 00 74 00 66 00 6f 00 73 00 6f 00 72 00 63 00 69 00 4d 00 5c 00 45 00 52 00 41 00 57 00 54 00 46 00 4f 00 53 00 5c 00 } //10 \nuR\noisreVtnerruC\swodniW\tfosorciM\ERAWTFOS\
 		$a_00_2 = {6d 00 65 00 74 00 73 00 79 00 53 00 5c 00 73 00 65 00 69 00 63 00 69 00 6c 00 6f 00 50 00 5c 00 6e 00 6f 00 69 00 73 00 72 00 65 00 56 00 74 00 6e 00 65 00 72 00 72 00 75 00 43 00 5c 00 73 00 77 00 6f 00 64 00 6e 00 69 00 57 00 5c 00 74 00 66 00 6f 00 73 00 6f 00 72 00 63 00 69 00 4d 00 5c 00 65 00 72 00 61 00 77 00 74 00 66 00 6f 00 53 00 5c 00 } //10 metsyS\seiciloP\noisreVtnerruC\swodniW\tfosorciM\erawtfoS\
 		$a_00_3 = {65 00 72 00 6f 00 74 00 73 00 65 00 52 00 6d 00 65 00 74 00 73 00 79 00 53 00 5c 00 6e 00 6f 00 69 00 73 00 72 00 65 00 56 00 74 00 6e 00 65 00 72 00 72 00 75 00 43 00 5c 00 54 00 4e 00 20 00 73 00 77 00 6f 00 64 00 6e 00 69 00 57 00 5c 00 74 00 66 00 6f 00 73 00 6f 00 72 00 63 00 69 00 4d 00 5c 00 45 00 52 00 41 00 57 00 54 00 46 00 4f 00 53 00 5c 00 } //10 erotseRmetsyS\noisreVtnerruC\TN swodniW\tfosorciM\ERAWTFOS\

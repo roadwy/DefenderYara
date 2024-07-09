@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_AMQ_MTB{
 		description = "Trojan:BAT/AgentTesla.AMQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,18 00 18 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {11 05 09 11 90 01 01 18 5a 18 90 01 05 1f 10 28 90 01 04 d2 90 00 } //10
+		$a_03_0 = {11 05 09 11 ?? 18 5a 18 ?? ?? ?? ?? ?? 1f 10 28 ?? ?? ?? ?? d2 } //10
 		$a_80_1 = {47 65 74 54 79 70 65 } //GetType  2
 		$a_80_2 = {49 6e 76 6f 6b 65 } //Invoke  2
 		$a_80_3 = {47 65 74 4d 65 74 68 6f 64 } //GetMethod  2

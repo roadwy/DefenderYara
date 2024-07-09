@@ -5,7 +5,7 @@ rule Backdoor_Win32_Tapazom_A{
 		
 	strings :
 		$a_01_0 = {c7 45 f0 03 00 00 00 8d 75 f4 33 db 8d 45 ec 8b cb c1 e1 03 ba ff 00 00 00 d3 e2 23 16 8b cb c1 e1 03 d3 ea e8 } //100
-		$a_03_1 = {8a 03 33 d2 8a d0 25 ff 00 00 00 d1 e8 2b d0 33 c0 8a 44 13 01 a3 90 01 02 40 00 33 c0 8a 03 33 d2 8a 13 d1 ea 2b c2 0f b6 04 03 90 00 } //100
+		$a_03_1 = {8a 03 33 d2 8a d0 25 ff 00 00 00 d1 e8 2b d0 33 c0 8a 44 13 01 a3 ?? ?? 40 00 33 c0 8a 03 33 d2 8a 13 d1 ea 2b c2 0f b6 04 03 } //100
 		$a_01_2 = {6d 7a 6f 2e 68 6f 70 74 6f 2e 6f 72 67 3a } //50 mzo.hopto.org:
 		$a_01_3 = {89 45 e8 89 55 ec 83 7d ec 00 75 08 83 7d e8 00 77 bc eb 02 7f b8 84 db 74 0b 57 e8 } //30
 		$a_00_4 = {2d 63 6f 72 65 } //20 -core

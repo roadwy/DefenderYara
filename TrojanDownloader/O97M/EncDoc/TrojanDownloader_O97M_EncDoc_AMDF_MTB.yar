@@ -4,9 +4,9 @@ rule TrojanDownloader_O97M_EncDoc_AMDF_MTB{
 		description = "TrojanDownloader:O97M/EncDoc.AMDF!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,01 00 01 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {70 22 26 22 73 3a 2f 2f 90 02 df 22 2c 22 90 00 } //1
-		$a_03_1 = {70 22 26 22 73 22 26 22 3a 2f 2f 90 02 df 22 2c 22 90 00 } //1
-		$a_03_2 = {70 22 26 22 3a 2f 22 26 22 2f 90 02 df 22 2c 22 90 00 } //1
+		$a_03_0 = {70 22 26 22 73 3a 2f 2f [0-df] 22 2c 22 } //1
+		$a_03_1 = {70 22 26 22 73 22 26 22 3a 2f 2f [0-df] 22 2c 22 } //1
+		$a_03_2 = {70 22 26 22 3a 2f 22 26 22 2f [0-df] 22 2c 22 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1) >=1
  
@@ -16,7 +16,7 @@ rule TrojanDownloader_O97M_EncDoc_AMDF_MTB_2{
 		description = "TrojanDownloader:O97M/EncDoc.AMDF!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {74 22 26 22 74 70 22 26 22 73 3a 2f 2f 90 02 df 2f 22 2c 22 90 02 0a 74 22 26 22 74 22 26 22 70 3a 2f 2f 90 02 df 2f 22 2c 22 90 02 0a 74 74 22 26 22 70 3a 2f 2f 90 02 df 2f 22 2c 22 90 02 0a 74 22 26 22 74 22 26 22 70 3a 2f 2f 90 02 df 2f 22 2c 22 90 00 } //1
+		$a_03_0 = {74 22 26 22 74 70 22 26 22 73 3a 2f 2f [0-df] 2f 22 2c 22 [0-0a] 74 22 26 22 74 22 26 22 70 3a 2f 2f [0-df] 2f 22 2c 22 [0-0a] 74 74 22 26 22 70 3a 2f 2f [0-df] 2f 22 2c 22 [0-0a] 74 22 26 22 74 22 26 22 70 3a 2f 2f [0-df] 2f 22 2c 22 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

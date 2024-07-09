@@ -4,7 +4,7 @@ rule Trojan_BAT_Mamson_CG_MTB{
 		description = "Trojan:BAT/Mamson.CG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1c 00 12 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {0a 0a 06 6f 43 90 01 02 0a 03 6f 90 01 03 0a 00 06 6f 90 01 03 0a 17 6f 90 01 03 0a 00 06 6f 90 01 03 0a 72 90 01 03 70 6f 90 01 03 0a 00 06 6f 90 01 03 0a 26 2a 90 00 } //10
+		$a_02_0 = {0a 0a 06 6f 43 ?? ?? 0a 03 6f ?? ?? ?? 0a 00 06 6f ?? ?? ?? 0a 17 6f ?? ?? ?? 0a 00 06 6f ?? ?? ?? 0a 72 ?? ?? ?? 70 6f ?? ?? ?? 0a 00 06 6f ?? ?? ?? 0a 26 2a } //10
 		$a_80_1 = {4c 55 4e 43 48 45 52 20 43 52 41 43 4b 49 4e 47 } //LUNCHER CRACKING  3
 		$a_80_2 = {72 75 6e 61 73 } //runas  3
 		$a_80_3 = {45 78 65 63 75 74 65 41 73 41 64 6d 69 6e } //ExecuteAsAdmin  3

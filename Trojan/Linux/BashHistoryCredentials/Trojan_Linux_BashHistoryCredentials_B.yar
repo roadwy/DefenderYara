@@ -4,7 +4,7 @@ rule Trojan_Linux_BashHistoryCredentials_B{
 		description = "Trojan:Linux/BashHistoryCredentials.B,SIGNATURE_TYPE_CMDHSTR_EXT,69 00 69 00 0c 00 00 "
 		
 	strings :
-		$a_02_0 = {68 00 69 00 73 00 74 00 6f 00 72 00 79 00 90 27 02 00 7c 00 90 27 02 00 67 00 72 00 65 00 70 00 90 00 } //100
+		$a_02_0 = {68 00 69 00 73 00 74 00 6f 00 72 00 79 00 90 27 02 00 7c 00 90 27 02 00 67 00 72 00 65 00 70 00 } //100
 		$a_00_1 = {70 00 61 00 73 00 73 00 77 00 6f 00 72 00 64 00 } //5 password
 		$a_00_2 = {70 00 61 00 73 00 73 00 } //5 pass
 		$a_00_3 = {70 00 77 00 } //5 pw

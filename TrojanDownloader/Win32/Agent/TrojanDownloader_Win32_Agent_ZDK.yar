@@ -15,7 +15,7 @@ rule TrojanDownloader_Win32_Agent_ZDK_2{
 		description = "TrojanDownloader:Win32/Agent.ZDK,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 00 6a 00 8d 4d e8 66 ba 2d 43 b8 90 01 04 e8 90 01 04 8b 45 e8 e8 90 01 04 50 8d 4d e4 66 ba 2d 43 b8 90 01 04 e8 3a fe ff ff 8b 45 e4 e8 90 01 04 50 6a 00 e8 90 01 04 6a 05 68 90 01 04 e8 90 01 04 33 c0 5a 59 59 64 89 10 68 90 00 } //1
+		$a_03_0 = {6a 00 6a 00 8d 4d e8 66 ba 2d 43 b8 ?? ?? ?? ?? e8 ?? ?? ?? ?? 8b 45 e8 e8 ?? ?? ?? ?? 50 8d 4d e4 66 ba 2d 43 b8 ?? ?? ?? ?? e8 3a fe ff ff 8b 45 e4 e8 ?? ?? ?? ?? 50 6a 00 e8 ?? ?? ?? ?? 6a 05 68 ?? ?? ?? ?? e8 ?? ?? ?? ?? 33 c0 5a 59 59 64 89 10 68 } //1
 		$a_00_1 = {43 3a 5c 57 49 4e 44 4f 57 53 5c 73 79 73 74 65 6d 33 32 5c 69 6d 67 6c 6f 67 2e 65 78 65 } //1 C:\WINDOWS\system32\imglog.exe
 	condition:
 		((#a_03_0  & 1)*1+(#a_00_1  & 1)*1) >=2

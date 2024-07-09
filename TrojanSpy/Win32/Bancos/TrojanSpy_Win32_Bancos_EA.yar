@@ -10,7 +10,7 @@ rule TrojanSpy_Win32_Bancos_EA{
 		$a_00_3 = {47 65 72 65 6e 63 69 61 64 6f 72 20 46 69 6e 61 6e 63 65 69 72 6f 20 2d 20 4d 69 63 72 6f 73 6f 66 74 20 49 6e 74 65 72 6e 65 74 20 45 78 70 6c 6f 72 65 72 } //100 Gerenciador Financeiro - Microsoft Internet Explorer
 		$a_00_4 = {5c 57 69 6e 64 6f 77 73 5c 68 6f 73 74 73 2e 6c 6f 67 } //10 \Windows\hosts.log
 		$a_00_5 = {5c 77 69 6e 64 6f 77 73 5c 73 79 73 74 65 6d 5c 63 61 72 74 61 6f 2e 65 78 65 } //10 \windows\system\cartao.exe
-		$a_02_6 = {5c 77 69 6e 64 6f 77 73 5c 73 79 73 74 65 6d 5c 6b 65 79 6c 6f 67 90 02 02 2e 64 6c 6c 90 00 } //10
+		$a_02_6 = {5c 77 69 6e 64 6f 77 73 5c 73 79 73 74 65 6d 5c 6b 65 79 6c 6f 67 [0-02] 2e 64 6c 6c } //10
 		$a_00_7 = {76 69 64 61 6e 6f 76 61 30 33 40 69 73 62 74 2e 63 6f 6d 2e 62 72 } //1 vidanova03@isbt.com.br
 		$a_00_8 = {73 6d 74 70 2e 69 73 62 74 2e 63 6f 6d 2e 62 72 } //1 smtp.isbt.com.br
 		$a_00_9 = {61 61 70 66 2f 61 61 69 2f 6c 6f 67 69 6e 2e 70 62 6b } //1 aapf/aai/login.pbk

@@ -4,7 +4,7 @@ rule Backdoor_Win32_Hupigon_ZAI{
 		description = "Backdoor:Win32/Hupigon.ZAI,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {68 94 05 00 00 23 90 01 01 6a 00 6a 04 50 6a ff ff 90 03 04 04 55 90 01 01 15 90 01 04 85 c0 a3 90 00 } //3
+		$a_03_0 = {68 94 05 00 00 23 ?? 6a 00 6a 04 50 6a ff ff (55 ?? 15 ??|?? ?? ?? 85) c0 a3 } //3
 		$a_00_1 = {66 55 43 4b 5f 41 56 50 } //3 fUCK_AVP
 		$a_01_2 = {4d 79 4c 69 76 65 } //1 MyLive
 		$a_00_3 = {5c 70 62 6b 5c 72 61 73 70 68 6f 6e 65 2e 70 62 6b } //1 \pbk\rasphone.pbk

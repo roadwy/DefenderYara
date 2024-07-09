@@ -4,7 +4,7 @@ rule Backdoor_Win32_Wondufi_A{
 		description = "Backdoor:Win32/Wondufi.A,SIGNATURE_TYPE_PEHSTR_EXT,15 00 15 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {3f 25 73 3d 90 02 05 67 65 74 6e 61 6d 65 69 6e 66 6f 90 00 } //4
+		$a_03_0 = {3f 25 73 3d [0-05] 67 65 74 6e 61 6d 65 69 6e 66 6f } //4
 		$a_01_1 = {47 00 65 00 74 00 43 00 75 00 72 00 72 00 65 00 6e 00 74 00 4a 00 50 00 47 00 49 00 6d 00 61 00 67 00 65 00 53 00 74 00 61 00 74 00 65 00 } //4 GetCurrentJPGImageState
 		$a_01_2 = {2f 00 61 00 70 00 69 00 2e 00 70 00 68 00 70 00 3b 00 } //4 /api.php;
 		$a_01_3 = {2a 00 2e 00 30 00 70 00 78 00 6d 00 } //4 *.0pxm

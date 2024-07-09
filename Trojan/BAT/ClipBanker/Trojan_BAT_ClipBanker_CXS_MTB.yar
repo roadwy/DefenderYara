@@ -4,7 +4,7 @@ rule Trojan_BAT_ClipBanker_CXS_MTB{
 		description = "Trojan:BAT/ClipBanker.CXS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {06 02 07 6f 90 01 04 25 26 7e 90 01 04 07 7e 90 01 04 8e 69 5d 91 61 28 90 01 04 6f 90 01 04 25 26 26 07 17 58 0b 07 02 6f 90 01 04 25 26 32 90 00 } //5
+		$a_03_0 = {06 02 07 6f ?? ?? ?? ?? 25 26 7e ?? ?? ?? ?? 07 7e ?? ?? ?? ?? 8e 69 5d 91 61 28 ?? ?? ?? ?? 6f ?? ?? ?? ?? 25 26 26 07 17 58 0b 07 02 6f ?? ?? ?? ?? 25 26 32 } //5
 		$a_01_1 = {43 6f 6e 74 61 69 6e 73 4b 65 79 } //1 ContainsKey
 	condition:
 		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1) >=6

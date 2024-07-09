@@ -4,7 +4,7 @@ rule Trojan_Win32_Glupteba_AV_MTB{
 		description = "Trojan:Win32/Glupteba.AV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {05 c3 9e 26 00 a3 90 01 04 8a 0d 90 01 04 30 0c 1e 83 ff 19 75 0b 90 00 } //1
+		$a_02_0 = {05 c3 9e 26 00 a3 ?? ?? ?? ?? 8a 0d ?? ?? ?? ?? 30 0c 1e 83 ff 19 75 0b } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Glupteba_AV_MTB_2{
 		description = "Trojan:Win32/Glupteba.AV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {83 f9 6c 75 0b b8 56 c4 08 00 01 05 90 01 04 41 81 f9 0f 7e 49 00 7c e7 90 00 } //1
+		$a_02_0 = {83 f9 6c 75 0b b8 56 c4 08 00 01 05 ?? ?? ?? ?? 41 81 f9 0f 7e 49 00 7c e7 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -24,7 +24,7 @@ rule Trojan_Win32_Glupteba_AV_MTB_3{
 		description = "Trojan:Win32/Glupteba.AV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_02_0 = {8a 4c 2e 15 8b 15 90 01 04 88 0c 32 3d 03 02 00 00 75 27 90 00 } //1
+		$a_02_0 = {8a 4c 2e 15 8b 15 ?? ?? ?? ?? 88 0c 32 3d 03 02 00 00 75 27 } //1
 		$a_00_1 = {75 03 83 c1 15 40 3d 45 74 8d 00 7c ee } //1
 	condition:
 		((#a_02_0  & 1)*1+(#a_00_1  & 1)*1) >=2

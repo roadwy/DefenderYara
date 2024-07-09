@@ -4,7 +4,7 @@ rule Trojan_BAT_Bladabindi_NWZ_MTB{
 		description = "Trojan:BAT/Bladabindi.NWZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {a2 25 17 08 a2 25 13 05 14 14 18 90 01 05 25 17 17 9c 25 90 00 } //3
+		$a_03_0 = {a2 25 17 08 a2 25 13 05 14 14 18 ?? ?? ?? ?? ?? 25 17 17 9c 25 } //3
 		$a_81_1 = {74 5f 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 } //3 t_AAAAAAAAAAAAAAAAAAAAA
 		$a_81_2 = {50 58 58 30 30 30 30 31 } //3 PXX00001
 		$a_81_3 = {50 58 58 30 30 30 30 32 } //3 PXX00002

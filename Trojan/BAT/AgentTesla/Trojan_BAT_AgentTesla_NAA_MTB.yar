@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_NAA_MTB{
 		description = "Trojan:BAT/AgentTesla.NAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {28 02 00 00 0a 28 90 01 01 00 00 06 6f 90 01 01 00 00 0a 28 90 01 01 00 00 0a 28 90 01 01 00 00 06 0a dd 90 01 01 00 00 00 90 00 } //5
+		$a_03_0 = {28 02 00 00 0a 28 ?? 00 00 06 6f ?? 00 00 0a 28 ?? 00 00 0a 28 ?? 00 00 06 0a dd ?? 00 00 00 } //5
 		$a_01_1 = {43 34 50 52 4f 4c 61 75 6e 63 68 65 72 } //1 C4PROLauncher
 	condition:
 		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1) >=6
@@ -15,7 +15,7 @@ rule Trojan_BAT_AgentTesla_NAA_MTB_2{
 		description = "Trojan:BAT/AgentTesla.NAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {0b 7e 03 00 00 04 28 90 01 01 00 00 0a 0c 07 08 16 08 8e 69 73 90 01 01 00 00 0a 72 90 01 01 00 00 70 72 90 01 01 00 00 70 6f 90 01 01 00 00 0a 00 06 7e 90 01 01 00 00 04 90 00 } //5
+		$a_03_0 = {0b 7e 03 00 00 04 28 ?? 00 00 0a 0c 07 08 16 08 8e 69 73 ?? 00 00 0a 72 ?? 00 00 70 72 ?? 00 00 70 6f ?? 00 00 0a 00 06 7e ?? 00 00 04 } //5
 		$a_01_1 = {47 61 6d 65 4d 6f 6e 50 52 4f 4b 49 4c 4c } //1 GameMonPROKILL
 	condition:
 		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1) >=6
@@ -26,7 +26,7 @@ rule Trojan_BAT_AgentTesla_NAA_MTB_3{
 		description = "Trojan:BAT/AgentTesla.NAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {07 8e 69 5a 28 90 01 01 00 00 0a 0c 16 0d 06 6f 90 01 01 00 00 0a 07 08 12 03 28 90 01 01 00 00 06 26 09 76 6c d0 90 01 01 00 00 01 28 90 01 01 00 00 0a 28 90 01 01 00 00 0a 6c 5b 28 90 01 01 00 00 0a 90 00 } //5
+		$a_03_0 = {07 8e 69 5a 28 ?? 00 00 0a 0c 16 0d 06 6f ?? 00 00 0a 07 08 12 03 28 ?? 00 00 06 26 09 76 6c d0 ?? 00 00 01 28 ?? 00 00 0a 28 ?? 00 00 0a 6c 5b 28 ?? 00 00 0a } //5
 		$a_01_1 = {31 64 32 61 61 30 61 36 2d 32 63 34 62 2d 34 33 36 39 2d 61 66 31 39 2d 65 66 30 33 65 34 33 63 62 64 37 38 } //1 1d2aa0a6-2c4b-4369-af19-ef03e43cbd78
 	condition:
 		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1) >=6

@@ -4,8 +4,8 @@ rule VirTool_Win32_DelfInject_gen_AY{
 		description = "VirTool:Win32/DelfInject.gen!AY,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0b 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 04 68 00 30 00 00 8b 45 90 01 01 8b 40 ec 8b 40 50 50 8b 45 90 01 01 8b 40 ec 8b 40 34 50 8b 45 90 01 01 8b 40 f0 50 ff 15 90 00 } //7
-		$a_03_1 = {80 e2 0f 32 c2 88 45 f7 8d 45 fc e8 90 01 04 8b 55 fc 8a 54 1a ff 80 e2 f0 8a 4d f7 02 d1 88 54 18 ff 46 8b 45 f0 e8 52 d9 ff ff 3b f0 90 00 } //5
+		$a_03_0 = {6a 04 68 00 30 00 00 8b 45 ?? 8b 40 ec 8b 40 50 50 8b 45 ?? 8b 40 ec 8b 40 34 50 8b 45 ?? 8b 40 f0 50 ff 15 } //7
+		$a_03_1 = {80 e2 0f 32 c2 88 45 f7 8d 45 fc e8 ?? ?? ?? ?? 8b 55 fc 8a 54 1a ff 80 e2 f0 8a 4d f7 02 d1 88 54 18 ff 46 8b 45 f0 e8 52 d9 ff ff 3b f0 } //5
 		$a_01_2 = {8a 19 02 5c 24 09 02 5c 24 0a 02 c3 8a 19 88 5c 24 08 33 db 8a d8 8a 1c 1f 88 19 } //5
 		$a_00_3 = {64 ff 35 00 00 00 00 64 89 25 00 00 00 00 bb 00 00 00 00 b8 01 00 00 00 0f 3f 07 0b 36 8b 04 24 64 89 05 00 00 00 00 83 c4 08 85 db 0f 94 c0 36 8d 65 fc 36 8b 1c 24 36 8b 6c 24 04 83 c4 08 c3 8b 4c 24 0c c7 81 a4 00 00 00 ff ff ff ff 83 81 } //5
 		$a_01_4 = {b8 68 58 4d 56 } //1

@@ -4,7 +4,7 @@ rule Trojan_WinNT_Alureon_B{
 		description = "Trojan:WinNT/Alureon.B,SIGNATURE_TYPE_PEHSTR_EXT,16 00 15 00 0a 00 00 "
 		
 	strings :
-		$a_02_0 = {66 81 38 4d 5a 0f 84 90 01 04 8d 44 20 ff 85 c0 81 c0 ff ff ff ff 0f 85 90 01 04 6b c9 ea 81 e1 00 00 00 00 83 c9 04 03 e1 f7 d9 8b 0c 0c 90 00 } //10
+		$a_02_0 = {66 81 38 4d 5a 0f 84 ?? ?? ?? ?? 8d 44 20 ff 85 c0 81 c0 ff ff ff ff 0f 85 ?? ?? ?? ?? 6b c9 ea 81 e1 00 00 00 00 83 c9 04 03 e1 f7 d9 8b 0c 0c } //10
 		$a_01_1 = {52 74 6c 49 6d 61 67 65 4e 74 48 65 61 64 65 72 } //5 RtlImageNtHeader
 		$a_01_2 = {45 78 41 6c 6c 6f 63 61 74 65 50 6f 6f 6c } //5 ExAllocatePool
 		$a_00_3 = {64 6c 66 63 63 63 6e 7a 7a 2e 64 6c 6c } //1 dlfcccnzz.dll

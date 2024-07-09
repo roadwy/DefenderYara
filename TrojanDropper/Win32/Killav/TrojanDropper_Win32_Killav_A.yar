@@ -4,7 +4,7 @@ rule TrojanDropper_Win32_Killav_A{
 		description = "TrojanDropper:Win32/Killav.A,SIGNATURE_TYPE_PEHSTR_EXT,16 00 16 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {74 69 74 6c 65 20 59 6f 75 20 44 45 41 44 21 21 21 21 21 21 21 90 02 08 73 65 74 20 74 61 73 6b 6b 69 6c 6c 3d 73 90 00 } //10
+		$a_02_0 = {74 69 74 6c 65 20 59 6f 75 20 44 45 41 44 21 21 21 21 21 21 21 [0-08] 73 65 74 20 74 61 73 6b 6b 69 6c 6c 3d 73 } //10
 		$a_00_1 = {25 73 25 20 2f 69 6d 20 45 53 41 46 45 20 2f 66 20 3e 6e 75 6c } //1 %s% /im ESAFE /f >nul
 		$a_00_2 = {25 73 25 20 2f 69 6d 20 4b 41 56 2a 20 2f 66 20 3e 6e 75 6c } //1 %s% /im KAV* /f >nul
 		$a_00_3 = {25 73 25 20 2f 69 6d 20 6e 6f 72 74 6f 6e 2a 20 2f 66 20 3e 6e 75 6c } //1 %s% /im norton* /f >nul

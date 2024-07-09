@@ -44,7 +44,7 @@ rule Trojan_Win32_Ekstak_RB_MTB_5{
 		description = "Trojan:Win32/Ekstak.RB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {55 8b ec 83 ec 08 56 57 ff 15 d8 c1 4b 00 68 90 01 01 e0 4b 00 6a 01 6a 00 8b f8 ff 15 dc c1 4b 00 90 00 } //1
+		$a_03_0 = {55 8b ec 83 ec 08 56 57 ff 15 d8 c1 4b 00 68 ?? e0 4b 00 6a 01 6a 00 8b f8 ff 15 dc c1 4b 00 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -54,7 +54,7 @@ rule Trojan_Win32_Ekstak_RB_MTB_6{
 		description = "Trojan:Win32/Ekstak.RB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {83 f0 11 f7 d8 1b c0 40 83 c4 90 01 01 c3 33 c0 5f 83 c4 90 00 } //1
+		$a_03_0 = {83 f0 11 f7 d8 1b c0 40 83 c4 ?? c3 33 c0 5f 83 c4 } //1
 		$a_01_1 = {55 8b ec 51 56 e8 f6 69 fb ff e9 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2
@@ -107,7 +107,7 @@ rule Trojan_Win32_Ekstak_RB_MTB_11{
 		description = "Trojan:Win32/Ekstak.RB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {55 8b ec 8b 45 14 50 ff 15 94 f0 46 00 ff 15 90 01 01 f0 46 00 3d 90 01 04 75 05 e8 21 b1 01 00 e9 90 00 } //5
+		$a_03_0 = {55 8b ec 8b 45 14 50 ff 15 94 f0 46 00 ff 15 ?? f0 46 00 3d ?? ?? ?? ?? 75 05 e8 21 b1 01 00 e9 } //5
 		$a_01_1 = {53 00 68 00 75 00 74 00 64 00 6f 00 77 00 6e 00 53 00 63 00 68 00 65 00 64 00 75 00 6c 00 65 00 72 00 2e 00 65 00 78 00 65 00 } //1 ShutdownScheduler.exe
 	condition:
 		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1) >=6

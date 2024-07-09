@@ -20,7 +20,7 @@ rule Trojan_BAT_Formbook_DB_MTB_2{
 		description = "Trojan:BAT/Formbook.DB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {00 06 07 16 20 90 01 04 6f 90 01 03 0a 0d 09 16 fe 02 13 04 11 04 2c 0c 00 08 07 16 09 6f 90 01 08 16 fe 02 13 05 11 05 2d 90 00 } //10
+		$a_02_0 = {00 06 07 16 20 ?? ?? ?? ?? 6f ?? ?? ?? 0a 0d 09 16 fe 02 13 04 11 04 2c 0c 00 08 07 16 09 6f ?? ?? ?? ?? ?? ?? ?? ?? 16 fe 02 13 05 11 05 2d } //10
 		$a_80_1 = {47 5a 49 44 45 4b 4b 4b 4b } //GZIDEKKKK  1
 		$a_80_2 = {44 45 53 5f 44 65 63 72 79 70 74 } //DES_Decrypt  1
 		$a_80_3 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //FromBase64String  1

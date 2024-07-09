@@ -4,7 +4,7 @@ rule Trojan_Win32_Antivirusxp{
 		description = "Trojan:Win32/Antivirusxp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_02_0 = {55 6e 69 6e 73 74 61 6c 6c 20 70 72 6f 67 72 61 6d 90 02 04 41 6e 74 69 76 69 72 75 73 20 58 50 90 00 } //2
+		$a_02_0 = {55 6e 69 6e 73 74 61 6c 6c 20 70 72 6f 67 72 61 6d [0-04] 41 6e 74 69 76 69 72 75 73 20 58 50 } //2
 		$a_00_1 = {00 5c 41 6e 74 69 76 69 72 75 73 20 58 50 20 } //2
 		$a_00_2 = {54 68 69 73 20 69 73 20 74 72 69 61 6c 20 76 65 72 73 69 6f 6e } //1 This is trial version
 		$a_00_3 = {64 65 6c 73 65 6c 66 2e 62 61 74 00 40 65 63 68 6f 20 6f 66 66 } //1
@@ -33,7 +33,7 @@ rule Trojan_Win32_Antivirusxp_3{
 		description = "Trojan:Win32/Antivirusxp,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 05 00 00 "
 		
 	strings :
-		$a_02_0 = {61 6e 74 69 76 69 72 75 73 90 02 02 32 30 90 01 02 2e 63 6f 6d 90 00 } //10
+		$a_02_0 = {61 6e 74 69 76 69 72 75 73 [0-02] 32 30 ?? ?? 2e 63 6f 6d } //10
 		$a_00_1 = {34 32 37 64 62 41 65 30 2d 37 37 39 39 2d 34 36 31 31 2d 39 37 38 39 2d 64 65 62 33 36 31 35 36 64 31 61 64 4c 4f 41 44 45 44 4d 55 54 58 } //2 427dbAe0-7799-4611-9789-deb36156d1adLOADEDMUTX
 		$a_00_2 = {5c 64 61 74 61 62 61 73 65 2e 64 61 74 00 00 00 45 6e 61 62 6c 65 4c 6f 67 67 69 6e 67 00 00 00 6c 6f 67 2e 74 78 74 } //1
 		$a_00_3 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 49 6e 74 65 72 6e 65 74 20 53 65 74 74 69 6e 67 73 5c 55 73 65 72 20 41 67 65 6e 74 5c 50 6f 73 74 20 50 6c 61 74 66 6f 72 6d } //1 SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\User Agent\Post Platform

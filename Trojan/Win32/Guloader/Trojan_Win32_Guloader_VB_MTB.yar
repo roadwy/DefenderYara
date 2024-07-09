@@ -4,7 +4,7 @@ rule Trojan_Win32_Guloader_VB_MTB{
 		description = "Trojan:Win32/Guloader.VB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 34 0a 81 f6 90 02 05 89 34 08 83 e9 90 02 05 7d 90 00 } //1
+		$a_03_0 = {8b 34 0a 81 f6 [0-05] 89 34 08 83 e9 [0-05] 7d } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

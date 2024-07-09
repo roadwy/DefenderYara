@@ -29,8 +29,8 @@ rule Trojan_AndroidOS_SmsSpy_A_3{
 		description = "Trojan:AndroidOS/SmsSpy.A,SIGNATURE_TYPE_DEXHSTR_EXT,07 00 07 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {4c 63 6f 6d 2f 73 79 73 74 65 6d 2f 73 6d 73 2f 90 02 06 2f 53 6d 53 73 65 72 76 65 72 90 00 } //3
-		$a_02_1 = {4c 63 6f 6d 2f 73 79 73 74 65 6d 2f 73 6d 73 2f 90 02 06 2f 53 6d 53 52 65 63 65 69 76 65 72 90 00 } //3
+		$a_02_0 = {4c 63 6f 6d 2f 73 79 73 74 65 6d 2f 73 6d 73 2f [0-06] 2f 53 6d 53 73 65 72 76 65 72 } //3
+		$a_02_1 = {4c 63 6f 6d 2f 73 79 73 74 65 6d 2f 73 6d 73 2f [0-06] 2f 53 6d 53 52 65 63 65 69 76 65 72 } //3
 		$a_00_2 = {4c 63 6f 6d 2f 73 6d 73 2f 74 72 61 63 74 2f 53 6d 53 73 65 72 76 65 72 } //3 Lcom/sms/tract/SmSserver
 		$a_00_3 = {4c 63 6f 6d 2f 73 6d 73 2f 74 72 61 63 74 2f 53 6d 53 52 65 63 65 69 76 65 72 } //3 Lcom/sms/tract/SmSReceiver
 		$a_00_4 = {69 73 6c 6a } //1 islj

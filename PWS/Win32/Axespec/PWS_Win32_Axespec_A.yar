@@ -4,7 +4,7 @@ rule PWS_Win32_Axespec_A{
 		description = "PWS:Win32/Axespec.A,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {be 00 02 00 00 eb 1c 39 7d fc 76 2f 6a 1e ff 75 fc 8d 85 90 01 02 ff ff 50 ff 75 08 e8 90 01 02 ff ff 90 00 } //3
+		$a_03_0 = {be 00 02 00 00 eb 1c 39 7d fc 76 2f 6a 1e ff 75 fc 8d 85 ?? ?? ff ff 50 ff 75 08 e8 ?? ?? ff ff } //3
 		$a_00_1 = {3c 64 69 76 20 63 6c 61 73 73 3d 22 66 31 22 3e 3c 61 20 68 72 65 66 3d 22 2f 25 53 22 3e 5b 25 53 5d 3c 2f 61 3e 3c 2f 64 69 76 3e } //1 <div class="f1"><a href="/%S">[%S]</a></div>
 		$a_00_2 = {3c 64 69 76 20 63 6c 61 73 73 3d 22 66 32 22 3e 3c 61 20 68 72 65 66 3d 22 2f 25 53 22 3e 25 53 3c 2f 61 3e 3c 2f 64 69 76 3e } //1 <div class="f2"><a href="/%S">%S</a></div>
 		$a_00_3 = {43 6f 6e 74 65 6e 74 2d 54 79 70 65 3a 20 61 70 70 6c 69 63 61 74 69 6f 6e 2f 77 69 6e 72 61 72 } //1 Content-Type: application/winrar

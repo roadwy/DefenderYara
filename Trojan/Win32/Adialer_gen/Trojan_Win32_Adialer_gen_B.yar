@@ -4,7 +4,7 @@ rule Trojan_Win32_Adialer_gen_B{
 		description = "Trojan:Win32/Adialer_gen.B,SIGNATURE_TYPE_PEHSTR_EXT,16 00 11 00 0c 00 00 "
 		
 	strings :
-		$a_02_0 = {7b 61 64 75 6c 74 90 01 03 2d 90 01 04 2d 90 01 04 2d 31 31 31 31 2d 31 31 31 31 31 31 31 31 31 31 31 31 7d 90 00 } //5
+		$a_02_0 = {7b 61 64 75 6c 74 ?? ?? ?? 2d ?? ?? ?? ?? 2d ?? ?? ?? ?? 2d 31 31 31 31 2d 31 31 31 31 31 31 31 31 31 31 31 31 7d } //5
 		$a_00_1 = {67 6f 69 63 66 62 6f 6f 67 69 64 69 6b 6b 65 6a 63 63 6d 63 6c 70 69 65 69 63 69 68 68 6c 70 6f 20 67 6a 62 6b 64 6f } //5 goicfboogidikkejccmclpieicihhlpo gjbkdo
 		$a_00_2 = {22 25 73 22 20 50 49 44 3a 25 64 20 45 58 45 3a 22 25 73 22 } //2 "%s" PID:%d EXE:"%s"
 		$a_00_3 = {45 78 65 44 65 6c 65 74 65 45 76 65 6e 74 } //2 ExeDeleteEvent

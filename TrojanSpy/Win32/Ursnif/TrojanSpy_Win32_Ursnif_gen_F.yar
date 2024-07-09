@@ -4,8 +4,8 @@ rule TrojanSpy_Win32_Ursnif_gen_F{
 		description = "TrojanSpy:Win32/Ursnif.gen!F,SIGNATURE_TYPE_PEHSTR_EXT,05 00 04 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {68 01 00 00 98 57 89 75 f8 89 5d f4 ff 15 90 01 04 83 f8 ff 74 9b 90 00 } //2
-		$a_03_1 = {7e 17 8d 45 fc 50 8b 45 08 0f b6 04 06 50 e8 90 01 04 46 3b 75 0c 7c e9 90 00 } //1
+		$a_03_0 = {68 01 00 00 98 57 89 75 f8 89 5d f4 ff 15 ?? ?? ?? ?? 83 f8 ff 74 9b } //2
+		$a_03_1 = {7e 17 8d 45 fc 50 8b 45 08 0f b6 04 06 50 e8 ?? ?? ?? ?? 46 3b 75 0c 7c e9 } //1
 		$a_01_2 = {74 08 46 83 fe 09 72 e9 eb 03 33 ff } //2
 		$a_01_3 = {75 73 65 72 5f 69 64 3d 25 73 26 73 6f 63 6b 73 3d 25 64 26 76 65 72 73 69 6f 6e 5f 69 64 3d 25 73 26 70 61 73 73 70 68 72 61 73 65 3d 25 73 26 63 72 63 3d 25 30 38 78 } //3 user_id=%s&socks=%d&version_id=%s&passphrase=%s&crc=%08x
 		$a_01_4 = {78 72 74 5f 6f 70 74 69 6f 6e 73 00 } //1 牸彴灯楴湯s

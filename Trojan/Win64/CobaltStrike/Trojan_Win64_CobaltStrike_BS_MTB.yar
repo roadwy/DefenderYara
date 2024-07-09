@@ -14,7 +14,7 @@ rule Trojan_Win64_CobaltStrike_BS_MTB_2{
 		description = "Trojan:Win64/CobaltStrike.BS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {31 c0 39 c2 7e 90 01 01 49 89 c1 41 83 e1 90 01 01 47 90 01 03 44 30 0c 01 48 ff c0 eb 90 01 01 4c 8d 05 90 01 04 e9 90 00 } //1
+		$a_03_0 = {31 c0 39 c2 7e ?? 49 89 c1 41 83 e1 ?? 47 ?? ?? ?? 44 30 0c 01 48 ff c0 eb ?? 4c 8d 05 ?? ?? ?? ?? e9 } //1
 		$a_00_1 = {44 6c 6c 47 65 74 43 6c 61 73 73 4f 62 6a 65 63 74 } //1 DllGetClassObject
 		$a_00_2 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //1 DllRegisterServer
 	condition:
@@ -26,7 +26,7 @@ rule Trojan_Win64_CobaltStrike_BS_MTB_3{
 		description = "Trojan:Win64/CobaltStrike.BS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {48 8b 44 24 90 01 01 0f b6 00 0f b6 4c 24 90 01 01 33 c1 48 8b 8c 24 90 01 04 48 8b 54 24 90 01 01 48 2b d1 48 8b ca 0f b6 c9 81 e1 90 02 04 33 c1 48 8b 4c 24 90 01 01 88 01 48 63 44 24 90 01 01 48 8b 4c 24 90 01 01 48 03 c8 48 8b c1 48 89 44 24 90 01 01 e9 90 00 } //1
+		$a_03_0 = {48 8b 44 24 ?? 0f b6 00 0f b6 4c 24 ?? 33 c1 48 8b 8c 24 ?? ?? ?? ?? 48 8b 54 24 ?? 48 2b d1 48 8b ca 0f b6 c9 81 e1 [0-04] 33 c1 48 8b 4c 24 ?? 88 01 48 63 44 24 ?? 48 8b 4c 24 ?? 48 03 c8 48 8b c1 48 89 44 24 ?? e9 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -36,8 +36,8 @@ rule Trojan_Win64_CobaltStrike_BS_MTB_4{
 		description = "Trojan:Win64/CobaltStrike.BS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {44 89 ee 48 c1 ee 90 01 01 42 90 01 04 c1 e3 90 01 01 c1 e1 90 01 01 09 d9 41 c1 e0 90 01 01 41 09 c8 41 09 f0 4c 8b b5 90 01 04 41 0f c8 44 33 85 90 01 04 48 89 c1 90 00 } //1
-		$a_03_1 = {48 39 c6 74 90 01 01 48 39 c1 0f 84 90 01 04 8a 1c 07 41 30 1c 06 48 ff c0 eb 90 00 } //1
+		$a_03_0 = {44 89 ee 48 c1 ee ?? 42 ?? ?? ?? ?? c1 e3 ?? c1 e1 ?? 09 d9 41 c1 e0 ?? 41 09 c8 41 09 f0 4c 8b b5 ?? ?? ?? ?? 41 0f c8 44 33 85 ?? ?? ?? ?? 48 89 c1 } //1
+		$a_03_1 = {48 39 c6 74 ?? 48 39 c1 0f 84 ?? ?? ?? ?? 8a 1c 07 41 30 1c 06 48 ff c0 eb } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  

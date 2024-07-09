@@ -4,7 +4,7 @@ rule VirTool_Win32_VBInject_W{
 		description = "VirTool:Win32/VBInject.W,SIGNATURE_TYPE_PEHSTR_EXT,ffffffbf 00 ffffffbf 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {40 6c ec fc 6c 00 fe 0a 90 01 01 00 14 00 3c 2d 90 01 01 fc 00 22 6c 74 ff f5 f8 00 00 00 aa 6c a8 fc ae fd 69 bc fc 04 ac fc fb 94 90 01 01 fc fc 22 71 dc fc 90 00 } //100
+		$a_03_0 = {40 6c ec fc 6c 00 fe 0a ?? 00 14 00 3c 2d ?? fc 00 22 6c 74 ff f5 f8 00 00 00 aa 6c a8 fc ae fd 69 bc fc 04 ac fc fb 94 ?? fc fc 22 71 dc fc } //100
 		$a_01_1 = {4f 70 65 6e 50 72 6f 63 65 73 73 00 } //10 灏湥牐捯獥s
 		$a_01_2 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 45 78 00 } //10
 		$a_01_3 = {53 75 73 70 65 6e 64 54 68 72 65 61 64 00 } //10 畓灳湥呤牨慥d

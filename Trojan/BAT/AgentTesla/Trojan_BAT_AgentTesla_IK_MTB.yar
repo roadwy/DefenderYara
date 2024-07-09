@@ -19,7 +19,7 @@ rule Trojan_BAT_AgentTesla_IK_MTB_2{
 		description = "Trojan:BAT/AgentTesla.IK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {06 16 06 8e 69 6f 90 01 03 0a 0d 09 8e 69 1f 10 59 8d 90 01 04 13 04 09 1f 10 11 04 16 09 8e 69 1f 10 59 1f 10 58 1f 10 59 28 90 00 } //10
+		$a_03_0 = {06 16 06 8e 69 6f ?? ?? ?? 0a 0d 09 8e 69 1f 10 59 8d ?? ?? ?? ?? 13 04 09 1f 10 11 04 16 09 8e 69 1f 10 59 1f 10 58 1f 10 59 28 } //10
 		$a_01_1 = {00 6f 00 45 00 69 00 62 00 72 00 36 00 34 00 31 00 56 00 4e 00 45 00 42 00 32 00 59 00 75 00 78 00 42 00 6b 00 38 00 4f 00 30 00 53 00 74 00 4d } //1
 		$a_80_2 = {35 37 48 33 46 4e 50 43 35 34 4a 48 58 46 46 46 38 44 43 33 34 37 } //57H3FNPC54JHXFFF8DC347  1
 	condition:
@@ -31,7 +31,7 @@ rule Trojan_BAT_AgentTesla_IK_MTB_3{
 		description = "Trojan:BAT/AgentTesla.IK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0d 00 0d 00 00 "
 		
 	strings :
-		$a_02_0 = {20 00 10 00 00 8d 0c 00 00 01 13 90 01 01 73 90 00 } //10
+		$a_02_0 = {20 00 10 00 00 8d 0c 00 00 01 13 ?? 73 } //10
 		$a_81_1 = {46 72 65 79 6a 61 20 74 68 65 20 46 72 65 79 6b 61 } //1 Freyja the Freyka
 		$a_81_2 = {52 65 76 65 72 73 65 } //1 Reverse
 		$a_81_3 = {47 5a 69 70 53 74 72 65 61 6d } //1 GZipStream

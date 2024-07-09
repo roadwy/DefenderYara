@@ -4,7 +4,7 @@ rule _#PUA_Block_InstallCore{
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {89 e2 89 32 b9 90 01 04 89 ca 68 90 01 04 5a 31 d1 8b 31 8b d6 31 c2 89 13 81 c1 90 01 04 ba 90 01 04 03 da bf 90 01 04 8b d7 68 90 01 04 5a 33 fa 31 cf 81 cf 90 01 04 0f 85 90 01 04 c3 90 00 } //1
+		$a_02_0 = {89 e2 89 32 b9 ?? ?? ?? ?? 89 ca 68 ?? ?? ?? ?? 5a 31 d1 8b 31 8b d6 31 c2 89 13 81 c1 ?? ?? ?? ?? ba ?? ?? ?? ?? 03 da bf ?? ?? ?? ?? 8b d7 68 ?? ?? ?? ?? 5a 33 fa 31 cf 81 cf ?? ?? ?? ?? 0f 85 ?? ?? ?? ?? c3 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule _#PUA_Block_InstallCore_2{
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {89 c2 81 c2 90 01 04 ff ca 8b 4a 90 01 01 33 cb 89 0f ba 90 01 04 03 c2 c7 c1 90 01 04 03 f9 c7 c1 90 01 04 8b d1 68 90 01 04 5a 33 ca 31 c1 c7 c6 90 01 04 ba 90 01 04 c1 ea 90 01 01 31 d6 29 f1 0f 85 90 00 } //1
+		$a_02_0 = {89 c2 81 c2 ?? ?? ?? ?? ff ca 8b 4a ?? 33 cb 89 0f ba ?? ?? ?? ?? 03 c2 c7 c1 ?? ?? ?? ?? 03 f9 c7 c1 ?? ?? ?? ?? 8b d1 68 ?? ?? ?? ?? 5a 33 ca 31 c1 c7 c6 ?? ?? ?? ?? ba ?? ?? ?? ?? c1 ea ?? 31 d6 29 f1 0f 85 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

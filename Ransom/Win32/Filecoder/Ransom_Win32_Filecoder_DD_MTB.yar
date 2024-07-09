@@ -8,7 +8,7 @@ rule Ransom_Win32_Filecoder_DD_MTB{
 		$a_81_1 = {41 6c 6c 20 65 6e 63 72 79 70 74 65 64 20 66 69 6c 65 73 20 66 6f 72 20 74 68 69 73 20 63 6f 6d 70 75 74 65 72 20 68 61 73 20 65 78 74 65 6e 73 69 6f 6e 3a 20 2e 39 34 36 35 62 62 } //1 All encrypted files for this computer has extension: .9465bb
 		$a_81_2 = {52 65 62 6f 6f 74 69 6e 67 2f 73 68 75 74 64 6f 77 6e 20 77 69 6c 6c 20 63 61 75 73 65 20 79 6f 75 20 74 6f 20 6c 6f 73 65 20 66 69 6c 65 73 20 77 69 74 68 6f 75 74 20 74 68 65 20 70 6f 73 73 69 62 69 6c 69 74 79 20 6f 66 20 72 65 63 6f 76 65 72 79 } //1 Rebooting/shutdown will cause you to lose files without the possibility of recovery
 		$a_81_3 = {4a 75 73 74 20 6f 70 65 6e 20 6f 75 72 20 77 65 62 73 69 74 65 2c 20 75 70 6c 6f 61 64 20 74 68 65 20 65 6e 63 72 79 70 74 65 64 20 66 69 6c 65 20 61 6e 64 20 67 65 74 20 74 68 65 20 64 65 63 72 79 70 74 65 64 20 66 69 6c 65 20 66 6f 72 20 66 72 65 65 } //1 Just open our website, upload the encrypted file and get the decrypted file for free
-		$a_03_4 = {4f 70 65 6e 20 6f 75 72 20 77 65 62 73 69 74 65 3a 20 90 02 3c 2e 6f 6e 69 6f 6e 90 00 } //1
+		$a_03_4 = {4f 70 65 6e 20 6f 75 72 20 77 65 62 73 69 74 65 3a 20 [0-3c] 2e 6f 6e 69 6f 6e } //1
 	condition:
 		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_03_4  & 1)*1) >=3
  
@@ -38,7 +38,7 @@ rule Ransom_Win32_Filecoder_DD_MTB_3{
 		$a_81_2 = {54 68 65 20 6f 6e 6c 79 20 31 20 77 61 79 20 74 6f 20 64 65 63 72 79 70 74 20 79 6f 75 72 20 66 69 6c 65 73 20 69 73 20 74 6f 20 72 65 63 65 69 76 65 20 74 68 65 20 70 72 69 76 61 74 65 20 6b 65 79 20 61 6e 64 20 64 65 63 72 79 70 74 69 6f 6e 20 70 72 6f 67 72 61 6d } //1 The only 1 way to decrypt your files is to receive the private key and decryption program
 		$a_81_3 = {41 6e 79 20 61 74 74 65 6d 70 74 73 20 74 6f 20 72 65 73 74 6f 72 65 20 79 6f 75 72 20 66 69 6c 65 73 20 77 69 74 68 20 74 68 65 20 74 68 69 72 64 20 70 61 72 74 79 20 73 6f 66 74 77 61 72 65 20 77 69 6c 6c 20 62 65 20 66 61 74 61 6c 20 66 6f 72 20 79 6f 75 72 20 66 69 6c 65 73 } //1 Any attempts to restore your files with the third party software will be fatal for your files
 		$a_81_4 = {54 6f 20 72 65 63 65 69 76 65 20 74 68 65 20 70 72 69 76 61 74 65 20 6b 65 79 20 61 6e 64 20 64 65 63 72 79 70 74 69 6f 6e 20 70 72 6f 67 72 61 6d 20 66 6f 6c 6c 6f 77 20 74 68 65 20 69 6e 73 74 72 75 63 74 69 6f 6e 73 20 62 65 6c 6f 77 } //1 To receive the private key and decryption program follow the instructions below
-		$a_03_5 = {68 74 74 70 3a 2f 2f 90 02 1e 2e 90 02 14 2e 6f 6e 69 6f 6e 2f 90 00 } //1
+		$a_03_5 = {68 74 74 70 3a 2f 2f [0-1e] 2e [0-14] 2e 6f 6e 69 6f 6e 2f } //1
 	condition:
 		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_03_5  & 1)*1) >=3
  

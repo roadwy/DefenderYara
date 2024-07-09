@@ -4,7 +4,7 @@ rule TrojanDropper_Win32_Bunitu_MR_MTB{
 		description = "TrojanDropper:Win32/Bunitu.MR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {5e 8b e5 5d c3 90 0a 1e 00 03 05 90 01 04 0f be 90 01 01 30 f7 90 01 01 8b 90 01 01 f8 0f be 90 01 01 2b 90 01 01 8b 90 01 01 f8 88 90 00 } //1
+		$a_02_0 = {5e 8b e5 5d c3 90 0a 1e 00 03 05 ?? ?? ?? ?? 0f be ?? 30 f7 ?? 8b ?? f8 0f be ?? 2b ?? 8b ?? f8 88 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

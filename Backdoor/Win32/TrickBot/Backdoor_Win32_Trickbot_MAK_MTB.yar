@@ -7,7 +7,7 @@ rule Backdoor_Win32_Trickbot_MAK_MTB{
 		$a_80_0 = {6a 6f 65 62 6f 78 63 6f 6e 74 72 6f 6c 2e 65 78 65 } //joeboxcontrol.exe  1
 		$a_80_1 = {6a 6f 65 62 6f 78 73 65 72 76 65 72 2e 65 78 65 } //joeboxserver.exe  1
 		$a_80_2 = {43 68 65 63 6b 69 6e 67 20 70 72 6f 63 65 73 73 20 6f 66 20 6d 61 6c 77 61 72 65 20 61 6e 61 6c 79 73 69 73 20 74 6f 6f 6c 3a 20 25 73 } //Checking process of malware analysis tool: %s  1
-		$a_03_3 = {8b c7 8b 39 8b f7 c1 e8 90 02 01 c1 e6 90 02 01 0b f0 89 32 4b 83 c1 90 02 01 83 c2 90 02 01 f6 c3 07 75 e4 90 00 } //5
+		$a_03_3 = {8b c7 8b 39 8b f7 c1 e8 [0-01] c1 e6 [0-01] 0b f0 89 32 4b 83 c1 [0-01] 83 c2 [0-01] f6 c3 07 75 e4 } //5
 	condition:
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_03_3  & 1)*5) >=8
  

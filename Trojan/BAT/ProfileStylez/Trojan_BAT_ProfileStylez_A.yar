@@ -4,7 +4,7 @@ rule Trojan_BAT_ProfileStylez_A{
 		description = "Trojan:BAT/ProfileStylez.A,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {16 20 af 00 0a 00 6f 90 01 01 00 00 0a 13 90 03 01 01 04 05 90 03 01 01 08 09 72 90 00 } //1
+		$a_03_0 = {16 20 af 00 0a 00 6f ?? 00 00 0a 13 (04|05) (|) 08 09 72 } //1
 		$a_01_1 = {42 48 4f 5f 48 65 6c 6c 6f 57 6f 72 6c 64 2e 49 4f 62 6a 65 63 74 57 69 74 68 53 69 74 65 2e 47 65 74 53 69 74 65 } //1 BHO_HelloWorld.IObjectWithSite.GetSite
 	condition:
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2

@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_NZF_MTB{
 		description = "Trojan:BAT/AgentTesla.NZF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {11 03 20 00 87 93 03 6f 90 01 03 0a 80 90 01 04 38 90 00 } //1
+		$a_03_0 = {11 03 20 00 87 93 03 6f ?? ?? ?? 0a 80 ?? ?? ?? ?? 38 } //1
 		$a_81_1 = {31 38 35 2e 32 34 36 2e 32 32 30 2e 36 35 } //1 185.246.220.65
 	condition:
 		((#a_03_0  & 1)*1+(#a_81_1  & 1)*1) >=2
@@ -15,7 +15,7 @@ rule Trojan_BAT_AgentTesla_NZF_MTB_2{
 		description = "Trojan:BAT/AgentTesla.NZF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {8e 69 5d 91 7e 90 01 01 00 00 04 07 91 61 d2 6f 90 01 01 00 00 0a 07 17 58 90 00 } //1
+		$a_03_0 = {8e 69 5d 91 7e ?? 00 00 04 07 91 61 d2 6f ?? 00 00 0a 07 17 58 } //1
 		$a_01_1 = {07 7e 01 00 00 04 8e 69 32 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2

@@ -4,7 +4,7 @@ rule TrojanSpy_AndroidOS_RewadSteal_A_MTB{
 		description = "TrojanSpy:AndroidOS/RewadSteal.A!MTB,SIGNATURE_TYPE_DEXHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {4c 63 6f 6d 2f 52 65 77 61 72 64 73 2f 90 02 10 2f 61 70 69 43 6f 6e 74 72 6f 6c 6c 65 72 90 00 } //1
+		$a_03_0 = {4c 63 6f 6d 2f 52 65 77 61 72 64 73 2f [0-10] 2f 61 70 69 43 6f 6e 74 72 6f 6c 6c 65 72 } //1
 		$a_00_1 = {2f 72 6f 6f 74 2f 61 70 69 2f 75 73 65 72 2f 73 74 65 70 31 } //1 /root/api/user/step1
 		$a_00_2 = {2f 72 6f 6f 74 2f 61 70 69 2f 75 73 65 72 2f 73 6d 73 } //1 /root/api/user/sms
 		$a_00_3 = {4b 45 59 5f 45 54 55 53 45 52 4e 41 4d 45 } //1 KEY_ETUSERNAME

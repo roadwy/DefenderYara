@@ -4,7 +4,7 @@ rule Backdoor_Win32_Begman_A{
 		description = "Backdoor:Win32/Begman.A,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {74 0c 8d 55 fc 8b c6 e8 90 01 02 ff ff eb 0d 46 83 c3 04 83 fe 03 0f 85 5f ff ff ff 69 05 90 01 04 60 ea 00 00 50 a1 90 01 04 8b 00 ff 50 18 e9 2e ff ff ff 90 00 } //5
+		$a_03_0 = {74 0c 8d 55 fc 8b c6 e8 ?? ?? ff ff eb 0d 46 83 c3 04 83 fe 03 0f 85 5f ff ff ff 69 05 ?? ?? ?? ?? 60 ea 00 00 50 a1 ?? ?? ?? ?? 8b 00 ff 50 18 e9 2e ff ff ff } //5
 		$a_00_1 = {0b 00 00 00 63 6c 62 63 61 74 71 2e 64 6c 6c 00 } //1
 		$a_00_2 = {09 00 00 00 69 6e 74 65 72 76 61 6c 22 00 } //1
 		$a_00_3 = {09 00 00 00 73 6f 63 6b 73 69 6e 74 22 00 } //1

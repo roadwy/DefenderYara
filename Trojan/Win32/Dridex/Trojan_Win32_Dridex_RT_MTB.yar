@@ -4,7 +4,7 @@ rule Trojan_Win32_Dridex_RT_MTB{
 		description = "Trojan:Win32/Dridex.RT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {33 d3 c7 05 90 01 04 00 00 00 00 01 15 90 01 04 a1 90 01 04 8b 0d 90 01 04 89 08 5b 8b e5 5d 90 00 } //1
+		$a_03_0 = {33 d3 c7 05 ?? ?? ?? ?? 00 00 00 00 01 15 ?? ?? ?? ?? a1 ?? ?? ?? ?? 8b 0d ?? ?? ?? ?? 89 08 5b 8b e5 5d } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -44,7 +44,7 @@ rule Trojan_Win32_Dridex_RT_MTB_4{
 		description = "Trojan:Win32/Dridex.RT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {6b c0 5a 03 c6 89 0d 90 01 04 89 44 24 90 01 01 81 7c 24 90 01 01 cd 05 00 00 75 90 01 01 66 0f b6 05 90 01 04 66 03 e8 0f b7 c5 66 89 6c 24 90 01 01 8d 5c 43 90 01 01 0f b6 05 90 01 04 0f b6 35 90 01 04 03 c6 3d 7c 03 00 00 75 90 00 } //1
+		$a_03_0 = {6b c0 5a 03 c6 89 0d ?? ?? ?? ?? 89 44 24 ?? 81 7c 24 ?? cd 05 00 00 75 ?? 66 0f b6 05 ?? ?? ?? ?? 66 03 e8 0f b7 c5 66 89 6c 24 ?? 8d 5c 43 ?? 0f b6 05 ?? ?? ?? ?? 0f b6 35 ?? ?? ?? ?? 03 c6 3d 7c 03 00 00 75 } //1
 		$a_81_1 = {63 3a 5c 43 61 75 73 65 5c 34 31 37 5c 4f 72 67 61 6e 5c 4f 75 74 20 76 69 5c 67 72 61 6e 64 2e 70 64 62 } //1 c:\Cause\417\Organ\Out vi\grand.pdb
 		$a_81_2 = {47 65 74 53 74 61 72 74 75 70 49 6e 66 6f 41 } //1 GetStartupInfoA
 		$a_81_3 = {65 73 73 69 22 65 20 43 32 65 69 31 } //1 essi"e C2ei1

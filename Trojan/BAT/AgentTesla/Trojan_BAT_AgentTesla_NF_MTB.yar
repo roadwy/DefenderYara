@@ -16,7 +16,7 @@ rule Trojan_BAT_AgentTesla_NF_MTB_2{
 		description = "Trojan:BAT/AgentTesla.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0d 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {0a 0a 06 16 06 8e 69 28 90 01 03 0a 02 7b 90 01 03 04 25 2d 02 26 2a 06 7e 90 01 03 0a 6f 90 01 03 0a 2a 90 00 } //10
+		$a_03_0 = {0a 0a 06 16 06 8e 69 28 ?? ?? ?? 0a 02 7b ?? ?? ?? 04 25 2d 02 26 2a 06 7e ?? ?? ?? 0a 6f ?? ?? ?? 0a 2a } //10
 		$a_01_1 = {6e 69 61 4d 6c 6c 44 72 6f 43 5f } //1 niaMllDroC_
 		$a_01_2 = {49 6e 76 6f 6b 65 } //1 Invoke
 		$a_01_3 = {2e 65 64 6f 6d 20 53 4f 44 20 6e 69 20 6e 75 72 20 65 62 20 74 6f 6e 6e 61 63 20 6d 61 72 67 6f 72 70 20 73 69 68 54 21 } //1 .edom SOD ni nur eb tonnac margorp sihT!

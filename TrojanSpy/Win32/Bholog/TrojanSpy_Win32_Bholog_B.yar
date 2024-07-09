@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Bholog_B{
 		description = "TrojanSpy:Win32/Bholog.B,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {6f 73 73 6b 90 02 0c 66 72 6d 4c 6f 67 69 6e 90 00 } //2
+		$a_03_0 = {6f 73 73 6b [0-0c] 66 72 6d 4c 6f 67 69 6e } //2
 		$a_01_1 = {5b 00 41 00 4c 00 54 00 55 00 50 00 5d 00 } //2 [ALTUP]
 		$a_00_2 = {5b 00 50 00 41 00 53 00 54 00 45 00 5d 00 } //2 [PASTE]
 		$a_01_3 = {72 65 61 64 69 6e 67 00 72 65 70 62 68 61 69 } //1

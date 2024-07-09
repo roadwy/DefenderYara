@@ -4,7 +4,7 @@ rule Trojan_Win32_Banker_L{
 		description = "Trojan:Win32/Banker.L,SIGNATURE_TYPE_PEHSTR_EXT,07 00 06 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {50 8b 43 fc 03 46 fc a9 00 00 00 c0 75 90 01 01 e8 90 01 04 89 c7 89 fa 89 d8 8b 4b fc d1 e1 e8 90 01 04 89 f0 8b 4e fc d1 e1 8b 53 fc d1 e2 01 fa e8 90 01 04 58 89 fa 85 ff 74 90 01 01 ff 4f f8 e8 90 00 } //1
+		$a_02_0 = {50 8b 43 fc 03 46 fc a9 00 00 00 c0 75 ?? e8 ?? ?? ?? ?? 89 c7 89 fa 89 d8 8b 4b fc d1 e1 e8 ?? ?? ?? ?? 89 f0 8b 4e fc d1 e1 8b 53 fc d1 e2 01 fa e8 ?? ?? ?? ?? 58 89 fa 85 ff 74 ?? ff 4f f8 e8 } //1
 		$a_00_1 = {70 00 72 00 61 00 71 00 75 00 65 00 6d 00 3d 00 6d 00 61 00 67 00 61 00 6f 00 78 00 78 00 40 00 67 00 6d 00 61 00 69 00 6c 00 2e 00 63 00 6f 00 6d 00 } //1 praquem=magaoxx@gmail.com
 		$a_00_2 = {6d 00 61 00 67 00 61 00 6f 00 78 00 78 00 40 00 69 00 67 00 2e 00 63 00 6f 00 6d 00 2e 00 62 00 72 00 } //1 magaoxx@ig.com.br
 		$a_00_3 = {77 00 77 00 77 00 2e 00 63 00 68 00 75 00 61 00 6e 00 6c 00 69 00 2e 00 63 00 6f 00 6d 00 2e 00 6d 00 79 00 } //1 www.chuanli.com.my

@@ -4,7 +4,7 @@ rule Trojan_BAT_Zusy_GZX_MTB{
 		description = "Trojan:BAT/Zusy.GZX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {11 07 11 0d 6f 90 01 03 0a 13 0c 02 09 11 09 11 0c 28 90 01 03 06 13 0d 16 13 11 2b 1b 00 11 0e 11 11 8f 90 01 03 01 25 47 11 0d 11 11 91 61 d2 52 00 11 11 17 58 13 11 11 11 11 0e 8e 69 fe 04 13 12 11 12 2d d7 90 00 } //10
+		$a_03_0 = {11 07 11 0d 6f ?? ?? ?? 0a 13 0c 02 09 11 09 11 0c 28 ?? ?? ?? 06 13 0d 16 13 11 2b 1b 00 11 0e 11 11 8f ?? ?? ?? 01 25 47 11 0d 11 11 91 61 d2 52 00 11 11 17 58 13 11 11 11 11 0e 8e 69 fe 04 13 12 11 12 2d d7 } //10
 		$a_80_1 = {50 69 6c 6c 61 67 65 72 2e 64 6c 6c } //Pillager.dll  1
 		$a_01_2 = {54 72 69 70 6c 65 44 45 53 43 72 79 70 74 6f 53 65 72 76 69 63 65 50 72 6f 76 69 64 65 72 } //1 TripleDESCryptoServiceProvider
 	condition:

@@ -49,7 +49,7 @@ rule Trojan_BAT_Rozena_ARA_MTB_5{
 		description = "Trojan:BAT/Rozena.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {16 0a 2b 21 00 02 06 8f 90 01 03 01 25 71 90 01 03 01 03 06 03 8e 69 5d 91 61 d2 81 90 01 03 01 00 06 17 58 0a 06 02 8e 69 fe 04 0c 08 2d d5 02 0b 2b 00 07 2a 90 00 } //2
+		$a_03_0 = {16 0a 2b 21 00 02 06 8f ?? ?? ?? 01 25 71 ?? ?? ?? 01 03 06 03 8e 69 5d 91 61 d2 81 ?? ?? ?? 01 00 06 17 58 0a 06 02 8e 69 fe 04 0c 08 2d d5 02 0b 2b 00 07 2a } //2
 		$a_01_1 = {56 69 72 74 75 61 6c 41 6c 6c 6f 63 } //1 VirtualAlloc
 		$a_01_2 = {43 72 65 61 74 65 54 68 72 65 61 64 } //1 CreateThread
 		$a_01_3 = {57 61 69 74 46 6f 72 53 69 6e 67 6c 65 4f 62 6a 65 63 74 } //1 WaitForSingleObject
@@ -62,7 +62,7 @@ rule Trojan_BAT_Rozena_ARA_MTB_6{
 		description = "Trojan:BAT/Rozena.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {00 08 11 0a 08 11 0a 91 19 8d 90 01 03 01 25 d0 90 01 03 04 28 90 01 03 0a 11 0a 19 5d 91 61 d2 9c 00 11 0a 17 58 13 0a 11 0a 08 8e 69 fe 04 13 0b 11 0b 2d cb 90 00 } //2
+		$a_03_0 = {00 08 11 0a 08 11 0a 91 19 8d ?? ?? ?? 01 25 d0 ?? ?? ?? 04 28 ?? ?? ?? 0a 11 0a 19 5d 91 61 d2 9c 00 11 0a 17 58 13 0a 11 0a 08 8e 69 fe 04 13 0b 11 0b 2d cb } //2
 		$a_00_1 = {53 00 45 00 4c 00 45 00 43 00 54 00 20 00 2a 00 20 00 46 00 52 00 4f 00 4d 00 20 00 41 00 6e 00 74 00 69 00 76 00 69 00 72 00 75 00 73 00 50 00 72 00 6f 00 64 00 75 00 63 00 74 00 } //2 SELECT * FROM AntivirusProduct
 		$a_00_2 = {57 00 69 00 6e 00 64 00 6f 00 77 00 73 00 20 00 44 00 65 00 66 00 65 00 6e 00 64 00 65 00 72 00 } //2 Windows Defender
 	condition:

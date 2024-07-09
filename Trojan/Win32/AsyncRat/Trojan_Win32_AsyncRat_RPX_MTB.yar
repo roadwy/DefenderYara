@@ -14,7 +14,7 @@ rule Trojan_Win32_AsyncRat_RPX_MTB_2{
 		description = "Trojan:Win32/AsyncRat.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 40 68 00 10 00 00 ff 74 24 10 6a 00 ff 15 90 01 04 8b f0 85 f6 74 21 ff 74 24 08 ff 74 24 10 56 e8 1f 12 00 00 83 c4 0c ff d6 68 00 80 00 00 6a 00 56 ff 15 90 01 04 ff 74 24 0c e8 90 00 } //1
+		$a_03_0 = {6a 40 68 00 10 00 00 ff 74 24 10 6a 00 ff 15 ?? ?? ?? ?? 8b f0 85 f6 74 21 ff 74 24 08 ff 74 24 10 56 e8 1f 12 00 00 83 c4 0c ff d6 68 00 80 00 00 6a 00 56 ff 15 ?? ?? ?? ?? ff 74 24 0c e8 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -24,7 +24,7 @@ rule Trojan_Win32_AsyncRat_RPX_MTB_3{
 		description = "Trojan:Win32/AsyncRat.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 40 68 00 10 00 00 2b f3 56 6a 00 ff 15 90 01 04 8b f8 85 ff 90 00 } //1
+		$a_03_0 = {6a 40 68 00 10 00 00 2b f3 56 6a 00 ff 15 ?? ?? ?? ?? 8b f8 85 ff } //1
 		$a_01_1 = {31 33 34 2e 31 32 32 2e 31 33 33 2e 34 39 } //1 134.122.133.49
 		$a_01_2 = {43 6c 69 65 6e 74 2e 62 69 6e } //1 Client.bin
 		$a_01_3 = {47 61 72 62 61 67 65 31 } //1 Garbage1

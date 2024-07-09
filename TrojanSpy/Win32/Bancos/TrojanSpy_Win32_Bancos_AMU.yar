@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Bancos_AMU{
 		description = "TrojanSpy:Win32/Bancos.AMU,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {83 e9 04 01 c8 01 ca f7 d9 df 2c 01 df 3c 11 83 c1 08 78 90 01 01 8b 04 01 89 04 11 c3 90 00 } //1
+		$a_03_0 = {83 e9 04 01 c8 01 ca f7 d9 df 2c 01 df 3c 11 83 c1 08 78 ?? 8b 04 01 89 04 11 c3 } //1
 		$a_01_1 = {be 01 00 00 00 8b 45 f0 0f b7 44 70 fe 33 } //1
 		$a_01_2 = {50 00 6f 00 72 00 74 00 61 00 6c 00 20 00 43 00 65 00 74 00 65 00 6c 00 65 00 6d 00 20 00 2d 00 20 00 4d 00 6f 00 7a 00 69 00 6c 00 6c 00 61 00 20 00 46 00 69 00 72 00 65 00 66 00 6f 00 78 00 } //1 Portal Cetelem - Mozilla Firefox
 		$a_01_3 = {50 00 6f 00 72 00 74 00 61 00 6c 00 20 00 42 00 41 00 4e 00 43 00 4f 00 20 00 52 00 45 00 41 00 4c 00 20 00 2d 00 20 00 4d 00 6f 00 7a 00 69 00 6c 00 6c 00 61 00 20 00 46 00 69 00 72 00 65 00 66 00 6f 00 78 00 } //1 Portal BANCO REAL - Mozilla Firefox

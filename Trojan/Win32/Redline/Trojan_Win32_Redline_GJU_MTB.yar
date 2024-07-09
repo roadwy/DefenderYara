@@ -4,8 +4,8 @@ rule Trojan_Win32_Redline_GJU_MTB{
 		description = "Trojan:Win32/Redline.GJU!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 7d 08 f6 17 80 2f 90 01 01 47 e2 90 00 } //10
-		$a_03_1 = {d1 f9 0f b6 95 90 01 04 c1 e2 07 0b ca 88 8d 90 01 04 0f b6 85 90 01 04 f7 d0 90 00 } //10
+		$a_03_0 = {8b 7d 08 f6 17 80 2f ?? 47 e2 } //10
+		$a_03_1 = {d1 f9 0f b6 95 ?? ?? ?? ?? c1 e2 07 0b ca 88 8d ?? ?? ?? ?? 0f b6 85 ?? ?? ?? ?? f7 d0 } //10
 	condition:
 		((#a_03_0  & 1)*10+(#a_03_1  & 1)*10) >=20
  

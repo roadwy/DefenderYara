@@ -4,7 +4,7 @@ rule TrojanDownloader_BAT_Seraph_MB_MTB{
 		description = "TrojanDownloader:BAT/Seraph.MB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 0b 00 00 "
 		
 	strings :
-		$a_03_0 = {1f 0d 6a 59 13 05 90 0a 1f 00 09 69 8d 90 01 03 01 25 17 73 90 01 03 0a 13 04 06 6f 90 01 03 0a 90 02 08 07 06 11 04 11 05 09 6f 90 01 03 06 2a 90 00 } //1
+		$a_03_0 = {1f 0d 6a 59 13 05 90 0a 1f 00 09 69 8d ?? ?? ?? 01 25 17 73 ?? ?? ?? 0a 13 04 06 6f ?? ?? ?? 0a [0-08] 07 06 11 04 11 05 09 6f ?? ?? ?? 06 2a } //1
 		$a_01_1 = {43 68 65 63 6b 52 65 6d 6f 74 65 44 65 62 75 67 67 65 72 50 72 65 73 65 6e 74 } //1 CheckRemoteDebuggerPresent
 		$a_01_2 = {49 73 4c 6f 67 67 69 6e 67 } //1 IsLogging
 		$a_01_3 = {4d 65 6d 6f 72 79 53 74 72 65 61 6d } //1 MemoryStream

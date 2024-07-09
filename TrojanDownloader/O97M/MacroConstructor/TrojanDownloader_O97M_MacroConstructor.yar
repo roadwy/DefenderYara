@@ -4,8 +4,8 @@ rule TrojanDownloader_O97M_MacroConstructor{
 		description = "TrojanDownloader:O97M/MacroConstructor,SIGNATURE_TYPE_MACROHSTR_EXT,15 00 15 00 12 00 00 "
 		
 	strings :
-		$a_02_0 = {3d 65 78 63 65 6c 34 6d 61 63 72 6f 73 68 65 65 74 73 90 0a 20 00 73 65 74 90 00 } //10
-		$a_02_1 = {3d 65 78 63 65 6c 34 69 6e 74 6c 6d 61 63 72 6f 73 68 65 65 74 73 90 0a 20 00 73 65 74 90 00 } //10
+		$a_02_0 = {3d 65 78 63 65 6c 34 6d 61 63 72 6f 73 68 65 65 74 73 90 0a 20 00 73 65 74 } //10
+		$a_02_1 = {3d 65 78 63 65 6c 34 69 6e 74 6c 6d 61 63 72 6f 73 68 65 65 74 73 90 0a 20 00 73 65 74 } //10
 		$a_00_2 = {65 78 63 65 6c 34 6d 61 63 72 6f 73 68 65 65 74 73 2e 61 64 64 28 } //10 excel4macrosheets.add(
 		$a_00_3 = {65 78 63 65 6c 34 69 6e 74 6c 6d 61 63 72 6f 73 68 65 65 74 73 2e 61 64 64 28 } //10 excel4intlmacrosheets.add(
 		$a_00_4 = {61 70 70 6c 69 63 61 74 69 6f 6e 2e 72 75 6e 73 68 65 65 74 73 28 } //10 application.runsheets(

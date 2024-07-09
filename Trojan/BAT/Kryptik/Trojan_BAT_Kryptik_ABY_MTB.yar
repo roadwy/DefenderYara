@@ -4,7 +4,7 @@ rule Trojan_BAT_Kryptik_ABY_MTB{
 		description = "Trojan:BAT/Kryptik.ABY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {09 11 09 07 11 09 18 5a 18 90 02 05 1f 10 90 02 05 d2 9c 90 00 } //10
+		$a_03_0 = {09 11 09 07 11 09 18 5a 18 [0-05] 1f 10 [0-05] d2 9c } //10
 		$a_80_1 = {41 75 74 6f 53 63 61 6c 65 42 61 73 65 53 69 7a 65 } //AutoScaleBaseSize  2
 		$a_80_2 = {53 75 62 73 74 72 69 6e 67 } //Substring  2
 		$a_80_3 = {54 6f 49 6e 74 33 32 } //ToInt32  2

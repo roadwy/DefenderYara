@@ -4,7 +4,7 @@ rule Trojan_BAT_Njrat_MD_MTB{
 		description = "Trojan:BAT/Njrat.MD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 0e 00 00 "
 		
 	strings :
-		$a_03_0 = {0a 06 07 6f 90 01 03 0a 17 73 90 01 03 0a 0c 08 02 16 02 8e 69 6f 90 01 03 0a 08 6f 90 01 03 0a 06 6f 90 01 03 0a 0d 09 2a 90 00 } //1
+		$a_03_0 = {0a 06 07 6f ?? ?? ?? 0a 17 73 ?? ?? ?? 0a 0c 08 02 16 02 8e 69 6f ?? ?? ?? 0a 08 6f ?? ?? ?? 0a 06 6f ?? ?? ?? 0a 0d 09 2a } //1
 		$a_01_1 = {73 74 6f 70 6d 65 } //1 stopme
 		$a_01_2 = {4d 79 41 6e 74 69 50 72 6f 63 65 73 73 } //1 MyAntiProcess
 		$a_01_3 = {4c 61 75 6e 63 68 5f 63 72 79 70 74 } //1 Launch_crypt

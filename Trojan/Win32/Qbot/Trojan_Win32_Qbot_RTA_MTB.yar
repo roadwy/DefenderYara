@@ -4,7 +4,7 @@ rule Trojan_Win32_Qbot_RTA_MTB{
 		description = "Trojan:Win32/Qbot.RTA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {31 18 6a 01 e8 90 01 04 8b d8 83 c3 04 6a 01 e8 90 01 04 2b d8 01 1d 90 01 04 83 05 90 01 04 04 90 00 } //1
+		$a_03_0 = {31 18 6a 01 e8 ?? ?? ?? ?? 8b d8 83 c3 04 6a 01 e8 ?? ?? ?? ?? 2b d8 01 1d ?? ?? ?? ?? 83 05 ?? ?? ?? ?? 04 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Qbot_RTA_MTB_2{
 		description = "Trojan:Win32/Qbot.RTA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {83 c0 04 89 45 90 01 01 8b 45 90 01 01 3b 45 90 01 01 0f 82 90 01 04 c7 45 90 01 01 00 10 00 00 8b 45 90 01 01 03 45 90 01 01 2b 45 90 01 01 83 c0 04 90 00 } //1
+		$a_03_0 = {83 c0 04 89 45 ?? 8b 45 ?? 3b 45 ?? 0f 82 ?? ?? ?? ?? c7 45 ?? 00 10 00 00 8b 45 ?? 03 45 ?? 2b 45 ?? 83 c0 04 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

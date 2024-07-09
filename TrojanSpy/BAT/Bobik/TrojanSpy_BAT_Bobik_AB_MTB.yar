@@ -4,7 +4,7 @@ rule TrojanSpy_BAT_Bobik_AB_MTB{
 		description = "TrojanSpy:BAT/Bobik.AB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {16 0b 2b 1d 06 02 07 6f 90 01 03 0a 03 61 d1 0c 12 02 28 90 01 03 0a 28 90 01 03 0a 0a 07 17 58 0b 07 02 6f 90 01 03 0a fe 04 0d 09 2d d6 90 00 } //2
+		$a_03_0 = {16 0b 2b 1d 06 02 07 6f ?? ?? ?? 0a 03 61 d1 0c 12 02 28 ?? ?? ?? 0a 28 ?? ?? ?? 0a 0a 07 17 58 0b 07 02 6f ?? ?? ?? 0a fe 04 0d 09 2d d6 } //2
 		$a_01_1 = {47 65 74 43 75 72 72 65 6e 74 44 69 72 65 63 74 6f 72 79 } //1 GetCurrentDirectory
 		$a_01_2 = {47 65 74 46 69 6c 65 73 } //1 GetFiles
 		$a_01_3 = {47 65 74 46 6c 61 67 } //1 GetFlag

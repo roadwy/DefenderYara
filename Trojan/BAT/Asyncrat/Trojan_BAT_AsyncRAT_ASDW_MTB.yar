@@ -4,7 +4,7 @@ rule Trojan_BAT_AsyncRAT_ASDW_MTB{
 		description = "Trojan:BAT/AsyncRAT.ASDW!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {20 c4 09 00 00 28 90 01 01 00 00 0a 00 28 90 01 01 02 00 06 16 fe 01 0a 06 2c 07 16 28 90 00 } //2
+		$a_03_0 = {20 c4 09 00 00 28 ?? 00 00 0a 00 28 ?? 02 00 06 16 fe 01 0a 06 2c 07 16 28 } //2
 		$a_01_1 = {5b 00 43 00 41 00 50 00 53 00 4c 00 4f 00 43 00 4b 00 3a 00 20 00 4f 00 4e 00 5d 00 } //1 [CAPSLOCK: ON]
 		$a_01_2 = {5b 00 53 00 68 00 69 00 66 00 74 00 5d 00 } //1 [Shift]
 		$a_01_3 = {62 00 6f 00 74 00 4b 00 69 00 6c 00 6c 00 65 00 72 00 } //1 botKiller

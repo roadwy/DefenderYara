@@ -4,7 +4,7 @@ rule TrojanDropper_Win32_Nebuler_E{
 		description = "TrojanDropper:Win32/Nebuler.E,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 51 08 ff d2 89 45 90 01 01 8b 45 08 05 90 01 04 50 8b 4d 90 01 01 51 8b 55 08 8b 42 04 ff d0 90 00 } //9
+		$a_03_0 = {8b 51 08 ff d2 89 45 ?? 8b 45 08 05 ?? ?? ?? ?? 50 8b 4d ?? 51 8b 55 08 8b 42 04 ff d0 } //9
 		$a_01_1 = {8b 55 ec 3b 15 00 70 40 00 } //1
 		$a_01_2 = {8b 4d ec 3b 0d 00 70 40 00 } //1
 		$a_01_3 = {8b 45 ec 3b 05 00 70 40 00 } //1

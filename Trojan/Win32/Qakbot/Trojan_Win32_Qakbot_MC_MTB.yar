@@ -4,7 +4,7 @@ rule Trojan_Win32_Qakbot_MC_MTB{
 		description = "Trojan:Win32/Qakbot.MC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b d8 03 1d 90 01 04 6a 00 e8 90 01 04 03 d8 6a 00 e8 90 01 04 2b d8 6a 00 e8 90 01 04 2b d8 6a 00 e8 90 01 04 2b d8 a1 90 01 04 33 18 89 1d 90 01 04 a1 90 01 04 8b 15 90 01 04 89 10 8b 45 f8 83 c0 04 90 00 } //10
+		$a_03_0 = {8b d8 03 1d ?? ?? ?? ?? 6a 00 e8 ?? ?? ?? ?? 03 d8 6a 00 e8 ?? ?? ?? ?? 2b d8 6a 00 e8 ?? ?? ?? ?? 2b d8 6a 00 e8 ?? ?? ?? ?? 2b d8 a1 ?? ?? ?? ?? 33 18 89 1d ?? ?? ?? ?? a1 ?? ?? ?? ?? 8b 15 ?? ?? ?? ?? 89 10 8b 45 f8 83 c0 04 } //10
 	condition:
 		((#a_03_0  & 1)*10) >=10
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Qakbot_MC_MTB_2{
 		description = "Trojan:Win32/Qakbot.MC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {0f af da 8d 50 ff 33 d0 89 91 fc 00 00 00 8b 81 00 01 00 00 01 41 50 8b 81 ec 00 00 00 01 41 10 8b 81 80 00 00 00 8b 91 a8 00 00 00 88 1c 02 ff 81 80 00 00 00 8b 81 c0 00 00 00 2b 81 0c 01 00 00 35 90 01 04 01 81 90 00 } //5
+		$a_03_0 = {0f af da 8d 50 ff 33 d0 89 91 fc 00 00 00 8b 81 00 01 00 00 01 41 50 8b 81 ec 00 00 00 01 41 10 8b 81 80 00 00 00 8b 91 a8 00 00 00 88 1c 02 ff 81 80 00 00 00 8b 81 c0 00 00 00 2b 81 0c 01 00 00 35 ?? ?? ?? ?? 01 81 } //5
 	condition:
 		((#a_03_0  & 1)*5) >=5
  

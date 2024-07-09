@@ -4,7 +4,7 @@ rule Trojan_BAT_AveMariaRat_MY_MTB{
 		description = "Trojan:BAT/AveMariaRat.MY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {08 07 2b 03 00 2b 07 6f 90 01 03 0a 2b f6 00 de 11 08 2b 08 08 6f 90 01 03 0a 2b 04 2c 03 2b f4 00 dc 07 6f 90 01 03 0a 0d de 1c 90 00 } //1
+		$a_03_0 = {08 07 2b 03 00 2b 07 6f ?? ?? ?? 0a 2b f6 00 de 11 08 2b 08 08 6f ?? ?? ?? 0a 2b 04 2c 03 2b f4 00 dc 07 6f ?? ?? ?? 0a 0d de 1c } //1
 		$a_01_1 = {4d 65 6d 6f 72 79 53 74 72 65 61 6d } //1 MemoryStream
 		$a_01_2 = {54 6f 41 72 72 61 79 } //1 ToArray
 		$a_01_3 = {44 79 6e 61 6d 69 63 49 6e 76 6f 6b 65 } //1 DynamicInvoke

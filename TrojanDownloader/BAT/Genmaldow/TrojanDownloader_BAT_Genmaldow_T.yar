@@ -4,7 +4,7 @@ rule TrojanDownloader_BAT_Genmaldow_T{
 		description = "TrojanDownloader:BAT/Genmaldow.T,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {49 6e 76 6f 69 63 65 20 23 90 02 0a 2e 65 78 65 90 00 } //3
+		$a_03_0 = {49 6e 76 6f 69 63 65 20 23 [0-0a] 2e 65 78 65 } //3
 		$a_01_1 = {5f 41 64 64 52 65 67 69 73 74 72 79 } //1 _AddRegistry
 		$a_01_2 = {44 6f 77 6e 6c 6f 61 64 46 69 6c 65 46 54 50 } //1 DownloadFileFTP
 		$a_01_3 = {65 00 78 00 70 00 6f 00 72 00 74 00 3d 00 64 00 6f 00 77 00 6e 00 6c 00 6f 00 61 00 64 00 26 00 69 00 64 00 3d 00 } //1 export=download&id=

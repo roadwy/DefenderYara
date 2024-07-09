@@ -33,8 +33,8 @@ rule PWS_Win32_Delf_EF_2{
 		$a_00_7 = {6d 75 6c 74 69 70 61 72 74 2f 72 65 6c 61 74 65 64 3b 20 74 79 70 65 3d 22 6d 75 6c 74 69 70 61 72 74 2f 61 6c 74 65 72 6e 61 74 69 76 65 22 3b 20 62 6f 75 6e 64 61 72 79 3d 22 3d 5f 4d 6f 72 65 53 74 75 66 5f 32 72 65 6c 7a 7a 7a 73 61 64 76 6e 71 31 32 33 34 77 33 6e 65 72 61 73 64 66 } //1 multipart/related; type="multipart/alternative"; boundary="=_MoreStuf_2relzzzsadvnq1234w3nerasdf
 		$a_00_8 = {6d 75 6c 74 69 70 61 72 74 2f 61 6c 74 65 72 6e 61 74 69 76 65 3b 20 62 6f 75 6e 64 61 72 79 3d 22 3d 5f 4d 6f 72 65 53 74 75 66 5f 32 7a 7a 7a 31 32 33 34 73 61 64 76 6e 71 77 33 6e 65 72 61 73 64 66 } //1 multipart/alternative; boundary="=_MoreStuf_2zzz1234sadvnqw3nerasdf
 		$a_00_9 = {61 70 70 6c 69 63 61 74 69 6f 6e 2f 6f 63 74 65 74 2d 73 74 72 65 61 6d } //1 application/octet-stream
-		$a_02_10 = {8b 8d f4 fd ff ff 8d 85 f8 fd ff ff ba 90 01 02 46 00 e8 90 01 02 f9 ff 8b 95 f8 fd ff ff 8d 85 28 fe ff ff e8 90 01 02 f9 ff e8 90 01 02 f9 ff e8 90 01 02 f9 ff 68 90 01 02 46 00 8d 95 e4 fd ff ff 33 c0 e8 90 01 02 f9 ff 8b 85 e4 fd ff ff 8d 95 e8 fd ff ff e8 90 01 02 f9 ff ff b5 e8 fd ff ff 68 90 01 02 46 00 8d 85 ec fd ff ff ba 03 00 00 00 e8 90 01 02 f9 ff 8b 95 ec fd ff ff 8d 85 28 fe ff ff e8 90 01 02 f9 ff e8 90 01 02 f9 ff e8 90 01 02 f9 ff 8d 85 28 fe ff ff e8 90 01 02 f9 ff e8 90 01 02 f9 ff 6a 00 68 90 01 02 46 00 e8 90 01 02 f9 ff a1 90 01 02 47 00 e8 90 01 02 fe ff c3 90 00 } //1
-		$a_02_11 = {33 c9 51 51 51 51 51 51 51 53 8b d8 33 c0 55 68 90 01 02 46 00 64 ff 30 64 89 20 33 d2 8b 83 24 03 00 00 e8 90 01 02 fb ff 6a ff 68 90 01 02 46 00 8d 55 fc 33 c0 e8 90 01 02 f9 ff 8b 45 fc e8 90 01 02 f9 ff 50 90 00 } //1
+		$a_02_10 = {8b 8d f4 fd ff ff 8d 85 f8 fd ff ff ba ?? ?? 46 00 e8 ?? ?? f9 ff 8b 95 f8 fd ff ff 8d 85 28 fe ff ff e8 ?? ?? f9 ff e8 ?? ?? f9 ff e8 ?? ?? f9 ff 68 ?? ?? 46 00 8d 95 e4 fd ff ff 33 c0 e8 ?? ?? f9 ff 8b 85 e4 fd ff ff 8d 95 e8 fd ff ff e8 ?? ?? f9 ff ff b5 e8 fd ff ff 68 ?? ?? 46 00 8d 85 ec fd ff ff ba 03 00 00 00 e8 ?? ?? f9 ff 8b 95 ec fd ff ff 8d 85 28 fe ff ff e8 ?? ?? f9 ff e8 ?? ?? f9 ff e8 ?? ?? f9 ff 8d 85 28 fe ff ff e8 ?? ?? f9 ff e8 ?? ?? f9 ff 6a 00 68 ?? ?? 46 00 e8 ?? ?? f9 ff a1 ?? ?? 47 00 e8 ?? ?? fe ff c3 } //1
+		$a_02_11 = {33 c9 51 51 51 51 51 51 51 53 8b d8 33 c0 55 68 ?? ?? 46 00 64 ff 30 64 89 20 33 d2 8b 83 24 03 00 00 e8 ?? ?? fb ff 6a ff 68 ?? ?? 46 00 8d 55 fc 33 c0 e8 ?? ?? f9 ff 8b 45 fc e8 ?? ?? f9 ff 50 } //1
 		$a_00_12 = {57 69 6e 45 78 65 63 } //1 WinExec
 	condition:
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_00_8  & 1)*1+(#a_00_9  & 1)*1+(#a_02_10  & 1)*1+(#a_02_11  & 1)*1+(#a_00_12  & 1)*1) >=13
@@ -60,7 +60,7 @@ rule PWS_Win32_Delf_EF_3{
 		$a_00_12 = {26 74 78 74 55 73 65 72 } //1 &txtUser
 		$a_00_13 = {26 73 79 73 3d 57 69 6e 64 6f 77 73 26 70 63 3d } //1 &sys=Windows&pc=
 		$a_00_14 = {43 6f 6e 6e 65 63 74 69 6f 6e 3a 20 43 6c 6f 73 65 } //1 Connection: Close
-		$a_02_15 = {8d 45 bc ba 90 01 02 40 00 e8 90 01 02 ff ff 8b 55 bc 58 e8 90 01 02 ff ff 84 c0 0f 90 02 20 8d 45 b8 e8 90 01 02 ff ff 8b 45 b8 ba 90 01 02 40 00 e8 90 01 02 ff ff 8d 45 b0 50 8d 45 ac ba 90 01 02 40 00 e8 90 01 02 ff ff 8b 45 ac b9 03 00 00 00 66 ba 82 4d e8 90 01 02 ff ff 8b 45 b0 8d 55 b4 90 00 } //200
+		$a_02_15 = {8d 45 bc ba ?? ?? 40 00 e8 ?? ?? ff ff 8b 55 bc 58 e8 ?? ?? ff ff 84 c0 0f [0-20] 8d 45 b8 e8 ?? ?? ff ff 8b 45 b8 ba ?? ?? 40 00 e8 ?? ?? ff ff 8d 45 b0 50 8d 45 ac ba ?? ?? 40 00 e8 ?? ?? ff ff 8b 45 ac b9 03 00 00 00 66 ba 82 4d e8 ?? ?? ff ff 8b 45 b0 8d 55 b4 } //200
 	condition:
 		((#a_00_0  & 1)*100+(#a_01_1  & 1)*100+(#a_00_2  & 1)*100+(#a_00_3  & 1)*10+(#a_01_4  & 1)*10+(#a_00_5  & 1)*10+(#a_00_6  & 1)*10+(#a_00_7  & 1)*10+(#a_00_8  & 1)*10+(#a_01_9  & 1)*10+(#a_00_10  & 1)*10+(#a_00_11  & 1)*1+(#a_00_12  & 1)*1+(#a_00_13  & 1)*1+(#a_00_14  & 1)*1+(#a_02_15  & 1)*200) >=581
  

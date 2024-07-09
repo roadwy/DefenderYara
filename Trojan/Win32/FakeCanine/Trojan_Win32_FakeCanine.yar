@@ -4,7 +4,7 @@ rule Trojan_Win32_FakeCanine{
 		description = "Trojan:Win32/FakeCanine,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {83 38 02 0f 85 90 01 01 00 00 00 68 90 01 02 46 00 68 90 01 02 46 00 e8 90 01 02 f9 ff 50 e8 90 01 02 f9 ff 80 38 e8 75 90 01 01 6a 34 90 00 } //3
+		$a_03_0 = {83 38 02 0f 85 ?? 00 00 00 68 ?? ?? 46 00 68 ?? ?? 46 00 e8 ?? ?? f9 ff 50 e8 ?? ?? f9 ff 80 38 e8 75 ?? 6a 34 } //3
 		$a_01_1 = {53 6f 66 74 77 61 72 65 5c 47 75 61 72 64 44 6f 67 20 43 6f 6d 70 75 74 69 6e 67 } //1 Software\GuardDog Computing
 		$a_01_2 = {61 6e 64 20 67 65 74 20 61 20 64 69 73 63 6f 75 6e 74 20 6f 66 20 32 30 24 2e } //1 and get a discount of 20$.
 		$a_01_3 = {74 6f 20 61 76 6f 69 64 20 70 61 72 74 69 63 69 70 61 74 69 6e 67 20 69 6e 20 63 72 69 6d 69 6e 61 6c 20 61 63 74 69 76 69 74 79 2e } //1 to avoid participating in criminal activity.

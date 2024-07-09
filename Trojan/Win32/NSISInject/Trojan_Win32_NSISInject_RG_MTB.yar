@@ -4,7 +4,7 @@ rule Trojan_Win32_NSISInject_RG_MTB{
 		description = "Trojan:Win32/NSISInject.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 40 68 00 30 00 00 53 57 ff 55 f8 90 02 20 8b c1 90 02 01 6a 0c 90 02 01 5e f7 fe 8a 82 90 01 04 30 04 39 41 3b cb 72 ea 90 00 } //1
+		$a_03_0 = {6a 40 68 00 30 00 00 53 57 ff 55 f8 [0-20] 8b c1 [0-01] 6a 0c [0-01] 5e f7 fe 8a 82 ?? ?? ?? ?? 30 04 39 41 3b cb 72 ea } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_NSISInject_RG_MTB_2{
 		description = "Trojan:Win32/NSISInject.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 40 68 00 30 00 00 56 6a 00 ff d7 53 6a 01 8b f8 56 57 e8 90 02 20 03 d2 03 d2 8b c1 2b c2 8a 90 01 05 30 14 39 41 3b ce 72 90 00 } //1
+		$a_03_0 = {6a 40 68 00 30 00 00 56 6a 00 ff d7 53 6a 01 8b f8 56 57 e8 [0-20] 03 d2 03 d2 8b c1 2b c2 8a ?? ?? ?? ?? ?? 30 14 39 41 3b ce 72 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

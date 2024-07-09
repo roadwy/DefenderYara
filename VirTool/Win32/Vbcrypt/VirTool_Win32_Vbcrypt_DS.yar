@@ -8,7 +8,7 @@ rule VirTool_Win32_Vbcrypt_DS{
 		$a_01_1 = {83 a5 e4 fe ff ff 00 8b 85 e0 fe ff ff 89 85 b0 fd ff ff 83 a5 e0 fe ff ff 00 8b 85 dc fe ff ff } //1
 		$a_01_2 = {83 a5 94 fe ff ff 00 c7 85 8c fe ff ff 02 00 00 00 83 a5 a4 fe ff ff 00 c7 85 9c fe ff ff 02 00 00 00 } //1
 		$a_01_3 = {83 65 c8 00 8b 85 ec fd ff ff 89 85 c4 fe ff ff c7 85 bc fe ff ff 08 00 00 00 6a 04 } //1
-		$a_03_4 = {8b 7d 08 8d 4d 94 8b 07 51 8d 4d e8 51 68 c2 8c 10 c5 ff 35 90 01 03 00 57 ff 50 24 90 00 } //1
+		$a_03_4 = {8b 7d 08 8d 4d 94 8b 07 51 8d 4d e8 51 68 c2 8c 10 c5 ff 35 ?? ?? ?? 00 57 ff 50 24 } //1
 	condition:
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_03_4  & 1)*1) >=3
  

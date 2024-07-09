@@ -4,7 +4,7 @@ rule Worm_Win32_Autorun_DW{
 		description = "Worm:Win32/Autorun.DW,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {55 8b ec 83 25 90 01 04 00 68 90 01 04 6a 04 6a 00 6a 04 6a 00 6a ff e8 ea 01 00 00 85 c0 74 90 01 01 a3 90 01 04 6a 04 6a 00 6a 00 6a 02 ff 35 ac 22 00 10 e8 f2 01 00 00 85 c0 74 90 01 01 ff 75 08 8f 00 50 e8 fb 01 00 00 6a 00 ff 35 cc 22 00 10 68 5f 13 00 10 6a 05 e8 05 02 00 00 90 00 } //1
+		$a_03_0 = {55 8b ec 83 25 ?? ?? ?? ?? 00 68 ?? ?? ?? ?? 6a 04 6a 00 6a 04 6a 00 6a ff e8 ea 01 00 00 85 c0 74 ?? a3 ?? ?? ?? ?? 6a 04 6a 00 6a 00 6a 02 ff 35 ac 22 00 10 e8 f2 01 00 00 85 c0 74 ?? ff 75 08 8f 00 50 e8 fb 01 00 00 6a 00 ff 35 cc 22 00 10 68 5f 13 00 10 6a 05 e8 05 02 00 00 } //1
 		$a_00_1 = {6e 74 68 69 64 65 2e 64 6c 6c } //1 nthide.dll
 		$a_00_2 = {48 69 64 65 50 72 6f 63 65 73 } //1 HideProces
 		$a_00_3 = {43 72 65 61 74 65 54 6f 6f 6c 68 65 6c 70 33 32 53 6e 61 70 73 68 6f 74 } //1 CreateToolhelp32Snapshot

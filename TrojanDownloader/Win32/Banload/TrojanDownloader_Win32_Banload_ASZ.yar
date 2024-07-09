@@ -5,7 +5,7 @@ rule TrojanDownloader_Win32_Banload_ASZ{
 		
 	strings :
 		$a_00_0 = {00 5c 72 65 73 6f 6c 76 65 72 2e 65 78 65 00 00 00 ff ff ff ff 06 00 00 00 2f 6e 6f 67 75 69 00 00 ff ff ff ff 09 00 00 00 5c 75 62 65 72 2e 74 78 74 00 } //5
-		$a_02_1 = {5c 74 65 6d 70 2e 7a 69 70 00 00 00 ff ff ff ff 90 01 01 00 00 00 5c 90 02 0f 2e 65 78 65 90 02 03 00 ff ff ff ff 90 01 01 00 00 00 5c 6d 65 64 69 61 63 65 6e 74 90 02 03 2e 65 78 65 00 90 00 } //1
+		$a_02_1 = {5c 74 65 6d 70 2e 7a 69 70 00 00 00 ff ff ff ff ?? 00 00 00 5c [0-0f] 2e 65 78 65 [0-03] 00 ff ff ff ff ?? 00 00 00 5c 6d 65 64 69 61 63 65 6e 74 [0-03] 2e 65 78 65 00 } //1
 		$a_00_2 = {5c 74 65 6d 70 2e 7a 69 70 00 00 00 ff ff ff ff 11 00 00 00 5c 65 78 74 65 6e 73 6f 72 6a 61 76 61 2e 65 78 65 00 } //1
 	condition:
 		((#a_00_0  & 1)*5+(#a_02_1  & 1)*1+(#a_00_2  & 1)*1) >=6
@@ -33,7 +33,7 @@ rule TrojanDownloader_Win32_Banload_ASZ_3{
 		description = "TrojanDownloader:Win32/Banload.ASZ,SIGNATURE_TYPE_PEHSTR_EXT,ffffffd3 00 ffffffd3 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {0f b6 44 30 ff 33 c3 89 45 90 01 01 3b 7d 90 01 01 7c 0f 8b 45 90 01 01 05 ff 00 00 00 2b c7 89 45 90 01 01 eb 03 29 7d 90 01 01 8d 45 90 01 01 8b 55 90 01 01 e8 90 01 04 8b 55 90 00 } //100
+		$a_03_0 = {0f b6 44 30 ff 33 c3 89 45 ?? 3b 7d ?? 7c 0f 8b 45 ?? 05 ff 00 00 00 2b c7 89 45 ?? eb 03 29 7d ?? 8d 45 ?? 8b 55 ?? e8 ?? ?? ?? ?? 8b 55 } //100
 		$a_01_1 = {59 55 51 4c 32 33 4b 4c 32 33 44 46 39 30 57 49 35 45 31 4a 41 53 34 36 37 4e 4d 43 58 58 4c 36 4a 41 4f 41 55 57 57 4d 43 4c 30 41 4f 4d 4d } //100 YUQL23KL23DF90WI5E1JAS467NMCXXL6JAOAUWWMCL0AOMM
 		$a_00_2 = {2e 62 61 74 00 00 00 00 ff ff ff ff 02 00 00 00 3a 31 00 00 ff ff ff ff 0a 00 00 00 65 72 61 73 65 20 22 25 73 22 } //10
 		$a_00_3 = {49 66 20 65 78 69 73 74 20 22 25 73 22 20 47 6f 74 6f 20 31 } //10 If exist "%s" Goto 1

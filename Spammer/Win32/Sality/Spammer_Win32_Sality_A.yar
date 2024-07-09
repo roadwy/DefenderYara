@@ -4,7 +4,7 @@ rule Spammer_Win32_Sality_A{
 		description = "Spammer:Win32/Sality.A,SIGNATURE_TYPE_PEHSTR_EXT,06 00 05 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {83 f9 24 0f 85 90 01 02 00 00 8b 55 08 03 90 01 02 ef ff ff 0f be 42 01 83 f8 72 0f 85 90 01 02 00 00 8b 4d 08 03 90 01 02 ef ff ff 0f be 51 02 83 fa 6e 0f 85 90 01 02 00 00 8b 45 08 90 00 } //2
+		$a_03_0 = {83 f9 24 0f 85 ?? ?? 00 00 8b 55 08 03 ?? ?? ef ff ff 0f be 42 01 83 f8 72 0f 85 ?? ?? 00 00 8b 4d 08 03 ?? ?? ef ff ff 0f be 51 02 83 fa 6e 0f 85 ?? ?? 00 00 8b 45 08 } //2
 		$a_01_1 = {eb ab 8b 85 5c fb ff ff 35 11 f9 ad de 89 85 5c fb ff ff 8b 8d 5c fb ff ff 51 ff 15 } //2
 		$a_01_2 = {8a 12 32 14 08 8b 45 08 03 45 f0 88 10 e9 5f ff ff ff 8b 4d 10 8a 55 f4 88 91 00 01 00 00 8b 45 10 8a 4d ec 88 88 01 01 00 00 } //2
 		$a_01_3 = {5b 56 41 52 25 64 } //1 [VAR%d

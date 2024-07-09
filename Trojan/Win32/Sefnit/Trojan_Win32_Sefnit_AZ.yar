@@ -4,8 +4,8 @@ rule Trojan_Win32_Sefnit_AZ{
 		description = "Trojan:Win32/Sefnit.AZ,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 1e 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 06 6a 65 ff b5 90 01 04 e8 90 01 04 68 5a 23 00 00 6a 3b ff b5 90 01 04 e8 90 00 } //1
-		$a_03_1 = {6a 06 6a 65 51 e8 90 01 04 8b 95 90 01 04 68 5a 23 00 00 6a 3b 52 e8 90 00 } //1
+		$a_03_0 = {6a 06 6a 65 ff b5 ?? ?? ?? ?? e8 ?? ?? ?? ?? 68 5a 23 00 00 6a 3b ff b5 ?? ?? ?? ?? e8 } //1
+		$a_03_1 = {6a 06 6a 65 51 e8 ?? ?? ?? ?? 8b 95 ?? ?? ?? ?? 68 5a 23 00 00 6a 3b 52 e8 } //1
 		$a_01_2 = {34 71 6e 35 6c 61 66 33 76 62 62 6a 6d 74 6f 62 } //1 4qn5laf3vbbjmtob
 		$a_01_3 = {34 79 68 79 71 74 33 34 6c 68 73 67 69 6f 72 71 } //1 4yhyqt34lhsgiorq
 		$a_01_4 = {64 6c 74 6a 37 65 32 65 6d 77 36 76 78 33 6f 78 } //1 dltj7e2emw6vx3ox

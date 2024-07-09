@@ -54,7 +54,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_6{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {51 c7 04 24 00 00 00 00 8b 44 24 0c 89 04 24 8b 44 24 08 31 04 24 8b 04 24 89 01 59 c2 08 00 90 02 08 81 00 e1 34 ef c6 c3 90 00 } //1
+		$a_03_0 = {51 c7 04 24 00 00 00 00 8b 44 24 0c 89 04 24 8b 44 24 08 31 04 24 8b 04 24 89 01 59 c2 08 00 [0-08] 81 00 e1 34 ef c6 c3 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -65,7 +65,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_7{
 		
 	strings :
 		$a_01_0 = {8b c3 f7 f1 8b 45 fc 8a 0c 02 8d 14 33 8a 04 17 32 c1 43 88 02 } //1
-		$a_03_1 = {8b 45 fc f7 f1 8a 0e 8b 45 fc 32 8a 90 01 04 40 88 0c 33 90 00 } //1
+		$a_03_1 = {8b 45 fc f7 f1 8a 0e 8b 45 fc 32 8a ?? ?? ?? ?? 40 88 0c 33 } //1
 	condition:
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
@@ -75,7 +75,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_8{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {55 8b ec 83 ec 08 89 55 f8 89 4d fc 8b 45 f8 c1 e0 04 8b 4d fc 89 01 8b e5 5d c3 90 02 20 8b 08 81 e9 1f cb 10 39 8b 55 fc 89 0a 8b e5 5d c3 90 00 } //1
+		$a_03_0 = {55 8b ec 83 ec 08 89 55 f8 89 4d fc 8b 45 f8 c1 e0 04 8b 4d fc 89 01 8b e5 5d c3 [0-20] 8b 08 81 e9 1f cb 10 39 8b 55 fc 89 0a 8b e5 5d c3 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -85,7 +85,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_9{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {36 dd 96 53 81 44 24 90 01 01 38 dd 96 53 8b c6 90 02 40 8b d6 d3 ea 03 d5 89 54 24 90 01 01 8b 44 24 90 01 01 31 44 24 90 01 01 8b 44 24 90 01 01 31 44 24 90 00 } //1
+		$a_03_0 = {36 dd 96 53 81 44 24 ?? 38 dd 96 53 8b c6 [0-40] 8b d6 d3 ea 03 d5 89 54 24 ?? 8b 44 24 ?? 31 44 24 ?? 8b 44 24 ?? 31 44 24 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -95,7 +95,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_10{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {36 dd 96 53 81 45 90 01 01 38 dd 96 53 8b 4d 90 01 01 8b c7 d3 e0 89 5d 90 01 01 03 45 90 02 20 8b c7 d3 e8 03 45 90 01 01 89 45 90 01 01 8b 45 90 01 01 31 45 90 00 } //1
+		$a_03_0 = {36 dd 96 53 81 45 ?? 38 dd 96 53 8b 4d ?? 8b c7 d3 e0 89 5d ?? 03 45 [0-20] 8b c7 d3 e8 03 45 ?? 89 45 ?? 8b 45 ?? 31 45 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -115,7 +115,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_12{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {36 dd 96 53 81 44 24 90 01 01 38 dd 96 53 8b c6 90 02 30 01 44 24 90 01 01 8b 44 24 90 01 01 89 44 24 90 01 01 8b 4c 24 90 01 01 8b c6 d3 e8 8b 4c 24 90 01 01 31 4c 24 90 00 } //1
+		$a_03_0 = {36 dd 96 53 81 44 24 ?? 38 dd 96 53 8b c6 [0-30] 01 44 24 ?? 8b 44 24 ?? 89 44 24 ?? 8b 4c 24 ?? 8b c6 d3 e8 8b 4c 24 ?? 31 4c 24 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -125,7 +125,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_13{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {36 dd 96 53 81 45 90 01 01 38 dd 96 53 8b 4d 90 01 01 8b c7 d3 e0 90 02 30 8b c7 d3 e8 03 45 90 01 01 89 45 90 01 01 8b 45 90 01 01 31 45 90 01 01 8b 45 90 01 01 31 45 90 00 } //1
+		$a_03_0 = {36 dd 96 53 81 45 ?? 38 dd 96 53 8b 4d ?? 8b c7 d3 e0 [0-30] 8b c7 d3 e8 03 45 ?? 89 45 ?? 8b 45 ?? 31 45 ?? 8b 45 ?? 31 45 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -135,7 +135,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_14{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {36 dd 96 53 81 44 24 90 01 01 38 dd 96 53 8b 4c 24 90 01 01 8b d6 d3 e2 90 02 35 8b c6 d3 e8 03 c5 89 44 24 90 01 01 8b 44 24 90 01 01 31 44 24 90 01 01 8b 4c 24 90 01 01 31 4c 24 90 00 } //1
+		$a_03_0 = {36 dd 96 53 81 44 24 ?? 38 dd 96 53 8b 4c 24 ?? 8b d6 d3 e2 [0-35] 8b c6 d3 e8 03 c5 89 44 24 ?? 8b 44 24 ?? 31 44 24 ?? 8b 4c 24 ?? 31 4c 24 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -145,7 +145,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_15{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {36 dd 96 53 81 44 24 90 01 01 38 dd 96 53 8b c6 90 02 30 01 44 24 90 01 01 8b 44 24 90 01 01 89 44 24 90 01 01 8b 4c 24 90 01 01 8b d6 d3 ea 03 d5 89 54 24 90 01 01 8b 44 24 90 01 01 31 44 24 90 00 } //1
+		$a_03_0 = {36 dd 96 53 81 44 24 ?? 38 dd 96 53 8b c6 [0-30] 01 44 24 ?? 8b 44 24 ?? 89 44 24 ?? 8b 4c 24 ?? 8b d6 d3 ea 03 d5 89 54 24 ?? 8b 44 24 ?? 31 44 24 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -155,7 +155,7 @@ rule Trojan_Win32_Raccoon_RF_MTB_16{
 		description = "Trojan:Win32/Raccoon.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {36 dd 96 53 81 44 24 90 01 01 38 dd 96 53 8b c6 90 02 40 8b 54 24 90 01 01 31 54 24 90 01 01 8b c6 d3 e8 03 c3 90 02 30 8b 44 24 90 01 01 31 44 24 90 01 01 8b 44 24 90 01 01 89 44 24 90 01 01 8b 44 24 90 01 01 29 44 24 90 00 } //1
+		$a_03_0 = {36 dd 96 53 81 44 24 ?? 38 dd 96 53 8b c6 [0-40] 8b 54 24 ?? 31 54 24 ?? 8b c6 d3 e8 03 c3 [0-30] 8b 44 24 ?? 31 44 24 ?? 8b 44 24 ?? 89 44 24 ?? 8b 44 24 ?? 29 44 24 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

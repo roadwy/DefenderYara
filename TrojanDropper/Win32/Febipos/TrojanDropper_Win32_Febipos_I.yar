@@ -4,7 +4,7 @@ rule TrojanDropper_Win32_Febipos_I{
 		description = "TrojanDropper:Win32/Febipos.I,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {3c 09 75 e7 0f b6 03 3c 20 75 73 83 c3 01 0f b6 03 3c 09 74 f6 3c 20 74 f2 f6 45 d0 01 be 0a 00 00 00 74 04 0f b7 75 d4 c7 04 24 00 00 00 00 e8 90 01 04 83 ec 04 89 74 24 0c 89 5c 24 08 c7 44 24 04 00 00 00 00 89 04 24 e8 90 00 } //5
+		$a_03_0 = {3c 09 75 e7 0f b6 03 3c 20 75 73 83 c3 01 0f b6 03 3c 09 74 f6 3c 20 74 f2 f6 45 d0 01 be 0a 00 00 00 74 04 0f b7 75 d4 c7 04 24 00 00 00 00 e8 ?? ?? ?? ?? 83 ec 04 89 74 24 0c 89 5c 24 08 c7 44 24 04 00 00 00 00 89 04 24 e8 } //5
 		$a_01_1 = {79 74 6e 65 77 73 2e 69 6e 66 6f 2f 73 68 6f 77 63 6f 75 6e 74 72 79 2e 70 68 70 } //5 ytnews.info/showcountry.php
 		$a_01_2 = {77 68 6f 73 2e 61 6d 75 6e 67 2e 75 73 2f 77 69 64 67 65 74 2f 6f 6b 69 6e 73 74 61 6c 6c 62 72 61 2e 70 6e 68 } //1 whos.amung.us/widget/okinstallbra.pnh
 		$a_01_3 = {22 69 6e 73 74 61 6c 6c 5f 74 69 6d 65 22 3a 20 22 31 33 30 35 34 37 38 35 39 32 31 31 34 35 38 31 32 22 } //1 "install_time": "13054785921145812"

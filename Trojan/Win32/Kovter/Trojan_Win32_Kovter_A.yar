@@ -4,7 +4,7 @@ rule Trojan_Win32_Kovter_A{
 		description = "Trojan:Win32/Kovter.A,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 11 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 45 fc 8a 44 18 ff 24 0f 8b 55 f8 8a 54 32 ff 80 e2 0f 32 c2 88 45 f3 8d 45 fc e8 90 01 04 8b 55 fc 8a 54 1a ff 80 e2 f0 90 00 } //1
+		$a_03_0 = {8b 45 fc 8a 44 18 ff 24 0f 8b 55 f8 8a 54 32 ff 80 e2 0f 32 c2 88 45 f3 8d 45 fc e8 ?? ?? ?? ?? 8b 55 fc 8a 54 1a ff 80 e2 f0 } //1
 		$a_01_1 = {6d 6f 64 65 3d 33 26 63 6d 64 69 64 3d 00 } //1 潭敤㌽挦摭摩=
 		$a_01_2 = {6d 00 6f 00 64 00 65 00 3d 00 31 00 26 00 55 00 49 00 44 00 3d 00 00 00 } //1
 		$a_01_3 = {26 00 63 00 6f 00 6f 00 6b 00 3d 00 00 00 00 00 0e 00 00 00 26 00 66 00 63 00 6f 00 6f 00 6b 00 3d 00 00 00 } //1

@@ -4,8 +4,8 @@ rule VirTool_Win32_Toksteal_A{
 		description = "VirTool:Win32/Toksteal.A,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 07 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {89 45 f8 8b 0d 90 01 04 89 4d f4 90 00 } //2
-		$a_03_1 = {8b f4 6a 00 6a 03 8d 55 f8 52 a1 90 01 04 50 8b 4d 08 51 ff 15 90 01 04 3b f4 e8 90 01 04 8b f4 8d 55 fc 52 8b 45 fc 50 6a 03 90 00 } //5
+		$a_03_0 = {89 45 f8 8b 0d ?? ?? ?? ?? 89 4d f4 } //2
+		$a_03_1 = {8b f4 6a 00 6a 03 8d 55 f8 52 a1 ?? ?? ?? ?? 50 8b 4d 08 51 ff 15 ?? ?? ?? ?? 3b f4 e8 ?? ?? ?? ?? 8b f4 8d 55 fc 52 8b 45 fc 50 6a 03 } //5
 		$a_01_2 = {57 00 69 00 6e 00 33 00 32 00 5f 00 50 00 72 00 6f 00 63 00 65 00 73 00 73 00 } //1 Win32_Process
 		$a_01_3 = {72 00 6f 00 6f 00 74 00 5c 00 63 00 69 00 6d 00 76 00 32 00 20 00 20 00 } //1 root\cimv2  
 		$a_01_4 = {77 6d 69 70 72 76 73 65 2e 65 78 65 } //1 wmiprvse.exe

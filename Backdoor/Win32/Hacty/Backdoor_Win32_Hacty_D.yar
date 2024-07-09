@@ -4,7 +4,7 @@ rule Backdoor_Win32_Hacty_D{
 		description = "Backdoor:Win32/Hacty.D,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {8a 5c 24 10 38 1c 16 74 90 01 01 8b fe 83 c9 ff 33 c0 42 f2 ae f7 d1 49 3b d1 72 90 00 } //1
+		$a_03_0 = {8a 5c 24 10 38 1c 16 74 ?? 8b fe 83 c9 ff 33 c0 42 f2 ae f7 d1 49 3b d1 72 } //1
 		$a_01_1 = {6d 68 61 63 6b 65 72 79 79 74 68 61 63 31 39 37 37 } //1 mhackeryythac1977
 		$a_01_2 = {54 68 65 20 62 61 63 6b 64 6f 6f 72 20 69 73 20 72 75 6e 6e 69 6e 67 } //1 The backdoor is running
 		$a_01_3 = {49 6e 6a 65 63 74 54 68 72 65 61 64 3a 22 25 73 22 20 65 72 72 6f 72 20 63 6f 64 65 3a 25 64 } //1 InjectThread:"%s" error code:%d

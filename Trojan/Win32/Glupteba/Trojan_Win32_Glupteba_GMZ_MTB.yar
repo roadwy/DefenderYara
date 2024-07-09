@@ -14,7 +14,7 @@ rule Trojan_Win32_Glupteba_GMZ_MTB_2{
 		description = "Trojan:Win32/Glupteba.GMZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {31 07 51 5b 81 c7 04 00 00 00 39 f7 90 01 02 21 da c3 90 00 } //10
+		$a_03_0 = {31 07 51 5b 81 c7 04 00 00 00 39 f7 ?? ?? 21 da c3 } //10
 	condition:
 		((#a_03_0  & 1)*10) >=10
  

@@ -4,7 +4,7 @@ rule TrojanDownloader_O97M_Ursnif_AC_MTB{
 		description = "TrojanDownloader:O97M/Ursnif.AC!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {2e 43 72 65 61 74 65 54 65 78 74 46 69 6c 65 28 90 02 14 2e 43 6f 6e 74 72 6f 6c 73 28 31 29 2e 56 61 6c 75 65 2c 20 54 72 75 65 29 90 00 } //1
+		$a_03_0 = {2e 43 72 65 61 74 65 54 65 78 74 46 69 6c 65 28 [0-14] 2e 43 6f 6e 74 72 6f 6c 73 28 31 29 2e 56 61 6c 75 65 2c 20 54 72 75 65 29 } //1
 		$a_01_1 = {2e 43 6f 6e 74 72 6f 6c 73 28 30 29 } //1 .Controls(0)
 		$a_01_2 = {2e 43 6f 6e 74 72 6f 6c 73 28 30 20 2b 20 31 29 } //1 .Controls(0 + 1)
 		$a_01_3 = {2e 4f 70 65 6e } //1 .Open

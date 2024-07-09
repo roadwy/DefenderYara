@@ -4,8 +4,8 @@ rule TrojanProxy_Win32_Wonknod_C{
 		description = "TrojanProxy:Win32/Wonknod.C,SIGNATURE_TYPE_PEHSTR_EXT,34 00 34 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {68 74 74 70 c7 05 90 01 04 3a 2f 2f 90 01 01 c7 05 90 00 } //50
-		$a_03_1 = {25 73 5c 25 c7 05 90 01 04 30 32 64 25 c7 05 90 00 } //50
+		$a_03_0 = {68 74 74 70 c7 05 ?? ?? ?? ?? 3a 2f 2f ?? c7 05 } //50
+		$a_03_1 = {25 73 5c 25 c7 05 ?? ?? ?? ?? 30 32 64 25 c7 05 } //50
 		$a_00_2 = {78 36 34 2e 7a 69 70 } //1 x64.zip
 		$a_00_3 = {78 33 32 2e 7a 69 70 } //1 x32.zip
 		$a_00_4 = {2c 61 64 6d 69 6e 3d } //1 ,admin=

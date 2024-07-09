@@ -4,7 +4,7 @@ rule Trojan_Win32_MotePro{
 		description = "Trojan:Win32/MotePro,SIGNATURE_TYPE_PEHSTR_EXT,67 00 67 00 05 00 00 "
 		
 	strings :
-		$a_02_0 = {50 72 6f 6d 6f 74 65 90 02 04 2e 44 4c 4c 00 44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 90 00 } //100
+		$a_02_0 = {50 72 6f 6d 6f 74 65 [0-04] 2e 44 4c 4c 00 44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 } //100
 		$a_01_1 = {46 78 53 74 61 74 75 73 45 78 5f 4c 61 75 6e 63 68 65 72 5f 45 76 65 6e 74 } //1 FxStatusEx_Launcher_Event
 		$a_00_2 = {55 72 6c 4d 6b 47 65 74 53 65 73 73 69 6f 6e 4f 70 74 69 6f 6e } //1 UrlMkGetSessionOption
 		$a_00_3 = {44 00 69 00 73 00 70 00 6c 00 61 00 79 00 20 00 49 00 6e 00 6c 00 69 00 6e 00 65 00 20 00 56 00 69 00 64 00 65 00 6f 00 73 00 } //1 Display Inline Videos

@@ -4,7 +4,7 @@ rule TrojanDownloader_BAT_AsyncRAT_Z_MTB{
 		description = "TrojanDownloader:BAT/AsyncRAT.Z!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {08 07 09 07 8e 69 5d 91 02 09 91 61 d2 6f 90 01 01 00 00 0a 09 17 58 0d 09 02 8e 69 32 90 00 } //2
+		$a_03_0 = {08 07 09 07 8e 69 5d 91 02 09 91 61 d2 6f ?? 00 00 0a 09 17 58 0d 09 02 8e 69 32 } //2
 		$a_01_1 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //1 DownloadData
 		$a_01_2 = {47 65 74 42 79 74 65 73 } //1 GetBytes
 		$a_01_3 = {47 65 74 54 79 70 65 } //1 GetType

@@ -4,7 +4,7 @@ rule Trojan_BAT_AsyncRat_CND_MTB{
 		description = "Trojan:BAT/AsyncRat.CND!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0d 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {07 08 9a 0d 7e 90 01 04 09 6f 90 01 04 6f 90 01 04 2d 12 7e 90 01 04 09 6f 90 01 04 6f 90 01 04 2c 25 17 0a 02 2c 90 00 } //5
+		$a_03_0 = {07 08 9a 0d 7e ?? ?? ?? ?? 09 6f ?? ?? ?? ?? 6f ?? ?? ?? ?? 2d 12 7e ?? ?? ?? ?? 09 6f ?? ?? ?? ?? 6f ?? ?? ?? ?? 2c 25 17 0a 02 2c } //5
 		$a_81_1 = {6f 6c 6c 79 64 62 67 } //1 ollydbg
 		$a_81_2 = {69 64 61 77 36 34 } //1 idaw64
 		$a_81_3 = {78 36 34 64 62 67 } //1 x64dbg

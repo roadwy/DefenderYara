@@ -4,8 +4,8 @@ rule TrojanDownloader_Win32_Delf_RAP{
 		description = "TrojanDownloader:Win32/Delf.RAP,SIGNATURE_TYPE_PEHSTR_EXT,28 00 28 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {63 3a 5c 77 69 6e 64 6f 77 73 5c 73 79 73 74 65 6d 33 32 5c 90 02 08 2e 6a 70 67 90 00 } //10
-		$a_02_1 = {63 3a 5c 77 69 6e 64 6f 77 73 5c 6a 61 76 61 5c 90 02 08 2e 65 78 65 90 00 } //10
+		$a_02_0 = {63 3a 5c 77 69 6e 64 6f 77 73 5c 73 79 73 74 65 6d 33 32 5c [0-08] 2e 6a 70 67 } //10
+		$a_02_1 = {63 3a 5c 77 69 6e 64 6f 77 73 5c 6a 61 76 61 5c [0-08] 2e 65 78 65 } //10
 		$a_00_2 = {55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 41 } //10 URLDownloadToFileA
 		$a_00_3 = {2e 63 6f 6d 2f 4f 72 6b 75 74 } //5 .com/Orkut
 		$a_00_4 = {63 3a 5c 77 69 6e 64 6f 77 73 5c 73 79 73 74 65 6d 33 32 5c 6f 72 6b 2e 65 78 65 } //5 c:\windows\system32\ork.exe

@@ -14,7 +14,7 @@ rule Trojan_Win32_Qbot_PAF_MTB_2{
 		description = "Trojan:Win32/Qbot.PAF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {2b c2 89 45 f0 0f b6 0d 90 01 04 33 4d f0 89 4d f0 0f b6 15 90 01 04 33 55 f0 89 55 f0 0f b6 05 90 01 04 33 45 f0 89 45 f0 0f b6 0d 90 01 04 8b 55 f0 2b d1 89 55 f0 0f b6 05 90 01 04 33 45 f0 89 45 f0 8b 0d 90 01 04 03 4d ec 8a 55 f0 88 11 90 00 } //1
+		$a_03_0 = {2b c2 89 45 f0 0f b6 0d ?? ?? ?? ?? 33 4d f0 89 4d f0 0f b6 15 ?? ?? ?? ?? 33 55 f0 89 55 f0 0f b6 05 ?? ?? ?? ?? 33 45 f0 89 45 f0 0f b6 0d ?? ?? ?? ?? 8b 55 f0 2b d1 89 55 f0 0f b6 05 ?? ?? ?? ?? 33 45 f0 89 45 f0 8b 0d ?? ?? ?? ?? 03 4d ec 8a 55 f0 88 11 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

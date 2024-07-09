@@ -18,8 +18,8 @@ rule TrojanDownloader_Win32_Banload_AWI_2{
 		description = "TrojanDownloader:Win32/Banload.AWI,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 04 00 00 "
 		
 	strings :
-		$a_02_0 = {35 2e 63 70 6c 90 01 0b 32 2e 74 78 74 90 01 0b 32 2e 6a 70 67 90 00 } //10
-		$a_02_1 = {4f 4e 5c 52 55 4e 90 01 0a 00 3a 5c 57 69 6e 64 6f 77 73 5c 53 90 00 } //1
+		$a_02_0 = {35 2e 63 70 6c ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 32 2e 74 78 74 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 32 2e 6a 70 67 } //10
+		$a_02_1 = {4f 4e 5c 52 55 4e ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 3a 5c 57 69 6e 64 6f 77 73 5c 53 } //1
 		$a_00_2 = {00 61 74 61 5c 52 6f 61 6d 69 6e 67 5c 00 } //1 愀慴剜慯業杮\
 		$a_00_3 = {54 63 61 62 65 63 61 64 6f 6d 65 75 70 61 75 } //1 Tcabecadomeupau
 	condition:

@@ -4,8 +4,8 @@ rule TrojanDownloader_Win32_Pingbed_A{
 		description = "TrojanDownloader:Win32/Pingbed.A,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 01 6a 10 57 68 90 01 02 00 00 56 56 b9 90 01 04 e8 90 01 04 b9 90 01 04 e8 90 01 04 6a 10 57 90 00 } //1
-		$a_03_1 = {68 e8 03 00 00 8b f0 ff 15 90 01 04 3b 90 01 01 76 90 01 01 56 90 01 01 68 ff 0f 1f 00 ff 15 90 00 } //1
+		$a_03_0 = {6a 01 6a 10 57 68 ?? ?? 00 00 56 56 b9 ?? ?? ?? ?? e8 ?? ?? ?? ?? b9 ?? ?? ?? ?? e8 ?? ?? ?? ?? 6a 10 57 } //1
+		$a_03_1 = {68 e8 03 00 00 8b f0 ff 15 ?? ?? ?? ?? 3b ?? 76 ?? 56 ?? 68 ff 0f 1f 00 ff 15 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  

@@ -17,8 +17,8 @@ rule Ransom_MSIL_Filecoder_SA_MTB_2{
 		description = "Ransom:MSIL/Filecoder.SA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {11 09 11 0a 61 13 15 11 08 11 0f 11 15 20 90 01 04 5f 90 00 } //2
-		$a_03_1 = {58 11 15 20 00 00 ff 00 5f 1f 10 64 d2 9c 11 08 11 0f 19 58 11 15 20 90 01 04 5f 1f 18 64 d2 90 00 } //2
+		$a_03_0 = {11 09 11 0a 61 13 15 11 08 11 0f 11 15 20 ?? ?? ?? ?? 5f } //2
+		$a_03_1 = {58 11 15 20 00 00 ff 00 5f 1f 10 64 d2 9c 11 08 11 0f 19 58 11 15 20 ?? ?? ?? ?? 5f 1f 18 64 d2 } //2
 		$a_01_2 = {55 31 4f 41 39 6f 57 4f 79 44 4a 61 75 69 34 48 38 6e } //1 U1OA9oWOyDJaui4H8n
 		$a_01_3 = {78 50 33 4a 79 34 56 55 41 56 57 47 75 45 38 4b 6d 6f } //1 xP3Jy4VUAVWGuE8Kmo
 		$a_01_4 = {54 50 49 6e 46 6e 34 66 45 38 70 41 4c 4e 38 71 39 6c 6f } //1 TPInFn4fE8pALN8q9lo

@@ -4,7 +4,7 @@ rule Trojan_Win32_SmokeLoader_ASM_MTB{
 		description = "Trojan:Win32/SmokeLoader.ASM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 00 6a 00 ff 15 90 01 04 33 c0 8d 54 24 1c 89 44 24 1c 89 44 24 20 89 44 24 24 89 44 24 28 89 44 24 2c 90 00 } //1
+		$a_03_0 = {6a 00 6a 00 ff 15 ?? ?? ?? ?? 33 c0 8d 54 24 1c 89 44 24 1c 89 44 24 20 89 44 24 24 89 44 24 28 89 44 24 2c } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -24,7 +24,7 @@ rule Trojan_Win32_SmokeLoader_ASM_MTB_3{
 		description = "Trojan:Win32/SmokeLoader.ASM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {c7 04 24 e8 a5 42 00 57 a3 20 e9 42 00 ff d6 50 e8 90 01 04 c7 04 24 d4 a5 42 00 57 a3 24 e9 42 00 ff d6 50 e8 90 01 04 c7 04 24 b8 a5 42 00 57 a3 28 e9 42 00 ff d6 90 00 } //1
+		$a_03_0 = {c7 04 24 e8 a5 42 00 57 a3 20 e9 42 00 ff d6 50 e8 ?? ?? ?? ?? c7 04 24 d4 a5 42 00 57 a3 24 e9 42 00 ff d6 50 e8 ?? ?? ?? ?? c7 04 24 b8 a5 42 00 57 a3 28 e9 42 00 ff d6 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

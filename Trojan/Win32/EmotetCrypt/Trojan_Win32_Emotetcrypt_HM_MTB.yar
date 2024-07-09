@@ -5,7 +5,7 @@ rule Trojan_Win32_Emotetcrypt_HM_MTB{
 		
 	strings :
 		$a_01_0 = {03 d5 2b d0 b8 00 04 00 00 2b c1 03 c0 03 c0 81 c2 00 10 00 00 03 c0 0b d0 52 57 53 ff 15 } //50
-		$a_03_1 = {8d bc ab 00 10 00 00 8d 5a 02 0f af 1d 90 01 04 2b 1d 90 01 04 2b 1d 90 01 04 03 da 8d 84 58 00 20 00 00 0b f8 57 56 6a 00 ff 15 90 00 } //50
+		$a_03_1 = {8d bc ab 00 10 00 00 8d 5a 02 0f af 1d ?? ?? ?? ?? 2b 1d ?? ?? ?? ?? 2b 1d ?? ?? ?? ?? 03 da 8d 84 58 00 20 00 00 0b f8 57 56 6a 00 ff 15 } //50
 		$a_81_2 = {70 68 69 6e 6c 2e 64 6c 6c } //1 phinl.dll
 		$a_81_3 = {44 6c 6c 52 65 67 69 73 74 65 72 43 6c 61 73 73 } //1 DllRegisterClass
 		$a_81_4 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //1 DllRegisterServer

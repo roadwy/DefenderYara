@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Nadebanker_G{
 		description = "TrojanSpy:Win32/Nadebanker.G,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {8b f8 47 81 ff ff ff ff 3f 7f 2a 8d 04 3f e8 90 01 02 00 00 8b f4 3b f3 74 1c 90 00 } //2
+		$a_03_0 = {8b f8 47 81 ff ff ff ff 3f 7f 2a 8d 04 3f e8 ?? ?? 00 00 8b f4 3b f3 74 1c } //2
 		$a_01_1 = {46 00 41 00 43 00 45 00 42 00 4f 00 4f 00 4b 00 } //1 FACEBOOK
 		$a_01_2 = {41 00 64 00 6f 00 62 00 65 00 5f 00 50 00 44 00 46 00 5f 00 52 00 65 00 61 00 64 00 65 00 72 00 5f 00 48 00 65 00 6c 00 70 00 65 00 72 00 } //1 Adobe_PDF_Reader_Helper
 		$a_01_3 = {25 00 73 00 25 00 64 00 5f 00 77 00 65 00 73 00 74 00 70 00 61 00 63 00 5f 00 25 00 64 00 2e 00 6d 00 76 00 74 00 } //1 %s%d_westpac_%d.mvt

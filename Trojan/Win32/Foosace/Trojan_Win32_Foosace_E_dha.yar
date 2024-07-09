@@ -17,7 +17,7 @@ rule Trojan_Win32_Foosace_E_dha_2{
 		description = "Trojan:Win32/Foosace.E!dha,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {64 6c 6c 2e 64 6c 6c 90 02 02 53 74 61 72 74 90 00 } //1
+		$a_03_0 = {64 6c 6c 2e 64 6c 6c [0-02] 53 74 61 72 74 } //1
 		$a_01_1 = {59 5a 5a 41 4d 75 74 65 78 00 } //2 婙䅚畍整x
 		$a_01_2 = {49 6e 69 74 31 00 } //1 湉瑩1
 		$a_01_3 = {f7 f7 8b 45 14 c1 eb 07 32 1c 02 8d 46 01 33 d2 f7 f7 8a 45 0f 02 c1 8b 4d 14 8a 0c 0a } //1

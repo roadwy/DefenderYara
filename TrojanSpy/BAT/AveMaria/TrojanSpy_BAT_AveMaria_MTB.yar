@@ -4,7 +4,7 @@ rule TrojanSpy_BAT_AveMaria_MTB{
 		description = "TrojanSpy:BAT/AveMaria!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {0c 04 00 fe 90 01 02 00 fe 90 01 02 00 fe 90 01 02 00 91 fe 90 01 02 00 61 d2 9c 00 fe 90 01 02 00 20 90 01 03 00 58 fe 90 01 02 00 fe 90 01 02 00 fe 90 01 02 00 8e 69 fe 90 01 01 fe 90 01 02 00 fe 90 01 02 00 3a 90 01 02 ff ff 90 00 } //6
+		$a_03_0 = {0c 04 00 fe ?? ?? 00 fe ?? ?? 00 fe ?? ?? 00 91 fe ?? ?? 00 61 d2 9c 00 fe ?? ?? 00 20 ?? ?? ?? 00 58 fe ?? ?? 00 fe ?? ?? 00 fe ?? ?? 00 8e 69 fe ?? fe ?? ?? 00 fe ?? ?? 00 3a ?? ?? ff ff } //6
 		$a_01_1 = {54 6f 53 74 72 69 6e 67 } //1 ToString
 		$a_01_2 = {6c 6f 63 61 6c 46 69 6c 65 50 61 74 68 } //1 localFilePath
 		$a_01_3 = {47 65 74 54 65 6d 70 50 61 74 68 } //1 GetTempPath

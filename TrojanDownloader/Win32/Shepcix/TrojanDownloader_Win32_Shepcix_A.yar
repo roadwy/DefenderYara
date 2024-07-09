@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Shepcix_A{
 		description = "TrojanDownloader:Win32/Shepcix.A,SIGNATURE_TYPE_PEHSTR_EXT,17 00 17 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {68 74 74 70 3a 2f 2f 78 78 78 2e 90 02 08 2e 75 73 2f 63 65 73 68 69 2f 64 64 2e 74 78 74 90 00 } //20
+		$a_02_0 = {68 74 74 70 3a 2f 2f 78 78 78 2e [0-08] 2e 75 73 2f 63 65 73 68 69 2f 64 64 2e 74 78 74 } //20
 		$a_00_1 = {25 73 5c 75 70 64 61 74 61 78 2e 65 78 65 } //1 %s\updatax.exe
 		$a_00_2 = {25 73 5c 25 64 2e 65 78 65 } //1 %s\%d.exe
 		$a_00_3 = {74 6d 70 25 64 2e 74 65 6d 70 } //1 tmp%d.temp

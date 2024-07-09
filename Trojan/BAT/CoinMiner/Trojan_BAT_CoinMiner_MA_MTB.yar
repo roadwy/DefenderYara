@@ -15,7 +15,7 @@ rule Trojan_BAT_CoinMiner_MA_MTB_2{
 		description = "Trojan:BAT/CoinMiner.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {08 11 07 07 11 07 9a 1f 10 28 90 01 03 0a 9c 11 07 17 58 13 07 11 07 07 8e 69 fe 04 13 08 11 08 2d de 90 00 } //5
+		$a_03_0 = {08 11 07 07 11 07 9a 1f 10 28 ?? ?? ?? 0a 9c 11 07 17 58 13 07 11 07 07 8e 69 fe 04 13 08 11 08 2d de } //5
 		$a_01_1 = {4d 69 6e 65 73 77 65 65 70 65 72 5f 57 69 6e 64 6f 77 73 46 6f 72 6d 73 41 70 70 } //1 Minesweeper_WindowsFormsApp
 		$a_01_2 = {67 65 74 5f 44 61 72 6b 52 65 64 } //1 get_DarkRed
 		$a_01_3 = {67 65 74 5f 49 73 48 69 64 64 65 6e } //1 get_IsHidden
@@ -28,7 +28,7 @@ rule Trojan_BAT_CoinMiner_MA_MTB_3{
 		description = "Trojan:BAT/CoinMiner.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {70 07 1f 64 73 90 01 03 0a 0c 73 90 01 03 0a 0d 09 20 00 01 00 00 6f 90 01 03 0a 09 17 6f 90 01 03 0a 09 08 1f 10 6f 90 01 03 0a 06 6f 90 01 03 0a 13 04 73 90 01 03 0a 13 05 11 05 11 04 17 73 90 01 03 0a 13 06 11 06 02 16 02 8e 69 6f 90 01 03 0a 11 06 6f 90 01 03 0a de 90 00 } //1
+		$a_03_0 = {70 07 1f 64 73 ?? ?? ?? 0a 0c 73 ?? ?? ?? 0a 0d 09 20 00 01 00 00 6f ?? ?? ?? 0a 09 17 6f ?? ?? ?? 0a 09 08 1f 10 6f ?? ?? ?? 0a 06 6f ?? ?? ?? 0a 13 04 73 ?? ?? ?? 0a 13 05 11 05 11 04 17 73 ?? ?? ?? 0a 13 06 11 06 02 16 02 8e 69 6f ?? ?? ?? 0a 11 06 6f ?? ?? ?? 0a de } //1
 		$a_01_1 = {47 65 74 46 6f 6c 64 65 72 50 61 74 68 } //1 GetFolderPath
 		$a_01_2 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //1 FromBase64String
 		$a_01_3 = {47 65 74 42 79 74 65 73 } //1 GetBytes

@@ -4,8 +4,8 @@ rule TrojanSpy_Win32_Banker_VDB_bit{
 		description = "TrojanSpy:Win32/Banker.VDB!bit,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {8a 11 33 c0 3a 54 04 90 01 01 74 08 40 83 f8 43 72 f4 eb 10 40 33 d2 bf 43 00 00 00 f7 f7 8a 54 14 90 01 01 88 11 90 00 } //1
-		$a_03_1 = {68 e8 03 00 00 ff 15 90 01 04 56 ff d5 8b 0d 90 01 04 a3 90 01 04 2b c1 83 c4 04 99 33 c2 2b c2 83 f8 5a 7c d8 90 00 } //1
+		$a_03_0 = {8a 11 33 c0 3a 54 04 ?? 74 08 40 83 f8 43 72 f4 eb 10 40 33 d2 bf 43 00 00 00 f7 f7 8a 54 14 ?? 88 11 } //1
+		$a_03_1 = {68 e8 03 00 00 ff 15 ?? ?? ?? ?? 56 ff d5 8b 0d ?? ?? ?? ?? a3 ?? ?? ?? ?? 2b c1 83 c4 04 99 33 c2 2b c2 83 f8 5a 7c d8 } //1
 		$a_01_2 = {8a 54 04 10 30 14 01 40 3b c6 7c f4 } //1
 		$a_01_3 = {63 6f 6e 74 65 6e 74 2d 74 79 70 65 3a 20 43 6c 69 70 62 6f 61 72 64 } //1 content-type: Clipboard
 		$a_01_4 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 45 78 70 6c 6f 72 65 72 5c 53 68 65 6c 6c 20 46 6f 6c 64 65 72 73 } //1 SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders

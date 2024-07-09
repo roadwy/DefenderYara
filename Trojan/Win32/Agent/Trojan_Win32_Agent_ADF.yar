@@ -4,7 +4,7 @@ rule Trojan_Win32_Agent_ADF{
 		description = "Trojan:Win32/Agent.ADF,SIGNATURE_TYPE_PEHSTR_EXT,ffffffe7 00 ffffffe6 00 08 00 00 "
 		
 	strings :
-		$a_02_0 = {43 3a 5c 57 49 4e 44 4f 57 53 5c 53 59 53 54 45 4d 33 32 5c 90 02 09 2e 65 78 65 90 00 } //100
+		$a_02_0 = {43 3a 5c 57 49 4e 44 4f 57 53 5c 53 59 53 54 45 4d 33 32 5c [0-09] 2e 65 78 65 } //100
 		$a_00_1 = {77 77 77 2e 70 6f 72 6e 2e 63 6f 6d } //100 www.porn.com
 		$a_00_2 = {53 68 65 6c 6c 45 78 65 63 75 74 65 } //10 ShellExecute
 		$a_00_3 = {42 6c 6f 63 6b 49 6e 70 75 74 } //10 BlockInput

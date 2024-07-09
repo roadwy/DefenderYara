@@ -4,7 +4,7 @@ rule Trojan_Win32_Stealerc_RP_MTB{
 		description = "Trojan:Win32/Stealerc.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {33 c0 3d cb d9 0b 00 75 06 81 c1 90 01 02 00 00 40 3d 3d a6 15 00 7c eb 90 00 } //1
+		$a_03_0 = {33 c0 3d cb d9 0b 00 75 06 81 c1 ?? ?? 00 00 40 3d 3d a6 15 00 7c eb } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Stealerc_RP_MTB_2{
 		description = "Trojan:Win32/Stealerc.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8a 8c 38 4b 13 01 00 a1 90 01 04 88 0c 38 8b 0d 90 01 04 81 f9 90 01 01 04 00 00 75 90 00 } //1
+		$a_03_0 = {8a 8c 38 4b 13 01 00 a1 ?? ?? ?? ?? 88 0c 38 8b 0d ?? ?? ?? ?? 81 f9 ?? 04 00 00 75 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -24,7 +24,7 @@ rule Trojan_Win32_Stealerc_RP_MTB_3{
 		description = "Trojan:Win32/Stealerc.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {00 00 01 44 24 10 8b 54 24 10 8a 04 32 8b 0d 90 01 04 88 04 31 81 3d 90 01 06 00 00 75 90 00 } //1
+		$a_03_0 = {00 00 01 44 24 10 8b 54 24 10 8a 04 32 8b 0d ?? ?? ?? ?? 88 04 31 81 3d ?? ?? ?? ?? ?? ?? 00 00 75 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -34,7 +34,7 @@ rule Trojan_Win32_Stealerc_RP_MTB_4{
 		description = "Trojan:Win32/Stealerc.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {57 57 ff 15 7c a0 41 00 ff 15 14 a0 41 00 57 ff 15 a4 a0 41 00 81 fe 90 01 03 00 7f 09 46 81 fe 90 01 03 00 7c da 90 00 } //1
+		$a_03_0 = {57 57 ff 15 7c a0 41 00 ff 15 14 a0 41 00 57 ff 15 a4 a0 41 00 81 fe ?? ?? ?? 00 7f 09 46 81 fe ?? ?? ?? 00 7c da } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -54,7 +54,7 @@ rule Trojan_Win32_Stealerc_RP_MTB_6{
 		description = "Trojan:Win32/Stealerc.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {ba 61 2a 07 90 02 04 9c 16 00 48 90 02 04 4d 4f 3f 0a 90 02 04 da 50 d8 1b 90 02 04 ca b6 35 54 90 02 04 65 58 8c 69 90 02 04 52 8b 07 25 90 00 } //1
+		$a_03_0 = {ba 61 2a 07 [0-04] 9c 16 00 48 [0-04] 4d 4f 3f 0a [0-04] da 50 d8 1b [0-04] ca b6 35 54 [0-04] 65 58 8c 69 [0-04] 52 8b 07 25 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

@@ -4,7 +4,7 @@ rule Trojan_Win32_Ouftap_B{
 		description = "Trojan:Win32/Ouftap.B,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 08 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {1d 53 8a 98 90 01 01 a0 40 00 30 1c 32 8b 1d 90 01 01 a0 40 00 40 3b c3 72 02 33 c0 42 3b d7 72 e5 90 00 } //5
+		$a_02_0 = {1d 53 8a 98 ?? a0 40 00 30 1c 32 8b 1d ?? a0 40 00 40 3b c3 72 02 33 c0 42 3b d7 72 e5 } //5
 		$a_01_1 = {5c 5c 2e 5c 46 61 44 65 76 69 63 65 30 } //1 \\.\FaDevice0
 		$a_00_2 = {25 73 5c 31 2e 74 78 74 } //1 %s\1.txt
 		$a_00_3 = {74 61 70 69 33 32 64 2e 65 78 65 20 77 61 73 20 6e 6f 74 20 72 61 6e } //1 tapi32d.exe was not ran

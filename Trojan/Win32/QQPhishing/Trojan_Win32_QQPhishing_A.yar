@@ -4,7 +4,7 @@ rule Trojan_Win32_QQPhishing_A{
 		description = "Trojan:Win32/QQPhishing.A,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 49 0c 8a 14 19 f6 d2 88 14 01 8b 85 90 01 04 03 c7 0f 80 90 01 04 8b f8 e9 90 00 } //3
+		$a_03_0 = {8b 49 0c 8a 14 19 f6 d2 88 14 01 8b 85 ?? ?? ?? ?? 03 c7 0f 80 ?? ?? ?? ?? 8b f8 e9 } //3
 		$a_01_1 = {9c 90 8a 91 8b 8a 8d 93 c2 97 8b 8b 8f c5 d0 d0 } //2
 		$a_01_2 = {8f 90 8f 8a 8d 93 c2 97 8b 8b 8f c5 d0 d0 } //2
 		$a_00_3 = {51 51 50 6f 70 2e 63 53 79 73 54 72 61 79 } //1 QQPop.cSysTray

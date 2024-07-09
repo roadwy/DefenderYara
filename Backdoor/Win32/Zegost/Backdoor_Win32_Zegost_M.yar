@@ -4,7 +4,7 @@ rule Backdoor_Win32_Zegost_M{
 		description = "Backdoor:Win32/Zegost.M,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {d5 07 66 c7 85 90 01 02 ff ff 07 00 66 c7 85 90 01 02 ff ff 10 00 66 c7 85 90 01 02 ff ff 14 00 66 c7 85 90 01 02 ff ff 00 00 8d 85 90 01 02 ff ff 50 90 00 } //4
+		$a_03_0 = {d5 07 66 c7 85 ?? ?? ff ff 07 00 66 c7 85 ?? ?? ff ff 10 00 66 c7 85 ?? ?? ff ff 14 00 66 c7 85 ?? ?? ff ff 00 00 8d 85 ?? ?? ff ff 50 } //4
 		$a_00_1 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 20 4e 54 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 53 76 63 68 6f 73 74 } //1 SOFTWARE\Microsoft\Windows NT\CurrentVersion\Svchost
 		$a_00_2 = {53 65 72 76 69 63 65 44 6c 6c } //1 ServiceDll
 		$a_00_3 = {5c 50 61 72 61 6d 65 74 65 72 73 } //1 \Parameters

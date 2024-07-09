@@ -4,7 +4,7 @@ rule Backdoor_Win32_R2d2_A{
 		description = "Backdoor:Win32/R2d2.A,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {83 fe ff 74 15 ff 15 90 01 04 3d b7 00 00 00 74 08 84 db 75 04 b3 01 eb 02 32 db 8b 57 04 56 6a 00 6a 00 6a 06 52 ff 15 90 00 } //1
+		$a_03_0 = {83 fe ff 74 15 ff 15 ?? ?? ?? ?? 3d b7 00 00 00 74 08 84 db 75 04 b3 01 eb 02 32 db 8b 57 04 56 6a 00 6a 00 6a 06 52 ff 15 } //1
 		$a_01_1 = {43 33 50 4f 2d 72 32 64 32 2d 50 4f 45 } //1 C3PO-r2d2-POE
 		$a_01_2 = {5c 5c 2e 5c 70 69 70 65 5c 73 61 70 69 70 69 70 65 } //1 \\.\pipe\sapipipe
 		$a_01_3 = {53 59 53 21 49 50 43 21 } //1 SYS!IPC!

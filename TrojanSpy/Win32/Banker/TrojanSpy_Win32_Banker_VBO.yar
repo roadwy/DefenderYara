@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Banker_VBO{
 		description = "TrojanSpy:Win32/Banker.VBO,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {65 78 65 2e 90 02 15 5c 3a 63 90 00 } //2
+		$a_02_0 = {65 78 65 2e [0-15] 5c 3a 63 } //2
 		$a_00_1 = {5c 65 72 61 77 74 66 6f 53 5c 4d 4c 4b 48 } //2 \erawtfoS\MLKH
 		$a_00_2 = {41 25 75 25 74 25 6f 25 43 25 6f 25 6d 25 70 25 6c 25 65 25 74 25 65 25 } //1 A%u%t%o%C%o%m%p%l%e%t%e%
 		$a_00_3 = {25 6d 25 65 25 6e 25 73 25 61 25 67 25 65 25 6d 25 } //1 %m%e%n%s%a%g%e%m%

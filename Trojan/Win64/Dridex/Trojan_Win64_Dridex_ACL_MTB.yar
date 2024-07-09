@@ -19,7 +19,7 @@ rule Trojan_Win64_Dridex_ACL_MTB_2{
 		description = "Trojan:Win64/Dridex.ACL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,16 00 16 00 05 00 00 "
 		
 	strings :
-		$a_02_0 = {ff d0 e8 f2 ff ff ff 90 09 33 00 4c 31 25 90 01 04 48 31 15 90 01 04 48 31 25 90 01 04 48 31 1d 90 01 04 4c 31 0d 90 01 04 48 8b 05 90 01 04 eb 09 4c 31 2d 90 00 } //10
+		$a_02_0 = {ff d0 e8 f2 ff ff ff 90 09 33 00 4c 31 25 ?? ?? ?? ?? 48 31 15 ?? ?? ?? ?? 48 31 25 ?? ?? ?? ?? 48 31 1d ?? ?? ?? ?? 4c 31 0d ?? ?? ?? ?? 48 8b 05 ?? ?? ?? ?? eb 09 4c 31 2d } //10
 		$a_80_1 = {47 65 74 55 72 6c 43 61 63 68 65 45 6e 74 72 79 49 6e 66 6f 57 } //GetUrlCacheEntryInfoW  3
 		$a_80_2 = {41 73 73 6f 63 69 61 74 65 43 6f 6c 6f 72 50 72 6f 66 69 6c 65 57 69 74 68 44 65 76 69 63 65 57 } //AssociateColorProfileWithDeviceW  3
 		$a_80_3 = {43 72 79 70 74 43 41 54 50 75 74 41 74 74 72 49 6e 66 6f } //CryptCATPutAttrInfo  3

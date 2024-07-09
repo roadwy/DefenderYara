@@ -4,7 +4,7 @@ rule Trojan_Win32_Cridex_AR_MTB{
 		description = "Trojan:Win32/Cridex.AR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {81 c2 08 79 03 01 a1 90 01 04 89 13 83 c3 04 2b c1 83 6c 24 10 01 75 b3 90 00 } //1
+		$a_02_0 = {81 c2 08 79 03 01 a1 ?? ?? ?? ?? 89 13 83 c3 04 2b c1 83 6c 24 10 01 75 b3 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Cridex_AR_MTB_2{
 		description = "Trojan:Win32/Cridex.AR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {8b 44 24 20 69 d2 34 50 01 00 05 40 26 00 01 89 44 24 20 89 01 8b 4c 24 18 a3 90 01 04 03 d6 90 00 } //1
+		$a_02_0 = {8b 44 24 20 69 d2 34 50 01 00 05 40 26 00 01 89 44 24 20 89 01 8b 4c 24 18 a3 ?? ?? ?? ?? 03 d6 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -24,7 +24,7 @@ rule Trojan_Win32_Cridex_AR_MTB_3{
 		description = "Trojan:Win32/Cridex.AR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {69 f8 d1 5f 01 00 0f b6 05 90 01 04 8d 0c 51 81 c1 a4 c1 fe ff 03 ce 89 0d 90 01 04 3b c7 77 11 90 00 } //1
+		$a_02_0 = {69 f8 d1 5f 01 00 0f b6 05 ?? ?? ?? ?? 8d 0c 51 81 c1 a4 c1 fe ff 03 ce 89 0d ?? ?? ?? ?? 3b c7 77 11 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -34,7 +34,7 @@ rule Trojan_Win32_Cridex_AR_MTB_4{
 		description = "Trojan:Win32/Cridex.AR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {8b 4c 24 14 8b c2 2b c3 81 c6 f0 25 08 01 83 e8 30 89 35 90 01 04 89 31 8d 1c 45 09 00 00 00 39 7c 24 2c 72 90 00 } //1
+		$a_02_0 = {8b 4c 24 14 8b c2 2b c3 81 c6 f0 25 08 01 83 e8 30 89 35 ?? ?? ?? ?? 89 31 8d 1c 45 09 00 00 00 39 7c 24 2c 72 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -44,7 +44,7 @@ rule Trojan_Win32_Cridex_AR_MTB_5{
 		description = "Trojan:Win32/Cridex.AR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {8b c6 2b c3 83 e8 04 2b 44 24 28 83 44 24 18 04 83 c0 da 8b 3d 90 01 04 03 c6 83 6c 24 1c 01 89 44 24 14 0f 85 90 00 } //1
+		$a_02_0 = {8b c6 2b c3 83 e8 04 2b 44 24 28 83 44 24 18 04 83 c0 da 8b 3d ?? ?? ?? ?? 03 c6 83 6c 24 1c 01 89 44 24 14 0f 85 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -54,7 +54,7 @@ rule Trojan_Win32_Cridex_AR_MTB_6{
 		description = "Trojan:Win32/Cridex.AR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {81 c3 2c 8f 04 01 89 1a 0f b7 2d 90 01 04 8b d0 2b d7 0f b7 3d 90 01 04 2b fd 81 ea 12 9d 00 00 a3 90 01 04 81 ff 67 01 00 00 75 0e 90 00 } //1
+		$a_02_0 = {81 c3 2c 8f 04 01 89 1a 0f b7 2d ?? ?? ?? ?? 8b d0 2b d7 0f b7 3d ?? ?? ?? ?? 2b fd 81 ea 12 9d 00 00 a3 ?? ?? ?? ?? 81 ff 67 01 00 00 75 0e } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -64,7 +64,7 @@ rule Trojan_Win32_Cridex_AR_MTB_7{
 		description = "Trojan:Win32/Cridex.AR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {b8 b6 0c 0c 00 b8 b6 0c 0c 00 a1 90 01 04 a3 90 01 04 31 0d 90 01 04 c7 05 90 01 08 a1 90 01 04 01 05 90 01 04 8b ff 8b 15 90 01 04 a1 90 01 04 89 02 5f 5d 90 00 } //1
+		$a_02_0 = {b8 b6 0c 0c 00 b8 b6 0c 0c 00 a1 ?? ?? ?? ?? a3 ?? ?? ?? ?? 31 0d ?? ?? ?? ?? c7 05 ?? ?? ?? ?? ?? ?? ?? ?? a1 ?? ?? ?? ?? 01 05 ?? ?? ?? ?? 8b ff 8b 15 ?? ?? ?? ?? a1 ?? ?? ?? ?? 89 02 5f 5d } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -74,8 +74,8 @@ rule Trojan_Win32_Cridex_AR_MTB_8{
 		description = "Trojan:Win32/Cridex.AR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
 	strings :
-		$a_02_0 = {8b 54 24 10 81 c1 08 e8 02 01 89 0a 8b 15 90 01 04 89 0d 90 01 04 8b 0d 90 01 04 03 ca 90 00 } //1
-		$a_02_1 = {8b 7c 24 2c 81 c2 78 41 0c 01 8b 74 24 1c 83 c6 3b 89 54 24 18 03 f0 89 15 90 01 04 89 17 90 00 } //1
+		$a_02_0 = {8b 54 24 10 81 c1 08 e8 02 01 89 0a 8b 15 ?? ?? ?? ?? 89 0d ?? ?? ?? ?? 8b 0d ?? ?? ?? ?? 03 ca } //1
+		$a_02_1 = {8b 7c 24 2c 81 c2 78 41 0c 01 8b 74 24 1c 83 c6 3b 89 54 24 18 03 f0 89 15 ?? ?? ?? ?? 89 17 } //1
 	condition:
 		((#a_02_0  & 1)*1+(#a_02_1  & 1)*1) >=1
  

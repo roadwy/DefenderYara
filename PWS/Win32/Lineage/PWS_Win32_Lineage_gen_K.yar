@@ -5,7 +5,7 @@ rule PWS_Win32_Lineage_gen_K{
 		
 	strings :
 		$a_00_0 = {53 6f 66 74 77 61 72 65 5c 42 6f 72 6c 61 6e 64 5c 44 65 6c 70 68 69 5c 4c 6f 63 61 6c 65 73 } //40 Software\Borland\Delphi\Locales
-		$a_02_1 = {50 72 6f 78 79 2d 43 6f 6e 6e 65 63 74 69 6f 6e 3a 20 4b 65 65 70 2d 41 6c 69 76 65 90 02 10 55 8b ec 33 c0 55 68 90 02 04 64 ff 30 64 89 20 ff 05 90 02 04 33 c0 5a 59 59 64 89 10 68 48 90 00 } //20
+		$a_02_1 = {50 72 6f 78 79 2d 43 6f 6e 6e 65 63 74 69 6f 6e 3a 20 4b 65 65 70 2d 41 6c 69 76 65 [0-10] 55 8b ec 33 c0 55 68 [0-04] 64 ff 30 64 89 20 ff 05 [0-04] 33 c0 5a 59 59 64 89 10 68 48 } //20
 		$a_00_2 = {41 63 63 65 70 74 3a 20 69 6d 61 67 65 2f 67 69 66 2c 20 69 6d 61 67 65 2f 78 2d 78 62 69 74 6d 61 70 2c 20 69 6d 61 67 65 2f 6a 70 65 67 2c 20 69 6d 61 67 65 2f 70 6a 70 65 67 2c 20 61 70 70 6c 69 63 61 74 69 6f 6e 2f 78 2d 73 68 6f 63 6b 77 61 76 65 2d 66 6c 61 73 68 2c 20 61 70 70 6c 69 63 61 74 69 6f 6e 2f 76 6e 64 2e 6d 73 2d 70 6f 77 65 72 70 6f 69 6e 74 2c 20 61 70 70 6c 69 63 61 74 69 6f 6e 2f 76 6e 64 2e 6d 73 2d 65 78 63 65 6c 2c 20 61 70 70 6c 69 63 61 74 69 6f 6e 2f 6d 73 77 6f 72 64 } //20 Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-powerpoint, application/vnd.ms-excel, application/msword
 		$a_00_3 = {41 63 63 65 70 74 2d 4c 61 6e 67 75 61 67 65 3a 20 7a 68 2d 63 6e } //10 Accept-Language: zh-cn
 		$a_00_4 = {55 73 65 72 2d 41 67 65 6e 74 3a 20 4d 6f 7a 69 6c 6c 61 2f 34 2e 30 20 28 63 6f 6d 70 61 74 69 62 6c 65 3b 20 4d 53 49 45 20 36 2e 30 3b 20 57 69 6e 64 6f 77 73 20 4e 54 20 35 2e 30 29 } //10 User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)
@@ -16,7 +16,7 @@ rule PWS_Win32_Lineage_gen_K{
 		$a_00_9 = {68 74 74 70 3a 2f 2f 64 66 2e 68 61 6e 67 61 6d 65 2e 63 6f 6d 2f 3f 47 4f 3d 68 6f 6d 65 } //10 http://df.hangame.com/?GO=home
 		$a_00_10 = {69 64 5f 68 69 64 64 65 6e 00 00 00 ff ff ff ff 09 00 00 00 70 61 73 73 77 6f 72 64 32 } //10
 		$a_00_11 = {4b 65 79 48 6f 6f 6b 2e 64 6c 6c 00 4d 73 67 48 6f 6f 6b 4f 66 66 00 4d 73 67 48 6f 6f 6b 4f 6e } //10
-		$a_02_12 = {63 3a 5c 31 2e 74 78 74 90 02 10 68 74 74 70 3a 2f 2f 64 66 2e 68 61 6e 67 61 6d 65 2e 63 6f 6d 90 02 10 69 64 5f 68 69 64 64 65 6e 90 00 } //10
+		$a_02_12 = {63 3a 5c 31 2e 74 78 74 [0-10] 68 74 74 70 3a 2f 2f 64 66 2e 68 61 6e 67 61 6d 65 2e 63 6f 6d [0-10] 69 64 5f 68 69 64 64 65 6e } //10
 		$a_00_13 = {44 4e 46 2e 65 78 65 } //10 DNF.exe
 		$a_00_14 = {68 74 74 70 3a 2f 2f 77 77 77 2e 79 61 6d 73 67 61 6d 65 2e 63 6f 6d 2f 69 74 65 6d 62 61 79 2f 73 65 6e 64 6d 61 69 6c 2e 61 73 70 3f 74 6f 6d 61 69 6c 3d 77 64 6f } //10 http://www.yamsgame.com/itembay/sendmail.asp?tomail=wdo
 		$a_00_15 = {2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 2d 37 63 66 31 64 36 63 34 37 63 } //10 -----------------------------7cf1d6c47c

@@ -4,7 +4,7 @@ rule Trojan_Win32_PecardoStealer_RPY_MTB{
 		description = "Trojan:Win32/PecardoStealer.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {31 45 f8 ff 25 90 01 04 cc ff 30 e8 90 01 04 59 a1 90 01 04 cc e8 90 01 04 50 55 c3 cc aa 68 90 01 04 c3 e9 90 01 02 ff ff 90 00 } //1
+		$a_02_0 = {31 45 f8 ff 25 ?? ?? ?? ?? cc ff 30 e8 ?? ?? ?? ?? 59 a1 ?? ?? ?? ?? cc e8 ?? ?? ?? ?? 50 55 c3 cc aa 68 ?? ?? ?? ?? c3 e9 ?? ?? ff ff } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

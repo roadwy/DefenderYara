@@ -4,7 +4,7 @@ rule Trojan_Win32_Ghostnet_SA_MTB{
 		description = "Trojan:Win32/Ghostnet.SA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {01 75 f0 e8 90 0a 30 00 8a 90 01 01 32 90 01 01 02 90 01 01 88 90 01 01 83 90 01 01 01 83 90 01 01 01 75 f0 90 00 } //1
+		$a_03_0 = {01 75 f0 e8 90 0a 30 00 8a ?? 32 ?? 02 ?? 88 ?? 83 ?? 01 83 ?? 01 75 f0 } //1
 		$a_81_1 = {4e 6f 44 72 69 76 65 73 } //1 NoDrives
 		$a_81_2 = {52 65 73 74 72 69 63 74 52 75 6e } //1 RestrictRun
 		$a_81_3 = {4e 6f 4e 65 74 43 6f 6e 6e 65 63 74 44 69 73 63 6f 6e 6e 65 63 74 } //1 NoNetConnectDisconnect

@@ -4,7 +4,7 @@ rule Trojan_Win32_Gatak_DT_dha{
 		description = "Trojan:Win32/Gatak.DT!dha,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {31 c7 89 7d 90 01 01 29 f1 8b 45 90 01 01 8a 5d 90 01 01 80 cb 90 01 01 88 5d 90 01 01 89 4d 90 01 01 8a 5d 90 01 01 38 1c 10 90 00 } //1
+		$a_03_0 = {31 c7 89 7d ?? 29 f1 8b 45 ?? 8a 5d ?? 80 cb ?? 88 5d ?? 89 4d ?? 8a 5d ?? 38 1c 10 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=20
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Gatak_DT_dha_2{
 		description = "Trojan:Win32/Gatak.DT!dha,SIGNATURE_TYPE_PEHSTR_EXT,64 00 64 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {c6 45 f0 31 c6 45 f1 32 c6 45 f2 33 c6 45 f3 34 c6 45 f4 35 c6 45 f5 35 c6 45 f6 34 c6 45 f7 33 c6 45 f8 32 c6 45 f9 31 88 5d fa ff 15 90 01 04 66 85 c0 90 00 } //5
+		$a_03_0 = {c6 45 f0 31 c6 45 f1 32 c6 45 f2 33 c6 45 f3 34 c6 45 f4 35 c6 45 f5 35 c6 45 f6 34 c6 45 f7 33 c6 45 f8 32 c6 45 f9 31 88 5d fa ff 15 ?? ?? ?? ?? 66 85 c0 } //5
 	condition:
 		((#a_03_0  & 1)*5) >=100
  

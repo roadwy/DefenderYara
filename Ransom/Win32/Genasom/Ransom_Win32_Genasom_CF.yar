@@ -4,7 +4,7 @@ rule Ransom_Win32_Genasom_CF{
 		description = "Ransom:Win32/Genasom.CF,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {ac 0f be c0 50 0f be 4e 02 01 c8 ab 58 50 0f be 0e 01 c8 ab 92 58 83 c0 40 ab 92 83 c0 40 ab 59 8b 81 90 01 01 00 00 00 90 00 } //4
+		$a_03_0 = {ac 0f be c0 50 0f be 4e 02 01 c8 ab 58 50 0f be 0e 01 c8 ab 92 58 83 c0 40 ab 92 83 c0 40 ab 59 8b 81 ?? 00 00 00 } //4
 		$a_00_1 = {38 39 30 33 30 30 30 30 30 30 30 } //2 89030000000
 		$a_00_2 = {6d 79 6e 75 6d } //2 mynum
 		$a_00_3 = {6d 79 6e 65 77 69 70 } //2 mynewip

@@ -6,7 +6,7 @@ rule Ransom_Win32_Paradise_BD_MTB{
 	strings :
 		$a_80_0 = {2f 43 20 73 63 20 64 65 6c 65 74 65 20 56 53 53 41 } ///C sc delete VSSA  10
 		$a_80_1 = {59 6f 75 20 68 61 76 65 20 74 6f 20 70 61 79 20 69 6e 20 42 69 74 63 6f 69 6e 73 2e } //You have to pay in Bitcoins.  10
-		$a_03_2 = {52 45 41 44 4d 45 90 02 0a 68 74 6d 6c 90 00 } //5
+		$a_03_2 = {52 45 41 44 4d 45 [0-0a] 68 74 6d 6c } //5
 		$a_80_3 = {43 79 63 6c 65 44 65 66 65 6e 64 65 72 } //CycleDefender  1
 		$a_80_4 = {44 65 6c 65 74 65 53 68 61 64 6f 77 43 6f 70 69 65 73 } //DeleteShadowCopies  1
 		$a_80_5 = {43 72 79 70 74 65 64 50 72 69 76 61 74 65 4b 65 79 } //CryptedPrivateKey  1

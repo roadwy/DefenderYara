@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Autohoc_A_bit{
 		description = "TrojanDownloader:Win32/Autohoc.A!bit,SIGNATURE_TYPE_PEHSTR_EXT,1e 00 1e 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {55 72 6c 20 3a 3d 20 22 68 74 74 70 90 02 30 2e 6a 70 67 90 00 } //5
+		$a_03_0 = {55 72 6c 20 3a 3d 20 22 68 74 74 70 [0-30] 2e 6a 70 67 } //5
 		$a_01_1 = {77 69 6e 73 20 3a 3d 20 22 75 73 65 72 33 32 2e 64 6c 6c 5c 43 61 6c 6c 57 69 6e 64 6f 77 50 72 6f 63 57 } //10 wins := "user32.dll\CallWindowProcW
 		$a_01_2 = {44 6c 6c 43 61 6c 6c 28 77 69 6e 73 2c 20 22 50 74 72 22 2c 20 26 4d 63 6f 64 65 2c 20 22 73 74 72 22 2c 20 54 61 72 67 65 74 48 6f 73 74 2c 20 22 50 74 72 22 2c 20 26 62 42 75 66 2c 20 22 55 69 6e 74 22 2c 20 30 2c 20 22 55 69 6e 74 22 2c 20 30 29 } //10 DllCall(wins, "Ptr", &Mcode, "str", TargetHost, "Ptr", &bBuf, "Uint", 0, "Uint", 0)
 		$a_01_3 = {46 69 6c 65 43 6f 70 79 2c 25 41 5f 53 63 72 69 70 74 66 75 6c 6c 70 61 74 68 25 2c 20 25 41 5f 54 65 6d 70 25 5c 25 41 5f 53 63 72 69 70 74 6e 61 6d 65 25 2c 31 } //2 FileCopy,%A_Scriptfullpath%, %A_Temp%\%A_Scriptname%,1

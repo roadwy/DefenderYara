@@ -4,7 +4,7 @@ rule Trojan_Win32_Redosdru_gen_Q{
 		description = "Trojan:Win32/Redosdru.gen!Q,SIGNATURE_TYPE_PEHSTR_EXT,09 00 08 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {49 8b 4d fc 8a 1c 0a 80 f3 90 01 01 88 1c 0a 42 3b d0 7c d8 90 00 } //3
+		$a_03_0 = {49 8b 4d fc 8a 1c 0a 80 f3 ?? 88 1c 0a 42 3b d0 7c d8 } //3
 		$a_01_1 = {8b 4d fc 0f be 11 85 d2 74 21 8b 45 fc 8a 08 32 4d f8 8b 55 fc 88 0a 8b 45 f8 83 c0 01 89 45 f8 } //3
 		$a_01_2 = {6a 02 6a 00 68 00 fc ff ff 56 ff 15 } //2
 		$a_01_3 = {8a 47 01 c1 e6 06 3c 3d 8b de 75 1c 8b 75 fc } //2

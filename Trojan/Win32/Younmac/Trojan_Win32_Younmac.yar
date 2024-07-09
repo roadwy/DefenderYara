@@ -4,7 +4,7 @@ rule Trojan_Win32_Younmac{
 		description = "Trojan:Win32/Younmac,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 06 6a 01 6a 02 e8 90 01 04 8b d8 83 fb ff 90 02 03 47 83 ff 0a 0f 8f 90 01 02 00 00 68 00 a0 00 00 e8 90 01 04 eb 90 00 } //2
+		$a_03_0 = {6a 06 6a 01 6a 02 e8 ?? ?? ?? ?? 8b d8 83 fb ff [0-03] 47 83 ff 0a 0f 8f ?? ?? 00 00 68 00 a0 00 00 e8 ?? ?? ?? ?? eb } //2
 		$a_01_1 = {22 43 3a 5c 57 69 6e 64 6f 77 73 5c 69 65 78 70 6c 6f 72 65 2e 65 78 65 22 } //1 "C:\Windows\iexplore.exe"
 		$a_01_2 = {63 3a 5c 61 75 74 6f 65 78 65 63 2e 64 61 74 } //1 c:\autoexec.dat
 		$a_01_3 = {53 4c 4f 57 4e 45 54 00 } //1 䱓坏䕎T

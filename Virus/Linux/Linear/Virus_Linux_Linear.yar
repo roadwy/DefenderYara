@@ -4,7 +4,7 @@ rule Virus_Linux_Linear{
 		description = "Virus:Linux/Linear,SIGNATURE_TYPE_MACROHSTR_EXT,0a 00 0a 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {4f 70 65 6e 20 22 90 02 10 2e 63 6f 6d 22 20 46 6f 72 20 4f 75 74 70 75 74 20 41 73 20 90 00 } //1
+		$a_03_0 = {4f 70 65 6e 20 22 [0-10] 2e 63 6f 6d 22 20 46 6f 72 20 4f 75 74 70 75 74 20 41 73 20 } //1
 		$a_00_1 = {50 72 69 6e 74 20 23 } //1 Print #
 		$a_00_2 = {43 6c 6f 73 65 20 23 } //1 Close #
 		$a_00_3 = {3d 20 53 68 65 6c 6c 28 22 } //1 = Shell("

@@ -4,7 +4,7 @@ rule Worm_Linux_Mepos_A{
 		description = "Worm:Linux/Mepos.A,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0d 00 00 "
 		
 	strings :
-		$a_02_0 = {0f e0 a0 11 05 f0 a0 11 37 3c e0 e3 f3 30 23 e2 00 40 93 e5 90 01 04 00 00 54 e1 40 00 9f 15 00 e0 a0 13 00 30 a0 13 00 20 a0 13 00 10 a0 13 90 01 0c 00 00 55 e3 90 01 02 9d 05 90 01 02 9d 05 90 01 04 06 10 a0 e1 42 00 a0 e3 90 01 04 00 00 e0 e3 90 00 } //4
+		$a_02_0 = {0f e0 a0 11 05 f0 a0 11 37 3c e0 e3 f3 30 23 e2 00 40 93 e5 ?? ?? ?? ?? 00 00 54 e1 40 00 9f 15 00 e0 a0 13 00 30 a0 13 00 20 a0 13 00 10 a0 13 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 55 e3 ?? ?? 9d 05 ?? ?? 9d 05 ?? ?? ?? ?? 06 10 a0 e1 42 00 a0 e3 ?? ?? ?? ?? 00 00 e0 e3 } //4
 		$a_00_1 = {68 74 74 70 3a 2f 2f 6d 6f 62 69 2e 78 69 61 6f 6d 65 69 74 69 2e 63 6f 6d 2f 75 70 6c 6f 61 64 66 69 6c 65 2f 6d 73 65 72 76 69 63 65 32 2e 7a 69 70 } //2 http://mobi.xiaomeiti.com/uploadfile/mservice2.zip
 		$a_00_2 = {25 73 3f 69 6d 65 69 3d 25 73 26 4d 61 6a 6f 72 56 65 72 73 69 6f 6e 3d 25 64 26 4d 69 6e 6f 72 56 65 72 73 69 6f 6e 3d 25 64 26 42 75 69 6c 64 4e 75 6d 62 65 72 3d 25 64 26 57 69 64 74 68 3d 25 64 26 48 69 67 68 74 3d 25 64 26 54 6f 74 61 6c 50 68 79 73 3d 25 64 26 55 49 4c 61 6e 67 75 61 67 65 3d 25 64 26 4c 61 6e 67 49 44 3d 25 64 26 6d 6f 64 65 6c 3d 25 73 26 70 6c 61 74 66 6f 72 6d 3d 25 73 } //2 %s?imei=%s&MajorVersion=%d&MinorVersion=%d&BuildNumber=%d&Width=%d&Hight=%d&TotalPhys=%d&UILanguage=%d&LangID=%d&model=%s&platform=%s
 		$a_00_3 = {68 74 74 70 3a 2f 2f 6d 6f 62 69 2e 78 69 61 6f 6d 65 69 74 69 2e 63 6f 6d 2f 75 70 64 61 74 65 69 6d 65 69 } //2 http://mobi.xiaomeiti.com/updateimei

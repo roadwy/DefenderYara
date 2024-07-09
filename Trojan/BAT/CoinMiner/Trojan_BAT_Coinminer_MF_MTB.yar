@@ -4,7 +4,7 @@ rule Trojan_BAT_Coinminer_MF_MTB{
 		description = "Trojan:BAT/Coinminer.MF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {0a d4 8d 58 00 00 01 2b 0e 02 06 16 06 8e 69 6f 90 01 03 0a 26 2b 03 0a 2b ef 06 2a 90 00 } //1
+		$a_03_0 = {0a d4 8d 58 00 00 01 2b 0e 02 06 16 06 8e 69 6f ?? ?? ?? 0a 26 2b 03 0a 2b ef 06 2a } //1
 		$a_01_1 = {54 6f 43 68 61 72 41 72 72 61 79 } //1 ToCharArray
 		$a_01_2 = {62 61 73 65 36 34 45 6e 63 6f 64 65 64 44 61 74 61 } //1 base64EncodedData
 		$a_01_3 = {52 65 6d 6f 76 65 52 65 70 65 61 74 65 64 } //1 RemoveRepeated

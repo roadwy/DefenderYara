@@ -4,7 +4,7 @@ rule Trojan_BAT_SpySnake_MZ_MTB{
 		description = "Trojan:BAT/SpySnake.MZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {07 02 16 02 8e 69 6f 77 00 00 0a 0c 08 0d de 0b 07 2c 07 07 6f 90 01 03 0a 00 dc 09 2a 90 00 } //5
+		$a_03_0 = {07 02 16 02 8e 69 6f 77 00 00 0a 0c 08 0d de 0b 07 2c 07 07 6f ?? ?? ?? 0a 00 dc 09 2a } //5
 		$a_01_1 = {44 36 6e 67 65 72 6f 75 73 } //1 D6ngerous
 		$a_01_2 = {41 64 6a 75 73 74 6d 34 6e 74 } //1 Adjustm4nt
 		$a_01_3 = {53 6f 6d 35 74 69 6d 35 73 } //1 Som5tim5s
@@ -35,7 +35,7 @@ rule Trojan_BAT_SpySnake_MZ_MTB_3{
 		description = "Trojan:BAT/SpySnake.MZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {0b 07 0c 2b 00 08 2a 90 0a 3f 00 7e 90 01 03 04 28 90 01 03 0a 03 6f 90 01 03 0a 6f 90 01 03 0a 0a 7e 90 01 03 04 06 6f 90 01 03 0a 00 7e 90 01 03 04 18 6f 90 01 03 0a 00 02 28 90 01 03 06 90 00 } //1
+		$a_03_0 = {0b 07 0c 2b 00 08 2a 90 0a 3f 00 7e ?? ?? ?? 04 28 ?? ?? ?? 0a 03 6f ?? ?? ?? 0a 6f ?? ?? ?? 0a 0a 7e ?? ?? ?? 04 06 6f ?? ?? ?? 0a 00 7e ?? ?? ?? 04 18 6f ?? ?? ?? 0a 00 02 28 ?? ?? ?? 06 } //1
 		$a_01_1 = {4d 69 72 61 72 6d 61 72 } //1 Mirarmar
 		$a_01_2 = {47 65 74 48 6f 73 74 45 6e 74 72 79 } //1 GetHostEntry
 		$a_01_3 = {47 65 74 42 79 74 65 73 } //1 GetBytes

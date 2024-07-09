@@ -4,7 +4,7 @@ rule TrojanDownloader_O97M_Powdow_RVBN_MTB{
 		description = "TrojanDownloader:O97M/Powdow.RVBN!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {28 22 2b 22 69 22 2b 22 27 22 2b 22 77 22 2b 22 27 22 2b 22 72 22 2b 22 28 27 68 74 74 70 73 3a 2f 2f 90 02 64 2f 66 69 6c 65 73 2f 90 02 1e 2e 74 78 74 27 29 2d 22 2b 22 75 22 2b 22 73 22 2b 22 3f 22 2b 22 22 2b 22 22 2b 22 62 22 2b 22 29 90 00 } //1
+		$a_03_0 = {28 22 2b 22 69 22 2b 22 27 22 2b 22 77 22 2b 22 27 22 2b 22 72 22 2b 22 28 27 68 74 74 70 73 3a 2f 2f [0-64] 2f 66 69 6c 65 73 2f [0-1e] 2e 74 78 74 27 29 2d 22 2b 22 75 22 2b 22 73 22 2b 22 3f 22 2b 22 22 2b 22 22 2b 22 62 22 2b 22 29 } //1
 		$a_01_1 = {61 75 74 6f 5f 6f 70 65 6e 5f 28 29 6d 73 67 62 6f 78 22 65 72 72 6f 72 21 22 63 61 6c 6c 5f 73 68 65 6c 6c 26 28 74 63 6f 6e 65 74 63 24 2c 30 29 65 6e 64 73 75 62 } //1 auto_open_()msgbox"error!"call_shell&(tconetc$,0)endsub
 	condition:
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2

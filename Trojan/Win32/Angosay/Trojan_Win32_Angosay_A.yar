@@ -4,7 +4,7 @@ rule Trojan_Win32_Angosay_A{
 		description = "Trojan:Win32/Angosay.A,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 09 00 00 "
 		
 	strings :
-		$a_02_0 = {52 54 4d 5f 49 6d 61 67 65 4d 6f 64 52 65 63 2e 64 6c 6c 90 02 10 52 48 42 69 6e 64 65 72 5f 5f 53 68 69 6d 45 78 65 4d 61 69 6e 90 00 } //20
+		$a_02_0 = {52 54 4d 5f 49 6d 61 67 65 4d 6f 64 52 65 63 2e 64 6c 6c [0-10] 52 48 42 69 6e 64 65 72 5f 5f 53 68 69 6d 45 78 65 4d 61 69 6e } //20
 		$a_00_1 = {57 69 6e 64 6f 77 73 2e 55 49 2e 58 61 6d 6c 2e } //10 Windows.UI.Xaml.
 		$a_00_2 = {52 65 61 64 41 6c 6c 42 79 74 65 73 } //1 ReadAllBytes
 		$a_00_3 = {45 6e 63 72 79 70 74 4b 65 79 } //1 EncryptKey

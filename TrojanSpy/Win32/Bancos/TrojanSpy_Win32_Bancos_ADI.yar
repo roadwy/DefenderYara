@@ -4,8 +4,8 @@ rule TrojanSpy_Win32_Bancos_ADI{
 		description = "TrojanSpy:Win32/Bancos.ADI,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {01 2c 08 74 90 01 01 04 d8 2c 0a 72 90 01 01 c6 01 00 90 00 } //3
-		$a_03_1 = {83 e8 04 8b 00 83 f8 03 75 90 01 01 6a 01 8b c6 8b 15 90 01 04 e8 90 01 04 8b d7 b1 01 90 00 } //2
+		$a_03_0 = {01 2c 08 74 ?? 04 d8 2c 0a 72 ?? c6 01 00 } //3
+		$a_03_1 = {83 e8 04 8b 00 83 f8 03 75 ?? 6a 01 8b c6 8b 15 ?? ?? ?? ?? e8 ?? ?? ?? ?? 8b d7 b1 01 } //2
 		$a_01_2 = {2f 6a 61 6d 62 61 2f 6a 73 2f 63 73 73 2f 73 65 6e 64 69 6e 66 6f 2e 70 68 70 } //2 /jamba/js/css/sendinfo.php
 		$a_01_3 = {50 6f 72 20 66 61 76 6f 72 2c 20 69 6e 66 6f 72 6d 65 20 6f 73 20 64 61 64 6f 73 20 61 62 61 69 78 6f 20 70 61 72 61 20 63 6f 6e 66 69 72 6d 61 72 20 6f 20 72 65 63 61 64 61 73 74 72 61 6d 65 6e 74 6f 20 64 65 20 73 75 61 20 63 6f 6e 74 61 3a } //1 Por favor, informe os dados abaixo para confirmar o recadastramento de sua conta:
 		$a_01_4 = {52 65 63 61 64 61 73 74 72 61 6d 65 6e 74 6f 20 43 61 69 78 61 } //1 Recadastramento Caixa

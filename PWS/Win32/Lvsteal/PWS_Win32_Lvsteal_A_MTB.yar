@@ -4,7 +4,7 @@ rule PWS_Win32_Lvsteal_A_MTB{
 		description = "PWS:Win32/Lvsteal.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,2e 00 2e 00 0e 00 00 "
 		
 	strings :
-		$a_03_0 = {47 33 f6 8d 45 ec 50 8b d6 03 d2 42 b9 02 00 00 00 8b 45 fc e8 90 01 04 8b 4d ec 8d 45 f0 ba 90 01 04 e8 90 01 04 8b 45 f0 ba 20 00 00 00 e8 90 01 04 8b d8 8b 45 f8 e8 90 01 04 85 c0 7e 1d 8b 45 f8 e8 90 01 04 50 8b c6 5a 8b ca 99 f7 f9 42 8b 45 f8 8a 44 10 ff 32 c3 8b d8 8d 45 e8 8b d3 e8 90 01 04 8b 55 e8 8b 45 f4 e8 90 01 04 8b 45 f4 46 4f 75 86 90 00 } //20
+		$a_03_0 = {47 33 f6 8d 45 ec 50 8b d6 03 d2 42 b9 02 00 00 00 8b 45 fc e8 ?? ?? ?? ?? 8b 4d ec 8d 45 f0 ba ?? ?? ?? ?? e8 ?? ?? ?? ?? 8b 45 f0 ba 20 00 00 00 e8 ?? ?? ?? ?? 8b d8 8b 45 f8 e8 ?? ?? ?? ?? 85 c0 7e 1d 8b 45 f8 e8 ?? ?? ?? ?? 50 8b c6 5a 8b ca 99 f7 f9 42 8b 45 f8 8a 44 10 ff 32 c3 8b d8 8d 45 e8 8b d3 e8 ?? ?? ?? ?? 8b 55 e8 8b 45 f4 e8 ?? ?? ?? ?? 8b 45 f4 46 4f 75 86 } //20
 		$a_01_1 = {5c 4d 6f 7a 69 6c 6c 61 5c 46 69 72 65 66 6f 78 5c 70 72 6f 66 69 6c 65 73 2e 69 6e 69 } //20 \Mozilla\Firefox\profiles.ini
 		$a_01_2 = {47 6f 6f 67 6c 65 5c 43 68 72 6f 6d 65 5c 55 73 65 72 20 44 61 74 61 5c 44 65 66 61 75 6c 74 5c 4c 6f 67 69 6e 20 44 61 74 61 } //1 Google\Chrome\User Data\Default\Login Data
 		$a_01_3 = {5c 6c 6f 67 69 6e 73 2e 6a 73 6f 6e } //1 \logins.json

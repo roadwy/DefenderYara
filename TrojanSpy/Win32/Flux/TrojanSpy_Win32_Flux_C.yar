@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Flux_C{
 		description = "TrojanSpy:Win32/Flux.C,SIGNATURE_TYPE_PEHSTR_EXT,33 00 32 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {88 16 0f be 09 8b 75 08 03 ca 23 c8 8a 8c 90 01 05 03 f3 30 0e 43 3b 90 00 } //10
+		$a_02_0 = {88 16 0f be 09 8b 75 08 03 ca 23 c8 8a 8c ?? ?? ?? ?? ?? 03 f3 30 0e 43 3b } //10
 		$a_00_1 = {5c 45 78 70 4c 6f 72 65 72 2e 65 58 65 } //10 \ExpLorer.eXe
 		$a_00_2 = {4e 74 4f 70 65 6e 54 68 72 65 61 64 } //10 NtOpenThread
 		$a_00_3 = {52 65 61 64 50 72 6f 63 65 73 73 4d 65 6d 6f 72 79 } //10 ReadProcessMemory

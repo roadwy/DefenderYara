@@ -6,7 +6,7 @@ rule Backdoor_Win32_Conpee_A{
 	strings :
 		$a_01_0 = {50 65 65 72 43 6f 6e 6e 5e 5f 5e 4d 65 32 } //1 PeerConn^_^Me2
 		$a_01_1 = {6d 73 70 61 74 63 68 2e 64 6c 6c 00 77 75 61 75 73 65 72 76 } //1
-		$a_03_2 = {8b 55 08 03 55 fc 0f be 02 83 e8 90 01 01 8b 4d 08 03 4d fc 88 01 8b 55 08 03 55 fc 0f be 02 35 90 01 04 8b 4d 08 03 4d fc 88 01 90 00 } //1
+		$a_03_2 = {8b 55 08 03 55 fc 0f be 02 83 e8 ?? 8b 4d 08 03 4d fc 88 01 8b 55 08 03 55 fc 0f be 02 35 ?? ?? ?? ?? 8b 4d 08 03 4d fc 88 01 } //1
 	condition:
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1) >=3
  
@@ -16,7 +16,7 @@ rule Backdoor_Win32_Conpee_A_2{
 		description = "Backdoor:Win32/Conpee.A,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {70 65 65 72 5f 70 6c 75 67 69 6e 5f 90 03 04 07 6d 61 69 6e 63 6f 6d 6d 61 6e 64 00 90 00 } //1
+		$a_03_0 = {70 65 65 72 5f 70 6c 75 67 69 6e 5f (6d 61 69 6e|63 6f 6d 6d 61 6e 64) 00 } //1
 		$a_01_1 = {3c 72 65 6d 6f 74 65 66 69 6c 65 3e 20 3c 6c 6f 63 61 6c 66 69 6c 65 3e } //1 <remotefile> <localfile>
 		$a_01_2 = {50 6c 75 67 4d 67 72 5f 52 65 67 69 73 74 65 72 43 6f 6d 6d 61 6e 64 } //1 PlugMgr_RegisterCommand
 		$a_01_3 = {69 69 73 67 65 74 64 69 72 } //1 iisgetdir

@@ -4,7 +4,7 @@ rule Backdoor_Win32_Feljina_A{
 		description = "Backdoor:Win32/Feljina.A,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 13 00 00 "
 		
 	strings :
-		$a_03_0 = {01 00 83 c4 0c c6 45 ec a2 c6 45 ed 13 c6 45 ee 90 01 01 c6 45 ef 90 00 } //8
+		$a_03_0 = {01 00 83 c4 0c c6 45 ec a2 c6 45 ed 13 c6 45 ee ?? c6 45 ef } //8
 		$a_01_1 = {6c 72 3a 25 64 2c 25 64 2c 25 64 3b 6c 61 3a 25 64 2c 25 64 2c 25 64 3b 63 72 3a 25 64 2c 25 64 2c 25 64 } //4 lr:%d,%d,%d;la:%d,%d,%d;cr:%d,%d,%d
 		$a_01_2 = {25 64 2c 25 64 2c 25 64 2c 78 78 3a 25 64 6b 6b 3a 30 78 25 78 } //4 %d,%d,%d,xx:%dkk:0x%x
 		$a_01_3 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 47 6f 6c 64 65 6e 4b 65 79 } //2 SOFTWARE\Microsoft\Windows\CurrentVersion\GoldenKey

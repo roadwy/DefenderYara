@@ -4,7 +4,7 @@ rule Trojan_BAT_LokiBot_RDD_MTB{
 		description = "Trojan:BAT/LokiBot.RDD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {07 06 08 06 28 90 01 04 25 26 69 5d 91 02 08 91 61 d2 6f 1e 00 00 0a 08 1f 10 28 90 01 04 58 0c 08 02 28 90 00 } //2
+		$a_03_0 = {07 06 08 06 28 ?? ?? ?? ?? 25 26 69 5d 91 02 08 91 61 d2 6f 1e 00 00 0a 08 1f 10 28 ?? ?? ?? ?? 58 0c 08 02 28 } //2
 		$a_01_1 = {53 65 74 4c 61 73 74 45 72 72 6f 72 } //1 SetLastError
 		$a_01_2 = {43 6c 6f 73 65 48 61 6e 64 6c 65 } //1 CloseHandle
 		$a_01_3 = {4f 70 65 6e 50 72 6f 63 65 73 73 } //1 OpenProcess

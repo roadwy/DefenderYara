@@ -4,8 +4,8 @@ rule Trojan_Win32_Malagent_PAA_MTB{
 		description = "Trojan:Win32/Malagent.PAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {50 42 5f 47 61 64 67 65 74 53 74 61 63 6b 5f 90 02 04 69 90 00 } //1
-		$a_03_1 = {43 3a 5c 54 45 4d 50 5c 90 02 04 2e 74 6d 70 90 00 } //1
+		$a_03_0 = {50 42 5f 47 61 64 67 65 74 53 74 61 63 6b 5f [0-04] 69 } //1
+		$a_03_1 = {43 3a 5c 54 45 4d 50 5c [0-04] 2e 74 6d 70 } //1
 		$a_01_2 = {44 65 62 75 67 67 65 72 20 62 72 65 61 6b 70 6f 69 6e 74 20 72 65 61 63 68 65 64 } //1 Debugger breakpoint reached
 		$a_01_3 = {2d 4e 6f 6e 49 20 2d 57 20 48 69 64 64 65 6e 20 2d 43 6f 6d 6d 61 6e } //1 -NonI -W Hidden -Comman
 		$a_01_4 = {2e 00 74 00 6d 00 70 00 62 00 32 00 65 00 74 00 65 00 6d 00 70 00 66 00 69 00 6c 00 65 00 } //1 .tmpb2etempfile

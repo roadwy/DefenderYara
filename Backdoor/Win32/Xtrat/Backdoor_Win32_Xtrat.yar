@@ -4,7 +4,7 @@ rule Backdoor_Win32_Xtrat{
 		description = "Backdoor:Win32/Xtrat,SIGNATURE_TYPE_PEHSTR_EXT,11 00 11 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {0f be 00 83 f0 90 01 01 8b 8d 90 01 04 03 8d 90 01 04 88 01 90 00 } //10
+		$a_03_0 = {0f be 00 83 f0 ?? 8b 8d ?? ?? ?? ?? 03 8d ?? ?? ?? ?? 88 01 } //10
 		$a_01_1 = {63 67 6c 2d 62 69 6e 2f 43 72 70 71 32 2e 63 67 69 } //1 cgl-bin/Crpq2.cgi
 		$a_01_2 = {63 67 6c 2d 62 69 6e 2f 43 6c 6e 70 70 35 2e 63 67 69 } //1 cgl-bin/Clnpp5.cgi
 		$a_01_3 = {63 67 6c 2d 62 69 6e 2f 52 77 70 71 31 2e 63 67 69 } //1 cgl-bin/Rwpq1.cgi

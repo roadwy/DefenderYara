@@ -5,7 +5,7 @@ rule Trojan_BAT_SnakeKeylogger_MK_MTB{
 		
 	strings :
 		$a_01_0 = {53 4e 41 4b 45 2d 4b 45 59 4c 4f 47 47 45 52 } //10 SNAKE-KEYLOGGER
-		$a_03_1 = {53 2d 2d 2d 2d 2d 2d 2d 2d 4e 2d 2d 2d 2d 2d 2d 2d 2d 41 2d 2d 2d 2d 2d 2d 2d 2d 4b 2d 2d 2d 2d 2d 2d 2d 2d 45 90 02 16 53 4e 41 4b 45 2d 4b 45 59 4c 4f 47 47 45 52 90 00 } //10
+		$a_03_1 = {53 2d 2d 2d 2d 2d 2d 2d 2d 4e 2d 2d 2d 2d 2d 2d 2d 2d 41 2d 2d 2d 2d 2d 2d 2d 2d 4b 2d 2d 2d 2d 2d 2d 2d 2d 45 [0-16] 53 4e 41 4b 45 2d 4b 45 59 4c 4f 47 47 45 52 } //10
 	condition:
 		((#a_01_0  & 1)*10+(#a_03_1  & 1)*10) >=20
  

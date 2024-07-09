@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_CRN_MTB{
 		description = "Trojan:BAT/AgentTesla.CRN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {07 06 09 18 5a 18 28 90 01 03 06 1f 10 28 90 01 03 06 d2 90 00 } //1
+		$a_03_0 = {07 06 09 18 5a 18 28 ?? ?? ?? 06 1f 10 28 ?? ?? ?? 06 d2 } //1
 		$a_01_1 = {53 75 62 73 74 72 69 6e 67 } //1 Substring
 		$a_01_2 = {54 6f 55 49 6e 74 33 32 } //1 ToUInt32
 		$a_01_3 = {43 72 65 61 74 65 49 6e 73 74 61 6e 63 65 } //1 CreateInstance

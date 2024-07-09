@@ -33,7 +33,7 @@ rule Backdoor_Win32_Zegost_3{
 		description = "Backdoor:Win32/Zegost,SIGNATURE_TYPE_PEHSTR_EXT,07 00 03 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {c6 01 7f c6 45 90 01 01 6b c6 45 90 01 01 65 c6 45 90 01 01 72 c6 45 90 01 01 6e c6 45 90 01 01 65 c6 45 90 01 01 6c c6 45 90 01 01 33 c6 45 90 01 01 32 c6 45 90 01 01 2e c6 45 90 01 01 64 c6 45 90 01 01 6c c6 45 90 01 01 6c c6 45 90 01 01 00 8d 55 90 01 01 52 ff 15 90 00 } //5
+		$a_03_0 = {c6 01 7f c6 45 ?? 6b c6 45 ?? 65 c6 45 ?? 72 c6 45 ?? 6e c6 45 ?? 65 c6 45 ?? 6c c6 45 ?? 33 c6 45 ?? 32 c6 45 ?? 2e c6 45 ?? 64 c6 45 ?? 6c c6 45 ?? 6c c6 45 ?? 00 8d 55 ?? 52 ff 15 } //5
 		$a_01_1 = {5c 41 70 70 6c 69 63 61 74 69 6f 6e 20 44 61 74 61 5c 4d 69 63 72 6f 73 6f 66 74 5c 4e 65 74 77 6f 72 6b 5c 43 6f 6e 6e 65 63 74 69 6f 6e 73 5c 70 62 6b 5c 72 61 73 70 68 6f 6e 65 2e 70 62 6b } //1 \Application Data\Microsoft\Network\Connections\pbk\rasphone.pbk
 		$a_01_2 = {4c 24 5f 52 61 73 44 65 66 61 75 6c 74 43 72 65 64 65 6e 74 69 61 6c 73 23 30 } //1 L$_RasDefaultCredentials#0
 		$a_00_3 = {49 6e 73 74 61 6c 6c 4d 6f 64 75 6c 65 } //1 InstallModule
@@ -46,7 +46,7 @@ rule Backdoor_Win32_Zegost_4{
 		description = "Backdoor:Win32/Zegost,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {47 c6 44 24 90 01 01 68 c6 44 24 90 01 01 30 c6 44 24 90 01 01 73 90 00 } //1
+		$a_03_0 = {47 c6 44 24 ?? 68 c6 44 24 ?? 30 c6 44 24 ?? 73 } //1
 		$a_01_1 = {64 64 6f 73 2e 68 61 63 6b 78 6b 2e 63 6f 6d } //1 ddos.hackxk.com
 		$a_01_2 = {6e 75 52 5c 6e 6f 69 73 72 65 56 74 6e 65 72 72 75 43 5c 73 77 6f 64 6e 69 57 5c 74 66 6f 73 6f 72 63 69 4d 5c 45 52 41 57 54 46 4f 53 } //1 nuR\noisreVtnerruC\swodniW\tfosorciM\ERAWTFOS
 		$a_01_3 = {57 69 6e 53 74 61 30 5c 44 65 66 61 75 6c 74 00 47 68 30 73 74 20 55 70 64 61 74 65 } //1 楗卮慴尰敄慦汵t桇猰⁴灕慤整

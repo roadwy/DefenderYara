@@ -4,7 +4,7 @@ rule Trojan_Win32_RasDialer_N_dr{
 		description = "Trojan:Win32/RasDialer.N!dr,SIGNATURE_TYPE_PEHSTR_EXT,35 00 33 00 09 00 00 "
 		
 	strings :
-		$a_02_0 = {43 3a 5c 57 49 4e 44 4f 57 53 5c 53 59 53 54 45 4d 33 32 65 70 6c 90 01 01 2e 65 78 65 90 00 } //10
+		$a_02_0 = {43 3a 5c 57 49 4e 44 4f 57 53 5c 53 59 53 54 45 4d 33 32 65 70 6c ?? 2e 65 78 65 } //10
 		$a_00_1 = {6d 6b 63 32 34 38 39 2e 65 78 65 } //10 mkc2489.exe
 		$a_00_2 = {53 6f 66 74 77 61 72 65 5c 56 69 73 69 6f 20 52 41 53 20 53 63 72 69 70 74 } //10 Software\Visio RAS Script
 		$a_00_3 = {4b 00 77 00 5a 00 5f 00 33 00 } //10 KwZ_3

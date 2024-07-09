@@ -4,7 +4,7 @@ rule Ransom_Win32_StopCrypt_SV_MTB{
 		description = "Ransom:Win32/StopCrypt.SV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 45 f0 d3 e8 8b 4d 90 01 01 c7 05 90 01 08 89 45 90 01 01 8d 45 90 01 01 e8 90 01 04 33 5d 90 01 01 31 5d 90 01 01 83 3d 90 01 05 75 90 00 } //1
+		$a_03_0 = {8b 45 f0 d3 e8 8b 4d ?? c7 05 ?? ?? ?? ?? ?? ?? ?? ?? 89 45 ?? 8d 45 ?? e8 ?? ?? ?? ?? 33 5d ?? 31 5d ?? 83 3d ?? ?? ?? ?? ?? 75 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

@@ -4,7 +4,7 @@ rule Trojan_Win32_Warece_C{
 		description = "Trojan:Win32/Warece.C,SIGNATURE_TYPE_PEHSTR_EXT,29 00 1f 00 09 00 00 "
 		
 	strings :
-		$a_02_0 = {53 50 68 00 46 00 00 68 00 30 40 00 ff 74 24 20 ff 90 01 04 00 6a 01 53 ff 90 00 } //10
+		$a_02_0 = {53 50 68 00 46 00 00 68 00 30 40 00 ff 74 24 20 ff ?? ?? ?? ?? 00 6a 01 53 ff } //10
 		$a_00_1 = {5c 5c 2e 5c 70 69 70 65 5c 78 6c 69 62 77 61 69 74 } //10 \\.\pipe\xlibwait
 		$a_00_2 = {5c 5c 2e 5c 70 69 70 65 5c 6d 76 69 77 61 69 74 } //10 \\.\pipe\mviwait
 		$a_00_3 = {5c 5c 2e 5c 70 69 70 65 5c 43 5f 5f 57 49 4e 44 4f 57 53 5f 49 45 58 50 4c 4f 52 45 2e 45 58 45 } //10 \\.\pipe\C__WINDOWS_IEXPLORE.EXE

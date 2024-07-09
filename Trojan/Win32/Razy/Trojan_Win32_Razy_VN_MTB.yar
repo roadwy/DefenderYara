@@ -4,7 +4,7 @@ rule Trojan_Win32_Razy_VN_MTB{
 		description = "Trojan:Win32/Razy.VN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {64 95 71 67 68 90 01 04 58 4f 81 e9 90 01 04 e8 90 01 04 31 06 81 c6 90 01 04 89 c9 39 de 75 e0 68 90 01 04 5f c3 90 00 } //10
+		$a_02_0 = {64 95 71 67 68 ?? ?? ?? ?? 58 4f 81 e9 ?? ?? ?? ?? e8 ?? ?? ?? ?? 31 06 81 c6 ?? ?? ?? ?? 89 c9 39 de 75 e0 68 ?? ?? ?? ?? 5f c3 } //10
 	condition:
 		((#a_02_0  & 1)*10) >=10
  

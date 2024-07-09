@@ -4,10 +4,10 @@ rule VirTool_Win32_CobaltStrike_C{
 		description = "VirTool:Win32/CobaltStrike.C,SIGNATURE_TYPE_PEHSTR_EXT,34 00 34 00 1b 00 00 "
 		
 	strings :
-		$a_03_0 = {5b bc 4a 6a 0f 85 90 01 01 00 00 00 8b 90 00 } //10
-		$a_03_1 = {8e 4e 0e ec 74 90 02 03 aa fc 0d 7c 74 90 02 03 54 ca af 91 75 90 00 } //10
+		$a_03_0 = {5b bc 4a 6a 0f 85 ?? 00 00 00 8b } //10
+		$a_03_1 = {8e 4e 0e ec 74 [0-03] aa fc 0d 7c 74 [0-03] 54 ca af 91 75 } //10
 		$a_01_2 = {b8 0a 4c 53 75 } //10
-		$a_03_3 = {68 00 30 00 00 90 0a 0a 00 6a 40 90 0a 10 00 8b 90 01 01 3c 90 00 } //10
+		$a_03_3 = {68 00 30 00 00 90 0a 0a 00 6a 40 90 0a 10 00 8b ?? 3c } //10
 		$a_01_4 = {52 65 66 6c 65 63 74 69 76 65 4c 6f 61 64 65 72 } //10 ReflectiveLoader
 		$a_01_5 = {5c 5c 2e 5c 70 69 70 65 5c 62 79 70 61 73 73 75 61 63 } //1 \\.\pipe\bypassuac
 		$a_01_6 = {5c 00 53 00 79 00 73 00 74 00 65 00 6d 00 33 00 32 00 5c 00 63 00 6c 00 69 00 63 00 6f 00 6e 00 66 00 67 00 2e 00 65 00 78 00 65 00 } //1 \System32\cliconfg.exe

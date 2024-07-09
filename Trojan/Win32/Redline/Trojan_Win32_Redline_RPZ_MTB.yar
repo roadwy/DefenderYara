@@ -35,7 +35,7 @@ rule Trojan_Win32_Redline_RPZ_MTB_4{
 		description = "Trojan:Win32/Redline.RPZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {8b c6 83 e0 03 8a 80 90 01 04 32 04 37 88 45 d3 ba 90 00 } //1
+		$a_03_0 = {8b c6 83 e0 03 8a 80 ?? ?? ?? ?? 32 04 37 88 45 d3 ba } //1
 		$a_01_1 = {59 0f b6 1c 37 8a c3 02 45 d3 88 04 37 ba } //1
 		$a_01_2 = {59 28 1c 37 46 8b 45 c8 eb b1 } //1
 	condition:
@@ -67,7 +67,7 @@ rule Trojan_Win32_Redline_RPZ_MTB_7{
 		description = "Trojan:Win32/Redline.RPZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {8d 45 fc 50 6a 40 8b 4d 0c 51 8b 55 08 52 ff 15 90 01 03 00 33 c0 33 d2 8b e5 5d c3 90 00 } //1
+		$a_03_0 = {8d 45 fc 50 6a 40 8b 4d 0c 51 8b 55 08 52 ff 15 ?? ?? ?? 00 33 c0 33 d2 8b e5 5d c3 } //1
 		$a_01_1 = {33 f0 03 ce 8b 55 0c 03 55 dc 88 0a 0f be 45 db 8b 4d 0c 03 4d dc 0f b6 11 2b d0 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2

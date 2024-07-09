@@ -5,7 +5,7 @@ rule TrojanDownloader_Win32_Youaru_A{
 		
 	strings :
 		$a_01_0 = {74 0a 80 f1 11 88 08 40 fe ca 75 f0 } //1
-		$a_03_1 = {6a ff 6a 14 e8 90 01 02 ff ff fe cb 75 bc 8b 0e 90 00 } //1
+		$a_03_1 = {6a ff 6a 14 e8 ?? ?? ff ff fe cb 75 bc 8b 0e } //1
 	condition:
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  

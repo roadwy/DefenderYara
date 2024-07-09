@@ -4,7 +4,7 @@ rule PWS_Win32_Wowsteal_AX{
 		description = "PWS:Win32/Wowsteal.AX,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {bf 20 14 86 00 6a 09 57 c6 45 90 01 01 89 c6 45 90 01 01 48 c6 45 90 01 01 04 90 00 } //3
+		$a_03_0 = {bf 20 14 86 00 6a 09 57 c6 45 ?? 89 c6 45 ?? 48 c6 45 ?? 04 } //3
 		$a_01_1 = {b8 a7 d2 41 00 89 20 } //1
 		$a_01_2 = {2b f7 8d 04 1f 2b f3 83 c4 0c 83 ee 05 c6 00 e9 89 70 01 } //2
 		$a_00_3 = {00 77 6f 77 2e 65 78 65 00 } //1

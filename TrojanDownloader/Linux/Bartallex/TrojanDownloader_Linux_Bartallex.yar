@@ -4,7 +4,7 @@ rule TrojanDownloader_Linux_Bartallex{
 		description = "TrojanDownloader:Linux/Bartallex,SIGNATURE_TYPE_MACROHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {61 48 52 30 63 44 6f 76 4c 33 56 74 61 57 4e 76 62 6e 52 79 62 32 77 75 59 32 39 74 4c 6d 4a 79 4c 32 52 76 59 33 4d 76 90 01 05 53 35 6c 65 47 55 3d 90 00 } //1
+		$a_03_0 = {61 48 52 30 63 44 6f 76 4c 33 56 74 61 57 4e 76 62 6e 52 79 62 32 77 75 59 32 39 74 4c 6d 4a 79 4c 32 52 76 59 33 4d 76 ?? ?? ?? ?? ?? 53 35 6c 65 47 55 3d } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -171,7 +171,7 @@ rule TrojanDownloader_Linux_Bartallex_14{
 		
 	strings :
 		$a_01_0 = {62 67 6a 36 37 76 66 66 73 64 67 3a 20 53 65 74 20 62 67 6a 36 37 76 66 66 73 64 67 20 3d 20 43 72 65 61 74 65 4f 62 6a 65 63 74 28 55 73 65 72 46 6f 72 6d 31 2e 54 65 78 74 42 6f 78 33 2e 54 65 78 74 29 } //1 bgj67vffsdg: Set bgj67vffsdg = CreateObject(UserForm1.TextBox3.Text)
-		$a_03_1 = {63 6d 64 73 20 3d 20 57 73 68 53 68 65 6c 6c 2e 52 75 6e 28 90 02 10 2c 20 30 2c 20 54 72 75 65 29 90 00 } //1
+		$a_03_1 = {63 6d 64 73 20 3d 20 57 73 68 53 68 65 6c 6c 2e 52 75 6e 28 [0-10] 2c 20 30 2c 20 54 72 75 65 29 } //1
 		$a_01_2 = {2e 4f 70 65 6e 20 55 73 65 72 46 6f 72 6d 31 2e 54 65 78 74 42 6f 78 32 2e 54 65 78 74 2c 20 55 73 65 72 46 6f 72 6d 31 2e 54 65 78 74 42 6f 78 31 2e 54 65 78 74 2c 20 46 61 6c 73 65 } //1 .Open UserForm1.TextBox2.Text, UserForm1.TextBox1.Text, False
 		$a_01_3 = {53 68 65 6c 6c 20 4d 6f 64 75 6c 65 31 2e 66 78 70 73 66 74 66 61 72 61 6b 71 68 28 63 61 6c 6c 72 65 74 75 72 6e 28 29 29 2c 20 30 } //2 Shell Module1.fxpsftfarakqh(callreturn()), 0
 		$a_01_4 = {76 49 73 69 6a 4e 6e 45 20 3d 20 53 68 65 6c 6c 28 73 7a 6c 71 56 78 63 4b 28 6a 31 41 75 4e 29 2c 20 73 44 70 39 57 79 33 29 } //2 vIsijNnE = Shell(szlqVxcK(j1AuN), sDp9Wy3)

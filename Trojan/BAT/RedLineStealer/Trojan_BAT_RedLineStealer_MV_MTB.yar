@@ -4,7 +4,7 @@ rule Trojan_BAT_RedLineStealer_MV_MTB{
 		description = "Trojan:BAT/RedLineStealer.MV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {0a fe 0e 01 00 fe 0c 00 00 39 81 00 00 00 fe 0c 00 00 8e 39 77 00 00 00 fe 0c 00 00 73 90 01 01 00 00 0a fe 0e 02 00 fe 0c 02 00 20 00 00 00 00 73 90 01 01 00 00 0a fe 0e 03 00 fe 0c 03 00 73 90 01 01 00 00 0a fe 0e 04 00 fe 0c 04 00 6f 90 01 03 0a fe 0e 01 00 dd 39 00 00 00 fe 0c 04 00 39 09 00 00 00 fe 0c 04 00 6f 90 01 03 0a dc 90 00 } //1
+		$a_03_0 = {0a fe 0e 01 00 fe 0c 00 00 39 81 00 00 00 fe 0c 00 00 8e 39 77 00 00 00 fe 0c 00 00 73 ?? 00 00 0a fe 0e 02 00 fe 0c 02 00 20 00 00 00 00 73 ?? 00 00 0a fe 0e 03 00 fe 0c 03 00 73 ?? 00 00 0a fe 0e 04 00 fe 0c 04 00 6f ?? ?? ?? 0a fe 0e 01 00 dd 39 00 00 00 fe 0c 04 00 39 09 00 00 00 fe 0c 04 00 6f ?? ?? ?? 0a dc } //1
 		$a_81_1 = {42 55 59 20 43 52 59 50 } //1 BUY CRYP
 		$a_81_2 = {40 50 75 6c 73 61 72 43 72 79 70 74 65 72 5f 62 6f 74 } //1 @PulsarCrypter_bot
 		$a_81_3 = {44 65 63 6f 6d 70 72 65 73 73 53 74 72 69 6e 67 } //1 DecompressString

@@ -4,7 +4,7 @@ rule Worm_Win32_Boinberg_gen_A{
 		description = "Worm:Win32/Boinberg.gen!A,SIGNATURE_TYPE_PEHSTR_EXT,09 00 08 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 56 8b 45 0c ff 90 90 90 01 01 01 00 00 50 8b 45 0c ff 90 90 90 01 01 01 00 00 6a 00 6a 03 6a 2d 90 00 } //4
+		$a_03_0 = {6a 56 8b 45 0c ff 90 90 ?? 01 00 00 50 8b 45 0c ff 90 90 ?? 01 00 00 6a 00 6a 03 6a 2d } //4
 		$a_01_1 = {c7 45 d0 51 ce db 25 66 c7 45 d4 8f 6c 66 c7 45 d6 72 4a } //4
 		$a_01_2 = {73 70 72 65 61 64 2e 75 73 62 } //1 spread.usb
 		$a_01_3 = {75 70 64 61 74 65 2d 6d 64 35 } //1 update-md5

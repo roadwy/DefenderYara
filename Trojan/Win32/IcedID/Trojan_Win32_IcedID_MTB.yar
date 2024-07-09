@@ -4,8 +4,8 @@ rule Trojan_Win32_IcedID_MTB{
 		description = "Trojan:Win32/IcedID!MTB,SIGNATURE_TYPE_PEHSTR_EXT,37 00 37 00 0d 00 00 "
 		
 	strings :
-		$a_03_0 = {49 44 41 54 90 0a 30 00 0b c1 c1 90 01 01 08 c1 90 01 01 08 0b d0 90 0a 30 00 0b d0 8b c1 90 02 20 00 ff 00 00 90 00 } //50
-		$a_03_1 = {49 44 41 54 90 08 50 00 0b c1 c1 90 01 01 08 c1 90 01 01 08 0b d0 90 0a 30 00 0b d0 8b c1 90 00 } //50
+		$a_03_0 = {49 44 41 54 90 0a 30 00 0b c1 c1 ?? 08 c1 ?? 08 0b d0 90 0a 30 00 0b d0 8b c1 [0-20] 00 ff 00 00 } //50
+		$a_03_1 = {49 44 41 54 90 08 50 00 0b c1 c1 ?? 08 c1 ?? 08 0b d0 90 0a 30 00 0b d0 8b c1 } //50
 		$a_01_2 = {57 69 6e 48 74 74 70 51 75 65 72 79 44 61 74 61 41 76 61 69 6c 61 62 6c 65 } //1 WinHttpQueryDataAvailable
 		$a_01_3 = {57 69 6e 48 74 74 70 43 6f 6e 6e 65 63 74 } //1 WinHttpConnect
 		$a_01_4 = {57 69 6e 48 74 74 70 53 65 6e 64 52 65 71 75 65 73 74 } //1 WinHttpSendRequest

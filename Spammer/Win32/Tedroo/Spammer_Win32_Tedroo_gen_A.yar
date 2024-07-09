@@ -4,7 +4,7 @@ rule Spammer_Win32_Tedroo_gen_A{
 		description = "Spammer:Win32/Tedroo.gen!A,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 0b 00 00 "
 		
 	strings :
-		$a_03_0 = {04 20 32 45 ff 47 88 04 33 b8 90 01 04 8d 48 01 8a 10 90 00 } //3
+		$a_03_0 = {04 20 32 45 ff 47 88 04 33 b8 ?? ?? ?? ?? 8d 48 01 8a 10 } //3
 		$a_01_1 = {57 bf 0d 00 00 00 01 7c 24 04 5f ff e7 } //3
 		$a_01_2 = {33 db 81 c3 7e 66 04 80 } //2
 		$a_01_3 = {8a d0 80 c2 54 30 14 01 40 3b c6 72 f3 } //2

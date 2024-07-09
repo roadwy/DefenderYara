@@ -5,7 +5,7 @@ rule Trojan_BAT_Redlinestealer_YKUF_MTB{
 		
 	strings :
 		$a_01_0 = {07 25 17 59 } //1 ┇夗
-		$a_03_1 = {2d 0d 26 16 2d cb 16 fe 02 0c 08 2d d9 2b 03 0b 2b f1 06 6f 90 01 03 0a 28 90 01 03 2b 90 00 } //1
+		$a_03_1 = {2d 0d 26 16 2d cb 16 fe 02 0c 08 2d d9 2b 03 0b 2b f1 06 6f ?? ?? ?? 0a 28 ?? ?? ?? 2b } //1
 	condition:
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  

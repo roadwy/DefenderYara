@@ -4,7 +4,7 @@ rule Backdoor_BAT_Nanocore_ABQ_MTB{
 		description = "Backdoor:BAT/Nanocore.ABQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {00 03 02 03 6f 4f 90 01 02 0a 5d 6f 50 90 01 02 0a 7e 4c 90 01 02 04 02 91 61 d2 0a 2b 00 06 2a 90 00 } //5
+		$a_03_0 = {00 03 02 03 6f 4f ?? ?? 0a 5d 6f 50 ?? ?? 0a 7e 4c ?? ?? 04 02 91 61 d2 0a 2b 00 06 2a } //5
 		$a_01_1 = {54 6f 53 74 72 69 6e 67 } //1 ToString
 		$a_01_2 = {44 61 74 65 54 69 6d 65 4b 69 6e 64 } //1 DateTimeKind
 		$a_01_3 = {44 65 6c 65 67 61 74 65 } //1 Delegate

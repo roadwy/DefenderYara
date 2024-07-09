@@ -4,7 +4,7 @@ rule Trojan_AndroidOS_Savestealer_B_MTB{
 		description = "Trojan:AndroidOS/Savestealer.B!MTB,SIGNATURE_TYPE_DEXHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {65 74 65 72 6e 69 74 79 70 72 2e 90 02 03 2f 61 70 69 2f 61 63 63 6f 75 6e 74 73 90 00 } //1
+		$a_03_0 = {65 74 65 72 6e 69 74 79 70 72 2e [0-03] 2f 61 70 69 2f 61 63 63 6f 75 6e 74 73 } //1
 		$a_01_1 = {4c 63 6f 6d 2f 65 74 65 72 6e 69 74 79 2f } //1 Lcom/eternity/
 		$a_01_2 = {73 61 76 65 64 61 74 00 } //1 慳敶慤t
 		$a_01_3 = {77 65 62 68 6f 6f 6b 75 72 6c 00 } //1

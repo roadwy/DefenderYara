@@ -4,7 +4,7 @@ rule Trojan_Win32_BHO_DC{
 		description = "Trojan:Win32/BHO.DC,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {64 ff 30 64 89 20 b2 01 a1 90 01 04 e8 90 01 04 33 c0 5a 59 59 64 89 10 eb 90 01 01 e9 90 00 } //1
+		$a_02_0 = {64 ff 30 64 89 20 b2 01 a1 ?? ?? ?? ?? e8 ?? ?? ?? ?? 33 c0 5a 59 59 64 89 10 eb ?? e9 } //1
 		$a_00_1 = {2e 63 6f 2e 6b 72 } //1 .co.kr
 		$a_00_2 = {69 65 28 61 6c 28 22 25 73 22 2c } //1 ie(al("%s",
 		$a_00_3 = {79 64 6f 77 6e } //1 ydown

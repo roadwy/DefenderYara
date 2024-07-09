@@ -4,7 +4,7 @@ rule Trojan_BAT_LockScreen_AHU_MTB{
 		description = "Trojan:BAT/LockScreen.AHU!MTB,SIGNATURE_TYPE_PEHSTR_EXT,20 00 20 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {0a 00 06 0b 16 0c 2b 21 07 08 9a 0d 00 72 90 01 03 70 72 90 01 03 70 28 90 01 03 0a 26 09 6f 90 01 03 0a 00 00 08 17 58 0c 08 07 8e 69 32 d9 90 00 } //10
+		$a_02_0 = {0a 00 06 0b 16 0c 2b 21 07 08 9a 0d 00 72 ?? ?? ?? 70 72 ?? ?? ?? 70 28 ?? ?? ?? 0a 26 09 6f ?? ?? ?? 0a 00 00 08 17 58 0c 08 07 8e 69 32 d9 } //10
 		$a_80_1 = {44 49 53 41 42 4c 45 43 4d 44 5f 54 69 63 6b } //DISABLECMD_Tick  5
 		$a_80_2 = {44 69 73 61 62 6c 65 54 61 73 6b 4d 67 72 } //DisableTaskMgr  4
 		$a_80_3 = {44 61 72 6b 43 72 79 70 74 } //DarkCrypt  4

@@ -4,7 +4,7 @@ rule Ransom_Win32_GandCrab_MTC_bit{
 		description = "Ransom:Win32/GandCrab.MTC!bit,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {8b c1 80 b0 90 01 04 05 40 3d 2b 87 00 00 90 00 } //1
+		$a_03_0 = {8b c1 80 b0 ?? ?? ?? ?? 05 40 3d 2b 87 00 00 } //1
 		$a_01_1 = {4b 00 52 00 41 00 42 00 2d 00 44 00 45 00 43 00 52 00 59 00 50 00 54 00 2e 00 74 00 78 00 74 00 } //1 KRAB-DECRYPT.txt
 		$a_01_2 = {43 00 52 00 41 00 42 00 2d 00 44 00 45 00 43 00 52 00 59 00 50 00 54 00 2e 00 74 00 78 00 74 00 } //1 CRAB-DECRYPT.txt
 		$a_01_3 = {25 00 73 00 2e 00 4b 00 52 00 41 00 42 00 } //1 %s.KRAB

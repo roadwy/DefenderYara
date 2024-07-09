@@ -4,7 +4,7 @@ rule Trojan_Win32_Emotetcrypt_DA_MTB{
 		description = "Trojan:Win32/Emotetcrypt.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {6a 40 68 00 30 00 00 8b 45 90 01 01 8b 48 90 01 01 51 8b 55 90 01 01 8b 42 90 01 01 50 ff 15 90 00 } //1
+		$a_02_0 = {6a 40 68 00 30 00 00 8b 45 ?? 8b 48 ?? 51 8b 55 ?? 8b 42 ?? 50 ff 15 } //1
 		$a_00_1 = {f3 a4 8b 44 24 0c 5e 5f c3 } //1
 		$a_00_2 = {83 c4 0c 8b 45 e4 83 c0 28 89 45 e4 eb } //1
 		$a_81_3 = {43 6f 6e 74 72 6f 6c 5f 52 75 6e 44 4c 4c } //1 Control_RunDLL

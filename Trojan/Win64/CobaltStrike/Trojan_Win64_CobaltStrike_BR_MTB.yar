@@ -24,8 +24,8 @@ rule Trojan_Win64_CobaltStrike_BR_MTB_3{
 		description = "Trojan:Win64/CobaltStrike.BR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {0f b6 44 14 90 01 01 48 8d 52 90 01 01 34 90 01 01 ff c1 88 84 15 90 01 04 81 f9 90 01 04 72 90 00 } //1
-		$a_03_1 = {f3 0f 6f 4c 04 90 01 01 f3 0f 7f 84 90 02 0a 66 0f ef cc 66 0f ef cb 66 0f ef ca f3 0f 7f 8c 90 01 05 81 f9 90 00 } //1
+		$a_03_0 = {0f b6 44 14 ?? 48 8d 52 ?? 34 ?? ff c1 88 84 15 ?? ?? ?? ?? 81 f9 ?? ?? ?? ?? 72 } //1
+		$a_03_1 = {f3 0f 6f 4c 04 ?? f3 0f 7f 84 [0-0a] 66 0f ef cc 66 0f ef cb 66 0f ef ca f3 0f 7f 8c ?? ?? ?? ?? ?? 81 f9 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  

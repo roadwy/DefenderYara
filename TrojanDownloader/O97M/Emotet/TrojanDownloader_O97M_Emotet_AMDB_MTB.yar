@@ -25,7 +25,7 @@ rule TrojanDownloader_O97M_Emotet_AMDB_MTB_3{
 		description = "TrojanDownloader:O97M/Emotet.AMDB!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {53 79 73 57 6f 77 36 34 5c 90 02 2f 5c 57 69 6e 64 6f 77 73 5c 90 02 2f 72 22 26 22 65 67 22 26 22 73 76 22 26 22 72 33 32 2e 65 78 65 90 02 2f 22 68 74 74 70 90 02 ff 22 68 74 74 70 3a 2f 2f 90 00 } //1
+		$a_03_0 = {53 79 73 57 6f 77 36 34 5c [0-2f] 5c 57 69 6e 64 6f 77 73 5c [0-2f] 72 22 26 22 65 67 22 26 22 73 76 22 26 22 72 33 32 2e 65 78 65 [0-2f] 22 68 74 74 70 [0-ff] 22 68 74 74 70 3a 2f 2f } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

@@ -4,7 +4,7 @@ rule Backdoor_Win32_Zegost_CM_bit{
 		description = "Backdoor:Win32/Zegost.CM!bit,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {7e 11 8a 14 01 80 c2 90 01 01 80 f2 90 01 01 88 14 01 41 3b ce 7c ef 90 00 } //10
+		$a_03_0 = {7e 11 8a 14 01 80 c2 ?? 80 f2 ?? 88 14 01 41 3b ce 7c ef } //10
 		$a_01_1 = {4c 6f 61 64 65 72 2e 64 6c 6c 00 44 61 74 61 } //3
 		$a_01_2 = {5c 5c 2e 5c 64 68 77 72 74 34 } //2 \\.\dhwrt4
 		$a_01_3 = {51 51 47 61 6d 65 5c 78 78 2e 64 61 74 } //2 QQGame\xx.dat

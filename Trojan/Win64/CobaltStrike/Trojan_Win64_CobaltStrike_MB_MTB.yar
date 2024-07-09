@@ -14,8 +14,8 @@ rule Trojan_Win64_CobaltStrike_MB_MTB_2{
 		description = "Trojan:Win64/CobaltStrike.MB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {0f af c1 89 87 90 01 04 8b 0d 90 01 04 8b 05 90 01 04 ff c0 0f af c8 89 0d 90 01 04 49 81 f8 90 00 } //1
-		$a_03_1 = {88 14 01 ff 05 90 01 04 48 8b 15 90 01 04 8b 82 90 01 04 8b 8a 90 01 04 33 c8 81 e9 90 01 04 0f af c8 89 8a 90 01 04 48 8b 05 90 00 } //1
+		$a_03_0 = {0f af c1 89 87 ?? ?? ?? ?? 8b 0d ?? ?? ?? ?? 8b 05 ?? ?? ?? ?? ff c0 0f af c8 89 0d ?? ?? ?? ?? 49 81 f8 } //1
+		$a_03_1 = {88 14 01 ff 05 ?? ?? ?? ?? 48 8b 15 ?? ?? ?? ?? 8b 82 ?? ?? ?? ?? 8b 8a ?? ?? ?? ?? 33 c8 81 e9 ?? ?? ?? ?? 0f af c8 89 8a ?? ?? ?? ?? 48 8b 05 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
@@ -25,7 +25,7 @@ rule Trojan_Win64_CobaltStrike_MB_MTB_3{
 		description = "Trojan:Win64/CobaltStrike.MB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 54 84 18 89 d5 c1 c5 90 02 01 89 d3 c1 c3 90 02 01 c1 ea 90 02 01 31 da 31 ea 8b 6c 84 90 02 01 8b 5c 84 90 02 01 89 df c1 c7 90 02 01 89 de c1 c6 90 02 01 c1 eb 90 02 01 31 f3 31 fb 03 6c 84 90 02 01 01 d5 01 dd 89 6c 84 90 02 01 48 83 c0 90 02 01 48 83 f8 90 02 01 75 90 00 } //1
+		$a_03_0 = {8b 54 84 18 89 d5 c1 c5 [0-01] 89 d3 c1 c3 [0-01] c1 ea [0-01] 31 da 31 ea 8b 6c 84 [0-01] 8b 5c 84 [0-01] 89 df c1 c7 [0-01] 89 de c1 c6 [0-01] c1 eb [0-01] 31 f3 31 fb 03 6c 84 [0-01] 01 d5 01 dd 89 6c 84 [0-01] 48 83 c0 [0-01] 48 83 f8 [0-01] 75 } //1
 		$a_01_1 = {62 72 6f 6b 65 6e 20 70 69 70 65 } //1 broken pipe
 		$a_01_2 = {63 6f 6e 6e 65 63 74 69 6f 6e 20 61 62 6f 72 74 65 64 } //1 connection aborted
 		$a_01_3 = {6f 77 6e 65 72 20 64 65 61 64 } //1 owner dead

@@ -4,7 +4,7 @@ rule PWS_Win32_OnLineGames_Q{
 		description = "PWS:Win32/OnLineGames.Q,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {d6 85 c0 0f 84 90 09 10 00 90 02 05 c6 90 02 03 78 88 90 02 03 88 90 02 03 ff 90 00 } //3
+		$a_03_0 = {d6 85 c0 0f 84 90 09 10 00 [0-05] c6 [0-03] 78 88 [0-03] 88 [0-03] ff } //3
 		$a_00_1 = {73 65 64 2e 64 72 61 75 47 65 6d 61 47 } //3 sed.drauGemaG
 		$a_00_2 = {6c 6f 67 69 6e 6e 61 6d 65 3d 64 66 00 } //3
 		$a_00_3 = {44 46 54 65 6d 70 3a 25 30 38 78 20 64 77 47 65 74 50 61 73 73 32 41 64 64 72 3a 25 30 38 78 20 64 77 47 65 74 50 61 73 73 32 52 65 74 41 64 64 72 3a 25 30 38 78 } //2 DFTemp:%08x dwGetPass2Addr:%08x dwGetPass2RetAddr:%08x

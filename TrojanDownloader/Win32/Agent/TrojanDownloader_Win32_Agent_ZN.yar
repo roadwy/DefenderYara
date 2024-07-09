@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Agent_ZN{
 		description = "TrojanDownloader:Win32/Agent.ZN,SIGNATURE_TYPE_PEHSTR_EXT,6a 00 69 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {7b 33 34 46 36 37 33 45 90 01 01 2d 38 37 38 46 2d 31 31 44 35 2d 42 39 38 41 2d 41 30 42 30 44 30 37 42 38 43 37 43 7d 90 00 } //100
+		$a_02_0 = {7b 33 34 46 36 37 33 45 ?? 2d 38 37 38 46 2d 31 31 44 35 2d 42 39 38 41 2d 41 30 42 30 44 30 37 42 38 43 37 43 7d } //100
 		$a_00_1 = {49 6e 74 65 72 6e 65 74 20 45 78 70 6c 6f 72 65 72 5f 53 65 72 76 65 72 } //1 Internet Explorer_Server
 		$a_00_2 = {48 57 4e 44 20 3a 25 6c 64 } //1 HWND :%ld
 		$a_00_3 = {68 74 74 70 3a 2f 2f 77 77 77 2e 6d 79 66 69 6c 65 64 69 73 74 72 69 62 75 74 69 6f 6e 2e 63 6f 6d 2f 6d 66 64 2e 70 68 70 } //1 http://www.myfiledistribution.com/mfd.php

@@ -57,7 +57,7 @@ rule Trojan_BAT_AgentTesla_AC_MTB_5{
 		description = "Trojan:BAT/AgentTesla.AC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,16 00 12 00 08 00 00 "
 		
 	strings :
-		$a_02_0 = {0a 1e 9a 0c 19 8d 90 01 03 01 25 16 72 90 01 03 70 a2 25 17 7e 90 01 03 04 a2 25 18 7e 90 01 03 04 a2 0d 09 28 90 01 03 0a 00 08 09 28 90 01 03 0a 26 20 90 01 03 00 0a 2b 00 06 2a 90 00 } //10
+		$a_02_0 = {0a 1e 9a 0c 19 8d ?? ?? ?? 01 25 16 72 ?? ?? ?? 70 a2 25 17 7e ?? ?? ?? 04 a2 25 18 7e ?? ?? ?? 04 a2 0d 09 28 ?? ?? ?? 0a 00 08 09 28 ?? ?? ?? 0a 26 20 ?? ?? ?? 00 0a 2b 00 06 2a } //10
 		$a_80_1 = {46 61 6c 6c 62 61 63 6b 42 75 66 66 65 72 } //FallbackBuffer  4
 		$a_80_2 = {57 53 54 52 42 75 66 66 65 72 4d 61 72 73 68 61 6c 65 72 } //WSTRBufferMarshaler  4
 		$a_80_3 = {44 73 6b 45 78 70 6c 6f 72 65 72 } //DskExplorer  4

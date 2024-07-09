@@ -4,7 +4,7 @@ rule Worm_Win32_Rombrast_gen_A{
 		description = "Worm:Win32/Rombrast.gen!A,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 75 10 8d 74 71 08 bb 00 30 00 00 66 85 1e 74 90 01 01 0f b7 36 8b 19 81 e6 ff 0f 00 00 03 75 08 90 03 04 03 03 f3 01 16 01 14 1e ff 45 10 39 7d 10 90 00 } //2
+		$a_03_0 = {8b 75 10 8d 74 71 08 bb 00 30 00 00 66 85 1e 74 ?? 0f b7 36 8b 19 81 e6 ff 0f 00 00 03 75 08 (03 f3 01 16|01 14 1e) ff 45 10 39 7d 10 } //2
 		$a_01_1 = {45 52 52 4f 52 5f 42 52 41 49 4e 5f 54 4f 4f 5f 53 4d 41 4c 4c } //1 ERROR_BRAIN_TOO_SMALL
 		$a_01_2 = {57 69 6e 64 6f 77 73 20 44 65 61 74 68 } //1 Windows Death
 		$a_01_3 = {64 61 74 61 3d 25 73 3c 7c 3e 25 73 3c 7c 3e 25 64 3c 7c 3e 25 64 3c 7c 3e 25 73 3c 7c 3e 25 64 } //1 data=%s<|>%s<|>%d<|>%d<|>%s<|>%d

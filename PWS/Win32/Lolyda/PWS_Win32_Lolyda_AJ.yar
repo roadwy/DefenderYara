@@ -4,7 +4,7 @@ rule PWS_Win32_Lolyda_AJ{
 		description = "PWS:Win32/Lolyda.AJ,SIGNATURE_TYPE_PEHSTR_EXT,06 00 05 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {68 4a ff ff ff 90 01 01 e8 90 01 02 ff ff 8d 45 90 01 01 e8 90 01 02 ff ff 6a 00 68 90 01 04 68 b6 00 00 00 90 00 } //3
+		$a_03_0 = {68 4a ff ff ff ?? e8 ?? ?? ff ff 8d 45 ?? e8 ?? ?? ff ff 6a 00 68 ?? ?? ?? ?? 68 b6 00 00 00 } //3
 		$a_01_1 = {c6 43 04 6f c6 43 05 72 c6 43 06 65 c6 43 07 72 c6 43 08 2e c6 43 09 65 c6 43 0a 78 c6 43 0b 65 } //3
 		$a_01_2 = {44 6f 50 61 63 74 68 2e 44 6f 4d 61 6b 65 53 68 65 6c 6c 43 6f 64 65 00 } //1
 		$a_01_3 = {44 6f 50 61 63 74 68 2e 61 73 6d 63 6f 64 65 5b 30 5d 3c 3e 30 00 } //1

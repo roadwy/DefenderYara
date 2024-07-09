@@ -4,7 +4,7 @@ rule Trojan_Win32_Reconyc_HMP_MTB{
 		description = "Trojan:Win32/Reconyc.HMP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {89 45 d0 be 90 01 04 81 f6 90 01 04 2b 35 90 01 04 83 f6 90 01 01 81 c6 90 01 04 2b 75 90 01 01 33 f0 03 35 90 01 04 89 75 90 00 } //10
+		$a_02_0 = {89 45 d0 be ?? ?? ?? ?? 81 f6 ?? ?? ?? ?? 2b 35 ?? ?? ?? ?? 83 f6 ?? 81 c6 ?? ?? ?? ?? 2b 75 ?? 33 f0 03 35 ?? ?? ?? ?? 89 75 } //10
 		$a_01_1 = {2e 70 6f 6c 79 70 68 61 48 } //1 .polyphaH
 		$a_01_2 = {2e 64 75 6d 70 73 } //1 .dumps
 		$a_01_3 = {2e 65 72 6f 74 6f 67 65 } //1 .erotoge

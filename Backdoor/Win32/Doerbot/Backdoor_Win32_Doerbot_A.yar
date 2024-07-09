@@ -20,7 +20,7 @@ rule Backdoor_Win32_Doerbot_A_2{
 		description = "Backdoor:Win32/Doerbot.A,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {68 74 74 70 3a 2f 2f 73 75 70 65 72 76 70 6e 2e 63 6f 2e 75 6b 2f 6d 79 6c 6f 67 2f 90 02 20 2e 70 68 70 90 00 } //3
+		$a_03_0 = {68 74 74 70 3a 2f 2f 73 75 70 65 72 76 70 6e 2e 63 6f 2e 75 6b 2f 6d 79 6c 6f 67 2f [0-20] 2e 70 68 70 } //3
 		$a_01_1 = {2f 6c 61 6c 61 33 2e 70 68 70 } //3 /lala3.php
 		$a_01_2 = {3c 66 6f 72 6d 20 6d 65 74 68 6f 64 3d 22 50 4f 53 54 22 20 61 63 74 69 6f 6e 3d } //2 <form method="POST" action=
 		$a_01_3 = {00 63 6d 64 68 69 64 65 00 } //2

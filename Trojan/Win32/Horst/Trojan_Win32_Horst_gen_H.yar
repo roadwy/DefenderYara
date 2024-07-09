@@ -4,7 +4,7 @@ rule Trojan_Win32_Horst_gen_H{
 		description = "Trojan:Win32/Horst.gen!H,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 01 6a 03 8d 4c 24 30 aa e8 87 fd ff ff 68 04 01 00 00 8d 84 24 b4 00 00 00 50 68 90 01 02 45 00 89 9c 24 d8 01 00 00 90 00 } //4
+		$a_03_0 = {6a 01 6a 03 8d 4c 24 30 aa e8 87 fd ff ff 68 04 01 00 00 8d 84 24 b4 00 00 00 50 68 ?? ?? 45 00 89 9c 24 d8 01 00 00 } //4
 		$a_01_1 = {68 74 73 74 66 6c 64 2e 74 6d 70 00 } //1
 		$a_01_2 = {3f 73 3d 37 26 69 64 3d 00 } //1
 		$a_01_3 = {67 65 74 46 72 69 65 6e 64 73 20 45 72 72 6f 72 } //1 getFriends Error

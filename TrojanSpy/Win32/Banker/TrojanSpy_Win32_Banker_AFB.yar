@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Banker_AFB{
 		description = "TrojanSpy:Win32/Banker.AFB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 08 00 00 "
 		
 	strings :
-		$a_02_0 = {6c 62 6c 42 72 6f 77 73 65 72 41 6e 65 78 61 64 6f 90 02 36 62 6c 6f 71 75 65 90 00 } //10
+		$a_02_0 = {6c 62 6c 42 72 6f 77 73 65 72 41 6e 65 78 61 64 6f [0-36] 62 6c 6f 71 75 65 } //10
 		$a_00_1 = {62 6c 6f 63 6b 69 6e 70 75 74 } //2 blockinput
 		$a_00_2 = {67 65 74 65 78 65 } //2 getexe
 		$a_00_3 = {6d 6f 75 73 65 68 6f 6f 6b } //2 mousehook

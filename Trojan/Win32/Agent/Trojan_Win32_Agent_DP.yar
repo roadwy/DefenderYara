@@ -4,7 +4,7 @@ rule Trojan_Win32_Agent_DP{
 		description = "Trojan:Win32/Agent.DP,SIGNATURE_TYPE_PEHSTR_EXT,ffffff96 00 ffffff96 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {f3 ab 66 ab aa c6 85 90 01 01 ff ff ff 5c c6 85 90 01 01 ff ff ff 73 c6 85 90 01 01 ff ff ff 76 c6 85 90 01 01 ff ff ff 63 c6 85 90 01 01 ff ff ff 68 c6 85 90 01 01 ff ff ff 6f c6 85 90 01 01 ff ff ff 73 c6 85 90 01 01 ff ff ff 74 c6 85 90 01 01 ff ff ff 2e c6 85 90 01 01 ff ff ff 65 c6 85 90 01 01 ff ff ff 78 c6 85 90 01 01 ff ff ff 65 80 a5 90 01 01 fe ff ff 00 6a 3f 90 00 } //100
+		$a_02_0 = {f3 ab 66 ab aa c6 85 ?? ff ff ff 5c c6 85 ?? ff ff ff 73 c6 85 ?? ff ff ff 76 c6 85 ?? ff ff ff 63 c6 85 ?? ff ff ff 68 c6 85 ?? ff ff ff 6f c6 85 ?? ff ff ff 73 c6 85 ?? ff ff ff 74 c6 85 ?? ff ff ff 2e c6 85 ?? ff ff ff 65 c6 85 ?? ff ff ff 78 c6 85 ?? ff ff ff 65 80 a5 ?? fe ff ff 00 6a 3f } //100
 		$a_00_1 = {44 6f 53 65 72 76 69 63 65 } //10 DoService
 		$a_00_2 = {4f 70 65 6e 53 65 72 76 69 63 65 41 } //10 OpenServiceA
 		$a_00_3 = {4f 70 65 6e 53 43 4d 61 6e 61 67 65 72 41 } //10 OpenSCManagerA

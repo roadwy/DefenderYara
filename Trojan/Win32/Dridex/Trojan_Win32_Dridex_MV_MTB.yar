@@ -4,7 +4,7 @@ rule Trojan_Win32_Dridex_MV_MTB{
 		description = "Trojan:Win32/Dridex.MV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 0e 00 00 "
 		
 	strings :
-		$a_02_0 = {8b 4d f0 81 c1 90 02 08 8a 55 eb 8b 75 dc 80 f2 9c 88 55 eb 89 75 e4 8b 75 e4 8b 7d cc 89 7d ec 89 4d e0 8b 4d e4 8b 5d d4 8a 14 33 8b 75 e0 8b 7d d0 88 14 0f 39 f0 90 00 } //1
+		$a_02_0 = {8b 4d f0 81 c1 [0-08] 8a 55 eb 8b 75 dc 80 f2 9c 88 55 eb 89 75 e4 8b 75 e4 8b 7d cc 89 7d ec 89 4d e0 8b 4d e4 8b 5d d4 8a 14 33 8b 75 e0 8b 7d d0 88 14 0f 39 f0 } //1
 		$a_00_1 = {64 6e 74 64 6c 6c 2e 64 6c 6c } //1 dntdll.dll
 		$a_00_2 = {53 00 45 00 4c 00 46 00 2e 00 45 00 58 00 45 00 } //1 SELF.EXE
 		$a_00_3 = {45 00 53 00 54 00 41 00 50 00 50 00 20 00 45 00 5f 00 } //1 ESTAPP E_

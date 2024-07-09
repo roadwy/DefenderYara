@@ -4,7 +4,7 @@ rule Trojan_BAT_BHO_B{
 		description = "Trojan:BAT/BHO.B,SIGNATURE_TYPE_PEHSTR_EXT,06 00 05 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {38 02 00 00 00 26 16 00 7e 90 01 01 00 00 0a 7e 90 01 01 00 00 04 17 6f 90 01 01 00 00 0a 0a 06 14 fe 01 16 90 00 } //2
+		$a_03_0 = {38 02 00 00 00 26 16 00 7e ?? 00 00 0a 7e ?? 00 00 04 17 6f ?? 00 00 0a 0a 06 14 fe 01 16 } //2
 		$a_00_1 = {42 48 4f 4b 45 59 4e 41 4d 45 } //1 BHOKEYNAME
 		$a_00_2 = {52 65 67 69 73 74 65 72 42 48 4f } //1 RegisterBHO
 		$a_00_3 = {52 61 6d 61 20 4b 72 69 73 68 6e 61 } //1 Rama Krishna

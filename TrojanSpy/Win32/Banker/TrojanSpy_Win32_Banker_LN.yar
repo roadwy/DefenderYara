@@ -4,8 +4,8 @@ rule TrojanSpy_Win32_Banker_LN{
 		description = "TrojanSpy:Win32/Banker.LN,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {2f 77 6f 72 6d 90 02 01 2e 70 68 70 90 00 } //1
-		$a_02_1 = {2f 77 61 62 90 02 01 2e 70 68 70 90 00 } //1
+		$a_02_0 = {2f 77 6f 72 6d [0-01] 2e 70 68 70 } //1
+		$a_02_1 = {2f 77 61 62 [0-01] 2e 70 68 70 } //1
 		$a_00_2 = {2a 2e 6d 62 78 00 } //1 ⸪扭x
 		$a_00_3 = {2a 2e 65 6d 6c 00 } //1 ⸪浥l
 		$a_00_4 = {6d 73 6f 65 40 6d 69 63 72 6f 73 6f 66 74 2e 63 6f 6d } //1 msoe@microsoft.com

@@ -4,7 +4,7 @@ rule Trojan_BAT_Dropper_PSJ_MTB{
 		description = "Trojan:BAT/Dropper.PSJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {00 28 12 00 00 06 28 27 90 01 03 13 06 11 05 11 06 16 11 06 8e 69 6f 28 90 01 03 00 11 05 6f 29 90 01 03 00 11 05 6f 2a 90 01 03 00 00 de 0d 90 00 } //5
+		$a_03_0 = {00 28 12 00 00 06 28 27 ?? ?? ?? 13 06 11 05 11 06 16 11 06 8e 69 6f 28 ?? ?? ?? 00 11 05 6f 29 ?? ?? ?? 00 11 05 6f 2a ?? ?? ?? 00 00 de 0d } //5
 		$a_01_1 = {44 65 62 75 67 67 69 6e 67 4d 6f 64 65 73 } //1 DebuggingModes
 		$a_01_2 = {47 65 74 54 65 6d 70 50 61 74 68 } //1 GetTempPath
 		$a_01_3 = {67 65 74 5f 41 73 73 65 6d 62 6c 79 } //1 get_Assembly

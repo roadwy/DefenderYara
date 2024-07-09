@@ -4,7 +4,7 @@ rule Ransom_MSIL_BearCrypt_SM_MTB{
 		description = "Ransom:MSIL/BearCrypt.SM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,22 00 22 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {5c 42 65 61 72 5c 6f 62 6a 5c 90 02 10 5c 42 65 61 72 2e 70 64 62 90 00 } //20
+		$a_03_0 = {5c 42 65 61 72 5c 6f 62 6a 5c [0-10] 5c 42 65 61 72 2e 70 64 62 } //20
 		$a_00_1 = {2e 00 63 00 72 00 79 00 70 00 74 00 } //5 .crypt
 		$a_00_2 = {5c 00 52 00 65 00 61 00 64 00 6d 00 65 00 2e 00 74 00 78 00 74 00 } //5 \Readme.txt
 		$a_00_3 = {63 00 3a 00 5c 00 31 00 2e 00 6a 00 70 00 67 00 } //5 c:\1.jpg

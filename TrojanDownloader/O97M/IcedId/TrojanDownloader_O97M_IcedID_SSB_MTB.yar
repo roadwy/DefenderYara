@@ -16,7 +16,7 @@ rule TrojanDownloader_O97M_IcedID_SSB_MTB_2{
 		description = "TrojanDownloader:O97M/IcedID.SSB!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {53 65 74 20 90 02 0f 20 3d 20 43 72 65 61 74 65 4f 62 6a 65 63 74 28 22 56 42 53 63 72 69 70 74 2e 52 65 67 45 78 70 22 29 90 00 } //1
+		$a_03_0 = {53 65 74 20 [0-0f] 20 3d 20 43 72 65 61 74 65 4f 62 6a 65 63 74 28 22 56 42 53 63 72 69 70 74 2e 52 65 67 45 78 70 22 29 } //1
 		$a_00_1 = {50 61 74 74 65 72 6e 20 3d 20 22 71 7c 44 7c 54 7c 50 7c 59 7c 77 7c 42 7c 56 7c 55 7c 49 7c 4f 7c 5a 7c 4d 7c 46 7c 58 7c 4e 7c 47 7c 51 7c 4c 7c 4b 7c 7a } //2 Pattern = "q|D|T|P|Y|w|B|V|U|I|O|Z|M|F|X|N|G|Q|L|K|z
 		$a_00_2 = {50 61 74 74 65 72 6e 20 3d 20 22 4b 7c 76 7c 71 7c 58 7c 50 7c 5a 7c 6a 7c 4e 7c 46 7c 54 7c 42 7c 59 7c 4c 7c 7a 7c 55 7c 48 7c 77 7c 56 7c 44 7c 4f 7c 47 } //2 Pattern = "K|v|q|X|P|Z|j|N|F|T|B|Y|L|z|U|H|w|V|D|O|G
 		$a_00_3 = {2e 52 65 70 6c 61 63 65 28 58 4b 55 35 6e 4f 66 4b 71 44 28 30 29 2c 20 22 22 29 } //2 .Replace(XKU5nOfKqD(0), "")

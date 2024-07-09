@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Linog_A{
 		description = "TrojanSpy:Win32/Linog.A,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 0b 00 00 "
 		
 	strings :
-		$a_03_0 = {8b c8 c1 e9 02 f3 a5 8b c8 83 e1 03 f3 a4 a0 90 01 04 88 85 c4 fa ff ff 6a 31 6a 00 8d 85 c5 fa ff ff 50 e8 90 00 } //2
+		$a_03_0 = {8b c8 c1 e9 02 f3 a5 8b c8 83 e1 03 f3 a4 a0 ?? ?? ?? ?? 88 85 c4 fa ff ff 6a 31 6a 00 8d 85 c5 fa ff ff 50 e8 } //2
 		$a_01_1 = {5c 73 79 73 63 6f 6e 66 69 67 2e 64 61 74 00 } //1
 		$a_01_2 = {2f 64 6f 77 6e 6c 6f 61 64 2f 63 64 61 74 61 2f } //1 /download/cdata/
 		$a_01_3 = {6c 6f 63 61 6c 2e 66 6f 6f 2e 63 6f 6d 2e 74 78 74 } //1 local.foo.com.txt

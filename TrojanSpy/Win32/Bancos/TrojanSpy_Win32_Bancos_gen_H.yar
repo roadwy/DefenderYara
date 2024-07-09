@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Bancos_gen_H{
 		description = "TrojanSpy:Win32/Bancos.gen!H,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 09 00 00 "
 		
 	strings :
-		$a_02_0 = {8b f0 85 f6 7e 6b bb 01 00 00 00 8d 45 f4 50 b9 01 00 00 00 8b d3 8b 45 fc e8 90 01 04 8b 45 f4 ba 90 01 04 e8 90 01 04 74 40 8d 45 f0 50 b9 01 00 00 00 8b d3 8b 45 fc e8 90 01 04 8b 45 f0 ba 90 01 04 e8 90 01 04 74 1e 8d 45 ec 50 b9 01 00 00 00 90 00 } //10
+		$a_02_0 = {8b f0 85 f6 7e 6b bb 01 00 00 00 8d 45 f4 50 b9 01 00 00 00 8b d3 8b 45 fc e8 ?? ?? ?? ?? 8b 45 f4 ba ?? ?? ?? ?? e8 ?? ?? ?? ?? 74 40 8d 45 f0 50 b9 01 00 00 00 8b d3 8b 45 fc e8 ?? ?? ?? ?? 8b 45 f0 ba ?? ?? ?? ?? e8 ?? ?? ?? ?? 74 1e 8d 45 ec 50 b9 01 00 00 00 } //10
 		$a_00_1 = {00 73 65 6e 68 61 } //1 猀湥慨
 		$a_00_2 = {70 61 73 73 77 6f 72 64 } //1 password
 		$a_00_3 = {69 6e 6e 65 72 68 74 6d 6c } //1 innerhtml

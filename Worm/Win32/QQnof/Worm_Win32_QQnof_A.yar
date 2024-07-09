@@ -4,7 +4,7 @@ rule Worm_Win32_QQnof_A{
 		description = "Worm:Win32/QQnof.A,SIGNATURE_TYPE_PEHSTR_EXT,15 00 15 00 05 00 00 "
 		
 	strings :
-		$a_02_0 = {6a 00 50 6a 00 6a 00 ff d3 68 ff 01 00 00 ff 15 90 01 04 68 90 00 } //10
+		$a_02_0 = {6a 00 50 6a 00 6a 00 ff d3 68 ff 01 00 00 ff 15 ?? ?? ?? ?? 68 } //10
 		$a_00_1 = {68 74 74 70 3a 2f 2f 77 77 77 2e 72 6a 68 6f 75 74 61 69 2e 63 6e } //1 http://www.rjhoutai.cn
 		$a_00_2 = {68 74 74 70 3a 2f 2f 75 73 65 72 2e 71 62 61 72 2e 71 71 2e 63 6f 6d 2f } //1 http://user.qbar.qq.com/
 		$a_00_3 = {68 74 74 70 3a 2f 2f 6d 69 6e 69 73 69 74 65 2e 71 71 2e 63 6f 6d 2f 61 6c 6c 2f 61 6c 6c 69 6e 6f 6e 65 2e 73 68 74 6d 6c } //1 http://minisite.qq.com/all/allinone.shtml

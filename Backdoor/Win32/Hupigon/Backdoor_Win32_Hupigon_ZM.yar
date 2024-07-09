@@ -4,7 +4,7 @@ rule Backdoor_Win32_Hupigon_ZM{
 		description = "Backdoor:Win32/Hupigon.ZM,SIGNATURE_TYPE_PEHSTR_EXT,07 00 06 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {e8 ea f8 ff ff 84 c0 74 21 e8 79 fd ff ff ba 90 09 16 00 75 3e 68 90 01 02 41 00 ba 90 01 02 41 00 b9 01 00 00 00 b8 0a 00 00 00 90 00 } //7
+		$a_02_0 = {e8 ea f8 ff ff 84 c0 74 21 e8 79 fd ff ff ba 90 09 16 00 75 3e 68 ?? ?? 41 00 ba ?? ?? 41 00 b9 01 00 00 00 b8 0a 00 00 00 } //7
 		$a_01_1 = {43 3a 5c 52 65 67 52 75 6e 2e 72 65 67 } //1 C:\RegRun.reg
 		$a_01_2 = {53 65 72 76 69 63 65 44 6c 6c } //1 ServiceDll
 		$a_01_3 = {2e 64 6c 6c 00 00 00 54 46 4f 52 4d 32 00 } //1

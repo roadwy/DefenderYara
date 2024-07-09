@@ -4,7 +4,7 @@ rule Trojan_Win64_CobaltStrike_SP_MTB{
 		description = "Trojan:Win64/CobaltStrike.SP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {41 8b d0 c1 ea 08 88 14 01 90 02 70 41 03 c2 09 43 90 01 01 89 8b 90 01 01 00 00 00 8d 81 90 01 04 09 43 90 01 01 49 81 f9 90 01 03 00 0f 8c 90 01 01 ff ff ff 90 00 } //1
+		$a_03_0 = {41 8b d0 c1 ea 08 88 14 01 [0-70] 41 03 c2 09 43 ?? 89 8b ?? 00 00 00 8d 81 ?? ?? ?? ?? 09 43 ?? 49 81 f9 ?? ?? ?? 00 0f 8c ?? ff ff ff } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -14,8 +14,8 @@ rule Trojan_Win64_CobaltStrike_SP_MTB_2{
 		description = "Trojan:Win64/CobaltStrike.SP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {48 01 d9 66 90 01 04 75 90 01 01 e8 90 01 04 41 90 01 02 ff c6 49 90 01 03 4d 90 01 02 41 90 00 } //1
-		$a_03_1 = {39 c3 7e 1b 48 90 01 02 48 90 01 04 83 e2 90 01 01 41 90 01 04 32 14 07 88 14 01 48 90 01 02 eb 90 00 } //1
+		$a_03_0 = {48 01 d9 66 ?? ?? ?? ?? 75 ?? e8 ?? ?? ?? ?? 41 ?? ?? ff c6 49 ?? ?? ?? 4d ?? ?? 41 } //1
+		$a_03_1 = {39 c3 7e 1b 48 ?? ?? 48 ?? ?? ?? ?? 83 e2 ?? 41 ?? ?? ?? ?? 32 14 07 88 14 01 48 ?? ?? eb } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  

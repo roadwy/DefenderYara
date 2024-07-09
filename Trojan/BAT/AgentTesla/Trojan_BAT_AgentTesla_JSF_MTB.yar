@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_JSF_MTB{
 		description = "Trojan:BAT/AgentTesla.JSF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {06 02 08 18 6f 90 01 03 0a 1f 10 28 90 01 03 0a 84 28 90 01 03 0a 6f 90 01 03 0a 26 11 05 90 00 } //1
+		$a_03_0 = {06 02 08 18 6f ?? ?? ?? 0a 1f 10 28 ?? ?? ?? 0a 84 28 ?? ?? ?? 0a 6f ?? ?? ?? 0a 26 11 05 } //1
 		$a_81_1 = {36 41 31 43 38 43 42 44 2d 35 36 37 32 2d 34 42 34 31 2d 42 36 41 45 2d 41 30 42 32 30 45 46 45 42 32 35 30 } //1 6A1C8CBD-5672-4B41-B6AE-A0B20EFEB250
 		$a_81_2 = {73 65 74 5f 58 } //1 set_X
 		$a_81_3 = {67 65 74 5f 4a 6f 6e 61 73 } //1 get_Jonas

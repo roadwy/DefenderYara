@@ -4,7 +4,7 @@ rule PWS_Win32_Selex_A{
 		description = "PWS:Win32/Selex.A,SIGNATURE_TYPE_PEHSTR_EXT,ffffffde 00 ffffffdc 00 0c 00 00 "
 		
 	strings :
-		$a_02_0 = {b9 a5 0e 00 00 33 c0 bf 90 01 03 00 52 f3 ab 66 ab 68 97 3a 00 00 6a 01 68 90 01 03 00 aa e8 90 01 03 00 8b 15 90 01 03 00 52 e8 90 00 } //100
+		$a_02_0 = {b9 a5 0e 00 00 33 c0 bf ?? ?? ?? 00 52 f3 ab 66 ab 68 97 3a 00 00 6a 01 68 ?? ?? ?? 00 aa e8 ?? ?? ?? 00 8b 15 ?? ?? ?? 00 52 e8 } //100
 		$a_00_1 = {89 45 f8 89 45 fc b8 01 00 00 00 0f a2 89 45 f8 89 55 fc 8b 4d f8 8b 55 fc 33 c0 33 f6 0b c1 0b d6 } //100
 		$a_00_2 = {51 55 49 44 3d 25 75 2d 25 49 36 34 75 2d } //4 QUID=%u-%I64u-
 		$a_00_3 = {53 4d 54 50 3d 25 73 26 50 4f 50 33 3d 25 73 26 4e 4f 4d 45 3d 25 73 26 41 44 44 52 3d 25 73 26 55 53 45 52 3d 25 73 26 50 41 53 53 3d 25 73 } //4 SMTP=%s&POP3=%s&NOME=%s&ADDR=%s&USER=%s&PASS=%s

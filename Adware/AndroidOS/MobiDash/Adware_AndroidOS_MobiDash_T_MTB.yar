@@ -4,7 +4,7 @@ rule Adware_AndroidOS_MobiDash_T_MTB{
 		description = "Adware:AndroidOS/MobiDash.T!MTB,SIGNATURE_TYPE_DEXHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {04 00 0c 01 6e 10 90 01 02 01 00 0c 02 6e 10 90 01 02 01 00 0c 01 6e 10 90 01 02 04 00 0c 04 6e 10 90 01 02 02 00 6e 20 90 01 02 04 00 0c 04 22 00 90 01 06 10 00 70 30 90 01 02 43 00 28 05 0d 04 90 00 } //1
+		$a_03_0 = {04 00 0c 01 6e 10 ?? ?? 01 00 0c 02 6e 10 ?? ?? 01 00 0c 01 6e 10 ?? ?? 04 00 0c 04 6e 10 ?? ?? 02 00 6e 20 ?? ?? 04 00 0c 04 22 00 ?? ?? ?? ?? ?? ?? 10 00 70 30 ?? ?? 43 00 28 05 0d 04 } //1
 		$a_01_1 = {61 6e 63 69 65 6e 74 72 6f 6d 65 2e 64 62 } //1 ancientrome.db
 		$a_01_2 = {44 65 78 43 6c 61 73 73 4c 6f 61 64 65 72 } //1 DexClassLoader
 		$a_01_3 = {4e 6f 74 69 66 69 63 61 74 69 6f 6e 4c 69 73 74 65 6e 65 72 } //1 NotificationListener

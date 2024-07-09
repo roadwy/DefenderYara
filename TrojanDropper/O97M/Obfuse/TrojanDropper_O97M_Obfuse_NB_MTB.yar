@@ -4,7 +4,7 @@ rule TrojanDropper_O97M_Obfuse_NB_MTB{
 		description = "TrojanDropper:O97M/Obfuse.NB!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {55 73 65 72 46 6f 72 6d 32 2e 54 65 78 74 42 6f 78 31 2e 54 61 67 20 26 20 22 5c 90 02 20 2e 78 6c 73 78 22 90 00 } //1
+		$a_03_0 = {55 73 65 72 46 6f 72 6d 32 2e 54 65 78 74 42 6f 78 31 2e 54 61 67 20 26 20 22 5c [0-20] 2e 78 6c 73 78 22 } //1
 		$a_01_1 = {2b 20 22 2e 64 22 20 2b 20 22 6c 6c 22 } //1 + ".d" + "ll"
 		$a_01_2 = {22 5c 55 6e 7a 54 6d 70 22 } //1 "\UnzTmp"
 		$a_01_3 = {26 20 22 5c 6f 6c 65 4f 62 6a 22 20 2b 20 22 65 63 74 2a 2e 62 69 6e 22 2c 20 5a 69 70 4e 61 6d 65 2c } //1 & "\oleObj" + "ect*.bin", ZipName,

@@ -4,7 +4,7 @@ rule TrojanDownloader_BAT_RemcosRAT_D_MTB{
 		description = "TrojanDownloader:BAT/RemcosRAT.D!MTB,SIGNATURE_TYPE_PEHSTR_EXT,16 00 16 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {0a 0b 00 73 90 01 03 0a 0c 16 2d 90 01 01 00 2b 90 01 01 2b 90 01 01 2b 90 01 01 00 2b 90 01 01 2b 90 01 01 16 2c 90 01 01 26 de 90 01 01 07 2b 90 01 01 08 2b 90 01 01 6f 90 01 03 0a 2b 90 01 01 08 2b 90 01 01 6f 90 01 03 0a 2b 90 01 01 0d 2b 90 0a 4a 00 17 2c 90 01 01 00 2b 90 01 01 38 90 01 03 00 00 06 02 6f 90 00 } //15
+		$a_03_0 = {0a 0b 00 73 ?? ?? ?? 0a 0c 16 2d ?? 00 2b ?? 2b ?? 2b ?? 00 2b ?? 2b ?? 16 2c ?? 26 de ?? 07 2b ?? 08 2b ?? 6f ?? ?? ?? 0a 2b ?? 08 2b ?? 6f ?? ?? ?? 0a 2b ?? 0d 2b 90 0a 4a 00 17 2c ?? 00 2b ?? 38 ?? ?? ?? 00 00 06 02 6f } //15
 		$a_01_1 = {47 65 74 54 79 70 65 73 } //1 GetTypes
 		$a_01_2 = {54 6f 4c 69 73 74 } //1 ToList
 		$a_01_3 = {54 6f 41 72 72 61 79 } //1 ToArray

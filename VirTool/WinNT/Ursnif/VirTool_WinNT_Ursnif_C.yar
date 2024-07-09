@@ -4,7 +4,7 @@ rule VirTool_WinNT_Ursnif_C{
 		description = "VirTool:WinNT/Ursnif.C,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {6a 06 8d 04 3e 50 68 90 01 03 00 ff 15 90 01 03 00 83 c4 0c 85 c0 75 06 89 35 90 01 03 00 46 81 fe 00 30 00 00 7c d9 90 00 } //1
+		$a_02_0 = {6a 06 8d 04 3e 50 68 ?? ?? ?? 00 ff 15 ?? ?? ?? 00 83 c4 0c 85 c0 75 06 89 35 ?? ?? ?? 00 46 81 fe 00 30 00 00 7c d9 } //1
 		$a_00_1 = {49 6e 74 65 72 6c 6f 63 6b 65 64 45 78 63 68 61 6e 67 65 } //1 InterlockedExchange
 		$a_00_2 = {5a 77 45 6e 75 6d 65 72 61 74 65 56 61 6c 75 65 4b 65 79 } //1 ZwEnumerateValueKey
 		$a_00_3 = {4b 65 53 65 72 76 69 63 65 44 65 73 63 72 69 70 74 6f 72 54 61 62 6c 65 } //1 KeServiceDescriptorTable

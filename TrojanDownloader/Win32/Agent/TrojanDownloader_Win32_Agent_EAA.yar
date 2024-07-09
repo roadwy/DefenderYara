@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Agent_EAA{
 		description = "TrojanDownloader:Win32/Agent.EAA,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 1e 83 c6 04 51 e8 90 01 04 59 01 45 90 01 01 89 07 83 c7 04 49 75 e9 90 00 } //2
+		$a_03_0 = {8b 1e 83 c6 04 51 e8 ?? ?? ?? ?? 59 01 45 ?? 89 07 83 c7 04 49 75 e9 } //2
 		$a_01_1 = {8b 0b 83 c3 04 8b 32 83 c2 04 f3 a4 48 75 f1 } //2
 		$a_00_2 = {20 3e 6e 75 6c 20 32 3e 6e 75 6c 0d 0a } //1
 		$a_00_3 = {40 72 64 20 2f 66 2f 73 2f 71 20 } //1 @rd /f/s/q 

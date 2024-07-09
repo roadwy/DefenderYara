@@ -5,8 +5,8 @@ rule TrojanDownloader_Win32_Banload_APD{
 		
 	strings :
 		$a_01_0 = {0f b6 44 30 ff 33 c3 89 45 e4 3b 7d e4 7c 0f 8b 45 e4 05 ff 00 00 00 2b c7 89 45 e4 eb 03 29 7d e4 } //20
-		$a_03_1 = {50 8d 55 dc b8 90 01 03 00 e8 90 01 02 ff ff 8b 45 dc e8 90 01 02 fe ff 50 6a 00 e8 90 01 02 ff ff b8 e8 03 00 00 90 00 } //1
-		$a_03_2 = {50 8b 45 fc 8b 40 04 50 e8 90 01 02 ff ff 68 88 13 00 00 e8 90 01 02 fe ff 43 fe 4d 90 01 01 75 aa 90 00 } //1
+		$a_03_1 = {50 8d 55 dc b8 ?? ?? ?? 00 e8 ?? ?? ff ff 8b 45 dc e8 ?? ?? fe ff 50 6a 00 e8 ?? ?? ff ff b8 e8 03 00 00 } //1
+		$a_03_2 = {50 8b 45 fc 8b 40 04 50 e8 ?? ?? ff ff 68 88 13 00 00 e8 ?? ?? fe ff 43 fe 4d ?? 75 aa } //1
 		$a_01_3 = {5b 4c 49 4e 64 00 } //1 䱛义d
 		$a_01_4 = {5b 4c 49 4e 4b 4d 4f 44 00 } //1
 		$a_01_5 = {5b 4c 49 4e 4b 45 58 45 20 31 5d } //1 [LINKEXE 1]

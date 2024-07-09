@@ -4,7 +4,7 @@ rule Worm_Win32_Sfone_A{
 		description = "Worm:Win32/Sfone.A,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 0f 00 00 "
 		
 	strings :
-		$a_03_0 = {85 c0 75 1f 8b 85 90 01 02 ff ff 50 6a 00 68 ff 0f 1f 00 ff 15 58 67 41 00 89 c6 6a 00 56 ff 15 90 01 02 41 00 83 c3 01 8b 04 9d 90 01 02 41 00 85 c0 75 a8 8d 85 90 01 02 ff ff 50 57 e8 8a 0c 00 00 83 f8 01 0f 84 00 ff ff ff 90 00 } //4
+		$a_03_0 = {85 c0 75 1f 8b 85 ?? ?? ff ff 50 6a 00 68 ff 0f 1f 00 ff 15 58 67 41 00 89 c6 6a 00 56 ff 15 ?? ?? 41 00 83 c3 01 8b 04 9d ?? ?? 41 00 85 c0 75 a8 8d 85 ?? ?? ff ff 50 57 e8 8a 0c 00 00 83 f8 01 0f 84 00 ff ff ff } //4
 		$a_00_1 = {6d 75 74 65 78 36 36 36 } //1 mutex666
 		$a_00_2 = {74 68 69 73 69 73 61 70 61 73 73 77 6f 72 64 21 } //1 thisisapassword!
 		$a_00_3 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 52 75 6e } //1 SOFTWARE\Microsoft\Windows\CurrentVersion\Run

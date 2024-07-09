@@ -4,7 +4,7 @@ rule Trojan_Win64_IcedID_MW_MTB{
 		description = "Trojan:Win64/IcedID.MW!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {41 f7 ec 41 03 d4 c1 fa 04 8b c2 c1 e8 1f 03 d0 41 8b c4 41 ff c4 6b d2 1d 2b c2 48 63 c8 48 8b 44 24 28 42 8a 8c 31 90 01 04 41 32 0c 00 43 88 0c 18 49 ff c0 44 3b 64 24 20 72 90 00 } //10
+		$a_03_0 = {41 f7 ec 41 03 d4 c1 fa 04 8b c2 c1 e8 1f 03 d0 41 8b c4 41 ff c4 6b d2 1d 2b c2 48 63 c8 48 8b 44 24 28 42 8a 8c 31 ?? ?? ?? ?? 41 32 0c 00 43 88 0c 18 49 ff c0 44 3b 64 24 20 72 } //10
 	condition:
 		((#a_03_0  & 1)*10) >=10
  
@@ -44,7 +44,7 @@ rule Trojan_Win64_IcedID_MW_MTB_4{
 		description = "Trojan:Win64/IcedID.MW!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {48 8b 44 24 40 48 89 44 24 10 eb 90 01 01 48 89 44 24 40 48 83 7c 24 10 00 76 90 01 01 eb 90 01 01 48 8b 44 24 30 48 83 c4 28 eb 90 01 01 4c 89 44 24 18 48 89 54 24 10 eb 90 01 01 8a 09 88 08 eb 90 00 } //10
+		$a_03_0 = {48 8b 44 24 40 48 89 44 24 10 eb ?? 48 89 44 24 40 48 83 7c 24 10 00 76 ?? eb ?? 48 8b 44 24 30 48 83 c4 28 eb ?? 4c 89 44 24 18 48 89 54 24 10 eb ?? 8a 09 88 08 eb } //10
 		$a_01_1 = {4a 6e 61 73 64 68 62 6a 61 73 64 73 } //5 Jnasdhbjasds
 	condition:
 		((#a_03_0  & 1)*10+(#a_01_1  & 1)*5) >=15

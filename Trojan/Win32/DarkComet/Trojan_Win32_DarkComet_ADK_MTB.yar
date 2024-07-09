@@ -36,7 +36,7 @@ rule Trojan_Win32_DarkComet_ADK_MTB_4{
 		description = "Trojan:Win32/DarkComet.ADK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 4d cc 8d 45 d0 ba 2c 4e 48 00 e8 90 01 04 8b 45 d0 e8 90 01 04 eb 20 8d 45 c4 90 00 } //2
+		$a_03_0 = {8b 4d cc 8d 45 d0 ba 2c 4e 48 00 e8 ?? ?? ?? ?? 8b 45 d0 e8 ?? ?? ?? ?? eb 20 8d 45 c4 } //2
 		$a_01_1 = {44 44 4f 53 48 54 54 50 46 4c 4f 4f 44 } //1 DDOSHTTPFLOOD
 		$a_01_2 = {42 54 52 45 53 55 4c 54 55 44 50 20 46 6c 6f 6f 64 7c 55 44 50 20 46 6c 6f 6f 64 20 74 61 73 6b 20 66 69 6e 69 73 68 65 64 } //1 BTRESULTUDP Flood|UDP Flood task finished
 		$a_01_3 = {42 54 52 45 53 55 4c 54 53 79 6e 20 46 6c 6f 6f 64 7c 53 79 6e 20 74 61 73 6b 20 66 69 6e 69 73 68 65 64 } //1 BTRESULTSyn Flood|Syn task finished

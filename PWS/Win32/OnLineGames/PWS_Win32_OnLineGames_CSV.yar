@@ -4,7 +4,7 @@ rule PWS_Win32_OnLineGames_CSV{
 		description = "PWS:Win32/OnLineGames.CSV,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_02_0 = {55 8b ec 81 ec 84 00 00 00 56 ff 15 90 01 04 8b f0 85 f6 74 3e 8d 45 fc 50 56 ff 15 90 01 04 ff 15 90 01 04 39 45 fc 75 28 8d 85 7c ff ff ff 6a 7f 50 56 ff 15 90 01 04 8d 85 7c ff ff ff 68 90 01 04 50 ff 15 90 01 04 59 85 c0 59 90 00 } //1
+		$a_02_0 = {55 8b ec 81 ec 84 00 00 00 56 ff 15 ?? ?? ?? ?? 8b f0 85 f6 74 3e 8d 45 fc 50 56 ff 15 ?? ?? ?? ?? ff 15 ?? ?? ?? ?? 39 45 fc 75 28 8d 85 7c ff ff ff 6a 7f 50 56 ff 15 ?? ?? ?? ?? 8d 85 7c ff ff ff 68 ?? ?? ?? ?? 50 ff 15 ?? ?? ?? ?? 59 85 c0 59 } //1
 		$a_00_1 = {75 73 65 72 64 61 74 61 5c 63 75 72 72 65 6e 74 73 65 72 76 65 72 2e 69 6e 69 } //1 userdata\currentserver.ini
 		$a_00_2 = {43 68 69 42 69 45 6c 65 6d 65 6e 74 43 6c 69 65 6e 74 20 57 69 6e 64 6f 77 } //1 ChiBiElementClient Window
 		$a_01_3 = {57 72 69 74 65 50 72 6f 63 65 73 73 4d 65 6d 6f 72 79 } //1 WriteProcessMemory

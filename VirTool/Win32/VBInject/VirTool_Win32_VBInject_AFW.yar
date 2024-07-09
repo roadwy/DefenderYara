@@ -5,7 +5,7 @@ rule VirTool_Win32_VBInject_AFW{
 		
 	strings :
 		$a_01_0 = {31 db 90 43 e0 fc ff d3 } //1
-		$a_03_1 = {8b 84 24 20 01 00 00 90 02 0f 5d 90 02 0f ff e0 90 00 } //1
+		$a_03_1 = {8b 84 24 20 01 00 00 [0-0f] 5d [0-0f] ff e0 } //1
 	condition:
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  

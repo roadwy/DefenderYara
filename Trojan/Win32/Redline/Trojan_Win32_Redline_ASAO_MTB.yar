@@ -4,8 +4,8 @@ rule Trojan_Win32_Redline_ASAO_MTB{
 		description = "Trojan:Win32/Redline.ASAO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {83 c4 08 8b c8 e8 90 01 02 00 00 8b 55 08 03 55 fc 0f b6 02 83 c0 90 01 01 8b 4d 08 03 4d fc 88 01 e9 90 00 } //1
-		$a_03_1 = {8b 55 08 03 55 fc 0f b6 02 35 90 01 01 00 00 00 8b 4d 08 03 4d fc 88 01 68 90 00 } //1
+		$a_03_0 = {83 c4 08 8b c8 e8 ?? ?? 00 00 8b 55 08 03 55 fc 0f b6 02 83 c0 ?? 8b 4d 08 03 4d fc 88 01 e9 } //1
+		$a_03_1 = {8b 55 08 03 55 fc 0f b6 02 35 ?? 00 00 00 8b 4d 08 03 4d fc 88 01 68 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  

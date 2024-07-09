@@ -4,11 +4,11 @@ rule Trojan_Win32_Rootkit_AF{
 		description = "Trojan:Win32/Rootkit.AF,SIGNATURE_TYPE_PEHSTR_EXT,ffffffe5 0b fffffff3 07 37 00 00 "
 		
 	strings :
-		$a_02_0 = {01 00 6a 00 6a 00 6a 00 6a 00 8d 85 a0 fd ff ff 50 ff 15 90 01 02 01 00 89 85 94 fd ff ff 90 00 } //1000
-		$a_02_1 = {8d 85 34 ff ff ff 50 6a 01 6a 00 68 00 90 01 01 00 00 8d 85 8c fd ff ff 50 6a 00 ff 75 08 ff 15 90 01 02 01 00 89 85 94 fd ff ff 90 00 } //1000
-		$a_02_2 = {83 bd 34 ff ff ff 00 74 90 01 01 ff b5 34 ff ff ff ff 15 90 01 02 01 00 90 00 } //1000
-		$a_02_3 = {50 68 3f 00 0f 00 8d 45 f4 50 ff 15 90 01 02 01 00 89 45 e4 90 00 } //1000
-		$a_02_4 = {8d 45 e8 50 ff 75 fc ff 75 f8 6a 01 8d 45 ec 50 ff 75 f4 ff 15 90 01 02 01 00 89 45 e4 90 00 } //1000
+		$a_02_0 = {01 00 6a 00 6a 00 6a 00 6a 00 8d 85 a0 fd ff ff 50 ff 15 ?? ?? 01 00 89 85 94 fd ff ff } //1000
+		$a_02_1 = {8d 85 34 ff ff ff 50 6a 01 6a 00 68 00 ?? 00 00 8d 85 8c fd ff ff 50 6a 00 ff 75 08 ff 15 ?? ?? 01 00 89 85 94 fd ff ff } //1000
+		$a_02_2 = {83 bd 34 ff ff ff 00 74 ?? ff b5 34 ff ff ff ff 15 ?? ?? 01 00 } //1000
+		$a_02_3 = {50 68 3f 00 0f 00 8d 45 f4 50 ff 15 ?? ?? 01 00 89 45 e4 } //1000
+		$a_02_4 = {8d 45 e8 50 ff 75 fc ff 75 f8 6a 01 8d 45 ec 50 ff 75 f4 ff 15 ?? ?? 01 00 89 45 e4 } //1000
 		$a_01_5 = {5a 77 43 72 65 61 74 65 46 69 6c 65 } //1 ZwCreateFile
 		$a_01_6 = {50 73 43 72 65 61 74 65 53 79 73 74 65 6d 54 68 72 65 61 64 } //1 PsCreateSystemThread
 		$a_01_7 = {4b 65 49 6e 73 65 72 74 51 75 65 75 65 41 70 63 } //1 KeInsertQueueApc

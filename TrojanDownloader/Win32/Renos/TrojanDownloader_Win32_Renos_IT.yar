@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Renos_IT{
 		description = "TrojanDownloader:Win32/Renos.IT,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {88 04 3e 46 eb 90 09 05 00 35 90 01 01 00 00 00 90 00 } //1
+		$a_03_0 = {88 04 3e 46 eb 90 09 05 00 35 ?? 00 00 00 } //1
 		$a_01_1 = {68 ff ff 0d ba ff 15 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2

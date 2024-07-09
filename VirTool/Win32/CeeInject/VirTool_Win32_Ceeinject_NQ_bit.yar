@@ -4,8 +4,8 @@ rule VirTool_Win32_Ceeinject_NQ_bit{
 		description = "VirTool:Win32/Ceeinject.NQ!bit,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {51 6a 00 52 ff d6 8b 8d 90 01 04 8b 95 90 01 04 89 85 90 00 } //1
-		$a_03_1 = {7e 7c 8d 9b 90 01 04 8b 8d 90 01 04 2b 8d 90 01 04 3b f9 72 05 e8 90 01 04 8b 95 90 01 04 8a 04 17 90 00 } //1
+		$a_03_0 = {51 6a 00 52 ff d6 8b 8d ?? ?? ?? ?? 8b 95 ?? ?? ?? ?? 89 85 } //1
+		$a_03_1 = {7e 7c 8d 9b ?? ?? ?? ?? 8b 8d ?? ?? ?? ?? 2b 8d ?? ?? ?? ?? 3b f9 72 05 e8 ?? ?? ?? ?? 8b 95 ?? ?? ?? ?? 8a 04 17 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  

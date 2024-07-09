@@ -4,7 +4,7 @@ rule Backdoor_BAT_Bladabindi_ABT_MTB{
 		description = "Backdoor:BAT/Bladabindi.ABT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {07 02 6f 24 90 01 02 0a 0a de 0a 07 2c 06 07 6f 90 01 03 0a dc 03 72 90 01 03 70 04 28 90 01 03 0a 06 28 90 01 03 0a 20 90 01 03 00 28 90 01 03 0a 03 72 90 01 03 70 04 28 90 01 03 0a 28 90 01 03 0a 26 de 13 90 00 } //5
+		$a_03_0 = {07 02 6f 24 ?? ?? 0a 0a de 0a 07 2c 06 07 6f ?? ?? ?? 0a dc 03 72 ?? ?? ?? 70 04 28 ?? ?? ?? 0a 06 28 ?? ?? ?? 0a 20 ?? ?? ?? 00 28 ?? ?? ?? 0a 03 72 ?? ?? ?? 70 04 28 ?? ?? ?? 0a 28 ?? ?? ?? 0a 26 de 13 } //5
 		$a_01_1 = {67 65 74 5f 43 75 72 72 65 6e 74 44 69 72 65 63 74 6f 72 79 } //1 get_CurrentDirectory
 		$a_01_2 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //1 DownloadData
 		$a_01_3 = {52 75 57 4c 70 4b 75 78 44 68 66 41 } //1 RuWLpKuxDhfA

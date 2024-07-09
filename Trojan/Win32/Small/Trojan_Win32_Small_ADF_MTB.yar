@@ -4,7 +4,7 @@ rule Trojan_Win32_Small_ADF_MTB{
 		description = "Trojan:Win32/Small.ADF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1d 00 1d 00 0a 00 00 "
 		
 	strings :
-		$a_02_0 = {8b c6 0d 11 47 00 00 c1 e0 10 0b f0 89 35 90 01 04 f7 d6 89 35 90 01 04 5e 5f 5b c9 c3 90 00 } //5
+		$a_02_0 = {8b c6 0d 11 47 00 00 c1 e0 10 0b f0 89 35 ?? ?? ?? ?? f7 d6 89 35 ?? ?? ?? ?? 5e 5f 5b c9 c3 } //5
 		$a_80_1 = {55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 41 } //URLDownloadToFileA  4
 		$a_80_2 = {44 65 6c 65 74 65 55 72 6c 43 61 63 68 65 45 6e 74 72 79 } //DeleteUrlCacheEntry  4
 		$a_80_3 = {50 72 6f 63 65 73 73 49 64 54 6f 53 65 73 73 69 6f 6e 49 64 } //ProcessIdToSessionId  3

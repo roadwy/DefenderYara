@@ -31,7 +31,7 @@ rule Trojan_BAT_AgentTesla_RPQ_MTB_3{
 		description = "Trojan:BAT/AgentTesla.RPQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {fe 0c 00 00 fe 0c 06 00 28 90 01 02 00 0a 28 90 01 02 00 0a fe 0c 03 00 fe 0c 06 00 6f 90 01 02 00 0a 67 52 fe 0c 06 00 20 01 00 00 00 58 fe 0e 06 00 fe 0c 06 00 fe 0c 03 00 6f 90 01 02 00 0a 3f bf ff ff ff 90 00 } //1
+		$a_03_0 = {fe 0c 00 00 fe 0c 06 00 28 ?? ?? 00 0a 28 ?? ?? 00 0a fe 0c 03 00 fe 0c 06 00 6f ?? ?? 00 0a 67 52 fe 0c 06 00 20 01 00 00 00 58 fe 0e 06 00 fe 0c 06 00 fe 0c 03 00 6f ?? ?? 00 0a 3f bf ff ff ff } //1
 		$a_01_1 = {57 72 69 74 65 4c 69 6e 65 } //1 WriteLine
 		$a_01_2 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //1 FromBase64String
 		$a_01_3 = {43 6f 6e 76 65 72 74 46 72 6f 6d 55 74 66 33 32 } //1 ConvertFromUtf32

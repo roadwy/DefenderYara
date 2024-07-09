@@ -4,8 +4,8 @@ rule PWS_Win32_OnLineGames_AN{
 		description = "PWS:Win32/OnLineGames.AN,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {0b c0 74 45 89 85 90 01 01 fe ff ff c7 85 90 01 01 fe ff ff e8 03 00 00 68 90 01 02 40 00 ff 15 90 01 02 40 00 40 89 85 90 01 01 fe ff ff 8d 05 90 01 02 40 00 89 85 90 01 01 fe ff ff 8d 85 90 01 01 fe ff ff 50 6a 00 6a 4a ff b5 90 01 01 fe ff ff ff 15 90 01 02 40 00 90 00 } //5
-		$a_03_1 = {68 60 ea 00 00 6a 00 6a 00 ff 15 90 01 02 00 10 a3 90 01 02 00 10 68 90 01 02 00 10 8d 85 90 01 02 ff ff 50 ff 15 90 01 02 00 10 0b c0 75 3f 68 c8 00 00 00 90 00 } //5
+		$a_03_0 = {0b c0 74 45 89 85 ?? fe ff ff c7 85 ?? fe ff ff e8 03 00 00 68 ?? ?? 40 00 ff 15 ?? ?? 40 00 40 89 85 ?? fe ff ff 8d 05 ?? ?? 40 00 89 85 ?? fe ff ff 8d 85 ?? fe ff ff 50 6a 00 6a 4a ff b5 ?? fe ff ff ff 15 ?? ?? 40 00 } //5
+		$a_03_1 = {68 60 ea 00 00 6a 00 6a 00 ff 15 ?? ?? 00 10 a3 ?? ?? 00 10 68 ?? ?? 00 10 8d 85 ?? ?? ff ff 50 ff 15 ?? ?? 00 10 0b c0 75 3f 68 c8 00 00 00 } //5
 		$a_00_2 = {48 42 51 51 2e 64 6c 6c } //5 HBQQ.dll
 		$a_00_3 = {50 72 6f 67 72 61 6d 20 4d 61 6e 61 67 65 72 } //5 Program Manager
 		$a_00_4 = {33 36 30 73 61 66 65 62 6f 78 2e 65 78 65 } //1 360safebox.exe

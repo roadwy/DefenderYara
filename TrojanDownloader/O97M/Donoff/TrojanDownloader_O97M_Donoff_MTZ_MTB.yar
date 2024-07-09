@@ -4,7 +4,7 @@ rule TrojanDownloader_O97M_Donoff_MTZ_MTB{
 		description = "TrojanDownloader:O97M/Donoff.MTZ!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,0e 00 0e 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {66 20 3d 20 78 73 61 64 77 71 64 77 71 64 28 90 02 0f 29 90 00 } //2
+		$a_03_0 = {66 20 3d 20 78 73 61 64 77 71 64 77 71 64 28 [0-0f] 29 } //2
 		$a_01_1 = {53 68 65 6c 6c 20 66 } //2 Shell f
 		$a_01_2 = {78 73 61 64 77 71 64 77 71 64 20 3d 20 73 74 72 49 6e 70 75 74 } //2 xsadwqdwqd = strInput
 		$a_01_3 = {57 6f 72 6b 62 6f 6f 6b 5f 4f 70 65 6e 28 29 } //2 Workbook_Open()

@@ -4,8 +4,8 @@ rule Trojan_Win32_Doina_GME_MTB{
 		description = "Trojan:Win32/Doina.GME!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 56 18 8a 44 82 ff f7 ff 8a fc 8d 14 8a 3c 80 73 90 01 01 02 c0 eb 90 01 01 34 1b 41 88 02 3b 0e 90 00 } //10
-		$a_03_1 = {57 8b f8 b8 90 01 04 48 46 08 9a c7 06 0a bf 90 00 } //10
+		$a_03_0 = {8b 56 18 8a 44 82 ff f7 ff 8a fc 8d 14 8a 3c 80 73 ?? 02 c0 eb ?? 34 1b 41 88 02 3b 0e } //10
+		$a_03_1 = {57 8b f8 b8 ?? ?? ?? ?? 48 46 08 9a c7 06 0a bf } //10
 	condition:
 		((#a_03_0  & 1)*10+(#a_03_1  & 1)*10) >=20
  

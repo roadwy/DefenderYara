@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Bancos_OJ{
 		description = "TrojanSpy:Win32/Bancos.OJ,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {7c 2e 43 33 ff 8d 45 f8 50 8b 45 fc e8 90 01 03 ff 8b d0 2b d7 b9 01 00 00 00 8b 45 fc e8 90 01 03 ff 8b 55 f8 8b c6 e8 90 01 03 ff 47 4b 75 d5 90 00 } //5
+		$a_03_0 = {7c 2e 43 33 ff 8d 45 f8 50 8b 45 fc e8 ?? ?? ?? ff 8b d0 2b d7 b9 01 00 00 00 8b 45 fc e8 ?? ?? ?? ff 8b 55 f8 8b c6 e8 ?? ?? ?? ff 47 4b 75 d5 } //5
 		$a_01_1 = {2f 2f 3a 70 74 74 68 } //1 //:ptth
 		$a_01_2 = {74 78 74 2e 6e 73 6d 2f } //1 txt.nsm/
 		$a_01_3 = {6c 6d 74 68 2e 6b 6f 2f } //1 lmth.ko/

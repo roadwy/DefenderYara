@@ -4,7 +4,7 @@ rule Ransom_Win32_LockScreen_DD{
 		description = "Ransom:Win32/LockScreen.DD,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {68 40 9c 00 00 8d 85 70 c6 fe ff 50 e8 90 01 04 85 c0 0f 84 d9 01 00 00 8b bd f0 fe ff ff c1 ef 02 0f 84 a8 01 00 00 90 00 } //1
+		$a_03_0 = {68 40 9c 00 00 8d 85 70 c6 fe ff 50 e8 ?? ?? ?? ?? 85 c0 0f 84 d9 01 00 00 8b bd f0 fe ff ff c1 ef 02 0f 84 a8 01 00 00 } //1
 		$a_01_1 = {46 42 49 20 4f 6e 6c 69 6e 65 20 41 67 65 6e 74 20 76 2e 32 2e } //1 FBI Online Agent v.2.
 		$a_01_2 = {41 72 74 69 63 6c 65 20 31 38 34 20 2d 20 50 6f 72 6e 6f 67 72 61 70 68 79 } //1 Article 184 - Pornography
 		$a_01_3 = {6d 6f 6e 65 79 70 61 63 6b 5f 63 61 72 64 5f 6e 75 6d 62 65 72 3d } //1 moneypack_card_number=

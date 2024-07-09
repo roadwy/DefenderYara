@@ -4,7 +4,7 @@ rule Trojan_Win32_Zenpack_EH_MTB{
 		description = "Trojan:Win32/Zenpack.EH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {fd ff ff 0f b6 c8 83 e9 33 8b 95 90 01 01 fd ff ff 89 8d 90 01 01 fd ff ff 89 95 d8 fd ff ff 74 90 00 } //3
+		$a_03_0 = {fd ff ff 0f b6 c8 83 e9 33 8b 95 ?? fd ff ff 89 8d ?? fd ff ff 89 95 d8 fd ff ff 74 } //3
 	condition:
 		((#a_03_0  & 1)*3) >=3
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Zenpack_EH_MTB_2{
 		description = "Trojan:Win32/Zenpack.EH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {55 89 e5 56 8a 45 14 8b 4d 10 8b 55 0c 8b 75 08 c7 05 90 01 04 97 00 00 00 8a 24 0a 28 c4 c7 05 90 01 04 5d 08 00 00 88 24 0e 5e 5d c3 90 00 } //5
+		$a_03_0 = {55 89 e5 56 8a 45 14 8b 4d 10 8b 55 0c 8b 75 08 c7 05 ?? ?? ?? ?? 97 00 00 00 8a 24 0a 28 c4 c7 05 ?? ?? ?? ?? 5d 08 00 00 88 24 0e 5e 5d c3 } //5
 	condition:
 		((#a_03_0  & 1)*5) >=5
  

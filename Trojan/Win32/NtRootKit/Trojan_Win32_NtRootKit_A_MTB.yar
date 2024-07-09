@@ -4,7 +4,7 @@ rule Trojan_Win32_NtRootKit_A_MTB{
 		description = "Trojan:Win32/NtRootKit.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {55 8b ec 53 c1 e0 90 01 01 8b 5d 08 c1 e3 90 01 01 0b c3 03 d2 03 d2 0b c2 0b c1 90 00 } //2
+		$a_03_0 = {55 8b ec 53 c1 e0 ?? 8b 5d 08 c1 e3 ?? 0b c3 03 d2 03 d2 0b c2 0b c1 } //2
 		$a_01_1 = {4d 79 50 73 70 61 64 64 72 65 73 73 20 69 73 3a } //2 MyPspaddress is:
 		$a_01_2 = {44 72 69 76 65 72 20 55 6e 6c 6f 61 64 } //2 Driver Unload
 		$a_01_3 = {50 49 44 20 69 73 3a } //2 PID is:

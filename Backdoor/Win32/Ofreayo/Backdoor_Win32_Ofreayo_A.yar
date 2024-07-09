@@ -4,7 +4,7 @@ rule Backdoor_Win32_Ofreayo_A{
 		description = "Backdoor:Win32/Ofreayo.A,SIGNATURE_TYPE_PEHSTR_EXT,07 00 06 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {8a 44 18 ff 04 80 88 45 fa 8d 45 90 01 01 8a 55 fb 32 55 fa e8 90 01 04 8b 55 90 01 01 8d 45 f4 e8 90 01 04 8b c7 e8 90 01 04 3b f0 7c b6 90 00 } //5
+		$a_03_0 = {8a 44 18 ff 04 80 88 45 fa 8d 45 ?? 8a 55 fb 32 55 fa e8 ?? ?? ?? ?? 8b 55 ?? 8d 45 f4 e8 ?? ?? ?? ?? 8b c7 e8 ?? ?? ?? ?? 3b f0 7c b6 } //5
 		$a_01_1 = {3c 64 6f 75 72 6c 3e } //1 <dourl>
 		$a_01_2 = {3c 72 65 66 75 72 6c 31 3e } //1 <refurl1>
 		$a_01_3 = {3c 73 61 79 66 61 31 3e } //1 <sayfa1>

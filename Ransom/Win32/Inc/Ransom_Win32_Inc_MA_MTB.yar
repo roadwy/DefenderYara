@@ -6,7 +6,7 @@ rule Ransom_Win32_Inc_MA_MTB{
 	strings :
 		$a_01_0 = {3a 00 5c 00 49 00 4e 00 43 00 2d 00 52 00 45 00 41 00 44 00 4d 00 45 00 2e 00 74 00 78 00 74 00 } //10 :\INC-README.txt
 		$a_01_1 = {7e 7e 7e 7e 20 49 4e 43 20 52 61 6e 73 6f 6d 20 7e 7e 7e 7e } //10 ~~~~ INC Ransom ~~~~
-		$a_03_2 = {68 74 74 70 3a 2f 2f 69 6e 63 70 61 79 90 02 50 2e 6f 6e 69 6f 6e 90 00 } //10
+		$a_03_2 = {68 74 74 70 3a 2f 2f 69 6e 63 70 61 79 [0-50] 2e 6f 6e 69 6f 6e } //10
 		$a_01_3 = {49 66 20 79 6f 75 20 64 6f 20 6e 6f 74 20 70 61 79 20 74 68 65 20 72 61 6e 73 6f 6d 2c 20 77 65 20 77 69 6c 6c 20 61 74 74 61 63 6b 20 79 6f 75 72 20 63 6f 6d 70 61 6e 79 20 61 67 61 69 6e 20 69 6e 20 74 68 65 20 66 75 74 75 72 65 } //1 If you do not pay the ransom, we will attack your company again in the future
 		$a_01_4 = {44 6f 6e 27 74 20 67 6f 20 74 6f 20 72 65 63 6f 76 65 72 79 20 63 6f 6d 70 61 6e 69 65 73 } //1 Don't go to recovery companies
 		$a_01_5 = {54 68 65 20 70 6f 6c 69 63 65 20 61 6e 64 20 46 42 49 20 77 6f 6e 27 74 20 70 72 6f 74 65 63 74 20 79 6f 75 20 66 72 6f 6d 20 72 65 70 65 61 74 65 64 20 61 74 74 61 63 6b 73 } //1 The police and FBI won't protect you from repeated attacks

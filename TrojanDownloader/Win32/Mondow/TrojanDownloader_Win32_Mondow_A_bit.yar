@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Mondow_A_bit{
 		description = "TrojanDownloader:Win32/Mondow.A!bit,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {68 74 74 70 3a 2f 2f 37 2e 34 35 36 37 37 37 38 39 2e 63 6f 6d 90 02 30 2e 65 78 65 90 00 } //2
+		$a_03_0 = {68 74 74 70 3a 2f 2f 37 2e 34 35 36 37 37 37 38 39 2e 63 6f 6d [0-30] 2e 65 78 65 } //2
 		$a_01_1 = {00 6b 73 61 66 65 74 72 61 79 2e 65 78 65 00 } //1
 		$a_01_2 = {00 73 63 76 68 6f 73 74 2e 65 78 65 00 } //1
 		$a_01_3 = {00 43 3a 5c 6d 6f 6f 6e 2e 65 78 65 00 } //1

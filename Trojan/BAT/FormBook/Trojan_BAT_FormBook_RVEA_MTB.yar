@@ -4,7 +4,7 @@ rule Trojan_BAT_FormBook_RVEA_MTB{
 		description = "Trojan:BAT/FormBook.RVEA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {08 07 09 28 90 01 03 06 0b 00 09 15 58 0d 09 16 fe 04 16 fe 01 13 04 11 04 2d e4 90 00 } //1
+		$a_03_0 = {08 07 09 28 ?? ?? ?? 06 0b 00 09 15 58 0d 09 16 fe 04 16 fe 01 13 04 11 04 2d e4 } //1
 		$a_01_1 = {47 65 74 4d 65 74 68 6f 64 } //1 GetMethod
 		$a_01_2 = {47 65 74 54 79 70 65 73 } //1 GetTypes
 		$a_01_3 = {49 6e 76 6f 6b 65 } //1 Invoke

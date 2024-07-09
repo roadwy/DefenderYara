@@ -4,7 +4,7 @@ rule Backdoor_Linux_Gafgyt_BH_xp{
 		description = "Backdoor:Linux/Gafgyt.BH!xp,SIGNATURE_TYPE_ELFHSTR_EXT,05 00 05 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {63 75 72 6c 20 2d 4f 20 68 74 74 70 3a 2f 2f 90 02 20 2f 73 68 61 6b 65 72 90 00 } //1
+		$a_03_0 = {63 75 72 6c 20 2d 4f 20 68 74 74 70 3a 2f 2f [0-20] 2f 73 68 61 6b 65 72 } //1
 		$a_01_1 = {68 69 73 74 6f 72 79 20 2d 63 } //1 history -c
 		$a_01_2 = {72 6d 20 2d 72 66 20 73 68 61 6b 65 72 } //1 rm -rf shaker
 		$a_01_3 = {63 68 6d 6f 64 20 2b 78 20 73 68 61 6b 65 72 } //1 chmod +x shaker

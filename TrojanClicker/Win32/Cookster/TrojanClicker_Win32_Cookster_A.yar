@@ -4,7 +4,7 @@ rule TrojanClicker_Win32_Cookster_A{
 		description = "TrojanClicker:Win32/Cookster.A,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {89 44 24 30 e8 90 01 02 ff ff 6a 0f 6a 03 89 44 24 4c e8 90 01 02 ff ff 6a 64 6a 28 89 44 24 50 e8 90 01 02 ff ff 6a 0f 6a 03 89 44 24 54 e8 90 01 02 ff ff 90 00 } //2
+		$a_03_0 = {89 44 24 30 e8 ?? ?? ff ff 6a 0f 6a 03 89 44 24 4c e8 ?? ?? ff ff 6a 64 6a 28 89 44 24 50 e8 ?? ?? ff ff 6a 0f 6a 03 89 44 24 54 e8 ?? ?? ff ff } //2
 		$a_01_1 = {25 73 26 63 6b 3d 25 64 2e 25 64 2e 25 64 2e 25 64 2e 25 64 2e 25 64 2e 25 64 2e 25 64 } //1 %s&ck=%d.%d.%d.%d.%d.%d.%d.%d
 		$a_01_2 = {42 44 28 27 25 73 27 29 2e 53 65 61 72 63 68 41 6e 64 43 6c 69 63 6b 28 27 25 73 27 29 3b } //1 BD('%s').SearchAndClick('%s');
 		$a_01_3 = {2f 73 65 6e 74 72 79 2f 61 70 69 2f 73 65 72 76 65 72 2e 70 68 70 } //1 /sentry/api/server.php

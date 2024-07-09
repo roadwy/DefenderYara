@@ -4,7 +4,7 @@ rule Trojan_Win32_Clipbanker_RF_MTB{
 		description = "Trojan:Win32/Clipbanker.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {81 ce 00 ff ff ff 46 8a 84 35 90 01 04 88 84 3d 90 01 04 88 8c 35 90 01 04 0f b6 84 3d 90 01 04 8b 4d 90 01 04 03 c2 0f b6 c0 8a 84 05 90 01 04 30 04 19 41 89 4d 90 01 01 3b 4d 90 00 } //1
+		$a_03_0 = {81 ce 00 ff ff ff 46 8a 84 35 ?? ?? ?? ?? 88 84 3d ?? ?? ?? ?? 88 8c 35 ?? ?? ?? ?? 0f b6 84 3d ?? ?? ?? ?? 8b 4d ?? ?? ?? ?? 03 c2 0f b6 c0 8a 84 05 ?? ?? ?? ?? 30 04 19 41 89 4d ?? 3b 4d } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

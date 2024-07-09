@@ -4,7 +4,7 @@ rule Backdoor_Win32_AdultChat_B{
 		description = "Backdoor:Win32/AdultChat.B,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 0a 00 00 "
 		
 	strings :
-		$a_02_0 = {83 7d 0c 01 75 1f ff 75 18 ff 75 14 ff 75 10 ff 15 90 01 04 8b 4d 20 f7 d8 1b c0 83 e0 03 89 01 33 c0 eb 05 b8 05 40 00 80 90 00 } //4
+		$a_02_0 = {83 7d 0c 01 75 1f ff 75 18 ff 75 14 ff 75 10 ff 15 ?? ?? ?? ?? 8b 4d 20 f7 d8 1b c0 83 e0 03 89 01 33 c0 eb 05 b8 05 40 00 80 } //4
 		$a_00_1 = {25 73 3a 2f 2f 25 73 3a 25 73 40 25 73 3a 25 64 25 73 25 73 } //2 %s://%s:%s@%s:%d%s%s
 		$a_00_2 = {5c 25 73 5c 64 69 61 6c 65 72 73 5c 25 73 5c 25 73 2e 65 78 65 } //2 \%s\dialers\%s\%s.exe
 		$a_00_3 = {7b 42 35 44 44 39 41 36 34 2d 35 43 34 42 2d 34 61 34 38 2d 42 45 35 36 2d 39 37 43 31 41 38 46 38 35 37 30 38 7d } //2 {B5DD9A64-5C4B-4a48-BE56-97C1A8F85708}

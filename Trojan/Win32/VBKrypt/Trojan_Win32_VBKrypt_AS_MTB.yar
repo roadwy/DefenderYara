@@ -4,8 +4,8 @@ rule Trojan_Win32_VBKrypt_AS_MTB{
 		description = "Trojan:Win32/VBKrypt.AS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 08 00 00 "
 		
 	strings :
-		$a_02_0 = {ff 32 66 0f 90 02 3f 83 c2 04 90 02 4f 31 1c 24 90 02 4f 8f 04 01 90 02 4f 83 c0 04 90 02 4f 3d 90 01 02 00 00 0f 85 90 01 01 ff ff ff 90 02 4f ff e1 90 00 } //6
-		$a_02_1 = {ff 32 0f 60 90 02 3f 83 c2 04 90 02 4f 31 1c 24 90 02 4f 8f 04 01 90 02 4f 83 c0 04 90 02 4f 3d 90 01 02 00 00 0f 85 90 01 01 ff ff ff 90 02 4f ff e1 90 00 } //6
+		$a_02_0 = {ff 32 66 0f [0-3f] 83 c2 04 [0-4f] 31 1c 24 [0-4f] 8f 04 01 [0-4f] 83 c0 04 [0-4f] 3d ?? ?? 00 00 0f 85 ?? ff ff ff [0-4f] ff e1 } //6
+		$a_02_1 = {ff 32 0f 60 [0-3f] 83 c2 04 [0-4f] 31 1c 24 [0-4f] 8f 04 01 [0-4f] 83 c0 04 [0-4f] 3d ?? ?? 00 00 0f 85 ?? ff ff ff [0-4f] ff e1 } //6
 		$a_00_2 = {42 72 6e 64 73 65 6c 73 63 65 6c 6c 65 72 6e 65 73 } //1 Brndselscellernes
 		$a_00_3 = {47 61 66 66 65 6c 62 69 64 64 65 72 65 73 } //1 Gaffelbidderes
 		$a_00_4 = {44 49 53 44 49 41 43 4c 41 53 49 53 } //1 DISDIACLASIS

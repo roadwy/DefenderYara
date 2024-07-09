@@ -4,7 +4,7 @@ rule PWS_Win32_OnLineGames_CPD{
 		description = "PWS:Win32/OnLineGames.CPD,SIGNATURE_TYPE_PEHSTR_EXT,35 00 35 00 0b 00 00 "
 		
 	strings :
-		$a_02_0 = {63 3a 5c 66 66 31 90 01 01 2e 74 78 74 90 00 } //10
+		$a_02_0 = {63 3a 5c 66 66 31 ?? 2e 74 78 74 } //10
 		$a_01_1 = {53 74 61 72 74 48 6f 6f 6b } //10 StartHook
 		$a_00_2 = {53 74 6f 70 48 6f 6f 6b } //10 StopHook
 		$a_01_3 = {43 72 65 61 74 65 54 6f 6f 6c 68 65 6c 70 33 32 53 6e 61 70 73 68 6f 74 } //10 CreateToolhelp32Snapshot

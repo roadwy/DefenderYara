@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Banker_AHX{
 		description = "TrojanSpy:Win32/Banker.AHX,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {5d 5b 30 2d 39 5d 7b 31 90 01 01 7d 90 00 } //2
+		$a_02_0 = {5d 5b 30 2d 39 5d 7b 31 ?? 7d } //2
 		$a_00_1 = {38 36 2e 35 35 2e 32 30 36 2e 31 37 30 } //2 86.55.206.170
 		$a_00_2 = {47 45 54 20 2f 73 65 74 73 2e 74 78 74 } //2 GET /sets.txt
 		$a_00_3 = {52 45 47 45 58 45 4e 44 } //2 REGEXEND

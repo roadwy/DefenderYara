@@ -4,9 +4,9 @@ rule Trojan_Win64_IcedID_SMG_MTB{
 		description = "Trojan:Win64/IcedID.SMG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {48 f7 f1 48 8b c2 90 01 01 8b 4c 24 48 66 3b c9 90 00 } //1
-		$a_03_1 = {0f b6 44 01 90 01 01 8b 4c 24 90 01 01 33 c8 66 3b 90 00 } //1
-		$a_03_2 = {8b c1 48 63 4c 24 90 01 01 48 8b 54 24 90 01 01 e9 90 00 } //1
+		$a_03_0 = {48 f7 f1 48 8b c2 ?? 8b 4c 24 48 66 3b c9 } //1
+		$a_03_1 = {0f b6 44 01 ?? 8b 4c 24 ?? 33 c8 66 3b } //1
+		$a_03_2 = {8b c1 48 63 4c 24 ?? 48 8b 54 24 ?? e9 } //1
 		$a_00_3 = {88 04 0a e9 } //1
 		$a_00_4 = {69 6e 69 74 } //1 init
 	condition:

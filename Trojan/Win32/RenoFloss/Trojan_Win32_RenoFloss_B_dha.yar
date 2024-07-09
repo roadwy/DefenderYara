@@ -4,7 +4,7 @@ rule Trojan_Win32_RenoFloss_B_dha{
 		description = "Trojan:Win32/RenoFloss.B!dha,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {e8 ff ff ff ff 90 01 07 31 90 01 01 10 03 90 01 01 10 83 90 01 01 fc 90 09 0a 00 90 90 90 90 90 01 03 c9 66 b9 90 01 01 00 90 00 } //1
+		$a_02_0 = {e8 ff ff ff ff ?? ?? ?? ?? ?? ?? ?? 31 ?? 10 03 ?? 10 83 ?? fc 90 09 0a 00 90 90 90 90 ?? ?? ?? c9 66 b9 ?? 00 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

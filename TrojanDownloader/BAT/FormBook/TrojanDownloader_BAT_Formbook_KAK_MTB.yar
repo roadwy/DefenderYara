@@ -4,8 +4,8 @@ rule TrojanDownloader_BAT_Formbook_KAK_MTB{
 		description = "TrojanDownloader:BAT/Formbook.KAK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {8e 69 5d 91 06 90 02 02 91 61 d2 9c 2b 03 0c 2b 90 01 01 90 02 02 17 58 90 02 02 2b 03 0b 2b 90 01 01 90 02 02 06 8e 69 32 90 00 } //1
-		$a_03_1 = {00 00 0a 25 02 73 90 01 01 00 00 0a 6f 90 01 01 00 00 0a 0a 6f 90 01 01 00 00 0a 06 0b de 90 00 } //1
+		$a_03_0 = {8e 69 5d 91 06 [0-02] 91 61 d2 9c 2b 03 0c 2b ?? [0-02] 17 58 [0-02] 2b 03 0b 2b ?? [0-02] 06 8e 69 32 } //1
+		$a_03_1 = {00 00 0a 25 02 73 ?? 00 00 0a 6f ?? 00 00 0a 0a 6f ?? 00 00 0a 06 0b de } //1
 		$a_01_2 = {47 65 74 42 79 74 65 73 } //1 GetBytes
 		$a_01_3 = {47 65 74 54 79 70 65 } //1 GetType
 		$a_01_4 = {47 65 74 4d 65 74 68 6f 64 } //1 GetMethod

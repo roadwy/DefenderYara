@@ -4,7 +4,7 @@ rule Trojan_Win32_LokibotCrypt_MS_MTB{
 		description = "Trojan:Win32/LokibotCrypt.MS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {30 01 42 3b 90 02 03 90 18 8b 90 02 03 8d 90 01 02 90 18 55 8b ec 90 01 01 a1 90 02 10 a3 90 02 04 81 90 02 06 8b 90 02 03 01 90 02 05 0f 90 02 06 25 90 02 08 c3 90 00 } //1
+		$a_02_0 = {30 01 42 3b [0-03] 90 18 8b [0-03] 8d ?? ?? 90 18 55 8b ec ?? a1 [0-10] a3 [0-04] 81 [0-06] 8b [0-03] 01 [0-05] 0f [0-06] 25 [0-08] c3 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

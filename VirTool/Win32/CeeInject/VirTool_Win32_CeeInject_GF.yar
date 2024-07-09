@@ -16,8 +16,8 @@ rule VirTool_Win32_CeeInject_GF_2{
 		description = "VirTool:Win32/CeeInject.GF,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {89 85 c8 fd ff ff 8b 0d 90 01 03 00 51 ff 15 90 01 03 00 83 c4 04 8b 55 f4 90 00 } //1
-		$a_03_1 = {00 03 95 58 ff ff ff 88 0a 8b 85 bc fe ff ff 83 e0 d2 0f b6 4d f2 0f b7 95 40 ff ff ff 2b ca 0b c1 88 85 2f ff ff ff 0f b7 85 08 ff ff ff b9 26 00 00 00 90 09 05 00 8b 15 90 00 } //1
+		$a_03_0 = {89 85 c8 fd ff ff 8b 0d ?? ?? ?? 00 51 ff 15 ?? ?? ?? 00 83 c4 04 8b 55 f4 } //1
+		$a_03_1 = {00 03 95 58 ff ff ff 88 0a 8b 85 bc fe ff ff 83 e0 d2 0f b6 4d f2 0f b7 95 40 ff ff ff 2b ca 0b c1 88 85 2f ff ff ff 0f b7 85 08 ff ff ff b9 26 00 00 00 90 09 05 00 8b 15 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
@@ -27,8 +27,8 @@ rule VirTool_Win32_CeeInject_GF_3{
 		description = "VirTool:Win32/CeeInject.GF,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {83 c2 21 89 95 fc fe ff ff 6a 40 68 00 10 00 00 8b 85 00 ff ff ff 50 6a 00 ff 15 9c e0 40 00 a3 90 01 03 00 0f b7 8d 6c fd ff ff 83 c1 60 0f b6 95 f3 fe ff ff 33 ca 90 00 } //1
-		$a_03_1 = {c7 85 fc fe ff ff 57 00 00 00 8b 95 e8 fe ff ff 2b 95 48 fe ff ff 83 ea 26 66 89 95 34 fe ff ff a1 90 01 04 50 ff 15 90 00 } //1
+		$a_03_0 = {83 c2 21 89 95 fc fe ff ff 6a 40 68 00 10 00 00 8b 85 00 ff ff ff 50 6a 00 ff 15 9c e0 40 00 a3 ?? ?? ?? 00 0f b7 8d 6c fd ff ff 83 c1 60 0f b6 95 f3 fe ff ff 33 ca } //1
+		$a_03_1 = {c7 85 fc fe ff ff 57 00 00 00 8b 95 e8 fe ff ff 2b 95 48 fe ff ff 83 ea 26 66 89 95 34 fe ff ff a1 ?? ?? ?? ?? 50 ff 15 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  

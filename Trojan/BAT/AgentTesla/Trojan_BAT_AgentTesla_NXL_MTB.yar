@@ -19,7 +19,7 @@ rule Trojan_BAT_AgentTesla_NXL_MTB_2{
 		description = "Trojan:BAT/AgentTesla.NXL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {0a 13 07 11 07 2c 40 11 04 1f 21 8c 90 01 01 00 00 01 09 1f 0e 8c 90 01 01 00 00 01 28 90 01 01 00 00 0a 1f 5e 90 00 } //1
+		$a_03_0 = {0a 13 07 11 07 2c 40 11 04 1f 21 8c ?? 00 00 01 09 1f 0e 8c ?? 00 00 01 28 ?? 00 00 0a 1f 5e } //1
 		$a_81_1 = {43 6f 6d 70 61 72 65 4f 62 6a 65 63 74 47 72 65 61 74 65 72 45 71 75 61 6c } //1 CompareObjectGreaterEqual
 		$a_81_2 = {51 75 65 73 74 4b 69 6e 67 64 6f 6d 2e 57 6f 72 6b 65 72 48 65 6c 70 65 72 } //1 QuestKingdom.WorkerHelper
 		$a_81_3 = {51 51 51 30 30 } //1 QQQ00

@@ -4,7 +4,7 @@ rule PWS_Win32_VidarStealer_MS_MTB{
 		description = "PWS:Win32/VidarStealer.MS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {30 04 31 81 fb 90 01 04 90 18 46 3b f3 90 18 81 fb 90 01 04 90 18 e8 90 01 04 8b 8d 90 00 } //1
+		$a_02_0 = {30 04 31 81 fb ?? ?? ?? ?? 90 18 46 3b f3 90 18 81 fb ?? ?? ?? ?? 90 18 e8 ?? ?? ?? ?? 8b 8d } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

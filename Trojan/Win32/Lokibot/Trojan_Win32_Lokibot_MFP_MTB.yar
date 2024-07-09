@@ -30,8 +30,8 @@ rule Trojan_Win32_Lokibot_MFP_MTB_3{
 		description = "Trojan:Win32/Lokibot.MFP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0a 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {ff 95 c0 fd ff ff c7 85 ec fd ff ff 90 01 04 eb 0f 8b 85 ec fd ff ff 83 c0 01 89 85 ec fd ff ff 8b 8d ec fd ff ff 3b 8d d8 fd ff ff 0f 83 37 01 00 00 8b 95 e4 fd ff ff 03 95 ec fd ff ff 8a 02 88 85 f3 fd ff ff 0f b6 8d f3 fd ff ff 83 e9 59 88 8d f3 fd ff ff 0f b6 95 f3 fd ff ff 90 00 } //10
-		$a_02_1 = {ff 95 c0 fd ff ff c7 85 ec fd ff ff 90 01 04 eb 0f 8b 85 ec fd ff ff 83 c0 01 89 85 ec fd ff ff 8b 8d ec fd ff ff 3b 8d d8 fd ff ff 0f 83 ee 90 01 03 8b 95 e4 fd ff ff 03 95 ec fd ff ff 8a 02 88 85 f3 fd ff ff 0f b6 8d f3 fd ff ff 03 8d ec fd ff ff 88 8d f3 fd ff ff 0f b6 95 f3 fd ff ff 90 00 } //10
+		$a_02_0 = {ff 95 c0 fd ff ff c7 85 ec fd ff ff ?? ?? ?? ?? eb 0f 8b 85 ec fd ff ff 83 c0 01 89 85 ec fd ff ff 8b 8d ec fd ff ff 3b 8d d8 fd ff ff 0f 83 37 01 00 00 8b 95 e4 fd ff ff 03 95 ec fd ff ff 8a 02 88 85 f3 fd ff ff 0f b6 8d f3 fd ff ff 83 e9 59 88 8d f3 fd ff ff 0f b6 95 f3 fd ff ff } //10
+		$a_02_1 = {ff 95 c0 fd ff ff c7 85 ec fd ff ff ?? ?? ?? ?? eb 0f 8b 85 ec fd ff ff 83 c0 01 89 85 ec fd ff ff 8b 8d ec fd ff ff 3b 8d d8 fd ff ff 0f 83 ee ?? ?? ?? 8b 95 e4 fd ff ff 03 95 ec fd ff ff 8a 02 88 85 f3 fd ff ff 0f b6 8d f3 fd ff ff 03 8d ec fd ff ff 88 8d f3 fd ff ff 0f b6 95 f3 fd ff ff } //10
 		$a_81_2 = {43 6c 6f 73 65 43 6c 69 70 62 6f 61 72 64 } //1 CloseClipboard
 		$a_81_3 = {53 65 74 43 6c 69 70 62 6f 61 72 64 44 61 74 61 } //1 SetClipboardData
 		$a_81_4 = {45 6d 70 74 79 43 6c 69 70 62 6f 61 72 64 } //1 EmptyClipboard
@@ -45,7 +45,7 @@ rule Trojan_Win32_Lokibot_MFP_MTB_4{
 		description = "Trojan:Win32/Lokibot.MFP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 04 00 05 00 00 "
 		
 	strings :
-		$a_02_0 = {55 8b ec 8b 55 0c 83 c9 ff 56 8b 75 08 eb 90 01 01 0f b6 06 4a 33 c8 46 6a 08 58 f6 c1 90 01 01 74 06 81 f1 54 ad 58 43 d1 e9 48 75 90 01 01 85 d2 75 90 01 01 f7 d1 8b c1 90 00 } //10
+		$a_02_0 = {55 8b ec 8b 55 0c 83 c9 ff 56 8b 75 08 eb ?? 0f b6 06 4a 33 c8 46 6a 08 58 f6 c1 ?? 74 06 81 f1 54 ad 58 43 d1 e9 48 75 ?? 85 d2 75 ?? f7 d1 8b c1 } //10
 		$a_81_1 = {53 6f 66 74 77 61 72 65 5c 4e 43 48 20 53 6f 66 74 77 61 72 65 5c 43 6c 61 73 73 69 63 46 54 50 5c 46 54 50 41 63 63 6f 75 6e 74 73 } //1 Software\NCH Software\ClassicFTP\FTPAccounts
 		$a_81_2 = {53 4f 46 54 57 41 52 45 5c 38 70 65 63 78 73 74 75 64 69 6f 73 5c 43 79 62 65 72 66 6f 78 38 36 } //1 SOFTWARE\8pecxstudios\Cyberfox86
 		$a_81_3 = {44 6c 52 79 63 71 31 74 50 32 76 53 65 61 6f 67 6a 35 62 45 55 46 7a 51 69 48 54 39 64 6d 4b 43 6e 36 75 66 37 78 73 4f 59 30 68 70 77 72 34 33 56 49 4e 58 38 4a 47 42 41 6b 4c 4d 5a 57 } //1 DlRycq1tP2vSeaogj5bEUFzQiHT9dmKCn6uf7xsOY0hpwr43VINX8JGBAkLMZW

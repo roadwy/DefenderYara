@@ -4,7 +4,7 @@ rule Worm_Win32_Autorun_AGR{
 		description = "Worm:Win32/Autorun.AGR,SIGNATURE_TYPE_PEHSTR_EXT,17 00 17 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {66 75 63 6b 90 02 20 55 53 42 20 68 61 73 20 62 65 65 6e 20 67 61 6e 72 61 6e 67 21 90 00 } //10
+		$a_02_0 = {66 75 63 6b [0-20] 55 53 42 20 68 61 73 20 62 65 65 6e 20 67 61 6e 72 61 6e 67 21 } //10
 		$a_00_1 = {52 65 6d 6f 74 65 20 63 6f 6d 70 75 74 65 72 20 77 69 6c 6c 20 62 65 65 6e 20 73 6c 65 65 70 70 65 64 20 66 6f 72 20 25 64 } //10 Remote computer will been sleepped for %d
 		$a_00_2 = {49 6e 69 74 42 61 63 6b 44 6f 6f 72 28 29 20 4f 4b 20 } //1 InitBackDoor() OK 
 		$a_00_3 = {44 6c 6c 20 68 61 73 20 62 65 65 6e 20 64 65 6c 65 74 65 64 2c 72 65 63 6f 76 65 72 20 69 74 20 66 72 6f 6d 20 6d 65 6d 6f 72 79 21 } //1 Dll has been deleted,recover it from memory!

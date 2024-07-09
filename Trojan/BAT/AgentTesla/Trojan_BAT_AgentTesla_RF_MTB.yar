@@ -14,7 +14,7 @@ rule Trojan_BAT_AgentTesla_RF_MTB_2{
 		description = "Trojan:BAT/AgentTesla.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {11 04 1c 62 11 07 58 13 04 11 05 17 58 13 05 11 05 19 3e 90 01 01 ff ff ff 07 08 11 04 1f 10 63 20 90 01 01 00 00 00 5f 28 90 01 01 00 00 0a 9c 08 17 58 0c 07 08 11 04 1e 63 90 00 } //1
+		$a_03_0 = {11 04 1c 62 11 07 58 13 04 11 05 17 58 13 05 11 05 19 3e ?? ff ff ff 07 08 11 04 1f 10 63 20 ?? 00 00 00 5f 28 ?? 00 00 0a 9c 08 17 58 0c 07 08 11 04 1e 63 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -35,7 +35,7 @@ rule Trojan_BAT_AgentTesla_RF_MTB_4{
 		description = "Trojan:BAT/AgentTesla.RF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_02_0 = {06 07 16 20 90 02 04 6f 90 02 04 0d 09 16 fe 02 13 04 11 04 2c 0c 90 01 01 08 07 16 09 6f 90 02 07 09 16 fe 02 13 05 11 05 2d d0 90 00 } //1
+		$a_02_0 = {06 07 16 20 [0-04] 6f [0-04] 0d 09 16 fe 02 13 04 11 04 2c 0c ?? 08 07 16 09 6f [0-07] 09 16 fe 02 13 05 11 05 2d d0 } //1
 		$a_81_1 = {47 5a 49 44 45 4b 4b 4b 4b } //1 GZIDEKKKK
 		$a_81_2 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //1 FromBase64String
 		$a_81_3 = {50 72 69 6d 65 72 } //1 Primer

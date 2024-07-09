@@ -4,7 +4,7 @@ rule Trojan_BAT_SpySnake_MAA_MTB{
 		description = "Trojan:BAT/SpySnake.MAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {0b 07 0c 2b 00 08 2a 90 0a 3f 00 7e 90 01 03 04 28 90 01 03 0a 03 6f 90 01 03 0a 6f 90 01 03 0a 0a 7e 90 01 03 04 06 6f 90 01 03 0a 00 7e 90 01 03 04 18 6f 90 01 03 0a 00 02 28 90 01 03 06 90 00 } //1
+		$a_03_0 = {0b 07 0c 2b 00 08 2a 90 0a 3f 00 7e ?? ?? ?? 04 28 ?? ?? ?? 0a 03 6f ?? ?? ?? 0a 6f ?? ?? ?? 0a 0a 7e ?? ?? ?? 04 06 6f ?? ?? ?? 0a 00 7e ?? ?? ?? 04 18 6f ?? ?? ?? 0a 00 02 28 ?? ?? ?? 06 } //1
 		$a_01_1 = {47 65 74 42 79 74 65 73 } //1 GetBytes
 		$a_01_2 = {53 68 6f 77 50 61 73 73 77 6f 72 64 5f 4d 6f 75 73 65 44 6f 77 6e } //1 ShowPassword_MouseDown
 		$a_01_3 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //1 DownloadData

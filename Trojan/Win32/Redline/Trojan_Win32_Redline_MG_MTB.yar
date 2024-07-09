@@ -39,7 +39,7 @@ rule Trojan_Win32_Redline_MG_MTB_4{
 		description = "Trojan:Win32/Redline.MG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 55 f4 83 c2 01 89 55 f4 8b 45 f4 3b 45 10 73 90 01 01 8b 4d fc 03 4d f4 8b 55 f8 03 55 f4 8a 02 88 01 eb 90 00 } //5
+		$a_03_0 = {8b 55 f4 83 c2 01 89 55 f4 8b 45 f4 3b 45 10 73 ?? 8b 4d fc 03 4d f4 8b 55 f8 03 55 f4 8a 02 88 01 eb } //5
 		$a_01_1 = {6d 75 67 6f 6b 61 74 65 72 69 70 61 79 61 73 6f 6a 65 6c 69 68 75 70 75 72 69 7a 61 72 75 6d 69 } //5 mugokateripayasojelihupurizarumi
 		$a_01_2 = {51 75 65 72 79 44 6f 73 44 65 76 69 63 65 57 } //1 QueryDosDeviceW
 		$a_01_3 = {47 65 74 44 69 73 6b 46 72 65 65 53 70 61 63 65 45 78 41 } //1 GetDiskFreeSpaceExA

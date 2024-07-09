@@ -4,7 +4,7 @@ rule Trojan_Win64_Rozena_RC_MTB{
 		description = "Trojan:Win64/Rozena.RC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {df c6 cb b6 c7 85 90 01 02 00 00 57 35 9c 21 c7 85 90 01 02 00 00 78 9f 93 38 c7 85 90 01 02 00 00 1e d4 01 58 c7 85 90 01 02 00 00 24 c9 71 7f c7 85 90 01 02 00 00 ad 56 74 8a 90 00 } //1
+		$a_03_0 = {df c6 cb b6 c7 85 ?? ?? 00 00 57 35 9c 21 c7 85 ?? ?? 00 00 78 9f 93 38 c7 85 ?? ?? 00 00 1e d4 01 58 c7 85 ?? ?? 00 00 24 c9 71 7f c7 85 ?? ?? 00 00 ad 56 74 8a } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

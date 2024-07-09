@@ -20,7 +20,7 @@ rule BrowserModifier_Win32_IEFeats_2{
 		description = "BrowserModifier:Win32/IEFeats,SIGNATURE_TYPE_PEHSTR_EXT,18 00 16 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {68 74 74 70 3a 2f 2f 61 64 90 04 02 03 30 2d 39 2e 63 6f 6d 2f 61 64 2e 70 68 70 90 00 } //10
+		$a_02_0 = {68 74 74 70 3a 2f 2f 61 64 [30-39] [30-39] 2e 63 6f 6d 2f 61 64 2e 70 68 70 } //10
 		$a_00_1 = {68 74 74 70 3a 2f 2f 77 69 6e 73 68 6f 77 2e 62 69 7a 2f 66 65 61 74 2f } //10 http://winshow.biz/feat/
 		$a_00_2 = {7b 35 38 37 44 42 46 32 44 2d 39 31 34 35 2d 34 63 39 65 2d 39 32 43 32 2d 31 46 39 35 33 44 41 37 33 37 37 33 7d } //1 {587DBF2D-9145-4c9e-92C2-1F953DA73773}
 		$a_00_3 = {67 00 6f 00 2d 00 61 00 64 00 76 00 65 00 72 00 74 00 69 00 73 00 69 00 6e 00 67 00 2e 00 63 00 6f 00 6d 00 } //1 go-advertising.com

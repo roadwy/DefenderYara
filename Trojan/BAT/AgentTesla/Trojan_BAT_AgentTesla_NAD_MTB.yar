@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_NAD_MTB{
 		description = "Trojan:BAT/AgentTesla.NAD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {73 1a 00 00 06 25 28 90 01 01 00 00 06 75 90 01 01 00 00 01 6f 90 01 01 00 00 0a 16 a3 90 01 01 00 00 01 28 90 01 01 00 00 06 90 00 } //5
+		$a_03_0 = {73 1a 00 00 06 25 28 ?? 00 00 06 75 ?? 00 00 01 6f ?? 00 00 0a 16 a3 ?? 00 00 01 28 ?? 00 00 06 } //5
 		$a_01_1 = {57 69 6e 64 6f 77 73 46 6f 72 6d 73 41 70 70 34 31 } //1 WindowsFormsApp41
 	condition:
 		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1) >=6

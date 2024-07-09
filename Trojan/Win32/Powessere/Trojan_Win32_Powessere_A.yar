@@ -4,8 +4,8 @@ rule Trojan_Win32_Powessere_A{
 		description = "Trojan:Win32/Powessere.A,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 6b 58 6a 65 66 89 45 90 01 01 58 6a 72 66 89 45 90 01 01 58 6a 6e 66 89 45 90 00 } //1
-		$a_03_1 = {56 69 72 74 c7 45 90 01 01 75 61 6c 41 c7 45 90 01 01 6c 6c 6f 63 c6 45 90 00 } //1
+		$a_03_0 = {6a 6b 58 6a 65 66 89 45 ?? 58 6a 72 66 89 45 ?? 58 6a 6e 66 89 45 } //1
+		$a_03_1 = {56 69 72 74 c7 45 ?? 75 61 6c 41 c7 45 ?? 6c 6c 6f 63 c6 45 } //1
 		$a_01_2 = {8a 04 07 32 45 ff b1 08 2a cb 8a d0 d2 ea 8b cb d2 e0 0a d0 88 54 3e 01 } //2
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_01_2  & 1)*2) >=4
@@ -16,7 +16,7 @@ rule Trojan_Win32_Powessere_A_2{
 		description = "Trojan:Win32/Powessere.A,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 6b 58 6a 65 66 89 45 90 01 01 58 6a 72 66 89 45 90 01 01 58 6a 6e 66 89 45 90 01 01 58 6a 65 66 89 45 90 01 01 58 6a 6c 90 00 } //1
+		$a_03_0 = {6a 6b 58 6a 65 66 89 45 ?? 58 6a 72 66 89 45 ?? 58 6a 6e 66 89 45 ?? 58 6a 65 66 89 45 ?? 58 6a 6c } //1
 		$a_01_1 = {32 45 ff b1 08 2a cb 8a d0 d2 ea 8b cb d2 e0 0a d0 88 54 3e 01 ff 45 f8 fe 45 ff 8b 45 f8 fe 45 fe 3b 45 0c 72 } //1
 		$a_00_2 = {3d 63 6d 64 5f 25 75 26 76 65 72 73 69 6f 6e 3d } //1 =cmd_%u&version=
 		$a_00_3 = {3d 64 65 62 75 67 5f 75 6d 33 5f 25 73 26 76 65 72 73 69 6f 6e 3d } //1 =debug_um3_%s&version=

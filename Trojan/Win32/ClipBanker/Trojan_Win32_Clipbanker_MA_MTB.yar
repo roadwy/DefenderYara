@@ -4,7 +4,7 @@ rule Trojan_Win32_Clipbanker_MA_MTB{
 		description = "Trojan:Win32/Clipbanker.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 4c 24 38 8b 44 24 3c 0f ac c1 14 81 f9 00 08 00 00 0f 82 90 01 04 0f 28 05 90 01 04 33 c0 0f 11 04 24 c7 44 24 10 90 01 04 8a 0c 24 30 4c 04 01 40 83 f8 12 72 90 00 } //5
+		$a_03_0 = {8b 4c 24 38 8b 44 24 3c 0f ac c1 14 81 f9 00 08 00 00 0f 82 ?? ?? ?? ?? 0f 28 05 ?? ?? ?? ?? 33 c0 0f 11 04 24 c7 44 24 10 ?? ?? ?? ?? 8a 0c 24 30 4c 04 01 40 83 f8 12 72 } //5
 		$a_01_1 = {6a 00 8d 4c 24 18 51 6a 18 8d 4c 24 24 51 6a 00 6a 00 68 00 00 07 00 50 ff 15 } //2
 		$a_01_2 = {47 65 74 54 69 63 6b 43 6f 75 6e 74 36 34 } //1 GetTickCount64
 		$a_01_3 = {47 65 74 43 6c 69 70 62 6f 61 72 64 44 61 74 61 } //1 GetClipboardData

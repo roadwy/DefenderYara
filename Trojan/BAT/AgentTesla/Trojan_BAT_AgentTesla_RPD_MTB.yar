@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_RPD_MTB{
 		description = "Trojan:BAT/AgentTesla.RPD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {32 00 2e 00 35 00 38 00 2e 00 31 00 34 00 39 00 2e 00 32 00 2f 00 90 02 40 2e 00 6a 00 70 00 67 00 90 00 } //1
+		$a_03_0 = {32 00 2e 00 35 00 38 00 2e 00 31 00 34 00 39 00 2e 00 32 00 2f 00 [0-40] 2e 00 6a 00 70 00 67 00 } //1
 		$a_01_1 = {54 6f 41 72 72 61 79 } //1 ToArray
 		$a_01_2 = {57 65 62 43 6c 69 65 6e 74 } //1 WebClient
 		$a_01_3 = {47 65 74 54 79 70 65 } //1 GetType

@@ -4,7 +4,7 @@ rule Trojan_Win32_Azorult_NK_MTB{
 		description = "Trojan:Win32/Azorult.NK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {8a 04 0f 88 04 0e 81 fa 90 02 04 75 06 89 2d 90 02 04 41 3b ca 72 e7 90 00 } //1
+		$a_02_0 = {8a 04 0f 88 04 0e 81 fa [0-04] 75 06 89 2d [0-04] 41 3b ca 72 e7 } //1
 		$a_81_1 = {53 63 72 6f 6c 6c 43 6f 6e 73 6f 6c 65 53 63 72 65 65 6e 42 75 66 66 65 72 57 } //1 ScrollConsoleScreenBufferW
 		$a_81_2 = {47 65 74 43 6f 6d 6d 4d 61 73 6b } //1 GetCommMask
 		$a_81_3 = {53 79 73 74 65 6d 46 75 6e 63 74 69 6f 6e 30 33 36 } //1 SystemFunction036

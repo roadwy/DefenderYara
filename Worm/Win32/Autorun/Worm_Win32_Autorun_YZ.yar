@@ -4,7 +4,7 @@ rule Worm_Win32_Autorun_YZ{
 		description = "Worm:Win32/Autorun.YZ,SIGNATURE_TYPE_PEHSTR_EXT,1f 00 1f 00 05 00 00 "
 		
 	strings :
-		$a_02_0 = {ff 75 94 e8 90 01 04 89 45 98 83 7d 98 02 0f 85 90 01 04 66 c7 45 bc 44 00 8d 45 ec e8 90 00 } //10
+		$a_02_0 = {ff 75 94 e8 ?? ?? ?? ?? 89 45 98 83 7d 98 02 0f 85 ?? ?? ?? ?? 66 c7 45 bc 44 00 8d 45 ec e8 } //10
 		$a_00_1 = {47 65 74 4c 6f 67 69 63 61 6c 44 72 69 76 65 53 74 72 69 6e 67 73 41 } //10 GetLogicalDriveStringsA
 		$a_00_2 = {5b 41 75 74 6f 52 75 6e 5d 0a 73 68 65 6c 6c 65 78 65 63 75 74 65 3d } //10
 		$a_00_3 = {5c 64 65 66 61 75 6c 74 2e 69 6e 66 } //1 \default.inf

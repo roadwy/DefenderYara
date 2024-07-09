@@ -4,7 +4,7 @@ rule Backdoor_Win32_Zegost_gen_B{
 		description = "Backdoor:Win32/Zegost.gen!B,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {8a 14 01 80 f2 62 88 10 40 90 01 01 75 f4 90 00 } //2
+		$a_03_0 = {8a 14 01 80 f2 62 88 10 40 ?? 75 f4 } //2
 		$a_01_1 = {8b 0f 8a d0 03 c8 80 c2 06 8a 19 32 da 40 3b c6 88 19 7c ec } //1
 		$a_01_2 = {83 f8 7f 77 11 83 f8 14 72 0c } //1
 		$a_00_3 = {48 74 74 70 2f 31 2e 31 20 34 30 33 20 46 6f 72 62 69 64 64 65 6e } //1 Http/1.1 403 Forbidden

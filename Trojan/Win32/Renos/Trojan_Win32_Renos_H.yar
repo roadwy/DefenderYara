@@ -4,7 +4,7 @@ rule Trojan_Win32_Renos_H{
 		description = "Trojan:Win32/Renos.H,SIGNATURE_TYPE_PEHSTR_EXT,64 00 64 00 0a 00 00 "
 		
 	strings :
-		$a_02_0 = {68 74 74 70 3a 2f 2f 64 6f 77 6e 6c 6f 61 64 2e 90 02 30 2e 63 6f 6d 2f 90 02 20 2e 65 78 65 90 00 } //10
+		$a_02_0 = {68 74 74 70 3a 2f 2f 64 6f 77 6e 6c 6f 61 64 2e [0-30] 2e 63 6f 6d 2f [0-20] 2e 65 78 65 } //10
 		$a_00_1 = {2f 53 20 2f 41 49 44 3d } //10 /S /AID=
 		$a_00_2 = {68 74 74 70 3a 2f 2f 61 6c 66 61 70 6f 72 74 61 6c 2e 63 6f 6d 2f 63 } //10 http://alfaportal.com/c
 		$a_00_3 = {43 4c 53 49 44 5c 7b 33 35 37 41 38 37 45 44 2d 33 45 35 44 2d 34 33 37 64 2d 42 33 33 34 2d 44 45 42 37 45 42 34 39 38 32 41 33 7d } //10 CLSID\{357A87ED-3E5D-437d-B334-DEB7EB4982A3}

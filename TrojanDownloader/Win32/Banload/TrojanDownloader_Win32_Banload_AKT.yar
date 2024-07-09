@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Banload_AKT{
 		description = "TrojanDownloader:Win32/Banload.AKT,SIGNATURE_TYPE_PEHSTR_EXT,54 01 40 01 09 00 00 "
 		
 	strings :
-		$a_03_0 = {2f 6e 69 63 68 61 6e 90 01 01 2e 7a 69 70 00 90 00 } //100
+		$a_03_0 = {2f 6e 69 63 68 61 6e ?? 2e 7a 69 70 00 } //100
 		$a_01_1 = {2f 61 72 71 61 2e 62 6d 70 00 } //100
 		$a_01_2 = {64 6f 6d 69 6e 69 6f 74 65 6d 70 6f 72 61 72 69 6f 2e 63 6f 6d } //100 dominiotemporario.com
 		$a_01_3 = {64 6c 2e 64 72 6f 70 62 6f 78 2e 63 6f 6d 2f 75 2f 37 34 36 34 37 39 36 30 } //200 dl.dropbox.com/u/74647960

@@ -4,7 +4,7 @@ rule TrojanClicker_Win32_Delf_K{
 		description = "TrojanClicker:Win32/Delf.K,SIGNATURE_TYPE_PEHSTR_EXT,1b 00 1b 00 0a 00 00 "
 		
 	strings :
-		$a_02_0 = {63 3a 5c 6d 69 63 72 6f 73 6f 66 74 5c 00 00 00 90 02 05 00 00 00 73 76 63 68 6f 73 74 2e 65 78 65 90 00 } //10
+		$a_02_0 = {63 3a 5c 6d 69 63 72 6f 73 6f 66 74 5c 00 00 00 [0-05] 00 00 00 73 76 63 68 6f 73 74 2e 65 78 65 } //10
 		$a_00_1 = {53 4f 46 54 57 41 52 45 5c 42 6f 72 6c 61 6e 64 5c 44 65 6c 70 68 69 5c 52 54 4c } //10 SOFTWARE\Borland\Delphi\RTL
 		$a_00_2 = {32 30 30 35 2d 73 65 61 72 63 68 2e 63 6f 6d 2f 67 6f 2e 70 68 70 } //3 2005-search.com/go.php
 		$a_00_3 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 52 75 6e } //1 Software\Microsoft\Windows\CurrentVersion\Run

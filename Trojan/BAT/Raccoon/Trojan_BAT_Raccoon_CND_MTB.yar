@@ -4,7 +4,7 @@ rule Trojan_BAT_Raccoon_CND_MTB{
 		description = "Trojan:BAT/Raccoon.CND!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {06 07 6f d2 03 00 0a 17 73 90 01 04 0c 08 02 16 02 8e 69 6f 90 01 04 08 90 00 } //5
+		$a_03_0 = {06 07 6f d2 03 00 0a 17 73 ?? ?? ?? ?? 0c 08 02 16 02 8e 69 6f ?? ?? ?? ?? 08 } //5
 		$a_01_1 = {44 00 65 00 62 00 75 00 67 00 67 00 65 00 72 00 20 00 44 00 65 00 74 00 65 00 63 00 74 00 65 00 64 00 } //1 Debugger Detected
 		$a_01_2 = {5f 52 75 6e 50 65 } //1 _RunPe
 		$a_01_3 = {46 00 69 00 6e 00 64 00 } //1 Find

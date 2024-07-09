@@ -4,7 +4,7 @@ rule Trojan_Win32_Sabsik_RW_MTB{
 		description = "Trojan:Win32/Sabsik.RW!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {69 f1 8b 64 45 2d 01 f2 89 44 24 90 01 01 89 54 24 90 01 01 8b 44 24 90 01 01 35 e4 ae 96 27 90 00 } //1
+		$a_03_0 = {69 f1 8b 64 45 2d 01 f2 89 44 24 ?? 89 54 24 ?? 8b 44 24 ?? 35 e4 ae 96 27 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Sabsik_RW_MTB_2{
 		description = "Trojan:Win32/Sabsik.RW!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {b8 89 88 88 88 f7 e1 8b c6 c1 ea 03 8b ca c1 e1 04 2b ca 2b c1 0f b6 80 90 01 04 30 86 90 01 04 83 c6 02 81 fe 7e 07 00 00 72 90 00 } //1
+		$a_03_0 = {b8 89 88 88 88 f7 e1 8b c6 c1 ea 03 8b ca c1 e1 04 2b ca 2b c1 0f b6 80 ?? ?? ?? ?? 30 86 ?? ?? ?? ?? 83 c6 02 81 fe 7e 07 00 00 72 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

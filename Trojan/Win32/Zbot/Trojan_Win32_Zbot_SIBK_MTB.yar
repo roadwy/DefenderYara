@@ -4,7 +4,7 @@ rule Trojan_Win32_Zbot_SIBK_MTB{
 		description = "Trojan:Win32/Zbot.SIBK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0a 00 0c 00 00 "
 		
 	strings :
-		$a_02_0 = {69 72 63 2e 90 02 05 2e 62 79 90 00 } //1
+		$a_02_0 = {69 72 63 2e [0-05] 2e 62 79 } //1
 		$a_80_1 = {43 3a 5c 6c 6f 67 2e 74 78 74 } //C:\log.txt  1
 		$a_80_2 = {6b 69 62 65 72 5f 73 6f 6c 64 69 65 72 73 } //kiber_soldiers  1
 		$a_80_3 = {21 73 68 75 74 75 70 } //!shutup  1

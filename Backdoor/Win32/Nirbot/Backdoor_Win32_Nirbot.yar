@@ -4,7 +4,7 @@ rule Backdoor_Win32_Nirbot{
 		description = "Backdoor:Win32/Nirbot,SIGNATURE_TYPE_PEHSTR_EXT,16 00 14 00 1a 00 00 "
 		
 	strings :
-		$a_03_0 = {68 e8 03 00 00 b8 dc ff 00 00 e8 90 01 03 ff 59 50 a3 90 01 04 66 c7 90 01 04 00 02 00 ff 15 90 01 04 6a 10 90 00 } //10
+		$a_03_0 = {68 e8 03 00 00 b8 dc ff 00 00 e8 ?? ?? ?? ff 59 50 a3 ?? ?? ?? ?? 66 c7 ?? ?? ?? ?? 00 02 00 ff 15 ?? ?? ?? ?? 6a 10 } //10
 		$a_01_1 = {8a 16 80 fa 2a 74 11 3a d1 74 05 80 fa 3f 75 26 46 40 8a 08 84 c9 } //8
 		$a_00_2 = {42 6f 74 20 4b 69 6c 6c 65 64 3a 20 25 73 } //2 Bot Killed: %s
 		$a_00_3 = {53 63 61 6e 3a 20 41 6c 6c 20 53 63 61 6e 20 54 68 72 65 61 64 73 20 53 74 6f 70 70 65 64 2e 20 25 64 20 6b 69 6c 6c 65 64 } //3 Scan: All Scan Threads Stopped. %d killed

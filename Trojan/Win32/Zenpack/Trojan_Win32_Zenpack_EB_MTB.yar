@@ -14,7 +14,7 @@ rule Trojan_Win32_Zenpack_EB_MTB_2{
 		description = "Trojan:Win32/Zenpack.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {ff 89 da 01 15 90 01 04 89 f0 01 05 90 01 04 55 8f 05 90 01 04 89 f8 01 05 90 01 04 e2 d4 90 00 } //5
+		$a_03_0 = {ff 89 da 01 15 ?? ?? ?? ?? 89 f0 01 05 ?? ?? ?? ?? 55 8f 05 ?? ?? ?? ?? 89 f8 01 05 ?? ?? ?? ?? e2 d4 } //5
 	condition:
 		((#a_03_0  & 1)*5) >=5
  
@@ -24,7 +24,7 @@ rule Trojan_Win32_Zenpack_EB_MTB_3{
 		description = "Trojan:Win32/Zenpack.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {ff e0 89 da 01 15 90 01 04 89 f0 01 05 90 01 04 55 8f 05 90 01 04 89 f8 01 05 90 01 04 e2 d7 90 00 } //7
+		$a_03_0 = {ff e0 89 da 01 15 ?? ?? ?? ?? 89 f0 01 05 ?? ?? ?? ?? 55 8f 05 ?? ?? ?? ?? 89 f8 01 05 ?? ?? ?? ?? e2 d7 } //7
 	condition:
 		((#a_03_0  & 1)*7) >=7
  
@@ -34,7 +34,7 @@ rule Trojan_Win32_Zenpack_EB_MTB_4{
 		description = "Trojan:Win32/Zenpack.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {ff 89 da 01 15 90 01 04 89 f0 01 05 90 01 04 55 8f 05 90 01 04 89 f8 01 05 90 01 04 83 f9 67 74 d1 90 00 } //5
+		$a_03_0 = {ff 89 da 01 15 ?? ?? ?? ?? 89 f0 01 05 ?? ?? ?? ?? 55 8f 05 ?? ?? ?? ?? 89 f8 01 05 ?? ?? ?? ?? 83 f9 67 74 d1 } //5
 	condition:
 		((#a_03_0  & 1)*5) >=5
  
@@ -44,7 +44,7 @@ rule Trojan_Win32_Zenpack_EB_MTB_5{
 		description = "Trojan:Win32/Zenpack.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {ff ff 89 da 01 15 90 01 04 89 f0 01 05 90 01 04 55 8f 05 90 01 04 89 f8 01 05 90 01 04 83 f9 0a 74 d1 90 00 } //6
+		$a_03_0 = {ff ff 89 da 01 15 ?? ?? ?? ?? 89 f0 01 05 ?? ?? ?? ?? 55 8f 05 ?? ?? ?? ?? 89 f8 01 05 ?? ?? ?? ?? 83 f9 0a 74 d1 } //6
 	condition:
 		((#a_03_0  & 1)*6) >=6
  
@@ -54,7 +54,7 @@ rule Trojan_Win32_Zenpack_EB_MTB_6{
 		description = "Trojan:Win32/Zenpack.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {31 18 ba 01 00 00 00 4a 8d 05 90 01 04 31 38 01 c2 4a 8d 05 90 01 04 01 28 01 c2 4a 8d 05 90 01 04 89 30 eb cc 90 00 } //6
+		$a_03_0 = {31 18 ba 01 00 00 00 4a 8d 05 ?? ?? ?? ?? 31 38 01 c2 4a 8d 05 ?? ?? ?? ?? 01 28 01 c2 4a 8d 05 ?? ?? ?? ?? 89 30 eb cc } //6
 	condition:
 		((#a_03_0  & 1)*6) >=6
  
@@ -64,7 +64,7 @@ rule Trojan_Win32_Zenpack_EB_MTB_7{
 		description = "Trojan:Win32/Zenpack.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {ff ff 89 da 01 15 90 01 04 89 f0 01 05 90 01 04 b9 03 00 00 00 55 8f 05 90 01 04 89 f8 01 05 90 01 04 e2 d5 31 c0 40 c3 90 00 } //6
+		$a_03_0 = {ff ff 89 da 01 15 ?? ?? ?? ?? 89 f0 01 05 ?? ?? ?? ?? b9 03 00 00 00 55 8f 05 ?? ?? ?? ?? 89 f8 01 05 ?? ?? ?? ?? e2 d5 31 c0 40 c3 } //6
 	condition:
 		((#a_03_0  & 1)*6) >=6
  
@@ -74,7 +74,7 @@ rule Trojan_Win32_Zenpack_EB_MTB_8{
 		description = "Trojan:Win32/Zenpack.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {49 89 ca 89 25 90 01 04 e8 90 01 04 e8 90 01 04 89 da 01 15 90 01 04 89 f0 01 05 90 01 04 55 8f 05 90 01 04 89 f8 01 05 90 01 04 eb da 90 00 } //4
+		$a_03_0 = {49 89 ca 89 25 ?? ?? ?? ?? e8 ?? ?? ?? ?? e8 ?? ?? ?? ?? 89 da 01 15 ?? ?? ?? ?? 89 f0 01 05 ?? ?? ?? ?? 55 8f 05 ?? ?? ?? ?? 89 f8 01 05 ?? ?? ?? ?? eb da } //4
 	condition:
 		((#a_03_0  & 1)*4) >=4
  
@@ -84,7 +84,7 @@ rule Trojan_Win32_Zenpack_EB_MTB_9{
 		description = "Trojan:Win32/Zenpack.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {40 83 ea 05 01 d0 83 f0 01 01 25 90 01 04 31 d0 29 c2 29 d0 b9 02 00 00 00 e2 2d 4a 83 f2 07 ba 04 00 00 00 8d 05 90 01 04 31 28 8d 05 90 00 } //7
+		$a_03_0 = {40 83 ea 05 01 d0 83 f0 01 01 25 ?? ?? ?? ?? 31 d0 29 c2 29 d0 b9 02 00 00 00 e2 2d 4a 83 f2 07 ba 04 00 00 00 8d 05 ?? ?? ?? ?? 31 28 8d 05 } //7
 	condition:
 		((#a_03_0  & 1)*7) >=7
  
@@ -94,7 +94,7 @@ rule Trojan_Win32_Zenpack_EB_MTB_10{
 		description = "Trojan:Win32/Zenpack.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {89 d0 b9 03 00 00 00 49 89 ca 89 25 90 01 04 eb 08 8d 05 90 01 04 ff e0 89 da 01 15 90 01 04 89 f0 01 05 90 01 04 55 8f 05 90 01 04 89 f8 01 05 90 00 } //7
+		$a_03_0 = {89 d0 b9 03 00 00 00 49 89 ca 89 25 ?? ?? ?? ?? eb 08 8d 05 ?? ?? ?? ?? ff e0 89 da 01 15 ?? ?? ?? ?? 89 f0 01 05 ?? ?? ?? ?? 55 8f 05 ?? ?? ?? ?? 89 f8 01 05 } //7
 	condition:
 		((#a_03_0  & 1)*7) >=7
  
@@ -104,7 +104,7 @@ rule Trojan_Win32_Zenpack_EB_MTB_11{
 		description = "Trojan:Win32/Zenpack.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {89 d0 b9 03 00 00 00 49 89 ca 89 25 90 01 04 eb 05 e8 90 01 04 89 da 01 15 90 01 04 89 f0 01 05 90 01 04 55 8f 05 90 01 04 89 f8 01 05 90 01 04 eb da 90 00 } //7
+		$a_03_0 = {89 d0 b9 03 00 00 00 49 89 ca 89 25 ?? ?? ?? ?? eb 05 e8 ?? ?? ?? ?? 89 da 01 15 ?? ?? ?? ?? 89 f0 01 05 ?? ?? ?? ?? 55 8f 05 ?? ?? ?? ?? 89 f8 01 05 ?? ?? ?? ?? eb da } //7
 	condition:
 		((#a_03_0  & 1)*7) >=7
  
@@ -114,7 +114,7 @@ rule Trojan_Win32_Zenpack_EB_MTB_12{
 		description = "Trojan:Win32/Zenpack.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {40 55 89 e5 eb 25 31 2d 90 01 04 58 a3 90 01 04 81 05 90 01 04 04 00 00 00 a1 90 01 04 66 6a 00 2d 83 11 00 00 ff d0 89 d9 89 0d 90 01 04 89 f1 89 0d 90 01 04 89 3d 90 01 04 39 3d 90 01 04 74 bd 90 00 } //6
+		$a_03_0 = {40 55 89 e5 eb 25 31 2d ?? ?? ?? ?? 58 a3 ?? ?? ?? ?? 81 05 ?? ?? ?? ?? 04 00 00 00 a1 ?? ?? ?? ?? 66 6a 00 2d 83 11 00 00 ff d0 89 d9 89 0d ?? ?? ?? ?? 89 f1 89 0d ?? ?? ?? ?? 89 3d ?? ?? ?? ?? 39 3d ?? ?? ?? ?? 74 bd } //6
 	condition:
 		((#a_03_0  & 1)*6) >=6
  
@@ -124,7 +124,7 @@ rule Trojan_Win32_Zenpack_EB_MTB_13{
 		description = "Trojan:Win32/Zenpack.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {ff d0 89 da 01 15 90 01 04 89 f0 01 05 90 01 04 55 8f 05 90 01 04 89 f8 01 05 90 01 04 eb d7 89 45 90 00 } //5
+		$a_03_0 = {ff d0 89 da 01 15 ?? ?? ?? ?? 89 f0 01 05 ?? ?? ?? ?? 55 8f 05 ?? ?? ?? ?? 89 f8 01 05 ?? ?? ?? ?? eb d7 89 45 } //5
 		$a_01_1 = {4f 75 74 70 75 74 44 65 62 75 67 53 74 72 69 6e 67 41 } //1 OutputDebugStringA
 		$a_01_2 = {4c 6f 61 64 52 65 73 6f 75 72 63 65 } //1 LoadResource
 	condition:

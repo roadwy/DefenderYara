@@ -4,7 +4,7 @@ rule Trojan_BAT_RedLine_ME_MTB{
 		description = "Trojan:BAT/RedLine.ME!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {0d 16 13 04 2b 22 09 11 04 9a 13 05 06 11 05 6f 90 01 03 06 2c 0c 06 6f 90 01 03 06 2c 04 17 0b 2b 0d 11 04 17 58 13 04 11 04 09 8e 69 32 d7 90 00 } //5
+		$a_03_0 = {0d 16 13 04 2b 22 09 11 04 9a 13 05 06 11 05 6f ?? ?? ?? 06 2c 0c 06 6f ?? ?? ?? 06 2c 04 17 0b 2b 0d 11 04 17 58 13 04 11 04 09 8e 69 32 d7 } //5
 	condition:
 		((#a_03_0  & 1)*5) >=5
  
@@ -14,8 +14,8 @@ rule Trojan_BAT_RedLine_ME_MTB_2{
 		description = "Trojan:BAT/RedLine.ME!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {08 02 16 02 8e 69 6f 90 01 03 0a 08 6f 90 01 03 0a de 0a 08 2c 06 08 6f 90 01 03 0a dc 07 6f 90 01 03 0a 0d de 14 90 00 } //5
-		$a_03_1 = {0b 16 0c 2b 78 06 08 9a 16 9a 72 90 01 03 70 28 90 01 03 0a 2d 11 06 08 9a 16 9a 90 00 } //5
+		$a_03_0 = {08 02 16 02 8e 69 6f ?? ?? ?? 0a 08 6f ?? ?? ?? 0a de 0a 08 2c 06 08 6f ?? ?? ?? 0a dc 07 6f ?? ?? ?? 0a 0d de 14 } //5
+		$a_03_1 = {0b 16 0c 2b 78 06 08 9a 16 9a 72 ?? ?? ?? 70 28 ?? ?? ?? 0a 2d 11 06 08 9a 16 9a } //5
 	condition:
 		((#a_03_0  & 1)*5+(#a_03_1  & 1)*5) >=10
  

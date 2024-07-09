@@ -4,7 +4,7 @@ rule Trojan_BAT_RedLine_MF_MTB{
 		description = "Trojan:BAT/RedLine.MF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {09 11 04 08 11 04 9a 1f 10 28 90 01 03 0a 9c 11 04 17 d6 13 04 00 11 04 20 90 01 03 00 fe 04 13 06 11 06 2d db 09 13 05 90 00 } //5
+		$a_03_0 = {09 11 04 08 11 04 9a 1f 10 28 ?? ?? ?? 0a 9c 11 04 17 d6 13 04 00 11 04 20 ?? ?? ?? 00 fe 04 13 06 11 06 2d db 09 13 05 } //5
 	condition:
 		((#a_03_0  & 1)*5) >=5
  
@@ -14,7 +14,7 @@ rule Trojan_BAT_RedLine_MF_MTB_2{
 		description = "Trojan:BAT/RedLine.MF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {0c 06 08 6f 90 01 01 00 00 0a 00 06 18 6f 90 01 01 00 00 0a 00 06 6f 90 01 01 00 00 0a 02 16 03 8e 69 6f 90 01 01 00 00 0a 0d 09 13 04 2b 00 11 04 2a 90 00 } //5
+		$a_03_0 = {0c 06 08 6f ?? 00 00 0a 00 06 18 6f ?? 00 00 0a 00 06 6f ?? 00 00 0a 02 16 03 8e 69 6f ?? 00 00 0a 0d 09 13 04 2b 00 11 04 2a } //5
 	condition:
 		((#a_03_0  & 1)*5) >=5
  
@@ -24,7 +24,7 @@ rule Trojan_BAT_RedLine_MF_MTB_3{
 		description = "Trojan:BAT/RedLine.MF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {09 02 16 02 8e 69 28 90 01 03 06 2a 73 53 00 00 0a 38 62 ff ff ff 0a 38 61 ff ff ff 0b 38 67 ff ff ff 73 54 00 00 0a 38 67 ff ff ff 28 90 01 03 06 38 6c ff ff ff 03 38 6b ff ff ff 28 90 01 03 06 38 66 ff ff ff 28 90 01 03 06 38 61 ff ff ff 0c 38 60 ff ff ff 90 00 } //1
+		$a_03_0 = {09 02 16 02 8e 69 28 ?? ?? ?? 06 2a 73 53 00 00 0a 38 62 ff ff ff 0a 38 61 ff ff ff 0b 38 67 ff ff ff 73 54 00 00 0a 38 67 ff ff ff 28 ?? ?? ?? 06 38 6c ff ff ff 03 38 6b ff ff ff 28 ?? ?? ?? 06 38 66 ff ff ff 28 ?? ?? ?? 06 38 61 ff ff ff 0c 38 60 ff ff ff } //1
 		$a_01_1 = {67 65 74 5f 45 78 65 63 75 74 61 62 6c 65 50 61 74 68 } //1 get_ExecutablePath
 		$a_01_2 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //1 FromBase64String
 		$a_01_3 = {52 65 70 6c 61 63 65 } //1 Replace

@@ -4,7 +4,7 @@ rule TrojanProxy_Win32_Wopla_gen_A{
 		description = "TrojanProxy:Win32/Wopla.gen!A,SIGNATURE_TYPE_PEHSTR_EXT,1e 00 1e 00 0c 00 00 "
 		
 	strings :
-		$a_02_0 = {66 83 f9 40 75 22 66 c7 84 45 90 01 02 ff ff 25 00 40 66 c7 84 45 90 01 02 ff ff 34 00 40 66 c7 84 45 90 01 02 ff ff 30 00 eb 25 66 83 f9 20 75 17 66 c7 84 45 90 01 02 ff ff 25 00 40 66 c7 84 45 90 01 02 ff ff 32 00 eb d6 66 89 8c 45 90 01 02 ff ff 40 42 0f b7 0c 57 66 3b ce 90 00 } //10
+		$a_02_0 = {66 83 f9 40 75 22 66 c7 84 45 ?? ?? ff ff 25 00 40 66 c7 84 45 ?? ?? ff ff 34 00 40 66 c7 84 45 ?? ?? ff ff 30 00 eb 25 66 83 f9 20 75 17 66 c7 84 45 ?? ?? ff ff 25 00 40 66 c7 84 45 ?? ?? ff ff 32 00 eb d6 66 89 8c 45 ?? ?? ff ff 40 42 0f b7 0c 57 66 3b ce } //10
 		$a_00_1 = {8d 4c 3e 01 8d 54 3e ff eb 15 3c 7e 7d 2e 3c 2c 74 2a 3c 3b 74 26 3a c3 74 22 3c 40 74 1e 4a 8a 02 3a c3 7f e5 eb 15 3c 7e 7d 17 3c 2c 74 13 3c 3b 74 0f 3a c3 74 0b 3c 40 74 07 41 8a 01 3a c3 7f e5 42 2b ca 8d 41 fa 83 f8 79 } //10
 		$a_00_2 = {25 30 34 68 75 2e 25 30 32 68 75 2e 25 30 32 68 75 5f 25 30 32 68 75 3a 25 30 32 68 75 3a 25 30 32 68 75 5f 25 30 34 58 5f 25 30 34 58 2e 64 61 74 } //2 %04hu.%02hu.%02hu_%02hu:%02hu:%02hu_%04X_%04X.dat
 		$a_00_3 = {6d 64 6e 5f 6c 6f 67 5f 25 70 69 64 74 69 64 2e 74 78 74 } //2 mdn_log_%pidtid.txt

@@ -9,7 +9,7 @@ rule TrojanSpy_Win32_Gimmiv_A{
 		$a_00_2 = {72 65 67 20 64 65 6c 65 74 65 20 22 48 4b 4c 4d 5c 53 59 53 54 45 4d 5c 43 75 72 72 65 6e 74 43 6f 6e 74 72 6f 6c 53 65 74 5c 53 65 72 76 69 63 65 73 5c 25 73 } //10 reg delete "HKLM\SYSTEM\CurrentControlSet\Services\%s
 		$a_00_3 = {6e 65 74 20 73 74 6f 70 20 25 73 } //10 net stop %s
 		$a_00_4 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 52 75 6e } //10 SOFTWARE\Microsoft\Windows\CurrentVersion\Run
-		$a_02_5 = {2e 76 62 73 90 02 10 6e 6f 74 65 70 61 64 2e 65 78 65 90 00 } //10
+		$a_02_5 = {2e 76 62 73 [0-10] 6e 6f 74 65 70 61 64 2e 65 78 65 } //10
 		$a_00_6 = {53 4f 46 54 57 41 52 45 5c 42 69 74 44 65 66 65 6e 64 65 72 } //2 SOFTWARE\BitDefender
 		$a_00_7 = {53 4f 46 54 57 41 52 45 5c 4a 69 61 6e 67 6d 69 6e } //2 SOFTWARE\Jiangmin
 		$a_00_8 = {53 4f 46 54 57 41 52 45 5c 4b 61 73 70 65 72 73 6b 79 4c 61 62 } //2 SOFTWARE\KasperskyLab

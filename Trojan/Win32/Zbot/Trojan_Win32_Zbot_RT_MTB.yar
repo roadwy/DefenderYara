@@ -4,7 +4,7 @@ rule Trojan_Win32_Zbot_RT_MTB{
 		description = "Trojan:Win32/Zbot.RT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {89 18 8b 45 90 01 01 05 8a a5 08 00 03 45 90 01 01 8b 55 90 01 01 31 02 8d 85 90 01 04 33 c9 ba 90 02 04 e8 90 01 04 8d 85 90 01 04 33 c9 ba 90 00 } //1
+		$a_03_0 = {89 18 8b 45 ?? 05 8a a5 08 00 03 45 ?? 8b 55 ?? 31 02 8d 85 ?? ?? ?? ?? 33 c9 ba [0-04] e8 ?? ?? ?? ?? 8d 85 ?? ?? ?? ?? 33 c9 ba } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

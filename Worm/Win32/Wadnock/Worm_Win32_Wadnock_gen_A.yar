@@ -4,8 +4,8 @@ rule Worm_Win32_Wadnock_gen_A{
 		description = "Worm:Win32/Wadnock.gen!A,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0a 00 16 00 00 "
 		
 	strings :
-		$a_03_0 = {eb 20 6a 10 8d 44 24 04 50 6a 00 6a 64 8d 44 24 20 50 53 e8 90 01 02 ff ff 68 2c 01 00 00 e8 90 01 02 ff ff 80 3d 90 01 04 00 75 d7 90 00 } //6
-		$a_03_1 = {74 26 83 fe 01 75 0f ba 75 08 00 00 8b 45 fc e8 90 01 04 eb 12 83 fe 02 75 0d ba 00 06 00 00 8b 45 fc e8 90 00 } //6
+		$a_03_0 = {eb 20 6a 10 8d 44 24 04 50 6a 00 6a 64 8d 44 24 20 50 53 e8 ?? ?? ff ff 68 2c 01 00 00 e8 ?? ?? ff ff 80 3d ?? ?? ?? ?? 00 75 d7 } //6
+		$a_03_1 = {74 26 83 fe 01 75 0f ba 75 08 00 00 8b 45 fc e8 ?? ?? ?? ?? eb 12 83 fe 02 75 0d ba 00 06 00 00 8b 45 fc e8 } //6
 		$a_00_2 = {23 20 53 79 73 74 65 6d 20 48 6f 73 74 73 20 46 69 6c 65 } //1 # System Hosts File
 		$a_00_3 = {23 20 44 4f 20 4e 4f 54 20 52 45 4d 4f 56 45 20 49 54 20 21 } //1 # DO NOT REMOVE IT !
 		$a_00_4 = {21 55 44 50 2e 44 44 4f 53 } //1 !UDP.DDOS

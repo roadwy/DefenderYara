@@ -20,7 +20,7 @@ rule TrojanDownloader_Win32_Nonaco_G_2{
 		description = "TrojanDownloader:Win32/Nonaco.G,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {85 c0 74 12 68 90 01 04 50 ff 15 90 01 04 85 c0 74 02 ff e0 90 00 } //1
+		$a_03_0 = {85 c0 74 12 68 ?? ?? ?? ?? 50 ff 15 ?? ?? ?? ?? 85 c0 74 02 ff e0 } //1
 		$a_01_1 = {69 53 65 63 75 72 69 74 79 2e 63 70 6c 00 00 00 76 25 73 5c 00 00 00 00 5c 69 53 65 63 75 72 69 } //2
 		$a_01_2 = {c6 45 ff 01 6a 07 ff 75 0c ff d7 5f 5e 8a 45 ff 5b c9 c3 } //1
 		$a_01_3 = {45 58 45 00 72 75 6e 64 6c 6c 33 32 20 22 25 73 22 2c 53 65 63 75 72 69 74 79 4d 6f 6e 69 74 6f 72 00 } //2 塅E畲摮汬㈳∠猥Ⱒ敓畣楲祴潍楮潴r

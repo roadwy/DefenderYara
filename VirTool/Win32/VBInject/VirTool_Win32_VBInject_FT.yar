@@ -4,8 +4,8 @@ rule VirTool_Win32_VBInject_FT{
 		description = "VirTool:Win32/VBInject.FT,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {3b c3 db e2 7d 90 01 01 6a 50 90 00 } //1
-		$a_03_1 = {3b c3 db e2 7d 90 01 01 6a 58 90 00 } //1
+		$a_03_0 = {3b c3 db e2 7d ?? 6a 50 } //1
+		$a_03_1 = {3b c3 db e2 7d ?? 6a 58 } //1
 		$a_01_2 = {50 6a 01 6a ff 6a 20 ff 15 } //1
 		$a_00_3 = {43 00 4e 00 54 00 42 00 52 00 41 00 00 00 } //1
 		$a_00_4 = {5c 00 53 00 61 00 64 00 6f 00 6b 00 5c 00 } //1 \Sadok\

@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_ADC_MTB{
 		description = "Trojan:BAT/AgentTesla.ADC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {25 16 08 a2 25 17 19 8d 90 02 04 25 16 7e 90 02 04 a2 25 17 7e 90 02 04 a2 25 18 90 02 0a a2 a2 25 0d 14 14 18 8d 90 02 04 25 16 17 9c 25 13 04 17 28 90 02 04 26 90 00 } //10
+		$a_03_0 = {25 16 08 a2 25 17 19 8d [0-04] 25 16 7e [0-04] a2 25 17 7e [0-04] a2 25 18 [0-0a] a2 a2 25 0d 14 14 18 8d [0-04] 25 16 17 9c 25 13 04 17 28 [0-04] 26 } //10
 		$a_80_1 = {43 72 65 61 74 65 49 6e 73 74 61 6e 63 65 } //CreateInstance  2
 		$a_80_2 = {47 65 74 54 79 70 65 73 } //GetTypes  2
 		$a_80_3 = {41 63 74 69 76 61 74 6f 72 } //Activator  2

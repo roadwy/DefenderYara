@@ -6,7 +6,7 @@ rule TrojanDownloader_Win32_Renos_PT{
 	strings :
 		$a_01_0 = {31 c0 81 c0 4d 5a 50 00 } //1
 		$a_01_1 = {b8 af ba ff ff f7 d0 } //1
-		$a_03_2 = {fb ff ff f7 90 01 01 83 90 01 01 04 c7 90 01 01 00 00 00 00 83 90 01 01 04 75 f2 ff 90 00 } //2
+		$a_03_2 = {fb ff ff f7 ?? 83 ?? 04 c7 ?? 00 00 00 00 83 ?? 04 75 f2 ff } //2
 	condition:
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*2) >=3
  

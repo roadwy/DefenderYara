@@ -24,7 +24,7 @@ rule Trojan_Win32_SmokeLoader_RG_MTB_3{
 		description = "Trojan:Win32/SmokeLoader.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b f7 d3 ee 8d 04 3b 89 45 e0 c7 05 90 01 04 ee 3d ea f4 03 75 e4 8b 45 e0 31 45 fc 33 75 fc 90 00 } //1
+		$a_03_0 = {8b f7 d3 ee 8d 04 3b 89 45 e0 c7 05 ?? ?? ?? ?? ee 3d ea f4 03 75 e4 8b 45 e0 31 45 fc 33 75 fc } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -34,7 +34,7 @@ rule Trojan_Win32_SmokeLoader_RG_MTB_4{
 		description = "Trojan:Win32/SmokeLoader.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b cf c1 e9 05 03 4c 24 90 01 01 8b d7 c1 e2 04 03 54 24 90 01 01 8d 04 2f 33 ca 33 c8 2b d9 8b cb c1 e1 04 90 00 } //1
+		$a_03_0 = {8b cf c1 e9 05 03 4c 24 ?? 8b d7 c1 e2 04 03 54 24 ?? 8d 04 2f 33 ca 33 c8 2b d9 8b cb c1 e1 04 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -44,7 +44,7 @@ rule Trojan_Win32_SmokeLoader_RG_MTB_5{
 		description = "Trojan:Win32/SmokeLoader.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {c1 e0 04 89 45 90 01 01 8b 45 90 01 01 01 45 90 01 01 8b 45 90 01 01 8b 4d 90 01 01 8d 14 03 d3 e8 03 45 90 01 01 33 c2 31 45 90 00 } //1
+		$a_03_0 = {c1 e0 04 89 45 ?? 8b 45 ?? 01 45 ?? 8b 45 ?? 8b 4d ?? 8d 14 03 d3 e8 03 45 ?? 33 c2 31 45 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

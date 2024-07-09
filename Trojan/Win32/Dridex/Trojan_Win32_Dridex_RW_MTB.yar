@@ -20,7 +20,7 @@ rule Trojan_Win32_Dridex_RW_MTB_2{
 		description = "Trojan:Win32/Dridex.RW!MTB,SIGNATURE_TYPE_PEHSTR_EXT,19 00 19 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {68 8c 10 00 00 ff 15 90 01 04 03 05 90 01 04 8b 15 90 01 04 03 15 90 01 04 8b 0d 90 01 04 8a 04 01 88 02 8b 0d 90 01 04 83 c1 01 89 0d 90 00 } //10
+		$a_03_0 = {68 8c 10 00 00 ff 15 ?? ?? ?? ?? 03 05 ?? ?? ?? ?? 8b 15 ?? ?? ?? ?? 03 15 ?? ?? ?? ?? 8b 0d ?? ?? ?? ?? 8a 04 01 88 02 8b 0d ?? ?? ?? ?? 83 c1 01 89 0d } //10
 		$a_81_1 = {47 65 74 53 79 73 74 65 6d 49 6e 66 6f } //1 GetSystemInfo
 		$a_81_2 = {49 73 44 65 62 75 67 67 65 72 50 72 65 73 65 6e 74 } //1 IsDebuggerPresent
 		$a_81_3 = {47 65 74 53 74 61 72 74 75 70 49 6e 66 6f 41 } //1 GetStartupInfoA

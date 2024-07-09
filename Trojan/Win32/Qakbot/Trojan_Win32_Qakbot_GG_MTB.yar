@@ -4,7 +4,7 @@ rule Trojan_Win32_Qakbot_GG_MTB{
 		description = "Trojan:Win32/Qakbot.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {01 02 8b 45 d8 03 45 b0 03 45 e8 89 45 b4 6a 00 e8 90 01 04 8b 5d b4 2b d8 6a 00 e8 90 01 04 2b d8 8b 45 ec 31 18 83 45 e8 04 83 45 ec 04 8b 45 e8 3b 45 e4 72 90 00 } //1
+		$a_03_0 = {01 02 8b 45 d8 03 45 b0 03 45 e8 89 45 b4 6a 00 e8 ?? ?? ?? ?? 8b 5d b4 2b d8 6a 00 e8 ?? ?? ?? ?? 2b d8 8b 45 ec 31 18 83 45 e8 04 83 45 ec 04 8b 45 e8 3b 45 e4 72 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -14,8 +14,8 @@ rule Trojan_Win32_Qakbot_GG_MTB_2{
 		description = "Trojan:Win32/Qakbot.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_02_0 = {4d 5a 8a 44 90 01 02 8a 4c 90 01 02 f6 e1 90 02 1e 50 45 90 00 } //1
-		$a_02_1 = {32 0c 02 8b 90 01 03 88 0c 30 8b 90 01 03 8a 90 01 03 32 90 01 03 88 90 01 03 83 90 01 01 01 90 00 } //1
+		$a_02_0 = {4d 5a 8a 44 ?? ?? 8a 4c ?? ?? f6 e1 [0-1e] 50 45 } //1
+		$a_02_1 = {32 0c 02 8b ?? ?? ?? 88 0c 30 8b ?? ?? ?? 8a ?? ?? ?? 32 ?? ?? ?? 88 ?? ?? ?? 83 ?? 01 } //1
 	condition:
 		((#a_02_0  & 1)*1+(#a_02_1  & 1)*1) >=2
  
@@ -25,7 +25,7 @@ rule Trojan_Win32_Qakbot_GG_MTB_3{
 		description = "Trojan:Win32/Qakbot.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {89 c1 8b 45 90 02 02 fc f3 a4 57 c7 04 90 02 06 59 55 33 2c 90 02 02 0b ab 90 02 04 83 e0 00 31 e8 5d 56 81 04 90 02 06 29 34 90 02 02 8f 83 90 02 04 21 8b 90 02 04 6a 00 31 2c 90 02 02 50 5d 03 ab 90 02 04 89 e8 5d ff e0 90 00 } //1
+		$a_02_0 = {89 c1 8b 45 [0-02] fc f3 a4 57 c7 04 [0-06] 59 55 33 2c [0-02] 0b ab [0-04] 83 e0 00 31 e8 5d 56 81 04 [0-06] 29 34 [0-02] 8f 83 [0-04] 21 8b [0-04] 6a 00 31 2c [0-02] 50 5d 03 ab [0-04] 89 e8 5d ff e0 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -35,7 +35,7 @@ rule Trojan_Win32_Qakbot_GG_MTB_4{
 		description = "Trojan:Win32/Qakbot.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 33 05 90 02 04 8b c8 8b d1 89 15 90 02 04 a1 90 02 04 8b 0d 90 02 04 89 08 5f 5b 5d c3 90 00 } //1
+		$a_02_0 = {bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 bb f1 32 01 00 33 05 [0-04] 8b c8 8b d1 89 15 [0-04] a1 [0-04] 8b 0d [0-04] 89 08 5f 5b 5d c3 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -45,8 +45,8 @@ rule Trojan_Win32_Qakbot_GG_MTB_5{
 		description = "Trojan:Win32/Qakbot.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_02_0 = {8a 04 06 88 04 90 02 02 8b 0d 90 02 04 83 90 02 02 01 89 0d 90 02 04 eb 90 02 02 5e 8b e5 5d c3 90 00 } //1
-		$a_02_1 = {8b d2 8b d2 8b d2 90 02 1e a1 90 02 04 a3 90 02 04 a1 90 02 04 8b d8 a1 90 02 04 33 d9 c7 05 90 02 04 00 00 00 00 01 1d 90 02 04 a1 90 02 04 8b 0d 90 02 04 89 08 5b 5d c3 90 00 } //1
+		$a_02_0 = {8a 04 06 88 04 [0-02] 8b 0d [0-04] 83 [0-02] 01 89 0d [0-04] eb [0-02] 5e 8b e5 5d c3 } //1
+		$a_02_1 = {8b d2 8b d2 8b d2 [0-1e] a1 [0-04] a3 [0-04] a1 [0-04] 8b d8 a1 [0-04] 33 d9 c7 05 [0-04] 00 00 00 00 01 1d [0-04] a1 [0-04] 8b 0d [0-04] 89 08 5b 5d c3 } //1
 	condition:
 		((#a_02_0  & 1)*1+(#a_02_1  & 1)*1) >=2
  

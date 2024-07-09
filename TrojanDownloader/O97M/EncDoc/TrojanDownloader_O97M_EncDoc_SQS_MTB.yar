@@ -5,7 +5,7 @@ rule TrojanDownloader_O97M_EncDoc_SQS_MTB{
 		
 	strings :
 		$a_01_0 = {3d 20 52 65 70 6c 61 63 65 28 22 63 6d 64 2e } //1 = Replace("cmd.
-		$a_03_1 = {3a 2f 2f 64 64 6c 38 2e 64 61 74 61 2e 68 75 2f 90 02 ff 2f 90 02 0a 2f 90 02 0a 2f 90 00 } //1
+		$a_03_1 = {3a 2f 2f 64 64 6c 38 2e 64 61 74 61 2e 68 75 2f [0-ff] 2f [0-0a] 2f [0-0a] 2f } //1
 		$a_01_2 = {2e 53 61 76 65 } //1 .Save
 		$a_01_3 = {3d 20 52 65 70 6c 61 63 65 28 22 72 75 6e 64 4b 66 61 75 38 73 38 61 64 36 79 61 4b 66 61 75 38 73 38 61 64 36 79 61 33 32 20 75 72 4b 66 61 75 38 73 38 61 64 36 79 61 2e 64 4b 66 61 75 38 73 38 61 64 36 79 61 4b 66 61 75 38 73 38 61 64 36 79 61 2c 4f 70 65 6e 55 52 4c } //1 = Replace("rundKfau8s8ad6yaKfau8s8ad6ya32 urKfau8s8ad6ya.dKfau8s8ad6yaKfau8s8ad6ya,OpenURL
 	condition:

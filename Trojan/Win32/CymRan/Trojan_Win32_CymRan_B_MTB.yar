@@ -4,7 +4,7 @@ rule Trojan_Win32_CymRan_B_MTB{
 		description = "Trojan:Win32/CymRan.B!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {2b ce f7 e9 c1 fa 90 01 01 8b c2 c1 e8 90 01 01 03 c2 8d 0c 40 8b c6 c1 e1 90 00 } //2
+		$a_03_0 = {2b ce f7 e9 c1 fa ?? 8b c2 c1 e8 ?? 03 c2 8d 0c 40 8b c6 c1 e1 } //2
 		$a_01_1 = {61 74 74 61 63 6b 5f 69 64 } //2 attack_id
 		$a_01_2 = {45 44 52 5f 61 74 74 61 63 6b 73 5f 70 61 74 68 } //2 EDR_attacks_path
 		$a_01_3 = {63 6e 63 5f 75 72 6c } //2 cnc_url

@@ -4,7 +4,7 @@ rule Trojan_BAT_SpyNoon_AB_MTB{
 		description = "Trojan:BAT/SpyNoon.AB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1a 00 1a 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {7e 01 00 00 04 02 6f 90 01 01 00 00 0a 0a 06 72 90 01 01 00 00 70 28 90 00 } //10
+		$a_03_0 = {7e 01 00 00 04 02 6f ?? 00 00 0a 0a 06 72 ?? 00 00 70 28 } //10
 		$a_01_1 = {0f 00 28 1b 00 00 0a 0a 06 03 58 04 52 } //10
 		$a_01_2 = {44 6f 77 6e 6c 6f 61 64 53 74 72 69 6e 67 } //1 DownloadString
 		$a_01_3 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //1 VirtualProtect

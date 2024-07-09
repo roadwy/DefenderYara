@@ -4,7 +4,7 @@ rule Trojan_Win32_RemcosRAT_RPE_MTB{
 		description = "Trojan:Win32/RemcosRAT.RPE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {68 00 74 00 74 00 70 00 3a 00 2f 00 2f 00 31 00 30 00 37 00 2e 00 31 00 38 00 39 00 2e 00 34 00 2e 00 37 00 30 00 2f 00 90 02 10 2e 00 62 00 69 00 6e 00 90 00 } //1
+		$a_03_0 = {68 00 74 00 74 00 70 00 3a 00 2f 00 2f 00 31 00 30 00 37 00 2e 00 31 00 38 00 39 00 2e 00 34 00 2e 00 37 00 30 00 2f 00 [0-10] 2e 00 62 00 69 00 6e 00 } //1
 		$a_01_1 = {43 72 65 61 74 65 49 6e 73 74 61 6e 63 65 } //1 CreateInstance
 		$a_01_2 = {41 63 74 69 76 61 74 6f 72 } //1 Activator
 		$a_01_3 = {53 68 65 6c 6c 49 63 6f 6e } //1 ShellIcon

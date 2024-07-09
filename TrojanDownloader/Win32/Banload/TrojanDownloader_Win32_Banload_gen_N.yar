@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Banload_gen_N{
 		description = "TrojanDownloader:Win32/Banload.gen!N,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {bb 01 00 00 00 8d 45 f4 8b 55 fc 0f b6 54 1a ff 2b d3 83 ea 90 01 01 e8 90 01 04 8b 55 f4 8d 45 f8 e8 90 01 04 43 4e 75 dc 90 00 } //1
+		$a_03_0 = {bb 01 00 00 00 8d 45 f4 8b 55 fc 0f b6 54 1a ff 2b d3 83 ea ?? e8 ?? ?? ?? ?? 8b 55 f4 8d 45 f8 e8 ?? ?? ?? ?? 43 4e 75 dc } //1
 		$a_01_1 = {3d 5f 4e 65 78 74 50 61 72 74 5f 32 72 66 6b 69 6e 64 79 73 61 64 76 6e 71 77 33 6e 65 72 61 73 64 66 } //1 =_NextPart_2rfkindysadvnqw3nerasdf
 		$a_01_2 = {4e 69 73 74 65 20 70 6f 7a 65 20 69 6e 74 65 72 65 73 61 6e 74 65 20 63 75 20 74 69 6e 65 20 69 6e 20 61 72 68 69 76 61 20 61 73 74 61 } //1 Niste poze interesante cu tine in arhiva asta
 		$a_01_3 = {45 74 69 4e 65 74 20 57 69 6e 64 6f 77 73 20 56 65 72 73 69 6f 6e 20 } //-10 EtiNet Windows Version 

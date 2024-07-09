@@ -4,7 +4,7 @@ rule Trojan_Win32_Guloader_RPP_MTB{
 		description = "Trojan:Win32/Guloader.RPP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {09 1c 38 ff 45 38 ff 4d 38 fc 83 c7 04 ff 45 38 ff 4d 38 83 04 24 00 81 ff 90 01 04 75 90 00 } //1
+		$a_02_0 = {09 1c 38 ff 45 38 ff 4d 38 fc 83 c7 04 ff 45 38 ff 4d 38 83 04 24 00 81 ff ?? ?? ?? ?? 75 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Guloader_RPP_MTB_2{
 		description = "Trojan:Win32/Guloader.RPP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {0f dc e5 ff 34 32 90 02 20 90 13 90 02 20 81 34 24 90 02 20 8f 04 30 90 02 20 83 de 90 02 20 90 13 90 02 20 83 d6 90 01 01 0f 8d 90 01 01 ff ff ff 90 00 } //1
+		$a_02_0 = {0f dc e5 ff 34 32 [0-20] 90 13 [0-20] 81 34 24 [0-20] 8f 04 30 [0-20] 83 de [0-20] 90 13 [0-20] 83 d6 ?? 0f 8d ?? ff ff ff } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

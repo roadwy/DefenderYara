@@ -6,7 +6,7 @@ rule PWS_Win32_QQpass_DP{
 	strings :
 		$a_00_0 = {53 4f 46 54 57 41 52 45 5c 4d 69 63 72 6f 73 6f 66 74 5c 77 69 6e 64 6f 77 73 5c 63 75 72 72 65 6e 74 76 65 72 73 69 6f 6e 5c 72 75 6e } //10 SOFTWARE\Microsoft\windows\currentversion\run
 		$a_00_1 = {5c 77 69 6e 73 74 61 72 74 65 72 2e 65 78 65 } //10 \winstarter.exe
-		$a_02_2 = {68 74 74 70 3a 2f 2f 90 02 20 2e 61 73 70 90 00 } //10
+		$a_02_2 = {68 74 74 70 3a 2f 2f [0-20] 2e 61 73 70 } //10
 		$a_00_3 = {26 50 61 73 73 77 6f 72 64 3d } //10 &Password=
 		$a_00_4 = {54 65 6e 63 65 6e 74 5f 51 51 42 61 72 } //10 Tencent_QQBar
 		$a_00_5 = {5c 6e 65 77 75 6d 73 67 2e 65 78 65 } //1 \newumsg.exe

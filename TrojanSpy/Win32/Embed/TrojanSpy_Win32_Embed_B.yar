@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Embed_B{
 		description = "TrojanSpy:Win32/Embed.B,SIGNATURE_TYPE_PEHSTR_EXT,05 00 04 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {40 89 45 f8 03 c0 83 c0 03 24 fc e8 90 01 04 8b c4 ff 75 f8 89 45 f0 50 6a ff ff 75 fc 66 89 18 90 00 } //1
+		$a_03_0 = {40 89 45 f8 03 c0 83 c0 03 24 fc e8 ?? ?? ?? ?? 8b c4 ff 75 f8 89 45 f0 50 6a ff ff 75 fc 66 89 18 } //1
 		$a_01_1 = {48 74 74 70 5f 64 6c 6c 2e 64 6c 6c 00 } //1
 		$a_01_2 = {57 00 69 00 6e 00 64 00 6f 00 77 00 73 00 20 00 46 00 72 00 61 00 6d 00 65 00 57 00 6f 00 72 00 6b 00 20 00 21 00 7e 00 00 00 } //1
 		$a_01_3 = {2f 77 69 6e 64 6f 77 73 2f 75 70 64 61 74 65 2f 73 65 61 72 63 68 3f 68 6c 3d 25 73 26 71 3d 25 73 26 6d 65 74 61 3d 25 73 26 69 64 3d 25 73 } //1 /windows/update/search?hl=%s&q=%s&meta=%s&id=%s

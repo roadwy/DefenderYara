@@ -4,7 +4,7 @@ rule Trojan_BAT_Formbook_MI_MTB{
 		description = "Trojan:BAT/Formbook.MI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,39 00 39 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {03 09 03 6f 90 01 03 0a 5d 17 d6 28 90 01 03 0a da 13 04 07 11 04 28 90 01 03 0a 28 90 01 03 0a 28 90 01 03 0a 0b 09 17 d6 0d 09 08 31 90 00 } //30
+		$a_03_0 = {03 09 03 6f ?? ?? ?? 0a 5d 17 d6 28 ?? ?? ?? 0a da 13 04 07 11 04 28 ?? ?? ?? 0a 28 ?? ?? ?? 0a 28 ?? ?? ?? 0a 0b 09 17 d6 0d 09 08 31 } //30
 		$a_01_1 = {46 00 72 00 6f 00 6d 00 42 00 61 00 73 00 65 00 36 00 34 00 53 00 74 00 72 00 69 00 6e 00 67 00 } //5 FromBase64String
 		$a_01_2 = {49 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f 5f } //5 I____________________
 		$a_01_3 = {44 65 62 75 67 67 61 62 6c 65 41 74 74 72 69 62 75 74 65 } //5 DebuggableAttribute

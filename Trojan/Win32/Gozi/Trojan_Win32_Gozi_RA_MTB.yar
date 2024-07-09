@@ -4,7 +4,7 @@ rule Trojan_Win32_Gozi_RA_MTB{
 		description = "Trojan:Win32/Gozi.RA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {b8 e1 bf 01 00 90 02 0a 8a 04 08 88 04 0a 90 00 } //1
+		$a_03_0 = {b8 e1 bf 01 00 [0-0a] 8a 04 08 88 04 0a } //1
 		$a_01_1 = {bd 00 01 00 00 88 80 78 b7 21 02 40 3b c5 75 } //1
 		$a_01_2 = {30 04 37 4e 0f } //1
 	condition:
@@ -27,7 +27,7 @@ rule Trojan_Win32_Gozi_RA_MTB_3{
 		description = "Trojan:Win32/Gozi.RA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 40 68 00 30 00 00 ff 75 90 01 01 57 ff 55 90 01 01 33 c9 8b f0 39 7d 90 01 01 76 1d 8b c1 99 6a 3c 5f f7 ff 8a 82 90 01 04 8b 55 90 01 01 32 04 11 88 04 31 41 3b 4d 90 01 01 72 e3 90 00 } //1
+		$a_03_0 = {6a 40 68 00 30 00 00 ff 75 ?? 57 ff 55 ?? 33 c9 8b f0 39 7d ?? 76 1d 8b c1 99 6a 3c 5f f7 ff 8a 82 ?? ?? ?? ?? 8b 55 ?? 32 04 11 88 04 31 41 3b 4d ?? 72 e3 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

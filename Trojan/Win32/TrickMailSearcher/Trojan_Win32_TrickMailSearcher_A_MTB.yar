@@ -4,7 +4,7 @@ rule Trojan_Win32_TrickMailSearcher_A_MTB{
 		description = "Trojan:Win32/TrickMailSearcher.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {6d 61 69 6c 46 69 6e 64 65 72 5f 78 90 02 04 2e 64 6c 6c 90 00 } //1
+		$a_03_0 = {6d 61 69 6c 46 69 6e 64 65 72 5f 78 [0-04] 2e 64 6c 6c } //1
 		$a_81_1 = {74 65 73 74 4d 61 69 6c 46 69 6e 64 65 72 } //1 testMailFinder
 		$a_81_2 = {54 65 73 74 4d 61 69 6c 46 69 6e 64 65 72 } //1 TestMailFinder
 		$a_81_3 = {65 6e 64 20 6f 66 20 55 52 4c 73 } //1 end of URLs

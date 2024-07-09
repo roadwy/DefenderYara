@@ -4,7 +4,7 @@ rule Ransom_Win32_Crilock_A{
 		description = "Ransom:Win32/Crilock.A,SIGNATURE_TYPE_PEHSTR_EXT,07 00 05 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {e8 00 00 00 00 5b 8d 43 36 bf 90 01 04 b9 90 01 04 89 fa 31 db 89 ce 83 e6 03 75 10 90 00 } //5
+		$a_03_0 = {e8 00 00 00 00 5b 8d 43 36 bf ?? ?? ?? ?? b9 ?? ?? ?? ?? 89 fa 31 db 89 ce 83 e6 03 75 10 } //5
 		$a_01_1 = {5c 66 73 32 30 20 42 69 74 63 6f 69 6e 20 69 73 20 61 20 63 72 79 70 74 6f 63 75 72 72 65 6e 63 79 20 77 68 65 72 65 } //1 \fs20 Bitcoin is a cryptocurrency where
 		$a_01_2 = {47 65 74 74 69 6e 67 20 73 74 61 72 74 65 64 20 77 69 74 68 20 42 69 74 63 6f 69 6e 7d 7d 7d 5c 63 66 31 5c 75 6c 6e 6f 6e 65 5c 62 30 5c 66 30 5c 66 73 32 30 5c 70 61 72 } //1 Getting started with Bitcoin}}}\cf1\ulnone\b0\f0\fs20\par
 		$a_01_3 = {6e 6f 62 6f 64 79 20 61 6e 64 20 6e 65 76 65 72 20 77 69 6c 6c 20 62 65 20 61 62 6c 65 5c 62 30 20 20 74 6f 20 72 65 73 74 6f 72 65 20 66 69 6c 65 73 2e 2e 2e 5c 70 61 72 } //1 nobody and never will be able\b0  to restore files...\par

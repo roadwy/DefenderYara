@@ -4,8 +4,8 @@ rule TrojanDownloader_Win32_Seimon_D{
 		description = "TrojanDownloader:Win32/Seimon.D,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {6c 6f 67 2f 70 72 6f 63 2e 70 68 70 3f 90 02 0a 6b 65 79 3d 25 90 02 08 49 44 90 00 } //2
-		$a_02_1 = {68 74 74 70 3a 2f 2f 77 77 77 2e 90 02 0a 2e 63 6f 6d 2f 62 69 6e 2f 90 02 0a 2e 70 68 70 90 00 } //2
+		$a_03_0 = {6c 6f 67 2f 70 72 6f 63 2e 70 68 70 3f [0-0a] 6b 65 79 3d 25 [0-08] 49 44 } //2
+		$a_02_1 = {68 74 74 70 3a 2f 2f 77 77 77 2e [0-0a] 2e 63 6f 6d 2f 62 69 6e 2f [0-0a] 2e 70 68 70 } //2
 		$a_01_2 = {6d 75 74 65 78 5f } //1 mutex_
 		$a_01_3 = {25 4d 41 43 41 44 44 52 } //1 %MACADDR
 		$a_01_4 = {25 73 5c 6d 73 61 67 65 6e 74 5c 25 73 } //1 %s\msagent\%s

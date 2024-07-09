@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Syglor_A{
 		description = "TrojanDownloader:Win32/Syglor.A,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {be 0f 00 00 00 33 ff 52 89 b5 90 01 04 89 bd 90 01 04 c6 85 90 01 04 00 e8 90 00 } //10
+		$a_02_0 = {be 0f 00 00 00 33 ff 52 89 b5 ?? ?? ?? ?? 89 bd ?? ?? ?? ?? c6 85 ?? ?? ?? ?? 00 e8 } //10
 		$a_00_1 = {26 68 61 72 64 69 64 3d 25 73 } //1 &hardid=%s
 		$a_00_2 = {5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 52 75 6e 5d } //1 \CurrentVersion\Run]
 		$a_00_3 = {55 73 65 72 2d 41 67 65 6e 74 3a 20 4f 70 65 72 61 2f 39 2e 38 30 } //1 User-Agent: Opera/9.80

@@ -4,7 +4,7 @@ rule Backdoor_Win32_Agent_DT{
 		description = "Backdoor:Win32/Agent.DT,SIGNATURE_TYPE_PEHSTR_EXT,ffffff83 00 ffffff83 00 0a 00 00 "
 		
 	strings :
-		$a_02_0 = {0f be 34 1f 83 fe 20 7c 22 83 fe 7e 7f 1d e8 90 01 04 8d 0c 40 c1 e1 05 8d 44 31 90 01 01 b9 5f 00 00 00 99 f7 f9 80 c2 20 88 14 1f 47 3b fd 7c 90 00 } //100
+		$a_02_0 = {0f be 34 1f 83 fe 20 7c 22 83 fe 7e 7f 1d e8 ?? ?? ?? ?? 8d 0c 40 c1 e1 05 8d 44 31 ?? b9 5f 00 00 00 99 f7 f9 80 c2 20 88 14 1f 47 3b fd 7c } //100
 		$a_00_1 = {73 68 75 74 64 6f 77 6e 20 2d 73 20 2d 74 20 30 20 2d 66 } //10 shutdown -s -t 0 -f
 		$a_00_2 = {4d 00 69 00 63 00 72 00 6f 00 73 00 6f 00 66 00 74 00 20 00 43 00 6f 00 72 00 70 00 6f 00 72 00 61 00 74 00 69 00 6f 00 6e 00 } //10 Microsoft Corporation
 		$a_00_3 = {50 73 53 65 74 4c 6f 61 64 49 6d 61 67 65 4e 6f 74 69 66 79 52 6f 75 74 69 6e 65 } //10 PsSetLoadImageNotifyRoutine

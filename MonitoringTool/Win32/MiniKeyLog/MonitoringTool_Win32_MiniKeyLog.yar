@@ -5,7 +5,7 @@ rule MonitoringTool_Win32_MiniKeyLog{
 		
 	strings :
 		$a_00_0 = {53 69 6d 70 6c 65 20 6b 65 79 6c 6f 67 67 65 72 20 3c } //10 Simple keylogger <
-		$a_02_1 = {8b c3 0d 00 00 00 40 3b d8 75 6a 68 90 01 02 40 00 6a 00 e8 90 01 01 ff ff ff 89 45 fc 68 90 01 02 40 00 e8 90 01 01 ff ff ff 90 00 } //10
+		$a_02_1 = {8b c3 0d 00 00 00 40 3b d8 75 6a 68 ?? ?? 40 00 6a 00 e8 ?? ff ff ff 89 45 fc 68 ?? ?? 40 00 e8 ?? ff ff ff } //10
 		$a_00_2 = {47 65 74 4b 65 79 62 6f 61 72 64 53 74 61 74 65 } //1 GetKeyboardState
 		$a_00_3 = {53 65 74 4b 65 79 48 6f 6f 6b } //1 SetKeyHook
 		$a_00_4 = {53 65 74 57 69 6e 64 6f 77 73 48 6f 6f 6b 45 78 41 } //1 SetWindowsHookExA

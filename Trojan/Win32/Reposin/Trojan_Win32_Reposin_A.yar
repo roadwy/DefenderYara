@@ -4,7 +4,7 @@ rule Trojan_Win32_Reposin_A{
 		description = "Trojan:Win32/Reposin.A,SIGNATURE_TYPE_PEHSTR_EXT,08 00 06 00 08 00 00 "
 		
 	strings :
-		$a_02_0 = {e9 ad 00 00 00 8b 45 e4 2b c2 8b c8 bf 90 01 02 40 00 8b f2 33 db f3 a6 75 1c 6a 19 ff 75 f8 ff 75 f4 90 00 } //8
+		$a_02_0 = {e9 ad 00 00 00 8b 45 e4 2b c2 8b c8 bf ?? ?? 40 00 8b f2 33 db f3 a6 75 1c 6a 19 ff 75 f8 ff 75 f4 } //8
 		$a_00_1 = {8b 74 24 08 57 8b f9 eb 0f 8a 0e 8a 07 8a d0 32 c1 02 d1 88 06 88 17 46 3b 74 24 10 72 eb } //5
 		$a_01_2 = {66 69 6c 65 6e 61 6d 65 3d 22 69 6d 61 67 2e 6a 70 67 22 } //2 filename="imag.jpg"
 		$a_01_3 = {66 69 6c 65 6e 61 6d 65 3d 20 22 6c 69 6e 6b 73 2e 61 72 63 68 22 } //2 filename= "links.arch"

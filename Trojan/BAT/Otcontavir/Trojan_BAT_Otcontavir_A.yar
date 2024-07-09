@@ -4,7 +4,7 @@ rule Trojan_BAT_Otcontavir_A{
 		description = "Trojan:BAT/Otcontavir.A,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {3a 00 2f 00 2f 00 6c 00 61 00 6c 00 61 00 78 00 2e 00 63 00 61 00 74 00 2f 00 90 02 10 2f 00 75 00 70 00 2e 00 70 00 68 00 70 00 90 00 } //4
+		$a_03_0 = {3a 00 2f 00 2f 00 6c 00 61 00 6c 00 61 00 78 00 2e 00 63 00 61 00 74 00 2f 00 [0-10] 2f 00 75 00 70 00 2e 00 70 00 68 00 70 00 } //4
 		$a_01_1 = {4f 75 74 6c 6f 6f 6b 43 6f 6e 74 61 63 74 73 56 69 65 77 65 72 } //2 OutlookContactsViewer
 		$a_01_2 = {55 70 6c 6f 61 64 45 6d 61 69 6c 4c 69 73 74 } //1 UploadEmailList
 		$a_01_3 = {52 65 64 65 6d 70 74 69 6f 6e 4c 6f 61 64 65 72 } //1 RedemptionLoader

@@ -4,7 +4,7 @@ rule PWS_Win32_OnLineGames_CSB{
 		description = "PWS:Win32/OnLineGames.CSB,SIGNATURE_TYPE_PEHSTR_EXT,16 00 16 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {75 26 8d 94 24 90 01 02 00 00 68 04 01 00 00 52 ff d6 6a 00 ff d7 8b 44 24 90 01 01 50 6a 00 68 ff 0f 1f 00 ff d3 6a 00 50 ff d5 8d 4c 24 90 01 01 68 90 01 03 00 51 ff 15 90 01 03 00 90 00 } //10
+		$a_02_0 = {75 26 8d 94 24 ?? ?? 00 00 68 04 01 00 00 52 ff d6 6a 00 ff d7 8b 44 24 ?? 50 6a 00 68 ff 0f 1f 00 ff d3 6a 00 50 ff d5 8d 4c 24 ?? 68 ?? ?? ?? 00 51 ff 15 ?? ?? ?? 00 } //10
 		$a_00_1 = {43 72 65 61 74 65 54 6f 6f 6c 68 65 6c 70 33 32 53 6e 61 70 73 68 6f 74 } //10 CreateToolhelp32Snapshot
 		$a_00_2 = {00 61 76 70 2e 65 78 65 } //2 愀灶攮數
 		$a_00_3 = {33 36 30 53 61 66 65 2e 65 78 65 } //1 360Safe.exe

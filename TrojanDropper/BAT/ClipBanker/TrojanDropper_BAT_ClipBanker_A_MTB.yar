@@ -4,7 +4,7 @@ rule TrojanDropper_BAT_ClipBanker_A_MTB{
 		description = "TrojanDropper:BAT/ClipBanker.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {0a 16 9a 14 14 6f 90 01 01 00 00 0a 74 90 01 01 00 00 01 0a de 90 00 } //2
+		$a_03_0 = {0a 16 9a 14 14 6f ?? 00 00 0a 74 ?? 00 00 01 0a de } //2
 		$a_01_1 = {00 00 0a 0b 07 2a } //2
 		$a_01_2 = {00 00 04 0b 07 2a } //2
 		$a_01_3 = {52 65 76 65 72 73 65 } //1 Reverse

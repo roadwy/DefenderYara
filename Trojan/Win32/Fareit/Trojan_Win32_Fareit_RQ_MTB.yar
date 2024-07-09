@@ -4,7 +4,7 @@ rule Trojan_Win32_Fareit_RQ_MTB{
 		description = "Trojan:Win32/Fareit.RQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {32 c2 88 01 c3 8d 40 00 55 8b ec 51 89 45 90 01 01 8b 7d 90 01 01 81 c7 90 01 04 ff d7 59 5d c3 8d 40 00 55 8b ec 51 53 56 57 6a 90 01 01 68 90 01 04 68 90 01 04 6a 90 01 01 e8 90 00 } //1
+		$a_02_0 = {32 c2 88 01 c3 8d 40 00 55 8b ec 51 89 45 ?? 8b 7d ?? 81 c7 ?? ?? ?? ?? ff d7 59 5d c3 8d 40 00 55 8b ec 51 53 56 57 6a ?? 68 ?? ?? ?? ?? 68 ?? ?? ?? ?? 6a ?? e8 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

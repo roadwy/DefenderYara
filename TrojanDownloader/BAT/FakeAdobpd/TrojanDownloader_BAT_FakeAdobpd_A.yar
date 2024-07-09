@@ -4,7 +4,7 @@ rule TrojanDownloader_BAT_FakeAdobpd_A{
 		description = "TrojanDownloader:BAT/FakeAdobpd.A,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {61 72 62 6f 72 90 02 20 5c 50 72 6f 6a 65 63 74 73 5c 46 6c 61 73 68 55 70 5c 46 6c 61 73 68 55 70 90 00 } //1
+		$a_03_0 = {61 72 62 6f 72 [0-20] 5c 50 72 6f 6a 65 63 74 73 5c 46 6c 61 73 68 55 70 5c 46 6c 61 73 68 55 70 } //1
 		$a_01_1 = {51 00 57 00 52 00 76 00 59 00 6d 00 55 00 } //1 QWRvYmU
 		$a_01_2 = {5a 00 6d 00 78 00 7a 00 61 00 44 00 4d 00 79 00 4c 00 6d 00 4e 00 32 00 59 00 77 00 3d 00 3d 00 } //1 ZmxzaDMyLmN2Yw==
 		$a_01_3 = {61 00 48 00 52 00 30 00 63 00 44 00 6f 00 76 00 4c 00 } //1 aHR0cDovL

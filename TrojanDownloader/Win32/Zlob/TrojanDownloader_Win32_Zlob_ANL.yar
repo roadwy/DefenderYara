@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Zlob_ANL{
 		description = "TrojanDownloader:Win32/Zlob.ANL,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {8a 47 01 47 3a c3 75 f8 be 90 01 02 40 00 66 a5 8d bd f0 fe ff ff 4f 8a 47 01 47 3a c3 75 f8 be 90 01 02 40 00 a5 a5 a5 a5 90 00 } //4
+		$a_03_0 = {8a 47 01 47 3a c3 75 f8 be ?? ?? 40 00 66 a5 8d bd f0 fe ff ff 4f 8a 47 01 47 3a c3 75 f8 be ?? ?? 40 00 a5 a5 a5 a5 } //4
 		$a_00_1 = {57 65 62 20 54 65 63 68 6e 6f 6c 6f 67 69 65 73 } //5 Web Technologies
 		$a_00_2 = {61 77 65 72 25 64 2e 62 61 74 } //1 awer%d.bat
 		$a_00_3 = {25 73 5c 6c 6c 25 73 25 64 2e 65 78 65 } //1 %s\ll%s%d.exe

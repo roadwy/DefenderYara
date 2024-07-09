@@ -4,7 +4,7 @@ rule TrojanDropper_Win32_Tofsee_gen_A{
 		description = "TrojanDropper:Win32/Tofsee.gen!A,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {83 c7 03 74 1a e8 90 01 02 00 00 33 d2 6a 19 59 f7 f1 80 c2 61 88 94 90 00 } //2
+		$a_03_0 = {83 c7 03 74 1a e8 ?? ?? 00 00 33 d2 6a 19 59 f7 f1 80 c2 61 88 94 } //2
 		$a_01_1 = {37 38 2e 31 30 39 2e 31 36 2e 32 35 30 00 } //2 㠷ㄮ㤰ㄮ⸶㔲0
 		$a_01_2 = {6e 65 74 73 66 2e 69 6e 66 00 } //1
 		$a_01_3 = {6e 65 74 73 66 5f 6d 2e 69 6e 66 0d 0a } //1

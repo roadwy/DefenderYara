@@ -4,7 +4,7 @@ rule Trojan_Win32_Farfli_DAQ_MTB{
 		description = "Trojan:Win32/Farfli.DAQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {68 f0 02 4e 00 33 c9 8d 75 08 e8 90 01 01 0b 00 00 85 c0 7c 03 c6 07 01 68 fc 02 4e 00 33 c9 8d 75 08 e8 90 01 01 0b 00 00 85 c0 7c 90 00 } //2
+		$a_03_0 = {68 f0 02 4e 00 33 c9 8d 75 08 e8 ?? 0b 00 00 85 c0 7c 03 c6 07 01 68 fc 02 4e 00 33 c9 8d 75 08 e8 ?? 0b 00 00 85 c0 7c } //2
 		$a_01_1 = {45 84 50 ff 15 70 81 4d 00 85 c0 0f 84 64 01 00 00 0f b7 45 98 6a ff 50 0f b7 45 96 50 0f b7 45 94 50 0f b7 45 92 50 0f b7 45 8e 50 0f b7 45 } //1
 		$a_01_2 = {5b c9 c2 04 00 8d 45 e4 50 68 b4 8b 4d 00 6a 01 57 68 84 8c 4d 00 89 7d e4 ff 15 80 86 4d 00 3b c7 7d 0f 8b 45 d8 83 c0 f0 e8 74 04 } //1
 		$a_01_3 = {69 00 6e 00 66 00 6f 00 63 00 30 00 2e 00 64 00 75 00 62 00 61 00 2e 00 6e 00 65 00 74 00 2f 00 63 00 } //1 infoc0.duba.net/c

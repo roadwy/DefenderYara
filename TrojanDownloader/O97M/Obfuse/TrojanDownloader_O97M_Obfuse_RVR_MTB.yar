@@ -4,7 +4,7 @@ rule TrojanDownloader_O97M_Obfuse_RVR_MTB{
 		description = "TrojanDownloader:O97M/Obfuse.RVR!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {77 77 77 2e 64 69 61 6d 61 6e 74 65 73 76 69 61 67 65 6e 73 2e 63 6f 6d 2e 62 72 2f 52 75 6e 2e 6a 70 67 22 90 0a 33 00 55 52 4c 20 3d 20 22 68 74 74 70 73 3a 2f 2f 90 00 } //1
+		$a_02_0 = {77 77 77 2e 64 69 61 6d 61 6e 74 65 73 76 69 61 67 65 6e 73 2e 63 6f 6d 2e 62 72 2f 52 75 6e 2e 6a 70 67 22 90 0a 33 00 55 52 4c 20 3d 20 22 68 74 74 70 73 3a 2f 2f } //1
 		$a_00_1 = {53 6c 65 65 70 20 36 30 30 30 30 } //1 Sleep 60000
 		$a_00_2 = {73 74 61 72 74 75 70 66 6f 6c 64 65 72 20 3d 20 22 43 3a 5c 55 73 65 72 73 5c 22 } //1 startupfolder = "C:\Users\"
 		$a_00_3 = {43 72 65 61 74 65 4f 62 6a 65 63 74 28 22 57 53 63 72 69 70 74 2e 4e 65 74 77 6f 72 6b 22 29 2e 55 73 65 72 4e 61 6d 65 } //1 CreateObject("WScript.Network").UserName

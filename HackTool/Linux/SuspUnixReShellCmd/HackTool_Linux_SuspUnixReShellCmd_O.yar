@@ -4,7 +4,7 @@ rule HackTool_Linux_SuspUnixReShellCmd_O{
 		description = "HackTool:Linux/SuspUnixReShellCmd.O,SIGNATURE_TYPE_CMDHSTR_EXT,0f 00 0f 00 0b 00 00 "
 		
 	strings :
-		$a_02_0 = {2f 00 62 00 69 00 6e 00 2f 00 90 02 04 73 00 68 00 90 00 } //10
+		$a_02_0 = {2f 00 62 00 69 00 6e 00 2f 00 [0-04] 73 00 68 00 } //10
 		$a_00_1 = {73 00 68 00 20 00 2d 00 63 00 } //1 sh -c
 		$a_01_2 = {6d 00 6b 00 66 00 69 00 66 00 6f 00 } //1 mkfifo
 		$a_01_3 = {6d 00 6b 00 6e 00 6f 00 64 00 } //1 mknod

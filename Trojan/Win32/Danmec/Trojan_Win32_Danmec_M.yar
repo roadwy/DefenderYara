@@ -4,7 +4,7 @@ rule Trojan_Win32_Danmec_M{
 		description = "Trojan:Win32/Danmec.M,SIGNATURE_TYPE_PEHSTR_EXT,ffffff92 01 ffffff91 01 19 00 00 "
 		
 	strings :
-		$a_02_0 = {33 c9 85 c0 7e 09 80 34 31 1b 41 3b c8 7c f7 90 05 03 03 5f 5e c9 c3 e9 90 00 } //100
+		$a_02_0 = {33 c9 85 c0 7e 09 80 34 31 1b 41 3b c8 7c f7 90 05 03 03 5f 5e c9 c3 e9 } //100
 		$a_00_1 = {33 c9 85 ff 7e 19 6a 02 5a 4a 8a c2 d0 e0 85 d2 88 44 15 fc 75 f3 80 34 31 1b 41 3b cf 7c e7 5f 5e c9 c3 e9 } //100
 		$a_00_2 = {47 45 54 20 25 73 25 73 20 48 54 54 50 2f 31 2e 31 } //100 GET %s%s HTTP/1.1
 		$a_00_3 = {4d 69 63 72 6f 73 6f 66 74 20 41 53 50 49 20 4d 61 6e 61 67 65 72 } //100 Microsoft ASPI Manager

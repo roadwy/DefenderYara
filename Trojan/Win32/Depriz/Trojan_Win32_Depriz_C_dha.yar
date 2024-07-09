@@ -4,7 +4,7 @@ rule Trojan_Win32_Depriz_C_dha{
 		description = "Trojan:Win32/Depriz.C!dha,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {81 ff 00 94 35 77 73 90 01 01 ff c7 48 83 c0 02 eb e5 90 00 } //1
+		$a_03_0 = {81 ff 00 94 35 77 73 ?? ff c7 48 83 c0 02 eb e5 } //1
 		$a_01_1 = {64 00 72 00 64 00 69 00 73 00 6b 00 2e 00 73 00 79 00 73 00 } //1 drdisk.sys
 		$a_01_2 = {6e 00 74 00 73 00 73 00 72 00 76 00 72 00 33 00 32 00 2e 00 65 00 78 00 65 00 } //1 ntssrvr32.exe
 		$a_01_3 = {6e 00 74 00 73 00 73 00 72 00 76 00 72 00 36 00 34 00 2e 00 65 00 78 00 65 00 } //1 ntssrvr64.exe

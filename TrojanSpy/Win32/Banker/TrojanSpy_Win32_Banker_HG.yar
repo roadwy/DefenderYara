@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Banker_HG{
 		description = "TrojanSpy:Win32/Banker.HG,SIGNATURE_TYPE_PEHSTR_EXT,2a 00 2a 00 08 00 00 "
 		
 	strings :
-		$a_02_0 = {57 69 6e 64 6f 77 73 75 70 64 61 74 65 31 68 90 01 10 57 69 6e 64 6f 77 73 6d 65 73 73 65 6e 67 65 72 31 70 90 00 } //10
+		$a_02_0 = {57 69 6e 64 6f 77 73 75 70 64 61 74 65 31 68 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 57 69 6e 64 6f 77 73 6d 65 73 73 65 6e 67 65 72 31 70 } //10
 		$a_00_1 = {57 4e 65 74 47 65 74 43 6f 6e 6e 65 63 74 69 6f 6e 41 } //10 WNetGetConnectionA
 		$a_00_2 = {52 65 67 53 65 74 56 61 6c 75 65 45 78 41 } //10 RegSetValueExA
 		$a_00_3 = {55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 41 } //10 URLDownloadToFileA

@@ -4,7 +4,7 @@ rule Trojan_Win32_zgRAT_A_MTB{
 		description = "Trojan:Win32/zgRAT.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {66 ad 66 83 f0 90 01 01 66 ab 66 83 f8 90 00 } //2
+		$a_03_0 = {66 ad 66 83 f0 ?? 66 ab 66 83 f8 } //2
 	condition:
 		((#a_03_0  & 1)*2) >=2
  

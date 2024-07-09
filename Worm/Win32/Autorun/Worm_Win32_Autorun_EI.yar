@@ -4,7 +4,7 @@ rule Worm_Win32_Autorun_EI{
 		description = "Worm:Win32/Autorun.EI,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_02_0 = {73 68 65 6c 6c 5c 6f 70 65 6e 5c 43 6f 6d 6d 61 6e 64 3d 90 02 20 2e 73 63 72 90 00 } //1
+		$a_02_0 = {73 68 65 6c 6c 5c 6f 70 65 6e 5c 43 6f 6d 6d 61 6e 64 3d [0-20] 2e 73 63 72 } //1
 		$a_00_1 = {5b 61 75 74 6f 72 75 6e 5d } //1 [autorun]
 		$a_00_2 = {61 75 74 6f 72 75 6e 2e 69 6e 66 } //1 autorun.inf
 		$a_00_3 = {54 61 73 6b 4d 6f 6e 69 74 6f 72 } //1 TaskMonitor

@@ -4,7 +4,7 @@ rule Virus_Win32_Fakefire_B{
 		description = "Virus:Win32/Fakefire.B,SIGNATURE_TYPE_PEHSTR_EXT,25 00 25 00 0c 00 00 "
 		
 	strings :
-		$a_02_0 = {c7 45 f0 00 00 00 00 c7 45 f4 00 00 00 00 8b 45 08 8b 08 8b 55 08 52 ff 51 04 c7 45 fc 01 00 00 00 c7 45 fc 02 00 00 00 6a ff ff 15 90 01 02 40 00 c7 45 fc 03 00 00 00 6a 00 68 90 01 02 40 00 8d 45 88 50 ff 15 90 01 02 40 00 8d 4d 88 51 8d 55 c0 52 ff 15 90 01 02 40 00 c7 45 fc 04 00 00 00 c7 85 60 ff ff ff 01 00 00 00 c7 85 58 ff ff ff 02 00 00 00 c7 85 50 ff ff ff 14 00 00 00 c7 85 48 ff ff ff 02 00 00 00 c7 85 40 ff ff ff 01 00 00 00 c7 85 38 ff ff ff 02 00 00 00 8d 85 58 ff ff ff 50 8d 8d 48 ff ff ff 51 8d 95 38 ff ff ff 52 8d 85 c8 fe ff ff 50 8d 8d d8 fe ff ff 51 8d 55 b0 52 90 00 } //10
+		$a_02_0 = {c7 45 f0 00 00 00 00 c7 45 f4 00 00 00 00 8b 45 08 8b 08 8b 55 08 52 ff 51 04 c7 45 fc 01 00 00 00 c7 45 fc 02 00 00 00 6a ff ff 15 ?? ?? 40 00 c7 45 fc 03 00 00 00 6a 00 68 ?? ?? 40 00 8d 45 88 50 ff 15 ?? ?? 40 00 8d 4d 88 51 8d 55 c0 52 ff 15 ?? ?? 40 00 c7 45 fc 04 00 00 00 c7 85 60 ff ff ff 01 00 00 00 c7 85 58 ff ff ff 02 00 00 00 c7 85 50 ff ff ff 14 00 00 00 c7 85 48 ff ff ff 02 00 00 00 c7 85 40 ff ff ff 01 00 00 00 c7 85 38 ff ff ff 02 00 00 00 8d 85 58 ff ff ff 50 8d 8d 48 ff ff ff 51 8d 95 38 ff ff ff 52 8d 85 c8 fe ff ff 50 8d 8d d8 fe ff ff 51 8d 55 b0 52 } //10
 		$a_00_1 = {4d 53 56 42 56 4d 36 30 2e 44 4c 4c } //10 MSVBVM60.DLL
 		$a_00_2 = {4d 00 73 00 66 00 69 00 72 00 65 00 77 00 61 00 6c 00 6c 00 } //2 Msfirewall
 		$a_00_3 = {43 00 3a 00 5c 00 56 00 42 00 56 00 69 00 72 00 75 00 73 00 5c 00 } //2 C:\VBVirus\

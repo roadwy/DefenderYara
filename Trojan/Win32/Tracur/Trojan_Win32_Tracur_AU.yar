@@ -4,7 +4,7 @@ rule Trojan_Win32_Tracur_AU{
 		description = "Trojan:Win32/Tracur.AU,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {66 69 72 65 66 6f 78 90 02 0a 63 68 72 6f 6d 65 90 02 0a 69 65 78 70 6c 6f 72 65 90 02 35 73 63 6f 64 65 66 90 00 } //1
+		$a_03_0 = {66 69 72 65 66 6f 78 [0-0a] 63 68 72 6f 6d 65 [0-0a] 69 65 78 70 6c 6f 72 65 [0-35] 73 63 6f 64 65 66 } //1
 		$a_01_1 = {43 22 6b 65 79 a3 3a 07 0e 4d 49 47 66 43 41 30 } //1
 		$a_01_2 = {64 6e 73 65 72 72 6f 72 64 69 61 67 6f 66 66 5f 77 65 62 6f 63 2e 68 74 6d } //1 dnserrordiagoff_weboc.htm
 		$a_01_3 = {21 2f 73 65 61 72 63 68 2f 72 65 73 75 6c 74 73 2e 70 68 70 3f } //1 !/search/results.php?

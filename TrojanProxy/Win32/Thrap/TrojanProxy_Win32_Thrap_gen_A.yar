@@ -4,7 +4,7 @@ rule TrojanProxy_Win32_Thrap_gen_A{
 		description = "TrojanProxy:Win32/Thrap.gen!A,SIGNATURE_TYPE_PEHSTR_EXT,13 00 0c 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {75 02 eb 38 c7 45 fc 00 00 00 00 eb 09 8b 45 fc 83 c0 01 89 45 fc 8b 4d 08 51 e8 90 01 02 00 00 83 c4 04 39 45 fc 7d 15 8b 55 08 03 55 fc 8a 02 32 45 0c 8b 4d 08 03 4d fc 88 01 eb d1 90 00 } //10
+		$a_03_0 = {75 02 eb 38 c7 45 fc 00 00 00 00 eb 09 8b 45 fc 83 c0 01 89 45 fc 8b 4d 08 51 e8 ?? ?? 00 00 83 c4 04 39 45 fc 7d 15 8b 55 08 03 55 fc 8a 02 32 45 0c 8b 4d 08 03 4d fc 88 01 eb d1 } //10
 		$a_01_1 = {83 bd ec fd ff ff 0a 74 42 81 bd ec fd ff ff ac 00 00 00 75 12 83 bd e8 fd ff ff 0f 7e 09 83 bd e8 fd ff ff 20 7c 24 } //6
 		$a_00_2 = {7e 66 73 6f 63 6b 31 2f 67 6f 64 2e 70 68 70 } //3 ~fsock1/god.php
 		$a_01_3 = {4e 6c 4d 65 64 69 61 43 65 6e 74 65 72 } //3 NlMediaCenter

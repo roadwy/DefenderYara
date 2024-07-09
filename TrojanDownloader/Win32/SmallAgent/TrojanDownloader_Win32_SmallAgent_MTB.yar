@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_SmallAgent_MTB{
 		description = "TrojanDownloader:Win32/SmallAgent!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {33 d2 33 c9 8a 8a 90 01 04 8b c1 83 e1 90 01 01 d1 90 01 01 83 e0 90 01 01 c1 e1 90 01 01 0b c1 35 90 01 04 83 c0 90 01 01 f7 d0 48 88 82 90 01 04 42 81 fa 90 01 04 72 90 00 } //1
+		$a_02_0 = {33 d2 33 c9 8a 8a ?? ?? ?? ?? 8b c1 83 e1 ?? d1 ?? 83 e0 ?? c1 e1 ?? 0b c1 35 ?? ?? ?? ?? 83 c0 ?? f7 d0 48 88 82 ?? ?? ?? ?? 42 81 fa ?? ?? ?? ?? 72 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

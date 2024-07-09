@@ -4,7 +4,7 @@ rule MonitoringTool_Win32_UltimateKeylogger{
 		description = "MonitoringTool:Win32/UltimateKeylogger,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {4b 4c 4b 6c 4d 6f 6e 2e 64 6c 6c 00 3f 41 64 64 4b 65 79 45 6e 74 72 79 40 90 02 ff 50 41 55 74 61 67 4b 65 79 52 65 73 75 6c 74 90 00 } //1
+		$a_03_0 = {4b 4c 4b 6c 4d 6f 6e 2e 64 6c 6c 00 3f 41 64 64 4b 65 79 45 6e 74 72 79 40 [0-ff] 50 41 55 74 61 67 4b 65 79 52 65 73 75 6c 74 } //1
 		$a_00_1 = {4b 65 79 48 6f 6f 6b } //1 KeyHook
 	condition:
 		((#a_03_0  & 1)*1+(#a_00_1  & 1)*1) >=2

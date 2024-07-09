@@ -4,7 +4,7 @@ rule Ransom_Win32_Tescrypt_O{
 		description = "Ransom:Win32/Tescrypt.O,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {52 ff d7 83 c4 08 85 c0 75 3f 8d 85 fc df ff ff 68 90 01 04 50 ff d7 83 c4 08 85 c0 75 2a 90 00 } //2
+		$a_03_0 = {52 ff d7 83 c4 08 85 c0 75 3f 8d 85 fc df ff ff 68 ?? ?? ?? ?? 50 ff d7 83 c4 08 85 c0 75 2a } //2
 		$a_01_1 = {5c 00 72 00 65 00 63 00 6f 00 76 00 65 00 72 00 5f 00 66 00 69 00 6c 00 65 00 5f 00 } //1 \recover_file_
 		$a_01_2 = {25 00 73 00 5c 00 5f 00 52 00 65 00 43 00 6f 00 56 00 65 00 52 00 79 00 5f 00 2e 00 54 00 58 00 54 00 } //1 %s\_ReCoVeRy_.TXT
 		$a_01_3 = {25 00 73 00 5c 00 5f 00 52 00 65 00 43 00 6f 00 56 00 65 00 52 00 79 00 5f 00 25 00 73 00 } //1 %s\_ReCoVeRy_%s

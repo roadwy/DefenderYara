@@ -9,7 +9,7 @@ rule TrojanDownloader_Win32_Kagayab_A{
 		$a_01_2 = {c6 85 c8 fd ff ff 5c c6 85 c9 fd ff ff 73 c6 85 ca fd ff ff 63 c6 85 cb fd ff ff 70 } //1
 		$a_01_3 = {c6 85 b0 fd ff ff 43 c6 85 b1 fd ff ff 4c c6 85 b2 fd ff ff 53 c6 85 b3 fd ff ff 49 89 44 24 08 8d 85 b0 fd ff ff c6 85 b4 fd ff ff 44 c6 85 b5 fd ff ff 5c c6 85 b6 fd ff ff 25 } //1
 		$a_01_4 = {83 f1 08 88 4c 14 16 83 c2 01 83 fa 08 75 ec 66 85 f6 74 27 66 3b 78 12 74 2f 8d 4e ff 8d 50 20 0f b7 c9 6b c9 0e 8d 4c 08 20 eb 0b } //1
-		$a_03_5 = {83 ec 14 85 c0 74 51 83 eb 01 75 c6 b8 05 00 00 00 e8 90 01 02 ff ff 90 00 } //1
+		$a_03_5 = {83 ec 14 85 c0 74 51 83 eb 01 75 c6 b8 05 00 00 00 e8 ?? ?? ff ff } //1
 	condition:
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_03_5  & 1)*1) >=4
  

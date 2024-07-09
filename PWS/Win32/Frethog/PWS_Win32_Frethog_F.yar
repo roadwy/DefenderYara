@@ -4,7 +4,7 @@ rule PWS_Win32_Frethog_F{
 		description = "PWS:Win32/Frethog.F,SIGNATURE_TYPE_PEHSTR_EXT,22 00 22 00 09 00 00 "
 		
 	strings :
-		$a_02_0 = {25 73 3f 61 3d 25 73 26 73 3d 25 73 26 75 3d 25 73 26 70 3d 25 73 90 02 20 26 72 3d 25 73 26 6c 3d 25 90 03 01 01 64 73 26 6d 3d 25 90 03 01 01 64 73 90 00 } //10
+		$a_02_0 = {25 73 3f 61 3d 25 73 26 73 3d 25 73 26 75 3d 25 73 26 70 3d 25 73 [0-20] 26 72 3d 25 73 26 6c 3d 25 (64|73) 26 6d 3d 25 (64|73) } //10
 		$a_01_1 = {57 72 69 74 65 50 72 6f 63 65 73 73 4d 65 6d 6f 72 79 } //5 WriteProcessMemory
 		$a_01_2 = {52 65 61 64 50 72 6f 63 65 73 73 4d 65 6d 6f 72 79 } //5 ReadProcessMemory
 		$a_01_3 = {53 65 74 57 69 6e 64 6f 77 73 48 6f 6f 6b 45 78 41 } //5 SetWindowsHookExA

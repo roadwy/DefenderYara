@@ -4,7 +4,7 @@ rule Backdoor_Win32_Deselia_A_dha{
 		description = "Backdoor:Win32/Deselia.A!dha,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {5c 30 30 30 45 4c 49 53 45 90 02 08 2e 54 4d 50 90 00 } //1
+		$a_02_0 = {5c 30 30 30 45 4c 49 53 45 [0-08] 2e 54 4d 50 } //1
 		$a_00_1 = {45 6c 69 73 65 44 4c 4c 2e 64 6c 6c } //1 EliseDLL.dll
 		$a_01_2 = {45 53 45 6e 74 72 79 00 45 53 48 61 6e 64 6c 65 00 } //1
 		$a_01_3 = {25 7f 00 00 80 79 05 48 83 c8 80 40 30 06 47 } //2

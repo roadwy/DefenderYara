@@ -4,7 +4,7 @@ rule Worm_Win32_Koobface_B{
 		description = "Worm:Win32/Koobface.B,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {75 24 33 f6 81 c6 60 ea 00 00 81 fe 80 8d 5b 00 0f 8f e4 00 00 00 56 ff 15 90 01 02 40 00 e8 90 01 02 ff ff 84 c0 74 de 90 00 } //3
+		$a_03_0 = {75 24 33 f6 81 c6 60 ea 00 00 81 fe 80 8d 5b 00 0f 8f e4 00 00 00 56 ff 15 ?? ?? 40 00 e8 ?? ?? ff ff 84 c0 74 de } //3
 		$a_01_1 = {c6 00 73 c6 40 01 2d c6 40 02 6b c6 40 03 61 c6 40 04 6b c6 40 05 61 c6 40 06 2e c6 40 00 6e c6 40 08 65 c6 40 09 74 c3 } //5
 		$a_00_2 = {2f 66 72 69 65 6e 64 73 2f 23 76 69 65 77 3d 65 76 65 72 79 6f 6e 65 } //1 /friends/#view=everyone
 		$a_00_3 = {2f 69 6e 62 6f 78 2f 3f 63 6f 6d 70 6f 73 65 26 69 64 3d 25 73 } //1 /inbox/?compose&id=%s

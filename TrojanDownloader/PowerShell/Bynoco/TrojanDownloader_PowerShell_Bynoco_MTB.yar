@@ -54,7 +54,7 @@ rule TrojanDownloader_PowerShell_Bynoco_MTB_5{
 		
 	strings :
 		$a_01_0 = {70 6f 77 65 72 73 68 65 6c 6c 2e 65 78 65 20 2d 57 69 6e 64 6f 77 53 74 79 6c 65 20 48 69 64 64 65 6e 20 2d 45 78 65 63 75 74 69 6f 6e 50 6f 6c 69 63 79 } //1 powershell.exe -WindowStyle Hidden -ExecutionPolicy
-		$a_03_1 = {68 74 74 70 3a 2f 2f 77 65 65 73 68 6f 70 70 69 2e 63 6f 6d 2f 77 70 2d 69 6e 63 6c 75 64 65 73 2f 49 44 33 2f 90 02 04 2f 90 02 08 2e 6a 70 67 90 00 } //1
+		$a_03_1 = {68 74 74 70 3a 2f 2f 77 65 65 73 68 6f 70 70 69 2e 63 6f 6d 2f 77 70 2d 69 6e 63 6c 75 64 65 73 2f 49 44 33 2f [0-04] 2f [0-08] 2e 6a 70 67 } //1
 		$a_01_2 = {53 74 61 72 74 2d 50 72 6f 63 65 73 73 20 2d 46 69 6c 65 50 61 74 68 20 22 43 3a 5c 55 73 65 72 73 5c 50 75 62 6c 69 63 5c 61 64 6c 68 76 6d 63 2e 65 78 65 } //3 Start-Process -FilePath "C:\Users\Public\adlhvmc.exe
 		$a_01_3 = {53 74 61 72 74 2d 50 72 6f 63 65 73 73 20 2d 46 69 6c 65 50 61 74 68 20 22 43 3a 5c 55 73 65 72 73 5c 50 75 62 6c 69 63 5c 44 6f 63 75 6d 65 6e 74 73 5c 6a 61 65 63 79 79 76 2e 65 78 65 } //3 Start-Process -FilePath "C:\Users\Public\Documents\jaecyyv.exe
 		$a_01_4 = {53 74 61 72 74 2d 50 72 6f 63 65 73 73 20 2d 46 69 6c 65 50 61 74 68 20 22 43 3a 5c 55 73 65 72 73 5c 50 75 62 6c 69 63 5c 44 6f 63 75 6d 65 6e 74 73 5c 6c 76 6d 69 73 61 70 2e 65 78 65 } //3 Start-Process -FilePath "C:\Users\Public\Documents\lvmisap.exe

@@ -4,9 +4,9 @@ rule VirTool_Win32_TonickInject{
 		description = "VirTool:Win32/TonickInject,SIGNATURE_TYPE_PEHSTR_EXT,1c 00 1c 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {66 33 45 d0 0f bf d0 52 ff 15 90 01 04 8b d0 8d 4d c8 ff 15 90 01 04 50 ff 15 90 01 04 8b d0 8d 4d d4 ff 15 90 00 } //20
-		$a_03_1 = {66 33 45 d0 0f bf c0 50 e8 90 01 04 8b d0 8d 4d c8 e8 90 01 04 50 e8 90 01 04 8b d0 8d 4d d4 e8 90 00 } //20
-		$a_03_2 = {6b 70 ff fb 12 e7 0b 90 01 01 00 04 00 23 44 ff 2a 31 74 ff 32 04 00 48 ff 44 ff 35 4c ff 00 0c 6b 70 ff f3 ff 00 c6 1c 90 01 02 00 07 f4 01 70 70 ff 1e 90 01 02 00 0b 6b 70 ff f4 01 a9 70 70 ff 00 0a 04 72 ff 64 6c 90 00 } //20
+		$a_03_0 = {66 33 45 d0 0f bf d0 52 ff 15 ?? ?? ?? ?? 8b d0 8d 4d c8 ff 15 ?? ?? ?? ?? 50 ff 15 ?? ?? ?? ?? 8b d0 8d 4d d4 ff 15 } //20
+		$a_03_1 = {66 33 45 d0 0f bf c0 50 e8 ?? ?? ?? ?? 8b d0 8d 4d c8 e8 ?? ?? ?? ?? 50 e8 ?? ?? ?? ?? 8b d0 8d 4d d4 e8 } //20
+		$a_03_2 = {6b 70 ff fb 12 e7 0b ?? 00 04 00 23 44 ff 2a 31 74 ff 32 04 00 48 ff 44 ff 35 4c ff 00 0c 6b 70 ff f3 ff 00 c6 1c ?? ?? 00 07 f4 01 70 70 ff 1e ?? ?? 00 0b 6b 70 ff f4 01 a9 70 70 ff 00 0a 04 72 ff 64 6c } //20
 		$a_00_3 = {57 72 69 74 65 50 72 6f 63 65 73 73 4d 65 6d 6f 72 79 } //4 WriteProcessMemory
 		$a_01_4 = {4f 00 76 00 56 00 6a 00 68 00 67 00 77 00 5e 00 60 00 6f 00 7c 00 43 00 6b 00 5d 00 6a 00 73 00 65 00 7b 00 7c 00 7a 00 } //2 OvVjhgw^`o|Ck]jse{|z
 		$a_01_5 = {57 00 6b 00 71 00 70 00 70 00 67 00 6b 00 49 00 65 00 66 00 64 00 6f 00 48 00 76 00 } //2 WkqppgkIefdoHv

@@ -31,7 +31,7 @@ rule Ransom_Win32_Filecoder_BB_MTB_3{
 	strings :
 		$a_81_0 = {48 4f 57 5f 54 4f 5f 52 45 54 55 52 4e 5f 46 49 4c 45 53 2e 74 78 74 } //1 HOW_TO_RETURN_FILES.txt
 		$a_81_1 = {77 6d 69 63 20 73 68 61 64 6f 77 63 6f 70 79 20 64 65 6c 65 74 65 } //1 wmic shadowcopy delete
-		$a_03_2 = {74 61 73 6b 6b 69 6c 6c 20 2f 69 6d 20 90 02 05 2e 65 78 65 20 2f 54 20 2f 46 90 00 } //1
+		$a_03_2 = {74 61 73 6b 6b 69 6c 6c 20 2f 69 6d 20 [0-05] 2e 65 78 65 20 2f 54 20 2f 46 } //1
 		$a_81_3 = {64 6f 6e 27 74 20 68 61 76 65 20 65 6e 6f 75 67 68 20 74 69 6d 65 20 74 6f 20 74 68 69 6e 6b 20 65 61 63 68 20 64 61 79 20 70 61 79 6d 65 6e 74 20 77 69 6c 6c 20 69 6e 63 72 65 61 73 65 20 61 6e 64 20 61 66 74 65 72 20 6f 6e 65 20 77 65 65 6b 20 79 6f 75 72 20 6b 65 79 20 77 69 6c 6c 20 62 65 20 64 65 6c 65 74 65 64 } //1 don't have enough time to think each day payment will increase and after one week your key will be deleted
 	condition:
 		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_03_2  & 1)*1+(#a_81_3  & 1)*1) >=4

@@ -8,7 +8,7 @@ rule Trojan_BAT_AgentTesla_FI_MTB{
 		$a_81_1 = {2e 4e 65 77 74 6f 6e 73 6f 66 74 2e 4a 73 6f 6e 2e 64 6c 6c } //1 .Newtonsoft.Json.dll
 		$a_81_2 = {77 77 77 2e 67 6f 6f 67 6c 65 2e 63 6f 6d } //1 www.google.com
 		$a_81_3 = {41 70 70 31 2e 50 72 6f 70 65 72 74 69 65 73 } //1 App1.Properties
-		$a_03_4 = {41 70 70 31 2e 52 65 73 6f 75 72 63 65 73 2e 90 02 19 2e 64 6c 6c 90 00 } //1
+		$a_03_4 = {41 70 70 31 2e 52 65 73 6f 75 72 63 65 73 2e [0-19] 2e 64 6c 6c } //1
 		$a_81_5 = {48 74 74 70 57 65 62 52 65 71 75 65 73 74 } //1 HttpWebRequest
 		$a_81_6 = {67 65 74 5f 43 75 72 72 65 6e 74 44 6f 6d 61 69 6e } //1 get_CurrentDomain
 		$a_81_7 = {61 64 6d 69 6e 31 32 33 } //1 admin123

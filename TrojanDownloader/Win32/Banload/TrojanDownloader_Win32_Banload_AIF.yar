@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Banload_AIF{
 		description = "TrojanDownloader:Win32/Banload.AIF,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {8d 85 64 ff ff ff 50 8d 4d 98 51 8d 95 68 ff ff ff 52 8d 45 88 50 ff 15 90 01 04 50 8d 4d bc 51 ff 15 90 01 04 50 68 90 01 04 8b 55 08 8b 02 8b 4d 08 51 ff 90 90 90 01 04 89 85 58 ff ff ff 83 bd 58 ff ff ff 00 7d 90 00 } //10
+		$a_03_0 = {8d 85 64 ff ff ff 50 8d 4d 98 51 8d 95 68 ff ff ff 52 8d 45 88 50 ff 15 ?? ?? ?? ?? 50 8d 4d bc 51 ff 15 ?? ?? ?? ?? 50 68 ?? ?? ?? ?? 8b 55 08 8b 02 8b 4d 08 51 ff 90 90 ?? ?? ?? ?? 89 85 58 ff ff ff 83 bd 58 ff ff ff 00 7d } //10
 		$a_00_1 = {68 00 74 00 74 00 70 00 3a 00 2f 00 2f 00 30 00 31 00 67 00 79 00 6e 00 30 00 31 00 2e 00 63 00 6f 00 6d 00 } //1 http://01gyn01.com
 		$a_00_2 = {73 00 79 00 73 00 74 00 65 00 6d 00 33 00 32 00 5c 00 77 00 79 00 6e 00 6e 00 64 00 79 00 2e 00 65 00 78 00 65 00 } //1 system32\wynndy.exe
 		$a_00_3 = {72 00 65 00 67 00 73 00 76 00 72 00 33 00 32 00 2e 00 65 00 78 00 65 00 20 00 2f 00 73 00 20 00 77 00 79 00 6e 00 6e 00 64 00 79 00 2e 00 64 00 6c 00 } //1 regsvr32.exe /s wynndy.dl

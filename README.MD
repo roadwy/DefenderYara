@@ -48,3 +48,4 @@ TODO:
 - https://github.com/commial/experiments/tree/master/windows-defender
 - https://github.com/HackingLZ/ExtractedDefender
 - https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/malware-naming?view=o365-worldwide
+- https://github.com/t0-retooling/defender-recon24/

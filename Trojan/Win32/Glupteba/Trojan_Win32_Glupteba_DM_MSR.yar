@@ -4,7 +4,7 @@ rule Trojan_Win32_Glupteba_DM_MSR{
 		description = "Trojan:Win32/Glupteba.DM!MSR,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {d3 e8 89 45 90 01 01 8b 45 90 01 01 03 45 90 01 01 89 45 90 01 01 c7 05 90 01 04 82 cd 10 fe 8b 45 90 01 01 33 45 90 01 01 89 45 90 01 01 81 3d 90 01 04 91 05 00 00 75 90 00 } //1
+		$a_02_0 = {d3 e8 89 45 ?? 8b 45 ?? 03 45 ?? 89 45 ?? c7 05 ?? ?? ?? ?? 82 cd 10 fe 8b 45 ?? 33 45 ?? 89 45 ?? 81 3d ?? ?? ?? ?? 91 05 00 00 75 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

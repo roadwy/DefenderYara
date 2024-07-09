@@ -4,7 +4,7 @@ rule Trojan_Win32_Relbma_A_dll{
 		description = "Trojan:Win32/Relbma.A!dll,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {2b d6 80 b4 05 f0 fd ff ff 90 01 01 80 b4 05 f1 fd ff ff 90 01 01 80 b4 05 f2 fd ff ff 90 01 01 83 c0 03 8d 34 02 8d b4 35 f1 fd ff ff 3b f1 72 d7 3b c1 73 08 80 b4 05 f0 fd ff ff 90 01 01 8d 50 01 90 00 } //9
+		$a_03_0 = {2b d6 80 b4 05 f0 fd ff ff ?? 80 b4 05 f1 fd ff ff ?? 80 b4 05 f2 fd ff ff ?? 83 c0 03 8d 34 02 8d b4 35 f1 fd ff ff 3b f1 72 d7 3b c1 73 08 80 b4 05 f0 fd ff ff ?? 8d 50 01 } //9
 		$a_00_1 = {72 75 6e 64 6c 6c 33 32 2e 65 78 65 20 25 73 2c 52 75 6e 4d 61 69 6e 00 } //2 畲摮汬㈳攮數┠ⱳ畒䵮楡n
 		$a_00_2 = {6d 62 75 72 6c 00 00 00 62 75 72 6c 00 00 00 00 6d 62 74 65 78 74 00 00 62 74 65 78 74 00 } //2
 		$a_00_3 = {79 61 6e 64 65 78 } //1 yandex

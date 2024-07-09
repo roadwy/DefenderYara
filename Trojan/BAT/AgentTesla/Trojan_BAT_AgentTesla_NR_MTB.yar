@@ -14,7 +14,7 @@ rule Trojan_BAT_AgentTesla_NR_MTB_2{
 		description = "Trojan:BAT/AgentTesla.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {2b 02 26 16 72 90 01 03 70 02 7b 90 01 03 04 6f 90 01 03 0a 28 90 01 03 06 90 00 } //5
+		$a_03_0 = {2b 02 26 16 72 ?? ?? ?? 70 02 7b ?? ?? ?? 04 6f ?? ?? ?? 0a 28 ?? ?? ?? 06 } //5
 		$a_01_1 = {44 00 6e 00 45 00 61 00 7a 00 } //1 DnEaz
 		$a_01_2 = {44 6e 45 61 7a 2e 50 72 6f 70 65 72 74 69 65 73 } //1 DnEaz.Properties
 	condition:
@@ -26,7 +26,7 @@ rule Trojan_BAT_AgentTesla_NR_MTB_3{
 		description = "Trojan:BAT/AgentTesla.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {72 11 00 00 70 11 04 16 28 90 01 03 0a 28 90 01 03 0a 72 90 01 03 70 90 00 } //5
+		$a_03_0 = {72 11 00 00 70 11 04 16 28 ?? ?? ?? 0a 28 ?? ?? ?? 0a 72 ?? ?? ?? 70 } //5
 		$a_01_1 = {7a 00 75 00 6d 00 73 00 65 00 6c 00 } //1 zumsel
 		$a_01_2 = {32 30 31 39 20 41 31 20 48 65 6c 70 44 65 73 6b } //1 2019 A1 HelpDesk
 		$a_01_3 = {73 65 74 5f 55 73 65 53 68 65 6c 6c 45 78 65 63 75 74 65 } //1 set_UseShellExecute

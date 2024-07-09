@@ -4,7 +4,7 @@ rule Trojan_Win32_Alureon_DP{
 		description = "Trojan:Win32/Alureon.DP,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {68 43 43 43 4e 89 45 90 01 01 68 33 33 52 47 90 00 } //2
+		$a_03_0 = {68 43 43 43 4e 89 45 ?? 68 33 33 52 47 } //2
 		$a_01_1 = {b8 4e 46 4d 47 e8 } //1
 		$a_01_2 = {b8 4f 43 49 48 e8 } //1
 		$a_01_3 = {b8 42 50 4d 48 e8 } //1

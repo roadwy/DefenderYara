@@ -4,7 +4,7 @@ rule Ransom_Win32_Pryncimoklyn_A_{
 		description = "Ransom:Win32/Pryncimoklyn.A!!Pryncimoklyn.gen!A,SIGNATURE_TYPE_ARHSTR_EXT,05 00 05 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {36 36 85 c9 74 90 01 01 c1 c0 07 0f b7 c9 8d 52 02 33 c1 0f b7 0a 66 85 c9 75 90 00 } //1
+		$a_03_0 = {36 36 85 c9 74 ?? c1 c0 07 0f b7 c9 8d 52 02 33 c1 0f b7 0a 66 85 c9 75 } //1
 		$a_80_1 = {30 30 41 45 25 30 38 58 } //00AE%08X  1
 		$a_80_2 = {2f 73 63 72 69 70 74 73 2f 73 75 70 65 72 66 69 73 68 2f 6a 73 2f 73 75 70 65 72 73 75 62 73 2e 70 68 70 } ///scripts/superfish/js/supersubs.php  1
 		$a_80_3 = {32 31 32 2e 34 37 2e 32 35 34 2e 31 38 37 } //212.47.254.187  1

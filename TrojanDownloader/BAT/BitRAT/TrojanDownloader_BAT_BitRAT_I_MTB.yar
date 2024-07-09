@@ -4,7 +4,7 @@ rule TrojanDownloader_BAT_BitRAT_I_MTB{
 		description = "TrojanDownloader:BAT/BitRAT.I!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {0c 08 06 6f 90 01 01 00 00 0a 0d 07 09 6f 90 01 01 00 00 0a 07 18 6f 90 01 01 00 00 0a 02 13 04 07 6f 90 01 01 00 00 0a 11 04 16 11 04 8e 69 6f 90 01 01 00 00 0a 13 05 dd 90 00 } //2
+		$a_03_0 = {0c 08 06 6f ?? 00 00 0a 0d 07 09 6f ?? 00 00 0a 07 18 6f ?? 00 00 0a 02 13 04 07 6f ?? 00 00 0a 11 04 16 11 04 8e 69 6f ?? 00 00 0a 13 05 dd } //2
 		$a_01_1 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //1 DownloadData
 		$a_01_2 = {47 65 74 42 79 74 65 73 } //1 GetBytes
 		$a_01_3 = {47 65 74 54 79 70 65 } //1 GetType

@@ -4,7 +4,7 @@ rule VirTool_Win32_Ntpacker{
 		description = "VirTool:Win32/Ntpacker,SIGNATURE_TYPE_PEHSTR_EXT,34 08 08 07 0c 00 00 "
 		
 	strings :
-		$a_02_0 = {6a 00 6a 00 6a 03 6a 00 6a 01 68 00 00 00 80 8d 95 98 fe ff ff 33 c0 e8 90 01 04 8b 85 90 01 02 ff ff e8 90 01 04 50 e8 90 01 04 8b f0 6a 00 6a 00 6a 00 56 90 00 } //1000
+		$a_02_0 = {6a 00 6a 00 6a 03 6a 00 6a 01 68 00 00 00 80 8d 95 98 fe ff ff 33 c0 e8 ?? ?? ?? ?? 8b 85 ?? ?? ff ff e8 ?? ?? ?? ?? 50 e8 ?? ?? ?? ?? 8b f0 6a 00 6a 00 6a 00 56 } //1000
 		$a_00_1 = {5a 77 55 6e 6d 61 70 56 69 65 77 4f 66 53 65 63 74 69 6f 6e } //100 ZwUnmapViewOfSection
 		$a_01_2 = {57 72 69 74 65 50 72 6f 63 65 73 73 4d 65 6d 6f 72 79 } //100 WriteProcessMemory
 		$a_01_3 = {43 72 65 61 74 65 52 65 6d 6f 74 65 54 68 72 65 61 64 } //100 CreateRemoteThread

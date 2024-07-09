@@ -4,7 +4,7 @@ rule Trojan_BAT_Reline_MR_MTB{
 		description = "Trojan:BAT/Reline.MR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,11 00 11 00 09 00 00 "
 		
 	strings :
-		$a_02_0 = {fe 0c 01 00 fe 90 02 03 6f 90 02 04 fe 90 02 03 6f 90 02 04 28 90 02 04 28 90 02 04 fe 90 02 03 fe 90 02 03 6f 90 02 04 fe 90 02 03 6f 90 02 04 dd 90 00 } //17
+		$a_02_0 = {fe 0c 01 00 fe [0-03] 6f [0-04] fe [0-03] 6f [0-04] 28 [0-04] 28 [0-04] fe [0-03] fe [0-03] 6f [0-04] fe [0-03] 6f [0-04] dd } //17
 		$a_81_1 = {4e 61 72 69 76 69 61 2e 53 65 6c 65 63 74 69 6f 6e 52 61 6e 67 65 43 6f 6e 76 65 72 74 65 72 2e 72 65 73 6f 75 72 63 65 73 } //1 Narivia.SelectionRangeConverter.resources
 		$a_81_2 = {24 32 39 66 61 64 37 39 33 2d 35 36 61 37 2d 34 38 30 34 2d 62 36 63 65 2d 30 32 61 66 38 62 31 66 35 65 64 62 } //1 $29fad793-56a7-4804-b6ce-02af8b1f5edb
 		$a_81_3 = {4e 61 72 69 76 69 61 43 6c 61 73 73 } //1 NariviaClass

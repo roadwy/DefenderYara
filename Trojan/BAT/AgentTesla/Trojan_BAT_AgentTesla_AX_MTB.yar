@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_AX_MTB{
 		description = "Trojan:BAT/AgentTesla.AX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {0a 02 16 28 90 01 03 0a 19 8d 90 01 03 01 0a 06 16 7e 90 01 03 04 a2 06 17 7e 90 01 03 04 a2 06 18 20 90 01 04 28 90 01 03 06 a2 06 73 90 01 03 06 26 90 00 } //1
+		$a_02_0 = {0a 02 16 28 ?? ?? ?? 0a 19 8d ?? ?? ?? 01 0a 06 16 7e ?? ?? ?? 04 a2 06 17 7e ?? ?? ?? 04 a2 06 18 20 ?? ?? ?? ?? 28 ?? ?? ?? 06 a2 06 73 ?? ?? ?? 06 26 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

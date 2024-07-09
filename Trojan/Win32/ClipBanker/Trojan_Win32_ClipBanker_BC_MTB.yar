@@ -4,7 +4,7 @@ rule Trojan_Win32_ClipBanker_BC_MTB{
 		description = "Trojan:Win32/ClipBanker.BC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 3b c7 85 90 01 01 fd ff ff 00 00 00 00 8d 8d 90 01 01 fd ff ff 68 90 01 04 c7 85 90 01 01 fd ff ff 00 00 00 00 c7 85 90 01 01 fd ff ff 0f 00 00 00 c6 85 90 01 01 fd ff ff 00 e8 13 90 01 01 ff ff 68 90 01 04 c6 45 fc 90 01 01 0f 57 c0 8b 1d 90 00 } //2
+		$a_03_0 = {6a 3b c7 85 ?? fd ff ff 00 00 00 00 8d 8d ?? fd ff ff 68 ?? ?? ?? ?? c7 85 ?? fd ff ff 00 00 00 00 c7 85 ?? fd ff ff 0f 00 00 00 c6 85 ?? fd ff ff 00 e8 13 ?? ff ff 68 ?? ?? ?? ?? c6 45 fc ?? 0f 57 c0 8b 1d } //2
 		$a_01_1 = {77 73 63 72 69 70 74 2e 65 78 65 20 2f 45 3a 6a 73 63 72 69 70 74 } //2 wscript.exe /E:jscript
 		$a_01_2 = {52 65 67 4f 70 65 6e 4b 65 79 45 78 41 } //1 RegOpenKeyExA
 		$a_01_3 = {52 65 67 53 65 74 56 61 6c 75 65 45 78 41 } //1 RegSetValueExA

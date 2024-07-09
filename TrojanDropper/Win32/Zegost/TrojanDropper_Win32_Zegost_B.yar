@@ -18,9 +18,9 @@ rule TrojanDropper_Win32_Zegost_B_2{
 		description = "TrojanDropper:Win32/Zegost.B,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {e8 00 00 00 00 5d 81 ed 90 01 04 bb 90 01 04 03 dd b9 90 01 05 80 33 90 02 01 43 e2 90 00 } //2
+		$a_03_0 = {e8 00 00 00 00 5d 81 ed ?? ?? ?? ?? bb ?? ?? ?? ?? 03 dd b9 ?? ?? ?? ?? ?? 80 33 [0-01] 43 e2 } //2
 		$a_01_1 = {6a 65 68 6d 54 69 6d 68 79 73 74 65 68 47 65 74 53 } //2 jehmTimhystehGetS
-		$a_03_2 = {83 c4 0c c6 45 90 01 01 47 c6 45 90 01 01 6f c6 45 90 01 01 62 c6 45 90 01 01 61 c6 45 90 01 01 5c c6 45 90 01 01 6b c6 45 90 01 01 69 90 00 } //2
+		$a_03_2 = {83 c4 0c c6 45 ?? 47 c6 45 ?? 6f c6 45 ?? 62 c6 45 ?? 61 c6 45 ?? 5c c6 45 ?? 6b c6 45 ?? 69 } //2
 		$a_00_3 = {6b 2d 20 65 78 65 2e 74 73 6f 68 } //1 k- exe.tsoh
 		$a_00_4 = {69 6b 5c 6c 61 62 6f 6c 47 73 25 73 } //1 ik\labolGs%s
 	condition:
@@ -46,8 +46,8 @@ rule TrojanDropper_Win32_Zegost_B_4{
 		description = "TrojanDropper:Win32/Zegost.B,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0d 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {33 d2 8a 11 8b 45 fc 25 ff 00 00 00 33 d0 8b 4d 90 01 01 88 11 90 00 } //5
-		$a_03_1 = {8b 45 fc 83 c0 01 89 45 fc 8b 4d fc 3b 4d 0c 7d 16 6a 7a 6a 62 e8 90 01 04 83 c4 08 8b 55 08 03 55 fc 88 02 eb d9 90 00 } //5
+		$a_03_0 = {33 d2 8a 11 8b 45 fc 25 ff 00 00 00 33 d0 8b 4d ?? 88 11 } //5
+		$a_03_1 = {8b 45 fc 83 c0 01 89 45 fc 8b 4d fc 3b 4d 0c 7d 16 6a 7a 6a 62 e8 ?? ?? ?? ?? 83 c4 08 8b 55 08 03 55 fc 88 02 eb d9 } //5
 		$a_01_2 = {50 52 4f 46 49 4c 45 25 5c 41 70 70 6c 69 63 61 74 69 6f 6e 20 44 61 74 61 5c } //1 PROFILE%\Application Data\
 		$a_01_3 = {2e 33 33 32 32 2e 6f 72 67 } //1 .3322.org
 		$a_01_4 = {6b 2d 20 65 78 65 2e 74 73 6f 68 } //1 k- exe.tsoh

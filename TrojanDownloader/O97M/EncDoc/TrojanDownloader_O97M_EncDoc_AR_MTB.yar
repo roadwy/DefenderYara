@@ -15,9 +15,9 @@ rule TrojanDownloader_O97M_EncDoc_AR_MTB_2{
 		description = "TrojanDownloader:O97M/EncDoc.AR!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,21 00 21 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {68 74 74 70 3a 2f 2f 90 02 28 2f 90 12 0f 00 2f 44 90 00 } //10
-		$a_03_1 = {68 74 74 70 3a 2f 2f 90 02 28 2f 90 12 0f 00 2f 90 10 0f 00 2e 70 6e 67 90 00 } //10
-		$a_03_2 = {09 00 00 43 3a 5c 90 02 0f 5c 90 00 } //10
+		$a_03_0 = {68 74 74 70 3a 2f 2f [0-28] 2f 90 12 0f 00 2f 44 } //10
+		$a_03_1 = {68 74 74 70 3a 2f 2f [0-28] 2f 90 12 0f 00 2f 90 10 0f 00 2e 70 6e 67 } //10
+		$a_03_2 = {09 00 00 43 3a 5c [0-0f] 5c } //10
 		$a_01_3 = {7a 69 70 66 6c 64 72 } //1 zipfldr
 		$a_01_4 = {4a 4a 43 43 43 4a } //1 JJCCCJ
 		$a_01_5 = {64 54 6f 46 69 6c 65 41 } //1 dToFileA

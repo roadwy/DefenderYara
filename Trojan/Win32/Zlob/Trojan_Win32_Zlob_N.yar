@@ -4,7 +4,7 @@ rule Trojan_Win32_Zlob_N{
 		description = "Trojan:Win32/Zlob.N,SIGNATURE_TYPE_PEHSTR_EXT,05 01 05 01 0a 00 00 "
 		
 	strings :
-		$a_02_0 = {56 8b 74 24 08 a3 90 01 04 8a 16 84 d2 8b c8 74 10 2b f0 32 54 24 0c 88 11 41 8a 14 0e 84 d2 75 f2 90 00 } //1
+		$a_02_0 = {56 8b 74 24 08 a3 ?? ?? ?? ?? 8a 16 84 d2 8b c8 74 10 2b f0 32 54 24 0c 88 11 41 8a 14 0e 84 d2 75 f2 } //1
 		$a_01_1 = {8b c8 b2 b4 2b d8 90 80 f2 c0 88 11 8a 54 0b 01 41 84 d2 75 f2 } //1
 		$a_01_2 = {2e 70 68 70 3f 71 71 3d 25 73 } //10 .php?qq=%s
 		$a_00_3 = {72 00 65 00 73 00 3a 00 2f 00 2f 00 25 00 73 00 } //10 res://%s

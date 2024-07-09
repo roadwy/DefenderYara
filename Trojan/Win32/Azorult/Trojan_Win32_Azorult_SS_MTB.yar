@@ -4,7 +4,7 @@ rule Trojan_Win32_Azorult_SS_MTB{
 		description = "Trojan:Win32/Azorult.SS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {0b 0f 66 81 fb d7 53 90 02 08 00 90 00 } //1
+		$a_03_0 = {0b 0f 66 81 fb d7 53 [0-08] 00 } //1
 		$a_00_1 = {00 00 8f 04 18 eb 0c } //1
 		$a_01_2 = {4b 00 36 00 4a 00 47 00 77 00 6a 00 49 00 38 00 65 00 68 00 4f 00 33 00 36 00 36 00 6c 00 4c 00 39 00 77 00 79 00 58 00 75 00 34 00 74 00 37 00 37 00 } //1 K6JGwjI8ehO366lL9wyXu4t77
 		$a_01_3 = {50 00 6c 00 61 00 6e 00 69 00 6d 00 65 00 74 00 72 00 69 00 63 00 61 00 6c 00 38 00 } //1 Planimetrical8

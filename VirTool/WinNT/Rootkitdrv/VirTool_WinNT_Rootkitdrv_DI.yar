@@ -4,7 +4,7 @@ rule VirTool_WinNT_Rootkitdrv_DI{
 		description = "VirTool:WinNT/Rootkitdrv.DI,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 08 00 00 "
 		
 	strings :
-		$a_02_0 = {0f 20 c0 25 ff ff fe ff 0f 22 c0 8b 06 8b 90 01 02 89 04 99 0f 20 c0 0d 00 00 01 00 0f 22 c0 fb 90 00 } //10
+		$a_02_0 = {0f 20 c0 25 ff ff fe ff 0f 22 c0 8b 06 8b ?? ?? 89 04 99 0f 20 c0 0d 00 00 01 00 0f 22 c0 fb } //10
 		$a_00_1 = {5c 00 46 00 55 00 43 00 4b 00 58 00 53 00 53 00 44 00 54 00 } //2 \FUCKXSSDT
 		$a_00_2 = {46 75 63 6b 20 44 69 73 50 61 74 63 68 } //2 Fuck DisPatch
 		$a_00_3 = {4d 61 6b 65 20 48 65 78 69 65 20 43 68 69 6e 61 21 } //1 Make Hexie China!

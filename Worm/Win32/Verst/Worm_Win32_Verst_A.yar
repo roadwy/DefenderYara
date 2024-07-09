@@ -26,7 +26,7 @@ rule Worm_Win32_Verst_A_2{
 		
 	strings :
 		$a_01_0 = {c2 ee f1 f1 f2 e0 ed ee e2 eb e5 ed e8 e5 20 e4 ee f1 f2 f3 ef e0 20 ea 20 57 4d 49 44 00 00 00 } //1
-		$a_03_1 = {55 8b ec 80 7d 08 01 75 1c 6a 00 a1 90 01 04 50 b8 90 01 04 50 6a 03 e8 90 01 04 a3 90 01 04 eb 12 a1 90 01 04 50 e8 90 01 04 33 c0 a3 90 01 04 5d c2 04 00 90 00 } //1
+		$a_03_1 = {55 8b ec 80 7d 08 01 75 1c 6a 00 a1 ?? ?? ?? ?? 50 b8 ?? ?? ?? ?? 50 6a 03 e8 ?? ?? ?? ?? a3 ?? ?? ?? ?? eb 12 a1 ?? ?? ?? ?? 50 e8 ?? ?? ?? ?? 33 c0 a3 ?? ?? ?? ?? 5d c2 04 00 } //1
 		$a_00_2 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 4d 53 72 74 6e 5c 70 } //1 Software\Microsoft\Windows\CurrentVersion\MSrtn\p
 		$a_00_3 = {53 4f 46 54 57 41 52 45 5c 42 6f 72 6c 61 6e 64 5c 44 65 6c 70 68 69 5c 52 54 4c } //1 SOFTWARE\Borland\Delphi\RTL
 	condition:

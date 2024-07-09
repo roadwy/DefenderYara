@@ -4,7 +4,7 @@ rule VirTool_Win32_Injector_FK{
 		description = "VirTool:Win32/Injector.FK,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {68 13 8e c0 09 50 e8 90 01 02 00 00 8b 4d 90 01 01 68 ee 38 83 0c 51 a3 90 01 02 40 00 e8 90 01 02 00 00 68 f2 5d d3 0b 90 00 } //3
+		$a_03_0 = {68 13 8e c0 09 50 e8 ?? ?? 00 00 8b 4d ?? 68 ee 38 83 0c 51 a3 ?? ?? 40 00 e8 ?? ?? 00 00 68 f2 5d d3 0b } //3
 		$a_01_1 = {68 99 b0 48 06 } //1
 		$a_01_2 = {68 44 27 23 0f } //1
 		$a_00_3 = {68 57 64 e1 01 } //1

@@ -4,7 +4,7 @@ rule TrojanSpy_Win64_Logzteca_A{
 		description = "TrojanSpy:Win64/Logzteca.A,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {b9 61 65 72 43 ff 15 90 01 02 00 00 b9 65 52 65 74 89 44 24 40 ff 15 90 01 02 00 00 b9 65 74 6f 6d 90 00 } //4
+		$a_03_0 = {b9 61 65 72 43 ff 15 ?? ?? 00 00 b9 65 52 65 74 89 44 24 40 ff 15 ?? ?? 00 00 b9 65 74 6f 6d } //4
 		$a_01_1 = {48 bf 32 a2 df 2d 99 2b 00 00 48 3b c7 74 0c 48 f7 d0 } //2
 		$a_01_2 = {47 45 54 20 2f 50 68 6f 74 6f 73 2f 51 75 65 72 79 2e 63 67 69 3f 6c 6f 67 69 6e 69 64 3d } //1 GET /Photos/Query.cgi?loginid=
 		$a_01_3 = {45 00 6c 00 65 00 76 00 61 00 74 00 69 00 6f 00 6e 00 3a 00 41 00 64 00 6d 00 69 00 6e 00 69 00 73 00 74 00 72 00 61 00 74 00 6f 00 72 00 21 00 6e 00 65 00 77 00 3a 00 7b 00 33 00 61 00 64 00 30 00 35 00 35 00 37 00 35 00 } //1 Elevation:Administrator!new:{3ad05575

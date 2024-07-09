@@ -5,7 +5,7 @@ rule Trojan_Win32_CryptInject_GDT_MTB{
 		
 	strings :
 		$a_01_0 = {8b ca 8b f2 83 e1 1f 33 f0 d3 ce 3b f7 74 69 85 f6 74 04 } //10
-		$a_02_1 = {8b c1 83 e1 3f c1 f8 06 6b c9 30 8b 04 85 90 01 04 f6 44 08 28 01 74 06 90 00 } //10
+		$a_02_1 = {8b c1 83 e1 3f c1 f8 06 6b c9 30 8b 04 85 ?? ?? ?? ?? f6 44 08 28 01 74 06 } //10
 		$a_80_2 = {6f 6e 74 64 6c 6c 2e 64 6c 6c } //ontdll.dll  1
 		$a_80_3 = {65 71 75 69 63 6b 73 65 65 69 6e 73 74 2e 65 78 65 } //equickseeinst.exe  1
 		$a_80_4 = {71 75 69 63 6b 73 65 65 69 6e 73 74 2e 64 6c 6c } //quickseeinst.dll  1

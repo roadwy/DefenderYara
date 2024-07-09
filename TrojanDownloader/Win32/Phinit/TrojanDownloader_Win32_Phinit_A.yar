@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Phinit_A{
 		description = "TrojanDownloader:Win32/Phinit.A,SIGNATURE_TYPE_PEHSTR_EXT,30 01 30 01 07 00 00 "
 		
 	strings :
-		$a_02_0 = {25 73 5c 25 73 2e 69 6e 69 90 02 04 25 73 90 00 } //100
+		$a_02_0 = {25 73 5c 25 73 2e 69 6e 69 [0-04] 25 73 } //100
 		$a_00_1 = {44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 } //100 DllCanUnloadNow
 		$a_00_2 = {25 59 2d 25 6d 2d 25 64 } //100 %Y-%m-%d
 		$a_00_3 = {68 74 74 70 3a 2f 2f 25 73 2f 75 70 2f 75 70 64 61 74 65 2e 68 74 6d } //3 http://%s/up/update.htm

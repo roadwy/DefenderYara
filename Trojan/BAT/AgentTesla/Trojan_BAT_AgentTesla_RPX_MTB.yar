@@ -24,7 +24,7 @@ rule Trojan_BAT_AgentTesla_RPX_MTB_3{
 		description = "Trojan:BAT/AgentTesla.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {16 31 01 2a 20 dc 05 00 00 28 90 01 01 00 00 0a 11 07 17 58 13 07 11 07 1b 32 cc 90 00 } //1
+		$a_03_0 = {16 31 01 2a 20 dc 05 00 00 28 ?? 00 00 0a 11 07 17 58 13 07 11 07 1b 32 cc } //1
 		$a_01_1 = {42 6c 69 73 73 6d 6f 73 71 75 69 74 6f } //1 Blissmosquito
 	condition:
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2
@@ -35,7 +35,7 @@ rule Trojan_BAT_AgentTesla_RPX_MTB_4{
 		description = "Trojan:BAT/AgentTesla.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {0b 16 0c 2b 18 07 08 18 5b 02 08 18 90 01 02 00 00 0a 1f 10 90 01 02 00 00 0a 9c 08 18 58 0c 08 06 fe 04 0d 09 2d e0 07 13 04 11 04 2a 90 00 } //1
+		$a_03_0 = {0b 16 0c 2b 18 07 08 18 5b 02 08 18 ?? ?? 00 00 0a 1f 10 ?? ?? 00 00 0a 9c 08 18 58 0c 08 06 fe 04 0d 09 2d e0 07 13 04 11 04 2a } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

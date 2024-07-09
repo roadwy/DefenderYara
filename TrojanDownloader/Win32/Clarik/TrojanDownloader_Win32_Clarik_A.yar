@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Clarik_A{
 		description = "TrojanDownloader:Win32/Clarik.A,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {66 74 70 74 72 61 6e 73 66 65 72 2e 90 01 03 00 4d 79 53 65 72 76 69 63 65 4d 61 69 6e 90 00 } //10
+		$a_03_0 = {66 74 70 74 72 61 6e 73 66 65 72 2e ?? ?? ?? 00 4d 79 53 65 72 76 69 63 65 4d 61 69 6e } //10
 		$a_01_1 = {77 73 63 72 69 70 74 2e 65 78 65 20 22 25 73 62 62 2e 6a 73 22 00 } //1
 		$a_00_2 = {43 3a 5c 69 6e 74 65 6c } //1 C:\intel
 		$a_01_3 = {00 63 6c 61 72 6b 2e 69 6e 69 00 } //1

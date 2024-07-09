@@ -4,7 +4,7 @@ rule Trojan_Win32_Qakbot_ECG_MTB{
 		description = "Trojan:Win32/Qakbot.ECG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 46 24 83 e8 90 01 01 01 86 90 01 04 8b 4e 90 01 01 8b 46 90 01 01 31 04 0a 83 c2 90 01 01 8b 46 90 01 01 83 e8 90 01 01 0f af 86 90 01 04 89 86 90 01 04 8b 46 90 01 01 01 46 90 01 01 81 fa 90 00 } //1
+		$a_03_0 = {8b 46 24 83 e8 ?? 01 86 ?? ?? ?? ?? 8b 4e ?? 8b 46 ?? 31 04 0a 83 c2 ?? 8b 46 ?? 83 e8 ?? 0f af 86 ?? ?? ?? ?? 89 86 ?? ?? ?? ?? 8b 46 ?? 01 46 ?? 81 fa } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

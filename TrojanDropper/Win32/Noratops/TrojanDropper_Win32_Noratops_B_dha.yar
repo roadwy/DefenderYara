@@ -4,7 +4,7 @@ rule TrojanDropper_Win32_Noratops_B_dha{
 		description = "TrojanDropper:Win32/Noratops.B!dha,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {c1 e3 06 03 df 8b bd e8 fd ff ff c1 e3 06 03 d8 3b 90 01 01 73 4c 90 00 } //1
+		$a_03_0 = {c1 e3 06 03 df 8b bd e8 fd ff ff c1 e3 06 03 d8 3b ?? 73 4c } //1
 		$a_01_1 = {52 65 66 6c 65 63 74 69 76 65 4c 6f 61 64 65 72 } //1 ReflectiveLoader
 		$a_01_2 = {49 6e 6a 65 63 74 6f 72 2e 64 6c 6c } //1 Injector.dll
 		$a_01_3 = {5f 64 65 63 } //1 _dec

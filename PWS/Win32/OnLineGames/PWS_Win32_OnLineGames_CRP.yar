@@ -4,7 +4,7 @@ rule PWS_Win32_OnLineGames_CRP{
 		description = "PWS:Win32/OnLineGames.CRP,SIGNATURE_TYPE_PEHSTR_EXT,19 00 19 00 0b 00 00 "
 		
 	strings :
-		$a_02_0 = {ff ff 68 04 01 00 00 50 6a 00 ff 15 90 01 03 00 8d 8d 90 01 02 ff ff 6a 5c 51 ff 15 90 01 03 00 83 c4 08 8b d8 90 00 } //10
+		$a_02_0 = {ff ff 68 04 01 00 00 50 6a 00 ff 15 ?? ?? ?? 00 8d 8d ?? ?? ff ff 6a 5c 51 ff 15 ?? ?? ?? 00 83 c4 08 8b d8 } //10
 		$a_00_1 = {43 72 65 61 74 65 54 6f 6f 6c 68 65 6c 70 33 32 53 6e 61 70 73 68 6f 74 } //10 CreateToolhelp32Snapshot
 		$a_00_2 = {49 6e 74 65 72 6e 65 74 4f 70 65 6e 41 } //1 InternetOpenA
 		$a_00_3 = {44 6f 77 6e 6c 6f 61 64 4e 65 74 46 69 6c 65 } //1 DownloadNetFile

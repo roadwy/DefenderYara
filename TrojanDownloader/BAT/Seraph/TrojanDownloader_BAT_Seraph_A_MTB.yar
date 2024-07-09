@@ -4,7 +4,7 @@ rule TrojanDownloader_BAT_Seraph_A_MTB{
 		description = "TrojanDownloader:BAT/Seraph.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {61 d1 9d fe 90 01 03 20 90 01 04 20 02 90 01 03 63 20 90 01 04 58 66 20 02 90 01 03 62 20 90 01 04 59 66 20 90 01 04 59 59 25 90 00 } //10
+		$a_02_0 = {61 d1 9d fe ?? ?? ?? 20 ?? ?? ?? ?? 20 02 ?? ?? ?? 63 20 ?? ?? ?? ?? 58 66 20 02 ?? ?? ?? 62 20 ?? ?? ?? ?? 59 66 20 ?? ?? ?? ?? 59 59 25 } //10
 		$a_81_1 = {58 52 61 69 6c 73 } //1 XRails
 		$a_81_2 = {43 6f 6e 73 6f 6c 65 41 70 70 } //1 ConsoleApp
 		$a_81_3 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //1 FromBase64String

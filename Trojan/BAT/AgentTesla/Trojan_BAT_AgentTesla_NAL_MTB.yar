@@ -15,8 +15,8 @@ rule Trojan_BAT_AgentTesla_NAL_MTB_2{
 		description = "Trojan:BAT/AgentTesla.NAL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {2b 0a 2b 0b 2b 0c 2b 11 2b 16 de 24 06 2b f3 02 2b f2 73 90 01 03 0a 2b ed 6f 90 01 03 0a 2b e8 0b 2b e7 90 00 } //5
-		$a_03_1 = {73 27 00 00 0a 0b 2b 2e 16 2b 2e 2b 33 2b 38 16 2d 09 2b 09 2b 0a 6f 90 01 03 0a de 10 08 2b f4 07 2b f3 90 00 } //5
+		$a_03_0 = {2b 0a 2b 0b 2b 0c 2b 11 2b 16 de 24 06 2b f3 02 2b f2 73 ?? ?? ?? 0a 2b ed 6f ?? ?? ?? 0a 2b e8 0b 2b e7 } //5
+		$a_03_1 = {73 27 00 00 0a 0b 2b 2e 16 2b 2e 2b 33 2b 38 16 2d 09 2b 09 2b 0a 6f ?? ?? ?? 0a de 10 08 2b f4 07 2b f3 } //5
 		$a_01_2 = {41 64 6f 62 65 20 55 70 64 61 74 65 72 20 55 74 69 6c 69 74 79 } //1 Adobe Updater Utility
 	condition:
 		((#a_03_0  & 1)*5+(#a_03_1  & 1)*5+(#a_01_2  & 1)*1) >=11
@@ -27,7 +27,7 @@ rule Trojan_BAT_AgentTesla_NAL_MTB_3{
 		description = "Trojan:BAT/AgentTesla.NAL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {09 11 04 6f 90 01 03 0a 0c 06 08 28 90 01 03 0a 07 59 28 90 01 03 0a 8c 90 01 03 01 28 90 01 03 0a 0a 11 04 17 58 13 04 11 04 09 6f 90 00 } //1
+		$a_03_0 = {09 11 04 6f ?? ?? ?? 0a 0c 06 08 28 ?? ?? ?? 0a 07 59 28 ?? ?? ?? 0a 8c ?? ?? ?? 01 28 ?? ?? ?? 0a 0a 11 04 17 58 13 04 11 04 09 6f } //1
 		$a_01_1 = {53 74 72 52 65 76 65 72 73 65 } //1 StrReverse
 		$a_01_2 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //1 FromBase64String
 		$a_01_3 = {6a 00 65 00 4c 00 51 00 71 00 44 00 77 00 44 00 37 00 6a 00 78 00 69 00 37 00 44 00 44 00 44 00 44 00 44 00 6a 00 44 00 44 00 44 00 44 00 44 00 44 00 44 00 44 00 44 00 44 00 44 00 44 00 44 00 44 00 44 00 44 } //1

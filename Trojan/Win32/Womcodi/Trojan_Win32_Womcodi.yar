@@ -4,9 +4,9 @@ rule Trojan_Win32_Womcodi{
 		description = "Trojan:Win32/Womcodi,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0d 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {66 33 45 d0 0f bf d0 52 ff 15 90 01 04 8b d0 8d 4d c8 ff 15 90 01 04 50 ff 15 90 01 04 8b d0 8d 4d d4 ff 15 90 00 } //10
-		$a_03_1 = {66 33 45 d0 0f bf c0 50 e8 90 01 04 8b d0 8d 4d c8 e8 90 01 04 50 e8 90 01 04 8b d0 8d 4d d4 e8 90 00 } //10
-		$a_03_2 = {6b 70 ff fb 12 e7 0b 90 01 01 00 04 00 23 44 ff 2a 31 74 ff 32 04 00 48 ff 44 ff 35 4c ff 00 0c 6b 70 ff f3 ff 00 c6 1c 90 01 02 00 07 f4 01 70 70 ff 1e 90 01 02 00 0b 6b 70 ff f4 01 a9 70 70 ff 00 0a 04 72 ff 64 6c 90 00 } //10
+		$a_03_0 = {66 33 45 d0 0f bf d0 52 ff 15 ?? ?? ?? ?? 8b d0 8d 4d c8 ff 15 ?? ?? ?? ?? 50 ff 15 ?? ?? ?? ?? 8b d0 8d 4d d4 ff 15 } //10
+		$a_03_1 = {66 33 45 d0 0f bf c0 50 e8 ?? ?? ?? ?? 8b d0 8d 4d c8 e8 ?? ?? ?? ?? 50 e8 ?? ?? ?? ?? 8b d0 8d 4d d4 e8 } //10
+		$a_03_2 = {6b 70 ff fb 12 e7 0b ?? 00 04 00 23 44 ff 2a 31 74 ff 32 04 00 48 ff 44 ff 35 4c ff 00 0c 6b 70 ff f3 ff 00 c6 1c ?? ?? 00 07 f4 01 70 70 ff 1e ?? ?? 00 0b 6b 70 ff f4 01 a9 70 70 ff 00 0a 04 72 ff 64 6c } //10
 		$a_01_3 = {4f 00 6d 00 77 00 6d 00 63 00 6f 00 64 00 69 00 7d 00 63 00 64 00 62 00 2d 00 4f 00 7d 00 75 00 70 00 } //1 Omwmcodi}cdb-O}up
 		$a_01_4 = {52 00 77 00 6d 00 45 00 72 00 72 00 43 00 61 00 68 00 66 00 64 00 6b 00 } //1 RwmErrCahfdk
 		$a_01_5 = {55 00 6d 00 6c 00 68 00 67 00 67 00 75 00 5f 00 60 00 64 00 6f 00 63 00 7a 00 3d 00 3d 00 } //1 Umlhggu_`docz==

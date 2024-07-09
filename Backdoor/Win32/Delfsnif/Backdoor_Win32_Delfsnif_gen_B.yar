@@ -4,7 +4,7 @@ rule Backdoor_Win32_Delfsnif_gen_B{
 		description = "Backdoor:Win32/Delfsnif.gen!B,SIGNATURE_TYPE_PEHSTR_EXT,36 01 31 01 1a 00 00 "
 		
 	strings :
-		$a_02_0 = {8b d8 8b 43 3c 03 c3 83 c0 04 83 c0 14 8b 70 60 03 f3 8b 6e 18 4d 85 ed 72 41 45 33 ff 8b 46 20 03 c3 8b d7 c1 e2 02 03 c2 8b 00 03 c3 8b 14 24 e8 90 01 04 85 c0 75 1e 8b 46 24 03 c3 8b d7 03 d2 03 c2 0f b7 00 c1 e0 02 8b 56 1c 03 d3 03 c2 8b 00 03 c3 eb 06 47 4d 75 c2 90 00 } //100
+		$a_02_0 = {8b d8 8b 43 3c 03 c3 83 c0 04 83 c0 14 8b 70 60 03 f3 8b 6e 18 4d 85 ed 72 41 45 33 ff 8b 46 20 03 c3 8b d7 c1 e2 02 03 c2 8b 00 03 c3 8b 14 24 e8 ?? ?? ?? ?? 85 c0 75 1e 8b 46 24 03 c3 8b d7 03 d2 03 c2 0f b7 00 c1 e0 02 8b 56 1c 03 d3 03 c2 8b 00 03 c3 eb 06 47 4d 75 c2 } //100
 		$a_00_1 = {25 73 5c 6e 65 74 73 68 2e 65 78 65 20 66 69 72 65 77 61 6c 6c 20 61 64 64 20 61 6c 6c 6f 77 65 64 70 72 6f 67 72 61 6d } //100 %s\netsh.exe firewall add allowedprogram
 		$a_00_2 = {4c 63 53 68 69 65 6c 64 } //10 LcShield
 		$a_00_3 = {76 69 6e 76 6e 63 34 } //10 vinvnc4

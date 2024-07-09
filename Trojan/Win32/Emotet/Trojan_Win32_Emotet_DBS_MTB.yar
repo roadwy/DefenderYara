@@ -4,7 +4,7 @@ rule Trojan_Win32_Emotet_DBS_MTB{
 		description = "Trojan:Win32/Emotet.DBS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_02_0 = {0f b6 07 0f b6 cb 03 c1 99 8b ce f7 f9 8b 45 8c 8a 4c 15 90 01 01 30 08 40 83 bd 90 01 04 00 89 45 8c 0f 85 90 00 } //5
+		$a_02_0 = {0f b6 07 0f b6 cb 03 c1 99 8b ce f7 f9 8b 45 8c 8a 4c 15 ?? 30 08 40 83 bd ?? ?? ?? ?? 00 89 45 8c 0f 85 } //5
 		$a_00_1 = {44 4f 4b 55 44 4f } //2 DOKUDO
 		$a_81_2 = {65 72 7a 47 47 57 47 34 74 67 32 7a 79 7a 65 } //1 erzGGWG4tg2zyze
 		$a_81_3 = {61 7a 67 61 34 61 67 33 67 33 71 67 } //1 azga4ag3g3qg

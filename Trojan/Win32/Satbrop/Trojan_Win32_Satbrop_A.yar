@@ -4,7 +4,7 @@ rule Trojan_Win32_Satbrop_A{
 		description = "Trojan:Win32/Satbrop.A,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 19 00 00 "
 		
 	strings :
-		$a_03_0 = {8b cb 66 ba b8 0b 8b 45 fc e8 90 01 02 ff ff 33 c0 5a 59 59 64 89 10 68 90 01 02 40 00 8d 45 fc e8 90 01 02 ff ff c3 90 00 } //4
+		$a_03_0 = {8b cb 66 ba b8 0b 8b 45 fc e8 ?? ?? ff ff 33 c0 5a 59 59 64 89 10 68 ?? ?? 40 00 8d 45 fc e8 ?? ?? ff ff c3 } //4
 		$a_01_1 = {4a 78 53 6f 71 64 37 48 6c 50 7a 43 63 43 } //2 JxSoqd7HlPzCcC
 		$a_01_2 = {47 68 37 6b 4f 58 4c 6c 44 43 4a 44 2f 4e 6e 58 42 6e 43 42 37 56 6d 38 78 70 6e 49 6e 4c 6c 49 6b 33 70 41 75 44 59 6b 59 2f 4d 67 66 76 4a 78 51 49 4a 77 75 64 76 74 33 50 67 39 4d 46 64 77 79 65 38 6e 4d 59 32 57 45 59 62 34 57 73 55 6e 31 34 52 64 } //2 Gh7kOXLlDCJD/NnXBnCB7Vm8xpnInLlIk3pAuDYkY/MgfvJxQIJwudvt3Pg9MFdwye8nMY2WEYb4WsUn14Rd
 		$a_01_3 = {59 52 6a 4d 69 52 35 70 4a 51 32 42 53 30 31 30 35 34 49 5a 2b 49 55 38 75 30 30 52 43 6b 32 4c 39 74 6d 2b 6c 41 43 54 66 32 38 4f 49 37 76 6f 77 39 78 5a 66 57 71 56 37 56 30 71 } //2 YRjMiR5pJQ2BS01054IZ+IU8u00RCk2L9tm+lACTf28OI7vow9xZfWqV7V0q

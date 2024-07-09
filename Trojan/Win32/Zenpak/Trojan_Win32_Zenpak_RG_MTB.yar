@@ -4,7 +4,7 @@ rule Trojan_Win32_Zenpak_RG_MTB{
 		description = "Trojan:Win32/Zenpak.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {89 18 83 c0 09 29 c2 8d 05 90 01 04 89 28 83 f2 05 83 e8 07 83 f2 09 31 3d 90 00 } //1
+		$a_03_0 = {89 18 83 c0 09 29 c2 8d 05 ?? ?? ?? ?? 89 28 83 f2 05 83 e8 07 83 f2 09 31 3d } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Zenpak_RG_MTB_2{
 		description = "Trojan:Win32/Zenpak.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {b9 89 88 88 88 89 44 24 90 01 01 f7 e1 c1 ea 03 6b c2 0f 8b 4c 24 90 01 01 29 c1 89 c8 83 e8 08 89 4c 24 90 01 01 89 44 24 90 00 } //1
+		$a_03_0 = {b9 89 88 88 88 89 44 24 ?? f7 e1 c1 ea 03 6b c2 0f 8b 4c 24 ?? 29 c1 89 c8 83 e8 08 89 4c 24 ?? 89 44 24 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -24,7 +24,7 @@ rule Trojan_Win32_Zenpak_RG_MTB_3{
 		description = "Trojan:Win32/Zenpak.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {b9 ab aa aa aa 89 44 24 90 01 01 f7 e1 c1 ea 03 6b c2 0c 8b 4c 24 90 01 01 29 c1 89 c8 83 e8 04 89 4c 24 90 01 01 89 44 24 90 00 } //1
+		$a_03_0 = {b9 ab aa aa aa 89 44 24 ?? f7 e1 c1 ea 03 6b c2 0c 8b 4c 24 ?? 29 c1 89 c8 83 e8 04 89 4c 24 ?? 89 44 24 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -34,7 +34,7 @@ rule Trojan_Win32_Zenpak_RG_MTB_4{
 		description = "Trojan:Win32/Zenpak.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {b9 cd cc cc cc 89 44 24 90 01 01 f7 e1 c1 ea 04 6b c2 14 8b 4c 24 90 01 01 29 c1 89 c8 83 e8 07 89 4c 24 90 01 01 89 44 24 90 01 01 74 35 90 00 } //1
+		$a_03_0 = {b9 cd cc cc cc 89 44 24 ?? f7 e1 c1 ea 04 6b c2 14 8b 4c 24 ?? 29 c1 89 c8 83 e8 07 89 4c 24 ?? 89 44 24 ?? 74 35 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -44,7 +44,7 @@ rule Trojan_Win32_Zenpak_RG_MTB_5{
 		description = "Trojan:Win32/Zenpak.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {89 e0 50 8f 05 90 01 04 31 d0 83 c2 09 83 c0 08 eb 05 e8 90 01 04 29 c2 31 35 90 01 04 b8 03 00 00 00 89 3d 90 01 04 83 c0 06 01 d0 89 d8 50 90 00 } //1
+		$a_03_0 = {89 e0 50 8f 05 ?? ?? ?? ?? 31 d0 83 c2 09 83 c0 08 eb 05 e8 ?? ?? ?? ?? 29 c2 31 35 ?? ?? ?? ?? b8 03 00 00 00 89 3d ?? ?? ?? ?? 83 c0 06 01 d0 89 d8 50 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -54,7 +54,7 @@ rule Trojan_Win32_Zenpak_RG_MTB_6{
 		description = "Trojan:Win32/Zenpak.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {01 d0 31 c2 8d 05 90 01 04 89 20 e8 25 00 00 00 c3 89 c2 83 f0 06 8d 05 90 01 04 89 38 42 ba 0a 00 00 00 42 8d 05 90 01 04 31 30 8d 05 90 01 04 ff e0 90 00 } //1
+		$a_03_0 = {01 d0 31 c2 8d 05 ?? ?? ?? ?? 89 20 e8 25 00 00 00 c3 89 c2 83 f0 06 8d 05 ?? ?? ?? ?? 89 38 42 ba 0a 00 00 00 42 8d 05 ?? ?? ?? ?? 31 30 8d 05 ?? ?? ?? ?? ff e0 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -64,7 +64,7 @@ rule Trojan_Win32_Zenpak_RG_MTB_7{
 		description = "Trojan:Win32/Zenpak.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {fe ff ff 89 c1 88 ca 83 e8 4d 88 95 90 01 01 fe ff ff 89 85 90 01 01 fe ff ff 74 90 01 01 eb 00 8a 85 90 01 01 fe ff ff 0f b6 c8 83 e9 54 89 8d 90 01 01 fe ff ff 74 90 00 } //1
+		$a_03_0 = {fe ff ff 89 c1 88 ca 83 e8 4d 88 95 ?? fe ff ff 89 85 ?? fe ff ff 74 ?? eb 00 8a 85 ?? fe ff ff 0f b6 c8 83 e9 54 89 8d ?? fe ff ff 74 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -74,7 +74,7 @@ rule Trojan_Win32_Zenpak_RG_MTB_8{
 		description = "Trojan:Win32/Zenpak.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {88 3c 0e 88 1c 16 0f b6 0c 0e 01 f9 81 e1 90 01 04 8a 1c 0e 8b 4d 90 01 01 8b 7d 90 01 01 32 1c 39 8b 4d 90 01 01 88 1c 39 8b 4d 90 01 01 01 cf 8b 4d 90 01 01 39 cf 8b 4d 90 01 01 89 4d 90 01 01 89 55 90 01 01 89 7d 90 01 01 74 90 00 } //1
+		$a_02_0 = {88 3c 0e 88 1c 16 0f b6 0c 0e 01 f9 81 e1 ?? ?? ?? ?? 8a 1c 0e 8b 4d ?? 8b 7d ?? 32 1c 39 8b 4d ?? 88 1c 39 8b 4d ?? 01 cf 8b 4d ?? 39 cf 8b 4d ?? 89 4d ?? 89 55 ?? 89 7d ?? 74 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -84,7 +84,7 @@ rule Trojan_Win32_Zenpak_RG_MTB_9{
 		description = "Trojan:Win32/Zenpak.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {fe ff ff 45 75 1e 80 bd 90 01 01 fe ff ff 4c 75 15 31 c0 80 bd 90 01 01 fe ff ff 2e 89 85 90 01 01 fe ff ff 0f 84 90 01 01 ff ff ff 90 00 } //5
+		$a_03_0 = {fe ff ff 45 75 1e 80 bd ?? fe ff ff 4c 75 15 31 c0 80 bd ?? fe ff ff 2e 89 85 ?? fe ff ff 0f 84 ?? ff ff ff } //5
 		$a_01_1 = {41 72 66 72 75 69 74 66 75 6c 73 61 77 2e 6c 69 6b 65 6e 65 73 73 63 69 73 6e 2e 74 2e 6b 64 6f 6e 2e 74 67 72 65 61 74 } //1 Arfruitfulsaw.likenesscisn.t.kdon.tgreat
 	condition:
 		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1) >=6

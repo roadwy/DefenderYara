@@ -4,7 +4,7 @@ rule MonitoringTool_Win32_Actmon{
 		description = "MonitoringTool:Win32/Actmon,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :
-		$a_02_0 = {8d 4d e4 51 68 90 01 04 e8 90 01 04 83 c4 08 8d 4d e4 e8 90 01 04 25 ff 00 00 00 85 c0 74 16 8b f4 6a 00 68 90 01 04 ff 15 90 01 04 3b f4 e8 90 01 04 8b f4 68 dc 05 00 00 ff 15 90 01 04 3b f4 e8 90 01 04 eb b2 90 00 } //1
+		$a_02_0 = {8d 4d e4 51 68 ?? ?? ?? ?? e8 ?? ?? ?? ?? 83 c4 08 8d 4d e4 e8 ?? ?? ?? ?? 25 ff 00 00 00 85 c0 74 16 8b f4 6a 00 68 ?? ?? ?? ?? ff 15 ?? ?? ?? ?? 3b f4 e8 ?? ?? ?? ?? 8b f4 68 dc 05 00 00 ff 15 ?? ?? ?? ?? 3b f4 e8 ?? ?? ?? ?? eb b2 } //1
 		$a_01_1 = {77 73 63 72 69 70 74 2e 65 78 65 20 62 6f 6f 74 2e 76 62 73 } //1 wscript.exe boot.vbs
 		$a_01_2 = {77 73 63 72 69 70 74 00 } //1 獷牣灩t
 		$a_01_3 = {57 69 6e 45 78 65 63 } //1 WinExec
@@ -64,7 +64,7 @@ rule MonitoringTool_Win32_Actmon_5{
 		$a_00_2 = {45 6d 61 69 6c 54 6f 00 59 4f 55 52 2d 45 4d 41 49 4c 40 2d 48 45 52 45 2d 2e 43 4f 4d 00 } //1 浅楡呬o余剕䔭䅍䱉ⵀ䕈䕒⸭佃M
 		$a_00_3 = {4c 6f 67 67 69 6e 67 20 65 6e 67 69 6e 65 20 73 74 6f 70 70 65 64 } //1 Logging engine stopped
 		$a_00_4 = {50 77 64 41 63 74 4d 6f 6e 48 61 73 68 } //1 PwdActMonHash
-		$a_02_5 = {5c 5c 41 64 6d 69 6e 2d 50 43 5c 90 02 08 52 65 70 6f 72 74 73 5c 90 00 } //1
+		$a_02_5 = {5c 5c 41 64 6d 69 6e 2d 50 43 5c [0-08] 52 65 70 6f 72 74 73 5c } //1
 		$a_00_6 = {3c 41 63 74 4d 6f 6e 50 72 6f 35 40 61 63 74 6d 6f 6e 70 72 6f 2e 63 6f 6d 3e } //1 <ActMonPro5@actmonpro.com>
 		$a_00_7 = {45 78 69 74 69 6e 67 20 53 74 6f 70 50 72 6f 63 65 73 73 28 22 65 78 70 6c 6f 72 65 72 2e 65 78 65 22 29 20 77 69 74 68 20 66 61 69 6c 75 72 65 } //1 Exiting StopProcess("explorer.exe") with failure
 		$a_00_8 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 50 6f 6c 69 63 69 65 73 5c 45 78 70 6c 6f 72 65 72 5c 52 75 6e } //1 Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run
@@ -78,7 +78,7 @@ rule MonitoringTool_Win32_Actmon_6{
 		description = "MonitoringTool:Win32/Actmon,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0d 00 0b 00 00 "
 		
 	strings :
-		$a_02_0 = {41 63 74 4d 6f 6e 90 02 16 4d 6f 6e 69 74 6f 72 90 00 } //10
+		$a_02_0 = {41 63 74 4d 6f 6e [0-16] 4d 6f 6e 69 74 6f 72 } //10
 		$a_00_1 = {5b 46 34 5d 00 00 00 00 5b 46 33 5d 00 00 00 00 5b 46 32 5d 00 00 00 00 5b 46 31 5d 00 00 00 00 5b 41 4c 54 5d 00 00 00 5b 4d 55 4c 54 49 50 4c 59 5d 00 00 5b 43 54 52 4c 5d } //2
 		$a_00_2 = {45 6d 61 69 6c 54 6f 00 59 4f 55 52 2d 45 4d 41 49 4c 40 2d 48 45 52 45 2d 2e 43 4f 4d 00 00 00 31 30 30 34 31 30 30 00 53 65 6e 64 54 72 69 67 67 65 72 } //1
 		$a_00_3 = {4c 6f 67 67 69 6e 67 20 65 6e 67 69 6e 65 20 73 74 6f 70 70 65 64 } //1 Logging engine stopped

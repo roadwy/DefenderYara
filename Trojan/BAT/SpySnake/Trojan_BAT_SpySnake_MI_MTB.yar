@@ -18,7 +18,7 @@ rule Trojan_BAT_SpySnake_MI_MTB_2{
 		description = "Trojan:BAT/SpySnake.MI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {0b 16 0c 2b 10 07 08 9a 6f 90 01 03 0a 06 17 58 0a 08 17 58 0c 08 07 8e 69 32 ea 90 00 } //5
+		$a_03_0 = {0b 16 0c 2b 10 07 08 9a 6f ?? ?? ?? 0a 06 17 58 0a 08 17 58 0c 08 07 8e 69 32 ea } //5
 		$a_01_1 = {64 37 31 38 65 39 31 31 2d 65 31 65 34 2d 34 38 38 31 2d 39 33 61 34 2d 61 61 63 37 32 30 65 39 61 37 63 62 } //5 d718e911-e1e4-4881-93a4-aac720e9a7cb
 		$a_01_2 = {78 73 68 77 2e 50 72 6f 70 65 72 74 69 65 73 } //5 xshw.Properties
 		$a_01_3 = {73 65 6c 66 44 65 6c 65 74 65 } //1 selfDelete

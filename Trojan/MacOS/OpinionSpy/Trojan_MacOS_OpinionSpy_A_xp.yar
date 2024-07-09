@@ -5,7 +5,7 @@ rule Trojan_MacOS_OpinionSpy_A_xp{
 		
 	strings :
 		$a_00_0 = {73 65 63 75 72 65 73 74 75 64 69 65 73 2e 63 6f 6d } //2 securestudies.com
-		$a_02_1 = {6d 61 63 6d 65 74 65 72 32 2f 90 02 08 2f 4d 61 63 41 6e 61 6c 79 73 65 72 2f 90 00 } //2
+		$a_02_1 = {6d 61 63 6d 65 74 65 72 32 2f [0-08] 2f 4d 61 63 41 6e 61 6c 79 73 65 72 2f } //2
 		$a_00_2 = {77 77 77 2e 70 72 65 6d 69 65 72 6f 70 69 6e 69 6f 6e 2e 63 6f 6d } //2 www.premieropinion.com
 		$a_00_3 = {2f 70 72 69 76 61 74 65 2f 74 6d 70 2f 50 6f 50 61 74 68 78 44 2f 70 6f 69 6e 73 74 61 6c 6c 65 72 } //2 /private/tmp/PoPathxD/poinstaller
 		$a_00_4 = {63 6f 6d 2e 56 6f 69 63 65 46 69 76 65 2e 50 72 65 6d 69 65 72 4f 70 69 6e 69 6f 6e } //2 com.VoiceFive.PremierOpinion

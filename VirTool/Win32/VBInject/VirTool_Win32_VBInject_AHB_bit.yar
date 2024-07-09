@@ -4,7 +4,7 @@ rule VirTool_Win32_VBInject_AHB_bit{
 		description = "VirTool:Win32/VBInject.AHB!bit,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {68 96 39 14 00 90 02 20 58 90 02 20 05 c0 c6 2d 00 90 02 20 39 41 04 90 02 20 68 cd 7b 34 00 90 02 20 58 90 02 20 05 80 84 1e 00 90 00 } //1
+		$a_03_0 = {68 96 39 14 00 [0-20] 58 [0-20] 05 c0 c6 2d 00 [0-20] 39 41 04 [0-20] 68 cd 7b 34 00 [0-20] 58 [0-20] 05 80 84 1e 00 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

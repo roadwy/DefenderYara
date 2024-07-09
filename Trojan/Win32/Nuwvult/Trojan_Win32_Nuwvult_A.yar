@@ -4,7 +4,7 @@ rule Trojan_Win32_Nuwvult_A{
 		description = "Trojan:Win32/Nuwvult.A,SIGNATURE_TYPE_PEHSTR_EXT,06 00 05 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 45 fc 83 38 00 74 65 8b 4d fc 8b 11 52 8b 45 08 50 ff 15 90 01 04 85 c0 74 46 90 00 } //3
+		$a_03_0 = {8b 45 fc 83 38 00 74 65 8b 4d fc 8b 11 52 8b 45 08 50 ff 15 ?? ?? ?? ?? 85 c0 74 46 } //3
 		$a_01_1 = {4d 53 4e 54 61 73 6b 3a 3a 45 78 65 63 75 74 65 } //1 MSNTask::Execute
 		$a_01_2 = {53 74 61 72 74 50 61 67 65 54 61 73 6b 3a 3a 45 78 65 63 75 74 65 } //1 StartPageTask::Execute
 		$a_01_3 = {41 64 54 61 73 6b 3a 3a 44 6f 77 6e 6c 6f 61 64 54 61 73 6b 73 } //1 AdTask::DownloadTasks

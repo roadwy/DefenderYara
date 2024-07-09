@@ -4,7 +4,7 @@ rule Trojan_Win32_ClipBanker_RT_MTB{
 		description = "Trojan:Win32/ClipBanker.RT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {33 d2 8b f8 59 8b f2 8a 0c 75 90 01 04 88 0c 3e 46 3b f3 72 90 01 01 8b c2 83 e0 0f 8a 80 90 01 04 30 04 3a 42 3b d3 72 90 00 } //2
+		$a_03_0 = {33 d2 8b f8 59 8b f2 8a 0c 75 ?? ?? ?? ?? 88 0c 3e 46 3b f3 72 ?? 8b c2 83 e0 0f 8a 80 ?? ?? ?? ?? 30 04 3a 42 3b d3 72 } //2
 	condition:
 		((#a_03_0  & 1)*2) >=2
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_ClipBanker_RT_MTB_2{
 		description = "Trojan:Win32/ClipBanker.RT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {b8 9b 01 00 00 85 c0 74 90 01 01 8b 0d 90 01 04 3b 0d 90 01 04 72 90 01 01 eb 90 01 01 68 90 01 04 ff 15 90 01 04 03 05 90 01 04 8b 15 90 01 04 03 15 90 01 04 8b 0d 90 01 04 8a 04 01 88 02 8b 0d 90 01 04 83 c1 01 90 00 } //1
+		$a_03_0 = {b8 9b 01 00 00 85 c0 74 ?? 8b 0d ?? ?? ?? ?? 3b 0d ?? ?? ?? ?? 72 ?? eb ?? 68 ?? ?? ?? ?? ff 15 ?? ?? ?? ?? 03 05 ?? ?? ?? ?? 8b 15 ?? ?? ?? ?? 03 15 ?? ?? ?? ?? 8b 0d ?? ?? ?? ?? 8a 04 01 88 02 8b 0d ?? ?? ?? ?? 83 c1 01 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

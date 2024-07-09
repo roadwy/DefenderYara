@@ -4,7 +4,7 @@ rule PWS_Win32_Fareit_MR_MTB{
 		description = "PWS:Win32/Fareit.MR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8a 1a 80 f3 90 01 01 88 5d 90 02 06 8b 5d 90 01 01 8b fb 8a 5d 90 01 01 88 1f 90 02 04 83 c6 90 01 01 73 90 01 01 e8 90 02 0c 42 49 75 90 00 } //1
+		$a_03_0 = {8a 1a 80 f3 ?? 88 5d [0-06] 8b 5d ?? 8b fb 8a 5d ?? 88 1f [0-04] 83 c6 ?? 73 ?? e8 [0-0c] 42 49 75 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

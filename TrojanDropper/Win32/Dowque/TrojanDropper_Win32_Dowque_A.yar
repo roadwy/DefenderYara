@@ -4,8 +4,8 @@ rule TrojanDropper_Win32_Dowque_A{
 		description = "TrojanDropper:Win32/Dowque.A,SIGNATURE_TYPE_PEHSTR_EXT,07 00 06 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {68 ff 00 00 00 8d 85 00 ff ff ff 50 e8 90 01 03 ff 85 c0 75 07 c6 85 00 ff ff ff 43 90 00 } //2
-		$a_02_1 = {8a 85 00 ff ff ff 50 e8 90 01 03 ff 83 f8 01 1b c0 40 84 c0 75 07 c6 85 00 ff ff ff 43 90 00 } //2
+		$a_02_0 = {68 ff 00 00 00 8d 85 00 ff ff ff 50 e8 ?? ?? ?? ff 85 c0 75 07 c6 85 00 ff ff ff 43 } //2
+		$a_02_1 = {8a 85 00 ff ff ff 50 e8 ?? ?? ?? ff 83 f8 01 1b c0 40 84 c0 75 07 c6 85 00 ff ff ff 43 } //2
 		$a_00_2 = {45 78 70 6c 6f 72 65 72 5c 50 4c 55 47 49 4e 53 5c } //1 Explorer\PLUGINS\
 		$a_01_3 = {48 6f 6f 6b 4f 6e } //1 HookOn
 		$a_00_4 = {69 66 20 65 78 69 73 74 20 22 } //2 if exist "

@@ -4,7 +4,7 @@ rule Trojan_Win32_Redline_DAE_MTB{
 		description = "Trojan:Win32/Redline.DAE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {f6 17 80 2f 90 01 01 47 e2 90 00 } //3
+		$a_03_0 = {f6 17 80 2f ?? 47 e2 } //3
 		$a_01_1 = {68 4d 45 69 37 75 34 48 69 70 5a 32 31 4d 6d 35 72 4f 47 6b 44 48 6d 57 55 36 77 67 52 7a 58 } //1 hMEi7u4HipZ21Mm5rOGkDHmWU6wgRzX
 		$a_01_2 = {6e 42 70 71 47 55 43 72 6b 75 65 4b 55 32 49 7a 45 4b 4a 6d 6f 58 42 68 } //1 nBpqGUCrkueKU2IzEKJmoXBh
 		$a_01_3 = {6b 74 6c 43 59 77 78 37 70 74 64 6d 36 31 50 78 4a 62 47 77 33 49 62 6b 67 4d 78 77 33 6e } //1 ktlCYwx7ptdm61PxJbGw3IbkgMxw3n

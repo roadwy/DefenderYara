@@ -4,7 +4,7 @@ rule VirTool_BAT_Obfuscator_AA{
 		description = "VirTool:BAT/Obfuscator.AA,SIGNATURE_TYPE_PEHSTR_EXT,64 00 03 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {fe 01 16 fe 01 fe 0e 90 01 01 01 fe 0c 90 01 01 01 2d 90 01 01 00 14 90 00 } //1
+		$a_03_0 = {fe 01 16 fe 01 fe 0e ?? 01 fe 0c ?? 01 2d ?? 00 14 } //1
 		$a_01_1 = {02 11 05 02 11 04 17 59 91 9c 20 } //1
 		$a_01_2 = {02 11 06 02 11 05 17 59 91 9c 20 } //1
 		$a_01_3 = {02 11 07 02 11 06 17 59 91 9c 20 } //1

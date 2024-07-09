@@ -34,7 +34,7 @@ rule _#PUA_Block_FusionCore_3{
 		description = "!#PUA:Block:FusionCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_02_0 = {64 6c 6c 3a 73 65 74 75 70 3a 66 69 6c 65 73 3a 90 02 0f 2e 64 6c 6c 90 00 } //1
+		$a_02_0 = {64 6c 6c 3a 73 65 74 75 70 3a 66 69 6c 65 73 3a [0-0f] 2e 64 6c 6c } //1
 		$a_00_1 = {64 6c 6c 3a 66 69 6c 65 73 3a 69 74 64 6f 77 6e 6c 6f 61 64 2e 64 6c 6c } //1 dll:files:itdownload.dll
 		$a_00_2 = {52 55 4e 52 4b 56 45 52 49 46 59 } //1 RUNRKVERIFY
 		$a_00_3 = {53 65 74 75 70 4c 64 72 2e 65 78 65 } //1 SetupLdr.exe

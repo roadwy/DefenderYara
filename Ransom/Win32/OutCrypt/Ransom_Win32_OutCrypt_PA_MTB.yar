@@ -4,7 +4,7 @@ rule Ransom_Win32_OutCrypt_PA_MTB{
 		description = "Ransom:Win32/OutCrypt.PA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 05 00 00 "
 		
 	strings :
-		$a_02_0 = {83 7d d8 10 7d 90 01 01 8b 90 01 02 8b 90 01 02 8b 90 01 02 8a 0c 1a 8b 90 01 02 c1 e6 04 03 90 01 02 8b 90 01 02 8b 90 01 02 30 90 01 02 ff 45 90 01 01 eb 90 00 } //3
+		$a_02_0 = {83 7d d8 10 7d ?? 8b ?? ?? 8b ?? ?? 8b ?? ?? 8a 0c 1a 8b ?? ?? c1 e6 04 03 ?? ?? 8b ?? ?? 8b ?? ?? 30 ?? ?? ff 45 ?? eb } //3
 		$a_00_1 = {61 73 20 62 65 65 6e 20 65 6e 63 72 79 70 74 65 64 } //1 as been encrypted
 		$a_00_2 = {48 45 53 4f 59 41 4d 41 45 5a 41 4b 4d 49 52 49 50 41 5a 48 41 48 45 53 4f 59 41 4d 41 45 5a 41 4b 4d 49 52 49 50 41 5a 48 41 } //1 HESOYAMAEZAKMIRIPAZHAHESOYAMAEZAKMIRIPAZHA
 		$a_00_3 = {5f 6f 75 74 } //1 _out

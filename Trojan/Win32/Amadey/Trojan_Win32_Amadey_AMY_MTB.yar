@@ -14,7 +14,7 @@ rule Trojan_Win32_Amadey_AMY_MTB_2{
 		description = "Trojan:Win32/Amadey.AMY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b c3 2b c6 57 3b f8 77 90 01 01 8d 04 3e 83 fb 10 89 85 90 01 04 8d 85 90 01 04 0f 43 85 90 01 04 03 f0 8d 85 90 01 04 50 56 90 00 } //1
+		$a_03_0 = {8b c3 2b c6 57 3b f8 77 ?? 8d 04 3e 83 fb 10 89 85 ?? ?? ?? ?? 8d 85 ?? ?? ?? ?? 0f 43 85 ?? ?? ?? ?? 03 f0 8d 85 ?? ?? ?? ?? 50 56 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

@@ -17,9 +17,9 @@ rule TrojanDownloader_Win32_Banload_ADG_2{
 		description = "TrojanDownloader:Win32/Banload.ADG,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {c2 08 00 53 a1 90 01 04 83 38 00 74 90 01 01 8b 1d 90 01 04 8b 1b ff d3 5b c3 90 01 01 55 8b ec 51 53 56 57 89 4d fc 8b da 8b f0 8b c3 ff 50 f4 90 00 } //2
-		$a_02_1 = {43 3a 5c 73 79 73 36 34 5c 90 02 08 2e 65 78 65 90 00 } //1
-		$a_02_2 = {2f 6a 75 62 61 73 2f 90 02 08 2e 65 78 65 90 00 } //1
+		$a_03_0 = {c2 08 00 53 a1 ?? ?? ?? ?? 83 38 00 74 ?? 8b 1d ?? ?? ?? ?? 8b 1b ff d3 5b c3 ?? 55 8b ec 51 53 56 57 89 4d fc 8b da 8b f0 8b c3 ff 50 f4 } //2
+		$a_02_1 = {43 3a 5c 73 79 73 36 34 5c [0-08] 2e 65 78 65 } //1
+		$a_02_2 = {2f 6a 75 62 61 73 2f [0-08] 2e 65 78 65 } //1
 		$a_00_3 = {59 4d 44 20 72 65 63 61 6c 63 20 6f 72 64 65 72 3a } //1 YMD recalc order:
 		$a_00_4 = {44 4d 59 20 72 65 63 61 6c 63 20 6f 72 64 65 72 3a } //1 DMY recalc order:
 	condition:

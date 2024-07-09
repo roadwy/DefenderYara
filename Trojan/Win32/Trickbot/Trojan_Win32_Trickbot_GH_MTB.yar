@@ -4,7 +4,7 @@ rule Trojan_Win32_Trickbot_GH_MTB{
 		description = "Trojan:Win32/Trickbot.GH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {f7 e9 c1 fa 90 01 01 8b c2 c1 e8 90 01 01 03 c2 90 02 0a 8a 90 01 02 30 90 01 01 31 41 3b cf 75 90 00 } //1
+		$a_02_0 = {f7 e9 c1 fa ?? 8b c2 c1 e8 ?? 03 c2 [0-0a] 8a ?? ?? 30 ?? 31 41 3b cf 75 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

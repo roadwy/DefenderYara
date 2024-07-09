@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_EU_MTB{
 		description = "Trojan:BAT/AgentTesla.EU!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 04 00 00 "
 		
 	strings :
-		$a_02_0 = {0d 08 09 61 d1 13 04 06 11 04 6f 90 01 03 0a 26 00 07 17 58 0b 07 02 6f 90 01 03 0a fe 04 13 05 11 05 2d ce 90 09 0d 00 02 07 6f 90 01 03 0a 0c 7e 90 01 03 04 90 00 } //10
+		$a_02_0 = {0d 08 09 61 d1 13 04 06 11 04 6f ?? ?? ?? 0a 26 00 07 17 58 0b 07 02 6f ?? ?? ?? 0a fe 04 13 05 11 05 2d ce 90 09 0d 00 02 07 6f ?? ?? ?? 0a 0c 7e ?? ?? ?? 04 } //10
 		$a_81_1 = {41 45 53 5f 44 65 63 72 79 70 74 } //1 AES_Decrypt
 		$a_81_2 = {45 6e 63 72 79 70 74 44 65 63 72 79 70 74 } //1 EncryptDecrypt
 		$a_81_3 = {58 6f 72 4b 65 79 } //1 XorKey
@@ -17,7 +17,7 @@ rule Trojan_BAT_AgentTesla_EU_MTB_2{
 		description = "Trojan:BAT/AgentTesla.EU!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {00 06 07 02 08 6f 90 01 03 0a 9d 06 08 02 07 6f 90 01 03 0a 9d 00 07 17 58 0b 08 17 59 0c 07 08 fe 04 0d 09 2d da 90 00 } //10
+		$a_02_0 = {00 06 07 02 08 6f ?? ?? ?? 0a 9d 06 08 02 07 6f ?? ?? ?? 0a 9d 00 07 17 58 0b 08 17 59 0c 07 08 fe 04 0d 09 2d da } //10
 		$a_81_1 = {52 65 70 6c 61 63 65 } //1 Replace
 		$a_81_2 = {46 72 6f 6d 42 61 73 65 36 34 43 68 61 72 41 72 72 61 79 } //1 FromBase64CharArray
 		$a_81_3 = {49 6e 76 6f 6b 65 4d 65 6d 62 65 72 } //1 InvokeMember

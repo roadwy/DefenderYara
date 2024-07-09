@@ -4,7 +4,7 @@ rule Trojan_Win32_FormBook_CE_MTB{
 		description = "Trojan:Win32/FormBook.CE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0d 00 00 "
 		
 	strings :
-		$a_02_0 = {85 db ff 31 90 02 40 31 f1 90 02 64 11 0c 10 90 00 } //12
+		$a_02_0 = {85 db ff 31 [0-40] 31 f1 [0-64] 11 0c 10 } //12
 		$a_01_1 = {6e 00 30 00 74 00 47 00 62 00 6f 00 36 00 49 00 76 00 6d 00 43 00 36 00 4a 00 4e 00 64 00 53 00 34 00 37 00 70 00 59 00 58 00 38 00 30 00 } //1 n0tGbo6IvmC6JNdS47pYX80
 		$a_01_2 = {53 00 6c 00 69 00 64 00 62 00 61 00 6e 00 65 00 72 00 6e 00 65 00 73 00 39 00 } //1 Slidbanernes9
 		$a_01_3 = {50 00 4f 00 52 00 4e 00 4f 00 46 00 49 00 4c 00 4d 00 } //1 PORNOFILM

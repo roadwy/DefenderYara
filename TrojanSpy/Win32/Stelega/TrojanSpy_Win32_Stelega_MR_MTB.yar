@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Stelega_MR_MTB{
 		description = "TrojanSpy:Win32/Stelega.MR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 0b 00 00 "
 		
 	strings :
-		$a_02_0 = {b1 ea f6 d8 b2 5e c0 c8 03 2a c8 b0 02 80 f1 60 2a d1 b1 13 32 d3 80 ea 5b 32 d3 2a c2 2a c3 32 c3 2a c8 32 cb 2a cb fe c9 80 f1 5f 80 c1 19 32 cb d0 c1 f6 d9 80 f1 7b f6 d1 2a cb 32 cb 80 e9 4f c0 c1 03 80 c1 12 88 8b 90 01 04 43 81 fb 90 01 04 72 90 09 06 00 8a 83 90 00 } //7
+		$a_02_0 = {b1 ea f6 d8 b2 5e c0 c8 03 2a c8 b0 02 80 f1 60 2a d1 b1 13 32 d3 80 ea 5b 32 d3 2a c2 2a c3 32 c3 2a c8 32 cb 2a cb fe c9 80 f1 5f 80 c1 19 32 cb d0 c1 f6 d9 80 f1 7b f6 d1 2a cb 32 cb 80 e9 4f c0 c1 03 80 c1 12 88 8b ?? ?? ?? ?? 43 81 fb ?? ?? ?? ?? 72 90 09 06 00 8a 83 } //7
 		$a_00_1 = {63 6f 6e 74 61 63 74 2e 64 6c 6c } //1 contact.dll
 		$a_00_2 = {57 65 6c 63 6f 6d 65 20 74 6f 20 61 30 20 63 6f 6e 74 61 63 74 20 4d 61 6e 61 67 65 72 } //1 Welcome to a0 contact Manager
 		$a_00_3 = {75 72 6c 6d 6f 6e 2e 64 6c 6c } //1 urlmon.dll

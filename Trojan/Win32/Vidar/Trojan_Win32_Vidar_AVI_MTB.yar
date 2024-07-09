@@ -4,7 +4,7 @@ rule Trojan_Win32_Vidar_AVI_MTB{
 		description = "Trojan:Win32/Vidar.AVI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {50 6a 00 53 ff 15 90 01 04 56 89 45 fc ff 15 90 00 } //2
+		$a_03_0 = {50 6a 00 53 ff 15 ?? ?? ?? ?? 56 89 45 fc ff 15 } //2
 		$a_01_1 = {4d 61 6c 6f 6c 6f 20 69 73 20 61 20 76 6f 6c 63 61 6e 69 63 20 69 73 6c 61 6e 64 20 69 6e 20 74 68 65 20 50 61 63 69 66 69 63 20 4f 63 65 61 6e } //1 Malolo is a volcanic island in the Pacific Ocean
 		$a_01_2 = {53 4f 46 54 57 41 52 45 5c 6d 6f 6e 65 72 6f 2d 70 72 6f 6a 65 63 74 5c 6d 6f 6e 65 72 6f 2d 63 6f 72 65 } //1 SOFTWARE\monero-project\monero-core
 		$a_01_3 = {5c 4d 6f 6e 65 72 6f 5c 77 61 6c 6c 65 74 2e 6b 65 79 73 } //1 \Monero\wallet.keys

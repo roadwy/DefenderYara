@@ -4,7 +4,7 @@ rule Trojan_BAT_Bladabindi_NH_MTB{
 		description = "Trojan:BAT/Bladabindi.NH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 61 b7 28 90 01 01 00 00 0a 28 90 01 01 00 00 0a 13 04 06 11 04 6f 90 01 01 00 00 0a 26 07 90 00 } //5
+		$a_03_0 = {6a 61 b7 28 ?? 00 00 0a 28 ?? 00 00 0a 13 04 06 11 04 6f ?? 00 00 0a 26 07 } //5
 		$a_81_1 = {74 65 78 74 66 69 6c 65 2e 74 78 74 } //1 textfile.txt
 		$a_81_2 = {4d 69 63 72 6f 73 6f 66 74 5c 73 76 63 68 6f 73 74 2e 65 78 65 } //1 Microsoft\svchost.exe
 		$a_81_3 = {63 6d 64 2e 65 78 65 20 2f 6b 20 70 69 6e 67 20 30 20 26 20 64 65 6c } //1 cmd.exe /k ping 0 & del

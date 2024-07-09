@@ -4,7 +4,7 @@ rule Trojan_Win32_Qakbot_RT_MTB{
 		description = "Trojan:Win32/Qakbot.RT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {1d 45 12 eb 06 1a 41 90 01 01 33 04 5f 03 db 4b 03 d2 81 e8 e8 ef 00 00 33 c7 90 00 } //1
+		$a_03_0 = {1d 45 12 eb 06 1a 41 ?? 33 04 5f 03 db 4b 03 d2 81 e8 e8 ef 00 00 33 c7 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -14,8 +14,8 @@ rule Trojan_Win32_Qakbot_RT_MTB_2{
 		description = "Trojan:Win32/Qakbot.RT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {66 69 c8 af d7 8b 94 24 90 01 04 81 c2 f2 29 a5 87 66 89 8c 24 90 01 04 39 90 02 04 72 90 00 } //1
-		$a_03_1 = {81 e1 8e 46 1b 50 89 8c 24 90 01 04 8b 44 c2 90 01 01 89 44 24 90 01 01 66 8b 74 24 90 01 01 66 89 b4 24 90 01 04 8b 44 24 90 01 01 c7 84 24 90 01 04 f8 19 ab 5d 90 00 } //1
+		$a_03_0 = {66 69 c8 af d7 8b 94 24 ?? ?? ?? ?? 81 c2 f2 29 a5 87 66 89 8c 24 ?? ?? ?? ?? 39 [0-04] 72 } //1
+		$a_03_1 = {81 e1 8e 46 1b 50 89 8c 24 ?? ?? ?? ?? 8b 44 c2 ?? 89 44 24 ?? 66 8b 74 24 ?? 66 89 b4 24 ?? ?? ?? ?? 8b 44 24 ?? c7 84 24 ?? ?? ?? ?? f8 19 ab 5d } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  

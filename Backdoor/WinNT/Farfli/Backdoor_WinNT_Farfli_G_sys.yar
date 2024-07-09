@@ -4,7 +4,7 @@ rule Backdoor_WinNT_Farfli_G_sys{
 		description = "Backdoor:WinNT/Farfli.G!sys,SIGNATURE_TYPE_PEHSTR_EXT,ffffff96 00 78 00 1d 00 00 "
 		
 	strings :
-		$a_02_0 = {53 55 56 57 ff 15 90 01 01 02 01 00 8b e8 33 db be 90 01 02 01 00 8b fe 83 c9 ff 33 c0 f2 ae f7 d1 49 8d 04 2b 51 50 56 ff 90 01 02 02 01 00 83 c4 0c 85 c0 74 10 43 81 fb 00 30 00 00 7c d8 33 c0 5f 5e 5d 5b c3 8b c3 eb f7 90 00 } //100
+		$a_02_0 = {53 55 56 57 ff 15 ?? 02 01 00 8b e8 33 db be ?? ?? 01 00 8b fe 83 c9 ff 33 c0 f2 ae f7 d1 49 8d 04 2b 51 50 56 ff ?? ?? 02 01 00 83 c4 0c 85 c0 74 10 43 81 fb 00 30 00 00 7c d8 33 c0 5f 5e 5d 5b c3 8b c3 eb f7 } //100
 		$a_01_1 = {45 78 41 6c 6c 6f 63 61 74 65 50 6f 6f 6c 57 69 74 68 54 61 67 } //2 ExAllocatePoolWithTag
 		$a_01_2 = {4b 65 44 65 6c 61 79 45 78 65 63 75 74 69 6f 6e 54 68 72 65 61 64 } //2 KeDelayExecutionThread
 		$a_01_3 = {4d 6d 47 65 74 53 79 73 74 65 6d 52 6f 75 74 69 6e 65 41 64 64 72 65 73 73 } //2 MmGetSystemRoutineAddress

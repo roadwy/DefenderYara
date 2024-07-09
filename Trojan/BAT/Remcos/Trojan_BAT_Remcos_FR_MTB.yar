@@ -4,7 +4,7 @@ rule Trojan_BAT_Remcos_FR_MTB{
 		description = "Trojan:BAT/Remcos.FR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {16 0a 2b 1b 00 7e 90 01 03 04 06 7e 90 01 03 04 06 91 20 a5 02 00 00 59 d2 9c 00 06 17 58 0a 06 7e 90 01 03 04 8e 69 fe 04 0b 07 2d d7 90 00 } //1
+		$a_03_0 = {16 0a 2b 1b 00 7e ?? ?? ?? 04 06 7e ?? ?? ?? 04 06 91 20 a5 02 00 00 59 d2 9c 00 06 17 58 0a 06 7e ?? ?? ?? 04 8e 69 fe 04 0b 07 2d d7 } //1
 		$a_81_1 = {47 65 74 52 65 73 70 6f 6e 73 65 53 74 72 65 61 6d } //1 GetResponseStream
 		$a_81_2 = {43 72 65 61 74 65 49 6e 73 74 61 6e 63 65 } //1 CreateInstance
 		$a_81_3 = {41 57 58 41 57 46 57 41 32 } //1 AWXAWFWA2

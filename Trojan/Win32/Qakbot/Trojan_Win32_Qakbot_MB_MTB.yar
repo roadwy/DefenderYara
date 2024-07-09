@@ -14,7 +14,7 @@ rule Trojan_Win32_Qakbot_MB_MTB_2{
 		description = "Trojan:Win32/Qakbot.MB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {33 18 89 1d 90 01 04 a1 90 01 04 8b 15 90 01 04 89 10 8b 45 f8 83 c0 04 90 0a 4f 00 8b d8 03 1d 90 01 04 6a 00 e8 90 01 04 03 d8 6a 00 e8 90 01 04 2b d8 6a 00 e8 90 01 04 2b d8 a1 90 00 } //10
+		$a_03_0 = {33 18 89 1d ?? ?? ?? ?? a1 ?? ?? ?? ?? 8b 15 ?? ?? ?? ?? 89 10 8b 45 f8 83 c0 04 90 0a 4f 00 8b d8 03 1d ?? ?? ?? ?? 6a 00 e8 ?? ?? ?? ?? 03 d8 6a 00 e8 ?? ?? ?? ?? 2b d8 6a 00 e8 ?? ?? ?? ?? 2b d8 a1 } //10
 	condition:
 		((#a_03_0  & 1)*10) >=10
  

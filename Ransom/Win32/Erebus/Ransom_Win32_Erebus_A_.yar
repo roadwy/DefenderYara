@@ -4,7 +4,7 @@ rule Ransom_Win32_Erebus_A_{
 		description = "Ransom:Win32/Erebus.A!!Erebus.A!rsm,SIGNATURE_TYPE_ARHSTR_EXT,05 00 05 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 4d 08 57 8b 7e 10 3b f9 72 90 01 01 8b 55 0c 8b c7 2b c1 3b c2 77 90 01 01 83 7e 14 10 89 4e 10 72 90 01 01 8b 06 5f c6 04 08 00 90 00 } //1
+		$a_03_0 = {8b 4d 08 57 8b 7e 10 3b f9 72 ?? 8b 55 0c 8b c7 2b c1 3b c2 77 ?? 83 7e 14 10 89 4e 10 72 ?? 8b 06 5f c6 04 08 00 } //1
 		$a_01_1 = {33 db 57 3d 11 27 00 00 0f 8f 0a 0c 00 00 0f 84 ed 0b 00 00 83 c0 fd 3d ec 00 00 00 0f 87 af 1b 00 00 } //1
 		$a_00_2 = {76 73 73 61 64 6d 69 6e 20 64 65 6c 65 74 65 20 73 68 61 64 6f 77 73 } //1 vssadmin delete shadows
 		$a_00_3 = {77 6d 69 63 20 6c 6f 67 69 63 61 6c 64 69 73 6b 20 77 68 65 72 65 20 64 72 69 76 65 74 79 70 65 3d } //1 wmic logicaldisk where drivetype=

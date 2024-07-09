@@ -31,7 +31,7 @@ rule Trojan_Win32_RisePro_RP_MTB_3{
 		description = "Trojan:Win32/RisePro.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {2e 74 61 67 67 61 6e 74 00 30 00 00 00 90 01 04 22 00 00 90 00 } //1
+		$a_03_0 = {2e 74 61 67 67 61 6e 74 00 30 00 00 00 ?? ?? ?? ?? 22 00 00 } //1
 		$a_01_1 = {5c 5c 2e 5c 47 6c 6f 62 61 6c 5c 6f 72 65 61 6e 73 78 36 34 } //1 \\.\Global\oreansx64
 		$a_01_2 = {50 6c 65 61 73 65 2c 20 63 6f 6e 74 61 63 74 20 74 68 65 20 73 6f 66 74 77 61 72 65 20 64 65 76 65 6c 6f 70 65 72 73 20 77 69 74 68 20 74 68 65 20 66 6f 6c 6c 6f 77 69 6e 67 20 63 6f 64 65 73 2e 20 54 68 61 6e 6b 20 79 6f 75 2e } //1 Please, contact the software developers with the following codes. Thank you.
 		$a_01_3 = {50 6c 65 61 73 65 2c 20 63 6f 6e 74 61 63 74 20 79 6f 75 72 73 69 74 65 40 79 6f 75 72 73 69 74 65 2e 63 6f 6d 2e 20 54 68 61 6e 6b 20 79 6f 75 21 } //1 Please, contact yoursite@yoursite.com. Thank you!
@@ -69,7 +69,7 @@ rule Trojan_Win32_RisePro_RP_MTB_5{
 		$a_01_4 = {a4 6b 87 80 e0 0a e9 d3 e0 0a e9 d3 e0 0a e9 d3 ab 72 ea d2 eb 0a e9 d3 ab 72 ec d2 20 0a e9 d3 ab 72 ee d2 e1 0a e9 d3 22 8b 14 d3 e4 0a e9 d3 22 8b ed d2 f3 0a e9 d3 22 8b ea d2 f8 0a e9 d3 22 8b ec d2 b6 0a e9 d3 ab 72 ed d2 f8 0a e9 d3 ab 72 ef d2 e1 0a e9 d3 ab 72 e8 d2 fb 0a e9 d3 e0 0a e8 d3 f9 0b e9 d3 13 88 e0 d2 fc 0a e9 d3 13 88 e9 d2 e1 0a e9 d3 13 88 16 d3 e1 0a e9 d3 e0 0a 7e d3 e1 0a e9 d3 13 88 eb d2 e1 0a e9 d3 52 69 63 68 e0 0a e9 d3 } //10
 		$a_01_5 = {a4 6d 87 80 e0 0c e9 d3 e0 0c e9 d3 e0 0c e9 d3 ab 74 ea d2 eb 0c e9 d3 ab 74 ec d2 20 0c e9 d3 ab 74 ee d2 e1 0c e9 d3 22 8d 14 d3 e4 0c e9 d3 22 8d ed d2 f3 0c e9 d3 22 8d ea d2 f8 0c e9 d3 22 8d ec d2 b6 0c e9 d3 ab 74 ed d2 f8 0c e9 d3 ab 74 ef d2 e1 0c e9 d3 ab 74 e8 d2 fb 0c e9 d3 e0 0c e8 d3 fa 0d e9 d3 13 8e e0 d2 fc 0c e9 d3 13 8e e9 d2 e1 0c e9 d3 13 8e 16 d3 e1 0c e9 d3 e0 0c 7e d3 e1 0c e9 d3 13 8e eb d2 e1 0c e9 d3 52 69 63 68 e0 0c e9 d3 } //10
 		$a_01_6 = {53 74 65 61 6c 65 72 43 6c 69 65 6e 74 } //50 StealerClient
-		$a_03_7 = {56 50 53 e8 01 00 00 00 00 58 89 c3 40 2d 00 90 01 02 00 2d 44 17 0c 10 05 3b 17 0c 10 80 3b cc 75 90 00 } //1
+		$a_03_7 = {56 50 53 e8 01 00 00 00 00 58 89 c3 40 2d 00 ?? ?? 00 2d 44 17 0c 10 05 3b 17 0c 10 80 3b cc 75 } //1
 		$a_01_8 = {4d 00 53 00 42 00 75 00 69 00 6c 00 64 00 2e 00 65 00 78 00 65 00 } //1 MSBuild.exe
 		$a_01_9 = {52 00 41 00 49 00 44 00 58 00 70 00 65 00 72 00 74 00 32 00 2e 00 65 00 78 00 65 00 } //1 RAIDXpert2.exe
 		$a_01_10 = {4b 00 56 00 4d 00 20 00 56 00 69 00 73 00 69 00 6f 00 6e 00 20 00 56 00 69 00 65 00 77 00 65 00 72 00 2e 00 65 00 78 00 65 00 } //1 KVM Vision Viewer.exe

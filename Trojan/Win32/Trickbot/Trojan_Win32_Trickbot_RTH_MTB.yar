@@ -4,7 +4,7 @@ rule Trojan_Win32_Trickbot_RTH_MTB{
 		description = "Trojan:Win32/Trickbot.RTH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {33 d0 8b 4d 90 01 01 2b 4d 90 01 01 0f b6 c1 83 90 01 01 20 33 d0 8b 4d 90 01 01 88 11 8b 55 90 01 01 03 55 90 01 01 89 55 90 01 01 eb 90 00 } //1
+		$a_03_0 = {33 d0 8b 4d ?? 2b 4d ?? 0f b6 c1 83 ?? 20 33 d0 8b 4d ?? 88 11 8b 55 ?? 03 55 ?? 89 55 ?? eb } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Trickbot_RTH_MTB_2{
 		description = "Trojan:Win32/Trickbot.RTH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_02_0 = {03 d1 03 f1 89 54 24 90 01 01 8a 00 89 74 24 90 01 01 88 44 24 90 01 01 8b 44 24 90 01 01 33 ff 33 ed 66 8b 3e 8b 74 24 90 01 01 8d 3c be 8b 32 8a 54 24 90 01 01 03 f9 03 f1 84 d2 74 90 01 01 8b 54 24 90 01 01 8b de 2b da 8a 14 03 84 d2 74 90 00 } //1
+		$a_02_0 = {03 d1 03 f1 89 54 24 ?? 8a 00 89 74 24 ?? 88 44 24 ?? 8b 44 24 ?? 33 ff 33 ed 66 8b 3e 8b 74 24 ?? 8d 3c be 8b 32 8a 54 24 ?? 03 f9 03 f1 84 d2 74 ?? 8b 54 24 ?? 8b de 2b da 8a 14 03 84 d2 74 } //1
 		$a_01_1 = {38 45 31 35 41 73 74 32 52 29 74 31 5a 42 4d } //1 8E15Ast2R)t1ZBM
 	condition:
 		((#a_02_0  & 1)*1+(#a_01_1  & 1)*1) >=2
@@ -25,7 +25,7 @@ rule Trojan_Win32_Trickbot_RTH_MTB_3{
 		description = "Trojan:Win32/Trickbot.RTH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {33 d2 03 c7 f7 f1 8b 45 90 01 01 8a 0c 10 88 0e 88 1c 10 8b 0d 90 01 04 03 c2 ff 45 90 01 01 46 39 4d 90 01 01 89 55 90 01 01 72 90 00 } //5
+		$a_03_0 = {33 d2 03 c7 f7 f1 8b 45 ?? 8a 0c 10 88 0e 88 1c 10 8b 0d ?? ?? ?? ?? 03 c2 ff 45 ?? 46 39 4d ?? 89 55 ?? 72 } //5
 		$a_81_1 = {65 4a 5a 5e 6e 52 4d 26 59 78 6d 6a 55 3c 62 69 5e 3f 73 26 74 70 6b 37 77 63 57 21 52 33 5f 59 4d 6e 51 7a 42 26 5e 31 43 43 57 53 4f 3c 71 3f 63 31 52 62 4d 5a 61 65 55 75 25 46 35 45 6d 2a 72 55 26 55 54 5f 72 } //1 eJZ^nRM&YxmjU<bi^?s&tpk7wcW!R3_YMnQzB&^1CCWSO<q?c1RbMZaeUu%F5Em*rU&UT_r
 		$a_81_2 = {46 57 53 65 38 26 4f 4f 31 6f 42 33 6f 43 58 46 40 2b 36 55 69 77 26 31 48 7a 4b 52 29 28 33 6e 37 66 71 50 51 63 46 71 55 5a 37 65 72 4f 36 } //1 FWSe8&OO1oB3oCXF@+6Uiw&1HzKR)(3n7fqPQcFqUZ7erO6
 	condition:

@@ -4,7 +4,7 @@ rule TrojanDownloader_O97M_EncDoc_OLP_MTB{
 		description = "TrojanDownloader:O97M/EncDoc.OLP!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {72 65 67 73 76 72 33 32 20 90 02 04 5c 70 6f 6c 79 31 2e 64 6c 6c 90 00 } //1
+		$a_03_0 = {72 65 67 73 76 72 33 32 20 [0-04] 5c 70 6f 6c 79 31 2e 64 6c 6c } //1
 		$a_01_1 = {5c 70 6f 6c 79 32 2e 64 6c 6c } //1 \poly2.dll
 		$a_01_2 = {2f 6d 6f 6f 6e 2e 68 74 6d 6c } //1 /moon.html
 		$a_01_3 = {55 52 4c 4d 6f 6e } //1 URLMon

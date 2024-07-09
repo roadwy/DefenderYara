@@ -4,7 +4,7 @@ rule VirTool_Win32_Obfuscator_AQS{
 		description = "VirTool:Win32/Obfuscator.AQS,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {51 c3 c3 55 89 e5 83 ec 28 c7 45 ec 00 00 00 00 b9 90 01 02 1d 02 90 00 } //2
+		$a_03_0 = {51 c3 c3 55 89 e5 83 ec 28 c7 45 ec 00 00 00 00 b9 ?? ?? 1d 02 } //2
 		$a_01_1 = {55 89 e5 c9 c2 10 00 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 } //1
 		$a_01_2 = {55 89 e5 c9 c2 10 00 c3 c3 c3 c3 c3 c3 c3 c3 } //1
 	condition:

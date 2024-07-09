@@ -4,7 +4,7 @@ rule Trojan_Win32_Injector_MT_MTB{
 		description = "Trojan:Win32/Injector.MT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 09 00 00 "
 		
 	strings :
-		$a_02_0 = {53 56 57 a1 90 01 04 31 45 90 01 01 33 c5 50 89 65 90 01 01 ff 75 90 01 01 8b 45 90 01 01 c7 45 90 01 05 89 45 90 01 01 8d 45 90 01 01 64 a3 00 00 00 00 c3 90 00 } //5
+		$a_02_0 = {53 56 57 a1 ?? ?? ?? ?? 31 45 ?? 33 c5 50 89 65 ?? ff 75 ?? 8b 45 ?? c7 45 ?? ?? ?? ?? ?? 89 45 ?? 8d 45 ?? 64 a3 00 00 00 00 c3 } //5
 		$a_00_1 = {54 68 65 20 51 55 49 43 4b 20 62 72 6f 77 6e 20 66 6f 78 20 6a 75 6d 70 73 20 6f 76 65 72 20 74 68 65 20 6c 61 7a 79 20 64 6f 67 } //1 The QUICK brown fox jumps over the lazy dog
 		$a_00_2 = {3c 3d 3e 3f 61 74 74 61 63 68 20 74 68 69 73 20 66 69 6c 65 20 77 69 74 68 20 65 2d 6d 61 69 6c } //1 <=>?attach this file with e-mail
 		$a_00_3 = {73 6f 6d 65 6f 6e 65 20 69 73 20 6c 6f 6f 6b 69 6e 67 3a 20 25 73 } //1 someone is looking: %s

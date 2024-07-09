@@ -4,7 +4,7 @@ rule Backdoor_Win32_Bifrose_FI{
 		description = "Backdoor:Win32/Bifrose.FI,SIGNATURE_TYPE_PEHSTR_EXT,ffffff8d 00 ffffff8d 00 09 00 00 "
 		
 	strings :
-		$a_02_0 = {59 0f b7 11 89 04 3a 66 83 79 02 00 74 90 01 01 0f b7 51 02 03 c2 83 c1 04 eb 90 00 } //100
+		$a_02_0 = {59 0f b7 11 89 04 3a 66 83 79 02 00 74 ?? 0f b7 51 02 03 c2 83 c1 04 eb } //100
 		$a_01_1 = {57 69 4e 2e 65 58 65 } //10 WiN.eXe
 		$a_00_2 = {6d 73 6e 6d 73 67 72 2e 65 78 65 } //10 msnmsgr.exe
 		$a_01_3 = {73 6f 66 74 77 61 52 65 5c 63 4c 61 73 73 45 73 5c 48 74 74 50 5c 53 68 65 6c 6c 5c 4f 70 65 6e 5c 63 6f 6d 6d 61 6e 64 } //10 softwaRe\cLassEs\HttP\Shell\Open\command

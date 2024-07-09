@@ -9,7 +9,7 @@ rule Backdoor_Win32_Zegost_H_dll{
 		$a_01_2 = {5c 73 79 73 6c 6f 67 2e 64 61 74 } //1 \syslog.dat
 		$a_01_3 = {41 70 70 6c 69 63 61 74 69 6f 6e 73 5c 69 65 78 70 6c 6f 72 65 2e 65 78 65 5c 73 68 65 6c 6c 5c 6f 70 65 6e 5c 63 6f 6d 6d 61 6e 64 } //1 Applications\iexplore.exe\shell\open\command
 		$a_01_4 = {47 6c 6f 62 61 6c 5c 64 66 67 25 64 38 64 34 67 } //1 Global\dfg%d8d4g
-		$a_03_5 = {b9 10 00 00 00 33 c0 8d bd 90 01 02 ff ff f3 ab c7 85 90 01 02 ff ff 44 00 00 00 c6 45 90 01 01 57 c6 45 90 01 01 69 c6 45 90 01 01 6e c6 45 90 01 01 53 c6 45 90 01 01 74 90 00 } //2
+		$a_03_5 = {b9 10 00 00 00 33 c0 8d bd ?? ?? ff ff f3 ab c7 85 ?? ?? ff ff 44 00 00 00 c6 45 ?? 57 c6 45 ?? 69 c6 45 ?? 6e c6 45 ?? 53 c6 45 ?? 74 } //2
 		$a_01_6 = {45 6e 61 62 6c 65 41 64 6d 69 6e 54 53 52 65 6d 6f 74 65 } //1 EnableAdminTSRemote
 		$a_01_7 = {53 68 75 74 64 6f 77 6e 57 69 74 68 6f 75 74 4c 6f 67 6f 6e } //1 ShutdownWithoutLogon
 		$a_01_8 = {66 44 65 6e 79 54 53 43 6f 6e 6e 65 63 74 69 6f 6e 73 } //1 fDenyTSConnections

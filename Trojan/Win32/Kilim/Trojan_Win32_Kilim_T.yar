@@ -4,7 +4,7 @@ rule Trojan_Win32_Kilim_T{
 		description = "Trojan:Win32/Kilim.T,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 05 00 00 "
 		
 	strings :
-		$a_03_0 = {47 65 74 44 6f 77 6e 6c 6f 61 64 28 22 68 74 74 70 3a 2f 2f 77 68 6f 73 2e 61 6d 75 6e 67 2e 75 73 2f 70 69 6e 67 6a 73 2f 3f 6b 3d 90 02 0f 2c 20 22 70 69 6e 67 6a 73 2e 6a 73 22 90 00 } //3
+		$a_03_0 = {47 65 74 44 6f 77 6e 6c 6f 61 64 28 22 68 74 74 70 3a 2f 2f 77 68 6f 73 2e 61 6d 75 6e 67 2e 75 73 2f 70 69 6e 67 6a 73 2f 3f 6b 3d [0-0f] 2c 20 22 70 69 6e 67 6a 73 2e 6a 73 22 } //3
 		$a_01_1 = {74 61 73 6b 6b 69 6c 6c 20 2f 49 4d 20 63 68 72 6f 6d 65 2e 65 78 65 20 2f 46 } //3 taskkill /IM chrome.exe /F
 		$a_01_2 = {25 63 69 6b 61 6e 5f 73 69 74 65 25 2f 43 69 76 61 6e 5f 43 6f 64 65 72 2f 62 61 63 6b 67 72 6f 75 6e 64 2e 6a 73 } //1 %cikan_site%/Civan_Coder/background.js
 		$a_01_3 = {2f 2f 25 63 69 6b 61 6e 5f 73 69 74 65 25 2f 73 6b 79 5f 63 6f 64 65 72 2f 73 6b 79 2e 6a 73 } //1 //%cikan_site%/sky_coder/sky.js

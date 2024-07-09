@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_NRK_MTB{
 		description = "Trojan:BAT/AgentTesla.NRK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {20 00 aa 02 00 8c 90 01 01 00 00 01 16 28 7d 00 00 0a 13 05 90 01 01 13 0b 2b 93 11 05 2c 05 90 01 01 13 0b 2b 8a 90 00 } //1
+		$a_03_0 = {20 00 aa 02 00 8c ?? 00 00 01 16 28 7d 00 00 0a 13 05 ?? 13 0b 2b 93 11 05 2c 05 ?? 13 0b 2b 8a } //1
 		$a_01_1 = {47 65 74 4d 61 6e 69 66 65 73 74 52 65 73 6f 75 72 63 65 53 74 72 65 61 6d } //1 GetManifestResourceStream
 		$a_80_2 = {47 65 74 4d 61 6e 69 66 65 73 74 52 65 73 6f 75 72 63 65 4e 61 6d 65 73 } //GetManifestResourceNames  1
 		$a_01_3 = {47 65 74 4f 62 6a 65 63 74 56 61 6c 75 65 } //1 GetObjectValue

@@ -4,7 +4,7 @@ rule Trojan_Win32_Ekstak_RG_MTB{
 		description = "Trojan:Win32/Ekstak.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {e0 46 00 ff d0 68 30 10 47 00 68 d4 1a 47 00 ff 15 90 01 01 e0 46 00 e9 90 00 } //1
+		$a_03_0 = {e0 46 00 ff d0 68 30 10 47 00 68 d4 1a 47 00 ff 15 ?? e0 46 00 e9 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -15,7 +15,7 @@ rule Trojan_Win32_Ekstak_RG_MTB_2{
 		
 	strings :
 		$a_01_0 = {55 8b ec 51 53 56 e8 c5 ff ff ff e9 } //1
-		$a_03_1 = {40 00 00 40 2e 90 01 01 64 65 78 00 00 00 90 00 } //1
+		$a_03_1 = {40 00 00 40 2e ?? 64 65 78 00 00 00 } //1
 	condition:
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
@@ -55,7 +55,7 @@ rule Trojan_Win32_Ekstak_RG_MTB_6{
 		description = "Trojan:Win32/Ekstak.RG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {55 8b ec 56 8b 75 14 56 ff 15 90 01 01 e4 46 00 ff 15 90 01 01 e4 46 00 68 70 1c 47 00 ff 15 90 01 04 e9 90 00 } //1
+		$a_03_0 = {55 8b ec 56 8b 75 14 56 ff 15 ?? e4 46 00 ff 15 ?? e4 46 00 68 70 1c 47 00 ff 15 ?? ?? ?? ?? e9 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

@@ -4,7 +4,7 @@ rule Trojan_Win32_Autophyte_G_dha{
 		description = "Trojan:Win32/Autophyte.G!dha,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 0d 00 00 "
 		
 	strings :
-		$a_02_0 = {8a 01 3c 69 7c 90 01 01 3c 70 7f 90 01 01 04 09 eb 90 01 01 3c 72 7c 90 01 01 3c 79 7e 90 01 01 3c 49 7c 90 01 01 3c 50 90 02 06 3c 52 7c 90 01 01 3c 59 7f 90 01 01 2c 09 90 00 } //5
+		$a_02_0 = {8a 01 3c 69 7c ?? 3c 70 7f ?? 04 09 eb ?? 3c 72 7c ?? 3c 79 7e ?? 3c 49 7c ?? 3c 50 [0-06] 3c 52 7c ?? 3c 59 7f ?? 2c 09 } //5
 		$a_01_1 = {2d 2d 2d 2d 46 78 69 76 42 78 6c 77 64 61 69 70 } //1 ----FxivBxlwdaip
 		$a_01_2 = {41 63 63 65 79 6b 3a } //1 Acceyk:
 		$a_01_3 = {4e 4a 41 4a 6b 61 69 6b 6c 79 } //1 NJAJkaikly

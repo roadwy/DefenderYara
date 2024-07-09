@@ -4,7 +4,7 @@ rule VirTool_WinNT_Rootkitdrv_FE{
 		description = "VirTool:WinNT/Rootkitdrv.FE,SIGNATURE_TYPE_PEHSTR_EXT,79 00 79 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {50 0f 20 c0 25 ff ff fe ff 0f 22 c0 58 a1 90 01 04 50 68 90 00 } //100
+		$a_02_0 = {50 0f 20 c0 25 ff ff fe ff 0f 22 c0 58 a1 ?? ?? ?? ?? 50 68 } //100
 		$a_00_1 = {5c 00 44 00 65 00 76 00 69 00 63 00 65 00 5c 00 57 00 69 00 6e 00 48 00 6f 00 6f 00 6b 00 } //10 \Device\WinHook
 		$a_00_2 = {5c 00 57 00 49 00 4e 00 44 00 4f 00 57 00 53 00 5c 00 73 00 79 00 73 00 74 00 65 00 6d 00 33 00 32 00 5c 00 66 00 79 00 64 00 64 00 6f 00 73 00 2e 00 65 00 78 00 65 00 } //10 \WINDOWS\system32\fyddos.exe
 		$a_00_3 = {5c 69 33 38 36 5c 53 59 53 2e 70 64 62 } //1 \i386\SYS.pdb

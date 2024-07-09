@@ -4,7 +4,7 @@ rule Trojan_Win32_Qakbot_CO_MTB{
 		description = "Trojan:Win32/Qakbot.CO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {66 3b e4 74 90 01 01 8b 4d 14 83 d9 00 3a ed 74 90 01 01 c3 89 45 10 89 4d 14 eb 90 00 } //1
+		$a_03_0 = {66 3b e4 74 ?? 8b 4d 14 83 d9 00 3a ed 74 ?? c3 89 45 10 89 4d 14 eb } //1
 		$a_01_1 = {42 45 58 5f 47 65 74 49 6e 66 6f } //1 BEX_GetInfo
 		$a_01_2 = {42 45 58 5f 49 6e 69 74 69 61 6c 69 7a 65 } //1 BEX_Initialize
 		$a_01_3 = {42 45 58 5f 53 65 74 43 61 6c 6c 42 61 63 6b 73 } //1 BEX_SetCallBacks

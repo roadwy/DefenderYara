@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_GAB_MTB{
 		description = "Trojan:BAT/AgentTesla.GAB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {2b 36 2b 37 de 3e 0a 2b de 0b 2b e7 28 90 01 01 00 00 0a 2b ed 28 90 01 01 00 00 06 2b c9 28 90 01 01 00 00 0a 2b c8 06 2b c7 6f 90 01 01 00 00 0a 2b c2 28 90 01 01 00 00 0a 2b bd 07 2b c0 07 2b c0 07 2b c7 0c 2b c6 90 00 } //5
+		$a_03_0 = {2b 36 2b 37 de 3e 0a 2b de 0b 2b e7 28 ?? 00 00 0a 2b ed 28 ?? 00 00 06 2b c9 28 ?? 00 00 0a 2b c8 06 2b c7 6f ?? 00 00 0a 2b c2 28 ?? 00 00 0a 2b bd 07 2b c0 07 2b c0 07 2b c7 0c 2b c6 } //5
 	condition:
 		((#a_03_0  & 1)*5) >=5
  

@@ -7,7 +7,7 @@ rule TrojanDownloader_Win32_Nekotimed_A{
 		$a_01_0 = {64 6d 2e 64 65 6d 69 73 65 74 6f 6b 65 6e 2e 63 6f 6d 3a 38 36 2f 6c 6f 67 2e 61 73 70 78 3f } //4 dm.demisetoken.com:86/log.aspx?
 		$a_01_1 = {2f 78 6e 2e 62 69 73 } //4 /xn.bis
 		$a_01_2 = {40 77 65 6e 23 25 25 25 36 6e } //4 @wen#%%%6n
-		$a_03_3 = {5b 6d 61 69 6e 5d 00 90 02 15 2e 70 68 70 00 90 00 } //4
+		$a_03_3 = {5b 6d 61 69 6e 5d 00 [0-15] 2e 70 68 70 00 } //4
 		$a_01_4 = {64 6d 2e 63 61 72 61 76 65 6c 32 2e 63 6f 6d 3a 38 36 2f 6c 6f 67 2e 61 73 70 78 3f } //4 dm.caravel2.com:86/log.aspx?
 		$a_01_5 = {83 7d f0 10 8b 45 dc 73 03 8d 45 dc ff 75 ec 50 8d 85 80 f7 ff ff 50 e8 } //4
 		$a_01_6 = {77 69 6e 69 6f 2e 73 79 73 } //2 winio.sys

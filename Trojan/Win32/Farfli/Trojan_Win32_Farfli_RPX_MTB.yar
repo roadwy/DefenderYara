@@ -14,7 +14,7 @@ rule Trojan_Win32_Farfli_RPX_MTB_2{
 		description = "Trojan:Win32/Farfli.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {31 33 81 ea 01 00 00 00 bf 90 01 04 43 29 ff 4f 39 c3 75 d5 01 d2 90 00 } //1
+		$a_03_0 = {31 33 81 ea 01 00 00 00 bf ?? ?? ?? ?? 43 29 ff 4f 39 c3 75 d5 01 d2 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -24,7 +24,7 @@ rule Trojan_Win32_Farfli_RPX_MTB_3{
 		description = "Trojan:Win32/Farfli.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {5a 57 5b 01 fb e8 90 01 01 00 00 00 81 ef 01 00 00 00 21 df 31 11 90 00 } //1
+		$a_03_0 = {5a 57 5b 01 fb e8 ?? 00 00 00 81 ef 01 00 00 00 21 df 31 11 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -54,7 +54,7 @@ rule Trojan_Win32_Farfli_RPX_MTB_6{
 		description = "Trojan:Win32/Farfli.RPX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 00 6a 00 53 53 6a 00 6a 00 ff 15 90 01 04 8b f0 5f 85 f6 75 04 5e 5b 59 c3 90 00 } //1
+		$a_03_0 = {6a 00 6a 00 53 53 6a 00 6a 00 ff 15 ?? ?? ?? ?? 8b f0 5f 85 f6 75 04 5e 5b 59 c3 } //1
 		$a_01_1 = {68 64 69 65 74 72 69 63 68 32 40 68 6f 74 6d 61 69 6c 2e 63 6f 6d } //1 hdietrich2@hotmail.com
 	condition:
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2

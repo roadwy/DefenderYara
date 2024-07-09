@@ -4,8 +4,8 @@ rule PWS_Win32_Skatayo_A{
 		description = "PWS:Win32/Skatayo.A,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0c 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {c8 f0 d0 c7 d7 a2 b2 e1 b1 ed bc e0 bf d8 cc e1 ca be 90 02 10 23 33 32 37 37 30 90 00 } //5
-		$a_02_1 = {cd ac d2 e2 d0 de b8 c4 90 02 10 42 75 74 74 6f 6e 90 00 } //5
+		$a_02_0 = {c8 f0 d0 c7 d7 a2 b2 e1 b1 ed bc e0 bf d8 cc e1 ca be [0-10] 23 33 32 37 37 30 } //5
+		$a_02_1 = {cd ac d2 e2 d0 de b8 c4 [0-10] 42 75 74 74 6f 6e } //5
 		$a_00_2 = {69 66 20 65 78 69 73 74 73 20 22 } //2 if exists "
 		$a_00_3 = {67 6f 74 6f 20 74 72 79 } //2 goto try
 		$a_00_4 = {41 73 6b 54 61 6f 2e } //2 AskTao.

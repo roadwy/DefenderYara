@@ -4,7 +4,7 @@ rule Trojan_Win32_Vidar_MA_MTB{
 		description = "Trojan:Win32/Vidar.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 06 89 45 fc 33 d2 8b c3 6a 90 01 01 59 f7 f1 8b 4d fc 8a 04 0a 8b 4d 0c 30 04 1f 43 8b 41 04 8b 39 2b c7 3b d8 72 90 00 } //1
+		$a_03_0 = {8b 06 89 45 fc 33 d2 8b c3 6a ?? 59 f7 f1 8b 4d fc 8a 04 0a 8b 4d 0c 30 04 1f 43 8b 41 04 8b 39 2b c7 3b d8 72 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Vidar_MA_MTB_2{
 		description = "Trojan:Win32/Vidar.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 44 24 0c 69 d2 fd 43 03 00 81 c2 c3 9e 26 00 89 15 14 90 01 01 45 00 8a 0d 16 90 01 01 45 00 30 0c 30 83 ff 0f 75 90 00 } //1
+		$a_03_0 = {8b 44 24 0c 69 d2 fd 43 03 00 81 c2 c3 9e 26 00 89 15 14 ?? 45 00 8a 0d 16 ?? 45 00 30 0c 30 83 ff 0f 75 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -24,7 +24,7 @@ rule Trojan_Win32_Vidar_MA_MTB_3{
 		description = "Trojan:Win32/Vidar.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 44 24 28 89 44 24 20 8b 44 24 24 01 44 24 20 8b 44 24 28 c1 e8 05 89 44 24 14 8b 4c 24 2c 8d 44 24 14 c7 05 24 0f 4d 00 ee 3d ea f4 e8 90 01 01 ff ff ff 8b 44 24 20 31 44 24 10 8b 54 24 10 31 54 24 14 81 3d 2c 0f 4d 00 13 02 00 00 75 90 00 } //10
+		$a_03_0 = {8b 44 24 28 89 44 24 20 8b 44 24 24 01 44 24 20 8b 44 24 28 c1 e8 05 89 44 24 14 8b 4c 24 2c 8d 44 24 14 c7 05 24 0f 4d 00 ee 3d ea f4 e8 ?? ff ff ff 8b 44 24 20 31 44 24 10 8b 54 24 10 31 54 24 14 81 3d 2c 0f 4d 00 13 02 00 00 75 } //10
 	condition:
 		((#a_03_0  & 1)*10) >=10
  
@@ -35,7 +35,7 @@ rule Trojan_Win32_Vidar_MA_MTB_4{
 		
 	strings :
 		$a_01_0 = {f1 d5 00 fa 4c 62 cc f4 0f 0b } //1
-		$a_03_1 = {8b 45 0c 8d 48 01 8a 10 40 84 d2 75 90 01 01 2b c1 8b d8 33 d2 8b c6 f7 f3 8b 45 0c 8d 0c 3e 8a 04 02 8b 55 08 32 04 0a 46 88 01 3b 75 10 72 90 00 } //10
+		$a_03_1 = {8b 45 0c 8d 48 01 8a 10 40 84 d2 75 ?? 2b c1 8b d8 33 d2 8b c6 f7 f3 8b 45 0c 8d 0c 3e 8a 04 02 8b 55 08 32 04 0a 46 88 01 3b 75 10 72 } //10
 		$a_01_2 = {5c 57 61 6c 6c 65 74 73 5c } //2 \Wallets\
 		$a_01_3 = {5c 54 65 6c 65 67 72 61 6d 5c } //2 \Telegram\
 		$a_01_4 = {20 2f 66 20 26 20 74 69 6d 65 6f 75 74 20 2f 74 20 36 20 26 20 64 65 6c 20 2f 66 20 2f 71 } //2  /f & timeout /t 6 & del /f /q

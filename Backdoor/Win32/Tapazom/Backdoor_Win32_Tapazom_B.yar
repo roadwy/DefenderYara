@@ -4,7 +4,7 @@ rule Backdoor_Win32_Tapazom_B{
 		description = "Backdoor:Win32/Tapazom.B,SIGNATURE_TYPE_PEHSTR_EXT,36 01 18 01 07 00 00 "
 		
 	strings :
-		$a_03_0 = {8a 03 33 d2 8a d0 25 ff 00 00 00 d1 e8 2b d0 33 c0 8a 44 13 01 a3 90 01 02 40 00 33 c0 8a 03 33 d2 8a 13 d1 ea 2b c2 0f b6 04 03 90 00 } //200
+		$a_03_0 = {8a 03 33 d2 8a d0 25 ff 00 00 00 d1 e8 2b d0 33 c0 8a 44 13 01 a3 ?? ?? 40 00 33 c0 8a 03 33 d2 8a 13 d1 ea 2b c2 0f b6 04 03 } //200
 		$a_01_1 = {6d 6d 7a 6f 2e 64 79 6e 64 6e 73 2e 6f 72 67 3a 31 34 33 31 } //50 mmzo.dyndns.org:1431
 		$a_01_2 = {43 61 72 76 69 65 72 } //50 Carvier
 		$a_01_3 = {07 49 6e 66 2e 65 78 65 08 55 74 69 6c 69 74 79 } //30 䤇普攮數唈楴楬祴

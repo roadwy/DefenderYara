@@ -4,7 +4,7 @@ rule Trojan_Win32_Janstr_gen_A{
 		description = "Trojan:Win32/Janstr.gen!A,SIGNATURE_TYPE_PEHSTR_EXT,6d 00 68 00 0a 00 00 "
 		
 	strings :
-		$a_02_0 = {53 8b d8 8b 83 04 03 00 00 8b 10 ff 92 e0 00 00 00 b2 01 8b 83 10 03 00 00 e8 90 01 04 5b c3 90 00 } //100
+		$a_02_0 = {53 8b d8 8b 83 04 03 00 00 8b 10 ff 92 e0 00 00 00 b2 01 8b 83 10 03 00 00 e8 ?? ?? ?? ?? 5b c3 } //100
 		$a_00_1 = {5c 77 65 62 6d 61 6c 2e 65 78 74 74 74 } //1 \webmal.exttt
 		$a_00_2 = {6b 69 6d 65 63 65 6b 2e 61 73 70 } //1 kimecek.asp
 		$a_00_3 = {68 74 74 70 3a 2f 2f 77 77 77 2e 61 6a 61 6e 73 74 65 72 2e 63 6f 6d 2f 7a 75 70 70 65 2f } //1 http://www.ajanster.com/zuppe/

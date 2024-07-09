@@ -4,7 +4,7 @@ rule Trojan_Win32_Phorpiex_MA_MTB{
 		description = "Trojan:Win32/Phorpiex.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {c7 85 2c f4 ff ff 90 01 04 8b 85 f0 fd ff ff 89 85 28 f4 ff ff 8b 8d 28 f4 ff ff 66 8b 11 66 89 95 26 f4 ff ff 8b 85 2c f4 ff ff 66 3b 10 75 4b 66 83 bd 26 f4 ff ff 00 74 90 00 } //1
+		$a_03_0 = {c7 85 2c f4 ff ff ?? ?? ?? ?? 8b 85 f0 fd ff ff 89 85 28 f4 ff ff 8b 8d 28 f4 ff ff 66 8b 11 66 89 95 26 f4 ff ff 8b 85 2c f4 ff ff 66 3b 10 75 4b 66 83 bd 26 f4 ff ff 00 74 } //1
 		$a_01_1 = {41 6e 74 69 56 69 72 75 73 44 69 73 61 62 6c 65 4e 6f 74 69 66 79 } //1 AntiVirusDisableNotify
 		$a_01_2 = {53 00 6f 00 66 00 74 00 77 00 61 00 72 00 65 00 5c 00 4d 00 69 00 63 00 72 00 6f 00 73 00 6f 00 66 00 74 00 5c 00 57 00 69 00 6e 00 64 00 6f 00 77 00 73 00 5c 00 43 00 75 00 72 00 72 00 65 00 6e 00 74 00 56 00 65 00 72 00 73 00 69 00 6f 00 6e 00 5c 00 52 00 75 00 6e 00 5c 00 } //1 Software\Microsoft\Windows\CurrentVersion\Run\
 		$a_01_3 = {2f 00 63 00 20 00 73 00 74 00 61 00 72 00 74 00 20 00 2e 00 5c 00 25 00 73 00 20 00 26 00 20 00 73 00 74 00 61 00 72 00 74 00 20 00 2e 00 5c 00 25 00 73 00 5c 00 56 00 6f 00 6c 00 44 00 72 00 69 00 76 00 65 00 72 00 2e 00 65 00 78 00 65 00 } //1 /c start .\%s & start .\%s\VolDriver.exe

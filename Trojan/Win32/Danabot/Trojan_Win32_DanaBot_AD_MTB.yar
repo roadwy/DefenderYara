@@ -4,7 +4,7 @@ rule Trojan_Win32_DanaBot_AD_MTB{
 		description = "Trojan:Win32/DanaBot.AD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {30 04 3e 56 90 02 30 83 c4 90 02 20 8b f0 85 f6 90 02 c8 8b 8d 90 02 40 33 cd 90 00 } //1
+		$a_02_0 = {30 04 3e 56 [0-30] 83 c4 [0-20] 8b f0 85 f6 [0-c8] 8b 8d [0-40] 33 cd } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  

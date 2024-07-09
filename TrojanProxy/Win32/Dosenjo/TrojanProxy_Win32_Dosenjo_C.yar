@@ -4,7 +4,7 @@ rule TrojanProxy_Win32_Dosenjo_C{
 		description = "TrojanProxy:Win32/Dosenjo.C,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 6e 66 c7 45 ec 02 00 ff 15 90 01 04 83 65 f0 00 6a 10 5f 66 89 45 ee 57 8d 45 ec 50 53 90 00 } //3
+		$a_03_0 = {6a 6e 66 c7 45 ec 02 00 ff 15 ?? ?? ?? ?? 83 65 f0 00 6a 10 5f 66 89 45 ee 57 8d 45 ec 50 53 } //3
 		$a_01_1 = {8b 4d 94 8a 4c 0d 98 30 08 ff 45 94 83 7d 94 20 72 04 83 65 94 00 40 80 38 00 75 e4 } //3
 		$a_01_2 = {3f 63 61 63 68 69 6e 67 44 65 6e 79 3d } //1 ?cachingDeny=
 		$a_01_3 = {42 55 46 42 55 46 20 4e 4f 54 20 45 4e 43 } //1 BUFBUF NOT ENC

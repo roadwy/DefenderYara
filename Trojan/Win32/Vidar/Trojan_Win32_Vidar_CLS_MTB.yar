@@ -4,8 +4,8 @@ rule Trojan_Win32_Vidar_CLS_MTB{
 		description = "Trojan:Win32/Vidar.CLS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,11 00 11 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {33 d8 23 da c1 e8 90 01 01 33 04 90 01 05 83 c1 90 01 01 83 ef 90 01 01 4e 90 00 } //5
-		$a_03_1 = {0f b6 31 33 f0 23 f2 c1 e8 90 01 01 33 04 90 01 05 41 4f 75 90 00 } //5
+		$a_03_0 = {33 d8 23 da c1 e8 ?? 33 04 ?? ?? ?? ?? ?? 83 c1 ?? 83 ef ?? 4e } //5
+		$a_03_1 = {0f b6 31 33 f0 23 f2 c1 e8 ?? 33 04 ?? ?? ?? ?? ?? 41 4f 75 } //5
 		$a_81_2 = {47 65 72 6f 57 61 6c 6c 65 74 } //1 GeroWallet
 		$a_81_3 = {50 6f 6e 74 65 6d 20 57 61 6c 6c 65 74 } //1 Pontem Wallet
 		$a_81_4 = {50 65 74 72 61 20 57 61 6c 6c 65 74 } //1 Petra Wallet

@@ -4,7 +4,7 @@ rule Backdoor_Win32_Rumsoot_A{
 		description = "Backdoor:Win32/Rumsoot.A,SIGNATURE_TYPE_PEHSTR_EXT,05 00 04 00 05 00 00 "
 		
 	strings :
-		$a_02_0 = {59 3d 80 51 01 00 7c 05 e8 90 01 02 ff ff e8 90 01 02 ff ff 68 c0 27 09 00 ff 15 90 01 02 00 01 eb 90 04 01 02 c9 ce 90 00 } //2
+		$a_02_0 = {59 3d 80 51 01 00 7c 05 e8 ?? ?? ff ff e8 ?? ?? ff ff 68 c0 27 09 00 ff 15 ?? ?? 00 01 eb 90 04 01 02 c9 ce } //2
 		$a_00_1 = {75 69 64 3d 25 49 36 34 64 26 67 69 64 3d 25 64 26 63 69 64 3d 25 73 26 72 69 64 3d 25 64 26 73 69 64 3d 25 64 } //1 uid=%I64d&gid=%d&cid=%s&rid=%d&sid=%d
 		$a_00_2 = {72 75 6e 61 73 73 79 73 75 73 65 72 } //1 runassysuser
 		$a_00_3 = {77 69 6c 6c 20 72 65 73 75 6c 74 20 69 6e 20 73 79 73 74 65 6d 20 69 6e 73 74 61 62 69 6c 69 74 79 } //1 will result in system instability

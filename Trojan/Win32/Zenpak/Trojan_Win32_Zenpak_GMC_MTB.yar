@@ -4,7 +4,7 @@ rule Trojan_Win32_Zenpak_GMC_MTB{
 		description = "Trojan:Win32/Zenpak.GMC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {89 e0 50 8f 05 90 01 04 83 e8 08 e8 90 01 04 42 89 e8 50 8f 05 90 01 04 01 d0 8d 05 90 01 04 01 18 e8 90 01 04 c3 48 48 89 35 90 00 } //10
+		$a_03_0 = {89 e0 50 8f 05 ?? ?? ?? ?? 83 e8 08 e8 ?? ?? ?? ?? 42 89 e8 50 8f 05 ?? ?? ?? ?? 01 d0 8d 05 ?? ?? ?? ?? 01 18 e8 ?? ?? ?? ?? c3 48 48 89 35 } //10
 	condition:
 		((#a_03_0  & 1)*10) >=10
  

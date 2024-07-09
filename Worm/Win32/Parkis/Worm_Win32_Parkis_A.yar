@@ -4,7 +4,7 @@ rule Worm_Win32_Parkis_A{
 		description = "Worm:Win32/Parkis.A,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 09 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {83 f8 01 74 44 6a ff 8d 45 90 01 01 66 8b 15 90 00 } //1
+		$a_03_0 = {83 f8 01 74 44 6a ff 8d 45 ?? 66 8b 15 } //1
 		$a_01_1 = {5b 0f 85 78 ff ff ff a1 d8 66 54 00 e8 } //1
 		$a_01_2 = {3a 00 5c 00 53 00 65 00 74 00 74 00 69 00 6e 00 67 00 73 00 5c 00 73 00 65 00 74 00 74 00 69 00 6e 00 67 00 2e 00 65 00 78 00 65 00 } //1 :\Settings\setting.exe
 		$a_01_3 = {5c 00 30 00 2e 00 65 00 78 00 65 00 } //1 \0.exe

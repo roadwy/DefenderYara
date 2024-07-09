@@ -4,7 +4,7 @@ rule PWS_Win32_Jauxeer_A{
 		description = "PWS:Win32/Jauxeer.A,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
 		
 	strings :
-		$a_02_0 = {0f b7 8d a2 fb ff ff 0f b7 95 aa fb ff ff 8b c1 8d 8d b0 fd ff ff 03 c0 8d 04 80 03 d0 42 52 8d 95 b0 fe ff ff 52 68 90 01 02 44 00 51 e8 90 01 02 00 00 90 00 } //2
+		$a_02_0 = {0f b7 8d a2 fb ff ff 0f b7 95 aa fb ff ff 8b c1 8d 8d b0 fd ff ff 03 c0 8d 04 80 03 d0 42 52 8d 95 b0 fe ff ff 52 68 ?? ?? 44 00 51 e8 ?? ?? 00 00 } //2
 		$a_00_1 = {5c 52 65 63 79 63 6c 65 64 } //1 \Recycled
 		$a_00_2 = {25 73 5c 25 64 25 64 2e 64 61 74 } //1 %s\%d%d.dat
 		$a_00_3 = {72 75 6e 64 6c 6c 33 32 2e 65 78 65 20 25 73 20 73 } //1 rundll32.exe %s s
@@ -17,7 +17,7 @@ rule PWS_Win32_Jauxeer_A_2{
 		description = "PWS:Win32/Jauxeer.A,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 09 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {68 00 01 00 00 52 68 90 01 04 e8 90 01 04 81 45 fc 39 30 00 00 68 90 01 04 e8 90 01 04 83 f8 03 75 90 00 } //5
+		$a_03_0 = {68 00 01 00 00 52 68 ?? ?? ?? ?? e8 ?? ?? ?? ?? 81 45 fc 39 30 00 00 68 ?? ?? ?? ?? e8 ?? ?? ?? ?? 83 f8 03 75 } //5
 		$a_01_1 = {2b 45 dc 3d 10 27 00 00 0f 87 } //3
 		$a_01_2 = {26 76 65 72 3d 25 73 26 74 67 69 64 3d 25 73 26 61 64 64 72 65 73 73 3d 25 73 } //2 &ver=%s&tgid=%s&address=%s
 		$a_01_3 = {65 3a 00 45 3a 5c 00 25 2e 38 78 25 2e 38 78 25 } //1 㩥䔀尺─㠮╸㠮╸

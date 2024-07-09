@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_MB_MTB{
 		description = "Trojan:BAT/AgentTesla.MB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_02_0 = {a2 25 17 7e 90 01 02 00 04 a2 25 18 72 90 01 02 00 70 a2 28 90 01 02 00 0a 26 90 00 } //1
+		$a_02_0 = {a2 25 17 7e ?? ?? 00 04 a2 25 18 72 ?? ?? 00 70 a2 28 ?? ?? 00 0a 26 } //1
 		$a_80_1 = {4d 61 69 6e 57 69 6e 64 6f 77 2e 52 65 73 6f 75 72 63 65 73 2e 72 65 73 6f 75 72 63 65 73 } //MainWindow.Resources.resources  1
 	condition:
 		((#a_02_0  & 1)*1+(#a_80_1  & 1)*1) >=2
@@ -29,7 +29,7 @@ rule Trojan_BAT_AgentTesla_MB_MTB_3{
 		description = "Trojan:BAT/AgentTesla.MB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {16 0d 2b 22 06 09 08 09 08 8e 69 5d 91 07 09 91 61 d2 6f 90 01 03 0a 2b 03 0c 2b e4 09 17 58 0d 2b 04 2c 0f 2b c9 09 07 8e 69 32 02 2b 05 2b d4 0b 2b b9 90 00 } //1
+		$a_03_0 = {16 0d 2b 22 06 09 08 09 08 8e 69 5d 91 07 09 91 61 d2 6f ?? ?? ?? 0a 2b 03 0c 2b e4 09 17 58 0d 2b 04 2c 0f 2b c9 09 07 8e 69 32 02 2b 05 2b d4 0b 2b b9 } //1
 		$a_01_1 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //1 DownloadData
 		$a_01_2 = {47 65 74 42 79 74 65 73 } //1 GetBytes
 		$a_01_3 = {54 6f 41 72 72 61 79 } //1 ToArray
@@ -44,7 +44,7 @@ rule Trojan_BAT_AgentTesla_MB_MTB_4{
 		description = "Trojan:BAT/AgentTesla.MB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {8e 69 1e 5a 6f 90 01 03 0a 00 07 02 7b 90 01 03 04 6f 90 01 03 0a 00 07 02 7b 90 01 03 04 8e 69 1e 5a 6f 90 01 03 0a 00 07 02 7b 90 01 03 04 6f 90 01 03 0a 00 07 6f 90 01 03 0a 0c 00 03 73 90 01 03 0a 0d 00 09 08 16 73 59 01 00 0a 13 04 00 03 8e 69 8d 90 01 01 00 00 01 13 05 11 04 11 05 16 03 8e 69 6f 90 01 03 0a 13 06 11 05 11 06 28 90 01 03 2b 28 90 01 03 2b 0a 00 de 90 00 } //1
+		$a_03_0 = {8e 69 1e 5a 6f ?? ?? ?? 0a 00 07 02 7b ?? ?? ?? 04 6f ?? ?? ?? 0a 00 07 02 7b ?? ?? ?? 04 8e 69 1e 5a 6f ?? ?? ?? 0a 00 07 02 7b ?? ?? ?? 04 6f ?? ?? ?? 0a 00 07 6f ?? ?? ?? 0a 0c 00 03 73 ?? ?? ?? 0a 0d 00 09 08 16 73 59 01 00 0a 13 04 00 03 8e 69 8d ?? 00 00 01 13 05 11 04 11 05 16 03 8e 69 6f ?? ?? ?? 0a 13 06 11 05 11 06 28 ?? ?? ?? 2b 28 ?? ?? ?? 2b 0a 00 de } //1
 		$a_01_1 = {47 65 74 42 79 74 65 73 } //1 GetBytes
 		$a_01_2 = {54 6f 53 74 72 69 6e 67 } //1 ToString
 		$a_01_3 = {43 72 65 61 74 65 44 65 63 72 79 70 74 6f 72 } //1 CreateDecryptor

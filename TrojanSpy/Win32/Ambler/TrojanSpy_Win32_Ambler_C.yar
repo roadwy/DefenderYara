@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Ambler_C{
 		description = "TrojanSpy:Win32/Ambler.C,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 25 00 00 "
 		
 	strings :
-		$a_02_0 = {59 6a 01 59 3b c1 7e 0e 0f be b1 90 01 04 33 d6 41 3b c8 7c f2 3b 15 90 01 04 74 07 33 c0 e9 90 01 02 00 00 90 00 } //15
+		$a_02_0 = {59 6a 01 59 3b c1 7e 0e 0f be b1 ?? ?? ?? ?? 33 d6 41 3b c8 7c f2 3b 15 ?? ?? ?? ?? 74 07 33 c0 e9 ?? ?? 00 00 } //15
 		$a_01_1 = {4f 56 45 52 53 3d 25 73 } //2 OVERS=%s
 		$a_01_2 = {43 4c 49 43 4b 53 3d 25 73 } //2 CLICKS=%s
 		$a_01_3 = {4b 45 59 53 52 45 41 44 3a 25 73 } //2 KEYSREAD:%s

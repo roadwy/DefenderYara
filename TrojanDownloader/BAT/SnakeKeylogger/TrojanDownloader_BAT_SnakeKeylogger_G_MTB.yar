@@ -4,7 +4,7 @@ rule TrojanDownloader_BAT_SnakeKeylogger_G_MTB{
 		description = "TrojanDownloader:BAT/SnakeKeylogger.G!MTB,SIGNATURE_TYPE_PEHSTR_EXT,19 00 19 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {0a 0a 00 06 02 73 90 01 03 0a 6f 90 01 03 0a 0b de 90 01 01 90 0a 48 00 20 90 01 03 00 2b 90 01 02 2b 90 01 01 28 90 01 03 0a 2b 90 01 02 de 90 01 01 26 90 01 02 de 00 73 90 00 } //15
+		$a_03_0 = {0a 0a 00 06 02 73 ?? ?? ?? 0a 6f ?? ?? ?? 0a 0b de ?? 90 0a 48 00 20 ?? ?? ?? 00 2b ?? ?? 2b ?? 28 ?? ?? ?? 0a 2b ?? ?? de ?? 26 ?? ?? de 00 73 } //15
 		$a_01_1 = {41 64 64 53 65 63 6f 6e 64 73 } //1 AddSeconds
 		$a_01_2 = {44 61 74 65 54 69 6d 65 } //1 DateTime
 		$a_01_3 = {53 65 63 75 72 69 74 79 50 72 6f 74 6f 63 6f 6c } //1 SecurityProtocol

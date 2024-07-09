@@ -4,7 +4,7 @@ rule TrojanDropper_Win32_SpamThru_gen_A{
 		description = "TrojanDropper:Win32/SpamThru.gen!A,SIGNATURE_TYPE_PEHSTR_EXT,7d 00 7d 00 15 00 00 "
 		
 	strings :
-		$a_02_0 = {2b cf 8d 04 c5 90 01 03 00 8b 50 04 85 d2 74 1e 8b 30 8d 3c 02 83 c0 08 3b c7 73 ed 0f b7 10 03 15 90 01 03 00 01 0c 32 03 d6 40 40 eb ea 90 00 } //20
+		$a_02_0 = {2b cf 8d 04 c5 ?? ?? ?? 00 8b 50 04 85 d2 74 1e 8b 30 8d 3c 02 83 c0 08 3b c7 73 ed 0f b7 10 03 15 ?? ?? ?? 00 01 0c 32 03 d6 40 40 eb ea } //20
 		$a_00_1 = {8b d6 8a 02 8d 72 01 88 07 47 84 c0 74 0b 49 74 0c 8a 06 88 07 47 46 eb f1 85 c9 75 0d 80 27 00 8a 06 46 84 c0 75 f9 } //20
 		$a_00_2 = {8a 0e 8d 46 01 88 0a 42 84 c9 74 0b 4f 74 0c 8a 08 88 0a 42 40 eb f1 85 ff 75 0a 80 22 00 8a 08 40 84 c9 75 f9 } //20
 		$a_00_3 = {43 3a 5c 70 72 6f 6a 65 63 74 73 5c 41 6e 69 54 61 5c 33 32 } //-125 C:\projects\AniTa\32

@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_JSD_MTB{
 		description = "Trojan:BAT/AgentTesla.JSD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {0a 0b 06 16 73 90 01 03 0a 73 90 01 03 0a 0c 08 07 6f 90 01 03 0a 07 6f 90 01 03 0a 0d de 1e 90 00 } //1
+		$a_03_0 = {0a 0b 06 16 73 ?? ?? ?? 0a 73 ?? ?? ?? 0a 0c 08 07 6f ?? ?? ?? 0a 07 6f ?? ?? ?? 0a 0d de 1e } //1
 		$a_01_1 = {44 65 63 6f 64 65 72 } //1 Decoder
 		$a_01_2 = {57 69 6e 41 70 69 } //1 WinApi
 		$a_01_3 = {44 79 6e 61 6d 69 63 49 6e 76 6f 6b 65 } //1 DynamicInvoke

@@ -4,7 +4,7 @@ rule HackTool_Win32_DarkComet{
 		description = "HackTool:Win32/DarkComet,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {44 61 72 6b 43 6f 6d 65 74 90 01 01 52 41 54 20 2d 20 4e 65 77 20 55 73 65 72 20 21 90 00 } //1
+		$a_03_0 = {44 61 72 6b 43 6f 6d 65 74 ?? 52 41 54 20 2d 20 4e 65 77 20 55 73 65 72 20 21 } //1
 		$a_01_1 = {2d 44 61 72 6b 43 6f 6d 65 74 2d 52 41 54 20 57 65 62 20 53 69 74 65 20 61 6e 64 20 53 6f 66 74 77 61 72 65 20 41 67 72 65 65 6d 65 6e 74 } //1 -DarkComet-RAT Web Site and Software Agreement
 		$a_01_2 = {44 61 72 6b 43 6f 6d 65 74 20 69 73 20 73 79 6e 63 68 72 6f 6e 69 7a 65 64 20 77 69 74 68 20 6e 6f 2d 69 70 20 64 6e 73 20 73 65 72 76 69 63 65 } //1 DarkComet is synchronized with no-ip dns service
 		$a_01_3 = {41 41 63 74 69 76 65 20 64 61 72 6b 63 6f 6d 65 74 20 73 6b 69 6e 20 66 6f 72 6d 20 73 79 73 74 65 6d } //1 AActive darkcomet skin form system

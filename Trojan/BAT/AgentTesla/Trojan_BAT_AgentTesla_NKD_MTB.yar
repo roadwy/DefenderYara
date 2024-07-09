@@ -4,7 +4,7 @@ rule Trojan_BAT_AgentTesla_NKD_MTB{
 		description = "Trojan:BAT/AgentTesla.NKD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {11 06 03 16 03 8e 69 6f 90 01 03 0a 00 11 06 6f 90 01 03 0a 00 00 de 0d 90 00 } //1
+		$a_03_0 = {11 06 03 16 03 8e 69 6f ?? ?? ?? 0a 00 11 06 6f ?? ?? ?? 0a 00 00 de 0d } //1
 		$a_80_1 = {64 73 66 67 64 73 66 73 64 66 73 64 } //dsfgdsfsdfsd  1
 		$a_01_2 = {52 69 6a 6e 64 61 65 6c 4d 61 6e 61 67 65 64 } //1 RijndaelManaged
 		$a_01_3 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //1 DownloadData

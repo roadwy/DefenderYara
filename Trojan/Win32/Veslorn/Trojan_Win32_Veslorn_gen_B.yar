@@ -4,7 +4,7 @@ rule Trojan_Win32_Veslorn_gen_B{
 		description = "Trojan:Win32/Veslorn.gen!B,SIGNATURE_TYPE_PEHSTR_EXT,ffffff8f 00 ffffff8f 00 09 00 00 "
 		
 	strings :
-		$a_02_0 = {8b 44 24 04 66 81 38 4d 5a 75 90 01 01 8b 48 3c 03 c1 81 38 50 45 00 00 75 90 00 } //100
+		$a_02_0 = {8b 44 24 04 66 81 38 4d 5a 75 ?? 8b 48 3c 03 c1 81 38 50 45 00 00 75 } //100
 		$a_00_1 = {5c 78 63 6f 70 79 2e 65 78 65 } //10 \xcopy.exe
 		$a_00_2 = {53 65 72 76 69 63 65 44 4c 4c } //10 ServiceDLL
 		$a_00_3 = {2e 5c 52 45 53 53 44 54 44 4f 53 } //10 .\RESSDTDOS

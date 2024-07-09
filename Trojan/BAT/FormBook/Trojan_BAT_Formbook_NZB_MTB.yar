@@ -4,7 +4,7 @@ rule Trojan_BAT_Formbook_NZB_MTB{
 		description = "Trojan:BAT/Formbook.NZB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {25 16 1f 25 9d 6f 90 01 01 00 00 0a 13 04 38 90 01 04 00 02 90 00 } //3
+		$a_03_0 = {25 16 1f 25 9d 6f ?? 00 00 0a 13 04 38 ?? ?? ?? ?? 00 02 } //3
 		$a_81_1 = {4d 61 6e 61 67 65 6d 65 6e 74 5f 53 79 73 74 65 6d 2e 50 72 6f 70 65 72 74 69 65 73 2e 52 65 73 6f 75 72 63 65 } //1 Management_System.Properties.Resource
 		$a_81_2 = {33 39 39 30 35 66 63 37 35 62 33 33 } //1 39905fc75b33
 	condition:

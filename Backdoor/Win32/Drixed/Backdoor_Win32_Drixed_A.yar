@@ -4,7 +4,7 @@ rule Backdoor_Win32_Drixed_A{
 		description = "Backdoor:Win32/Drixed.A,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {32 cb 75 01 46 40 3b 75 08 7c ef 8d 88 90 01 04 8a 01 3a c3 74 16 8b f1 8a d8 32 5d ff 8b c7 e8 90 00 } //2
+		$a_03_0 = {32 cb 75 01 46 40 3b 75 08 7c ef 8d 88 ?? ?? ?? ?? 8a 01 3a c3 74 16 8b f1 8a d8 32 5d ff 8b c7 e8 } //2
 		$a_01_1 = {65 64 67 00 2e 74 6d 70 00 } //1
 		$a_01_2 = {73 65 00 63 6d 64 2e 65 78 65 00 20 63 70 00 } //1
 		$a_01_3 = {63 66 67 00 3c 00 63 6f 6e 66 69 67 20 62 ee 74 f0 65 e6 3d } //1

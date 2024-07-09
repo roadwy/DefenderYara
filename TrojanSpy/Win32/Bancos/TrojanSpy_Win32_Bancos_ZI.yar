@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Bancos_ZI{
 		description = "TrojanSpy:Win32/Bancos.ZI,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 0b 00 00 "
 		
 	strings :
-		$a_03_0 = {64 61 74 61 3d 90 02 06 26 75 73 65 72 4e 61 6d 65 3d 25 73 26 63 6f 6d 70 4e 61 6d 65 3d 25 73 90 00 } //1
+		$a_03_0 = {64 61 74 61 3d [0-06] 26 75 73 65 72 4e 61 6d 65 3d 25 73 26 63 6f 6d 70 4e 61 6d 65 3d 25 73 } //1
 		$a_00_1 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 52 75 6e } //1 Software\Microsoft\Windows\CurrentVersion\Run
 		$a_00_2 = {2f 73 6f 70 68 69 61 2f 69 6e 66 6f 34 31 2e 70 68 70 } //1 /sophia/info41.php
 		$a_00_3 = {53 6f 70 68 69 61 5c 52 65 6c 65 61 73 65 5c 53 6f 70 68 69 61 2e 70 64 62 } //1 Sophia\Release\Sophia.pdb

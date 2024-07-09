@@ -5,7 +5,7 @@ rule Trojan_Win32_IcedID_AF_MTB{
 		
 	strings :
 		$a_00_0 = {02 4c 24 07 2a c2 2a 44 24 08 02 c9 55 2a c1 0f b6 e9 56 2c 69 57 88 44 24 13 } //10
-		$a_02_1 = {89 4d fc 8b 15 90 01 04 81 c2 79 8f 0e 00 89 55 fc 6b 45 0c 4e 0f af 45 fc 90 00 } //10
+		$a_02_1 = {89 4d fc 8b 15 ?? ?? ?? ?? 81 c2 79 8f 0e 00 89 55 fc 6b 45 0c 4e 0f af 45 fc } //10
 	condition:
 		((#a_00_0  & 1)*10+(#a_02_1  & 1)*10) >=20
  

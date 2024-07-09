@@ -4,7 +4,7 @@ rule Ransom_Win32_Mimic_MA_MTB{
 		description = "Ransom:Win32/Mimic.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {33 c0 c7 45 e8 00 00 00 00 68 90 01 02 5d 00 8d 4d d8 c7 45 ec 07 00 00 00 66 89 45 d8 e8 90 01 02 fd ff 8b 45 e8 8d 55 8c 83 7d bc 08 8d 4d a8 6a 00 0f 43 4d a8 52 6a 00 68 06 01 02 00 8d 1c 00 33 c0 38 05 90 01 02 5e 90 00 } //5
+		$a_03_0 = {33 c0 c7 45 e8 00 00 00 00 68 ?? ?? 5d 00 8d 4d d8 c7 45 ec 07 00 00 00 66 89 45 d8 e8 ?? ?? fd ff 8b 45 e8 8d 55 8c 83 7d bc 08 8d 4d a8 6a 00 0f 43 4d a8 52 6a 00 68 06 01 02 00 8d 1c 00 33 c0 38 05 ?? ?? 5e } //5
 		$a_01_1 = {4d 00 49 00 4d 00 49 00 43 00 5f 00 4c 00 4f 00 47 00 2e 00 74 00 78 00 74 00 } //2 MIMIC_LOG.txt
 		$a_01_2 = {44 6f 6e 74 44 65 63 6f 6d 70 69 6c 65 4d 65 50 6c 65 61 73 65 } //2 DontDecompileMePlease
 		$a_01_3 = {44 00 65 00 6c 00 65 00 74 00 65 00 20 00 53 00 68 00 61 00 64 00 6f 00 77 00 20 00 43 00 6f 00 70 00 69 00 65 00 73 00 } //2 Delete Shadow Copies

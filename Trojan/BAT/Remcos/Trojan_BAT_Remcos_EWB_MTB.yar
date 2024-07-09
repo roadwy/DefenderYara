@@ -4,7 +4,7 @@ rule Trojan_BAT_Remcos_EWB_MTB{
 		description = "Trojan:BAT/Remcos.EWB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {06 07 16 20 00 10 00 00 6f 90 01 03 0a 0d 09 16 fe 02 13 04 11 04 2c 0c 00 08 07 16 09 6f 90 01 03 0a 00 00 00 09 16 fe 02 13 05 11 05 2d d0 90 00 } //1
+		$a_03_0 = {06 07 16 20 00 10 00 00 6f ?? ?? ?? 0a 0d 09 16 fe 02 13 04 11 04 2c 0c 00 08 07 16 09 6f ?? ?? ?? 0a 00 00 00 09 16 fe 02 13 05 11 05 2d d0 } //1
 		$a_01_1 = {47 65 74 4d 65 74 68 6f 64 } //1 GetMethod
 		$a_01_2 = {47 65 74 54 79 70 65 } //1 GetType
 		$a_01_3 = {54 00 6f 00 6d 00 61 00 73 00 7a 00 5a 00 61 00 77 00 61 00 64 00 7a 00 6b 00 69 00 5f 00 5a 00 61 00 64 00 44 00 6f 00 6d 00 32 00 } //1 TomaszZawadzki_ZadDom2

@@ -4,7 +4,7 @@ rule Trojan_Win32_VBKrypt_AX_MTB{
 		description = "Trojan:Win32/VBKrypt.AX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {89 0c 24 eb 90 0a 1f 00 8b 0f eb 90 02 1f 89 0c 24 eb 90 02 1f 31 34 24 eb 90 02 1f 59 eb 90 02 1f 83 c2 04 eb 90 02 1f 83 c7 04 eb 90 02 1f 81 fa 90 01 02 00 00 75 90 00 } //6
+		$a_02_0 = {89 0c 24 eb 90 0a 1f 00 8b 0f eb [0-1f] 89 0c 24 eb [0-1f] 31 34 24 eb [0-1f] 59 eb [0-1f] 83 c2 04 eb [0-1f] 83 c7 04 eb [0-1f] 81 fa ?? ?? 00 00 75 } //6
 		$a_00_1 = {44 00 52 00 45 00 53 00 53 00 49 00 45 00 52 00 } //1 DRESSIER
 		$a_00_2 = {4d 00 49 00 4e 00 44 00 53 00 54 00 45 00 4d 00 41 00 41 00 4c 00 45 00 54 00 } //1 MINDSTEMAALET
 		$a_00_3 = {42 00 45 00 53 00 4b 00 59 00 54 00 54 00 45 00 4c 00 53 00 45 00 53 00 4f 00 4d 00 52 00 41 00 41 00 44 00 45 00 52 00 4e 00 45 00 53 00 } //1 BESKYTTELSESOMRAADERNES

@@ -4,7 +4,7 @@ rule Trojan_Win32_NanoCore_RPG_MTB{
 		description = "Trojan:Win32/NanoCore.RPG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {32 00 33 00 2e 00 32 00 32 00 39 00 2e 00 33 00 34 00 2e 00 31 00 31 00 34 00 3a 00 38 00 31 00 2f 00 90 02 30 2e 00 62 00 6d 00 70 00 90 00 } //1
+		$a_03_0 = {32 00 33 00 2e 00 32 00 32 00 39 00 2e 00 33 00 34 00 2e 00 31 00 31 00 34 00 3a 00 38 00 31 00 2f 00 [0-30] 2e 00 62 00 6d 00 70 00 } //1
 		$a_01_1 = {52 65 76 65 72 73 65 } //1 Reverse
 		$a_01_2 = {49 6e 76 6f 6b 65 4d 65 6d 62 65 72 } //1 InvokeMember
 		$a_01_3 = {42 69 6e 64 65 72 } //1 Binder

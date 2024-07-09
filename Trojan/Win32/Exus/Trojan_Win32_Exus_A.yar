@@ -4,7 +4,7 @@ rule Trojan_Win32_Exus_A{
 		description = "Trojan:Win32/Exus.A,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0a 00 0a 00 00 "
 		
 	strings :
-		$a_02_0 = {55 8b ec 81 ec c0 02 00 00 a1 90 01 04 33 c5 89 45 fc 68 90 01 04 e9 90 00 } //2
+		$a_02_0 = {55 8b ec 81 ec c0 02 00 00 a1 ?? ?? ?? ?? 33 c5 89 45 fc 68 ?? ?? ?? ?? e9 } //2
 		$a_00_1 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 52 75 6e } //1 Software\Microsoft\Windows\CurrentVersion\Run
 		$a_00_2 = {45 78 55 53 74 61 72 74 75 70 } //1 ExUStartup
 		$a_00_3 = {36 31 2e 31 34 37 2e 31 30 33 2e 31 37 34 } //1 61.147.103.174

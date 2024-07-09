@@ -4,7 +4,7 @@ rule Trojan_Win32_ClipBanker_MR_MTB{
 		description = "Trojan:Win32/ClipBanker.MR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0c 00 00 "
 		
 	strings :
-		$a_02_0 = {0f b6 14 30 0f 90 02 04 81 90 02 05 c1 90 02 02 03 90 01 01 8a 90 02 02 88 90 02 02 40 3b c1 7c e1 90 00 } //5
+		$a_02_0 = {0f b6 14 30 0f [0-04] 81 [0-05] c1 [0-02] 03 ?? 8a [0-02] 88 [0-02] 40 3b c1 7c e1 } //5
 		$a_81_1 = {63 6c 72 6a 69 74 2e 64 6c 6c } //1 clrjit.dll
 		$a_81_2 = {43 4c 52 43 72 65 61 74 65 49 6e 73 74 61 6e 63 65 } //1 CLRCreateInstance
 		$a_81_3 = {47 65 74 4d 61 6e 69 66 65 73 74 52 65 73 6f 75 72 63 65 53 74 72 65 61 6d } //1 GetManifestResourceStream

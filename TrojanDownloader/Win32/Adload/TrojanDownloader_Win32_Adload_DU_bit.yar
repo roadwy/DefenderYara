@@ -15,9 +15,9 @@ rule TrojanDownloader_Win32_Adload_DU_bit_2{
 		description = "TrojanDownloader:Win32/Adload.DU!bit,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {64 8b 05 30 00 00 00 8b 40 0c 8b 40 1c 8b 00 8b 40 08 a3 90 01 03 00 8d 45 fc ba 90 01 03 00 e8 90 01 03 ff 8d 45 f8 ba 90 01 03 00 e8 90 01 03 ff 8d 4d 90 01 01 8b 55 fc 8b 45 f8 e8 90 01 03 ff 90 00 } //1
+		$a_03_0 = {64 8b 05 30 00 00 00 8b 40 0c 8b 40 1c 8b 00 8b 40 08 a3 ?? ?? ?? 00 8d 45 fc ba ?? ?? ?? 00 e8 ?? ?? ?? ff 8d 45 f8 ba ?? ?? ?? 00 e8 ?? ?? ?? ff 8d 4d ?? 8b 55 fc 8b 45 f8 e8 ?? ?? ?? ff } //1
 		$a_01_1 = {8b 55 fc 8b 55 f8 8a 54 32 ff 32 da 88 5c 30 ff 46 4f 75 90 } //1
-		$a_03_2 = {6a 05 6a 00 8b 03 e8 90 01 03 ff 50 8d 85 90 01 01 ff ff ff 8b 0d 90 01 03 00 8b 15 90 01 03 00 e8 90 01 03 ff 8b 85 90 01 01 ff ff ff e8 90 01 03 ff 50 68 90 01 03 00 6a 00 ff 15 90 01 03 00 90 00 } //1
+		$a_03_2 = {6a 05 6a 00 8b 03 e8 ?? ?? ?? ff 50 8d 85 ?? ff ff ff 8b 0d ?? ?? ?? 00 8b 15 ?? ?? ?? 00 e8 ?? ?? ?? ff 8b 85 ?? ff ff ff e8 ?? ?? ?? ff 50 68 ?? ?? ?? 00 6a 00 ff 15 ?? ?? ?? 00 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1) >=3
  

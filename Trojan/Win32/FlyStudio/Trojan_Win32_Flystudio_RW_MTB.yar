@@ -4,7 +4,7 @@ rule Trojan_Win32_Flystudio_RW_MTB{
 		description = "Trojan:Win32/Flystudio.RW!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1e 00 1e 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {83 ec 0c 50 ff 74 24 90 01 01 33 c0 89 44 24 90 01 01 89 44 24 90 01 01 89 44 24 90 01 01 8d 54 24 90 01 01 52 ff d3 8b 44 24 90 01 01 8b 54 24 90 01 01 8b 4c 24 90 01 01 83 c4 18 90 00 } //20
+		$a_03_0 = {83 ec 0c 50 ff 74 24 ?? 33 c0 89 44 24 ?? 89 44 24 ?? 89 44 24 ?? 8d 54 24 ?? 52 ff d3 8b 44 24 ?? 8b 54 24 ?? 8b 4c 24 ?? 83 c4 18 } //20
 		$a_01_1 = {5f 45 4c 5f 48 69 64 65 4f 77 6e 65 72 } //1 _EL_HideOwner
 		$a_01_2 = {69 6e 63 6c 75 64 65 20 5c 6c 2e 63 68 73 5c 61 66 78 72 65 73 2e 72 63 } //1 include \l.chs\afxres.rc
 		$a_01_3 = {54 24 30 56 52 50 53 51 } //1 T$0VRPSQ

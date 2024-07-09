@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Banload_XP{
 		description = "TrojanDownloader:Win32/Banload.XP,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {3a 5c 77 69 6e 64 6f 77 73 5c 53 79 73 74 65 6d 33 32 5c 90 02 05 2e 74 78 74 90 00 } //1
+		$a_03_0 = {3a 5c 77 69 6e 64 6f 77 73 5c 53 79 73 74 65 6d 33 32 5c [0-05] 2e 74 78 74 } //1
 		$a_00_1 = {49 6e 74 65 6c 69 67 65 6e 63 69 61 20 41 72 74 69 66 69 63 69 61 6c 20 41 43 54 } //1 Inteligencia Artificial ACT
 		$a_00_2 = {3a 2a 3a 45 6e 61 62 6c 65 64 3a 4d 69 63 72 6f 73 6f 66 74 20 57 69 6e 64 6f 77 73 20 55 70 64 61 74 65 20 50 6c 61 74 66 6f 72 6d } //1 :*:Enabled:Microsoft Windows Update Platform
 		$a_00_3 = {69 6e 74 65 72 6e 65 74 62 61 6e 6b 69 6e 67 63 61 69 78 61 6d 6f 7a 69 6c 6c 61 66 69 72 65 66 6f 78 } //1 internetbankingcaixamozillafirefox

@@ -4,7 +4,7 @@ rule VirTool_WinNT_Rootkitdrv_AQ{
 		description = "VirTool:WinNT/Rootkitdrv.AQ,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_02_0 = {55 8b ec 8b 0d 90 01 03 00 8b 40 01 8b 09 83 ec 14 56 8b 34 81 80 3e e9 75 11 8b 45 90 01 01 2b c6 83 e8 05 39 46 01 75 04 33 c0 eb 77 90 00 } //1
+		$a_02_0 = {55 8b ec 8b 0d ?? ?? ?? 00 8b 40 01 8b 09 83 ec 14 56 8b 34 81 80 3e e9 75 11 8b 45 ?? 2b c6 83 e8 05 39 46 01 75 04 33 c0 eb 77 } //1
 		$a_00_1 = {5a 77 51 75 65 72 79 56 61 6c 75 65 4b 65 79 } //1 ZwQueryValueKey
 		$a_00_2 = {5a 77 45 6e 75 6d 65 72 61 74 65 4b 65 79 } //1 ZwEnumerateKey
 		$a_00_3 = {5a 77 43 72 65 61 74 65 46 69 6c 65 } //1 ZwCreateFile

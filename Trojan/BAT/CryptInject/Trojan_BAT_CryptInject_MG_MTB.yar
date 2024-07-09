@@ -4,7 +4,7 @@ rule Trojan_BAT_CryptInject_MG_MTB{
 		description = "Trojan:BAT/CryptInject.MG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {0a 0a 02 8e 69 8d 90 01 03 01 0b 16 0c 2b 13 07 08 02 08 91 06 08 06 8e 69 5d 91 61 b4 9c 08 17 d6 0c 08 02 8e 69 32 e7 90 00 } //1
+		$a_03_0 = {0a 0a 02 8e 69 8d ?? ?? ?? 01 0b 16 0c 2b 13 07 08 02 08 91 06 08 06 8e 69 5d 91 61 b4 9c 08 17 d6 0c 08 02 8e 69 32 e7 } //1
 		$a_01_1 = {52 65 73 75 6d 65 54 68 72 65 61 64 } //1 ResumeThread
 		$a_01_2 = {53 75 73 70 65 6e 64 54 68 72 65 61 64 } //1 SuspendThread
 		$a_01_3 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //1 FromBase64String

@@ -4,7 +4,7 @@ rule Trojan_Win32_Alureon_gen_O{
 		description = "Trojan:Win32/Alureon.gen!O,SIGNATURE_TYPE_PEHSTR_EXT,06 00 05 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {33 c0 8a c8 80 c1 54 30 88 90 01 02 00 10 40 83 f8 90 01 01 72 ef c3 90 00 } //3
+		$a_03_0 = {33 c0 8a c8 80 c1 54 30 88 ?? ?? 00 10 40 83 f8 ?? 72 ef c3 } //3
 		$a_00_1 = {00 58 3a 5c 72 65 73 79 63 6c 65 64 5c 62 6f 6f 74 2e 63 6f 6d 00 } //1
 		$a_00_2 = {00 58 3a 5c 61 75 74 6f 72 75 6e 2e 69 6e 66 00 } //1
 		$a_01_3 = {00 50 4f 53 54 20 2f 63 67 69 2d 62 69 6e 2f 67 65 6e 65 72 61 74 6f 72 20 48 54 54 50 2f 31 2e 30 0d 0a } //1

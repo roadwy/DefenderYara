@@ -4,7 +4,7 @@ rule Trojan_Win32_Qakbot_MF_MTB{
 		description = "Trojan:Win32/Qakbot.MF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {03 d8 6a 00 e8 90 01 04 03 d8 8b 45 d8 33 18 89 5d a0 8b 45 a0 8b 55 d8 89 02 8b 45 a8 83 c0 04 89 45 a8 33 c0 89 45 a4 8b 45 d8 83 c0 04 03 45 a4 89 45 d8 8b 45 a8 3b 45 cc 0f 82 90 00 } //10
+		$a_03_0 = {03 d8 6a 00 e8 ?? ?? ?? ?? 03 d8 8b 45 d8 33 18 89 5d a0 8b 45 a0 8b 55 d8 89 02 8b 45 a8 83 c0 04 89 45 a8 33 c0 89 45 a4 8b 45 d8 83 c0 04 03 45 a4 89 45 d8 8b 45 a8 3b 45 cc 0f 82 } //10
 	condition:
 		((#a_03_0  & 1)*10) >=10
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Qakbot_MF_MTB_2{
 		description = "Trojan:Win32/Qakbot.MF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {89 50 0c 8b 48 70 8b 90 01 01 94 00 00 00 88 1c 0a ff 40 70 8b 50 70 8b 88 94 00 00 00 8b 5c 24 28 88 1c 0a ff 40 70 8b 48 68 81 f1 90 01 04 29 48 48 8b 88 80 00 00 00 09 88 c4 00 00 00 8b 88 a0 00 00 00 01 88 88 00 00 00 81 ff 90 01 04 0f 8c 90 00 } //10
+		$a_03_0 = {89 50 0c 8b 48 70 8b ?? 94 00 00 00 88 1c 0a ff 40 70 8b 50 70 8b 88 94 00 00 00 8b 5c 24 28 88 1c 0a ff 40 70 8b 48 68 81 f1 ?? ?? ?? ?? 29 48 48 8b 88 80 00 00 00 09 88 c4 00 00 00 8b 88 a0 00 00 00 01 88 88 00 00 00 81 ff ?? ?? ?? ?? 0f 8c } //10
 		$a_01_1 = {44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 } //2 DllRegisterServer
 	condition:
 		((#a_03_0  & 1)*10+(#a_01_1  & 1)*2) >=12

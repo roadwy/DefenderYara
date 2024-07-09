@@ -4,8 +4,8 @@ rule Trojan_Win32_Fareit_RW_MTB{
 		description = "Trojan:Win32/Fareit.RW!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 7c 30 fc 90 02 0f 5d 90 02 0a 81 f7 90 02 12 57 90 02 0a 8f 44 30 fc 90 02 19 d9 90 00 } //1
-		$a_03_1 = {8b 7c 10 fc 90 02 0f 5d 90 02 0a 81 f7 90 02 12 57 90 02 0a 8f 44 10 fc 90 02 19 d9 90 00 } //1
+		$a_03_0 = {8b 7c 30 fc [0-0f] 5d [0-0a] 81 f7 [0-12] 57 [0-0a] 8f 44 30 fc [0-19] d9 } //1
+		$a_03_1 = {8b 7c 10 fc [0-0f] 5d [0-0a] 81 f7 [0-12] 57 [0-0a] 8f 44 10 fc [0-19] d9 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=1
  

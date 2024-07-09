@@ -19,7 +19,7 @@ rule Trojan_BAT_AgentTesla_NS_MTB_2{
 		description = "Trojan:BAT/AgentTesla.NS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {1f 30 8d c8 00 00 01 13 04 06 6f 90 01 03 0a 16 11 04 16 1f 20 28 90 01 03 0a 90 00 } //5
+		$a_03_0 = {1f 30 8d c8 00 00 01 13 04 06 6f ?? ?? ?? 0a 16 11 04 16 1f 20 28 ?? ?? ?? 0a } //5
 		$a_01_1 = {55 00 70 00 6c 00 6f 00 61 00 64 00 52 00 65 00 70 00 6f 00 72 00 74 00 4c 00 6f 00 67 00 69 00 6e 00 2e 00 61 00 73 00 6d 00 78 00 } //1 UploadReportLogin.asmx
 		$a_01_2 = {53 00 65 00 72 00 76 00 65 00 72 00 52 00 32 00 } //1 ServerR2
 		$a_01_3 = {73 65 74 5f 45 78 70 65 63 74 31 30 30 43 6f 6e 74 69 6e 75 65 } //1 set_Expect100Continue
@@ -34,7 +34,7 @@ rule Trojan_BAT_AgentTesla_NS_MTB_3{
 		description = "Trojan:BAT/AgentTesla.NS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 08 00 00 "
 		
 	strings :
-		$a_02_0 = {a2 25 17 28 90 02 04 a2 25 18 72 90 02 04 a2 0a 72 90 02 04 0b 28 90 02 04 6f 90 02 04 16 9a 72 90 02 04 18 17 8d 90 02 04 25 16 07 28 90 02 04 28 90 02 04 a2 28 90 02 04 06 28 90 02 04 2a 90 00 } //7
+		$a_02_0 = {a2 25 17 28 [0-04] a2 25 18 72 [0-04] a2 0a 72 [0-04] 0b 28 [0-04] 6f [0-04] 16 9a 72 [0-04] 18 17 8d [0-04] 25 16 07 28 [0-04] 28 [0-04] a2 28 [0-04] 06 28 [0-04] 2a } //7
 		$a_81_1 = {42 75 6e 69 66 75 2e 55 49 2e 42 75 6e 69 66 75 5f 42 75 74 74 6f 6e } //1 Bunifu.UI.Bunifu_Button
 		$a_81_2 = {42 75 6e 69 66 75 5f 54 65 78 74 42 6f 78 } //1 Bunifu_TextBox
 		$a_81_3 = {54 6f 43 68 61 72 41 72 72 61 79 } //1 ToCharArray

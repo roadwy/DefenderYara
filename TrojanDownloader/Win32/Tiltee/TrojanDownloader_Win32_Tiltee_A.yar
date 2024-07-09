@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Tiltee_A{
 		description = "TrojanDownloader:Win32/Tiltee.A,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {80 7e 01 74 75 90 01 01 80 7e 02 74 75 90 01 01 80 7e 03 70 75 90 00 } //3
+		$a_03_0 = {80 7e 01 74 75 ?? 80 7e 02 74 75 ?? 80 7e 03 70 75 } //3
 		$a_01_1 = {66 74 61 6c 79 6c 2e 63 6e } //2 ftalyl.cn
 		$a_01_2 = {7e 74 74 00 } //1 瑾t
 		$a_01_3 = {3e 3e 22 63 6c 65 61 6e 2e 62 61 74 } //1 >>"clean.bat

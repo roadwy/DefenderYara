@@ -4,7 +4,7 @@ rule PWS_Win32_Ldpinch_UQ{
 		description = "PWS:Win32/Ldpinch.UQ,SIGNATURE_TYPE_PEHSTR_EXT,ffffffa4 01 ffffffa1 01 18 00 00 "
 		
 	strings :
-		$a_02_0 = {33 c0 eb 1a 80 3d 90 01 02 40 00 32 74 0c 81 3d 90 01 02 40 00 33 35 34 20 75 e7 40 47 c6 07 00 90 00 } //100
+		$a_02_0 = {33 c0 eb 1a 80 3d ?? ?? 40 00 32 74 0c 81 3d ?? ?? 40 00 33 35 34 20 75 e7 40 47 c6 07 00 } //100
 		$a_00_1 = {58 69 6e 63 68 55 73 65 72 } //100 XinchUser
 		$a_00_2 = {45 48 4c 4f 20 6c 6f 63 61 6c 68 6f 73 74 } //100 EHLO localhost
 		$a_00_3 = {32 32 30 20 46 54 50 } //100 220 FTP

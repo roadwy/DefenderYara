@@ -4,7 +4,7 @@ rule Trojan_BAT_nJRat_ANJ_MTB{
 		description = "Trojan:BAT/nJRat.ANJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {13 64 11 64 16 11 62 a2 00 11 64 17 07 11 61 17 28 90 01 01 00 00 0a a2 00 11 64 18 11 0c 11 61 17 28 90 01 01 00 00 0a a2 00 11 64 19 11 17 11 61 17 28 90 00 } //1
+		$a_03_0 = {13 64 11 64 16 11 62 a2 00 11 64 17 07 11 61 17 28 ?? 00 00 0a a2 00 11 64 18 11 0c 11 61 17 28 ?? 00 00 0a a2 00 11 64 19 11 17 11 61 17 28 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule Trojan_BAT_nJRat_ANJ_MTB_2{
 		description = "Trojan:BAT/nJRat.ANJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {0d 2b 41 7e 07 00 00 04 11 04 6f 90 01 03 0a 74 03 00 00 01 6f 90 01 03 0a 2c 25 11 04 08 fe 01 16 fe 01 2c 17 7e 07 00 00 04 08 7e 07 00 00 04 11 04 6f 90 00 } //2
+		$a_03_0 = {0d 2b 41 7e 07 00 00 04 11 04 6f ?? ?? ?? 0a 74 03 00 00 01 6f ?? ?? ?? 0a 2c 25 11 04 08 fe 01 16 fe 01 2c 17 7e 07 00 00 04 08 7e 07 00 00 04 11 04 6f } //2
 	condition:
 		((#a_03_0  & 1)*2) >=2
  
@@ -24,7 +24,7 @@ rule Trojan_BAT_nJRat_ANJ_MTB_3{
 		description = "Trojan:BAT/nJRat.ANJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {1f 09 8d 1e 00 00 01 13 0d 11 0d 16 11 04 a2 00 11 0d 17 11 05 08 17 28 90 01 03 0a a2 00 11 0d 18 11 06 08 17 28 90 01 03 0a a2 00 11 0d 19 11 07 08 17 28 90 00 } //2
+		$a_03_0 = {1f 09 8d 1e 00 00 01 13 0d 11 0d 16 11 04 a2 00 11 0d 17 11 05 08 17 28 ?? ?? ?? 0a a2 00 11 0d 18 11 06 08 17 28 ?? ?? ?? 0a a2 00 11 0d 19 11 07 08 17 28 } //2
 		$a_01_1 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //1 FromBase64String
 	condition:
 		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3

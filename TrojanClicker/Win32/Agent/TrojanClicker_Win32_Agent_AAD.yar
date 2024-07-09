@@ -4,7 +4,7 @@ rule TrojanClicker_Win32_Agent_AAD{
 		description = "TrojanClicker:Win32/Agent.AAD,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :
-		$a_02_0 = {56 68 00 01 00 00 be 90 01 04 6a 00 56 e8 90 01 04 8b 44 24 14 83 c4 0c 8a 08 84 c9 74 11 8b d6 2b d0 fe c9 88 0c 02 8a 48 01 40 84 c9 75 f3 8b c6 5e c3 90 00 } //1
+		$a_02_0 = {56 68 00 01 00 00 be ?? ?? ?? ?? 6a 00 56 e8 ?? ?? ?? ?? 8b 44 24 14 83 c4 0c 8a 08 84 c9 74 11 8b d6 2b d0 fe c9 88 0c 02 8a 48 01 40 84 c9 75 f3 8b c6 5e c3 } //1
 		$a_01_1 = {53 6f 66 74 77 61 72 65 5c 4d 69 63 72 6f 73 6f 66 74 5c 57 69 6e 64 6f 77 73 5c 43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 52 75 6e } //1 Software\Microsoft\Windows\CurrentVersion\Run
 		$a_01_2 = {43 72 65 61 74 65 54 6f 6f 6c 68 65 6c 70 33 32 53 6e 61 70 73 68 6f 74 } //1 CreateToolhelp32Snapshot
 		$a_01_3 = {5c 73 79 73 74 65 6d 33 32 5c 63 61 74 63 6c 6f 67 64 2e 64 6c 6c } //1 \system32\catclogd.dll

@@ -4,7 +4,7 @@ rule VirTool_Win32_Obfuscator_ALM{
 		description = "VirTool:Win32/Obfuscator.ALM,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {68 13 8e c0 09 50 e8 90 01 02 00 00 8b 4d 90 01 01 68 ee 38 83 0c 51 a3 90 01 02 40 00 e8 90 01 02 00 00 68 f2 5d d3 0b 90 00 } //1
+		$a_03_0 = {68 13 8e c0 09 50 e8 ?? ?? 00 00 8b 4d ?? 68 ee 38 83 0c 51 a3 ?? ?? 40 00 e8 ?? ?? 00 00 68 f2 5d d3 0b } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -15,8 +15,8 @@ rule VirTool_Win32_Obfuscator_ALM_2{
 		
 	strings :
 		$a_01_0 = {8a 10 49 88 14 06 40 85 c9 75 f5 } //5
-		$a_03_1 = {8a 14 06 88 14 19 33 d2 8b c1 f7 35 90 01 04 46 85 d2 75 06 03 35 90 00 } //10
-		$a_03_2 = {25 ff 00 00 00 8a 8c 85 90 01 02 ff ff 8b 85 90 01 02 ff ff 30 0c 07 90 00 } //5
+		$a_03_1 = {8a 14 06 88 14 19 33 d2 8b c1 f7 35 ?? ?? ?? ?? 46 85 d2 75 06 03 35 } //10
+		$a_03_2 = {25 ff 00 00 00 8a 8c 85 ?? ?? ff ff 8b 85 ?? ?? ff ff 30 0c 07 } //5
 		$a_01_3 = {68 cd ac ce 26 } //1
 		$a_01_4 = {68 a7 5b 66 f0 } //1
 		$a_01_5 = {68 01 cb 89 40 } //1

@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Obvod_C{
 		description = "TrojanDownloader:Win32/Obvod.C,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {74 08 83 c8 ff 5e 83 c4 10 c3 8a 54 24 04 a0 90 01 04 3a d0 75 18 8a 44 24 05 8a 0d 90 01 04 3a c1 90 00 } //2
+		$a_03_0 = {74 08 83 c8 ff 5e 83 c4 10 c3 8a 54 24 04 a0 ?? ?? ?? ?? 3a d0 75 18 8a 44 24 05 8a 0d ?? ?? ?? ?? 3a c1 } //2
 		$a_01_1 = {8b 54 24 18 88 14 07 8a 1c 01 03 da 81 e3 ff 00 00 00 8a 14 03 8a 1c 2e 32 da 8b 54 24 1c 88 1c 2e 46 3b f2 7c b4 } //2
 		$a_01_2 = {3b c1 75 71 80 3f 4f 75 6c 80 7f 01 4b 75 66 80 7f 02 20 75 60 6a } //3
 		$a_01_3 = {5c 2a 61 64 2a 74 78 74 00 } //1

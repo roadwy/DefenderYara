@@ -4,7 +4,7 @@ rule Trojan_Win32_Emotet_BA_MTB{
 		description = "Trojan:Win32/Emotet.BA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_02_0 = {03 c2 25 ff 00 00 80 79 90 01 01 48 0d 00 ff ff ff 40 89 45 90 01 01 8b 45 90 01 01 0f b6 88 90 01 04 8b 55 90 01 01 0f b6 84 15 90 01 04 33 c8 8b 55 90 01 01 88 8a 90 01 04 e9 90 00 } //1
+		$a_02_0 = {03 c2 25 ff 00 00 80 79 ?? 48 0d 00 ff ff ff 40 89 45 ?? 8b 45 ?? 0f b6 88 ?? ?? ?? ?? 8b 55 ?? 0f b6 84 15 ?? ?? ?? ?? 33 c8 8b 55 ?? 88 8a ?? ?? ?? ?? e9 } //1
 	condition:
 		((#a_02_0  & 1)*1) >=1
  
@@ -14,7 +14,7 @@ rule Trojan_Win32_Emotet_BA_MTB_2{
 		description = "Trojan:Win32/Emotet.BA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0d 00 02 00 00 "
 		
 	strings :
-		$a_02_0 = {2b c7 33 f6 89 74 24 14 8d 2c 08 8b 0d 90 01 04 8b f9 8b dd 0f af f9 0f af da 0f af fa 90 00 } //10
+		$a_02_0 = {2b c7 33 f6 89 74 24 14 8d 2c 08 8b 0d ?? ?? ?? ?? 8b f9 8b dd 0f af f9 0f af da 0f af fa } //10
 		$a_01_1 = {45 72 4a 49 5a 77 51 25 42 34 58 5f 23 2a 54 55 75 55 33 32 76 78 28 63 39 5f 40 38 2a 43 21 42 69 37 64 58 37 6f } //3 ErJIZwQ%B4X_#*TUuU32vx(c9_@8*C!Bi7dX7o
 	condition:
 		((#a_02_0  & 1)*10+(#a_01_1  & 1)*3) >=13
@@ -25,7 +25,7 @@ rule Trojan_Win32_Emotet_BA_MTB_3{
 		description = "Trojan:Win32/Emotet.BA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
-		$a_02_0 = {03 c6 99 be 90 01 04 f7 fe 8a 44 8c 04 0f b6 c0 8b f2 8b 54 b4 10 89 54 8c 04 89 44 b4 10 33 d2 8d 47 ff f7 f3 0f 90 00 } //1
+		$a_02_0 = {03 c6 99 be ?? ?? ?? ?? f7 fe 8a 44 8c 04 0f b6 c0 8b f2 8b 54 b4 10 89 54 8c 04 89 44 b4 10 33 d2 8d 47 ff f7 f3 0f } //1
 		$a_00_1 = {8a 44 8c 10 8b f2 8b 54 b4 10 89 54 8c 10 0f b6 d0 89 54 b4 10 8b 44 8c 10 03 c2 99 f7 } //1
 		$a_00_2 = {f7 fe 8a 44 8c 08 0f b6 c0 8b f2 8b 54 b4 10 89 54 8c 08 89 44 b4 10 33 d2 8b c7 f7 f3 0f } //1
 	condition:

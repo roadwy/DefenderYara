@@ -4,8 +4,8 @@ rule Trojan_BAT_SpySnake_MD_MTB{
 		description = "Trojan:BAT/SpySnake.MD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {08 07 11 09 9a 1f 10 28 90 01 03 0a 6f 90 01 03 0a 00 11 09 17 58 13 09 11 09 07 8e 69 fe 04 13 0a 11 0a 2d db 90 00 } //10
-		$a_03_1 = {25 16 11 06 16 9a a2 25 17 11 06 17 9a a2 25 18 72 90 01 03 70 a2 13 07 11 05 90 00 } //10
+		$a_03_0 = {08 07 11 09 9a 1f 10 28 ?? ?? ?? 0a 6f ?? ?? ?? 0a 00 11 09 17 58 13 09 11 09 07 8e 69 fe 04 13 0a 11 0a 2d db } //10
+		$a_03_1 = {25 16 11 06 16 9a a2 25 17 11 06 17 9a a2 25 18 72 ?? ?? ?? 70 a2 13 07 11 05 } //10
 	condition:
 		((#a_03_0  & 1)*10+(#a_03_1  & 1)*10) >=20
  
@@ -15,7 +15,7 @@ rule Trojan_BAT_SpySnake_MD_MTB_2{
 		description = "Trojan:BAT/SpySnake.MD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0d 00 04 00 00 "
 		
 	strings :
-		$a_03_0 = {0b 07 8e 69 17 da 0c 2b 13 06 07 08 93 28 90 01 03 0a 28 90 01 03 0a 0a 08 15 d6 0c 08 16 2f e9 90 00 } //10
+		$a_03_0 = {0b 07 8e 69 17 da 0c 2b 13 06 07 08 93 28 ?? ?? ?? 0a 28 ?? ?? ?? 0a 0a 08 15 d6 0c 08 16 2f e9 } //10
 		$a_01_1 = {52 65 76 65 72 73 65 53 74 72 69 6e 67 } //1 ReverseString
 		$a_01_2 = {67 65 74 5f 57 65 62 42 72 6f 77 73 65 72 } //1 get_WebBrowser
 		$a_01_3 = {46 69 6c 65 44 6f 77 6e 6c 6f 61 64 } //1 FileDownload

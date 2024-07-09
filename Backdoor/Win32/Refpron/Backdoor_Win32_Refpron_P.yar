@@ -4,7 +4,7 @@ rule Backdoor_Win32_Refpron_P{
 		description = "Backdoor:Win32/Refpron.P,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {6d ce 00 00 90 02 20 66 81 45 90 01 01 bf 58 90 00 } //1
+		$a_03_0 = {6d ce 00 00 [0-20] 66 81 45 ?? bf 58 } //1
 		$a_01_1 = {62 66 6b 71 2e 63 6f 6d 7c } //1 bfkq.com|
 		$a_01_2 = {7c 6a 73 61 63 74 69 76 69 74 79 2e 63 6f 6d } //1 |jsactivity.com
 		$a_01_3 = {4e 65 65 64 4b 69 6c 6c 00 } //1

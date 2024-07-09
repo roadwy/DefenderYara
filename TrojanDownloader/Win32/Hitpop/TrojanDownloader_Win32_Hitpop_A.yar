@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Hitpop_A{
 		description = "TrojanDownloader:Win32/Hitpop.A,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {2b c3 3d 60 ea 00 00 72 90 01 01 e8 90 01 04 8b 90 02 06 50 8d 45 ec 50 b9 90 01 04 ba 90 01 04 b8 90 00 } //1
+		$a_03_0 = {2b c3 3d 60 ea 00 00 72 ?? e8 ?? ?? ?? ?? 8b [0-06] 50 8d 45 ec 50 b9 ?? ?? ?? ?? ba ?? ?? ?? ?? b8 } //1
 		$a_00_1 = {64 65 6c 20 25 30 } //1 del %0
 		$a_00_2 = {68 69 74 70 6f 70 } //1 hitpop
 		$a_00_3 = {41 56 50 2e 42 75 74 74 6f 6e } //1 AVP.Button

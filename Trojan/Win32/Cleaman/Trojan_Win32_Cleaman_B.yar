@@ -4,7 +4,7 @@ rule Trojan_Win32_Cleaman_B{
 		description = "Trojan:Win32/Cleaman.B,SIGNATURE_TYPE_PEHSTR_EXT,06 00 05 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 02 56 ff d7 b8 90 01 01 87 00 00 33 c9 66 3b d8 0f 94 c1 90 00 } //2
+		$a_03_0 = {6a 02 56 ff d7 b8 ?? 87 00 00 33 c9 66 3b d8 0f 94 c1 } //2
 		$a_01_1 = {8a 04 31 d0 c8 88 04 31 8b c6 41 8d 78 01 8b ff 8a 10 40 84 d2 75 f9 } //2
 		$a_01_2 = {75 04 c6 45 00 e9 8d 45 01 6a 04 50 89 44 24 18 } //2
 		$a_01_3 = {8a 08 d0 c9 88 08 40 80 38 00 75 f4 80 3d } //2

@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Bafi_O{
 		description = "TrojanSpy:Win32/Bafi.O,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 10 00 00 "
 		
 	strings :
-		$a_03_0 = {81 e1 0f 00 00 80 79 05 49 83 c9 f0 41 8b 90 02 02 88 4d 90 01 01 8a 4c 38 02 32 cb 90 00 } //10
+		$a_03_0 = {81 e1 0f 00 00 80 79 05 49 83 c9 f0 41 8b [0-02] 88 4d ?? 8a 4c 38 02 32 cb } //10
 		$a_01_1 = {25 0f 00 00 80 79 05 48 83 c8 f0 40 88 45 fe 8b 45 08 03 45 f8 0f b6 00 0f b6 4d ff 33 c1 } //10
 		$a_01_2 = {25 cd 77 13 9b d6 11 19 04 01 03 7b 65 b9 fb c2 } //2
 		$a_01_3 = {2f 19 8b db 37 0e 07 05 22 5b 49 01 6f 7d 19 13 } //2

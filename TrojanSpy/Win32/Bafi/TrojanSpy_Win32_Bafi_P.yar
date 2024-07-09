@@ -4,7 +4,7 @@ rule TrojanSpy_Win32_Bafi_P{
 		description = "TrojanSpy:Win32/Bafi.P,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {e3 0f 53 6a 01 68 f1 00 00 00 51 ff 15 90 01 04 8d 45 90 01 01 50 ff 15 90 01 04 8d 45 90 01 01 50 ff 75 90 01 01 ff 15 90 01 04 ff 75 90 01 01 ff 75 90 01 01 ff 15 90 00 } //10
+		$a_03_0 = {e3 0f 53 6a 01 68 f1 00 00 00 51 ff 15 ?? ?? ?? ?? 8d 45 ?? 50 ff 15 ?? ?? ?? ?? 8d 45 ?? 50 ff 75 ?? ff 15 ?? ?? ?? ?? ff 75 ?? ff 75 ?? ff 15 } //10
 		$a_00_1 = {00 62 61 6e 6b 5c 73 72 76 62 6c 63 6b 35 2e 74 6d 70 00 } //1
 		$a_00_2 = {00 25 73 6e 65 74 62 61 6e 6b 5f 25 73 5f 25 73 00 } //1
 		$a_00_3 = {00 6e 61 74 69 6f 6e 61 6c 69 72 69 73 68 62 61 6e 6b 00 } //1
@@ -19,7 +19,7 @@ rule TrojanSpy_Win32_Bafi_P_2{
 		description = "TrojanSpy:Win32/Bafi.P,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0d 00 0f 00 00 "
 		
 	strings :
-		$a_03_0 = {32 c2 32 e2 88 66 90 01 01 88 47 90 01 01 8a 46 90 01 01 8a 67 90 01 01 32 c2 32 e2 88 66 90 00 } //3
+		$a_03_0 = {32 c2 32 e2 88 66 ?? 88 47 ?? 8a 46 ?? 8a 67 ?? 32 c2 32 e2 88 66 } //3
 		$a_00_1 = {5c 61 70 70 63 6f 6e 66 33 32 2e 65 78 65 } //2 \appconf32.exe
 		$a_00_2 = {2e 77 6d 61 2e 78 6d 6c 2e 62 61 74 2e } //2 .wma.xml.bat.
 		$a_00_3 = {26 76 65 72 73 69 6f 6e 32 3d } //2 &version2=

@@ -4,7 +4,7 @@ rule Trojan_Win32_Glupteba_PD_MTB{
 		description = "Trojan:Win32/Glupteba.PD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
-		$a_02_0 = {83 c7 08 83 ed 01 90 18 81 3d 90 02 08 90 18 81 3d 90 02 08 90 18 57 e8 90 02 04 81 3d 90 02 08 75 90 00 } //1
+		$a_02_0 = {83 c7 08 83 ed 01 90 18 81 3d [0-08] 90 18 81 3d [0-08] 90 18 57 e8 [0-04] 81 3d [0-08] 75 } //1
 		$a_81_1 = {53 65 74 50 72 69 6f 72 69 74 79 43 6c 61 73 73 } //1 SetPriorityClass
 		$a_81_2 = {47 65 74 43 6f 6e 73 6f 6c 65 4f 75 74 70 75 74 43 50 } //1 GetConsoleOutputCP
 		$a_81_3 = {47 65 74 43 6f 6e 73 6f 6c 65 57 69 6e 64 6f 77 } //1 GetConsoleWindow

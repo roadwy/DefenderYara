@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Dkbits{
 		description = "TrojanDownloader:Win32/Dkbits,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0b 00 0d 00 00 "
 		
 	strings :
-		$a_02_0 = {31 32 37 2e 30 2e 30 2e 33 90 02 10 2e 63 6f 6d 90 00 } //3
+		$a_02_0 = {31 32 37 2e 30 2e 30 2e 33 [0-10] 2e 63 6f 6d } //3
 		$a_00_1 = {64 72 69 76 65 72 73 5c 65 74 63 5c 68 6f 73 74 73 } //2 drivers\etc\hosts
 		$a_00_2 = {69 66 72 61 6d 65 64 6f 6c 6c 61 72 73 2e 62 69 7a } //1 iframedollars.biz
 		$a_00_3 = {64 6b 70 72 6f 67 73 } //1 dkprogs

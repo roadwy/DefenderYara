@@ -4,7 +4,7 @@ rule Trojan_Win32_Agent_EAD{
 		description = "Trojan:Win32/Agent.EAD,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {8a 1c 11 80 f3 11 88 1c 11 8b 54 24 90 01 01 8a 1c 11 80 c3 f0 88 1c 11 41 3b c8 7c d4 90 00 } //4
+		$a_03_0 = {8a 1c 11 80 f3 11 88 1c 11 8b 54 24 ?? 8a 1c 11 80 c3 f0 88 1c 11 41 3b c8 7c d4 } //4
 		$a_00_1 = {3a 5c 61 6e 67 65 6c 2e 6a 70 67 } //1 :\angel.jpg
 		$a_00_2 = {5c 66 61 63 74 6f 72 79 2e 64 6c 6c } //1 \factory.dll
 		$a_00_3 = {00 64 65 76 69 63 65 2e 64 6c 6c } //1

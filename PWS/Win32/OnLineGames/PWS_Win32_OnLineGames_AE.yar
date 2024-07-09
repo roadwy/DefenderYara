@@ -4,7 +4,7 @@ rule PWS_Win32_OnLineGames_AE{
 		description = "PWS:Win32/OnLineGames.AE,SIGNATURE_TYPE_PEHSTR_EXT,17 00 17 00 10 00 00 "
 		
 	strings :
-		$a_03_0 = {55 8b ec 83 ec 20 56 57 ff 15 90 01 02 40 00 33 f6 56 56 56 ff 15 90 01 02 40 00 50 ff 15 90 01 02 40 00 56 56 8d 45 e0 56 50 ff 90 01 02 10 40 00 8d 45 fc 50 6a 20 ff 15 90 01 02 40 00 50 ff 15 90 01 02 40 00 6a 01 68 90 01 02 40 00 ff 75 fc e8 aa fe ff ff 83 c4 0c 68 90 01 02 40 00 6a 01 56 ff 15 90 01 02 40 00 8b f8 ff 15 90 01 02 40 00 90 00 } //20
+		$a_03_0 = {55 8b ec 83 ec 20 56 57 ff 15 ?? ?? 40 00 33 f6 56 56 56 ff 15 ?? ?? 40 00 50 ff 15 ?? ?? 40 00 56 56 8d 45 e0 56 50 ff ?? ?? 10 40 00 8d 45 fc 50 6a 20 ff 15 ?? ?? 40 00 50 ff 15 ?? ?? 40 00 6a 01 68 ?? ?? 40 00 ff 75 fc e8 aa fe ff ff 83 c4 0c 68 ?? ?? 40 00 6a 01 56 ff 15 ?? ?? 40 00 8b f8 ff 15 ?? ?? 40 00 } //20
 		$a_00_1 = {62 75 74 74 6f 6e 2d 72 65 64 2d 73 65 63 75 72 69 74 79 74 6f 6b 65 6e 2e 67 69 66 } //1 button-red-securitytoken.gif
 		$a_00_2 = {77 65 69 74 65 72 5f 7a 75 5f 66 6d 2e 67 69 66 } //1 weiter_zu_fm.gif
 		$a_00_3 = {77 6f 72 6c 64 6f 66 77 61 72 63 72 61 66 74 } //1 worldofwarcraft

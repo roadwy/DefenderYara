@@ -14,7 +14,7 @@ rule Trojan_Win32_Nebuler_J_2{
 		description = "Trojan:Win32/Nebuler.J,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {73 29 8b 8d 90 01 04 0f b6 94 90 01 05 8b 85 90 01 04 0f b6 88 90 01 04 33 ca 8b 95 90 01 04 88 8a 90 00 } //1
+		$a_03_0 = {73 29 8b 8d ?? ?? ?? ?? 0f b6 94 ?? ?? ?? ?? ?? 8b 85 ?? ?? ?? ?? 0f b6 88 ?? ?? ?? ?? 33 ca 8b 95 ?? ?? ?? ?? 88 8a } //1
 		$a_01_1 = {b8 68 58 4d 56 b9 14 00 00 00 66 ba 58 56 ed } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2

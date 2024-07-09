@@ -4,7 +4,7 @@ rule Trojan_Win32_Lokibot_SIS_MTB{
 		description = "Trojan:Win32/Lokibot.SIS!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 16 00 00 "
 		
 	strings :
-		$a_02_0 = {8b 45 fc 8b 4d 08 0f b7 14 41 0f b6 8a 90 01 04 c1 e1 04 8b 55 fc 8b 45 08 0f b7 54 50 02 0f b6 82 90 01 04 0b c8 8b 45 fc 99 2b c2 d1 f8 88 4c 05 ec 90 00 } //1
+		$a_02_0 = {8b 45 fc 8b 4d 08 0f b7 14 41 0f b6 8a ?? ?? ?? ?? c1 e1 04 8b 55 fc 8b 45 08 0f b7 54 50 02 0f b6 82 ?? ?? ?? ?? 0b c8 8b 45 fc 99 2b c2 d1 f8 88 4c 05 ec } //1
 		$a_01_1 = {72 35 2c 36 36 36 51 36 fa 36 30 37 78 37 87 37 a6 37 } //1
 		$a_01_2 = {0f b6 45 ff 33 45 f8 88 45 ff 0f b6 45 ff 2d d8 00 00 00 88 45 ff } //1
 		$a_01_3 = {0f b6 45 ff c1 f8 06 0f b6 4d ff c1 e1 02 0b c1 88 45 ff } //1

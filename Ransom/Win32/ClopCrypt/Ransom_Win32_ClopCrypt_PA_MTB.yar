@@ -4,7 +4,7 @@ rule Ransom_Win32_ClopCrypt_PA_MTB{
 		description = "Ransom:Win32/ClopCrypt.PA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {81 c1 00 20 00 00 89 4d 90 01 01 8b 95 90 01 02 ff ff 2b 55 98 89 95 90 01 02 ff ff 8b 45 90 01 01 99 b9 00 c0 0f 00 f7 f9 89 45 90 01 01 8b 55 90 01 01 81 c2 00 10 00 00 89 55 90 01 01 8b 85 90 01 02 ff ff 33 85 90 01 02 ff ff 89 85 90 01 02 ff ff 8b 4d 90 01 01 81 c1 00 f0 ff 0f 89 4d 90 01 01 c1 85 90 01 02 ff ff 07 8b 55 90 01 01 81 ea cc 34 00 00 89 55 90 01 01 8b 85 90 01 02 ff ff 33 85 90 01 02 ff ff 89 85 90 01 02 ff ff 8b 4d 90 01 01 8b 55 90 01 01 8b 85 90 01 02 ff ff 89 04 8a e9 90 01 02 ff ff 90 00 } //1
+		$a_03_0 = {81 c1 00 20 00 00 89 4d ?? 8b 95 ?? ?? ff ff 2b 55 98 89 95 ?? ?? ff ff 8b 45 ?? 99 b9 00 c0 0f 00 f7 f9 89 45 ?? 8b 55 ?? 81 c2 00 10 00 00 89 55 ?? 8b 85 ?? ?? ff ff 33 85 ?? ?? ff ff 89 85 ?? ?? ff ff 8b 4d ?? 81 c1 00 f0 ff 0f 89 4d ?? c1 85 ?? ?? ff ff 07 8b 55 ?? 81 ea cc 34 00 00 89 55 ?? 8b 85 ?? ?? ff ff 33 85 ?? ?? ff ff 89 85 ?? ?? ff ff 8b 4d ?? 8b 55 ?? 8b 85 ?? ?? ff ff 89 04 8a e9 ?? ?? ff ff } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

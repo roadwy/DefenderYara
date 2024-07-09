@@ -14,7 +14,7 @@ rule Trojan_Win32_NSISInject_RE_MTB_2{
 		description = "Trojan:Win32/NSISInject.RE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {89 c8 f7 e7 d1 ea 83 e2 fc 8d 04 52 89 ca 29 c2 0f b6 92 90 01 04 30 14 0e f7 d8 0f b6 84 01 90 01 04 30 44 0e 01 83 c1 02 39 cb 75 d1 90 00 } //1
+		$a_03_0 = {89 c8 f7 e7 d1 ea 83 e2 fc 8d 04 52 89 ca 29 c2 0f b6 92 ?? ?? ?? ?? 30 14 0e f7 d8 0f b6 84 01 ?? ?? ?? ?? 30 44 0e 01 83 c1 02 39 cb 75 d1 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -24,8 +24,8 @@ rule Trojan_Win32_NSISInject_RE_MTB_3{
 		description = "Trojan:Win32/NSISInject.RE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_03_0 = {68 00 80 00 00 6a 32 89 44 24 90 01 01 ff d6 50 6a 31 ff d6 50 33 f6 46 56 57 90 00 } //1
-		$a_03_1 = {50 c7 45 a8 58 00 00 00 c7 45 b4 90 01 04 c7 45 dc 66 08 88 00 c7 45 ec 90 01 04 c7 45 f0 90 01 01 01 00 00 c7 45 e4 90 01 04 ff 15 90 00 } //1
+		$a_03_0 = {68 00 80 00 00 6a 32 89 44 24 ?? ff d6 50 6a 31 ff d6 50 33 f6 46 56 57 } //1
+		$a_03_1 = {50 c7 45 a8 58 00 00 00 c7 45 b4 ?? ?? ?? ?? c7 45 dc 66 08 88 00 c7 45 ec ?? ?? ?? ?? c7 45 f0 ?? 01 00 00 c7 45 e4 ?? ?? ?? ?? ff 15 } //1
 	condition:
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  

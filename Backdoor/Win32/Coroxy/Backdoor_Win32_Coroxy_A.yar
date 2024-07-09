@@ -4,7 +4,7 @@ rule Backdoor_Win32_Coroxy_A{
 		description = "Backdoor:Win32/Coroxy.A,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 0b 00 00 "
 		
 	strings :
-		$a_03_0 = {b8 fc fd fe ff b9 40 00 00 00 90 01 07 2d 04 04 04 04 90 00 } //4
+		$a_03_0 = {b8 fc fd fe ff b9 40 00 00 00 ?? ?? ?? ?? ?? ?? ?? 2d 04 04 04 04 } //4
 		$a_00_1 = {3c 19 74 20 3c 23 74 1c 3c 22 74 18 3c 2c 74 14 3c 2b 74 10 3c 43 74 0c 3c 3f 74 08 3c 40 74 04 3c 18 } //3
 		$a_00_2 = {2a d5 8b 14 ab a2 ce 11 b1 1f 00 aa 00 53 05 03 } //1
 		$a_00_3 = {68 04 00 00 98 ff 75 a0 e8 9e 3a 00 00 } //1

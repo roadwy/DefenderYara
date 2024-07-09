@@ -4,7 +4,7 @@ rule Trojan_Win32_Straba_EH_MTB{
 		description = "Trojan:Win32/Straba.EH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {89 20 eb 0a a1 90 01 04 83 c0 20 ff d0 8d 05 90 01 04 89 18 89 f0 01 05 90 01 04 89 ea 89 15 90 01 04 01 3d 90 01 04 eb d6 c3 89 45 90 00 } //5
+		$a_03_0 = {89 20 eb 0a a1 ?? ?? ?? ?? 83 c0 20 ff d0 8d 05 ?? ?? ?? ?? 89 18 89 f0 01 05 ?? ?? ?? ?? 89 ea 89 15 ?? ?? ?? ?? 01 3d ?? ?? ?? ?? eb d6 c3 89 45 } //5
 	condition:
 		((#a_03_0  & 1)*5) >=5
  

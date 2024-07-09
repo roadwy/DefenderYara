@@ -4,7 +4,7 @@ rule Trojan_Win32_Autohk_MA_MTB{
 		description = "Trojan:Win32/Autohk.MA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0a 00 00 "
 		
 	strings :
-		$a_03_0 = {33 c9 66 89 0d b8 6c 4c 00 be 2c b0 4a 00 bb 01 00 00 00 89 35 c0 6e 4c 00 c6 44 24 34 00 c6 44 24 2e 00 89 5c 24 30 39 1d c4 41 4c 00 0f 8e 90 01 04 80 7c 24 2e 00 a1 cc 41 4c 00 8b 3c 98 0f 84 90 01 04 8b 4c 24 30 51 8d 54 24 44 68 a8 08 4a 00 52 e8 90 00 } //1
+		$a_03_0 = {33 c9 66 89 0d b8 6c 4c 00 be 2c b0 4a 00 bb 01 00 00 00 89 35 c0 6e 4c 00 c6 44 24 34 00 c6 44 24 2e 00 89 5c 24 30 39 1d c4 41 4c 00 0f 8e ?? ?? ?? ?? 80 7c 24 2e 00 a1 cc 41 4c 00 8b 3c 98 0f 84 ?? ?? ?? ?? 8b 4c 24 30 51 8d 54 24 44 68 a8 08 4a 00 52 e8 } //1
 		$a_01_1 = {6f 78 62 76 57 71 62 53 74 } //1 oxbvWqbSt
 		$a_01_2 = {41 75 74 6f 48 6f 74 6b 65 79 } //1 AutoHotkey
 		$a_01_3 = {43 72 65 61 74 65 54 6f 6f 6c 68 65 6c 70 33 32 53 6e 61 70 73 68 6f 74 } //1 CreateToolhelp32Snapshot

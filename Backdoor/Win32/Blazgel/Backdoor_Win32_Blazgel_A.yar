@@ -19,7 +19,7 @@ rule Backdoor_Win32_Blazgel_A_2{
 		description = "Backdoor:Win32/Blazgel.A,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {68 38 02 00 00 50 90 01 02 c7 84 24 90 01 01 02 00 00 88 88 88 88 c7 84 24 90 01 01 02 00 00 38 02 00 00 ff 90 01 01 85 c0 90 00 } //5
+		$a_03_0 = {68 38 02 00 00 50 ?? ?? c7 84 24 ?? 02 00 00 88 88 88 88 c7 84 24 ?? 02 00 00 38 02 00 00 ff ?? 85 c0 } //5
 		$a_00_1 = {42 4c 41 5a 49 4e 47 41 4e 47 45 4c 52 55 4e 4e 49 4e 47 } //2 BLAZINGANGELRUNNING
 		$a_00_2 = {5c 5c 2e 5c 75 73 62 6d 6f 75 73 65 62 } //2 \\.\usbmouseb
 		$a_00_3 = {56 49 50 2d 4e 56 28 32 30 30 } //1 VIP-NV(200

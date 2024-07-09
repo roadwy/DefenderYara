@@ -27,7 +27,7 @@ rule Trojan_Win32_Qakbot_EM_MTB_3{
 		description = "Trojan:Win32/Qakbot.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {03 d8 6a 00 e8 90 01 04 2b d8 a1 90 01 04 33 18 89 1d 90 01 04 a1 90 01 04 8b 15 90 01 04 89 10 90 00 } //6
+		$a_03_0 = {03 d8 6a 00 e8 ?? ?? ?? ?? 2b d8 a1 ?? ?? ?? ?? 33 18 89 1d ?? ?? ?? ?? a1 ?? ?? ?? ?? 8b 15 ?? ?? ?? ?? 89 10 } //6
 	condition:
 		((#a_03_0  & 1)*6) >=6
  

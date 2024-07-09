@@ -4,7 +4,7 @@ rule Ransom_Win32_Teerac_I{
 		description = "Ransom:Win32/Teerac.I,SIGNATURE_TYPE_PEHSTR_EXT,1e 00 1e 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {83 fa 0e 0f 87 90 01 04 53 56 ff 24 95 90 00 } //10
+		$a_03_0 = {83 fa 0e 0f 87 ?? ?? ?? ?? 53 56 ff 24 95 } //10
 		$a_01_1 = {8b 45 08 ff 30 ff d7 } //10
 		$a_01_2 = {8b 4d 08 ff 71 0c 8b 41 04 ff 71 08 8b 11 50 52 ff d7 } //10
 	condition:
@@ -16,7 +16,7 @@ rule Ransom_Win32_Teerac_I_2{
 		description = "Ransom:Win32/Teerac.I,SIGNATURE_TYPE_PEHSTR_EXT,1e 00 1e 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {83 fa 0e 0f 87 90 01 04 53 56 57 ff 24 95 90 00 } //10
+		$a_03_0 = {83 fa 0e 0f 87 ?? ?? ?? ?? 53 56 57 ff 24 95 } //10
 		$a_01_1 = {8b 44 24 34 ff 30 ff d5 } //10
 		$a_01_2 = {8b 4c 24 34 ff 71 0c 8b 41 04 ff 71 08 8b 11 50 52 ff d5 } //10
 	condition:

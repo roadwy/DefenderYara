@@ -4,7 +4,7 @@ rule Trojan_BAT_Formbook_RPV_MTB{
 		description = "Trojan:BAT/Formbook.RPV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {31 00 39 00 38 00 2e 00 34 00 36 00 2e 00 31 00 33 00 32 00 2e 00 31 00 37 00 38 00 2f 00 90 02 30 2e 00 62 00 6d 00 70 00 90 00 } //1
+		$a_03_0 = {31 00 39 00 38 00 2e 00 34 00 36 00 2e 00 31 00 33 00 32 00 2e 00 31 00 37 00 38 00 2f 00 [0-30] 2e 00 62 00 6d 00 70 00 } //1
 		$a_01_1 = {52 65 76 65 72 73 65 } //1 Reverse
 		$a_01_2 = {44 6f 77 6e 6c 6f 61 64 44 61 74 61 } //1 DownloadData
 		$a_01_3 = {47 65 74 54 79 70 65 } //1 GetType

@@ -4,7 +4,7 @@ rule Backdoor_Win32_Adialer_C{
 		description = "Backdoor:Win32/Adialer.C,SIGNATURE_TYPE_PEHSTR_EXT,ffffffe6 00 ffffffdc 00 08 00 00 "
 		
 	strings :
-		$a_02_0 = {46 83 fe 03 7e 12 8a 15 90 01 04 be 01 00 00 00 02 d1 88 14 28 eb 90 00 } //100
+		$a_02_0 = {46 83 fe 03 7e 12 8a 15 ?? ?? ?? ?? be 01 00 00 00 02 d1 88 14 28 eb } //100
 		$a_00_1 = {80 3c 28 5c 75 16 80 7c 28 01 0d 75 0f 80 7c 28 02 0a 75 08 83 c0 02 e9 } //100
 		$a_00_2 = {49 6e 74 65 72 6e 65 74 4f 70 65 6e } //5 InternetOpen
 		$a_00_3 = {49 6e 74 65 72 6e 65 74 52 65 61 64 } //5 InternetRead

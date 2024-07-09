@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Istbar_IV{
 		description = "TrojanDownloader:Win32/Istbar.IV,SIGNATURE_TYPE_PEHSTR_EXT,16 00 16 00 0a 00 00 "
 		
 	strings :
-		$a_02_0 = {ff ff 83 c4 08 a3 90 01 04 68 90 01 04 68 90 01 04 e8 90 01 02 ff ff 83 c4 08 a3 90 01 04 68 20 4e 00 00 ff 15 90 01 04 83 3d 90 01 04 05 90 00 } //10
+		$a_02_0 = {ff ff 83 c4 08 a3 ?? ?? ?? ?? 68 ?? ?? ?? ?? 68 ?? ?? ?? ?? e8 ?? ?? ff ff 83 c4 08 a3 ?? ?? ?? ?? 68 20 4e 00 00 ff 15 ?? ?? ?? ?? 83 3d ?? ?? ?? ?? 05 } //10
 		$a_00_1 = {25 73 3f 76 65 72 73 69 6f 6e 3d 25 69 26 6f 6c 64 5f 76 65 72 73 69 6f 6e 3d 25 73 26 69 73 74 73 76 63 3d 25 69 26 69 73 74 72 65 63 6f 76 65 72 3d 25 69 26 73 61 63 63 3d 25 69 26 61 63 63 6f 75 6e 74 5f 69 64 3d 25 69 26 73 6f 66 74 3d 25 73 26 72 76 65 72 73 69 6f 6e 3d 25 73 26 6e 72 3d 25 73 26 6e 64 3d 25 73 26 76 69 6e 66 6f 3d 25 73 } //10 %s?version=%i&old_version=%s&istsvc=%i&istrecover=%i&sacc=%i&account_id=%i&soft=%s&rversion=%s&nr=%s&nd=%s&vinfo=%s
 		$a_00_2 = {53 6f 66 74 77 61 72 65 5c 49 53 54 } //2 Software\IST
 		$a_00_3 = {69 73 74 73 76 63 2e 65 78 65 } //2 istsvc.exe

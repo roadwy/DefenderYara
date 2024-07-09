@@ -4,7 +4,7 @@ rule PWS_Win32_Delf_EM{
 		description = "PWS:Win32/Delf.EM,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0b 00 00 "
 		
 	strings :
-		$a_02_0 = {8b 45 fc 83 78 90 01 01 00 74 90 01 01 8b 45 fc 83 78 90 01 01 00 74 90 00 } //2
+		$a_02_0 = {8b 45 fc 83 78 ?? 00 74 ?? 8b 45 fc 83 78 ?? 00 74 } //2
 		$a_00_1 = {6d 61 6c 77 61 72 65 } //2 malware
 		$a_00_2 = {53 65 6c 66 44 65 6c 2e 62 61 74 } //2 SelfDel.bat
 		$a_00_3 = {70 72 65 6c 6c 65 72 73 74 61 79 2e 63 6f 2e 7a 61 } //2 prellerstay.co.za

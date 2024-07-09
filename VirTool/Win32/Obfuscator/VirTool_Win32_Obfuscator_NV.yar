@@ -4,7 +4,7 @@ rule VirTool_Win32_Obfuscator_NV{
 		description = "VirTool:Win32/Obfuscator.NV,SIGNATURE_TYPE_PEHSTR_EXT,64 00 03 00 03 00 00 "
 		
 	strings :
-		$a_02_0 = {6a 00 6a 00 6a 00 6a 00 6a 02 8b 90 01 02 ff ff ff 90 01 01 ff 55 90 00 } //1
+		$a_02_0 = {6a 00 6a 00 6a 00 6a 00 6a 02 8b ?? ?? ff ff ff ?? ff 55 } //1
 		$a_00_1 = {6a 00 6a 04 6a 00 6a ff ff } //1
 		$a_00_2 = {8a 0c 11 32 8c 85 c8 fb ff ff } //1
 	condition:

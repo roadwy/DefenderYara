@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Brucryp_G{
 		description = "TrojanDownloader:Win32/Brucryp.G,SIGNATURE_TYPE_PEHSTR_EXT,05 00 04 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {8b d1 c1 ea 1d 8b f9 c1 ef 1e 83 e2 01 83 e7 01 8d 14 57 8b f9 c1 ef 1f 8d 14 57 8b 14 95 90 01 02 40 00 f7 c1 00 00 00 04 74 90 00 } //1
+		$a_03_0 = {8b d1 c1 ea 1d 8b f9 c1 ef 1e 83 e2 01 83 e7 01 8d 14 57 8b f9 c1 ef 1f 8d 14 57 8b 14 95 ?? ?? 40 00 f7 c1 00 00 00 04 74 } //1
 		$a_01_1 = {63 00 6f 00 72 00 72 00 65 00 63 00 61 00 6d 00 69 00 6e 00 73 00 2e 00 6e 00 65 00 74 00 2f 00 66 00 6f 00 74 00 6f 00 73 00 2f 00 62 00 69 00 6e 00 2e 00 64 00 61 00 74 00 } //1 correcamins.net/fotos/bin.dat
 		$a_01_2 = {77 00 77 00 77 00 2e 00 72 00 62 00 70 00 68 00 6f 00 74 00 6f 00 2e 00 63 00 6f 00 6d 00 2e 00 62 00 72 00 2f 00 74 00 77 00 67 00 2f 00 62 00 69 00 6e 00 2e 00 64 00 61 00 74 00 } //1 www.rbphoto.com.br/twg/bin.dat
 		$a_01_3 = {66 00 72 00 61 00 75 00 72 00 69 00 63 00 61 00 6d 00 62 00 69 00 2e 00 63 00 6f 00 6d 00 2f 00 66 00 72 00 61 00 75 00 2f 00 62 00 69 00 6e 00 2e 00 64 00 61 00 74 00 } //1 frauricambi.com/frau/bin.dat

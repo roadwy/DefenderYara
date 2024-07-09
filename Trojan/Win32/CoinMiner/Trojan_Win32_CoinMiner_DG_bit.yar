@@ -4,7 +4,7 @@ rule Trojan_Win32_CoinMiner_DG_bit{
 		description = "Trojan:Win32/CoinMiner.DG!bit,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {68 74 74 70 3a 2f 2f 6f 77 77 77 63 2e 63 6f 6d 2f 6d 6d 2f 90 02 30 2e 65 78 65 90 00 } //1
+		$a_03_0 = {68 74 74 70 3a 2f 2f 6f 77 77 77 63 2e 63 6f 6d 2f 6d 6d 2f [0-30] 2e 65 78 65 } //1
 		$a_01_1 = {4d 7a 6b 75 4d 54 41 35 4c 6a 45 } //1 MzkuMTA5LjE
 		$a_01_2 = {6d 69 6e 65 2e 63 33 70 6f 6f 6c 2e 63 6f 6d } //1 mine.c3pool.com
 		$a_01_3 = {78 6d 72 2e 66 32 70 6f 6f 6c 2e 63 6f 6d } //1 xmr.f2pool.com

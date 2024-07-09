@@ -17,7 +17,7 @@ rule TrojanSpy_Win32_SSonce_C_2{
 		description = "TrojanSpy:Win32/SSonce.C,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {ba e9 03 00 00 e8 90 01 04 8d 95 90 01 01 fb ff ff b9 e9 03 00 00 8b 45 90 01 01 e8 90 01 04 8b d8 8b 45 90 01 01 80 78 0c 00 90 00 } //3
+		$a_03_0 = {ba e9 03 00 00 e8 ?? ?? ?? ?? 8d 95 ?? fb ff ff b9 e9 03 00 00 8b 45 ?? e8 ?? ?? ?? ?? 8b d8 8b 45 ?? 80 78 0c 00 } //3
 		$a_01_1 = {05 06 00 00 00 00 00 00 00 00 00 01 00 00 07 08 09 0a 04 00 00 00 00 00 02 03 00 00 00 00 00 00 00 00 00 00 0b } //1
 		$a_01_2 = {75 4b 65 79 4c 6f 67 67 65 72 } //1 uKeyLogger
 		$a_01_3 = {50 63 6e 52 61 77 69 6e 70 75 74 } //1 PcnRawinput

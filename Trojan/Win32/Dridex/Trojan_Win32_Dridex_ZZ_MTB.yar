@@ -5,7 +5,7 @@ rule Trojan_Win32_Dridex_ZZ_MTB{
 		
 	strings :
 		$a_00_0 = {3d 12 35 09 00 77 07 cc cc 40 cc cc eb f2 } //1
-		$a_03_1 = {77 07 cc cc 40 cc cc eb f2 90 09 05 00 3d 90 01 02 09 00 90 00 } //1
+		$a_03_1 = {77 07 cc cc 40 cc cc eb f2 90 09 05 00 3d ?? ?? 09 00 } //1
 	condition:
 		((#a_00_0  & 1)*1+(#a_03_1  & 1)*1) >=1
  

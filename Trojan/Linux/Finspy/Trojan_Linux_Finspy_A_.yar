@@ -4,7 +4,7 @@ rule Trojan_Linux_Finspy_A_{
 		description = "Trojan:Linux/Finspy.A!!Finspy.A,SIGNATURE_TYPE_ARHSTR_EXT,0b 00 0b 00 03 00 00 "
 		
 	strings :
-		$a_03_0 = {a5 aa ca a6 54 5a 90 01 02 5a a5 0a 90 00 } //10
+		$a_03_0 = {a5 aa ca a6 54 5a ?? ?? 5a a5 0a } //10
 		$a_01_1 = {7f 0d 45 4c 46 01 02 c2 14 68 03 05 0e } //1
 		$a_01_2 = {7f 07 45 4c 46 02 01 1e 15 01 8e 03 0e } //1
 	condition:

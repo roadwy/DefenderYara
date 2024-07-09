@@ -4,7 +4,7 @@ rule Trojan_Win64_R2d2_A{
 		description = "Trojan:Win64/R2d2.A,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {33 d2 41 b9 8e 20 03 00 41 b8 ef 01 00 00 8d 4a 01 48 c7 44 24 20 a8 c5 00 00 ff 15 90 01 04 cc 90 00 } //5
+		$a_03_0 = {33 d2 41 b9 8e 20 03 00 41 b8 ef 01 00 00 8d 4a 01 48 c7 44 24 20 a8 c5 00 00 ff 15 ?? ?? ?? ?? cc } //5
 		$a_00_1 = {5c 00 44 00 72 00 69 00 76 00 65 00 72 00 5c 00 6b 00 62 00 64 00 63 00 6c 00 61 00 73 00 73 00 } //1 \Driver\kbdclass
 		$a_01_2 = {5a 77 53 65 74 49 6e 66 6f 72 6d 61 74 69 6f 6e 46 69 6c 65 } //1 ZwSetInformationFile
 		$a_01_3 = {50 6f 53 74 61 72 74 4e 65 78 74 50 6f 77 65 72 49 72 70 } //1 PoStartNextPowerIrp

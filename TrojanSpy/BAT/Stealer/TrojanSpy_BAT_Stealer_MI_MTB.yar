@@ -4,7 +4,7 @@ rule TrojanSpy_BAT_Stealer_MI_MTB{
 		description = "TrojanSpy:BAT/Stealer.MI!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 0b 00 00 "
 		
 	strings :
-		$a_03_0 = {0a fe 0e 01 00 fe 0c 01 00 73 90 01 03 0a fe 0e 02 00 14 fe 0e 03 00 14 fe 0e 04 00 28 90 01 03 0a fe 0c 02 00 fe 0c 00 00 28 90 01 03 0a 8e 69 20 10 00 00 00 59 6f 90 01 03 0a 6f 90 01 03 0a 28 90 01 03 0a fe 0e 04 00 fe 0c 01 00 20 f0 ff ff ff 6a 20 02 00 00 00 6f 90 01 03 0a 26 fe 0c 02 00 20 10 00 00 00 6f 90 01 03 0a 28 90 01 03 0a fe 0e 03 00 fe 0c 04 00 fe 0c 03 00 28 90 01 03 0a fe 0e 05 00 fe 0c 05 00 39 06 00 00 00 73 26 00 00 0a 7a 2a 90 00 } //1
+		$a_03_0 = {0a fe 0e 01 00 fe 0c 01 00 73 ?? ?? ?? 0a fe 0e 02 00 14 fe 0e 03 00 14 fe 0e 04 00 28 ?? ?? ?? 0a fe 0c 02 00 fe 0c 00 00 28 ?? ?? ?? 0a 8e 69 20 10 00 00 00 59 6f ?? ?? ?? 0a 6f ?? ?? ?? 0a 28 ?? ?? ?? 0a fe 0e 04 00 fe 0c 01 00 20 f0 ff ff ff 6a 20 02 00 00 00 6f ?? ?? ?? 0a 26 fe 0c 02 00 20 10 00 00 00 6f ?? ?? ?? 0a 28 ?? ?? ?? 0a fe 0e 03 00 fe 0c 04 00 fe 0c 03 00 28 ?? ?? ?? 0a fe 0e 05 00 fe 0c 05 00 39 06 00 00 00 73 26 00 00 0a 7a 2a } //1
 		$a_01_1 = {4d 75 74 65 78 41 63 63 65 73 73 52 75 6c 65 } //1 MutexAccessRule
 		$a_01_2 = {46 72 6f 6d 42 61 73 65 36 34 54 72 61 6e 73 66 6f 72 6d 4d 6f 64 65 } //1 FromBase64TransformMode
 		$a_01_3 = {47 65 74 42 79 74 65 73 } //1 GetBytes

@@ -4,7 +4,7 @@ rule Trojan_BAT_XpertRat_MB_MTB{
 		description = "Trojan:BAT/XpertRat.MB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {0a 25 72 0b 00 00 70 6f 90 01 03 0a 25 72 21 00 00 70 6f 90 01 03 0a 25 17 6f 90 01 03 0a 28 90 01 03 0a 6f 90 01 03 0a 90 00 } //1
+		$a_03_0 = {0a 25 72 0b 00 00 70 6f ?? ?? ?? 0a 25 72 21 00 00 70 6f ?? ?? ?? 0a 25 17 6f ?? ?? ?? 0a 28 ?? ?? ?? 0a 6f ?? ?? ?? 0a } //1
 		$a_81_1 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //1 FromBase64String
 		$a_81_2 = {47 65 74 54 79 70 65 73 } //1 GetTypes
 		$a_81_3 = {51 75 65 72 79 52 65 71 75 65 73 74 } //1 QueryRequest

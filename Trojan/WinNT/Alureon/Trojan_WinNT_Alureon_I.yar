@@ -4,7 +4,7 @@ rule Trojan_WinNT_Alureon_I{
 		description = "Trojan:WinNT/Alureon.I,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 08 00 00 "
 		
 	strings :
-		$a_02_0 = {5c 5c 3f 5c 67 6c 6f 62 61 6c 72 6f 6f 74 5c 73 79 73 74 65 6d 72 6f 6f 74 5c 73 79 73 74 65 6d 33 32 5c 64 72 69 76 65 72 73 5c 90 02 10 2e 73 79 73 90 00 } //1
+		$a_02_0 = {5c 5c 3f 5c 67 6c 6f 62 61 6c 72 6f 6f 74 5c 73 79 73 74 65 6d 72 6f 6f 74 5c 73 79 73 74 65 6d 33 32 5c 64 72 69 76 65 72 73 5c [0-10] 2e 73 79 73 } //1
 		$a_01_1 = {4b 65 53 65 72 76 69 63 65 44 65 73 63 72 69 70 74 6f 72 54 61 62 6c 65 } //1 KeServiceDescriptorTable
 		$a_00_2 = {3f 6b 65 79 77 6f 72 64 3d 25 73 26 75 69 64 3d 25 73 26 73 65 69 64 3d 25 64 } //1 ?keyword=%s&uid=%s&seid=%d
 		$a_00_3 = {2a 66 69 72 65 66 6f 78 2a } //1 *firefox*

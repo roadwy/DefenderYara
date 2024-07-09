@@ -4,7 +4,7 @@ rule Trojan_Win64_IcedID_SU_MTB{
 		description = "Trojan:Win64/IcedID.SU!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {8b 04 24 eb 90 01 01 48 90 01 03 c7 04 24 90 01 04 eb 90 01 01 eb 90 01 01 8b 4c 24 90 01 01 33 c8 eb 90 01 02 f7 7c 24 90 01 01 eb 90 01 01 89 54 24 90 00 } //1
+		$a_03_0 = {8b 04 24 eb ?? 48 ?? ?? ?? c7 04 24 ?? ?? ?? ?? eb ?? eb ?? 8b 4c 24 ?? 33 c8 eb ?? ?? f7 7c 24 ?? eb ?? 89 54 24 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  

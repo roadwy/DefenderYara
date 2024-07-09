@@ -4,7 +4,7 @@ rule TrojanDownloader_Win32_Meralifea_A{
 		description = "TrojanDownloader:Win32/Meralifea.A,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 0c 00 00 "
 		
 	strings :
-		$a_03_0 = {68 7c 4a 00 00 68 70 4a 00 00 c7 45 90 01 01 53 29 00 00 c7 45 90 01 01 6f 29 00 00 c7 45 90 01 01 61 29 00 00 90 00 } //2
+		$a_03_0 = {68 7c 4a 00 00 68 70 4a 00 00 c7 45 ?? 53 29 00 00 c7 45 ?? 6f 29 00 00 c7 45 ?? 61 29 00 00 } //2
 		$a_01_1 = {83 f8 7a 89 44 24 14 74 05 83 f8 6f 75 28 56 6a 00 ff d7 50 ff d5 } //2
 		$a_00_2 = {49 4e 53 54 41 4c 4c 5f 43 49 44 } //1 INSTALL_CID
 		$a_00_3 = {49 4e 53 54 41 4c 4c 5f 53 49 44 } //1 INSTALL_SID

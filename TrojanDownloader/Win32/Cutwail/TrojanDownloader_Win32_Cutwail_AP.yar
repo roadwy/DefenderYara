@@ -18,7 +18,7 @@ rule TrojanDownloader_Win32_Cutwail_AP_2{
 		description = "TrojanDownloader:Win32/Cutwail.AP,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 08 00 00 "
 		
 	strings :
-		$a_03_0 = {0f b6 1b 81 f3 90 01 04 81 fb 90 00 } //2
+		$a_03_0 = {0f b6 1b 81 f3 ?? ?? ?? ?? 81 fb } //2
 		$a_01_1 = {25 00 00 ff ff 05 00 30 00 00 } //1
 		$a_01_2 = {8b c0 ff 73 50 } //1
 		$a_01_3 = {6a 00 e2 fc } //1

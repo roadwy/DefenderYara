@@ -4,8 +4,8 @@ rule PWS_Win32_Fareit_V_MTB{
 		description = "PWS:Win32/Fareit.V!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
 	strings :
-		$a_02_0 = {55 8b ec 51 e8 90 01 04 89 45 fc 8b 45 08 0f be 00 33 45 fc 8b 4d 08 88 01 90 00 } //1
-		$a_02_1 = {8b 85 50 f6 ff ff 40 89 85 90 01 04 8b 85 90 01 04 3b 45 94 73 90 01 01 8b 45 ec 89 85 90 01 04 ff b5 90 01 04 ff b5 90 01 04 ff 75 e8 e8 90 01 04 eb 90 00 } //1
+		$a_02_0 = {55 8b ec 51 e8 ?? ?? ?? ?? 89 45 fc 8b 45 08 0f be 00 33 45 fc 8b 4d 08 88 01 } //1
+		$a_02_1 = {8b 85 50 f6 ff ff 40 89 85 ?? ?? ?? ?? 8b 85 ?? ?? ?? ?? 3b 45 94 73 ?? 8b 45 ec 89 85 ?? ?? ?? ?? ff b5 ?? ?? ?? ?? ff b5 ?? ?? ?? ?? ff 75 e8 e8 ?? ?? ?? ?? eb } //1
 	condition:
 		((#a_02_0  & 1)*1+(#a_02_1  & 1)*1) >=1
  

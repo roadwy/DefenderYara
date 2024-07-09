@@ -4,8 +4,8 @@ rule Trojan_Win32_Nebuler_R{
 		description = "Trojan:Win32/Nebuler.R,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 06 00 00 "
 		
 	strings :
-		$a_03_0 = {05 10 08 00 00 50 8b 4d 08 8b 51 08 ff d2 89 45 f4 83 7d f4 00 75 90 01 01 b8 29 00 00 00 e9 90 01 04 8b 45 08 05 30 08 00 00 90 00 } //2
-		$a_03_1 = {6a 00 8b 45 0c 50 8b 90 01 02 e8 90 01 04 0f b6 c8 85 c9 74 90 01 01 8b 90 01 02 83 7a 90 01 01 10 72 90 00 } //2
+		$a_03_0 = {05 10 08 00 00 50 8b 4d 08 8b 51 08 ff d2 89 45 f4 83 7d f4 00 75 ?? b8 29 00 00 00 e9 ?? ?? ?? ?? 8b 45 08 05 30 08 00 00 } //2
+		$a_03_1 = {6a 00 8b 45 0c 50 8b ?? ?? e8 ?? ?? ?? ?? 0f b6 c8 85 c9 74 ?? 8b ?? ?? 83 7a ?? 10 72 } //2
 		$a_00_2 = {47 65 74 42 6b 4d 6f 64 65 } //1 GetBkMode
 		$a_00_3 = {47 6f 6f 67 6c 65 20 54 6f 6f 6c 62 61 72 } //1 Google Toolbar
 		$a_00_4 = {26 50 72 63 41 72 63 3d } //1 &PrcArc=
@@ -19,7 +19,7 @@ rule Trojan_Win32_Nebuler_R_2{
 		description = "Trojan:Win32/Nebuler.R,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0a 00 0b 00 00 "
 		
 	strings :
-		$a_03_0 = {89 45 dc 83 7d dc 00 74 17 83 7d dc 01 74 02 eb 1b 8b 4d 08 89 0d 90 01 04 eb 10 eb 0e eb 0c 8d 55 e0 52 e8 90 00 } //5
+		$a_03_0 = {89 45 dc 83 7d dc 00 74 17 83 7d dc 01 74 02 eb 1b 8b 4d 08 89 0d ?? ?? ?? ?? eb 10 eb 0e eb 0c 8d 55 e0 52 e8 } //5
 		$a_01_1 = {47 6f 6f 67 6c 65 20 54 6f 6f 6c 62 61 72 20 31 2e 32 00 } //1
 		$a_01_2 = {47 45 54 00 79 61 68 6f 6f 2e 63 6f 6d 00 } //1
 		$a_01_3 = {26 42 6c 64 4e 75 6d 3d 00 } //1

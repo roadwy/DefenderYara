@@ -4,7 +4,7 @@ rule TrojanSpy_AndroidOS_Realrat_D_MTB{
 		description = "TrojanSpy:AndroidOS/Realrat.D!MTB,SIGNATURE_TYPE_DEXHSTR_EXT,07 00 07 00 09 00 00 "
 		
 	strings :
-		$a_03_0 = {2f 52 65 6d 6f 74 65 90 02 20 2f 72 65 71 2e 70 68 70 90 00 } //1
+		$a_03_0 = {2f 52 65 6d 6f 74 65 [0-20] 2f 72 65 71 2e 70 68 70 } //1
 		$a_00_1 = {2f 73 65 6e 64 5f 73 6d 73 } //1 /send_sms
 		$a_00_2 = {2f 68 69 64 65 } //1 /hide
 		$a_00_3 = {2f 73 65 6e 64 5f 6c 61 73 74 5f 73 6d 73 } //1 /send_last_sms

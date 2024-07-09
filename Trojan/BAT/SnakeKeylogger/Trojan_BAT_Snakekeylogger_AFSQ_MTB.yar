@@ -4,7 +4,7 @@ rule Trojan_BAT_Snakekeylogger_AFSQ_MTB{
 		description = "Trojan:BAT/Snakekeylogger.AFSQ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 07 00 00 "
 		
 	strings :
-		$a_03_0 = {02 7b 02 00 00 04 06 6f 90 01 03 0a 00 00 02 7b 04 00 00 04 6f 90 01 03 0a 25 0a 14 fe 03 0c 08 90 00 } //2
+		$a_03_0 = {02 7b 02 00 00 04 06 6f ?? ?? ?? 0a 00 00 02 7b 04 00 00 04 6f ?? ?? ?? 0a 25 0a 14 fe 03 0c 08 } //2
 		$a_01_1 = {48 00 65 00 6c 00 70 00 65 00 72 00 5f 00 43 00 6c 00 61 00 73 00 73 00 65 00 73 00 } //1 Helper_Classes
 		$a_01_2 = {43 72 65 61 74 65 44 65 63 72 79 70 74 6f 72 } //1 CreateDecryptor
 		$a_01_3 = {54 72 61 6e 73 66 6f 72 6d 46 69 6e 61 6c 42 6c 6f 63 6b } //1 TransformFinalBlock

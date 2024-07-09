@@ -6,7 +6,7 @@ rule TrojanDownloader_Win32_Lerspeng_A{
 	strings :
 		$a_01_0 = {69 c0 01 01 01 01 57 8b 7d 08 c1 e9 02 f3 ab 8b ce 83 e1 03 f3 aa 5f } //8
 		$a_01_1 = {4d 42 41 50 4f 32 33 32 2e 64 6c 6c 00 44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 00 44 6c 6c } //-8 䉍偁㉏㈳搮汬䐀汬慃啮汮慯乤睯䐀汬
-		$a_03_2 = {83 f8 01 75 5b 39 7d fc 74 06 83 7d fc 06 75 50 8d 85 90 01 02 ff ff 50 ff 15 90 00 } //4
+		$a_03_2 = {83 f8 01 75 5b 39 7d fc 74 06 83 7d fc 06 75 50 8d 85 ?? ?? ff ff 50 ff 15 } //4
 		$a_00_3 = {83 f8 01 74 0f 83 c6 04 81 fe d4 00 00 00 0f 82 } //3
 		$a_01_4 = {65 73 6f 66 74 6d 65 63 68 61 6e 69 63 73 2e 63 6f 6d 2f 73 70 65 6e 67 6c 65 72 2f 62 65 61 74 6c 65 } //2 esoftmechanics.com/spengler/beatle
 		$a_01_5 = {66 6c 6f 6f 72 6d 61 73 74 65 72 73 61 6e 64 69 65 67 6f 2e 63 6f 6d 2f 69 6d 70 75 67 6e 69 6e 67 2f 66 65 6c 73 69 74 69 63 } //1 floormastersandiego.com/impugning/felsitic
