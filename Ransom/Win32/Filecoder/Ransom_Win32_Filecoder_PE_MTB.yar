@@ -1,7 +1,7 @@
 
-rule Ransom_Win32_Filecoder_PE_MTB{
+rule Ransom_Win32_FileCoder_PE_MTB{
 	meta:
-		description = "Ransom:Win32/Filecoder.PE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		description = "Ransom:Win32/FileCoder.PE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :
 		$a_00_0 = {52 45 41 44 4d 45 2e 74 78 74 } //1 README.txt
@@ -12,9 +12,9 @@ rule Ransom_Win32_Filecoder_PE_MTB{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_02_3  & 1)*1) >=4
  
 }
-rule Ransom_Win32_Filecoder_PE_MTB_2{
+rule Ransom_Win32_FileCoder_PE_MTB_2{
 	meta:
-		description = "Ransom:Win32/Filecoder.PE!MTB,SIGNATURE_TYPE_PEHSTR,07 00 07 00 07 00 00 "
+		description = "Ransom:Win32/FileCoder.PE!MTB,SIGNATURE_TYPE_PEHSTR,07 00 07 00 07 00 00 "
 		
 	strings :
 		$a_01_0 = {5b 00 52 00 61 00 6e 00 73 00 6f 00 6d 00 50 00 43 00 5d 00 } //1 [RansomPC]

@@ -1,7 +1,7 @@
 
-rule Ransom_Win32_Filecoder_PD_MTB{
+rule Ransom_Win32_FileCoder_PD_MTB{
 	meta:
-		description = "Ransom:Win32/Filecoder.PD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
+		description = "Ransom:Win32/FileCoder.PD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
 	strings :
 		$a_01_0 = {55 00 50 00 5c 00 75 00 6c 00 6f 00 67 00 2e 00 74 00 78 00 74 00 } //1 UP\ulog.txt
@@ -13,9 +13,9 @@ rule Ransom_Win32_Filecoder_PD_MTB{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_03_4  & 1)*1) >=4
  
 }
-rule Ransom_Win32_Filecoder_PD_MTB_2{
+rule Ransom_Win32_FileCoder_PD_MTB_2{
 	meta:
-		description = "Ransom:Win32/Filecoder.PD!MTB,SIGNATURE_TYPE_PEHSTR,04 00 04 00 04 00 00 "
+		description = "Ransom:Win32/FileCoder.PD!MTB,SIGNATURE_TYPE_PEHSTR,04 00 04 00 04 00 00 "
 		
 	strings :
 		$a_01_0 = {25 00 73 00 5c 00 52 00 65 00 61 00 64 00 6d 00 65 00 2e 00 52 00 45 00 41 00 44 00 4d 00 45 00 } //1 %s\Readme.README

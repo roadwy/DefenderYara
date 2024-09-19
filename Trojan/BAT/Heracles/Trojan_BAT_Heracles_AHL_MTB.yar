@@ -31,3 +31,16 @@ rule Trojan_BAT_Heracles_AHL_MTB_3{
 		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }
+rule Trojan_BAT_Heracles_AHL_MTB_4{
+	meta:
+		description = "Trojan:BAT/Heracles.AHL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
+		$a_01_0 = {4e 6f 72 74 68 41 6d 65 72 69 63 61 55 70 64 61 74 65 2e 50 72 6f 70 65 72 74 69 65 73 2e 52 65 73 6f 75 72 63 65 73 } //1 NorthAmericaUpdate.Properties.Resources
+		$a_01_1 = {62 63 33 38 66 35 65 33 2d 33 61 35 31 2d 34 33 63 35 2d 38 39 37 61 2d 31 37 38 32 32 38 64 37 66 34 32 30 } //1 bc38f5e3-3a51-43c5-897a-178228d7f420
+		$a_01_2 = {4e 00 6f 00 72 00 74 00 68 00 41 00 6d 00 65 00 72 00 69 00 63 00 61 00 55 00 70 00 64 00 61 00 74 00 65 00 2e 00 65 00 78 00 65 00 } //1 NorthAmericaUpdate.exe
+		$a_01_3 = {55 00 70 00 64 00 61 00 74 00 65 00 20 00 66 00 72 00 6f 00 6d 00 20 00 4a 00 61 00 76 00 61 00 } //1 Update from Java
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
+ 
+}

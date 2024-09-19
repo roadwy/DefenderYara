@@ -31,6 +31,21 @@ rule Trojan_Win64_Cobaltstrike_EB_MTB_3{
 }
 rule Trojan_Win64_Cobaltstrike_EB_MTB_4{
 	meta:
+		description = "Trojan:Win64/Cobaltstrike.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
+		
+	strings :
+		$a_01_0 = {55 6e 68 6f 6f 6b 69 6e 67 50 61 74 63 68 5c 50 61 74 63 68 69 6e 67 41 50 49 5c 78 36 34 5c 52 65 6c 65 61 73 65 5c 50 61 74 63 68 69 6e 67 41 50 49 2e 70 64 62 } //1 UnhookingPatch\PatchingAPI\x64\Release\PatchingAPI.pdb
+		$a_01_1 = {4e 74 57 61 69 74 46 6f 72 53 69 6e 67 6c 65 4f 4e 74 41 6c 6c 6f 63 61 74 65 56 69 72 74 75 61 4e 74 50 72 6f 74 65 63 74 56 69 72 74 75 61 6c 4e 74 43 72 65 61 74 65 54 68 72 65 61 64 45 78 } //1 NtWaitForSingleONtAllocateVirtuaNtProtectVirtualNtCreateThreadEx
+		$a_01_2 = {57 72 69 74 65 50 72 6f 63 65 73 73 4d 65 6d 6f 72 79 } //1 WriteProcessMemory
+		$a_01_3 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //1 VirtualProtect
+		$a_01_4 = {43 72 79 70 74 43 72 65 61 74 65 48 61 73 68 } //1 CryptCreateHash
+		$a_01_5 = {43 72 79 70 74 44 65 63 72 79 70 74 } //1 CryptDecrypt
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=6
+ 
+}
+rule Trojan_Win64_Cobaltstrike_EB_MTB_5{
+	meta:
 		description = "Trojan:Win64/Cobaltstrike.EB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 0b 00 00 "
 		
 	strings :

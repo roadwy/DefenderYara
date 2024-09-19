@@ -1,7 +1,7 @@
 
 rule HackTool_Linux_PythonPTY_A{
 	meta:
-		description = "HackTool:Linux/PythonPTY.A,SIGNATURE_TYPE_CMDHSTR_EXT,0b 00 0b 00 09 00 00 "
+		description = "HackTool:Linux/PythonPTY.A,SIGNATURE_TYPE_CMDHSTR_EXT,0b 00 0b 00 0a 00 00 "
 		
 	strings :
 		$a_00_0 = {69 00 6d 00 70 00 6f 00 72 00 74 00 20 00 70 00 74 00 79 00 } //5 import pty
@@ -13,7 +13,8 @@ rule HackTool_Linux_PythonPTY_A{
 		$a_00_6 = {2f 00 62 00 69 00 6e 00 2f 00 6b 00 73 00 68 00 39 00 33 00 } //1 /bin/ksh93
 		$a_00_7 = {2f 00 62 00 69 00 6e 00 2f 00 6b 00 73 00 68 00 } //1 /bin/ksh
 		$a_00_8 = {2f 00 62 00 69 00 6e 00 2f 00 74 00 63 00 73 00 68 00 } //1 /bin/tcsh
+		$a_00_9 = {61 00 6e 00 73 00 79 00 73 00 } //-10 ansys
 	condition:
-		((#a_00_0  & 1)*5+(#a_00_1  & 1)*5+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_00_8  & 1)*1) >=11
+		((#a_00_0  & 1)*5+(#a_00_1  & 1)*5+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_00_8  & 1)*1+(#a_00_9  & 1)*-10) >=11
  
 }

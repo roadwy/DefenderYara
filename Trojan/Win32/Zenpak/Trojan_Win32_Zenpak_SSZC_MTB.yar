@@ -1,0 +1,11 @@
+
+rule Trojan_Win32_Zenpak_SSZC_MTB{
+	meta:
+		description = "Trojan:Win32/Zenpak.SSZC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {8a 45 fa a2 ?? ?? ?? ?? 8a 45 fb a2 ?? ?? ?? ?? 0f b6 15 ?? ?? ?? ?? 0f b6 35 ?? ?? ?? ?? 31 f2 88 d0 a2 } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}

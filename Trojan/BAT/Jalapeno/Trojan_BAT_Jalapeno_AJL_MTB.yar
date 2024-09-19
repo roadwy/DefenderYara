@@ -1,6 +1,19 @@
 
 rule Trojan_BAT_Jalapeno_AJL_MTB{
 	meta:
+		description = "Trojan:BAT/Jalapeno.AJL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0d 00 0d 00 04 00 00 "
+		
+	strings :
+		$a_01_0 = {54 00 69 00 6c 00 65 00 73 00 65 00 74 00 74 00 65 00 72 00 20 00 32 00 30 00 32 00 34 00 } //1 Tilesetter 2024
+		$a_01_1 = {32 30 46 33 42 39 34 39 2d 31 34 39 41 2d 34 35 31 35 2d 42 37 35 32 2d 35 34 39 37 43 30 34 45 31 36 44 34 } //2 20F3B949-149A-4515-B752-5497C04E16D4
+		$a_01_2 = {42 00 75 00 72 00 73 00 74 00 65 00 69 00 6e 00 2e 00 64 00 6c 00 6c 00 } //5 Burstein.dll
+		$a_01_3 = {42 00 75 00 72 00 73 00 74 00 65 00 69 00 6e 00 20 00 41 00 70 00 70 00 6c 00 65 00 62 00 65 00 65 00 } //5 Burstein Applebee
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*2+(#a_01_2  & 1)*5+(#a_01_3  & 1)*5) >=13
+ 
+}
+rule Trojan_BAT_Jalapeno_AJL_MTB_2{
+	meta:
 		description = "Trojan:BAT/Jalapeno.AJL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,2e 00 2e 00 08 00 00 "
 		
 	strings :

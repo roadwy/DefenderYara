@@ -24,7 +24,7 @@ rule Trojan_Win32_Smokeloader_GZZ_MTB_3{
 		description = "Trojan:Win32/Smokeloader.GZZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {6a 00 6a 00 ff d5 6a 00 6a 00 6a 00 6a 00 ff 15 ?? ?? ?? ?? e8 ?? ?? ?? ?? 30 04 33 46 3b f7 } //10
+		$a_03_0 = {03 c6 30 08 83 ff ?? ?? ?? 6a 00 6a 00 ff 15 ?? ?? ?? ?? 46 3b f7 } //10
 	condition:
 		((#a_03_0  & 1)*10) >=10
  
@@ -34,12 +34,22 @@ rule Trojan_Win32_Smokeloader_GZZ_MTB_4{
 		description = "Trojan:Win32/Smokeloader.GZZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {73 69 c6 05 ?? ?? ?? ?? 2e c7 05 ?? ?? ?? ?? 6d 67 33 32 c7 05 ?? ?? ?? ?? 64 6c 6c 00 a2 ?? ?? ?? ?? ff 15 } //10
+		$a_03_0 = {6a 00 6a 00 ff d5 6a 00 6a 00 6a 00 6a 00 ff 15 ?? ?? ?? ?? e8 ?? ?? ?? ?? 30 04 33 46 3b f7 } //10
 	condition:
 		((#a_03_0  & 1)*10) >=10
  
 }
 rule Trojan_Win32_Smokeloader_GZZ_MTB_5{
+	meta:
+		description = "Trojan:Win32/Smokeloader.GZZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {73 69 c6 05 ?? ?? ?? ?? 2e c7 05 ?? ?? ?? ?? 6d 67 33 32 c7 05 ?? ?? ?? ?? 64 6c 6c 00 a2 ?? ?? ?? ?? ff 15 } //10
+	condition:
+		((#a_03_0  & 1)*10) >=10
+ 
+}
+rule Trojan_Win32_Smokeloader_GZZ_MTB_6{
 	meta:
 		description = "Trojan:Win32/Smokeloader.GZZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
 		

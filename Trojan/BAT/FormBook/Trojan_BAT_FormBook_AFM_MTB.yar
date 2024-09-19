@@ -110,6 +110,47 @@ rule Trojan_BAT_FormBook_AFM_MTB_10{
 }
 rule Trojan_BAT_FormBook_AFM_MTB_11{
 	meta:
+		description = "Trojan:BAT/FormBook.AFM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {02 08 11 05 58 91 03 11 05 07 5d 91 61 d2 9c 00 11 05 17 58 13 05 11 05 09 fe 04 13 06 11 06 2d da } //2
+		$a_01_1 = {61 00 69 00 6e 00 76 00 65 00 73 00 74 00 69 00 6e 00 74 00 65 00 72 00 6e 00 61 00 74 00 69 00 6f 00 6e 00 61 00 6c 00 2e 00 63 00 6f 00 6d 00 } //2 ainvestinternational.com
+		$a_01_2 = {55 00 42 00 4f 00 54 00 65 00 78 00 74 00 75 00 72 00 65 00 } //1 UBOTexture
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*1) >=5
+ 
+}
+rule Trojan_BAT_FormBook_AFM_MTB_12{
+	meta:
+		description = "Trojan:BAT/FormBook.AFM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {35 39 31 35 37 63 33 66 2d 31 64 61 65 2d 34 32 64 63 2d 38 63 32 66 2d 39 65 62 30 66 63 61 37 36 30 66 64 } //1 59157c3f-1dae-42dc-8c2f-9eb0fca760fd
+		$a_01_1 = {49 00 6e 00 76 00 65 00 6e 00 74 00 6f 00 72 00 79 00 4d 00 61 00 69 00 6e 00 74 00 65 00 6e 00 61 00 6e 00 63 00 65 00 2e 00 50 00 72 00 6f 00 70 00 65 00 72 00 74 00 69 00 65 00 73 00 2e 00 52 00 65 00 73 00 6f 00 75 00 72 00 63 00 65 00 73 00 } //1 InventoryMaintenance.Properties.Resources
+		$a_01_2 = {49 00 6e 00 76 00 65 00 6e 00 74 00 6f 00 72 00 79 00 4d 00 61 00 69 00 6e 00 74 00 65 00 6e 00 61 00 6e 00 63 00 65 00 2e 00 52 00 65 00 73 00 6f 00 75 00 72 00 63 00 65 00 31 00 } //1 InventoryMaintenance.Resource1
+		$a_01_3 = {41 00 72 00 65 00 20 00 79 00 6f 00 75 00 20 00 73 00 75 00 72 00 65 00 20 00 79 00 6f 00 75 00 20 00 77 00 61 00 6e 00 74 00 20 00 74 00 6f 00 20 00 64 00 65 00 6c 00 65 00 74 00 65 00 } //1 Are you sure you want to delete
+		$a_01_4 = {43 00 6f 00 6e 00 66 00 69 00 72 00 6d 00 20 00 44 00 65 00 6c 00 65 00 74 00 65 00 } //1 Confirm Delete
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
+ 
+}
+rule Trojan_BAT_FormBook_AFM_MTB_13{
+	meta:
+		description = "Trojan:BAT/FormBook.AFM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 06 00 00 "
+		
+	strings :
+		$a_01_0 = {52 00 65 00 69 00 63 00 68 00 55 00 49 00 2e 00 50 00 72 00 6f 00 70 00 65 00 72 00 74 00 69 00 65 00 73 00 2e 00 52 00 65 00 73 00 6f 00 75 00 72 00 63 00 65 00 73 00 } //2 ReichUI.Properties.Resources
+		$a_01_1 = {46 00 61 00 69 00 6c 00 65 00 64 00 20 00 74 00 6f 00 20 00 72 00 65 00 74 00 72 00 69 00 65 00 76 00 65 00 20 00 63 00 75 00 73 00 74 00 6f 00 6d 00 20 00 63 00 75 00 72 00 73 00 6f 00 72 00 20 00 66 00 72 00 6f 00 6d 00 20 00 65 00 6d 00 62 00 65 00 64 00 64 00 65 00 64 00 20 00 72 00 65 00 73 00 6f 00 75 00 72 00 63 00 65 00 } //1 Failed to retrieve custom cursor from embedded resource
+		$a_01_2 = {37 37 63 64 33 30 66 64 2d 62 66 30 39 2d 34 38 34 33 2d 38 65 31 62 2d 31 34 39 36 30 64 32 38 33 65 30 61 } //1 77cd30fd-bf09-4843-8e1b-14960d283e0a
+		$a_01_3 = {67 65 74 5f 52 65 73 6f 75 72 63 65 4d 61 6e 61 67 65 72 } //1 get_ResourceManager
+		$a_01_4 = {47 65 74 4d 61 6e 69 66 65 73 74 52 65 73 6f 75 72 63 65 4e 61 6d 65 73 } //1 GetManifestResourceNames
+		$a_01_5 = {43 72 65 61 74 65 49 63 6f 6e 46 72 6f 6d 52 65 73 6f 75 72 63 65 } //1 CreateIconFromResource
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=7
+ 
+}
+rule Trojan_BAT_FormBook_AFM_MTB_14{
+	meta:
 		description = "Trojan:BAT/FormBook.AFM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :

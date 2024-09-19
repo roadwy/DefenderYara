@@ -10,13 +10,3 @@ rule Backdoor_Linux_Mirai_DD_MTB{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule Backdoor_Linux_Mirai_DD_MTB_2{
-	meta:
-		description = "Backdoor:Linux/Mirai.DD!MTB,SIGNATURE_TYPE_ELFHSTR_EXT,01 00 01 00 01 00 00 "
-		
-	strings :
-		$a_03_0 = {8d 03 00 01 9d 05 00 01 4b ff ?? ?? 41 81 ?? ?? 38 e0 00 01 4b ff ?? ?? 7c e7 39 15 4b ff ?? ?? 41 a0 ?? ?? 34 e7 ff fd 39 00 00 00 41 80 ?? ?? 8d 63 00 01 54 e7 40 2e 7c ea 58 f9 41 82 ?? ?? 4b ff ?? ?? 7d 08 41 15 4b ff ?? ?? 7d 08 41 15 38 e0 00 01 40 82 } //1
-	condition:
-		((#a_03_0  & 1)*1) >=1
- 
-}

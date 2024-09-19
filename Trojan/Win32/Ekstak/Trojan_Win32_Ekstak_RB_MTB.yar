@@ -44,12 +44,22 @@ rule Trojan_Win32_Ekstak_RB_MTB_5{
 		description = "Trojan:Win32/Ekstak.RB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {55 8b ec 83 ec 08 56 57 ff 15 d8 c1 4b 00 68 ?? e0 4b 00 6a 01 6a 00 8b f8 ff 15 dc c1 4b 00 } //1
+		$a_03_0 = {55 8b ec 83 ec 10 53 56 57 8b 45 08 50 e8 ?? e8 f5 ff 83 c4 04 25 ff ff 00 00 89 45 fc e9 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
 }
 rule Trojan_Win32_Ekstak_RB_MTB_6{
+	meta:
+		description = "Trojan:Win32/Ekstak.RB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {55 8b ec 83 ec 08 56 57 ff 15 d8 c1 4b 00 68 ?? e0 4b 00 6a 01 6a 00 8b f8 ff 15 dc c1 4b 00 } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}
+rule Trojan_Win32_Ekstak_RB_MTB_7{
 	meta:
 		description = "Trojan:Win32/Ekstak.RB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -60,7 +70,7 @@ rule Trojan_Win32_Ekstak_RB_MTB_6{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule Trojan_Win32_Ekstak_RB_MTB_7{
+rule Trojan_Win32_Ekstak_RB_MTB_8{
 	meta:
 		description = "Trojan:Win32/Ekstak.RB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -70,7 +80,7 @@ rule Trojan_Win32_Ekstak_RB_MTB_7{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule Trojan_Win32_Ekstak_RB_MTB_8{
+rule Trojan_Win32_Ekstak_RB_MTB_9{
 	meta:
 		description = "Trojan:Win32/Ekstak.RB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -80,7 +90,7 @@ rule Trojan_Win32_Ekstak_RB_MTB_8{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule Trojan_Win32_Ekstak_RB_MTB_9{
+rule Trojan_Win32_Ekstak_RB_MTB_10{
 	meta:
 		description = "Trojan:Win32/Ekstak.RB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
@@ -91,7 +101,7 @@ rule Trojan_Win32_Ekstak_RB_MTB_9{
 		((#a_01_0  & 1)*5+(#a_01_1  & 1)*1) >=6
  
 }
-rule Trojan_Win32_Ekstak_RB_MTB_10{
+rule Trojan_Win32_Ekstak_RB_MTB_11{
 	meta:
 		description = "Trojan:Win32/Ekstak.RB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
@@ -102,7 +112,7 @@ rule Trojan_Win32_Ekstak_RB_MTB_10{
 		((#a_01_0  & 1)*5+(#a_01_1  & 1)*1) >=6
  
 }
-rule Trojan_Win32_Ekstak_RB_MTB_11{
+rule Trojan_Win32_Ekstak_RB_MTB_12{
 	meta:
 		description = "Trojan:Win32/Ekstak.RB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		

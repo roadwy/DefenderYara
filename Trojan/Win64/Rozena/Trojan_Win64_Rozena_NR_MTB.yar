@@ -34,6 +34,17 @@ rule Trojan_Win64_Rozena_NR_MTB_3{
 }
 rule Trojan_Win64_Rozena_NR_MTB_4{
 	meta:
+		description = "Trojan:Win64/Rozena.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {48 8b 35 7b e0 55 00 65 48 8b 04 25 30 00 00 00 48 8b 58 08 31 c0 f0 48 0f b1 5d 00 74 ?? 48 39 c3 74 ?? b9 e8 03 00 00 } //3
+		$a_03_1 = {8d 4b 01 48 63 c9 48 c1 e1 03 e8 ?? ?? ?? ?? 4c 8b 35 d0 bd 55 00 49 89 c5 44 39 e3 } //2
+	condition:
+		((#a_03_0  & 1)*3+(#a_03_1  & 1)*2) >=5
+ 
+}
+rule Trojan_Win64_Rozena_NR_MTB_5{
+	meta:
 		description = "Trojan:Win64/Rozena.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 "
 		
 	strings :
@@ -42,5 +53,16 @@ rule Trojan_Win64_Rozena_NR_MTB_4{
 		$a_01_2 = {70 72 69 6d 6f 72 64 69 61 6c 5f 63 72 61 63 6b } //1 primordial_crack
 	condition:
 		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=7
+ 
+}
+rule Trojan_Win64_Rozena_NR_MTB_6{
+	meta:
+		description = "Trojan:Win64/Rozena.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {48 8d 15 6b 22 00 00 ff 15 95 20 00 00 b9 ?? ?? 00 00 66 89 bd ?? ?? 00 00 ff 15 7b 20 00 00 44 8d 47 0e 48 8b cb 48 8d 95 ?? ?? 00 00 66 89 85 ?? ?? 00 00 ff 15 80 20 00 00 } //3
+		$a_03_1 = {ff 15 cd 1d 00 00 48 89 74 24 ?? 4c 8b cb 89 74 24 ?? 45 33 c0 33 d2 48 89 74 24 ?? 48 8b cf ff 15 c6 1d 00 00 } //3
+	condition:
+		((#a_03_0  & 1)*3+(#a_03_1  & 1)*3) >=6
  
 }

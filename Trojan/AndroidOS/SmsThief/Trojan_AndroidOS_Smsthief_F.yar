@@ -1,6 +1,17 @@
 
 rule Trojan_AndroidOS_Smsthief_F{
 	meta:
+		description = "Trojan:AndroidOS/Smsthief.F,SIGNATURE_TYPE_DEXHSTR_EXT,02 00 02 00 02 00 00 "
+		
+	strings :
+		$a_01_0 = {66 69 6e 64 4e 6f 64 65 73 42 79 54 65 78 74 76 32 } //1 findNodesByTextv2
+		$a_01_1 = {5f 77 69 66 69 70 6f 6c 63 5f 6d 65 74 68 5f } //1 _wifipolc_meth_
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
+ 
+}
+rule Trojan_AndroidOS_Smsthief_F_2{
+	meta:
 		description = "Trojan:AndroidOS/Smsthief.F,SIGNATURE_TYPE_DEXHSTR_EXT,06 00 06 00 03 00 00 "
 		
 	strings :

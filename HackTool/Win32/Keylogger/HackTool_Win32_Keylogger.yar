@@ -1,7 +1,7 @@
 
-rule HackTool_Win32_Keylogger{
+rule HackTool_Win32_keylogger{
 	meta:
-		description = "HackTool:Win32/Keylogger,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		description = "HackTool:Win32/keylogger,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
 		$a_80_0 = {48 65 78 4c 6f 67 67 65 72 } //HexLogger  1

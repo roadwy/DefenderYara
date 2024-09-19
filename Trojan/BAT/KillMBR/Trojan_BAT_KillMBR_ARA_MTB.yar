@@ -42,6 +42,19 @@ rule Trojan_BAT_KillMBR_ARA_MTB_4{
 		description = "Trojan:BAT/KillMBR.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 "
 		
 	strings :
+		$a_80_0 = {5c 50 6f 77 65 72 2e 70 64 62 } //\Power.pdb  2
+		$a_80_1 = {50 6f 77 65 72 2e 50 72 6f 70 65 72 74 69 65 73 2e 52 65 73 6f 75 72 63 65 73 } //Power.Properties.Resources  2
+		$a_01_2 = {24 38 64 62 62 32 64 35 38 2d 62 39 64 65 2d 34 38 36 62 2d 62 65 38 33 2d 31 30 30 36 34 62 39 64 32 63 38 35 } //2 $8dbb2d58-b9de-486b-be83-10064b9d2c85
+		$a_01_3 = {49 73 57 69 6e 64 6f 77 73 44 65 66 65 6e 64 65 72 49 6e 73 74 61 6c 6c 65 64 } //2 IsWindowsDefenderInstalled
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*2+(#a_01_2  & 1)*2+(#a_01_3  & 1)*2) >=8
+ 
+}
+rule Trojan_BAT_KillMBR_ARA_MTB_5{
+	meta:
+		description = "Trojan:BAT/KillMBR.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 "
+		
+	strings :
 		$a_80_0 = {6f 6f 62 65 5c 77 69 6e 64 65 70 6c 6f 79 2e 65 78 65 } //oobe\windeploy.exe  2
 		$a_80_1 = {74 72 6f 6a 61 6e 20 69 73 20 67 6f 69 6e 67 20 74 6f 20 72 65 62 6f 6f 74 20 79 6f 75 72 20 64 65 76 69 63 65 } //trojan is going to reboot your device  2
 		$a_80_2 = {6f 76 65 72 77 72 69 74 65 20 74 68 65 20 4d 42 52 20 73 65 63 74 6f 72 } //overwrite the MBR sector  2
@@ -50,7 +63,7 @@ rule Trojan_BAT_KillMBR_ARA_MTB_4{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*2+(#a_80_2  & 1)*2+(#a_80_3  & 1)*2) >=8
  
 }
-rule Trojan_BAT_KillMBR_ARA_MTB_5{
+rule Trojan_BAT_KillMBR_ARA_MTB_6{
 	meta:
 		description = "Trojan:BAT/KillMBR.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 08 00 00 "
 		

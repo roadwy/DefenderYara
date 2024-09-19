@@ -1,7 +1,7 @@
 
-rule Trojan_Win32_Cobaltstrike_DB_MTB{
+rule Trojan_Win32_CobaltStrike_DB_MTB{
 	meta:
-		description = "Trojan:Win32/Cobaltstrike.DB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
+		description = "Trojan:Win32/CobaltStrike.DB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :
 		$a_81_0 = {5c 2e 5c 70 69 70 65 5c 56 6d 77 61 72 65 2e 30 30 30 30 30 30 30 30 30 30 2e 30 30 30 32 } //1 \.\pipe\Vmware.0000000000.0002

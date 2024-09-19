@@ -1,7 +1,7 @@
 
-rule Backdoor_BAT_Sisbot{
+rule Backdoor_BAT_sisbot{
 	meta:
-		description = "Backdoor:BAT/Sisbot,SIGNATURE_TYPE_PEHSTR,03 00 03 00 03 00 00 "
+		description = "Backdoor:BAT/sisbot,SIGNATURE_TYPE_PEHSTR,03 00 03 00 03 00 00 "
 		
 	strings :
 		$a_01_0 = {55 00 53 00 45 00 52 00 20 00 66 00 6f 00 6f 00 } //1 USER foo

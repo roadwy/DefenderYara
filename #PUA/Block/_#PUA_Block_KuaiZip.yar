@@ -139,6 +139,19 @@ rule _#PUA_Block_KuaiZip_10{
 }
 rule _#PUA_Block_KuaiZip_11{
 	meta:
+		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
+		$a_80_0 = {64 3a 5c 73 76 6e 72 6f 6f 74 5c 6b 75 61 69 7a 69 70 5c 74 72 75 6e 6b 5c 62 69 6e 5c 52 65 6c 65 61 73 65 5c 58 38 36 5c 4b 7a 55 70 64 61 74 65 41 67 65 6e 63 79 2e 70 64 62 } //d:\svnroot\kuaizip\trunk\bin\Release\X86\KzUpdateAgency.pdb  1
+		$a_80_1 = {69 2e 6b 70 7a 69 70 2e 63 6f 6d 2f 6e 2f 74 75 69 2f 75 70 64 61 74 65 5f 61 67 65 6e 63 79 2f 6b 62 2e 78 6d 6c } //i.kpzip.com/n/tui/update_agency/kb.xml  1
+		$a_80_2 = {6b 7a 75 70 64 61 74 65 5f 61 67 65 6e 63 79 } //kzupdate_agency  1
+		$a_80_3 = {4b 75 61 69 5a 69 70 } //KuaiZip  1
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
+ 
+}
+rule _#PUA_Block_KuaiZip_12{
+	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
 	strings :
@@ -150,7 +163,7 @@ rule _#PUA_Block_KuaiZip_11{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=3
  
 }
-rule _#PUA_Block_KuaiZip_12{
+rule _#PUA_Block_KuaiZip_13{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -164,7 +177,7 @@ rule _#PUA_Block_KuaiZip_12{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_13{
+rule _#PUA_Block_KuaiZip_14{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -177,7 +190,7 @@ rule _#PUA_Block_KuaiZip_13{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule _#PUA_Block_KuaiZip_14{
+rule _#PUA_Block_KuaiZip_15{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -192,7 +205,34 @@ rule _#PUA_Block_KuaiZip_14{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=6
  
 }
-rule _#PUA_Block_KuaiZip_15{
+rule _#PUA_Block_KuaiZip_16{
+	meta:
+		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
+		$a_80_0 = {6d 69 6e 69 6e 65 77 73 2d 68 6e 2e 37 36 35 34 2e 63 6f 6d 2f 6e 2f 74 75 69 2f 77 6b 65 2e 64 6c 6c } //mininews-hn.7654.com/n/tui/wke.dll  1
+		$a_80_1 = {74 6a 2e 6b 70 7a 69 70 2e 63 6f 6d 2f 6b 75 61 69 7a 69 70 72 65 70 6f 72 74 } //tj.kpzip.com/kuaizipreport  1
+		$a_80_2 = {65 3a 5c 5a 4d 5f 50 72 6f 6a 65 63 74 5c 4b 75 61 69 5a 69 70 5c 62 69 6e 5c 52 65 6c 65 61 73 65 5c 58 38 36 5c 6d 69 6e 69 6e 65 77 73 2e 70 64 62 } //e:\ZM_Project\KuaiZip\bin\Release\X86\mininews.pdb  1
+		$a_80_3 = {77 77 77 2e 6b 75 61 69 7a 69 70 2e 63 6f 6d 2f 6d 65 6d 62 65 72 2f 69 6e 64 65 78 2e 70 68 70 } //www.kuaizip.com/member/index.php  1
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
+ 
+}
+rule _#PUA_Block_KuaiZip_17{
+	meta:
+		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_80_0 = {64 3a 5c 73 76 6e 72 6f 6f 74 5c 6b 75 61 69 7a 69 70 5c 74 72 75 6e 6b 5c 62 69 6e 5c 52 65 6c 65 61 73 65 5c 58 38 36 5c 55 70 64 61 74 65 43 68 65 63 6b 65 72 2e 70 64 62 } //d:\svnroot\kuaizip\trunk\bin\Release\X86\UpdateChecker.pdb  2
+		$a_80_1 = {6c 69 65 62 61 6f 2e 65 78 65 } //liebao.exe  1
+		$a_80_2 = {69 2e 6b 70 7a 69 70 2e 63 6f 6d 2f 6e 2f 75 70 64 61 74 65 63 68 65 63 6b 65 72 2f 6b 62 2e 78 6d 6c } //i.kpzip.com/n/updatechecker/kb.xml  1
+		$a_80_3 = {53 6f 66 74 77 61 72 65 5c 4b 75 61 69 5a 69 70 5c 49 6e 73 74 61 6c 6c } //Software\KuaiZip\Install  1
+		$a_80_4 = {6b 75 61 69 7a 69 70 72 65 70 6f 72 74 } //kuaizipreport  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
+ 
+}
+rule _#PUA_Block_KuaiZip_18{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 0a 00 00 "
 		
@@ -211,7 +251,21 @@ rule _#PUA_Block_KuaiZip_15{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_80_8  & 1)*-100+(#a_80_9  & 1)*-100) >=8
  
 }
-rule _#PUA_Block_KuaiZip_16{
+rule _#PUA_Block_KuaiZip_19{
+	meta:
+		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_80_0 = {74 70 6f 70 2e 6b 70 7a 69 70 2e 63 6f 6d 2f 6e 2f 74 75 69 2f 74 70 6f 70 2f 74 70 6f 70 34 2f 6b 62 5f 6e 6f 70 6f 70 2e 78 6d 6c } //tpop.kpzip.com/n/tui/tpop/tpop4/kb_nopop.xml  1
+		$a_80_1 = {64 6f 77 6e 32 2e 37 36 35 34 2e 63 6f 6d } //down2.7654.com  1
+		$a_80_2 = {65 3a 5c 5a 4d 5f 50 72 6f 6a 65 63 74 5c 4b 75 61 69 5a 69 70 5c 62 69 6e 5c 52 65 6c 65 61 73 65 5c 58 38 36 5c 74 70 6f 70 34 2e 70 64 62 } //e:\ZM_Project\KuaiZip\bin\Release\X86\tpop4.pdb  1
+		$a_80_3 = {68 6f 74 6e 65 77 73 2e 64 66 74 6f 75 74 69 61 6f 2e 63 6f 6d } //hotnews.dftoutiao.com  1
+		$a_80_4 = {2f 6b 75 61 69 7a 69 70 72 65 70 6f 72 74 2f 6d 69 6e 69 6e 65 77 73 } ///kuaizipreport/mininews  1
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
+ 
+}
+rule _#PUA_Block_KuaiZip_20{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 "
 		
@@ -227,7 +281,7 @@ rule _#PUA_Block_KuaiZip_16{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_02_5  & 1)*1+(#a_02_6  & 1)*1) >=6
  
 }
-rule _#PUA_Block_KuaiZip_17{
+rule _#PUA_Block_KuaiZip_21{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
 		
@@ -243,7 +297,7 @@ rule _#PUA_Block_KuaiZip_17{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*-100+(#a_80_6  & 1)*-100) >=5
  
 }
-rule _#PUA_Block_KuaiZip_18{
+rule _#PUA_Block_KuaiZip_22{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -259,7 +313,7 @@ rule _#PUA_Block_KuaiZip_18{
 		((#a_80_0  & 1)*1+(#a_00_1  & 1)*1+(#a_80_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_80_6  & 1)*1) >=7
  
 }
-rule _#PUA_Block_KuaiZip_19{
+rule _#PUA_Block_KuaiZip_23{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -273,7 +327,7 @@ rule _#PUA_Block_KuaiZip_19{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_20{
+rule _#PUA_Block_KuaiZip_24{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 09 00 00 "
 		
@@ -291,7 +345,26 @@ rule _#PUA_Block_KuaiZip_20{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_00_7  & 1)*2+(#a_80_8  & 1)*2) >=4
  
 }
-rule _#PUA_Block_KuaiZip_21{
+rule _#PUA_Block_KuaiZip_25{
+	meta:
+		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 0a 00 00 "
+		
+	strings :
+		$a_80_0 = {73 74 61 74 2e 6b 70 7a 69 70 2e 63 6f 6d 2f 73 74 61 74 2f 69 6e 64 65 78 2e 70 68 70 } //stat.kpzip.com/stat/index.php  2
+		$a_80_1 = {69 2e 6b 70 7a 69 70 2e 63 6f 6d 2f 6e 2f 75 70 64 61 74 65 2f 6b 62 2e 78 6d 6c } //i.kpzip.com/n/update/kb.xml  1
+		$a_80_2 = {6b 7a 55 70 64 61 74 65 2e 43 50 72 6f 6d 70 74 55 70 67 72 61 64 65 2e 53 43 5f 43 4c 4f 53 45 } //kzUpdate.CPromptUpgrade.SC_CLOSE  1
+		$a_80_3 = {64 3a 5c 73 76 6e 72 6f 6f 74 5c 6b 75 61 69 7a 69 70 5c 74 72 75 6e 6b 5c 62 69 6e 5c 52 65 6c 65 61 73 65 5c 58 38 36 5c 55 70 64 61 74 65 2e 70 64 62 } //d:\svnroot\kuaizip\trunk\bin\Release\X86\Update.pdb  1
+		$a_80_4 = {50 65 72 72 79 53 68 61 64 6f 77 57 6e 64 } //PerryShadowWnd  1
+		$a_80_5 = {4b 7a 55 70 64 61 74 65 2e 65 78 65 } //KzUpdate.exe  1
+		$a_80_6 = {4b 75 61 69 7a 69 70 53 65 74 75 70 5f } //KuaizipSetup_  1
+		$a_80_7 = {55 6e 69 6e 73 74 2e 65 78 65 } //Uninst.exe  -100
+		$a_80_8 = {55 6e 69 6e 73 74 61 6c 6c 65 72 2e 65 78 65 } //Uninstaller.exe  -100
+		$a_80_9 = {55 6e 69 6e 73 74 61 6c 2e 65 78 65 } //Uninstal.exe  -100
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*-100+(#a_80_8  & 1)*-100+(#a_80_9  & 1)*-100) >=6
+ 
+}
+rule _#PUA_Block_KuaiZip_26{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 06 00 00 "
 		
@@ -306,7 +379,7 @@ rule _#PUA_Block_KuaiZip_21{
 		((#a_80_0  & 1)*1+(#a_02_1  & 1)*1+(#a_02_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=4
  
 }
-rule _#PUA_Block_KuaiZip_22{
+rule _#PUA_Block_KuaiZip_27{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,05 00 05 00 06 00 00 "
 		
@@ -321,7 +394,7 @@ rule _#PUA_Block_KuaiZip_22{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_23{
+rule _#PUA_Block_KuaiZip_28{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,05 00 05 00 05 00 00 "
 		
@@ -335,7 +408,7 @@ rule _#PUA_Block_KuaiZip_23{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_24{
+rule _#PUA_Block_KuaiZip_29{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,03 00 03 00 02 00 00 "
 		
@@ -346,7 +419,7 @@ rule _#PUA_Block_KuaiZip_24{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }
-rule _#PUA_Block_KuaiZip_25{
+rule _#PUA_Block_KuaiZip_30{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,07 00 07 00 06 00 00 "
 		
@@ -361,7 +434,7 @@ rule _#PUA_Block_KuaiZip_25{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=7
  
 }
-rule _#PUA_Block_KuaiZip_26{
+rule _#PUA_Block_KuaiZip_31{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,05 00 05 00 05 00 00 "
 		

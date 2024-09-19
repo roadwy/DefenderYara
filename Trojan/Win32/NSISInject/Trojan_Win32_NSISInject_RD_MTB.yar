@@ -21,6 +21,18 @@ rule Trojan_Win32_NSISInject_RD_MTB_2{
 }
 rule Trojan_Win32_NSISInject_RD_MTB_3{
 	meta:
+		description = "Trojan:Win32/NSISInject.RD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {64 79 6b 6b 65 72 65 5c 55 6e 69 6e 73 74 61 6c 6c 5c 6a 6f 73 69 61 73 73 } //2 dykkere\Uninstall\josiass
+		$a_01_1 = {6d 61 6e 69 66 65 73 74 61 74 69 6f 6e 65 72 5c 62 65 74 76 69 76 6c 65 2e 69 6e 69 } //1 manifestationer\betvivle.ini
+		$a_01_2 = {5c 4b 75 6c 74 75 72 66 6f 72 73 6b 65 6c 6c 65 5c 70 72 6f 67 72 61 6d 6d 72 2e 69 6e 69 } //1 \Kulturforskelle\programmr.ini
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=4
+ 
+}
+rule Trojan_Win32_NSISInject_RD_MTB_4{
+	meta:
 		description = "Trojan:Win32/NSISInject.RD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
@@ -29,7 +41,19 @@ rule Trojan_Win32_NSISInject_RD_MTB_3{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_Win32_NSISInject_RD_MTB_4{
+rule Trojan_Win32_NSISInject_RD_MTB_5{
+	meta:
+		description = "Trojan:Win32/NSISInject.RD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {57 69 6e 64 6f 77 73 5c 46 6f 74 6f 65 72 6e 65 73 5c 55 6e 69 6e 73 74 61 6c 6c 5c 49 6e 68 61 6c 61 74 6f 72 65 6e 32 32 34 } //2 Windows\Fotoernes\Uninstall\Inhalatoren224
+		$a_01_1 = {46 61 72 76 65 62 61 61 6e 64 73 6f 6d 73 6b 69 66 74 65 72 65 6e 2e 74 78 74 } //1 Farvebaandsomskifteren.txt
+		$a_01_2 = {41 70 70 6c 69 63 61 74 69 6f 6e 20 44 61 74 61 5c 63 61 6d 65 6c 68 61 69 72 2e 75 64 67 } //1 Application Data\camelhair.udg
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=4
+ 
+}
+rule Trojan_Win32_NSISInject_RD_MTB_6{
 	meta:
 		description = "Trojan:Win32/NSISInject.RD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -44,7 +68,7 @@ rule Trojan_Win32_NSISInject_RD_MTB_4{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=6
  
 }
-rule Trojan_Win32_NSISInject_RD_MTB_5{
+rule Trojan_Win32_NSISInject_RD_MTB_7{
 	meta:
 		description = "Trojan:Win32/NSISInject.RD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		

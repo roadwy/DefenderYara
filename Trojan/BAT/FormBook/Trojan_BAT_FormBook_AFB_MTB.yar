@@ -11,6 +11,16 @@ rule Trojan_BAT_FormBook_AFB_MTB{
 }
 rule Trojan_BAT_FormBook_AFB_MTB_2{
 	meta:
+		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_01_0 = {13 0a 11 0a 11 06 1f 16 5d 91 13 0b 11 04 11 06 91 11 0b 61 13 0c 11 06 18 58 17 59 11 05 5d } //1
+	condition:
+		((#a_01_0  & 1)*1) >=1
+ 
+}
+rule Trojan_BAT_FormBook_AFB_MTB_3{
+	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
 		
 	strings :
@@ -20,7 +30,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_2{
 		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_3{
+rule Trojan_BAT_FormBook_AFB_MTB_4{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -30,7 +40,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_3{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_4{
+rule Trojan_BAT_FormBook_AFB_MTB_5{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -40,7 +50,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_4{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_5{
+rule Trojan_BAT_FormBook_AFB_MTB_6{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -50,7 +60,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_5{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_6{
+rule Trojan_BAT_FormBook_AFB_MTB_7{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -60,7 +70,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_6{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_7{
+rule Trojan_BAT_FormBook_AFB_MTB_8{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -70,7 +80,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_7{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_8{
+rule Trojan_BAT_FormBook_AFB_MTB_9{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -80,7 +90,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_8{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_9{
+rule Trojan_BAT_FormBook_AFB_MTB_10{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -90,7 +100,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_9{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_10{
+rule Trojan_BAT_FormBook_AFB_MTB_11{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -100,7 +110,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_10{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_11{
+rule Trojan_BAT_FormBook_AFB_MTB_12{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
 		
@@ -111,7 +121,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_11{
 		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_12{
+rule Trojan_BAT_FormBook_AFB_MTB_13{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -121,7 +131,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_12{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_13{
+rule Trojan_BAT_FormBook_AFB_MTB_14{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
 		
@@ -132,7 +142,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_13{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_14{
+rule Trojan_BAT_FormBook_AFB_MTB_15{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -142,7 +152,7 @@ rule Trojan_BAT_FormBook_AFB_MTB_14{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_15{
+rule Trojan_BAT_FormBook_AFB_MTB_16{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -153,7 +163,18 @@ rule Trojan_BAT_FormBook_AFB_MTB_15{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_16{
+rule Trojan_BAT_FormBook_AFB_MTB_17{
+	meta:
+		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {16 13 06 2b 69 00 02 09 11 06 28 ?? 00 00 06 13 07 02 11 06 08 28 ?? 00 00 06 13 08 02 07 11 08 08 28 ?? 00 00 06 13 09 02 07 11 06 08 11 07 11 09 28 ?? 00 00 06 13 0a 02 11 0a 28 } //2
+		$a_01_1 = {4a 00 61 00 70 00 61 00 6e 00 65 00 73 00 65 00 54 00 72 00 61 00 69 00 6e 00 65 00 72 00 } //1 JapaneseTrainer
+	condition:
+		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
+ 
+}
+rule Trojan_BAT_FormBook_AFB_MTB_18{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -167,7 +188,18 @@ rule Trojan_BAT_FormBook_AFB_MTB_16{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_17{
+rule Trojan_BAT_FormBook_AFB_MTB_19{
+	meta:
+		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
+		
+	strings :
+		$a_01_0 = {5d 08 58 08 5d 13 0b 16 13 17 2b 29 00 11 17 13 19 11 19 13 18 11 18 2c 09 2b 00 11 18 17 2e 08 2b 0c 11 0b 13 0b 2b 06 11 0b 13 0b 2b 00 00 11 17 17 58 13 17 11 17 18 fe 04 } //1
+		$a_01_1 = {16 13 1b 2b 29 00 11 1b 13 1d 11 1d 13 1c 11 1c 2c 09 2b 00 11 1c 17 2e 08 2b 0c 11 13 13 13 2b 06 11 13 13 13 2b 00 00 11 1b 17 58 13 1b 11 1b 18 fe 04 } //1
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
+ 
+}
+rule Trojan_BAT_FormBook_AFB_MTB_20{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -178,7 +210,29 @@ rule Trojan_BAT_FormBook_AFB_MTB_17{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
 }
-rule Trojan_BAT_FormBook_AFB_MTB_18{
+rule Trojan_BAT_FormBook_AFB_MTB_21{
+	meta:
+		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {16 13 06 2b 68 16 13 07 2b 53 07 11 06 11 07 6f ?? 00 00 0a 13 08 08 12 08 28 ?? 00 00 0a 6f ?? 00 00 0a 08 6f ?? 00 00 0a 20 00 b8 00 00 2f 0d 08 12 08 28 ?? 00 00 0a 6f ?? 00 00 0a 08 6f ?? 00 00 0a 20 00 b8 00 00 2f 0d 08 12 08 28 ?? 00 00 0a 6f ?? 00 00 0a 11 07 17 58 13 07 11 07 07 } //2
+		$a_01_1 = {57 68 69 73 70 65 72 2e 50 72 6f 70 65 72 74 69 65 73 2e 52 65 73 6f 75 72 63 65 73 } //1 Whisper.Properties.Resources
+	condition:
+		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
+ 
+}
+rule Trojan_BAT_FormBook_AFB_MTB_22{
+	meta:
+		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {0c 16 13 04 2b 68 16 13 05 2b 53 07 11 04 11 05 6f ?? 00 00 0a 13 06 08 12 06 28 ?? 00 00 0a 6f ?? 00 00 0a 08 6f ?? 00 00 0a 20 00 40 01 00 2f 0d 08 12 06 28 ?? 00 00 0a 6f ?? 00 00 0a 08 6f ?? 00 00 0a 20 00 40 01 00 2f 0d 08 12 06 28 } //2
+		$a_01_1 = {56 00 50 00 5f 00 4c 00 61 00 62 00 32 00 5f 00 66 00 69 00 6e 00 61 00 6c 00 2e 00 50 00 72 00 6f 00 70 00 65 00 72 00 74 00 69 00 65 00 73 00 2e 00 52 00 65 00 73 00 6f 00 75 00 72 00 63 00 65 00 73 00 } //1 VP_Lab2_final.Properties.Resources
+	condition:
+		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
+ 
+}
+rule Trojan_BAT_FormBook_AFB_MTB_23{
 	meta:
 		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 05 00 00 "
 		
@@ -190,5 +244,16 @@ rule Trojan_BAT_FormBook_AFB_MTB_18{
 		$a_01_4 = {47 65 74 4d 61 6e 69 66 65 73 74 52 65 73 6f 75 72 63 65 53 74 72 65 61 6d } //1 GetManifestResourceStream
 	condition:
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=8
+ 
+}
+rule Trojan_BAT_FormBook_AFB_MTB_24{
+	meta:
+		description = "Trojan:BAT/FormBook.AFB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {25 16 16 02 08 91 28 ?? 00 00 0a 25 17 16 02 08 17 58 91 28 ?? 00 00 0a 0d 06 09 28 ?? 00 00 06 13 04 07 08 11 04 16 16 28 ?? 00 00 0a d2 9c 07 08 17 58 11 04 17 16 28 } //2
+		$a_01_1 = {69 00 6e 00 76 00 65 00 73 00 74 00 64 00 69 00 72 00 65 00 63 00 74 00 69 00 6e 00 73 00 75 00 72 00 61 00 6e 00 63 00 65 00 2e 00 63 00 6f 00 6d 00 2f 00 61 00 73 00 73 00 75 00 65 00 6e 00 63 00 65 00 2f 00 6c 00 69 00 74 00 65 00 73 00 6f 00 6c 00 69 00 64 00 43 00 68 00 61 00 2f 00 43 00 68 00 69 00 65 00 66 00 2e 00 68 00 65 00 } //1 investdirectinsurance.com/assuence/litesolidCha/Chief.he
+	condition:
+		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }

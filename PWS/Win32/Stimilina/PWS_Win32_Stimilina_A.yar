@@ -1,25 +1,6 @@
 
 rule PWS_Win32_Stimilina_A{
 	meta:
-		description = "PWS:Win32/Stimilina.A,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 0a 00 00 "
-		
-	strings :
-		$a_80_0 = {53 4f 46 54 57 41 52 45 5c 56 61 6c 76 65 5c 53 74 65 61 6d } //SOFTWARE\Valve\Steam  1
-		$a_80_1 = {53 74 65 61 6d 50 61 74 68 } //SteamPath  1
-		$a_80_2 = {2f 53 74 65 61 6d 41 70 70 44 61 74 61 2e 76 64 66 } ///SteamAppData.vdf  1
-		$a_80_3 = {73 73 66 6e 2a } //ssfn*  2
-		$a_80_4 = {73 74 65 61 6d 63 6f 6d 6e 75 6e 69 74 79 } //steamcomnunity  5
-		$a_80_5 = {73 74 65 61 6d 63 6f 6d 6d 75 6d 6e 69 74 74 79 } //steamcommumnitty  5
-		$a_80_6 = {73 74 65 61 6d 63 6f 6d 6d 75 6e 6e 69 74 74 79 } //steamcommunnitty  5
-		$a_00_7 = {73 74 65 61 6d 72 6f 6d 6d 75 6e 69 74 79 2e 63 6f 6d } //5 steamrommunity.com
-		$a_00_8 = {73 74 65 61 7a 6f 6d 6d 75 6e 69 74 79 2e 63 6f 6d } //5 steazommunity.com
-		$a_80_9 = {2f 73 73 66 6e 55 70 6c 6f 61 64 } ///ssfnUpload  5
-	condition:
-		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*2+(#a_80_4  & 1)*5+(#a_80_5  & 1)*5+(#a_80_6  & 1)*5+(#a_00_7  & 1)*5+(#a_00_8  & 1)*5+(#a_80_9  & 1)*5) >=8
- 
-}
-rule PWS_Win32_Stimilina_A_2{
-	meta:
 		description = "PWS:Win32/Stimilina.A,SIGNATURE_TYPE_PEHSTR,04 00 04 00 05 00 00 "
 		
 	strings :

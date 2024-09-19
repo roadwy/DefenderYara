@@ -21,6 +21,16 @@ rule Trojan_Win32_Filecoder_ARA_MTB_2{
 }
 rule Trojan_Win32_Filecoder_ARA_MTB_3{
 	meta:
+		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 "
+		
+	strings :
+		$a_01_0 = {32 04 33 f7 d0 88 04 33 83 c6 01 8b 44 24 18 83 d7 00 31 fa 31 f0 09 c2 75 be } //2
+	condition:
+		((#a_01_0  & 1)*2) >=2
+ 
+}
+rule Trojan_Win32_Filecoder_ARA_MTB_4{
+	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 "
 		
 	strings :
@@ -31,7 +41,7 @@ rule Trojan_Win32_Filecoder_ARA_MTB_3{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*2+(#a_80_2  & 1)*2) >=6
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_4{
+rule Trojan_Win32_Filecoder_ARA_MTB_5{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -43,7 +53,7 @@ rule Trojan_Win32_Filecoder_ARA_MTB_4{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_80_2  & 1)*2) >=6
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_5{
+rule Trojan_Win32_Filecoder_ARA_MTB_6{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -55,7 +65,7 @@ rule Trojan_Win32_Filecoder_ARA_MTB_5{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2) >=6
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_6{
+rule Trojan_Win32_Filecoder_ARA_MTB_7{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -67,7 +77,7 @@ rule Trojan_Win32_Filecoder_ARA_MTB_6{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_80_2  & 1)*2) >=6
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_7{
+rule Trojan_Win32_Filecoder_ARA_MTB_8{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 "
 		
@@ -80,7 +90,7 @@ rule Trojan_Win32_Filecoder_ARA_MTB_7{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2+(#a_01_3  & 1)*2) >=8
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_8{
+rule Trojan_Win32_Filecoder_ARA_MTB_9{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 "
 		
@@ -93,7 +103,7 @@ rule Trojan_Win32_Filecoder_ARA_MTB_8{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*2+(#a_80_2  & 1)*2+(#a_80_3  & 1)*2) >=8
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_9{
+rule Trojan_Win32_Filecoder_ARA_MTB_10{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 05 00 00 "
 		
@@ -107,7 +117,7 @@ rule Trojan_Win32_Filecoder_ARA_MTB_9{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2+(#a_01_3  & 1)*2+(#a_01_4  & 1)*2) >=10
  
 }
-rule Trojan_Win32_Filecoder_ARA_MTB_10{
+rule Trojan_Win32_Filecoder_ARA_MTB_11{
 	meta:
 		description = "Trojan:Win32/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 "
 		

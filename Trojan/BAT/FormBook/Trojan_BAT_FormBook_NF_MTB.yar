@@ -1,16 +1,6 @@
 
 rule Trojan_BAT_FormBook_NF_MTB{
 	meta:
-		description = "Trojan:BAT/FormBook.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 01 00 00 "
-		
-	strings :
-		$a_03_0 = {14 91 08 11 ?? 08 8e 69 5d 91 61 d2 9c 00 11 } //5
-	condition:
-		((#a_03_0  & 1)*5) >=5
- 
-}
-rule Trojan_BAT_FormBook_NF_MTB_2{
-	meta:
 		description = "Trojan:BAT/FormBook.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 "
 		
 	strings :
@@ -18,6 +8,18 @@ rule Trojan_BAT_FormBook_NF_MTB_2{
 		$a_03_1 = {1f 09 2e 32 03 07 59 28 ?? 00 00 0a 17 30 0b 04 08 } //5
 	condition:
 		((#a_01_0  & 1)*5+(#a_03_1  & 1)*5) >=10
+ 
+}
+rule Trojan_BAT_FormBook_NF_MTB_2{
+	meta:
+		description = "Trojan:BAT/FormBook.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {4a 6f 67 6f 44 61 73 50 61 6c 61 76 72 61 73 } //2 JogoDasPalavras
+		$a_01_1 = {24 38 34 35 66 61 37 65 62 2d 32 61 36 30 2d 34 38 63 35 2d 39 35 32 34 2d 32 32 64 31 62 39 64 63 65 39 34 36 } //2 $845fa7eb-2a60-48c5-9524-22d1b9dce946
+		$a_01_2 = {46 72 6d 46 6f 72 63 61 2e 72 65 73 6f 75 72 63 65 73 } //2 FrmForca.resources
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2) >=6
  
 }
 rule Trojan_BAT_FormBook_NF_MTB_3{

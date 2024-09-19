@@ -11,6 +11,16 @@ rule Trojan_BAT_Remcos_ARM_MTB{
 }
 rule Trojan_BAT_Remcos_ARM_MTB_2{
 	meta:
+		description = "Trojan:BAT/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {16 13 0c 2b 21 00 11 07 11 0c 11 06 08 11 06 6f ?? 00 00 0a 6f ?? 00 00 0a 6f ?? 00 00 0a 9d 00 11 0c 17 58 13 0c 11 0c 11 07 8e 69 fe 04 13 0d 11 0d 2d d1 } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}
+rule Trojan_BAT_Remcos_ARM_MTB_3{
+	meta:
 		description = "Trojan:BAT/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
@@ -20,7 +30,7 @@ rule Trojan_BAT_Remcos_ARM_MTB_2{
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
 }
-rule Trojan_BAT_Remcos_ARM_MTB_3{
+rule Trojan_BAT_Remcos_ARM_MTB_4{
 	meta:
 		description = "Trojan:BAT/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -31,7 +41,7 @@ rule Trojan_BAT_Remcos_ARM_MTB_3{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule Trojan_BAT_Remcos_ARM_MTB_4{
+rule Trojan_BAT_Remcos_ARM_MTB_5{
 	meta:
 		description = "Trojan:BAT/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 03 00 00 "
 		
@@ -43,7 +53,17 @@ rule Trojan_BAT_Remcos_ARM_MTB_4{
 		((#a_01_0  & 1)*2+(#a_03_1  & 1)*2+(#a_01_2  & 1)*1) >=5
  
 }
-rule Trojan_BAT_Remcos_ARM_MTB_5{
+rule Trojan_BAT_Remcos_ARM_MTB_6{
+	meta:
+		description = "Trojan:BAT/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_01_0 = {16 13 12 2b 63 00 11 07 17 58 20 ff 00 00 00 5f 13 07 11 05 11 04 11 07 95 58 20 ff 00 00 00 5f 13 05 11 04 11 07 95 13 06 11 04 11 07 11 04 11 05 95 9e 11 04 11 05 11 06 9e 11 04 11 07 95 11 04 11 05 95 58 20 ff 00 00 00 5f 13 13 11 04 11 13 95 d2 13 14 09 11 12 07 11 12 91 11 14 61 d2 9c 00 11 12 17 58 13 12 11 12 09 8e 69 } //1
+	condition:
+		((#a_01_0  & 1)*1) >=1
+ 
+}
+rule Trojan_BAT_Remcos_ARM_MTB_7{
 	meta:
 		description = "Trojan:BAT/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -54,7 +74,7 @@ rule Trojan_BAT_Remcos_ARM_MTB_5{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule Trojan_BAT_Remcos_ARM_MTB_6{
+rule Trojan_BAT_Remcos_ARM_MTB_8{
 	meta:
 		description = "Trojan:BAT/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
@@ -70,5 +90,21 @@ rule Trojan_BAT_Remcos_ARM_MTB_6{
 		$a_01_8 = {65 30 34 63 63 62 37 65 2d 64 38 32 64 2d 34 33 63 37 2d 39 39 34 36 2d 31 33 38 34 36 39 65 66 38 33 30 63 } //1 e04ccb7e-d82d-43c7-9946-138469ef830c
 	condition:
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1) >=9
+ 
+}
+rule Trojan_BAT_Remcos_ARM_MTB_9{
+	meta:
+		description = "Trojan:BAT/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 07 00 00 "
+		
+	strings :
+		$a_01_0 = {53 6f 6c 61 72 61 42 6f 6f 74 73 74 72 61 70 70 65 72 5c 62 69 6e 5c 52 65 6c 65 61 73 65 5c 42 6f 6f 74 73 74 72 61 70 70 65 72 2e 70 64 62 } //2 SolaraBootstrapper\bin\Release\Bootstrapper.pdb
+		$a_01_1 = {4e 00 65 00 77 00 20 00 62 00 6f 00 6f 00 74 00 73 00 74 00 72 00 61 00 70 00 70 00 65 00 72 00 20 00 64 00 6f 00 77 00 6e 00 6c 00 6f 00 61 00 64 00 65 00 64 00 } //2 New bootstrapper downloaded
+		$a_01_2 = {2f 00 73 00 69 00 6c 00 65 00 6e 00 74 00 20 00 2f 00 69 00 6e 00 73 00 74 00 61 00 6c 00 6c 00 } //1 /silent /install
+		$a_01_3 = {57 00 65 00 62 00 56 00 69 00 65 00 77 00 32 00 20 00 72 00 75 00 6e 00 74 00 69 00 6d 00 65 00 20 00 69 00 6e 00 73 00 74 00 61 00 6c 00 6c 00 65 00 64 00 20 00 73 00 75 00 63 00 63 00 65 00 73 00 73 00 66 00 75 00 6c 00 6c 00 79 00 } //1 WebView2 runtime installed successfully
+		$a_01_4 = {2f 00 69 00 6e 00 73 00 74 00 61 00 6c 00 6c 00 20 00 2f 00 71 00 75 00 69 00 65 00 74 00 20 00 2f 00 6e 00 6f 00 72 00 65 00 73 00 74 00 61 00 72 00 74 00 } //1 /install /quiet /norestart
+		$a_01_5 = {6b 00 69 00 6c 00 6c 00 69 00 6e 00 67 00 20 00 53 00 6f 00 6c 00 61 00 72 00 61 00 2e 00 65 00 78 00 65 00 20 00 70 00 72 00 6f 00 63 00 65 00 73 00 73 00 } //1 killing Solara.exe process
+		$a_01_6 = {6b 00 69 00 6c 00 6c 00 69 00 6e 00 67 00 20 00 6e 00 6f 00 64 00 65 00 2e 00 65 00 78 00 65 00 20 00 70 00 72 00 6f 00 63 00 65 00 73 00 73 00 } //1 killing node.exe process
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=9
  
 }

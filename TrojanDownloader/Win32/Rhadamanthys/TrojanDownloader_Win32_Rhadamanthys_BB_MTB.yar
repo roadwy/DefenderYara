@@ -1,7 +1,7 @@
 
 rule TrojanDownloader_Win32_Rhadamanthys_BB_MTB{
 	meta:
-		description = "TrojanDownloader:Win32/Rhadamanthys.BB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,13 00 13 00 0b 00 00 "
+		description = "TrojanDownloader:Win32/Rhadamanthys.BB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 0b 00 00 "
 		
 	strings :
 		$a_80_0 = {74 65 78 74 62 69 6e 2e 6e 65 74 2f 72 61 77 2f } //textbin.net/raw/  10
@@ -16,6 +16,6 @@ rule TrojanDownloader_Win32_Rhadamanthys_BB_MTB{
 		$a_81_9 = {70 73 74 6f 72 65 63 } //1 pstorec
 		$a_81_10 = {63 6d 64 76 72 74 36 34 } //1 cmdvrt64
 	condition:
-		((#a_80_0  & 1)*10+(#a_01_1  & 1)*10+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1+(#a_81_6  & 1)*1+(#a_81_7  & 1)*1+(#a_81_8  & 1)*1+(#a_81_9  & 1)*1+(#a_81_10  & 1)*1) >=19
+		((#a_80_0  & 1)*10+(#a_01_1  & 1)*10+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1+(#a_81_6  & 1)*1+(#a_81_7  & 1)*1+(#a_81_8  & 1)*1+(#a_81_9  & 1)*1+(#a_81_10  & 1)*1) >=18
  
 }

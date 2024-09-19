@@ -1,7 +1,7 @@
 
-rule TrojanDownloader_BAT_zgRAT_F_MTB{
+rule TrojanDownloader_BAT_ZgRAT_F_MTB{
 	meta:
-		description = "TrojanDownloader:BAT/zgRAT.F!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 04 00 00 "
+		description = "TrojanDownloader:BAT/ZgRAT.F!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 04 00 00 "
 		
 	strings :
 		$a_03_0 = {06 11 02 72 ?? 00 00 70 28 ?? 00 00 06 28 ?? 00 00 2b 28 ?? 00 00 06 26 20 } //2

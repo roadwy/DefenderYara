@@ -1,7 +1,7 @@
 
-rule Trojan_BAT_zgRat_NZA_MTB{
+rule Trojan_BAT_ZgRAT_NZA_MTB{
 	meta:
-		description = "Trojan:BAT/zgRat.NZA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
+		description = "Trojan:BAT/ZgRAT.NZA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
 	strings :
 		$a_03_0 = {28 0f 00 00 0a 28 ?? ?? ?? 06 6f ?? ?? ?? 0a 28 ?? ?? ?? 0a 28 ?? ?? ?? 06 0a dd ?? ?? ?? 00 } //5
@@ -10,9 +10,9 @@ rule Trojan_BAT_zgRat_NZA_MTB{
 		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1) >=6
  
 }
-rule Trojan_BAT_zgRat_NZA_MTB_2{
+rule Trojan_BAT_ZgRAT_NZA_MTB_2{
 	meta:
-		description = "Trojan:BAT/zgRat.NZA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
+		description = "Trojan:BAT/ZgRAT.NZA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
 	strings :
 		$a_03_0 = {28 0c 00 00 06 0a 28 ?? 00 00 0a 06 6f ?? 00 00 0a 28 ?? 00 00 06 75 ?? 00 00 1b 0b 07 16 07 8e 69 28 10 00 00 0a 07 } //5

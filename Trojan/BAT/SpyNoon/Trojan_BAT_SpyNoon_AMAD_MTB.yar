@@ -1,6 +1,16 @@
 
 rule Trojan_BAT_SpyNoon_AMAD_MTB{
 	meta:
+		description = "Trojan:BAT/SpyNoon.AMAD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {95 58 d2 20 ff 00 00 00 [0-1e] 20 ff 00 00 00 5f 6a 61 d2 9c 11 ?? 17 6a 58 13 [0-0a] 8e 69 17 59 6a } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}
+rule Trojan_BAT_SpyNoon_AMAD_MTB_2{
+	meta:
 		description = "Trojan:BAT/SpyNoon.AMAD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :

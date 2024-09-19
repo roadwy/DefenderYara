@@ -1,6 +1,20 @@
 
 rule Trojan_Win32_GuLoader_DA_MTB{
 	meta:
+		description = "Trojan:Win32/GuLoader.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_81_0 = {69 73 62 6a 65 72 67 65 74 73 5c 62 72 61 6e 64 69 6e 73 70 65 6b 74 72 65 72 6e 65 5c 72 65 67 6e 65 6e 73 } //1 isbjergets\brandinspektrerne\regnens
+		$a_81_1 = {4c 61 75 72 62 72 6b 72 61 6e 73 65 6e 65 2e 70 72 69 } //1 Laurbrkransene.pri
+		$a_81_2 = {53 76 65 6c 6e 69 6e 67 65 72 73 2e 69 6e 69 } //1 Svelningers.ini
+		$a_81_3 = {6f 70 66 72 65 6c 73 65 73 5c 74 69 70 70 65 6c 61 64 5c 67 65 6e 65 72 61 6c 69 6e 64 65 72 73 } //1 opfrelses\tippelad\generalinders
+		$a_81_4 = {67 65 72 6d 61 79 6e 65 2e 74 78 74 } //1 germayne.txt
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1) >=5
+ 
+}
+rule Trojan_Win32_GuLoader_DA_MTB_2{
+	meta:
 		description = "Trojan:Win32/GuLoader.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
 	strings :

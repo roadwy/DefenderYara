@@ -1,7 +1,7 @@
 
-rule Trojan_BAT_zgRAT_Y_MTB{
+rule Trojan_BAT_ZgRAT_Y_MTB{
 	meta:
-		description = "Trojan:BAT/zgRAT.Y!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 "
+		description = "Trojan:BAT/ZgRAT.Y!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 "
 		
 	strings :
 		$a_03_0 = {20 00 04 00 00 8d ?? 00 00 01 13 01 20 } //2

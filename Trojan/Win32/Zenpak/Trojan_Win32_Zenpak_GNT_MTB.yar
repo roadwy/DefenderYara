@@ -9,3 +9,13 @@ rule Trojan_Win32_Zenpak_GNT_MTB{
 		((#a_03_0  & 1)*10) >=10
  
 }
+rule Trojan_Win32_Zenpak_GNT_MTB_2{
+	meta:
+		description = "Trojan:Win32/Zenpak.GNT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {55 89 e5 8a 45 0c 8a 4d 08 8b 15 ?? ?? ?? ?? 30 c8 81 c2 ?? ?? ?? ?? 89 15 ?? ?? ?? ?? a2 ?? ?? ?? ?? c7 05 ?? ?? ?? ?? a8 06 00 00 0f b6 c0 } //10
+	condition:
+		((#a_03_0  & 1)*10) >=10
+ 
+}

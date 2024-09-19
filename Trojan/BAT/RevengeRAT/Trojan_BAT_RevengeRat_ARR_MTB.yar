@@ -11,6 +11,16 @@ rule Trojan_BAT_RevengeRat_ARR_MTB{
 }
 rule Trojan_BAT_RevengeRat_ARR_MTB_2{
 	meta:
+		description = "Trojan:BAT/RevengeRat.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {18 13 07 28 ?? 00 00 0a 0d 19 13 07 17 28 ?? 00 00 0a 1f 20 17 19 15 28 ?? 00 00 0a 1a 13 07 17 28 ?? 00 00 0a b7 28 ?? 00 00 0a 0a 1b 13 07 17 12 00 15 6a 16 28 } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}
+rule Trojan_BAT_RevengeRat_ARR_MTB_3{
+	meta:
 		description = "Trojan:BAT/RevengeRat.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
@@ -21,7 +31,7 @@ rule Trojan_BAT_RevengeRat_ARR_MTB_2{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule Trojan_BAT_RevengeRat_ARR_MTB_3{
+rule Trojan_BAT_RevengeRat_ARR_MTB_4{
 	meta:
 		description = "Trojan:BAT/RevengeRat.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
 		

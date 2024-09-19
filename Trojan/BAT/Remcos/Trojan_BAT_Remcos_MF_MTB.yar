@@ -15,3 +15,13 @@ rule Trojan_BAT_Remcos_MF_MTB{
 		((#a_01_0  & 1)*10+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=16
  
 }
+rule Trojan_BAT_Remcos_MF_MTB_2{
+	meta:
+		description = "Trojan:BAT/Remcos.MF!MTB,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_01_0 = {11 07 5f 13 08 07 09 11 08 d2 9c } //1
+	condition:
+		((#a_01_0  & 1)*1) >=1
+ 
+}

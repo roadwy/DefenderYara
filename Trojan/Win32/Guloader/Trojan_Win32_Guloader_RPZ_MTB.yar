@@ -56,6 +56,20 @@ rule Trojan_Win32_Guloader_RPZ_MTB_5{
 		description = "Trojan:Win32/Guloader.RPZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
+		$a_01_0 = {54 65 6e 6e 69 73 65 6e 73 5c 6e 6f 6e 6d 61 6c 6c 65 61 62 6e 65 73 73 } //1 Tennisens\nonmalleabness
+		$a_01_1 = {75 6e 69 6d 6d 6f 72 74 61 6c 69 73 65 64 } //1 unimmortalised
+		$a_01_2 = {6c 65 74 68 61 6c 69 74 79 5c 64 69 61 73 73 65 6e 65 } //1 lethality\diassene
+		$a_01_3 = {72 65 67 72 69 70 70 65 64 5c 6c 69 70 70 69 6e 67 73 2e 77 69 74 } //1 regripped\lippings.wit
+		$a_01_4 = {6b 76 61 64 72 75 70 65 6c } //1 kvadrupel
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
+ 
+}
+rule Trojan_Win32_Guloader_RPZ_MTB_6{
+	meta:
+		description = "Trojan:Win32/Guloader.RPZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
 		$a_01_0 = {72 65 67 69 6f 6e 70 6c 61 6e 72 65 74 6e 69 6e 67 73 6c 69 6e 6a 65 72 } //1 regionplanretningslinjer
 		$a_01_1 = {73 6c 65 74 68 76 61 72 72 65 72 73 } //1 slethvarrers
 		$a_01_2 = {67 79 6e 61 6e 64 72 6f 6d 6f 72 70 68 79 } //1 gynandromorphy
@@ -65,7 +79,35 @@ rule Trojan_Win32_Guloader_RPZ_MTB_5{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule Trojan_Win32_Guloader_RPZ_MTB_6{
+rule Trojan_Win32_Guloader_RPZ_MTB_7{
+	meta:
+		description = "Trojan:Win32/Guloader.RPZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {6f 76 65 72 77 69 74 68 65 72 65 64 2e 76 65 72 } //10 overwithered.ver
+		$a_01_1 = {66 61 72 76 65 68 61 6e 64 6c 65 6e 73 2e 6d 65 74 } //1 farvehandlens.met
+		$a_01_2 = {43 61 72 64 69 6e 61 6c 73 68 69 70 5c 69 6e 64 74 72 6e 67 65 6e 64 65 2e 74 69 6c } //1 Cardinalship\indtrngende.til
+		$a_01_3 = {53 74 6f 72 6d 65 6e 64 65 5c 50 65 6a 6c 65 74 31 38 34 } //1 Stormende\Pejlet184
+		$a_01_4 = {69 6d 6d 75 6e 6f 6c 6f 67 69 73 2e 42 79 67 } //1 immunologis.Byg
+	condition:
+		((#a_01_0  & 1)*10+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=14
+ 
+}
+rule Trojan_Win32_Guloader_RPZ_MTB_8{
+	meta:
+		description = "Trojan:Win32/Guloader.RPZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {64 65 6c 61 79 65 72 5c 48 6f 72 74 65 6e 73 69 61 65 72 6e 65 } //1 delayer\Hortensiaerne
+		$a_01_1 = {72 68 65 73 75 73 70 6f 73 69 74 69 76 65 5c 55 6e 69 6e 73 74 61 6c 6c 5c 6f 6b 74 6f 62 65 72 65 6e 73 } //1 rhesuspositive\Uninstall\oktoberens
+		$a_01_2 = {53 65 72 72 69 65 64 6e 65 73 73 5c 55 6e 69 6e 73 74 61 6c 6c 5c 65 72 69 6e 61 63 65 75 73 } //1 Serriedness\Uninstall\erinaceus
+		$a_01_3 = {47 74 65 73 65 6e 67 65 6e 65 73 } //1 Gtesengenes
+		$a_01_4 = {42 72 61 6e 64 73 6b 61 64 65 72 73 31 33 38 } //1 Brandskaders138
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
+ 
+}
+rule Trojan_Win32_Guloader_RPZ_MTB_9{
 	meta:
 		description = "Trojan:Win32/Guloader.RPZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -79,7 +121,7 @@ rule Trojan_Win32_Guloader_RPZ_MTB_6{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule Trojan_Win32_Guloader_RPZ_MTB_7{
+rule Trojan_Win32_Guloader_RPZ_MTB_10{
 	meta:
 		description = "Trojan:Win32/Guloader.RPZ!MTB,SIGNATURE_TYPE_PEHSTR,08 00 08 00 08 00 00 "
 		

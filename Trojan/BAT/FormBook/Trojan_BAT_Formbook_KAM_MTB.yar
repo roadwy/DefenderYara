@@ -1,0 +1,11 @@
+
+rule Trojan_BAT_Formbook_KAM_MTB{
+	meta:
+		description = "Trojan:BAT/Formbook.KAM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {5f 95 d2 13 ?? ?? ?? ?? ?? 61 13 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 59 [0-0e] 20 ff 00 00 00 5f d2 9c } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}

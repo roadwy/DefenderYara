@@ -34,13 +34,24 @@ rule Trojan_BAT_Remcos_ARO_MTB_4{
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
+		$a_03_0 = {7a 06 16 07 06 8e 69 28 ?? 00 00 0a 07 06 8e 69 1f 10 12 02 28 } //1
+		$a_03_1 = {0c 08 07 17 73 1f 00 00 0a 0d 02 28 ?? 00 00 06 13 04 09 11 04 16 11 04 8e 69 6f ?? 00 00 0a 08 13 05 } //1
+	condition:
+		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
+ 
+}
+rule Trojan_BAT_Remcos_ARO_MTB_5{
+	meta:
+		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
+		
+	strings :
 		$a_01_0 = {0b 16 0c 2b 15 00 06 08 06 08 91 07 08 07 8e 69 5d 93 61 d2 9c 00 08 17 58 0c 08 06 8e 69 fe 04 } //1
 		$a_03_1 = {a2 25 1a 11 18 a2 25 1b 72 ?? ?? ?? 70 a2 25 1c 11 0e a2 25 1d 11 08 a2 25 1e 11 0d a2 25 1f 09 11 13 a2 28 } //1
 	condition:
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
 }
-rule Trojan_BAT_Remcos_ARO_MTB_5{
+rule Trojan_BAT_Remcos_ARO_MTB_6{
 	meta:
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
 		
@@ -51,7 +62,7 @@ rule Trojan_BAT_Remcos_ARO_MTB_5{
 		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }
-rule Trojan_BAT_Remcos_ARO_MTB_6{
+rule Trojan_BAT_Remcos_ARO_MTB_7{
 	meta:
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -62,7 +73,7 @@ rule Trojan_BAT_Remcos_ARO_MTB_6{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
 }
-rule Trojan_BAT_Remcos_ARO_MTB_7{
+rule Trojan_BAT_Remcos_ARO_MTB_8{
 	meta:
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -73,7 +84,7 @@ rule Trojan_BAT_Remcos_ARO_MTB_7{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule Trojan_BAT_Remcos_ARO_MTB_8{
+rule Trojan_BAT_Remcos_ARO_MTB_9{
 	meta:
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -84,7 +95,7 @@ rule Trojan_BAT_Remcos_ARO_MTB_8{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule Trojan_BAT_Remcos_ARO_MTB_9{
+rule Trojan_BAT_Remcos_ARO_MTB_10{
 	meta:
 		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -92,5 +103,16 @@ rule Trojan_BAT_Remcos_ARO_MTB_9{
 		$a_03_0 = {0c 00 07 13 07 16 13 08 2b 43 11 07 11 08 9a 0d 00 09 6f ?? ?? ?? 0a 72 a5 00 00 70 6f ?? ?? ?? 0a 16 fe 01 13 09 11 09 2d 1c 00 12 02 08 8e 69 17 58 28 ?? ?? ?? 2b 00 08 08 8e 69 17 59 09 6f ?? ?? ?? 0a a2 00 00 11 08 17 58 13 08 11 08 11 07 8e 69 fe 04 13 09 11 09 2d af } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
+ 
+}
+rule Trojan_BAT_Remcos_ARO_MTB_11{
+	meta:
+		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {5d 91 1e 5d 0b 02 7b ?? 00 00 04 06 18 58 02 7b ?? 00 00 04 5d 91 0c 02 7b ?? 00 00 04 06 19 58 02 7b ?? 00 00 04 5d 91 0d 02 03 06 91 28 } //2
+		$a_01_1 = {69 00 6e 00 76 00 65 00 73 00 74 00 64 00 69 00 72 00 65 00 63 00 74 00 69 00 6e 00 73 00 75 00 72 00 61 00 6e 00 63 00 65 00 2e 00 63 00 6f 00 6d 00 } //1 investdirectinsurance.com
+	condition:
+		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }

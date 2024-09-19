@@ -4,7 +4,7 @@ rule Trojan_Win32_Remcos_ARM_MTB{
 		description = "Trojan:Win32/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_01_0 = {86 0e 0a 01 01 b9 6c 01 01 01 67 8a 86 e9 e7 00 00 ba 66 01 01 01 67 8a 8e eb e7 00 00 bb 73 01 01 01 67 8a 96 ed e7 } //1
+		$a_01_0 = {8b 04 8d a0 01 43 00 8b f0 81 e6 ff 00 00 00 c1 e8 08 33 04 b5 a0 05 43 00 41 89 04 8d 9c 05 43 00 3b ca } //1
 	condition:
 		((#a_01_0  & 1)*1) >=1
  
@@ -14,12 +14,32 @@ rule Trojan_Win32_Remcos_ARM_MTB_2{
 		description = "Trojan:Win32/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
+		$a_01_0 = {86 0e 0a 01 01 b9 6c 01 01 01 67 8a 86 e9 e7 00 00 ba 66 01 01 01 67 8a 8e eb e7 00 00 bb 73 01 01 01 67 8a 96 ed e7 } //1
+	condition:
+		((#a_01_0  & 1)*1) >=1
+ 
+}
+rule Trojan_Win32_Remcos_ARM_MTB_3{
+	meta:
+		description = "Trojan:Win32/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
 		$a_03_0 = {8b d8 03 5d a4 6a 00 e8 ?? ?? ?? ?? 2b d8 8b 45 d4 31 18 83 45 ec 04 6a 00 e8 ?? ?? ?? ?? 83 c0 04 01 45 d4 8b 45 ec 3b 45 d0 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_Win32_Remcos_ARM_MTB_3{
+rule Trojan_Win32_Remcos_ARM_MTB_4{
+	meta:
+		description = "Trojan:Win32/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_01_0 = {0d 54 5f 5f 33 36 34 37 39 35 33 38 31 39 80 03 00 00 02 00 0d 54 5f 5f 33 36 34 37 39 36 32 35 37 30 84 03 00 00 02 00 0d 54 5f 5f 33 } //1
+	condition:
+		((#a_01_0  & 1)*1) >=1
+ 
+}
+rule Trojan_Win32_Remcos_ARM_MTB_5{
 	meta:
 		description = "Trojan:Win32/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -29,7 +49,7 @@ rule Trojan_Win32_Remcos_ARM_MTB_3{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule Trojan_Win32_Remcos_ARM_MTB_4{
+rule Trojan_Win32_Remcos_ARM_MTB_6{
 	meta:
 		description = "Trojan:Win32/Remcos.ARM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		

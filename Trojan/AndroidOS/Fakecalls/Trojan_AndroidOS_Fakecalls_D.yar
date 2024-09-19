@@ -1,6 +1,17 @@
 
 rule Trojan_AndroidOS_Fakecalls_D{
 	meta:
+		description = "Trojan:AndroidOS/Fakecalls.D,SIGNATURE_TYPE_DEXHSTR_EXT,02 00 02 00 02 00 00 "
+		
+	strings :
+		$a_01_0 = {75 70 64 61 74 65 5f 68 75 68 75 } //1 update_huhu
+		$a_01_1 = {75 70 6c 6f 61 64 53 4d 53 46 69 6c 65 } //1 uploadSMSFile
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
+ 
+}
+rule Trojan_AndroidOS_Fakecalls_D_2{
+	meta:
 		description = "Trojan:AndroidOS/Fakecalls.D,SIGNATURE_TYPE_DEXHSTR_EXT,04 00 04 00 02 00 00 "
 		
 	strings :
@@ -10,7 +21,7 @@ rule Trojan_AndroidOS_Fakecalls_D{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2) >=4
  
 }
-rule Trojan_AndroidOS_Fakecalls_D_2{
+rule Trojan_AndroidOS_Fakecalls_D_3{
 	meta:
 		description = "Trojan:AndroidOS/Fakecalls.D,SIGNATURE_TYPE_DEXHSTR_EXT,05 00 05 00 04 00 00 "
 		
