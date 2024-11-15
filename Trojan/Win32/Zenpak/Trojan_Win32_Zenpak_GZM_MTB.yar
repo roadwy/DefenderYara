@@ -1,6 +1,16 @@
 
 rule Trojan_Win32_Zenpak_GZM_MTB{
 	meta:
+		description = "Trojan:Win32/Zenpak.GZM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {48 89 f0 50 8f 05 ?? ?? ?? ?? 83 f2 ?? 42 89 d0 31 1d ?? ?? ?? ?? 89 f8 50 8f 05 ?? ?? ?? ?? 89 2d ?? ?? ?? ?? 8d 05 ?? ?? ?? ?? ff d0 } //10
+	condition:
+		((#a_03_0  & 1)*10) >=10
+ 
+}
+rule Trojan_Win32_Zenpak_GZM_MTB_2{
+	meta:
 		description = "Trojan:Win32/Zenpak.GZM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 "
 		
 	strings :

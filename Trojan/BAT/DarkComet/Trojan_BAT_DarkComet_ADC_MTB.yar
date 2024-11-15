@@ -85,13 +85,24 @@ rule Trojan_BAT_DarkComet_ADC_MTB_9{
 		description = "Trojan:BAT/DarkComet.ADC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
 		
 	strings :
+		$a_01_0 = {16 02 50 8e b7 17 da 0c 0b 2b 37 02 50 07 02 50 8e b7 5d 02 50 07 02 50 8e b7 5d 91 03 07 03 8e b7 5d 91 61 02 50 07 17 d6 02 50 8e b7 5d 91 da 20 00 01 00 00 d6 20 00 01 00 00 5d b4 9c 07 17 d6 0b 07 08 31 c5 } //2
+		$a_01_1 = {54 00 68 00 65 00 45 00 6c 00 65 00 76 00 61 00 74 00 6f 00 72 00 2e 00 74 00 78 00 74 00 } //1 TheElevator.txt
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1) >=3
+ 
+}
+rule Trojan_BAT_DarkComet_ADC_MTB_10{
+	meta:
+		description = "Trojan:BAT/DarkComet.ADC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
+		
+	strings :
 		$a_03_0 = {02 06 17 da 17 6f ?? 00 00 0a 6f ?? 00 00 0a 16 93 13 0e 11 0e 28 ?? 00 00 0a 13 0f 11 0f 11 10 61 13 0d 38 6e 01 00 00 11 05 11 09 09 94 d6 20 00 01 00 00 5d 13 05 } //2
 		$a_01_1 = {11 09 09 94 13 0f 11 09 09 11 09 11 05 94 9e 11 09 11 05 11 0f 9e 11 09 11 09 09 94 11 09 11 05 94 d6 20 00 01 00 00 5d 94 13 10 fe 0c 01 00 6d 16 5f 16 fe 01 } //1
 	condition:
 		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }
-rule Trojan_BAT_DarkComet_ADC_MTB_10{
+rule Trojan_BAT_DarkComet_ADC_MTB_11{
 	meta:
 		description = "Trojan:BAT/DarkComet.ADC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
 		

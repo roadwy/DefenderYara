@@ -108,6 +108,34 @@ rule _#PUA_Block_Softcnapp_8{
 }
 rule _#PUA_Block_Softcnapp_9{
 	meta:
+		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_80_0 = {62 61 63 6b 73 74 61 67 65 77 77 77 2e 77 6e 77 62 2e 63 6f 6d } //backstagewww.wnwb.com  2
+		$a_80_1 = {57 6e 55 73 65 72 50 61 67 65 2e 65 78 65 } //WnUserPage.exe  1
+		$a_80_2 = {53 6f 66 74 53 6b 69 6e } //SoftSkin  1
+		$a_80_3 = {57 61 6e 4e 65 6e 67 57 42 49 4d 45 2e 75 73 65 72 73 } //WanNengWBIME.users  1
+		$a_80_4 = {55 73 65 56 65 73 74 69 67 65 2e 69 6e 69 } //UseVestige.ini  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
+ 
+}
+rule _#PUA_Block_Softcnapp_10{
+	meta:
+		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_80_0 = {77 6e 77 62 2e 65 78 65 } //wnwb.exe  2
+		$a_80_1 = {74 6a 74 76 33 2e 77 6e 35 31 2e 63 6f 6d } //tjtv3.wn51.com  1
+		$a_80_2 = {77 77 77 2e 77 6e 77 62 2e 63 6f 6d 2f 70 6f 6c 69 63 79 2e 68 74 6d 6c } //www.wnwb.com/policy.html  1
+		$a_80_3 = {57 61 6e 4e 65 6e 67 57 42 49 6e 66 6f 2e 69 6e 69 } //WanNengWBInfo.ini  1
+		$a_80_4 = {55 73 65 56 65 73 74 69 67 65 2e 69 6e 69 } //UseVestige.ini  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
+ 
+}
+rule _#PUA_Block_Softcnapp_11{
+	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
 	strings :
@@ -120,7 +148,7 @@ rule _#PUA_Block_Softcnapp_9{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*-5) >=4
  
 }
-rule _#PUA_Block_Softcnapp_10{
+rule _#PUA_Block_Softcnapp_12{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 06 00 00 "
 		
@@ -135,7 +163,7 @@ rule _#PUA_Block_Softcnapp_10{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*2+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*-100+(#a_80_5  & 1)*-100) >=5
  
 }
-rule _#PUA_Block_Softcnapp_11{
+rule _#PUA_Block_Softcnapp_13{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
@@ -149,7 +177,7 @@ rule _#PUA_Block_Softcnapp_11{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_00_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*-5) >=4
  
 }
-rule _#PUA_Block_Softcnapp_12{
+rule _#PUA_Block_Softcnapp_14{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -163,7 +191,7 @@ rule _#PUA_Block_Softcnapp_12{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_Softcnapp_13{
+rule _#PUA_Block_Softcnapp_15{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 06 00 00 "
 		
@@ -178,7 +206,7 @@ rule _#PUA_Block_Softcnapp_13{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*-100+(#a_80_5  & 1)*-100) >=4
  
 }
-rule _#PUA_Block_Softcnapp_14{
+rule _#PUA_Block_Softcnapp_16{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 08 00 00 "
 		
@@ -195,7 +223,7 @@ rule _#PUA_Block_Softcnapp_14{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*2+(#a_80_2  & 1)*1+(#a_02_3  & 1)*1+(#a_02_4  & 1)*1+(#a_80_5  & 1)*-100+(#a_80_6  & 1)*-100+(#a_80_7  & 1)*-100) >=5
  
 }
-rule _#PUA_Block_Softcnapp_15{
+rule _#PUA_Block_Softcnapp_17{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -208,7 +236,7 @@ rule _#PUA_Block_Softcnapp_15{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule _#PUA_Block_Softcnapp_16{
+rule _#PUA_Block_Softcnapp_18{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -222,7 +250,7 @@ rule _#PUA_Block_Softcnapp_16{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_Softcnapp_17{
+rule _#PUA_Block_Softcnapp_19{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 09 00 00 "
 		
@@ -240,7 +268,7 @@ rule _#PUA_Block_Softcnapp_17{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*-100+(#a_80_7  & 1)*-100+(#a_80_8  & 1)*-100) >=6
  
 }
-rule _#PUA_Block_Softcnapp_18{
+rule _#PUA_Block_Softcnapp_20{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -255,7 +283,7 @@ rule _#PUA_Block_Softcnapp_18{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=6
  
 }
-rule _#PUA_Block_Softcnapp_19{
+rule _#PUA_Block_Softcnapp_21{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -271,7 +299,7 @@ rule _#PUA_Block_Softcnapp_19{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1) >=7
  
 }
-rule _#PUA_Block_Softcnapp_20{
+rule _#PUA_Block_Softcnapp_22{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 "
 		
@@ -289,7 +317,7 @@ rule _#PUA_Block_Softcnapp_20{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*-100+(#a_80_8  & 1)*-100) >=7
  
 }
-rule _#PUA_Block_Softcnapp_21{
+rule _#PUA_Block_Softcnapp_23{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 0b 00 00 "
 		
@@ -309,7 +337,7 @@ rule _#PUA_Block_Softcnapp_21{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*-5) >=3
  
 }
-rule _#PUA_Block_Softcnapp_22{
+rule _#PUA_Block_Softcnapp_24{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 0c 00 00 "
 		
@@ -330,7 +358,7 @@ rule _#PUA_Block_Softcnapp_22{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_00_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*-5) >=3
  
 }
-rule _#PUA_Block_Softcnapp_23{
+rule _#PUA_Block_Softcnapp_25{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -345,7 +373,7 @@ rule _#PUA_Block_Softcnapp_23{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1) >=6
  
 }
-rule _#PUA_Block_Softcnapp_24{
+rule _#PUA_Block_Softcnapp_26{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 06 00 00 "
 		
@@ -360,7 +388,7 @@ rule _#PUA_Block_Softcnapp_24{
 		((#a_80_0  & 1)*1+(#a_02_1  & 1)*1+(#a_02_2  & 1)*1+(#a_80_3  & 1)*1+(#a_02_4  & 1)*1+(#a_02_5  & 1)*1) >=4
  
 }
-rule _#PUA_Block_Softcnapp_25{
+rule _#PUA_Block_Softcnapp_27{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
 		
@@ -376,7 +404,7 @@ rule _#PUA_Block_Softcnapp_25{
 		((#a_80_0  & 1)*2+(#a_02_1  & 1)*1+(#a_02_2  & 1)*1+(#a_02_3  & 1)*2+(#a_02_4  & 1)*2+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1) >=5
  
 }
-rule _#PUA_Block_Softcnapp_26{
+rule _#PUA_Block_Softcnapp_28{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR,01 00 01 00 02 00 00 "
 		
@@ -387,7 +415,7 @@ rule _#PUA_Block_Softcnapp_26{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#PUA_Block_Softcnapp_27{
+rule _#PUA_Block_Softcnapp_29{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR,03 00 03 00 03 00 00 "
 		
@@ -399,7 +427,7 @@ rule _#PUA_Block_Softcnapp_27{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#PUA_Block_Softcnapp_28{
+rule _#PUA_Block_Softcnapp_30{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR,04 00 04 00 05 00 00 "
 		
@@ -413,7 +441,7 @@ rule _#PUA_Block_Softcnapp_28{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=4
  
 }
-rule _#PUA_Block_Softcnapp_29{
+rule _#PUA_Block_Softcnapp_31{
 	meta:
 		description = "!#PUA:Block:Softcnapp,SIGNATURE_TYPE_PEHSTR,04 00 04 00 04 00 00 "
 		

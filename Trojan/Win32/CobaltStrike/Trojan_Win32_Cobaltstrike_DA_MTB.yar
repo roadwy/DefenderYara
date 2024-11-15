@@ -1,7 +1,7 @@
 
-rule Trojan_Win32_Cobaltstrike_DA_MTB{
+rule Trojan_Win32_CobaltStrike_DA_MTB{
 	meta:
-		description = "Trojan:Win32/Cobaltstrike.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
+		description = "Trojan:Win32/CobaltStrike.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
 		$a_03_0 = {8b d9 83 e3 03 8a 1c 3b 8d 14 29 32 1c 10 41 3b ce 88 1a 7c ?? 8b 54 24 18 8b 44 24 1c 5b 89 2a 5f 89 30 } //1

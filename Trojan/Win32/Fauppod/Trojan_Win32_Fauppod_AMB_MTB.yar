@@ -1,0 +1,11 @@
+
+rule Trojan_Win32_Fauppod_AMB_MTB{
+	meta:
+		description = "Trojan:Win32/Fauppod.AMB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {55 89 e5 56 50 8a 45 0c 8a 4d 08 88 45 fb 88 4d fa 0f b6 55 fa 0f b6 35 [0-32] 01 f2 88 d0 a2 [0-28] c7 05 ?? ?? ?? ?? ?? ?? ?? ?? 8a 45 [0-1f] c7 05 ?? ?? ?? ?? ?? ?? ?? ?? 0f b6 15 ?? ?? ?? ?? 0f b6 35 ?? ?? ?? ?? 31 f2 88 d0 a2 [0-50] 83 c4 04 5e 5d c3 } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}

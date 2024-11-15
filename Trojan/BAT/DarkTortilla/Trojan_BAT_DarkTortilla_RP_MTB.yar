@@ -144,7 +144,7 @@ rule Trojan_BAT_DarkTortilla_RP_MTB_15{
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {02 16 9a 14 [0-10] 20 ?? ?? ?? ?? 28 ?? ?? ?? ?? 17 8d ?? ?? 00 01 25 16 03 8c ?? ?? 00 01 a2 25 0b 14 14 17 8d ?? ?? 00 01 25 16 17 9c 25 0c 28 ?? ?? 00 0a 0d ?? 13 09 2b } //1
+		$a_03_0 = {00 00 20 cc 00 00 00 0a 72 ?? ?? 00 70 28 ?? ?? 00 06 0b 07 74 ?? ?? 00 1b 28 ?? ?? 00 06 00 de 0f 25 28 ?? ?? 00 0a 0c 00 28 ?? ?? 00 0a de 00 00 2a } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -154,7 +154,7 @@ rule Trojan_BAT_DarkTortilla_RP_MTB_16{
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {06 17 da 17 d6 8d ?? ?? 00 01 0c 72 ?? ?? 00 70 0d 09 28 ?? ?? 00 06 13 04 11 04 28 ?? ?? 00 06 13 05 08 06 17 da 11 05 28 ?? ?? 00 0a a2 08 06 28 ?? ?? 00 06 00 de 10 } //1
+		$a_03_0 = {02 16 9a 14 [0-10] 20 ?? ?? ?? ?? 28 ?? ?? ?? ?? 17 8d ?? ?? 00 01 25 16 03 8c ?? ?? 00 01 a2 25 0b 14 14 17 8d ?? ?? 00 01 25 16 17 9c 25 0c 28 ?? ?? 00 0a 0d ?? 13 09 2b } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -164,12 +164,22 @@ rule Trojan_BAT_DarkTortilla_RP_MTB_17{
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
+		$a_03_0 = {06 17 da 17 d6 8d ?? ?? 00 01 0c 72 ?? ?? 00 70 0d 09 28 ?? ?? 00 06 13 04 11 04 28 ?? ?? 00 06 13 05 08 06 17 da 11 05 28 ?? ?? 00 0a a2 08 06 28 ?? ?? 00 06 00 de 10 } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}
+rule Trojan_BAT_DarkTortilla_RP_MTB_18{
+	meta:
+		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
 		$a_01_0 = {28 ec 01 00 06 28 37 00 00 0a 10 00 02 28 37 00 00 0a 28 ed 01 00 06 28 37 00 00 0a 0a 02 74 1c 00 00 01 06 28 69 00 00 0a 28 ee 01 00 06 28 05 01 00 06 28 3d 02 00 06 28 37 00 00 0a 28 19 02 00 06 } //1
 	condition:
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_DarkTortilla_RP_MTB_18{
+rule Trojan_BAT_DarkTortilla_RP_MTB_19{
 	meta:
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -179,7 +189,7 @@ rule Trojan_BAT_DarkTortilla_RP_MTB_18{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_DarkTortilla_RP_MTB_19{
+rule Trojan_BAT_DarkTortilla_RP_MTB_20{
 	meta:
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -189,7 +199,7 @@ rule Trojan_BAT_DarkTortilla_RP_MTB_19{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_DarkTortilla_RP_MTB_20{
+rule Trojan_BAT_DarkTortilla_RP_MTB_21{
 	meta:
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,65 00 65 00 03 00 00 "
 		
@@ -201,7 +211,7 @@ rule Trojan_BAT_DarkTortilla_RP_MTB_20{
 		((#a_03_0  & 1)*100+(#a_03_1  & 1)*100+(#a_01_2  & 1)*1) >=101
  
 }
-rule Trojan_BAT_DarkTortilla_RP_MTB_21{
+rule Trojan_BAT_DarkTortilla_RP_MTB_22{
 	meta:
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 02 00 00 "
 		
@@ -212,7 +222,7 @@ rule Trojan_BAT_DarkTortilla_RP_MTB_21{
 		((#a_01_0  & 1)*10+(#a_01_1  & 1)*1) >=11
  
 }
-rule Trojan_BAT_DarkTortilla_RP_MTB_22{
+rule Trojan_BAT_DarkTortilla_RP_MTB_23{
 	meta:
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 03 00 00 "
 		
@@ -224,7 +234,7 @@ rule Trojan_BAT_DarkTortilla_RP_MTB_22{
 		((#a_03_0  & 1)*10+(#a_03_1  & 1)*10+(#a_01_2  & 1)*1) >=11
  
 }
-rule Trojan_BAT_DarkTortilla_RP_MTB_23{
+rule Trojan_BAT_DarkTortilla_RP_MTB_24{
 	meta:
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,6f 00 6f 00 04 00 00 "
 		
@@ -237,7 +247,7 @@ rule Trojan_BAT_DarkTortilla_RP_MTB_23{
 		((#a_01_0  & 1)*100+(#a_03_1  & 1)*10+(#a_03_2  & 1)*10+(#a_01_3  & 1)*1) >=111
  
 }
-rule Trojan_BAT_DarkTortilla_RP_MTB_24{
+rule Trojan_BAT_DarkTortilla_RP_MTB_25{
 	meta:
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 03 00 00 "
 		
@@ -249,7 +259,7 @@ rule Trojan_BAT_DarkTortilla_RP_MTB_24{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1) >=1
  
 }
-rule Trojan_BAT_DarkTortilla_RP_MTB_25{
+rule Trojan_BAT_DarkTortilla_RP_MTB_26{
 	meta:
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,68 00 68 00 06 00 00 "
 		
@@ -264,7 +274,7 @@ rule Trojan_BAT_DarkTortilla_RP_MTB_25{
 		((#a_03_0  & 1)*100+(#a_03_1  & 1)*100+(#a_03_2  & 1)*100+(#a_03_3  & 1)*100+(#a_01_4  & 1)*1+(#a_01_5  & 1)*3) >=104
  
 }
-rule Trojan_BAT_DarkTortilla_RP_MTB_26{
+rule Trojan_BAT_DarkTortilla_RP_MTB_27{
 	meta:
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,6a 00 6a 00 07 00 00 "
 		
@@ -280,7 +290,7 @@ rule Trojan_BAT_DarkTortilla_RP_MTB_26{
 		((#a_03_0  & 1)*100+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_80_6  & 1)*1) >=106
  
 }
-rule Trojan_BAT_DarkTortilla_RP_MTB_27{
+rule Trojan_BAT_DarkTortilla_RP_MTB_28{
 	meta:
 		description = "Trojan:BAT/DarkTortilla.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,ffffff94 00 ffffff94 00 10 00 00 "
 		

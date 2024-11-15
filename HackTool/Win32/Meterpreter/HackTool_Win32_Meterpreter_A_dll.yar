@@ -1,6 +1,19 @@
 
 rule HackTool_Win32_Meterpreter_A_dll{
 	meta:
+		description = "HackTool:Win32/Meterpreter.A!dll,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
+		$a_03_0 = {8e 4e 0e ec [0-04] aa fc 0d 7c } //1
+		$a_03_1 = {81 f9 5d 68 fa 3c [0-04] 8b } //1
+		$a_01_2 = {81 f9 5b bc 4a 6a 0f 85 } //1
+		$a_03_3 = {8b 46 ec 89 45 f4 85 c0 ?? ?? ?? ?? ?? 50 ?? ?? ?? ?? 50 ?? ?? ?? 50 ?? ?? ?? 6a ff 50 e8 ?? ?? ?? ?? 8b ?? f8 83 c4 18 83 c6 28 85 ff 0f 85 ?? ?? ?? ?? 8b 5d ec } //1
+	condition:
+		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_01_2  & 1)*1+(#a_03_3  & 1)*1) >=4
+ 
+}
+rule HackTool_Win32_Meterpreter_A_dll_2{
+	meta:
 		description = "HackTool:Win32/Meterpreter.A!dll,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
@@ -15,7 +28,7 @@ rule HackTool_Win32_Meterpreter_A_dll{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=7
  
 }
-rule HackTool_Win32_Meterpreter_A_dll_2{
+rule HackTool_Win32_Meterpreter_A_dll_3{
 	meta:
 		description = "HackTool:Win32/Meterpreter.A!dll,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -30,7 +43,7 @@ rule HackTool_Win32_Meterpreter_A_dll_2{
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=6
  
 }
-rule HackTool_Win32_Meterpreter_A_dll_3{
+rule HackTool_Win32_Meterpreter_A_dll_4{
 	meta:
 		description = "HackTool:Win32/Meterpreter.A!dll,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 "
 		
@@ -46,7 +59,7 @@ rule HackTool_Win32_Meterpreter_A_dll_3{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1+(#a_03_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=6
  
 }
-rule HackTool_Win32_Meterpreter_A_dll_4{
+rule HackTool_Win32_Meterpreter_A_dll_5{
 	meta:
 		description = "HackTool:Win32/Meterpreter.A!dll,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -62,7 +75,7 @@ rule HackTool_Win32_Meterpreter_A_dll_4{
 		((#a_81_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1+(#a_01_6  & 1)*1) >=7
  
 }
-rule HackTool_Win32_Meterpreter_A_dll_5{
+rule HackTool_Win32_Meterpreter_A_dll_6{
 	meta:
 		description = "HackTool:Win32/Meterpreter.A!dll,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -78,7 +91,7 @@ rule HackTool_Win32_Meterpreter_A_dll_5{
 		((#a_81_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1+(#a_01_6  & 1)*1) >=7
  
 }
-rule HackTool_Win32_Meterpreter_A_dll_6{
+rule HackTool_Win32_Meterpreter_A_dll_7{
 	meta:
 		description = "HackTool:Win32/Meterpreter.A!dll,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		

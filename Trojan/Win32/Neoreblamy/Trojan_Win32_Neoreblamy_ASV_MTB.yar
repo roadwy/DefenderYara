@@ -1,0 +1,30 @@
+
+rule Trojan_Win32_Neoreblamy_ASV_MTB{
+	meta:
+		description = "Trojan:Win32/Neoreblamy.ASV!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 14 00 00 "
+		
+	strings :
+		$a_01_0 = {50 4a 74 46 51 43 67 51 64 4b 59 66 55 50 77 79 79 6c 63 71 4c 6e 63 57 52 4f 77 77 } //1 PJtFQCgQdKYfUPwyylcqLncWROww
+		$a_01_1 = {6f 4b 45 58 4c 51 70 53 4f 41 70 67 64 69 47 44 79 78 52 74 41 69 58 4a 55 4f 62 4a 50 4d 61 42 68 57 } //1 oKEXLQpSOApgdiGDyxRtAiXJUObJPMaBhW
+		$a_01_2 = {6e 67 4a 5a 74 49 4b 48 67 64 52 61 62 76 66 49 58 63 74 73 59 6d 49 70 73 5a 45 64 42 } //1 ngJZtIKHgdRabvfIXctsYmIpsZEdB
+		$a_01_3 = {47 4b 58 41 59 65 6d 6e 4d 6e 4a 45 70 43 45 76 69 72 44 6e 5a 4b 6b 68 6a 79 78 6a 6a 77 66 52 58 76 50 65 65 6c 56 61 50 4c 48 6f 46 42 41 62 41 64 48 61 6a 78 4c 56 73 42 68 41 7a 52 74 6c 48 44 41 6f 6c 6e 4b 6f 59 6b 48 62 5a 4d 4e 75 76 4b 68 55 70 54 76 44 53 } //1 GKXAYemnMnJEpCEvirDnZKkhjyxjjwfRXvPeelVaPLHoFBAbAdHajxLVsBhAzRtlHDAolnKoYkHbZMNuvKhUpTvDS
+		$a_01_4 = {4d 5a 76 4e 50 53 42 76 46 42 53 62 4a 57 50 4a 52 48 73 43 4f 46 6b 6b 6d 4c 4a 43 } //1 MZvNPSBvFBSbJWPJRHsCOFkkmLJC
+		$a_01_5 = {66 54 48 69 4d 70 51 6f 55 7a 4d 6e 54 62 52 50 6a 62 63 53 63 4b 77 69 75 44 70 6e 74 68 } //1 fTHiMpQoUzMnTbRPjbcScKwiuDpnth
+		$a_01_6 = {75 66 58 48 57 4b 51 77 6d 76 4d 48 45 53 41 6c 4f 4f 54 46 6b 69 66 74 52 6b 46 5a 57 62 7a 41 6e 50 } //1 ufXHWKQwmvMHESAlOOTFkiftRkFZWbzAnP
+		$a_01_7 = {66 51 56 55 74 57 59 77 53 63 70 65 6e 79 59 46 4a 6a 76 68 71 6e 45 4e 72 61 56 46 63 71 67 53 51 49 64 4d 77 52 4f 43 79 44 45 53 57 48 49 4a 6f 53 4b 47 4f 4e 70 54 46 71 48 6a 6a 56 57 79 47 64 59 65 76 41 59 48 59 67 5a 77 6a 57 71 62 57 6b 46 71 72 53 53 50 63 } //1 fQVUtWYwScpenyYFJjvhqnENraVFcqgSQIdMwROCyDESWHIJoSKGONpTFqHjjVWyGdYevAYHYgZwjWqbWkFqrSSPc
+		$a_01_8 = {4e 4f 65 6f 53 6b 55 79 62 68 52 71 42 69 6f 64 6c 6c 41 52 44 4e 6c 63 53 6e 48 4f 66 68 } //1 NOeoSkUybhRqBiodllARDNlcSnHOfh
+		$a_01_9 = {4b 49 5a 48 61 58 49 56 68 72 58 55 50 58 72 46 77 57 6d 4e 78 58 52 69 63 4c 6c 51 45 67 } //1 KIZHaXIVhrXUPXrFwWmNxXRicLlQEg
+		$a_01_10 = {68 47 59 52 49 66 50 6b 65 51 6e 49 53 54 76 64 5a 64 48 66 54 6f 4b 70 51 79 41 65 64 63 } //1 hGYRIfPkeQnISTvdZdHfToKpQyAedc
+		$a_01_11 = {6b 67 71 55 5a 47 74 59 6b 63 66 65 67 47 79 6c 4e 7a 61 58 42 41 62 54 69 66 6a 4c 71 58 7a 78 7a 45 4b 4a 63 7a 42 63 41 54 70 77 52 43 57 42 7a 6e 48 44 67 56 58 67 6b 6f 64 4d 6c 4b 69 6b 50 43 58 71 46 6a 67 70 50 62 66 63 7a 4c 76 50 43 7a 4d 42 53 64 6d 77 6b } //1 kgqUZGtYkcfegGylNzaXBAbTifjLqXzxzEKJczBcATpwRCWBznHDgVXgkodMlKikPCXqFjgpPbfczLvPCzMBSdmwk
+		$a_01_12 = {52 4e 69 4b 53 5a 63 41 4d 4d 67 56 67 70 4b 4a 67 6c 71 6b 78 79 42 71 4a 79 6f 49 6f 67 } //1 RNiKSZcAMMgVgpKJglqkxyBqJyoIog
+		$a_01_13 = {6d 56 4e 49 44 77 4c 62 56 67 7a 56 6a 68 55 69 6d 43 50 6e 43 65 63 56 64 4e 47 75 6c 74 65 53 77 61 } //1 mVNIDwLbVgzVjhUimCPnCecVdNGulteSwa
+		$a_01_14 = {50 54 52 4f 47 54 57 55 41 68 6a 72 6b 63 5a 6d 4d 45 79 51 62 59 55 46 6f 49 58 42 7a } //1 PTROGTWUAhjrkcZmMEyQbYUFoIXBz
+		$a_01_15 = {58 6f 76 68 4f 73 4d 66 73 59 42 74 4c 62 42 72 42 79 41 79 4a 55 51 71 76 6e 50 79 54 55 71 6c 6a 58 47 54 44 41 42 46 62 4f 56 50 43 52 75 76 79 58 45 75 79 63 52 61 50 68 41 49 41 7a 55 46 7a 65 67 52 4e 70 6c 4d 5a 4d 72 47 75 59 68 67 6a 64 48 67 45 78 7a 42 4c } //1 XovhOsMfsYBtLbBrByAyJUQqvnPyTUqljXGTDABFbOVPCRuvyXEuycRaPhAIAzUFzegRNplMZMrGuYhgjdHgExzBL
+		$a_01_16 = {49 71 6d 54 4b 63 61 54 55 54 4c 47 70 75 58 6e 54 6c 6e 77 58 6d 57 4c 61 6b 5a 47 76 45 } //1 IqmTKcaTUTLGpuXnTlnwXmWLakZGvE
+		$a_01_17 = {52 41 59 42 6e 67 73 51 6e 43 43 75 6b 71 47 70 58 77 4b 63 64 6e 68 4f 45 75 52 73 42 63 45 71 72 6b } //1 RAYBngsQnCCukqGpXwKcdnhOEuRsBcEqrk
+		$a_01_18 = {78 71 64 45 41 4d 52 6e 64 55 4a 71 75 46 54 5a 54 4a 4e 4f 58 7a 6b 56 63 48 59 43 50 } //1 xqdEAMRndUJquFTZTJNOXzkVcHYCP
+		$a_01_19 = {53 49 4e 57 46 55 79 70 58 75 56 71 47 42 70 5a 75 6d 45 49 76 48 79 79 41 45 6e 68 45 4d 4a 4e 7a 4e 43 7a 4b 50 69 49 5a 4e 55 6e 6a 54 51 74 57 4b 4b 4a 4b 42 4f 72 5a 43 7a 6e 67 6d 4d 71 73 41 69 41 61 6c 66 78 58 55 6c 54 42 49 69 75 58 47 51 55 56 79 51 7a 6d } //1 SINWFUypXuVqGBpZumEIvHyyAEnhEMJNzNCzKPiIZNUnjTQtWKKJKBOrZCzngmMqsAiAalfxXUlTBIiuXGQUVyQzm
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1+(#a_01_12  & 1)*1+(#a_01_13  & 1)*1+(#a_01_14  & 1)*1+(#a_01_15  & 1)*1+(#a_01_16  & 1)*1+(#a_01_17  & 1)*1+(#a_01_18  & 1)*1+(#a_01_19  & 1)*1) >=4
+ 
+}

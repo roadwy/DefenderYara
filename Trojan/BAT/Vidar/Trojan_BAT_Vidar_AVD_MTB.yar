@@ -1,6 +1,28 @@
 
 rule Trojan_BAT_Vidar_AVD_MTB{
 	meta:
+		description = "Trojan:BAT/Vidar.AVD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {16 13 34 12 1f 28 ?? 00 00 0a 12 34 28 ?? 00 00 0a 26 16 13 35 12 28 28 ?? 00 00 0a 28 ?? 00 00 0a 13 35 03 11 34 91 13 36 06 11 35 91 13 37 11 36 11 37 61 d2 13 36 03 11 34 11 36 9c } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}
+rule Trojan_BAT_Vidar_AVD_MTB_2{
+	meta:
+		description = "Trojan:BAT/Vidar.AVD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {52 44 50 43 72 65 61 74 6f 72 5c 6f 62 6a 5c 52 65 6c 65 61 73 65 5c 52 44 50 43 72 65 61 74 6f 72 2e 70 64 62 } //2 RDPCreator\obj\Release\RDPCreator.pdb
+		$a_81_1 = {68 74 74 70 3a 2f 2f 31 34 37 2e 34 35 2e 34 34 2e 31 30 34 } //5 http://147.45.44.104
+		$a_81_2 = {43 75 72 72 65 6e 74 56 65 72 73 69 6f 6e 5c 50 6f 6c 69 63 69 65 73 5c 53 79 73 74 65 6d 22 20 2f 76 20 22 41 6c 6c 6f 77 52 65 6d 6f 74 65 52 50 43 22 20 2f 74 20 52 45 47 5f 44 57 4f 52 44 20 2f 64 20 31 20 2f 66 } //3 CurrentVersion\Policies\System" /v "AllowRemoteRPC" /t REG_DWORD /d 1 /f
+	condition:
+		((#a_01_0  & 1)*2+(#a_81_1  & 1)*5+(#a_81_2  & 1)*3) >=10
+ 
+}
+rule Trojan_BAT_Vidar_AVD_MTB_3{
+	meta:
 		description = "Trojan:BAT/Vidar.AVD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 0b 00 00 "
 		
 	strings :

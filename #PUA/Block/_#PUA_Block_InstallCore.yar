@@ -74,6 +74,21 @@ rule _#PUA_Block_InstallCore_6{
 }
 rule _#PUA_Block_InstallCore_7{
 	meta:
+		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 06 00 00 "
+		
+	strings :
+		$a_80_0 = {6f 73 2e 73 65 63 75 72 65 64 64 6f 77 6e 6c 6f 61 64 63 64 6e 2e 63 6f 6d 2f 53 65 63 75 72 65 64 44 6f 77 6e 6c 6f 61 64 2f } //os.secureddownloadcdn.com/SecuredDownload/  2
+		$a_80_1 = {53 48 4f 57 5f 53 50 4f 4e 53 4f 52 45 44 5f 4f 46 46 45 52 } //SHOW_SPONSORED_OFFER  1
+		$a_80_2 = {53 4b 49 50 5f 4f 46 46 45 52 } //SKIP_OFFER  1
+		$a_80_3 = {44 45 46 41 55 4c 54 5f 4f 46 52 5f 43 48 45 43 4b 45 52 } //DEFAULT_OFR_CHECKER  1
+		$a_80_4 = {44 45 46 41 55 4c 54 5f 4f 46 52 5f 4f 4e 5f 46 49 4e 49 53 48 } //DEFAULT_OFR_ON_FINISH  1
+		$a_80_5 = {4f 70 65 72 61 } //Opera  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=5
+ 
+}
+rule _#PUA_Block_InstallCore_8{
+	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
 		
 	strings :
@@ -88,7 +103,7 @@ rule _#PUA_Block_InstallCore_7{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*-100+(#a_80_6  & 1)*-100) >=5
  
 }
-rule _#PUA_Block_InstallCore_8{
+rule _#PUA_Block_InstallCore_9{
 	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		

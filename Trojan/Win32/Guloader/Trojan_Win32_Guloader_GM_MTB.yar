@@ -1,6 +1,25 @@
 
 rule Trojan_Win32_Guloader_GM_MTB{
 	meta:
+		description = "Trojan:Win32/Guloader.GM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,12 00 12 00 0a 00 00 "
+		
+	strings :
+		$a_01_0 = {47 65 74 54 65 6d 70 46 69 6c 65 4e 61 6d 65 57 } //1 GetTempFileNameW
+		$a_01_1 = {53 65 6e 64 4d 65 73 73 61 67 65 57 } //1 SendMessageW
+		$a_01_2 = {53 48 42 72 6f 77 73 65 46 6f 72 46 6f 6c 64 65 72 57 } //1 SHBrowseForFolderW
+		$a_01_3 = {53 48 47 65 74 53 70 65 63 69 61 6c 46 6f 6c 64 65 72 4c 6f 63 61 74 69 6f 6e } //1 SHGetSpecialFolderLocation
+		$a_01_4 = {49 6e 69 74 69 61 74 65 53 68 75 74 64 6f 77 6e 57 } //1 InitiateShutdownW
+		$a_01_5 = {53 65 74 44 65 66 61 75 6c 74 44 6c 6c 44 69 72 65 63 74 6f 72 69 65 73 } //1 SetDefaultDllDirectories
+		$a_00_6 = {53 00 65 00 53 00 68 00 75 00 74 00 64 00 6f 00 77 00 6e 00 50 00 72 00 69 00 76 00 69 00 6c 00 65 00 67 00 65 00 } //5 SeShutdownPrivilege
+		$a_00_7 = {5c 00 54 00 65 00 6d 00 70 00 } //1 \Temp
+		$a_00_8 = {6c 00 6f 00 79 00 61 00 6c 00 69 00 74 00 65 00 74 00 65 00 72 00 73 00 20 00 72 00 61 00 64 00 69 00 65 00 72 00 6e 00 65 00 2e 00 65 00 78 00 65 00 } //5 loyaliteters radierne.exe
+		$a_00_9 = {4d 00 61 00 6c 00 77 00 61 00 72 00 65 00 62 00 79 00 74 00 65 00 73 00 20 00 43 00 6f 00 72 00 70 00 6f 00 72 00 61 00 74 00 69 00 6f 00 6e 00 } //5 Malwarebytes Corporation
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_00_6  & 1)*5+(#a_00_7  & 1)*1+(#a_00_8  & 1)*5+(#a_00_9  & 1)*5) >=18
+ 
+}
+rule Trojan_Win32_Guloader_GM_MTB_2{
+	meta:
 		description = "Trojan:Win32/Guloader.GM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :

@@ -19,3 +19,18 @@ rule Trojan_BAT_DarkComet_ADO_MTB_2{
 		((#a_03_0  & 1)*1) >=1
  
 }
+rule Trojan_BAT_DarkComet_ADO_MTB_3{
+	meta:
+		description = "Trojan:BAT/DarkComet.ADO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 06 00 00 "
+		
+	strings :
+		$a_03_0 = {1e 9c 11 05 1f 0e 1f 22 9c 11 05 1f 0f 1f 3c 9c 11 05 73 ?? 00 00 0a 0b 11 04 07 1f 20 6f ?? 00 00 0a 6f ?? 00 00 0a 11 04 07 1f 10 6f } //2
+		$a_01_1 = {62 00 75 00 6d 00 6d 00 79 00 62 00 75 00 6d 00 62 00 75 00 6d 00 } //1 bummybumbum
+		$a_01_2 = {48 00 61 00 72 00 64 00 43 00 6f 00 72 00 65 00 44 00 4c 00 4c 00 2e 00 44 00 69 00 6d 00 44 00 6f 00 6d 00 } //1 HardCoreDLL.DimDom
+		$a_01_3 = {64 00 75 00 6d 00 6d 00 6d 00 79 00 64 00 75 00 6d 00 64 00 75 00 6d 00 } //1 dummmydumdum
+		$a_01_4 = {65 00 72 00 69 00 63 00 73 00 73 00 6f 00 6e 00 } //1 ericsson
+		$a_01_5 = {53 00 61 00 79 00 48 00 61 00 72 00 64 00 43 00 6f 00 72 00 65 00 54 00 72 00 6f 00 6f 00 6c 00 6c 00 } //1 SayHardCoreTrooll
+	condition:
+		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=7
+ 
+}

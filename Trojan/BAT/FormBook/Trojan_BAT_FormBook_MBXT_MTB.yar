@@ -1,6 +1,16 @@
 
 rule Trojan_BAT_FormBook_MBXT_MTB{
 	meta:
+		description = "Trojan:BAT/FormBook.MBXT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {06 91 04 06 28 ?? 00 00 0a 05 6f ?? 00 00 0a 8e 69 5d 91 61 d2 9c 00 06 17 58 0a } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}
+rule Trojan_BAT_FormBook_MBXT_MTB_2{
+	meta:
 		description = "Trojan:BAT/FormBook.MBXT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :
@@ -12,7 +22,7 @@ rule Trojan_BAT_FormBook_MBXT_MTB{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
  
 }
-rule Trojan_BAT_FormBook_MBXT_MTB_2{
+rule Trojan_BAT_FormBook_MBXT_MTB_3{
 	meta:
 		description = "Trojan:BAT/FormBook.MBXT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 "
 		
@@ -23,7 +33,7 @@ rule Trojan_BAT_FormBook_MBXT_MTB_2{
 		((#a_03_0  & 1)*3+(#a_01_1  & 1)*2) >=5
  
 }
-rule Trojan_BAT_FormBook_MBXT_MTB_3{
+rule Trojan_BAT_FormBook_MBXT_MTB_4{
 	meta:
 		description = "Trojan:BAT/FormBook.MBXT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 04 00 00 "
 		

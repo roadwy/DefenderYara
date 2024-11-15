@@ -1,7 +1,7 @@
 
-rule Trojan_Win32_FlyStudio_NF_MTB{
+rule Trojan_Win32_Flystudio_NF_MTB{
 	meta:
-		description = "Trojan:Win32/FlyStudio.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 "
+		description = "Trojan:Win32/Flystudio.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 "
 		
 	strings :
 		$a_03_0 = {33 db 39 1d ?? ?? ?? ?? 56 57 75 05 e8 44 fd ff ff be b0 f1 4d } //5
@@ -10,9 +10,9 @@ rule Trojan_Win32_FlyStudio_NF_MTB{
 		((#a_03_0  & 1)*5+(#a_03_1  & 1)*5) >=10
  
 }
-rule Trojan_Win32_FlyStudio_NF_MTB_2{
+rule Trojan_Win32_Flystudio_NF_MTB_2{
 	meta:
-		description = "Trojan:Win32/FlyStudio.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 "
+		description = "Trojan:Win32/Flystudio.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 "
 		
 	strings :
 		$a_03_0 = {eb de 8d 45 ?? 50 ff 15 9c 21 47 00 66 83 7d ea 00 0f 84 d1 } //5
@@ -21,9 +21,9 @@ rule Trojan_Win32_FlyStudio_NF_MTB_2{
 		((#a_03_0  & 1)*5+(#a_03_1  & 1)*5) >=10
  
 }
-rule Trojan_Win32_FlyStudio_NF_MTB_3{
+rule Trojan_Win32_Flystudio_NF_MTB_3{
 	meta:
-		description = "Trojan:Win32/FlyStudio.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
+		description = "Trojan:Win32/Flystudio.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
 	strings :
 		$a_03_0 = {3b f0 73 1e 80 66 04 00 83 0e ?? 83 66 08 00 c6 46 05 ?? a1 60 bc 61 00 83 c6 ?? 05 80 04 00 00 eb de } //5
