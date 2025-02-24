@@ -1,0 +1,11 @@
+
+rule Trojan_BAT_Snakekeylogger_SUPD_MTB{
+	meta:
+		description = "Trojan:BAT/Snakekeylogger.SUPD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {19 00 03 06 7e ?? 00 00 04 06 91 02 06 02 8e 69 5d 91 61 d2 9c 00 06 17 58 } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}

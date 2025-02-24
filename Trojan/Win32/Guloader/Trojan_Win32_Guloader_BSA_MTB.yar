@@ -1,0 +1,45 @@
+
+rule Trojan_Win32_Guloader_BSA_MTB{
+	meta:
+		description = "Trojan:Win32/Guloader.BSA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,19 00 19 00 03 00 00 "
+		
+	strings :
+		$a_81_0 = {6c 61 67 65 72 65 2e 65 78 65 } //15 lagere.exe
+		$a_81_1 = {70 61 72 69 64 69 67 69 74 61 74 65 20 64 65 6e 74 6e 69 6e 67 65 72 } //5 paridigitate dentninger
+		$a_81_2 = {75 6e 63 69 72 6f 73 74 72 61 74 65 20 70 6f 73 74 67 6c 65 6e 6f 69 64 61 6c } //5 uncirostrate postglenoidal
+	condition:
+		((#a_81_0  & 1)*15+(#a_81_1  & 1)*5+(#a_81_2  & 1)*5) >=25
+ 
+}
+rule Trojan_Win32_Guloader_BSA_MTB_2{
+	meta:
+		description = "Trojan:Win32/Guloader.BSA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1f 00 1f 00 07 00 00 "
+		
+	strings :
+		$a_01_0 = {53 6f 66 74 77 61 72 65 5c 48 6a 6d 65 73 73 65 6e 73 5c 70 6f 72 6e } //1 Software\Hjmessens\porn
+		$a_01_1 = {66 61 73 74 73 74 74 65 6c 73 65 6e 73 5c 6c 69 74 68 6f 67 72 61 70 68 65 72 } //1 faststtelsens\lithographer
+		$a_01_2 = {74 72 61 6e 67 65 73 74 5c 69 63 68 6e 65 75 6d 6f 6e 65 64 2e 41 72 62 31 38 36 } //1 trangest\ichneumoned.Arb186
+		$a_01_3 = {65 6e 68 79 64 72 69 74 69 63 5c 62 61 77 6c 79 2e 70 61 75 } //1 enhydritic\bawly.pau
+		$a_01_4 = {5c 44 72 6f 70 73 5c 53 74 72 61 6d 6e 69 6e 67 73 5c 52 69 67 73 61 72 6b 69 76 65 72 } //15 \Drops\Stramnings\Rigsarkiver
+		$a_01_5 = {41 6e 61 67 72 61 6d 6d 61 74 69 73 65 64 2e 47 6f 62 } //11 Anagrammatised.Gob
+		$a_01_6 = {74 72 69 6d 6f 6e 2e 74 78 74 } //1 trimon.txt
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*15+(#a_01_5  & 1)*11+(#a_01_6  & 1)*1) >=31
+ 
+}
+rule Trojan_Win32_Guloader_BSA_MTB_3{
+	meta:
+		description = "Trojan:Win32/Guloader.BSA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1f 00 1f 00 07 00 00 "
+		
+	strings :
+		$a_01_0 = {42 72 61 6e 64 6d 61 6e 64 65 6e 38 39 5c 62 61 6e 6e 65 72 5c 73 69 76 65 74 5c 70 72 65 63 68 61 6c 6c 65 6e 67 69 6e 67 2e 69 6e 69 } //1 Brandmanden89\banner\sivet\prechallenging.ini
+		$a_01_1 = {53 6f 66 74 77 61 72 65 5c 61 6e 64 65 6e 70 72 6d 69 65 72 73 5c 62 6c 61 64 66 6f 72 6d 69 67 } //1 Software\andenprmiers\bladformig
+		$a_01_2 = {64 69 73 73 65 6d 69 6e 61 74 69 76 65 5c 56 65 6e 65 72 61 63 65 61 6e 2e 69 6e 69 } //15 disseminative\Veneracean.ini
+		$a_01_3 = {70 6f 73 74 76 65 6e 65 72 65 61 6c 5c 65 73 6b 6f 72 74 65 72 69 6e 67 65 72 6e 65 2e 62 6c 61 } //1 postvenereal\eskorteringerne.bla
+		$a_01_4 = {41 64 76 65 72 73 69 6f 6e 2e 74 78 74 } //1 Adversion.txt
+		$a_01_5 = {41 66 72 69 6e 67 6e 69 6e 67 65 6e 73 33 39 5c 47 61 6d 6d 65 6c 6f 73 74 37 } //11 Afringningens39\Gammelost7
+		$a_01_6 = {5c 63 61 64 64 69 65 5c 69 6e 66 72 61 6e 67 69 62 6c 65 2e 65 74 68 } //1 \caddie\infrangible.eth
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*15+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*11+(#a_01_6  & 1)*1) >=31
+ 
+}

@@ -17,6 +17,18 @@ rule _#PUA_Block_FusionCore{
 }
 rule _#PUA_Block_FusionCore_2{
 	meta:
+		description = "!#PUA:Block:FusionCore,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 "
+		
+	strings :
+		$a_80_0 = {46 75 73 69 6f 6e 2e 64 6c 6c } //Fusion.dll  2
+		$a_80_1 = {64 6c 34 6a 32 69 6c 34 74 64 75 33 6d 2e 63 6c 6f 75 64 66 72 6f 6e 74 2e 6e 65 74 2f 42 69 67 4e 6f 78 2f 46 75 73 69 6f 6e 2e 7a 69 70 } //dl4j2il4tdu3m.cloudfront.net/BigNox/Fusion.zip  1
+		$a_80_2 = {73 6c 6f 74 5f 69 6e 73 74 61 6c 6c 5f 6f 66 66 65 72 } //slot_install_offer  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1) >=4
+ 
+}
+rule _#PUA_Block_FusionCore_3{
+	meta:
 		description = "!#PUA:Block:FusionCore,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
 	strings :
@@ -29,7 +41,7 @@ rule _#PUA_Block_FusionCore_2{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*2+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=4
  
 }
-rule _#PUA_Block_FusionCore_3{
+rule _#PUA_Block_FusionCore_4{
 	meta:
 		description = "!#PUA:Block:FusionCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -43,7 +55,7 @@ rule _#PUA_Block_FusionCore_3{
 		((#a_02_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_FusionCore_4{
+rule _#PUA_Block_FusionCore_5{
 	meta:
 		description = "!#PUA:Block:FusionCore,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 07 00 00 "
 		
@@ -59,7 +71,7 @@ rule _#PUA_Block_FusionCore_4{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1) >=3
  
 }
-rule _#PUA_Block_FusionCore_5{
+rule _#PUA_Block_FusionCore_6{
 	meta:
 		description = "!#PUA:Block:FusionCore,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 0a 00 00 "
 		
@@ -78,7 +90,7 @@ rule _#PUA_Block_FusionCore_5{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_00_9  & 1)*1) >=3
  
 }
-rule _#PUA_Block_FusionCore_6{
+rule _#PUA_Block_FusionCore_7{
 	meta:
 		description = "!#PUA:Block:FusionCore,SIGNATURE_TYPE_PEHSTR,06 00 06 00 06 00 00 "
 		
@@ -93,7 +105,7 @@ rule _#PUA_Block_FusionCore_6{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2+(#a_01_3  & 1)*2+(#a_01_4  & 1)*2+(#a_01_5  & 1)*2) >=6
  
 }
-rule _#PUA_Block_FusionCore_7{
+rule _#PUA_Block_FusionCore_8{
 	meta:
 		description = "!#PUA:Block:FusionCore,SIGNATURE_TYPE_PEHSTR,0d 00 0d 00 0d 00 00 "
 		
@@ -115,7 +127,7 @@ rule _#PUA_Block_FusionCore_7{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1+(#a_01_12  & 1)*1) >=13
  
 }
-rule _#PUA_Block_FusionCore_8{
+rule _#PUA_Block_FusionCore_9{
 	meta:
 		description = "!#PUA:Block:FusionCore,SIGNATURE_TYPE_PEHSTR,0b 00 0b 00 0b 00 00 "
 		
@@ -135,7 +147,7 @@ rule _#PUA_Block_FusionCore_8{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1) >=11
  
 }
-rule _#PUA_Block_FusionCore_9{
+rule _#PUA_Block_FusionCore_10{
 	meta:
 		description = "!#PUA:Block:FusionCore,SIGNATURE_TYPE_PEHSTR,07 00 07 00 08 00 00 "
 		

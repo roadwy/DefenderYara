@@ -1,6 +1,20 @@
 
 rule Trojan_Win32_AgentTesla_A_MTB{
 	meta:
+		description = "Trojan:Win32/AgentTesla.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_81_0 = {72 6f 6f 74 5c 63 69 6d 76 32 } //1 root\cimv2
+		$a_81_1 = {55 73 65 72 6e 61 6d 65 3a } //1 Username:
+		$a_81_2 = {50 61 73 73 77 6f 72 64 3a } //1 Password:
+		$a_81_3 = {77 6f 72 6c 6f 72 64 65 72 62 69 6c 6c 69 6f 6e 73 2e 74 6f 70 } //1 worlorderbillions.top
+		$a_81_4 = {6e 69 67 67 61 62 6f 77 6e 32 32 6a 61 6e 32 30 32 34 } //1 niggabown22jan2024
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1) >=5
+ 
+}
+rule Trojan_Win32_AgentTesla_A_MTB_2{
+	meta:
 		description = "Trojan:Win32/AgentTesla.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
@@ -11,7 +25,7 @@ rule Trojan_Win32_AgentTesla_A_MTB{
 		((#a_02_0  & 1)*1+(#a_02_1  & 1)*1+(#a_02_2  & 1)*1) >=3
  
 }
-rule Trojan_Win32_AgentTesla_A_MTB_2{
+rule Trojan_Win32_AgentTesla_A_MTB_3{
 	meta:
 		description = "Trojan:Win32/AgentTesla.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 06 00 00 "
 		
@@ -26,7 +40,32 @@ rule Trojan_Win32_AgentTesla_A_MTB_2{
 		((#a_01_0  & 1)*10+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=15
  
 }
-rule Trojan_Win32_AgentTesla_A_MTB_3{
+rule Trojan_Win32_AgentTesla_A_MTB_4{
+	meta:
+		description = "Trojan:Win32/AgentTesla.A!MTB,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 10 00 00 "
+		
+	strings :
+		$a_81_0 = {67 65 74 5f 50 61 73 73 77 6f 72 64 } //1 get_Password
+		$a_81_1 = {73 65 74 5f 50 61 73 73 77 6f 72 64 } //1 set_Password
+		$a_81_2 = {44 6f 6d 61 69 6e 50 61 73 73 77 6f 72 64 } //1 DomainPassword
+		$a_81_3 = {53 6d 74 70 50 61 73 73 77 6f 72 64 } //1 SmtpPassword
+		$a_81_4 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //1 FromBase64String
+		$a_81_5 = {54 6f 42 61 73 65 36 34 53 74 72 69 6e 67 } //1 ToBase64String
+		$a_81_6 = {45 6e 63 50 61 73 73 77 6f 72 64 } //1 EncPassword
+		$a_81_7 = {44 69 73 63 6f 72 64 20 54 6f 6b 65 6e } //1 Discord Token
+		$a_81_8 = {5c 4c 6f 67 69 6e 20 44 61 74 61 } //1 \Login Data
+		$a_81_9 = {5c 44 65 66 61 75 6c 74 5c 4c 6f 67 69 6e 20 44 61 74 61 } //1 \Default\Login Data
+		$a_81_10 = {28 68 6f 73 74 6e 61 6d 65 7c 65 6e 63 72 79 70 74 65 64 50 61 73 73 77 6f 72 64 7c 65 6e 63 72 79 70 74 65 64 55 73 65 72 6e 61 6d 65 29 } //1 (hostname|encryptedPassword|encryptedUsername)
+		$a_81_11 = {3b 50 6f 72 74 3d } //1 ;Port=
+		$a_81_12 = {46 6f 78 4d 61 69 6c } //1 FoxMail
+		$a_81_13 = {5c 6d 61 69 6c } //1 \mail
+		$a_81_14 = {49 63 65 44 72 61 67 6f 6e } //1 IceDragon
+		$a_81_15 = {5c 4e 45 54 47 41 54 45 20 54 65 63 68 6e 6f 6c 6f 67 69 65 73 5c 42 6c 61 63 6b 48 61 77 6b } //1 \NETGATE Technologies\BlackHawk
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1+(#a_81_6  & 1)*1+(#a_81_7  & 1)*1+(#a_81_8  & 1)*1+(#a_81_9  & 1)*1+(#a_81_10  & 1)*1+(#a_81_11  & 1)*1+(#a_81_12  & 1)*1+(#a_81_13  & 1)*1+(#a_81_14  & 1)*1+(#a_81_15  & 1)*1) >=16
+ 
+}
+rule Trojan_Win32_AgentTesla_A_MTB_5{
 	meta:
 		description = "Trojan:Win32/AgentTesla.A!MTB,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		

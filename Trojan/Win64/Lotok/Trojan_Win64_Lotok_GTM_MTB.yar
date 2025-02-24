@@ -1,0 +1,11 @@
+
+rule Trojan_Win64_Lotok_GTM_MTB{
+	meta:
+		description = "Trojan:Win64/Lotok.GTM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {55 48 89 e5 48 83 ec ?? 85 c0 41 81 f0 ?? ?? ?? ?? b9 ?? ?? ?? ?? 41 81 f1 ?? ?? ?? ?? 41 81 f0 ?? ?? ?? ?? 48 83 c0 } //10
+	condition:
+		((#a_03_0  & 1)*10) >=10
+ 
+}

@@ -1,6 +1,24 @@
 
 rule Ransom_Win64_FileCoder_RHX_MTB{
 	meta:
+		description = "Ransom:Win64/FileCoder.RHX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 09 00 00 "
+		
+	strings :
+		$a_01_0 = {2d 2d 2d 2d 2d 42 45 47 49 4e 20 50 55 42 4c 49 43 20 4b 45 59 2d 2d 2d 2d 2d } //3 -----BEGIN PUBLIC KEY-----
+		$a_01_1 = {2d 2d 2d 2d 2d 45 4e 44 20 50 55 42 4c 49 43 20 4b 45 59 2d 2d 2d 2d 2d } //1 -----END PUBLIC KEY-----
+		$a_01_2 = {47 6f 20 62 75 69 6c 64 20 49 44 3a } //1 Go build ID:
+		$a_01_3 = {73 33 2e 64 75 61 6c 73 74 61 63 6b 2e 75 73 } //1 s3.dualstack.us
+		$a_00_4 = {62 00 63 00 72 00 79 00 70 00 74 00 70 00 72 00 69 00 6d 00 69 00 74 00 69 00 76 00 65 00 73 00 } //1 bcryptprimitives
+		$a_01_5 = {52 45 53 54 4f 52 45 2d 4d 59 2d 46 49 4c 45 53 2e 74 78 74 } //1 RESTORE-MY-FILES.txt
+		$a_01_6 = {2e 62 61 63 6b } //1 .back
+		$a_01_7 = {2e 70 70 74 78 } //1 .pptx
+		$a_03_8 = {50 45 00 00 64 86 08 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 0b 02 03 00 00 8e 3e 00 00 b2 04 00 00 00 00 00 80 8a 06 } //2
+	condition:
+		((#a_01_0  & 1)*3+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_00_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_03_8  & 1)*2) >=12
+ 
+}
+rule Ransom_Win64_FileCoder_RHX_MTB_2{
+	meta:
 		description = "Ransom:Win64/FileCoder.RHX!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 09 00 00 "
 		
 	strings :

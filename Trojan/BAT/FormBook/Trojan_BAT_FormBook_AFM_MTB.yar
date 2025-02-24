@@ -96,6 +96,17 @@ rule Trojan_BAT_FormBook_AFM_MTB_9{
 }
 rule Trojan_BAT_FormBook_AFM_MTB_10{
 	meta:
+		description = "Trojan:BAT/FormBook.AFM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {16 0b 2b 30 02 06 07 28 ?? 00 00 06 0c 04 03 6f ?? 00 00 0a 59 0d 03 08 09 28 ?? 00 00 06 03 08 09 28 ?? 00 00 06 03 6f ?? 00 00 0a 04 32 01 2a 07 17 58 } //2
+		$a_01_1 = {45 00 50 00 32 00 5f 00 46 00 69 00 6c 00 6f 00 73 00 6f 00 66 00 6f 00 73 00 } //1 EP2_Filosofos
+	condition:
+		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
+ 
+}
+rule Trojan_BAT_FormBook_AFM_MTB_11{
+	meta:
 		description = "Trojan:BAT/FormBook.AFM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
 		
 	strings :
@@ -107,7 +118,7 @@ rule Trojan_BAT_FormBook_AFM_MTB_10{
 		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=5
  
 }
-rule Trojan_BAT_FormBook_AFM_MTB_11{
+rule Trojan_BAT_FormBook_AFM_MTB_12{
 	meta:
 		description = "Trojan:BAT/FormBook.AFM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
 		
@@ -118,7 +129,7 @@ rule Trojan_BAT_FormBook_AFM_MTB_11{
 		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }
-rule Trojan_BAT_FormBook_AFM_MTB_12{
+rule Trojan_BAT_FormBook_AFM_MTB_13{
 	meta:
 		description = "Trojan:BAT/FormBook.AFM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 03 00 00 "
 		
@@ -130,7 +141,7 @@ rule Trojan_BAT_FormBook_AFM_MTB_12{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*1) >=5
  
 }
-rule Trojan_BAT_FormBook_AFM_MTB_13{
+rule Trojan_BAT_FormBook_AFM_MTB_14{
 	meta:
 		description = "Trojan:BAT/FormBook.AFM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -144,7 +155,7 @@ rule Trojan_BAT_FormBook_AFM_MTB_13{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule Trojan_BAT_FormBook_AFM_MTB_14{
+rule Trojan_BAT_FormBook_AFM_MTB_15{
 	meta:
 		description = "Trojan:BAT/FormBook.AFM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 06 00 00 "
 		
@@ -159,7 +170,7 @@ rule Trojan_BAT_FormBook_AFM_MTB_14{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=7
  
 }
-rule Trojan_BAT_FormBook_AFM_MTB_15{
+rule Trojan_BAT_FormBook_AFM_MTB_16{
 	meta:
 		description = "Trojan:BAT/FormBook.AFM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		

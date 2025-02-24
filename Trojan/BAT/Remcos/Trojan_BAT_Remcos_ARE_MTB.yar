@@ -14,12 +14,22 @@ rule Trojan_BAT_Remcos_ARE_MTB_2{
 		description = "Trojan:BAT/Remcos.ARE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {0c 2b 33 02 0d 16 13 04 09 12 04 28 ?? 00 00 0a 07 06 08 18 6f ?? 00 00 0a 1f 10 28 ?? 00 00 0a 6f ?? 00 00 0a de 0b 11 04 2c 06 09 28 ?? 00 00 0a dc 08 18 58 0c 08 06 } //1
+		$a_03_0 = {0d 16 13 08 2b 13 00 07 08 11 08 09 28 ?? 00 00 06 00 00 11 08 17 58 13 08 11 08 07 6f ?? 00 00 0a 2f 0b 08 6f ?? 00 00 0a 09 fe 04 2b 01 16 13 09 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
 }
 rule Trojan_BAT_Remcos_ARE_MTB_3{
+	meta:
+		description = "Trojan:BAT/Remcos.ARE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {0c 2b 33 02 0d 16 13 04 09 12 04 28 ?? 00 00 0a 07 06 08 18 6f ?? 00 00 0a 1f 10 28 ?? 00 00 0a 6f ?? 00 00 0a de 0b 11 04 2c 06 09 28 ?? 00 00 0a dc 08 18 58 0c 08 06 } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}
+rule Trojan_BAT_Remcos_ARE_MTB_4{
 	meta:
 		description = "Trojan:BAT/Remcos.ARE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -30,7 +40,7 @@ rule Trojan_BAT_Remcos_ARE_MTB_3{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule Trojan_BAT_Remcos_ARE_MTB_4{
+rule Trojan_BAT_Remcos_ARE_MTB_5{
 	meta:
 		description = "Trojan:BAT/Remcos.ARE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -40,7 +50,18 @@ rule Trojan_BAT_Remcos_ARE_MTB_4{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_Remcos_ARE_MTB_5{
+rule Trojan_BAT_Remcos_ARE_MTB_6{
+	meta:
+		description = "Trojan:BAT/Remcos.ARE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {0d 16 13 04 2b 1f 08 11 04 07 11 04 91 09 11 04 09 6f ?? 00 00 0a 5d 6f ?? 00 00 0a 61 d2 9c 11 04 17 58 13 04 11 04 07 8e 69 32 da 06 08 6f ?? 00 00 0a 06 16 6f } //2
+		$a_01_1 = {50 00 61 00 67 00 61 00 6d 00 65 00 6e 00 74 00 6f 00 2e 00 4e 00 6f 00 76 00 6f 00 62 00 61 00 6e 00 63 00 6f 00 2e 00 70 00 64 00 66 00 } //1 Pagamento.Novobanco.pdf
+	condition:
+		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
+ 
+}
+rule Trojan_BAT_Remcos_ARE_MTB_7{
 	meta:
 		description = "Trojan:BAT/Remcos.ARE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
 		
@@ -53,7 +74,7 @@ rule Trojan_BAT_Remcos_ARE_MTB_5{
 		((#a_03_0  & 1)*2+(#a_03_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=5
  
 }
-rule Trojan_BAT_Remcos_ARE_MTB_6{
+rule Trojan_BAT_Remcos_ARE_MTB_8{
 	meta:
 		description = "Trojan:BAT/Remcos.ARE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 09 00 00 "
 		

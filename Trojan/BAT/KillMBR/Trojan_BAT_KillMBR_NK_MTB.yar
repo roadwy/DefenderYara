@@ -26,6 +26,20 @@ rule Trojan_BAT_KillMBR_NK_MTB_2{
 }
 rule Trojan_BAT_KillMBR_NK_MTB_3{
 	meta:
+		description = "Trojan:BAT/KillMBR.NK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {20 00 02 00 00 8d 11 00 00 01 0a 72 3d 00 00 70 20 00 00 00 10 19 7e 11 00 00 0a 19 16 7e 11 00 00 0a 28 13 00 00 06 0b } //3
+		$a_01_1 = {47 44 49 5f 70 61 79 6c 6f 61 64 73 32 } //1 GDI_payloads2
+		$a_01_2 = {2f 00 6b 00 20 00 72 00 65 00 67 00 20 00 64 00 65 00 6c 00 65 00 74 00 65 00 20 00 48 00 4b 00 43 00 52 00 20 00 2f 00 66 00 } //1 /k reg delete HKCR /f
+		$a_01_3 = {74 00 68 00 31 00 73 00 20 00 69 00 73 00 20 00 46 00 72 00 65 00 65 00 6d 00 61 00 73 00 6f 00 6e 00 72 00 79 00 } //1 th1s is Freemasonry
+		$a_01_4 = {67 64 69 5f 6d 61 6c 77 61 72 65 } //1 gdi_malware
+	condition:
+		((#a_01_0  & 1)*3+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=7
+ 
+}
+rule Trojan_BAT_KillMBR_NK_MTB_4{
+	meta:
 		description = "Trojan:BAT/KillMBR.NK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :

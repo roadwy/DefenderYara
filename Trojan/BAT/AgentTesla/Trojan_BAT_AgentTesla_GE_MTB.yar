@@ -1,6 +1,22 @@
 
 rule Trojan_BAT_AgentTesla_GE_MTB{
 	meta:
+		description = "Trojan:BAT/AgentTesla.GE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 07 00 00 "
+		
+	strings :
+		$a_01_0 = {43 72 65 61 74 65 54 6f 6f 6c 68 65 6c 70 33 32 53 6e 61 70 73 68 6f 74 } //1 CreateToolhelp32Snapshot
+		$a_01_1 = {42 6c 6f 63 6b 43 6f 70 79 } //1 BlockCopy
+		$a_01_2 = {46 75 63 6b 69 6e 67 53 68 69 74 } //3 FuckingShit
+		$a_00_3 = {46 00 75 00 63 00 6b 00 69 00 6e 00 67 00 53 00 68 00 69 00 74 00 } //3 FuckingShit
+		$a_00_4 = {70 00 54 00 63 00 63 00 46 00 6e 00 6e 00 43 00 6d 00 6c 00 72 00 43 00 6a 00 44 00 77 00 36 00 } //4 pTccFnnCmlrCjDw6
+		$a_00_5 = {46 00 61 00 73 00 74 00 6b 00 72 00 6f 00 61 00 6b 00 2e 00 65 00 78 00 65 00 } //3 Fastkroak.exe
+		$a_01_6 = {46 61 73 74 6b 72 6f 61 6b } //3 Fastkroak
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*3+(#a_00_3  & 1)*3+(#a_00_4  & 1)*4+(#a_00_5  & 1)*3+(#a_01_6  & 1)*3) >=8
+ 
+}
+rule Trojan_BAT_AgentTesla_GE_MTB_2{
+	meta:
 		description = "Trojan:BAT/AgentTesla.GE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,17 00 17 00 0d 00 00 "
 		
 	strings :

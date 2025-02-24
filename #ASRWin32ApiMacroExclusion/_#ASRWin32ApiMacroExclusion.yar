@@ -832,6 +832,20 @@ rule _#ASRWin32ApiMacroExclusion_70{
 }
 rule _#ASRWin32ApiMacroExclusion_71{
 	meta:
+		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_00_0 = {42 6c 6f 6f 6d 62 65 72 67 56 65 72 73 69 6f 6e 43 68 65 63 6b 65 72 } //1 BloombergVersionChecker
+		$a_00_1 = {42 6c 6f 6f 6d 62 65 72 67 2e 63 63 79 72 65 61 64 65 72 } //1 Bloomberg.ccyreader
+		$a_00_2 = {42 42 5f 54 41 58 5f 44 41 54 41 5f 41 53 53 55 4d } //1 BB_TAX_DATA_ASSUM
+		$a_00_3 = {42 42 5f 52 45 56 5f 4e 55 4d 5f 45 53 54 5f 45 52 52 5f 45 50 53 } //1 BB_REV_NUM_EST_ERR_EPS
+		$a_00_4 = {43 61 73 65 20 22 43 68 6e 67 20 69 6e 20 4e 65 74 20 4c 6f 6e 67 54 20 44 65 66 20 54 61 78 20 4c 69 61 62 22 } //1 Case "Chng in Net LongT Def Tax Liab"
+	condition:
+		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=5
+ 
+}
+rule _#ASRWin32ApiMacroExclusion_72{
+	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
 	strings :
@@ -842,7 +856,7 @@ rule _#ASRWin32ApiMacroExclusion_71{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_72{
+rule _#ASRWin32ApiMacroExclusion_73{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -854,7 +868,7 @@ rule _#ASRWin32ApiMacroExclusion_72{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_73{
+rule _#ASRWin32ApiMacroExclusion_74{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -866,7 +880,7 @@ rule _#ASRWin32ApiMacroExclusion_73{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_74{
+rule _#ASRWin32ApiMacroExclusion_75{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 03 00 00 "
 		
@@ -878,7 +892,7 @@ rule _#ASRWin32ApiMacroExclusion_74{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_75{
+rule _#ASRWin32ApiMacroExclusion_76{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -890,7 +904,7 @@ rule _#ASRWin32ApiMacroExclusion_75{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_76{
+rule _#ASRWin32ApiMacroExclusion_77{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -902,7 +916,7 @@ rule _#ASRWin32ApiMacroExclusion_76{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_77{
+rule _#ASRWin32ApiMacroExclusion_78{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -914,7 +928,7 @@ rule _#ASRWin32ApiMacroExclusion_77{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_78{
+rule _#ASRWin32ApiMacroExclusion_79{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -926,7 +940,7 @@ rule _#ASRWin32ApiMacroExclusion_78{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_79{
+rule _#ASRWin32ApiMacroExclusion_80{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -938,7 +952,7 @@ rule _#ASRWin32ApiMacroExclusion_79{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_80{
+rule _#ASRWin32ApiMacroExclusion_81{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -950,7 +964,7 @@ rule _#ASRWin32ApiMacroExclusion_80{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_81{
+rule _#ASRWin32ApiMacroExclusion_82{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 04 00 00 "
 		
@@ -963,7 +977,7 @@ rule _#ASRWin32ApiMacroExclusion_81{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_82{
+rule _#ASRWin32ApiMacroExclusion_83{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 04 00 00 "
 		
@@ -976,7 +990,7 @@ rule _#ASRWin32ApiMacroExclusion_82{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2) >=8
  
 }
-rule _#ASRWin32ApiMacroExclusion_83{
+rule _#ASRWin32ApiMacroExclusion_84{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -988,7 +1002,7 @@ rule _#ASRWin32ApiMacroExclusion_83{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_84{
+rule _#ASRWin32ApiMacroExclusion_85{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1000,7 +1014,7 @@ rule _#ASRWin32ApiMacroExclusion_84{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_85{
+rule _#ASRWin32ApiMacroExclusion_86{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1012,7 +1026,7 @@ rule _#ASRWin32ApiMacroExclusion_85{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_86{
+rule _#ASRWin32ApiMacroExclusion_87{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1024,7 +1038,7 @@ rule _#ASRWin32ApiMacroExclusion_86{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_87{
+rule _#ASRWin32ApiMacroExclusion_88{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1036,7 +1050,7 @@ rule _#ASRWin32ApiMacroExclusion_87{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_88{
+rule _#ASRWin32ApiMacroExclusion_89{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 02 00 00 "
 		
@@ -1047,7 +1061,7 @@ rule _#ASRWin32ApiMacroExclusion_88{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_89{
+rule _#ASRWin32ApiMacroExclusion_90{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1059,7 +1073,7 @@ rule _#ASRWin32ApiMacroExclusion_89{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_90{
+rule _#ASRWin32ApiMacroExclusion_91{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 04 00 00 "
 		
@@ -1072,7 +1086,7 @@ rule _#ASRWin32ApiMacroExclusion_90{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2) >=8
  
 }
-rule _#ASRWin32ApiMacroExclusion_91{
+rule _#ASRWin32ApiMacroExclusion_92{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1084,7 +1098,7 @@ rule _#ASRWin32ApiMacroExclusion_91{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_92{
+rule _#ASRWin32ApiMacroExclusion_93{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1096,7 +1110,7 @@ rule _#ASRWin32ApiMacroExclusion_92{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_93{
+rule _#ASRWin32ApiMacroExclusion_94{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1108,7 +1122,7 @@ rule _#ASRWin32ApiMacroExclusion_93{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_94{
+rule _#ASRWin32ApiMacroExclusion_95{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1120,7 +1134,7 @@ rule _#ASRWin32ApiMacroExclusion_94{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_95{
+rule _#ASRWin32ApiMacroExclusion_96{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1132,7 +1146,7 @@ rule _#ASRWin32ApiMacroExclusion_95{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_96{
+rule _#ASRWin32ApiMacroExclusion_97{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1145,7 +1159,7 @@ rule _#ASRWin32ApiMacroExclusion_96{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_97{
+rule _#ASRWin32ApiMacroExclusion_98{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1157,7 +1171,7 @@ rule _#ASRWin32ApiMacroExclusion_97{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_98{
+rule _#ASRWin32ApiMacroExclusion_99{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1169,7 +1183,7 @@ rule _#ASRWin32ApiMacroExclusion_98{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_99{
+rule _#ASRWin32ApiMacroExclusion_100{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -1183,7 +1197,7 @@ rule _#ASRWin32ApiMacroExclusion_99{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=5
  
 }
-rule _#ASRWin32ApiMacroExclusion_100{
+rule _#ASRWin32ApiMacroExclusion_101{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,1e 00 1e 00 03 00 00 "
 		
@@ -1195,7 +1209,7 @@ rule _#ASRWin32ApiMacroExclusion_100{
 		((#a_01_0  & 1)*10+(#a_01_1  & 1)*10+(#a_01_2  & 1)*10) >=30
  
 }
-rule _#ASRWin32ApiMacroExclusion_101{
+rule _#ASRWin32ApiMacroExclusion_102{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1207,7 +1221,7 @@ rule _#ASRWin32ApiMacroExclusion_101{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_102{
+rule _#ASRWin32ApiMacroExclusion_103{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1219,7 +1233,7 @@ rule _#ASRWin32ApiMacroExclusion_102{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_103{
+rule _#ASRWin32ApiMacroExclusion_104{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1231,7 +1245,7 @@ rule _#ASRWin32ApiMacroExclusion_103{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_104{
+rule _#ASRWin32ApiMacroExclusion_105{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1243,7 +1257,7 @@ rule _#ASRWin32ApiMacroExclusion_104{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_105{
+rule _#ASRWin32ApiMacroExclusion_106{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1256,7 +1270,7 @@ rule _#ASRWin32ApiMacroExclusion_105{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_106{
+rule _#ASRWin32ApiMacroExclusion_107{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -1267,7 +1281,7 @@ rule _#ASRWin32ApiMacroExclusion_106{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1) >=2
  
 }
-rule _#ASRWin32ApiMacroExclusion_107{
+rule _#ASRWin32ApiMacroExclusion_108{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1279,7 +1293,7 @@ rule _#ASRWin32ApiMacroExclusion_107{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_108{
+rule _#ASRWin32ApiMacroExclusion_109{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1292,7 +1306,7 @@ rule _#ASRWin32ApiMacroExclusion_108{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_109{
+rule _#ASRWin32ApiMacroExclusion_110{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0a 00 0a 00 05 00 00 "
 		
@@ -1306,7 +1320,7 @@ rule _#ASRWin32ApiMacroExclusion_109{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2+(#a_00_4  & 1)*2) >=10
  
 }
-rule _#ASRWin32ApiMacroExclusion_110{
+rule _#ASRWin32ApiMacroExclusion_111{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1318,7 +1332,7 @@ rule _#ASRWin32ApiMacroExclusion_110{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_111{
+rule _#ASRWin32ApiMacroExclusion_112{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1331,7 +1345,7 @@ rule _#ASRWin32ApiMacroExclusion_111{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_112{
+rule _#ASRWin32ApiMacroExclusion_113{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1343,7 +1357,7 @@ rule _#ASRWin32ApiMacroExclusion_112{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_113{
+rule _#ASRWin32ApiMacroExclusion_114{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1355,7 +1369,7 @@ rule _#ASRWin32ApiMacroExclusion_113{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_114{
+rule _#ASRWin32ApiMacroExclusion_115{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1368,7 +1382,7 @@ rule _#ASRWin32ApiMacroExclusion_114{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_115{
+rule _#ASRWin32ApiMacroExclusion_116{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 04 00 00 "
 		
@@ -1381,7 +1395,7 @@ rule _#ASRWin32ApiMacroExclusion_115{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_116{
+rule _#ASRWin32ApiMacroExclusion_117{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1394,7 +1408,7 @@ rule _#ASRWin32ApiMacroExclusion_116{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_117{
+rule _#ASRWin32ApiMacroExclusion_118{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1406,7 +1420,7 @@ rule _#ASRWin32ApiMacroExclusion_117{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_118{
+rule _#ASRWin32ApiMacroExclusion_119{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1419,7 +1433,7 @@ rule _#ASRWin32ApiMacroExclusion_118{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_119{
+rule _#ASRWin32ApiMacroExclusion_120{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1432,7 +1446,7 @@ rule _#ASRWin32ApiMacroExclusion_119{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_120{
+rule _#ASRWin32ApiMacroExclusion_121{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -1447,7 +1461,7 @@ rule _#ASRWin32ApiMacroExclusion_120{
 		((#a_00_0  & 1)*3+(#a_00_1  & 1)*3+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_121{
+rule _#ASRWin32ApiMacroExclusion_122{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1459,7 +1473,7 @@ rule _#ASRWin32ApiMacroExclusion_121{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_122{
+rule _#ASRWin32ApiMacroExclusion_123{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1472,7 +1486,7 @@ rule _#ASRWin32ApiMacroExclusion_122{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_123{
+rule _#ASRWin32ApiMacroExclusion_124{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1484,7 +1498,7 @@ rule _#ASRWin32ApiMacroExclusion_123{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_124{
+rule _#ASRWin32ApiMacroExclusion_125{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1496,7 +1510,7 @@ rule _#ASRWin32ApiMacroExclusion_124{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_125{
+rule _#ASRWin32ApiMacroExclusion_126{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -1510,7 +1524,7 @@ rule _#ASRWin32ApiMacroExclusion_125{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=5
  
 }
-rule _#ASRWin32ApiMacroExclusion_126{
+rule _#ASRWin32ApiMacroExclusion_127{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1522,7 +1536,7 @@ rule _#ASRWin32ApiMacroExclusion_126{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_127{
+rule _#ASRWin32ApiMacroExclusion_128{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1535,7 +1549,7 @@ rule _#ASRWin32ApiMacroExclusion_127{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_128{
+rule _#ASRWin32ApiMacroExclusion_129{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1548,7 +1562,7 @@ rule _#ASRWin32ApiMacroExclusion_128{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_129{
+rule _#ASRWin32ApiMacroExclusion_130{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 04 00 00 "
 		
@@ -1561,7 +1575,7 @@ rule _#ASRWin32ApiMacroExclusion_129{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2) >=8
  
 }
-rule _#ASRWin32ApiMacroExclusion_130{
+rule _#ASRWin32ApiMacroExclusion_131{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 04 00 00 "
 		
@@ -1574,7 +1588,7 @@ rule _#ASRWin32ApiMacroExclusion_130{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2+(#a_01_3  & 1)*2) >=8
  
 }
-rule _#ASRWin32ApiMacroExclusion_131{
+rule _#ASRWin32ApiMacroExclusion_132{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1587,7 +1601,7 @@ rule _#ASRWin32ApiMacroExclusion_131{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_132{
+rule _#ASRWin32ApiMacroExclusion_133{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1599,7 +1613,7 @@ rule _#ASRWin32ApiMacroExclusion_132{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_133{
+rule _#ASRWin32ApiMacroExclusion_134{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1611,7 +1625,7 @@ rule _#ASRWin32ApiMacroExclusion_133{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_134{
+rule _#ASRWin32ApiMacroExclusion_135{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1623,7 +1637,7 @@ rule _#ASRWin32ApiMacroExclusion_134{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_135{
+rule _#ASRWin32ApiMacroExclusion_136{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -1634,7 +1648,7 @@ rule _#ASRWin32ApiMacroExclusion_135{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2) >=2
  
 }
-rule _#ASRWin32ApiMacroExclusion_136{
+rule _#ASRWin32ApiMacroExclusion_137{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1647,7 +1661,7 @@ rule _#ASRWin32ApiMacroExclusion_136{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_137{
+rule _#ASRWin32ApiMacroExclusion_138{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1660,7 +1674,7 @@ rule _#ASRWin32ApiMacroExclusion_137{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_138{
+rule _#ASRWin32ApiMacroExclusion_139{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1672,7 +1686,7 @@ rule _#ASRWin32ApiMacroExclusion_138{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_139{
+rule _#ASRWin32ApiMacroExclusion_140{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0b 00 0b 00 04 00 00 "
 		
@@ -1685,7 +1699,7 @@ rule _#ASRWin32ApiMacroExclusion_139{
 		((#a_00_0  & 1)*5+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2) >=11
  
 }
-rule _#ASRWin32ApiMacroExclusion_140{
+rule _#ASRWin32ApiMacroExclusion_141{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1698,7 +1712,7 @@ rule _#ASRWin32ApiMacroExclusion_140{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_141{
+rule _#ASRWin32ApiMacroExclusion_142{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1710,7 +1724,7 @@ rule _#ASRWin32ApiMacroExclusion_141{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_142{
+rule _#ASRWin32ApiMacroExclusion_143{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0b 00 0b 00 04 00 00 "
 		
@@ -1723,7 +1737,7 @@ rule _#ASRWin32ApiMacroExclusion_142{
 		((#a_00_0  & 1)*5+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2) >=11
  
 }
-rule _#ASRWin32ApiMacroExclusion_143{
+rule _#ASRWin32ApiMacroExclusion_144{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 05 00 00 "
 		
@@ -1737,7 +1751,7 @@ rule _#ASRWin32ApiMacroExclusion_143{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=8
  
 }
-rule _#ASRWin32ApiMacroExclusion_144{
+rule _#ASRWin32ApiMacroExclusion_145{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1749,7 +1763,7 @@ rule _#ASRWin32ApiMacroExclusion_144{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_145{
+rule _#ASRWin32ApiMacroExclusion_146{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1761,7 +1775,7 @@ rule _#ASRWin32ApiMacroExclusion_145{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_146{
+rule _#ASRWin32ApiMacroExclusion_147{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -1773,7 +1787,7 @@ rule _#ASRWin32ApiMacroExclusion_146{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=2
  
 }
-rule _#ASRWin32ApiMacroExclusion_147{
+rule _#ASRWin32ApiMacroExclusion_148{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1786,7 +1800,7 @@ rule _#ASRWin32ApiMacroExclusion_147{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_148{
+rule _#ASRWin32ApiMacroExclusion_149{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1799,7 +1813,7 @@ rule _#ASRWin32ApiMacroExclusion_148{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_149{
+rule _#ASRWin32ApiMacroExclusion_150{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1811,7 +1825,7 @@ rule _#ASRWin32ApiMacroExclusion_149{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_150{
+rule _#ASRWin32ApiMacroExclusion_151{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1823,7 +1837,7 @@ rule _#ASRWin32ApiMacroExclusion_150{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_151{
+rule _#ASRWin32ApiMacroExclusion_152{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1836,7 +1850,7 @@ rule _#ASRWin32ApiMacroExclusion_151{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_152{
+rule _#ASRWin32ApiMacroExclusion_153{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 04 00 00 "
 		
@@ -1849,7 +1863,7 @@ rule _#ASRWin32ApiMacroExclusion_152{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_153{
+rule _#ASRWin32ApiMacroExclusion_154{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 05 00 00 "
 		
@@ -1863,7 +1877,7 @@ rule _#ASRWin32ApiMacroExclusion_153{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*2) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_154{
+rule _#ASRWin32ApiMacroExclusion_155{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1876,7 +1890,7 @@ rule _#ASRWin32ApiMacroExclusion_154{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_155{
+rule _#ASRWin32ApiMacroExclusion_156{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -1888,7 +1902,7 @@ rule _#ASRWin32ApiMacroExclusion_155{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_156{
+rule _#ASRWin32ApiMacroExclusion_157{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1901,7 +1915,7 @@ rule _#ASRWin32ApiMacroExclusion_156{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_157{
+rule _#ASRWin32ApiMacroExclusion_158{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1914,7 +1928,7 @@ rule _#ASRWin32ApiMacroExclusion_157{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_158{
+rule _#ASRWin32ApiMacroExclusion_159{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1926,7 +1940,7 @@ rule _#ASRWin32ApiMacroExclusion_158{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_159{
+rule _#ASRWin32ApiMacroExclusion_160{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1939,7 +1953,7 @@ rule _#ASRWin32ApiMacroExclusion_159{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_160{
+rule _#ASRWin32ApiMacroExclusion_161{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 05 00 00 "
 		
@@ -1953,7 +1967,7 @@ rule _#ASRWin32ApiMacroExclusion_160{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2+(#a_00_4  & 1)*2) >=8
  
 }
-rule _#ASRWin32ApiMacroExclusion_161{
+rule _#ASRWin32ApiMacroExclusion_162{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1966,7 +1980,7 @@ rule _#ASRWin32ApiMacroExclusion_161{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_162{
+rule _#ASRWin32ApiMacroExclusion_163{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1979,7 +1993,7 @@ rule _#ASRWin32ApiMacroExclusion_162{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_163{
+rule _#ASRWin32ApiMacroExclusion_164{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 04 00 00 "
 		
@@ -1992,7 +2006,7 @@ rule _#ASRWin32ApiMacroExclusion_163{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_164{
+rule _#ASRWin32ApiMacroExclusion_165{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0a 00 0a 00 05 00 00 "
 		
@@ -2006,7 +2020,7 @@ rule _#ASRWin32ApiMacroExclusion_164{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2+(#a_00_4  & 1)*2) >=10
  
 }
-rule _#ASRWin32ApiMacroExclusion_165{
+rule _#ASRWin32ApiMacroExclusion_166{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,09 00 09 00 0e 00 00 "
 		
@@ -2029,7 +2043,7 @@ rule _#ASRWin32ApiMacroExclusion_165{
 		((#a_00_0  & 1)*3+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_00_8  & 1)*1+(#a_00_9  & 1)*1+(#a_00_10  & 1)*1+(#a_00_11  & 1)*1+(#a_00_12  & 1)*1+(#a_00_13  & 1)*1) >=9
  
 }
-rule _#ASRWin32ApiMacroExclusion_166{
+rule _#ASRWin32ApiMacroExclusion_167{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2041,7 +2055,7 @@ rule _#ASRWin32ApiMacroExclusion_166{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_167{
+rule _#ASRWin32ApiMacroExclusion_168{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 04 00 00 "
 		
@@ -2054,7 +2068,7 @@ rule _#ASRWin32ApiMacroExclusion_167{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2) >=8
  
 }
-rule _#ASRWin32ApiMacroExclusion_168{
+rule _#ASRWin32ApiMacroExclusion_169{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -2066,7 +2080,7 @@ rule _#ASRWin32ApiMacroExclusion_168{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_169{
+rule _#ASRWin32ApiMacroExclusion_170{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2079,7 +2093,7 @@ rule _#ASRWin32ApiMacroExclusion_169{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_170{
+rule _#ASRWin32ApiMacroExclusion_171{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 05 00 00 "
 		
@@ -2093,7 +2107,7 @@ rule _#ASRWin32ApiMacroExclusion_170{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2+(#a_00_4  & 1)*2) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_171{
+rule _#ASRWin32ApiMacroExclusion_172{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2105,7 +2119,7 @@ rule _#ASRWin32ApiMacroExclusion_171{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_172{
+rule _#ASRWin32ApiMacroExclusion_173{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2117,7 +2131,7 @@ rule _#ASRWin32ApiMacroExclusion_172{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_173{
+rule _#ASRWin32ApiMacroExclusion_174{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2130,7 +2144,7 @@ rule _#ASRWin32ApiMacroExclusion_173{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_174{
+rule _#ASRWin32ApiMacroExclusion_175{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2143,7 +2157,7 @@ rule _#ASRWin32ApiMacroExclusion_174{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_175{
+rule _#ASRWin32ApiMacroExclusion_176{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2156,7 +2170,7 @@ rule _#ASRWin32ApiMacroExclusion_175{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_176{
+rule _#ASRWin32ApiMacroExclusion_177{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2169,7 +2183,7 @@ rule _#ASRWin32ApiMacroExclusion_176{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_177{
+rule _#ASRWin32ApiMacroExclusion_178{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2182,7 +2196,7 @@ rule _#ASRWin32ApiMacroExclusion_177{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_178{
+rule _#ASRWin32ApiMacroExclusion_179{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2195,7 +2209,7 @@ rule _#ASRWin32ApiMacroExclusion_178{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_179{
+rule _#ASRWin32ApiMacroExclusion_180{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -2209,7 +2223,7 @@ rule _#ASRWin32ApiMacroExclusion_179{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=5
  
 }
-rule _#ASRWin32ApiMacroExclusion_180{
+rule _#ASRWin32ApiMacroExclusion_181{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0a 00 0a 00 05 00 00 "
 		
@@ -2223,7 +2237,7 @@ rule _#ASRWin32ApiMacroExclusion_180{
 		((#a_01_0  & 1)*5+(#a_01_1  & 1)*2+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=10
  
 }
-rule _#ASRWin32ApiMacroExclusion_181{
+rule _#ASRWin32ApiMacroExclusion_182{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 04 00 00 "
 		
@@ -2236,7 +2250,7 @@ rule _#ASRWin32ApiMacroExclusion_181{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_182{
+rule _#ASRWin32ApiMacroExclusion_183{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2248,7 +2262,7 @@ rule _#ASRWin32ApiMacroExclusion_182{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_183{
+rule _#ASRWin32ApiMacroExclusion_184{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2261,7 +2275,7 @@ rule _#ASRWin32ApiMacroExclusion_183{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_184{
+rule _#ASRWin32ApiMacroExclusion_185{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2273,7 +2287,7 @@ rule _#ASRWin32ApiMacroExclusion_184{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_185{
+rule _#ASRWin32ApiMacroExclusion_186{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2286,7 +2300,7 @@ rule _#ASRWin32ApiMacroExclusion_185{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_186{
+rule _#ASRWin32ApiMacroExclusion_187{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2299,7 +2313,7 @@ rule _#ASRWin32ApiMacroExclusion_186{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_187{
+rule _#ASRWin32ApiMacroExclusion_188{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2312,7 +2326,7 @@ rule _#ASRWin32ApiMacroExclusion_187{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_188{
+rule _#ASRWin32ApiMacroExclusion_189{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2324,7 +2338,7 @@ rule _#ASRWin32ApiMacroExclusion_188{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_189{
+rule _#ASRWin32ApiMacroExclusion_190{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2337,7 +2351,7 @@ rule _#ASRWin32ApiMacroExclusion_189{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_190{
+rule _#ASRWin32ApiMacroExclusion_191{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2350,7 +2364,7 @@ rule _#ASRWin32ApiMacroExclusion_190{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_191{
+rule _#ASRWin32ApiMacroExclusion_192{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2362,7 +2376,7 @@ rule _#ASRWin32ApiMacroExclusion_191{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_192{
+rule _#ASRWin32ApiMacroExclusion_193{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2374,7 +2388,7 @@ rule _#ASRWin32ApiMacroExclusion_192{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_193{
+rule _#ASRWin32ApiMacroExclusion_194{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2387,7 +2401,7 @@ rule _#ASRWin32ApiMacroExclusion_193{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_194{
+rule _#ASRWin32ApiMacroExclusion_195{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2400,7 +2414,7 @@ rule _#ASRWin32ApiMacroExclusion_194{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_195{
+rule _#ASRWin32ApiMacroExclusion_196{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2413,7 +2427,7 @@ rule _#ASRWin32ApiMacroExclusion_195{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_196{
+rule _#ASRWin32ApiMacroExclusion_197{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2426,7 +2440,7 @@ rule _#ASRWin32ApiMacroExclusion_196{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_197{
+rule _#ASRWin32ApiMacroExclusion_198{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2439,7 +2453,7 @@ rule _#ASRWin32ApiMacroExclusion_197{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_198{
+rule _#ASRWin32ApiMacroExclusion_199{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2452,7 +2466,7 @@ rule _#ASRWin32ApiMacroExclusion_198{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_199{
+rule _#ASRWin32ApiMacroExclusion_200{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 04 00 00 "
 		
@@ -2465,7 +2479,7 @@ rule _#ASRWin32ApiMacroExclusion_199{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_200{
+rule _#ASRWin32ApiMacroExclusion_201{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2478,7 +2492,7 @@ rule _#ASRWin32ApiMacroExclusion_200{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_201{
+rule _#ASRWin32ApiMacroExclusion_202{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2491,7 +2505,7 @@ rule _#ASRWin32ApiMacroExclusion_201{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_202{
+rule _#ASRWin32ApiMacroExclusion_203{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2504,7 +2518,7 @@ rule _#ASRWin32ApiMacroExclusion_202{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_203{
+rule _#ASRWin32ApiMacroExclusion_204{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2517,7 +2531,7 @@ rule _#ASRWin32ApiMacroExclusion_203{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_204{
+rule _#ASRWin32ApiMacroExclusion_205{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2530,7 +2544,7 @@ rule _#ASRWin32ApiMacroExclusion_204{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_205{
+rule _#ASRWin32ApiMacroExclusion_206{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -2544,7 +2558,7 @@ rule _#ASRWin32ApiMacroExclusion_205{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=5
  
 }
-rule _#ASRWin32ApiMacroExclusion_206{
+rule _#ASRWin32ApiMacroExclusion_207{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2557,7 +2571,7 @@ rule _#ASRWin32ApiMacroExclusion_206{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_207{
+rule _#ASRWin32ApiMacroExclusion_208{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2570,7 +2584,7 @@ rule _#ASRWin32ApiMacroExclusion_207{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_208{
+rule _#ASRWin32ApiMacroExclusion_209{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0e 00 0e 00 07 00 00 "
 		
@@ -2586,7 +2600,7 @@ rule _#ASRWin32ApiMacroExclusion_208{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2+(#a_00_4  & 1)*2+(#a_00_5  & 1)*2+(#a_00_6  & 1)*2) >=14
  
 }
-rule _#ASRWin32ApiMacroExclusion_209{
+rule _#ASRWin32ApiMacroExclusion_210{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 03 00 00 "
 		
@@ -2598,7 +2612,7 @@ rule _#ASRWin32ApiMacroExclusion_209{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_210{
+rule _#ASRWin32ApiMacroExclusion_211{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2611,7 +2625,7 @@ rule _#ASRWin32ApiMacroExclusion_210{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_211{
+rule _#ASRWin32ApiMacroExclusion_212{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2624,7 +2638,7 @@ rule _#ASRWin32ApiMacroExclusion_211{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_212{
+rule _#ASRWin32ApiMacroExclusion_213{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2637,7 +2651,7 @@ rule _#ASRWin32ApiMacroExclusion_212{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_213{
+rule _#ASRWin32ApiMacroExclusion_214{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2650,7 +2664,7 @@ rule _#ASRWin32ApiMacroExclusion_213{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_214{
+rule _#ASRWin32ApiMacroExclusion_215{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2662,7 +2676,7 @@ rule _#ASRWin32ApiMacroExclusion_214{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_215{
+rule _#ASRWin32ApiMacroExclusion_216{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2675,7 +2689,7 @@ rule _#ASRWin32ApiMacroExclusion_215{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_216{
+rule _#ASRWin32ApiMacroExclusion_217{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2688,7 +2702,7 @@ rule _#ASRWin32ApiMacroExclusion_216{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_217{
+rule _#ASRWin32ApiMacroExclusion_218{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 05 00 00 "
 		
@@ -2702,7 +2716,7 @@ rule _#ASRWin32ApiMacroExclusion_217{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2+(#a_00_4  & 1)*2) >=8
  
 }
-rule _#ASRWin32ApiMacroExclusion_218{
+rule _#ASRWin32ApiMacroExclusion_219{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2715,7 +2729,7 @@ rule _#ASRWin32ApiMacroExclusion_218{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_219{
+rule _#ASRWin32ApiMacroExclusion_220{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2728,7 +2742,7 @@ rule _#ASRWin32ApiMacroExclusion_219{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_220{
+rule _#ASRWin32ApiMacroExclusion_221{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2741,7 +2755,7 @@ rule _#ASRWin32ApiMacroExclusion_220{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_221{
+rule _#ASRWin32ApiMacroExclusion_222{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2753,7 +2767,7 @@ rule _#ASRWin32ApiMacroExclusion_221{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_222{
+rule _#ASRWin32ApiMacroExclusion_223{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2766,7 +2780,7 @@ rule _#ASRWin32ApiMacroExclusion_222{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_223{
+rule _#ASRWin32ApiMacroExclusion_224{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2779,7 +2793,7 @@ rule _#ASRWin32ApiMacroExclusion_223{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_224{
+rule _#ASRWin32ApiMacroExclusion_225{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2791,7 +2805,7 @@ rule _#ASRWin32ApiMacroExclusion_224{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_225{
+rule _#ASRWin32ApiMacroExclusion_226{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,09 00 09 00 06 00 00 "
 		
@@ -2806,7 +2820,7 @@ rule _#ASRWin32ApiMacroExclusion_225{
 		((#a_00_0  & 1)*5+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1) >=9
  
 }
-rule _#ASRWin32ApiMacroExclusion_226{
+rule _#ASRWin32ApiMacroExclusion_227{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2819,7 +2833,7 @@ rule _#ASRWin32ApiMacroExclusion_226{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_227{
+rule _#ASRWin32ApiMacroExclusion_228{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -2831,7 +2845,7 @@ rule _#ASRWin32ApiMacroExclusion_227{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_228{
+rule _#ASRWin32ApiMacroExclusion_229{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2843,7 +2857,7 @@ rule _#ASRWin32ApiMacroExclusion_228{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_229{
+rule _#ASRWin32ApiMacroExclusion_230{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2856,7 +2870,7 @@ rule _#ASRWin32ApiMacroExclusion_229{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_230{
+rule _#ASRWin32ApiMacroExclusion_231{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2869,7 +2883,7 @@ rule _#ASRWin32ApiMacroExclusion_230{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_231{
+rule _#ASRWin32ApiMacroExclusion_232{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2882,7 +2896,7 @@ rule _#ASRWin32ApiMacroExclusion_231{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_232{
+rule _#ASRWin32ApiMacroExclusion_233{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 08 00 00 "
 		
@@ -2899,7 +2913,7 @@ rule _#ASRWin32ApiMacroExclusion_232{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_233{
+rule _#ASRWin32ApiMacroExclusion_234{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 05 00 00 "
 		
@@ -2913,7 +2927,7 @@ rule _#ASRWin32ApiMacroExclusion_233{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=3
  
 }
-rule _#ASRWin32ApiMacroExclusion_234{
+rule _#ASRWin32ApiMacroExclusion_235{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2926,7 +2940,7 @@ rule _#ASRWin32ApiMacroExclusion_234{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_235{
+rule _#ASRWin32ApiMacroExclusion_236{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2939,7 +2953,7 @@ rule _#ASRWin32ApiMacroExclusion_235{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_236{
+rule _#ASRWin32ApiMacroExclusion_237{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -2953,7 +2967,7 @@ rule _#ASRWin32ApiMacroExclusion_236{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=5
  
 }
-rule _#ASRWin32ApiMacroExclusion_237{
+rule _#ASRWin32ApiMacroExclusion_238{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 03 00 00 "
 		
@@ -2965,7 +2979,7 @@ rule _#ASRWin32ApiMacroExclusion_237{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_238{
+rule _#ASRWin32ApiMacroExclusion_239{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2978,7 +2992,7 @@ rule _#ASRWin32ApiMacroExclusion_238{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_239{
+rule _#ASRWin32ApiMacroExclusion_240{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -2991,7 +3005,7 @@ rule _#ASRWin32ApiMacroExclusion_239{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_240{
+rule _#ASRWin32ApiMacroExclusion_241{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 06 00 00 "
 		
@@ -3006,7 +3020,7 @@ rule _#ASRWin32ApiMacroExclusion_240{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2+(#a_00_4  & 1)*2+(#a_00_5  & 1)*2) >=8
  
 }
-rule _#ASRWin32ApiMacroExclusion_241{
+rule _#ASRWin32ApiMacroExclusion_242{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -3020,7 +3034,7 @@ rule _#ASRWin32ApiMacroExclusion_241{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=5
  
 }
-rule _#ASRWin32ApiMacroExclusion_242{
+rule _#ASRWin32ApiMacroExclusion_243{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -3033,7 +3047,7 @@ rule _#ASRWin32ApiMacroExclusion_242{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_243{
+rule _#ASRWin32ApiMacroExclusion_244{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -3046,7 +3060,7 @@ rule _#ASRWin32ApiMacroExclusion_243{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_244{
+rule _#ASRWin32ApiMacroExclusion_245{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -3059,7 +3073,7 @@ rule _#ASRWin32ApiMacroExclusion_244{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_245{
+rule _#ASRWin32ApiMacroExclusion_246{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -3072,7 +3086,7 @@ rule _#ASRWin32ApiMacroExclusion_245{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_246{
+rule _#ASRWin32ApiMacroExclusion_247{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -3085,7 +3099,7 @@ rule _#ASRWin32ApiMacroExclusion_246{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_247{
+rule _#ASRWin32ApiMacroExclusion_248{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,0d 00 0d 00 05 00 00 "
 		
@@ -3099,7 +3113,7 @@ rule _#ASRWin32ApiMacroExclusion_247{
 		((#a_00_0  & 1)*10+(#a_00_1  & 1)*10+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=13
  
 }
-rule _#ASRWin32ApiMacroExclusion_248{
+rule _#ASRWin32ApiMacroExclusion_249{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -3112,7 +3126,7 @@ rule _#ASRWin32ApiMacroExclusion_248{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_249{
+rule _#ASRWin32ApiMacroExclusion_250{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -3125,7 +3139,7 @@ rule _#ASRWin32ApiMacroExclusion_249{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_250{
+rule _#ASRWin32ApiMacroExclusion_251{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -3138,7 +3152,7 @@ rule _#ASRWin32ApiMacroExclusion_250{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_251{
+rule _#ASRWin32ApiMacroExclusion_252{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -3151,7 +3165,7 @@ rule _#ASRWin32ApiMacroExclusion_251{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_252{
+rule _#ASRWin32ApiMacroExclusion_253{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -3164,7 +3178,7 @@ rule _#ASRWin32ApiMacroExclusion_252{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_253{
+rule _#ASRWin32ApiMacroExclusion_254{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -3177,7 +3191,7 @@ rule _#ASRWin32ApiMacroExclusion_253{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_254{
+rule _#ASRWin32ApiMacroExclusion_255{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -3190,7 +3204,7 @@ rule _#ASRWin32ApiMacroExclusion_254{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1) >=4
  
 }
-rule _#ASRWin32ApiMacroExclusion_255{
+rule _#ASRWin32ApiMacroExclusion_256{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 08 00 00 "
 		
@@ -3207,7 +3221,7 @@ rule _#ASRWin32ApiMacroExclusion_255{
 		((#a_00_0  & 1)*3+(#a_00_1  & 1)*3+(#a_00_2  & 1)*3+(#a_00_3  & 1)*3+(#a_00_4  & 1)*2+(#a_00_5  & 1)*2+(#a_00_6  & 1)*2+(#a_00_7  & 1)*2) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_256{
+rule _#ASRWin32ApiMacroExclusion_257{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 18 00 00 "
 		
@@ -3240,7 +3254,7 @@ rule _#ASRWin32ApiMacroExclusion_256{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_00_8  & 1)*1+(#a_00_9  & 1)*1+(#a_00_10  & 1)*1+(#a_00_11  & 1)*1+(#a_00_12  & 1)*1+(#a_00_13  & 1)*1+(#a_00_14  & 1)*1+(#a_00_15  & 1)*1+(#a_00_16  & 1)*1+(#a_00_17  & 1)*1+(#a_00_18  & 1)*1+(#a_00_19  & 1)*1+(#a_00_20  & 1)*1+(#a_00_21  & 1)*1+(#a_00_22  & 1)*1+(#a_00_23  & 1)*1) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_257{
+rule _#ASRWin32ApiMacroExclusion_258{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -3254,7 +3268,7 @@ rule _#ASRWin32ApiMacroExclusion_257{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=5
  
 }
-rule _#ASRWin32ApiMacroExclusion_258{
+rule _#ASRWin32ApiMacroExclusion_259{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,06 00 06 00 0b 00 00 "
 		
@@ -3274,7 +3288,7 @@ rule _#ASRWin32ApiMacroExclusion_258{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*2+(#a_00_4  & 1)*2+(#a_00_5  & 1)*2+(#a_00_6  & 1)*2+(#a_00_7  & 1)*2+(#a_00_8  & 1)*1+(#a_00_9  & 1)*1+(#a_00_10  & 1)*1) >=6
  
 }
-rule _#ASRWin32ApiMacroExclusion_259{
+rule _#ASRWin32ApiMacroExclusion_260{
 	meta:
 		description = "!#ASRWin32ApiMacroExclusion,SIGNATURE_TYPE_MACROHSTR_EXT,08 00 08 00 08 00 00 "
 		

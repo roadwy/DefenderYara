@@ -4,6 +4,20 @@ rule Trojan_Win32_GuLoader_EM_MTB{
 		description = "Trojan:Win32/GuLoader.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
+		$a_81_0 = {75 6e 68 61 69 6c 65 64 5c 42 79 67 72 6e 73 65 72 6e 65 73 2e 6c 6e 6b } //1 unhailed\Bygrnsernes.lnk
+		$a_81_1 = {42 6f 69 6c 65 72 6d 61 6b 65 72 31 32 39 2e 73 61 67 } //1 Boilermaker129.sag
+		$a_81_2 = {62 72 64 66 72 75 67 74 74 72 65 72 73 5c 72 65 67 67 69 6f 2e 69 6e 69 } //1 brdfrugttrers\reggio.ini
+		$a_81_3 = {62 6c 6f 6d 6d 65 73 74 65 6e 65 6e 65 73 5c 75 70 66 6c 6f 77 73 2e 69 6e 69 } //1 blommestenenes\upflows.ini
+		$a_81_4 = {6e 75 6c 70 75 6e 6b 74 73 67 65 6e 6e 65 6d 67 61 6e 67 65 5c 63 6c 61 79 77 61 72 65 73 5c 50 61 67 65 64 6f 6d } //1 nulpunktsgennemgange\claywares\Pagedom
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1) >=5
+ 
+}
+rule Trojan_Win32_GuLoader_EM_MTB_2{
+	meta:
+		description = "Trojan:Win32/GuLoader.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
 		$a_01_0 = {4b 00 72 00 66 00 74 00 73 00 76 00 75 00 6c 00 73 00 74 00 65 00 72 00 6e 00 65 00 } //1 Krftsvulsterne
 		$a_01_1 = {4f 00 70 00 64 00 72 00 74 00 74 00 65 00 74 00 33 00 37 00 2e 00 56 00 65 00 64 00 } //1 Opdrttet37.Ved
 		$a_01_2 = {43 00 68 00 69 00 6d 00 65 00 72 00 69 00 63 00 5c 00 52 00 61 00 62 00 69 00 61 00 74 00 65 00 73 00 } //1 Chimeric\Rabiates
@@ -13,7 +27,7 @@ rule Trojan_Win32_GuLoader_EM_MTB{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule Trojan_Win32_GuLoader_EM_MTB_2{
+rule Trojan_Win32_GuLoader_EM_MTB_3{
 	meta:
 		description = "Trojan:Win32/GuLoader.EM!MTB,SIGNATURE_TYPE_PEHSTR,0a 00 0a 00 02 00 00 "
 		

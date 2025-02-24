@@ -14,6 +14,17 @@ rule Trojan_BAT_Formbook_AOK_MTB_2{
 		description = "Trojan:BAT/Formbook.AOK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
 		
 	strings :
+		$a_03_0 = {16 0a 2b 11 00 02 03 06 04 05 28 ?? 00 00 06 00 06 17 58 0a 00 06 02 6f ?? 00 00 0a 2f 0b 04 6f ?? 00 00 0a 05 fe 04 2b 01 16 0b 07 2d d6 } //2
+		$a_03_1 = {02 03 04 6f ?? 00 00 0a 0a 0e 04 05 6f ?? 00 00 0a 59 0b 06 07 05 28 } //1
+	condition:
+		((#a_03_0  & 1)*2+(#a_03_1  & 1)*1) >=3
+ 
+}
+rule Trojan_BAT_Formbook_AOK_MTB_3{
+	meta:
+		description = "Trojan:BAT/Formbook.AOK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
+		
+	strings :
 		$a_01_0 = {0a 0a 06 72 ed 05 00 70 28 10 00 00 06 6f 40 00 00 0a 00 06 18 6f 41 00 00 0a 00 06 18 6f 42 00 00 0a 00 06 6f 43 00 00 0a 0b 07 02 16 02 8e 69 6f 44 00 00 0a 0c 2b 00 } //2
 		$a_01_1 = {66 00 6f 00 72 00 6d 00 75 00 6c 00 61 00 72 00 69 00 6f 00 31 00 35 00 31 00 31 00 32 00 32 00 2e 00 65 00 78 00 65 00 } //1 formulario151122.exe
 	condition:

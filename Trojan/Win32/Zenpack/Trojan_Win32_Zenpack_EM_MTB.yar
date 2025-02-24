@@ -60,6 +60,20 @@ rule Trojan_Win32_Zenpack_EM_MTB_6{
 		description = "Trojan:Win32/Zenpack.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
+		$a_81_0 = {6c 6f 61 64 65 72 2e 63 70 70 2e 62 63 2e 6f 62 6a 2e 70 64 62 } //1 loader.cpp.bc.obj.pdb
+		$a_81_1 = {64 6f 6d 69 6e 69 6f 6e 38 63 72 65 65 70 65 74 68 7a 48 69 73 6d 6f 76 65 64 46 69 73 68 67 47 } //1 dominion8creepethzHismovedFishgG
+		$a_81_2 = {6f 6e 65 32 4b 74 77 6f 59 6f 75 2e 72 65 } //1 one2KtwoYou.re
+		$a_81_3 = {52 65 70 6c 65 6e 69 73 68 4e 67 61 74 68 65 72 69 6e 67 } //1 ReplenishNgathering
+		$a_81_4 = {43 72 65 61 74 65 50 6f 69 6e 74 65 72 4d 6f 6e 69 6b 65 72 } //1 CreatePointerMoniker
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1) >=5
+ 
+}
+rule Trojan_Win32_Zenpack_EM_MTB_7{
+	meta:
+		description = "Trojan:Win32/Zenpack.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
 		$a_01_0 = {46 6f 72 2e 66 39 75 70 6f 6e 4e 53 66 6f 77 6c 73 6f 73 68 65 2e 64 47 72 65 61 74 65 72 } //1 For.f9uponNSfowlsoshe.dGreater
 		$a_01_1 = {4d 61 6b 65 48 55 62 72 6f 75 67 68 74 66 69 73 68 } //1 MakeHUbroughtfish
 		$a_01_2 = {68 65 61 76 65 6e 48 65 61 76 65 6e 6b 69 6e 64 43 45 6c 73 65 65 64 67 72 65 61 74 65 72 } //1 heavenHeavenkindCElseedgreater
@@ -69,7 +83,7 @@ rule Trojan_Win32_Zenpack_EM_MTB_6{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule Trojan_Win32_Zenpack_EM_MTB_7{
+rule Trojan_Win32_Zenpack_EM_MTB_8{
 	meta:
 		description = "Trojan:Win32/Zenpack.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -83,7 +97,7 @@ rule Trojan_Win32_Zenpack_EM_MTB_7{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule Trojan_Win32_Zenpack_EM_MTB_8{
+rule Trojan_Win32_Zenpack_EM_MTB_9{
 	meta:
 		description = "Trojan:Win32/Zenpack.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -97,7 +111,7 @@ rule Trojan_Win32_Zenpack_EM_MTB_8{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule Trojan_Win32_Zenpack_EM_MTB_9{
+rule Trojan_Win32_Zenpack_EM_MTB_10{
 	meta:
 		description = "Trojan:Win32/Zenpack.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		

@@ -1,6 +1,21 @@
 
 rule Trojan_Win32_Guloader_ASH_MTB{
 	meta:
+		description = "Trojan:Win32/Guloader.ASH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
+		
+	strings :
+		$a_01_0 = {6c 6f 6e 67 68 6f 75 73 65 5c 48 61 62 69 6c 69 6d 65 6e 74 61 74 69 6f 6e 32 32 36 2e 69 6e 69 } //1 longhouse\Habilimentation226.ini
+		$a_01_1 = {55 61 67 74 73 6f 6d 6d 65 73 5c 45 66 74 65 72 6d 69 64 64 61 67 73 6d 61 61 6c 74 69 64 65 72 73 5c 73 6d 75 64 73 65 } //1 Uagtsommes\Eftermiddagsmaaltiders\smudse
+		$a_01_2 = {73 6a 6c 64 65 6e 68 65 64 65 72 5c 53 79 72 65 62 61 64 65 74 73 2e 74 6f 72 } //1 sjldenheder\Syrebadets.tor
+		$a_01_3 = {72 65 73 66 6f 72 6e 72 6d 65 6e 64 65 73 5c 50 72 69 6e 74 65 72 6b 6f 6d 6d 61 6e 64 6f 2e 76 65 6c } //1 resfornrmendes\Printerkommando.vel
+		$a_01_4 = {67 74 65 73 6b 61 62 73 73 61 67 65 6e 5c 41 66 6b 72 69 73 74 6e 65 6e 64 65 73 2e 64 6c 6c } //1 gteskabssagen\Afkristnendes.dll
+		$a_01_5 = {54 6f 74 61 6c 73 61 6e 65 72 69 6e 67 65 6e 32 34 32 2e 74 78 74 } //1 Totalsaneringen242.txt
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=6
+ 
+}
+rule Trojan_Win32_Guloader_ASH_MTB_2{
+	meta:
 		description = "Trojan:Win32/Guloader.ASH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :

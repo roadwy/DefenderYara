@@ -1,0 +1,11 @@
+
+rule Trojan_Win32_LummaC_GE_MTB{
+	meta:
+		description = "Trojan:Win32/LummaC.GE!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_02_0 = {ff c6 ff cf 90 13 fe c3 90 13 8a 94 1d ?? ?? ?? ?? 02 c2 90 13 8a 8c 05 ?? ?? ?? ?? 88 8c 1d ?? ?? ?? ?? 88 94 05 ?? ?? ?? ?? 02 ca 90 13 8a 8c 0d ?? ?? ?? ?? 30 0e } //1
+	condition:
+		((#a_02_0  & 1)*1) >=1
+ 
+}

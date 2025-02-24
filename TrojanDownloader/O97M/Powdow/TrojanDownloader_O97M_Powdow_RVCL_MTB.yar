@@ -11,3 +11,15 @@ rule TrojanDownloader_O97M_Powdow_RVCL_MTB{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
+rule TrojanDownloader_O97M_Powdow_RVCL_MTB_2{
+	meta:
+		description = "TrojanDownloader:O97M/Powdow.RVCL!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,03 00 03 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {73 75 62 61 75 74 6f 5f 6f 70 65 6e 28 29 63 61 6c 6c 78 63 67 75 78 6c 76 66 65 6e 64 73 75 62 73 75 62 78 63 67 75 78 6c 76 66 28 29 64 69 6d 63 61 73 73 74 72 69 6e 67 63 3d 22 70 6f 77 65 72 73 68 65 6c 6c 2e 65 78 65 2d 6e 6f 70 2d 77 68 69 64 64 65 6e 2d 65 6e 63 6a 61 62 78 61 67 6b 61 62 67 61 7a 61 64 69 61 69 61 61 39 61 63 61 61 71 61 61 69 61 61 30 61 } //1 subauto_open()callxcguxlvfendsubsubxcguxlvf()dimcasstringc="powershell.exe-nop-whidden-encjabxagkabgazadiaiaa9acaaqaaiaa0a
+		$a_01_1 = {61 67 67 61 64 61 62 30 61 68 61 61 63 77 61 36 61 63 38 61 6c 77 22 5f 26 22 61 78 61 64 6b 61 6e 61 61 75 61 64 65 61 6f 61 61 79 61 63 34 61 6d 71 61 32 61 64 71 61 6c 67 61 78 61 64 71 61 6f 71 61 36 61 64 67 61 6d 61 61 34 61 64 61 61 6c 77 62 6d 61 67 38 61 62 67 62 30 61 67 65 61 64 77 62 6c 61 68 6d 61 62 77 62 74 61 67 75 61 6c 67 62 33 61 67 38 61 7a 67 62 6d 61 63 69 61 6b 71 61 } //1 aggadab0ahaacwa6ac8alw"_&"axadkanaauadeaoaayac4amqa2adqalgaxadqaoqa6adgamaa4adaalwbmag8abgb0ageadwblahmabwbtagualgb3ag8azgbmaciakqa
+		$a_01_2 = {22 73 68 65 6c 6c 28 63 29 65 6e 64 73 75 62 } //1 "shell(c)endsub
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
+ 
+}

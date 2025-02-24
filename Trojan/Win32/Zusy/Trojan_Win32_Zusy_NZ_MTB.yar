@@ -31,3 +31,30 @@ rule Trojan_Win32_Zusy_NZ_MTB_3{
 		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1) >=6
  
 }
+rule Trojan_Win32_Zusy_NZ_MTB_4{
+	meta:
+		description = "Trojan:Win32/Zusy.NZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 04 00 00 "
+		
+	strings :
+		$a_01_0 = {89 41 08 c7 41 04 00 00 00 00 89 51 0c 8b 06 89 41 10 8b 45 f8 89 0e ff 00 ff 75 fc ff d3 8b 77 50 6a 20 } //3
+		$a_01_1 = {47 65 74 4e 61 74 69 76 65 53 79 73 74 65 6d 49 6e 66 6f } //1 GetNativeSystemInfo
+		$a_01_2 = {57 53 41 53 65 6e 64 } //1 WSASend
+		$a_01_3 = {3a 4a 3a 4f 3a 58 3a 56 3a 53 3a 59 3a } //1 :J:O:X:V:S:Y:
+	condition:
+		((#a_01_0  & 1)*3+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=6
+ 
+}
+rule Trojan_Win32_Zusy_NZ_MTB_5{
+	meta:
+		description = "Trojan:Win32/Zusy.NZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {61 6e 74 69 61 6e 61 6c 79 73 69 65 72 20 73 74 61 72 74 65 64 } //2 antianalysier started
+		$a_01_1 = {65 6e 63 6f 64 65 64 50 61 79 6c 6f 61 64 5f 70 61 73 73 77 6f 72 64 } //1 encodedPayload_password
+		$a_01_2 = {28 20 69 20 64 6f 6e 74 20 6c 6f 76 65 20 75 2c 20 62 72 6f 28 28 28 } //1 ( i dont love u, bro(((
+		$a_01_3 = {40 20 77 68 79 20 75 20 72 65 76 65 72 73 65 20 6d 79 20 73 74 75 62 3f 28 28 } //1 @ why u reverse my stub?((
+		$a_01_4 = {50 4f 6e 50 61 50 69 63 } //1 POnPaPic
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=6
+ 
+}

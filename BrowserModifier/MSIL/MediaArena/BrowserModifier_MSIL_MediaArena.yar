@@ -1,6 +1,21 @@
 
 rule BrowserModifier_MSIL_MediaArena{
 	meta:
+		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
+		
+	strings :
+		$a_80_0 = {50 44 46 61 6c 63 6f 6e } //PDFalcon  2
+		$a_80_1 = {4f 66 66 65 72 53 63 72 65 65 6e } //OfferScreen  1
+		$a_80_2 = {6f 66 66 65 72 57 69 6e 64 6f 77 } //offerWindow  1
+		$a_80_3 = {63 6f 6d 70 6f 6e 65 6e 74 2f 6f 66 66 65 72 73 63 72 65 65 6e 2e 78 61 6d 6c } //component/offerscreen.xaml  1
+		$a_80_4 = {50 6f 70 75 70 53 6c 65 65 70 35 } //PopupSleep5  1
+		$a_80_5 = {42 4c 42 65 61 63 6f 6e } //BLBeacon  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=6
+ 
+}
+rule BrowserModifier_MSIL_MediaArena_2{
+	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0a 00 00 "
 		
 	strings :
@@ -18,7 +33,7 @@ rule BrowserModifier_MSIL_MediaArena{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1) >=10
  
 }
-rule BrowserModifier_MSIL_MediaArena_2{
+rule BrowserModifier_MSIL_MediaArena_3{
 	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
@@ -35,7 +50,7 @@ rule BrowserModifier_MSIL_MediaArena_2{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1) >=8
  
 }
-rule BrowserModifier_MSIL_MediaArena_3{
+rule BrowserModifier_MSIL_MediaArena_4{
 	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 "
 		
@@ -56,7 +71,7 @@ rule BrowserModifier_MSIL_MediaArena_3{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1) >=12
  
 }
-rule BrowserModifier_MSIL_MediaArena_4{
+rule BrowserModifier_MSIL_MediaArena_5{
 	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 "
 		
@@ -75,5 +90,20 @@ rule BrowserModifier_MSIL_MediaArena_4{
 		$a_01_11 = {61 00 64 00 76 00 65 00 72 00 74 00 69 00 73 00 65 00 6d 00 65 00 6e 00 74 00 73 00 20 00 62 00 61 00 73 00 65 00 64 00 20 00 6f 00 6e 00 20 00 79 00 6f 00 75 00 72 00 20 00 73 00 65 00 61 00 72 00 63 00 68 00 65 00 73 00 } //1 advertisements based on your searches
 	condition:
 		((#a_01_0  & 1)*3+(#a_01_1  & 1)*3+(#a_01_2  & 1)*3+(#a_01_3  & 1)*3+(#a_01_4  & 1)*2+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1) >=12
+ 
+}
+rule BrowserModifier_MSIL_MediaArena_6{
+	meta:
+		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR,08 00 08 00 06 00 00 "
+		
+	strings :
+		$a_01_0 = {4f 66 66 65 72 53 63 72 65 65 6e } //1 OfferScreen
+		$a_01_1 = {6f 66 66 65 72 57 69 6e 64 6f 77 } //1 offerWindow
+		$a_01_2 = {49 5f 44 53 5f 54 5f 59 5f 50 5f 4f 50 45 4e 45 44 } //1 I_DS_T_Y_P_OPENED
+		$a_01_3 = {49 5f 44 53 5f 46 46 5f 53 45 54 5f 54 49 4e 47 53 5f 53 45 45 52 52 43 48 5f 45 4e 47 } //2 I_DS_FF_SET_TINGS_SEERRCH_ENG
+		$a_01_4 = {42 72 6f 77 73 65 72 4c 6f 61 64 65 64 57 69 74 68 55 72 6c } //1 BrowserLoadedWithUrl
+		$a_01_5 = {4d 79 50 64 66 4d 61 6e 61 67 65 72 2e 70 64 62 } //2 MyPdfManager.pdb
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*2+(#a_01_4  & 1)*1+(#a_01_5  & 1)*2) >=8
  
 }

@@ -9,14 +9,3 @@ rule Trojan_BAT_Remcos_RP_MTB{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_BAT_Remcos_RP_MTB_2{
-	meta:
-		description = "Trojan:BAT/Remcos.RP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 02 00 00 "
-		
-	strings :
-		$a_03_0 = {58 07 59 61 08 61 13 12 11 12 20 ?? ?? ?? ?? 06 59 07 61 61 13 12 7e ?? ?? ?? ?? 6f ?? ?? ?? ?? 11 12 6a 6f ?? ?? ?? ?? 7e ?? ?? ?? ?? 2c 09 } //10
-		$a_01_1 = {11 1f 18 91 11 1f 19 91 1f 10 62 60 11 1f 16 91 1e 62 60 11 1f 17 91 1f 18 62 60 02 65 61 } //1
-	condition:
-		((#a_03_0  & 1)*10+(#a_01_1  & 1)*1) >=11
- 
-}

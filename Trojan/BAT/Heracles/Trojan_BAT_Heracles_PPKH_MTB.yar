@@ -1,0 +1,12 @@
+
+rule Trojan_BAT_Heracles_PPKH_MTB{
+	meta:
+		description = "Trojan:BAT/Heracles.PPKH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {1f 10 62 0f ?? 28 ?? ?? ?? ?? 1e 62 60 0f 01 28 ?? ?? ?? ?? 60 0b 02 07 1f 10 63 20 ff 00 00 00 5f d2 6f ?? ?? ?? ?? 00 02 07 1e 63 } //5
+		$a_03_1 = {9c 25 18 0f 01 28 ?? ?? ?? ?? 9c 0d 02 09 04 28 ?? ?? ?? ?? 6f ?? ?? ?? ?? 00 09 16 91 09 17 91 60 } //6
+	condition:
+		((#a_03_0  & 1)*5+(#a_03_1  & 1)*6) >=11
+ 
+}

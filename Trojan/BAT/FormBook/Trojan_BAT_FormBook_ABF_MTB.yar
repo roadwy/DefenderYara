@@ -1,6 +1,16 @@
 
 rule Trojan_BAT_FormBook_ABF_MTB{
 	meta:
+		description = "Trojan:BAT/FormBook.ABF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 "
+		
+	strings :
+		$a_01_0 = {16 13 07 2b 15 11 06 11 07 91 13 08 00 11 08 04 61 13 09 00 11 07 17 58 13 07 11 07 11 06 8e 69 32 e3 } //2
+	condition:
+		((#a_01_0  & 1)*2) >=2
+ 
+}
+rule Trojan_BAT_FormBook_ABF_MTB_2{
+	meta:
 		description = "Trojan:BAT/FormBook.ABF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
 		
 	strings :
@@ -10,7 +20,7 @@ rule Trojan_BAT_FormBook_ABF_MTB{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }
-rule Trojan_BAT_FormBook_ABF_MTB_2{
+rule Trojan_BAT_FormBook_ABF_MTB_3{
 	meta:
 		description = "Trojan:BAT/FormBook.ABF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -21,7 +31,18 @@ rule Trojan_BAT_FormBook_ABF_MTB_2{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
 }
-rule Trojan_BAT_FormBook_ABF_MTB_3{
+rule Trojan_BAT_FormBook_ABF_MTB_4{
+	meta:
+		description = "Trojan:BAT/FormBook.ABF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {02 06 07 6f ?? 00 00 0a 0c 04 03 6f ?? 00 00 0a 59 0d 09 19 fe 04 16 fe 01 13 04 11 04 2c 2f 00 03 19 8d ?? 00 00 01 25 16 12 02 28 ?? 00 00 0a 9c 25 17 12 02 28 ?? 00 00 0a 9c 25 18 12 02 28 ?? 00 00 0a 9c 6f } //3
+		$a_01_1 = {49 00 67 00 6e 00 69 00 74 00 65 00 46 00 69 00 74 00 6e 00 65 00 73 00 73 00 54 00 72 00 61 00 63 00 6b 00 65 00 72 00 } //2 IgniteFitnessTracker
+	condition:
+		((#a_03_0  & 1)*3+(#a_01_1  & 1)*2) >=5
+ 
+}
+rule Trojan_BAT_FormBook_ABF_MTB_5{
 	meta:
 		description = "Trojan:BAT/FormBook.ABF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 "
 		

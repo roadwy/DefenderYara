@@ -1,6 +1,21 @@
 
 rule HackTool_Win32_Crack_MTB{
 	meta:
+		description = "HackTool:Win32/Crack!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
+		
+	strings :
+		$a_80_0 = {52 61 72 45 78 74 49 6e 73 74 61 6c 6c 65 72 2e 70 64 62 } //RarExtInstaller.pdb  2
+		$a_80_1 = {43 3a 5c 4e 65 76 65 72 53 68 6f 77 2e 74 78 74 } //C:\NeverShow.txt  1
+		$a_80_2 = {4f 6e 43 6c 69 63 6b } //OnClick  1
+		$a_80_3 = {72 65 70 61 63 6b 73 2e 64 64 6e 73 2e 6e 65 74 } //repacks.ddns.net  1
+		$a_80_4 = {72 65 70 61 63 6b 2e 6d 65 } //repack.me  1
+		$a_80_5 = {41 63 74 69 76 61 74 69 6f 6e } //Activation  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=6
+ 
+}
+rule HackTool_Win32_Crack_MTB_2{
+	meta:
 		description = "HackTool:Win32/Crack!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :
@@ -15,7 +30,7 @@ rule HackTool_Win32_Crack_MTB{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1) >=7
  
 }
-rule HackTool_Win32_Crack_MTB_2{
+rule HackTool_Win32_Crack_MTB_3{
 	meta:
 		description = "HackTool:Win32/Crack!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		

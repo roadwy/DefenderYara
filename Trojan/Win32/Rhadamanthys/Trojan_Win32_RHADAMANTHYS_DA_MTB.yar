@@ -1,7 +1,7 @@
 
-rule Trojan_Win32_RHADAMANTHYS_DA_MTB{
+rule Trojan_Win32_Rhadamanthys_DA_MTB{
 	meta:
-		description = "Trojan:Win32/RHADAMANTHYS.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,47 00 47 00 0b 00 00 "
+		description = "Trojan:Win32/Rhadamanthys.DA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,47 00 47 00 0b 00 00 "
 		
 	strings :
 		$a_81_0 = {4e 42 44 65 76 69 63 65 47 65 74 49 64 41 } //10 NBDeviceGetIdA

@@ -1,6 +1,18 @@
 
 rule Trojan_BAT_SnakeLogger_PB_MTB{
 	meta:
+		description = "Trojan:BAT/SnakeLogger.PB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {50 00 4b 00 31 00 31 00 53 00 44 00 52 00 5f 00 44 00 65 00 63 00 72 00 79 00 70 00 74 00 } //1 PK11SDR_Decrypt
+		$a_01_1 = {5c 00 64 00 69 00 73 00 63 00 6f 00 72 00 64 00 5c 00 4c 00 6f 00 63 00 61 00 6c 00 20 00 53 00 74 00 6f 00 72 00 61 00 67 00 65 00 5c 00 6c 00 65 00 76 00 65 00 6c 00 64 00 62 00 } //1 \discord\Local Storage\leveldb
+		$a_01_2 = {2d 00 2d 00 2d 00 2d 00 2d 00 2d 00 2d 00 2d 00 20 00 53 00 6e 00 61 00 6b 00 65 00 20 00 4b 00 65 00 79 00 6c 00 6f 00 67 00 67 00 65 00 72 00 20 00 2d 00 2d 00 2d 00 2d 00 2d 00 2d 00 2d 00 2d 00 } //2 -------- Snake Keylogger --------
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*2) >=4
+ 
+}
+rule Trojan_BAT_SnakeLogger_PB_MTB_2{
+	meta:
 		description = "Trojan:BAT/SnakeLogger.PB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :

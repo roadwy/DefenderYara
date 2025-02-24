@@ -1,0 +1,12 @@
+
+rule Trojan_BAT_AsyncRAT_PPXH_MTB{
+	meta:
+		description = "Trojan:BAT/AsyncRAT.PPXH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {25 16 08 1f 10 63 20 ?? ?? ?? ?? 5f d2 9c 25 17 08 1e 63 20 ?? ?? ?? ?? 5f d2 9c 25 18 08 20 ?? ?? ?? ?? 5f d2 9c } //6
+		$a_03_1 = {25 16 0f 01 28 ?? ?? ?? ?? 9c 25 17 0f 01 28 ?? ?? ?? ?? 9c 25 18 0f 01 28 ?? ?? ?? ?? 9c 04 } //5
+	condition:
+		((#a_03_0  & 1)*6+(#a_03_1  & 1)*5) >=11
+ 
+}

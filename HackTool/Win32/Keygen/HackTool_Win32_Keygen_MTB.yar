@@ -1,6 +1,19 @@
 
 rule HackTool_Win32_Keygen_MTB{
 	meta:
+		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
+		$a_80_0 = {47 65 6e 65 72 61 74 65 } //Generate  1
+		$a_80_1 = {6b 65 79 67 65 6e 6e 65 64 20 62 79 20 69 63 65 2f 42 52 44 } //keygenned by ice/BRD  1
+		$a_80_2 = {2d 20 4b 65 79 67 65 6e 20 62 79 20 42 52 44 } //- Keygen by BRD  1
+		$a_80_3 = {62 6c 61 63 6b 20 72 69 64 65 72 73 } //black riders  1
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
+ 
+}
+rule HackTool_Win32_Keygen_MTB_2{
+	meta:
 		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
 	strings :
@@ -13,7 +26,7 @@ rule HackTool_Win32_Keygen_MTB{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_00_4  & 1)*1) >=4
  
 }
-rule HackTool_Win32_Keygen_MTB_2{
+rule HackTool_Win32_Keygen_MTB_3{
 	meta:
 		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR,05 00 05 00 05 00 00 "
 		
@@ -27,7 +40,7 @@ rule HackTool_Win32_Keygen_MTB_2{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule HackTool_Win32_Keygen_MTB_3{
+rule HackTool_Win32_Keygen_MTB_4{
 	meta:
 		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR,06 00 06 00 06 00 00 "
 		
@@ -42,7 +55,7 @@ rule HackTool_Win32_Keygen_MTB_3{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=6
  
 }
-rule HackTool_Win32_Keygen_MTB_4{
+rule HackTool_Win32_Keygen_MTB_5{
 	meta:
 		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR,07 00 07 00 07 00 00 "
 		
@@ -58,7 +71,7 @@ rule HackTool_Win32_Keygen_MTB_4{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=7
  
 }
-rule HackTool_Win32_Keygen_MTB_5{
+rule HackTool_Win32_Keygen_MTB_6{
 	meta:
 		description = "HackTool:Win32/Keygen.MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		

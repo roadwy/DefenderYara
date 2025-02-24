@@ -12,6 +12,17 @@ rule Trojan_Win64_Tedy_NT_MTB{
 }
 rule Trojan_Win64_Tedy_NT_MTB_2{
 	meta:
+		description = "Trojan:Win64/Tedy.NT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {84 c0 0f 84 36 01 00 00 40 32 f6 40 88 74 24 ?? e8 d6 f9 ff ff 8a d8 8b 0d 8a dd 05 00 83 f9 01 0f 84 23 01 00 00 85 c9 75 4a c7 05 73 dd 05 00 01 00 00 00 48 8d 15 6c 75 03 00 48 8d 0d 15 75 03 00 } //3
+		$a_01_1 = {52 4f 53 48 61 6e 64 6c 65 72 } //1 ROSHandler
+	condition:
+		((#a_03_0  & 1)*3+(#a_01_1  & 1)*1) >=4
+ 
+}
+rule Trojan_Win64_Tedy_NT_MTB_3{
+	meta:
 		description = "Trojan:Win64/Tedy.NT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
@@ -24,7 +35,19 @@ rule Trojan_Win64_Tedy_NT_MTB_2{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule Trojan_Win64_Tedy_NT_MTB_3{
+rule Trojan_Win64_Tedy_NT_MTB_4{
+	meta:
+		description = "Trojan:Win64/Tedy.NT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 03 00 00 "
+		
+	strings :
+		$a_03_0 = {41 ff c0 48 ff c2 48 83 c0 28 49 3b d1 7c e1 eb 19 49 63 c0 48 8d 0c 80 41 8b 44 ca ?? 41 8b 74 ca ?? 4a 8d 1c 38 4e 8d 24 28 41 8b 04 24 4c 8b ac 24 48 03 00 00 } //3
+		$a_01_1 = {65 78 70 6c 6f 69 74 61 74 69 6f 6e 20 64 } //1 exploitation d
+		$a_01_2 = {45 58 50 4c 4f 49 54 5c 42 49 4e 41 52 59 } //1 EXPLOIT\BINARY
+	condition:
+		((#a_03_0  & 1)*3+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=5
+ 
+}
+rule Trojan_Win64_Tedy_NT_MTB_5{
 	meta:
 		description = "Trojan:Win64/Tedy.NT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 "
 		

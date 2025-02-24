@@ -116,3 +116,14 @@ rule Trojan_BAT_Remcos_ARO_MTB_11{
 		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }
+rule Trojan_BAT_Remcos_ARO_MTB_12{
+	meta:
+		description = "Trojan:BAT/Remcos.ARO!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {08 11 04 07 11 04 91 09 11 04 09 6f ?? 00 00 0a 5d 6f ?? 00 00 0a 61 d2 9c 11 04 17 58 13 04 11 04 07 8e 69 32 da } //3
+		$a_01_1 = {69 00 6e 00 73 00 70 00 69 00 72 00 65 00 63 00 6f 00 6c 00 6c 00 65 00 67 00 65 00 2e 00 63 00 6f 00 2e 00 75 00 6b 00 2f 00 74 00 72 00 61 00 73 00 68 00 73 00 73 00 2f 00 4a 00 70 00 6d 00 66 00 77 00 71 00 2e 00 77 00 61 00 76 00 } //2 inspirecollege.co.uk/trashss/Jpmfwq.wav
+	condition:
+		((#a_03_0  & 1)*3+(#a_01_1  & 1)*2) >=5
+ 
+}

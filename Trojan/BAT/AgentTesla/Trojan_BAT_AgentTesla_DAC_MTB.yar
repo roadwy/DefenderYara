@@ -11,15 +11,3 @@ rule Trojan_BAT_AgentTesla_DAC_MTB{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule Trojan_BAT_AgentTesla_DAC_MTB_2{
-	meta:
-		description = "Trojan:BAT/AgentTesla.DAC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 03 00 00 "
-		
-	strings :
-		$a_03_0 = {0d 16 13 07 2b 17 00 09 11 07 08 11 07 9a 1f 10 28 ?? 00 00 0a 9c 00 11 07 17 58 13 07 11 07 08 8e 69 fe 04 13 08 11 08 2d dc } //3
-		$a_01_1 = {53 70 6c 69 74 } //1 Split
-		$a_01_2 = {54 6f 42 79 74 65 } //1 ToByte
-	condition:
-		((#a_03_0  & 1)*3+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=5
- 
-}
