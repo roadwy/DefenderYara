@@ -14,12 +14,22 @@ rule Trojan_Win32_Fragtor_AFG_MTB_2{
 		description = "Trojan:Win32/Fragtor.AFG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_01_0 = {0f b6 05 70 48 01 10 a2 10 53 01 10 0f b6 05 71 48 01 10 a2 11 53 01 10 0f b6 05 72 48 01 10 a2 12 53 01 10 0f b6 05 73 48 01 10 a2 13 53 01 10 0f b6 05 74 48 01 10 a2 14 53 01 10 } //1
+		$a_01_0 = {8b ca c1 f9 06 83 e2 3f 6b d2 38 8b 0c 8d 48 8f 50 00 88 44 11 29 8b 0b 8b c1 c1 f8 06 83 e1 3f 6b d1 38 8b 0c 85 48 8f 50 00 8b 45 14 c1 e8 10 32 44 11 2d 24 01 30 44 11 2d } //1
 	condition:
 		((#a_01_0  & 1)*1) >=1
  
 }
 rule Trojan_Win32_Fragtor_AFG_MTB_3{
+	meta:
+		description = "Trojan:Win32/Fragtor.AFG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_01_0 = {0f b6 05 70 48 01 10 a2 10 53 01 10 0f b6 05 71 48 01 10 a2 11 53 01 10 0f b6 05 72 48 01 10 a2 12 53 01 10 0f b6 05 73 48 01 10 a2 13 53 01 10 0f b6 05 74 48 01 10 a2 14 53 01 10 } //1
+	condition:
+		((#a_01_0  & 1)*1) >=1
+ 
+}
+rule Trojan_Win32_Fragtor_AFG_MTB_4{
 	meta:
 		description = "Trojan:Win32/Fragtor.AFG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 "
 		

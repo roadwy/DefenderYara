@@ -25,6 +25,22 @@ rule Trojan_Win64_Zusy_EM_MTB_2{
 }
 rule Trojan_Win64_Zusy_EM_MTB_3{
 	meta:
+		description = "Trojan:Win64/Zusy.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
+		
+	strings :
+		$a_81_0 = {49 20 46 6f 6c 6c 6f 77 20 59 6f 75 2e 64 6c 6c } //1 I Follow You.dll
+		$a_81_1 = {49 5f 46 6f 6c 6c 6f 77 5f 59 6f 75 5f 61 75 6a 64 61 77 } //1 I_Follow_You_aujdaw
+		$a_81_2 = {47 65 74 54 65 6d 70 50 61 74 68 41 } //1 GetTempPathA
+		$a_81_3 = {43 6f 70 79 46 69 6c 65 41 } //1 CopyFileA
+		$a_81_4 = {57 69 6e 45 78 65 63 } //1 WinExec
+		$a_81_5 = {57 69 6e 48 74 74 70 52 65 63 65 69 76 65 52 65 73 70 6f 6e 73 65 } //1 WinHttpReceiveResponse
+		$a_81_6 = {63 65 69 6c 66 } //1 ceilf
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1+(#a_81_6  & 1)*1) >=7
+ 
+}
+rule Trojan_Win64_Zusy_EM_MTB_4{
+	meta:
 		description = "Trojan:Win64/Zusy.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
@@ -38,7 +54,7 @@ rule Trojan_Win64_Zusy_EM_MTB_3{
 		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1) >=6
  
 }
-rule Trojan_Win64_Zusy_EM_MTB_4{
+rule Trojan_Win64_Zusy_EM_MTB_5{
 	meta:
 		description = "Trojan:Win64/Zusy.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		

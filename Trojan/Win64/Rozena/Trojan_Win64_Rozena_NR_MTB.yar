@@ -12,6 +12,17 @@ rule Trojan_Win64_Rozena_NR_MTB{
 }
 rule Trojan_Win64_Rozena_NR_MTB_2{
 	meta:
+		description = "Trojan:Win64/Rozena.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
+		
+	strings :
+		$a_01_0 = {75 24 48 8b 05 c9 e6 10 00 48 83 f8 00 74 06 48 83 38 00 75 11 48 8d 05 8e 4d 00 00 ff d0 } //2
+		$a_01_1 = {e8 7d ff ff ff 48 8b 0d e6 3c 15 00 65 48 8b 09 48 8b 7c 24 08 48 8b 77 08 48 2b 34 24 48 89 39 48 89 f4 89 44 24 20 } //1
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1) >=3
+ 
+}
+rule Trojan_Win64_Rozena_NR_MTB_3{
+	meta:
 		description = "Trojan:Win64/Rozena.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
 	strings :
@@ -21,7 +32,7 @@ rule Trojan_Win64_Rozena_NR_MTB_2{
 		((#a_03_0  & 1)*3+(#a_03_1  & 1)*3) >=6
  
 }
-rule Trojan_Win64_Rozena_NR_MTB_3{
+rule Trojan_Win64_Rozena_NR_MTB_4{
 	meta:
 		description = "Trojan:Win64/Rozena.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		
@@ -32,7 +43,7 @@ rule Trojan_Win64_Rozena_NR_MTB_3{
 		((#a_03_0  & 1)*3+(#a_03_1  & 1)*3) >=6
  
 }
-rule Trojan_Win64_Rozena_NR_MTB_4{
+rule Trojan_Win64_Rozena_NR_MTB_5{
 	meta:
 		description = "Trojan:Win64/Rozena.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 "
 		
@@ -43,7 +54,7 @@ rule Trojan_Win64_Rozena_NR_MTB_4{
 		((#a_03_0  & 1)*3+(#a_03_1  & 1)*2) >=5
  
 }
-rule Trojan_Win64_Rozena_NR_MTB_5{
+rule Trojan_Win64_Rozena_NR_MTB_6{
 	meta:
 		description = "Trojan:Win64/Rozena.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 "
 		
@@ -54,7 +65,7 @@ rule Trojan_Win64_Rozena_NR_MTB_5{
 		((#a_03_0  & 1)*3+(#a_01_1  & 1)*2) >=5
  
 }
-rule Trojan_Win64_Rozena_NR_MTB_6{
+rule Trojan_Win64_Rozena_NR_MTB_7{
 	meta:
 		description = "Trojan:Win64/Rozena.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 03 00 00 "
 		
@@ -66,7 +77,7 @@ rule Trojan_Win64_Rozena_NR_MTB_6{
 		((#a_03_0  & 1)*5+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=7
  
 }
-rule Trojan_Win64_Rozena_NR_MTB_7{
+rule Trojan_Win64_Rozena_NR_MTB_8{
 	meta:
 		description = "Trojan:Win64/Rozena.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 "
 		
@@ -77,7 +88,7 @@ rule Trojan_Win64_Rozena_NR_MTB_7{
 		((#a_03_0  & 1)*3+(#a_03_1  & 1)*2) >=5
  
 }
-rule Trojan_Win64_Rozena_NR_MTB_8{
+rule Trojan_Win64_Rozena_NR_MTB_9{
 	meta:
 		description = "Trojan:Win64/Rozena.NR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 02 00 00 "
 		

@@ -1,7 +1,7 @@
 
 rule Ransom_MSIL_Cryptolocker_EA_MTB{
 	meta:
-		description = "Ransom:MSIL/Cryptolocker.EA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,4a 00 4a 00 0f 00 00 "
+		description = "Ransom:MSIL/Cryptolocker.EA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,4a 00 4a 00 0e 00 00 "
 		
 	strings :
 		$a_81_0 = {2e 70 61 6c 65 73 74 69 6e 65 } //50 .palestine
@@ -18,8 +18,7 @@ rule Ransom_MSIL_Cryptolocker_EA_MTB{
 		$a_81_11 = {6c 6f 6c 69 70 6f 70 } //1 lolipop
 		$a_81_12 = {65 6e 63 72 79 70 74 65 64 46 69 6c 65 45 78 74 65 6e 73 69 6f 6e } //1 encryptedFileExtension
 		$a_81_13 = {45 6e 63 72 79 70 74 46 69 6c 65 } //1 EncryptFile
-		$a_81_14 = {4a 6f 68 6e 44 6f 65 } //1 JohnDoe
 	condition:
-		((#a_81_0  & 1)*50+(#a_81_1  & 1)*50+(#a_81_2  & 1)*50+(#a_81_3  & 1)*50+(#a_81_4  & 1)*20+(#a_81_5  & 1)*20+(#a_81_6  & 1)*20+(#a_81_7  & 1)*3+(#a_81_8  & 1)*3+(#a_81_9  & 1)*3+(#a_81_10  & 1)*3+(#a_81_11  & 1)*1+(#a_81_12  & 1)*1+(#a_81_13  & 1)*1+(#a_81_14  & 1)*1) >=74
+		((#a_81_0  & 1)*50+(#a_81_1  & 1)*50+(#a_81_2  & 1)*50+(#a_81_3  & 1)*50+(#a_81_4  & 1)*20+(#a_81_5  & 1)*20+(#a_81_6  & 1)*20+(#a_81_7  & 1)*3+(#a_81_8  & 1)*3+(#a_81_9  & 1)*3+(#a_81_10  & 1)*3+(#a_81_11  & 1)*1+(#a_81_12  & 1)*1+(#a_81_13  & 1)*1) >=74
  
 }

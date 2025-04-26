@@ -27,19 +27,6 @@ rule TrojanDownloader_Win32_Zlob_2{
 }
 rule TrojanDownloader_Win32_Zlob_3{
 	meta:
-		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
-		
-	strings :
-		$a_01_0 = {b8 68 58 4d 56 bb 00 00 00 00 b9 0a 00 00 00 ba 58 56 00 00 ed 81 fb 68 58 4d 56 } //1
-		$a_01_1 = {49 45 53 50 6c 75 67 69 6e } //1 IESPlugin
-		$a_02_2 = {56 68 04 01 00 00 6a 00 be ?? ?? ?? ?? 56 e8 ?? ?? ?? ?? ff 74 24 14 e8 ?? ?? ?? ?? 83 c4 10 48 78 1a 8b 4c 24 08 2b ce 8a 94 01 ?? ?? ?? ?? 32 54 24 0c 48 88 90 90 ?? ?? ?? ?? 79 ec 8b c6 5e c3 } //2
-		$a_02_3 = {8a 08 40 84 c9 75 f9 2b c2 48 78 1c 8a 4c 24 ?? 81 ?? ?? ?? ?? ?? 8a 94 ?? ?? ?? ?? ?? 32 d1 48 88 90 90 ?? ?? ?? ?? 79 ee } //2
-	condition:
-		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_02_2  & 1)*2+(#a_02_3  & 1)*2) >=3
- 
-}
-rule TrojanDownloader_Win32_Zlob_4{
-	meta:
 		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
@@ -50,7 +37,7 @@ rule TrojanDownloader_Win32_Zlob_4{
 		((#a_02_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule TrojanDownloader_Win32_Zlob_5{
+rule TrojanDownloader_Win32_Zlob_4{
 	meta:
 		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,63 02 63 02 0a 00 00 "
 		
@@ -69,7 +56,7 @@ rule TrojanDownloader_Win32_Zlob_5{
 		((#a_01_0  & 1)*100+(#a_00_1  & 1)*100+(#a_01_2  & 1)*100+(#a_00_3  & 1)*100+(#a_01_4  & 1)*100+(#a_01_5  & 1)*100+(#a_02_6  & 1)*10+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1) >=611
  
 }
-rule TrojanDownloader_Win32_Zlob_6{
+rule TrojanDownloader_Win32_Zlob_5{
 	meta:
 		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,63 02 63 02 0b 00 00 "
 		
@@ -89,7 +76,7 @@ rule TrojanDownloader_Win32_Zlob_6{
 		((#a_01_0  & 1)*100+(#a_00_1  & 1)*100+(#a_01_2  & 1)*100+(#a_00_3  & 1)*100+(#a_01_4  & 1)*100+(#a_01_5  & 1)*100+(#a_01_6  & 1)*10+(#a_00_7  & 1)*10+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1) >=611
  
 }
-rule TrojanDownloader_Win32_Zlob_7{
+rule TrojanDownloader_Win32_Zlob_6{
 	meta:
 		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,06 00 05 00 05 00 00 "
 		
@@ -103,7 +90,7 @@ rule TrojanDownloader_Win32_Zlob_7{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_02_3  & 1)*2+(#a_02_4  & 1)*1) >=5
  
 }
-rule TrojanDownloader_Win32_Zlob_8{
+rule TrojanDownloader_Win32_Zlob_7{
 	meta:
 		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,ffffff97 00 ffffff97 00 08 00 00 "
 		
@@ -120,7 +107,7 @@ rule TrojanDownloader_Win32_Zlob_8{
 		((#a_02_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*10+(#a_00_3  & 1)*10+(#a_00_4  & 1)*10+(#a_00_5  & 1)*10+(#a_00_6  & 1)*10+(#a_01_7  & 1)*100) >=151
  
 }
-rule TrojanDownloader_Win32_Zlob_9{
+rule TrojanDownloader_Win32_Zlob_8{
 	meta:
 		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,22 00 22 00 08 00 00 "
 		
@@ -137,39 +124,7 @@ rule TrojanDownloader_Win32_Zlob_9{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*10+(#a_01_6  & 1)*10+(#a_00_7  & 1)*10) >=34
  
 }
-rule TrojanDownloader_Win32_Zlob_10{
-	meta:
-		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,24 00 24 00 08 00 00 "
-		
-	strings :
-		$a_01_0 = {49 6e 74 65 72 6e 65 74 52 65 61 64 46 69 6c 65 } //10 InternetReadFile
-		$a_01_1 = {4f 70 65 6e 45 76 65 6e 74 57 } //10 OpenEventW
-		$a_01_2 = {4e 65 74 62 69 6f 73 } //10 Netbios
-		$a_02_3 = {68 00 74 00 74 00 70 00 3a 00 2f 00 2f 00 74 00 68 00 65 00 6e 00 (6d 00 6e 00|) 65 00 74 00 77 00 6f 00 72 00 6b 00 90 03 06 00 63 00 6f 00 6d 00 2e 00 63 00 6f 00 6d 00 2f 00 64 00 77 00 2e 00 70 00 68 00 70 00 } //3
-		$a_01_4 = {3f 00 63 00 6f 00 64 00 65 00 3d 00 30 00 30 00 2d 00 30 00 30 00 2d 00 30 00 30 00 2d 00 30 00 30 00 2d 00 30 00 30 00 2d 00 30 00 30 00 26 00 68 00 61 00 73 00 68 00 3d 00 } //2 ?code=00-00-00-00-00-00&hash=
-		$a_01_5 = {62 00 78 00 31 00 38 00 64 00 78 00 76 00 2e 00 64 00 61 00 74 00 } //1 bx18dxv.dat
-		$a_01_6 = {62 78 31 38 64 78 76 2e 64 61 74 } //1 bx18dxv.dat
-		$a_01_7 = {4d 00 79 00 42 00 49 00 54 00 53 00 54 00 72 00 61 00 6e 00 73 00 5f 00 6e 00 65 00 77 00 } //2 MyBITSTrans_new
-	condition:
-		((#a_01_0  & 1)*10+(#a_01_1  & 1)*10+(#a_01_2  & 1)*10+(#a_02_3  & 1)*3+(#a_01_4  & 1)*2+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*2) >=36
- 
-}
-rule TrojanDownloader_Win32_Zlob_11{
-	meta:
-		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,24 00 24 00 06 00 00 "
-		
-	strings :
-		$a_01_0 = {2f 73 65 61 72 63 68 2e 70 68 70 3f 71 71 3d 25 73 } //10 /search.php?qq=%s
-		$a_01_1 = {43 4c 41 46 2e 64 6c 6c 00 44 6c 6c 43 61 6e 55 6e 6c 6f 61 64 4e 6f 77 00 44 6c 6c 47 65 74 43 6c 61 73 73 4f 62 6a 65 63 74 00 44 6c 6c 52 65 67 69 73 74 65 72 53 65 72 76 65 72 00 } //10
-		$a_01_2 = {68 00 74 00 74 00 70 00 3a 00 2f 00 2f 00 61 00 75 00 74 00 6f 00 2e 00 73 00 65 00 61 00 72 00 63 00 68 00 2e 00 6d 00 73 00 6e 00 2e 00 63 00 6f 00 6d 00 2f 00 72 00 65 00 73 00 70 00 6f 00 6e 00 73 00 65 00 2e 00 61 00 73 00 70 00 3f 00 4d 00 54 00 3d 00 } //5 http://auto.search.msn.com/response.asp?MT=
-		$a_01_3 = {2f 00 73 00 65 00 61 00 72 00 63 00 68 00 2e 00 70 00 68 00 70 00 3f 00 71 00 71 00 3d 00 25 00 73 00 } //5 /search.php?qq=%s
-		$a_01_4 = {72 65 6c 65 61 73 65 00 } //5 敲敬獡e
-		$a_01_5 = {7b 35 44 44 45 35 35 39 31 2d 41 38 41 42 2d 34 38 39 37 2d 39 33 45 46 2d 31 45 34 45 39 34 33 46 38 35 41 37 7d } //1 {5DDE5591-A8AB-4897-93EF-1E4E943F85A7}
-	condition:
-		((#a_01_0  & 1)*10+(#a_01_1  & 1)*10+(#a_01_2  & 1)*5+(#a_01_3  & 1)*5+(#a_01_4  & 1)*5+(#a_01_5  & 1)*1) >=36
- 
-}
-rule TrojanDownloader_Win32_Zlob_12{
+rule TrojanDownloader_Win32_Zlob_9{
 	meta:
 		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,ffffff8a 02 ffffff80 02 0d 00 00 "
 		
@@ -191,7 +146,7 @@ rule TrojanDownloader_Win32_Zlob_12{
 		((#a_00_0  & 1)*100+(#a_00_1  & 1)*100+(#a_01_2  & 1)*100+(#a_01_3  & 1)*100+(#a_01_4  & 1)*10+(#a_01_5  & 1)*10+(#a_01_6  & 1)*20+(#a_01_7  & 1)*20+(#a_00_8  & 1)*20+(#a_00_9  & 1)*10+(#a_02_10  & 1)*10+(#a_02_11  & 1)*100+(#a_00_12  & 1)*100) >=640
  
 }
-rule TrojanDownloader_Win32_Zlob_13{
+rule TrojanDownloader_Win32_Zlob_10{
 	meta:
 		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,2e 00 2e 00 07 00 00 "
 		
@@ -207,7 +162,7 @@ rule TrojanDownloader_Win32_Zlob_13{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*10+(#a_00_3  & 1)*10+(#a_00_4  & 1)*10+(#a_00_5  & 1)*10+(#a_00_6  & 1)*5) >=46
  
 }
-rule TrojanDownloader_Win32_Zlob_14{
+rule TrojanDownloader_Win32_Zlob_11{
 	meta:
 		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,56 00 56 00 16 00 00 "
 		
@@ -238,7 +193,7 @@ rule TrojanDownloader_Win32_Zlob_14{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1+(#a_01_12  & 1)*1+(#a_01_13  & 1)*1+(#a_01_14  & 1)*1+(#a_01_15  & 1)*1+(#a_01_16  & 1)*1+(#a_01_17  & 1)*50+(#a_01_18  & 1)*10+(#a_01_19  & 1)*10+(#a_01_20  & 1)*10+(#a_01_21  & 1)*5) >=86
  
 }
-rule TrojanDownloader_Win32_Zlob_15{
+rule TrojanDownloader_Win32_Zlob_12{
 	meta:
 		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR_EXT,5b 00 5b 00 16 00 00 "
 		
@@ -269,7 +224,7 @@ rule TrojanDownloader_Win32_Zlob_15{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1+(#a_01_12  & 1)*1+(#a_01_13  & 1)*1+(#a_01_14  & 1)*1+(#a_01_15  & 1)*1+(#a_01_16  & 1)*1+(#a_01_17  & 1)*50+(#a_01_18  & 1)*10+(#a_01_19  & 1)*10+(#a_01_20  & 1)*10+(#a_01_21  & 1)*10) >=91
  
 }
-rule TrojanDownloader_Win32_Zlob_16{
+rule TrojanDownloader_Win32_Zlob_13{
 	meta:
 		description = "TrojanDownloader:Win32/Zlob,SIGNATURE_TYPE_PEHSTR,03 00 03 00 03 00 00 "
 		

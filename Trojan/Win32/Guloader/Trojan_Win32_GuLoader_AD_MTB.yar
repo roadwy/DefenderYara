@@ -17,6 +17,21 @@ rule Trojan_Win32_GuLoader_AD_MTB{
 }
 rule Trojan_Win32_GuLoader_AD_MTB_2{
 	meta:
+		description = "Trojan:Win32/GuLoader.AD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 06 00 00 "
+		
+	strings :
+		$a_81_0 = {66 6c 6c 65 73 62 72 6e 2e 74 78 74 } //2 fllesbrn.txt
+		$a_81_1 = {59 64 65 72 72 65 64 65 6e 73 31 30 32 2e 4b 61 6e } //2 Yderredens102.Kan
+		$a_81_2 = {62 6c 69 6e 6b 65 6e 62 65 72 67 2e 74 78 74 } //2 blinkenberg.txt
+		$a_81_3 = {63 69 76 69 6c 69 73 61 62 6c 65 5c 45 6e 74 65 72 6f 63 6f 63 63 69 31 34 33 } //2 civilisable\Enterococci143
+		$a_81_4 = {6d 65 73 61 6c 6c 69 61 6e 63 65 72 73 5c 53 65 6b 73 61 61 72 69 6e 67 65 6e } //2 mesalliancers\Seksaaringen
+		$a_81_5 = {63 68 65 67 6f 5c 72 65 76 65 72 65 6e 73 65 6e 73 } //2 chego\reverensens
+	condition:
+		((#a_81_0  & 1)*2+(#a_81_1  & 1)*2+(#a_81_2  & 1)*2+(#a_81_3  & 1)*2+(#a_81_4  & 1)*2+(#a_81_5  & 1)*2) >=12
+ 
+}
+rule Trojan_Win32_GuLoader_AD_MTB_3{
+	meta:
 		description = "Trojan:Win32/GuLoader.AD!MTB,SIGNATURE_TYPE_PEHSTR,05 00 05 00 05 00 00 "
 		
 	strings :
@@ -29,7 +44,7 @@ rule Trojan_Win32_GuLoader_AD_MTB_2{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule Trojan_Win32_GuLoader_AD_MTB_3{
+rule Trojan_Win32_GuLoader_AD_MTB_4{
 	meta:
 		description = "Trojan:Win32/GuLoader.AD!MTB,SIGNATURE_TYPE_PEHSTR,06 00 06 00 06 00 00 "
 		

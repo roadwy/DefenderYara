@@ -1,0 +1,11 @@
+
+rule Trojan_Win32_Zusy_GNN_MTB{
+	meta:
+		description = "Trojan:Win32/Zusy.GNN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {89 04 24 a1 ?? ?? ?? ?? ff d0 83 ec ?? 89 45 ?? ?? ?? c7 04 24 65 00 00 00 a1 ?? ?? ?? ?? ff d0 83 ec ?? 8b 45 ?? 89 44 24 ?? 8b 45 ?? 89 04 24 a1 ?? ?? ?? ?? ff d0 } //10
+	condition:
+		((#a_03_0  & 1)*10) >=10
+ 
+}

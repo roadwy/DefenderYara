@@ -1,6 +1,18 @@
 
 rule Ransom_MSIL_Filecoder_PAB_MTB{
 	meta:
+		description = "Ransom:MSIL/Filecoder.PAB!MTB,SIGNATURE_TYPE_PEHSTR,07 00 07 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {59 00 6f 00 75 00 72 00 20 00 69 00 6e 00 66 00 65 00 63 00 74 00 65 00 64 00 20 00 62 00 79 00 20 00 74 00 68 00 65 00 20 00 59 00 61 00 6e 00 69 00 20 00 53 00 63 00 72 00 65 00 65 00 6e 00 6c 00 6f 00 63 00 6b 00 65 00 72 00 } //3 Your infected by the Yani Screenlocker
+		$a_01_1 = {59 00 61 00 6e 00 69 00 5f 00 72 00 61 00 6e 00 73 00 6f 00 6d 00 77 00 61 00 72 00 65 00 2e 00 50 00 72 00 6f 00 70 00 65 00 72 00 74 00 69 00 65 00 73 00 2e 00 52 00 65 00 73 00 6f 00 75 00 72 00 63 00 65 00 73 00 } //3 Yani_ransomware.Properties.Resources
+		$a_01_2 = {53 00 6f 00 66 00 74 00 77 00 61 00 72 00 65 00 5c 00 4d 00 69 00 63 00 72 00 6f 00 73 00 6f 00 66 00 74 00 5c 00 57 00 69 00 6e 00 64 00 6f 00 77 00 73 00 5c 00 43 00 75 00 72 00 72 00 65 00 6e 00 74 00 56 00 65 00 72 00 73 00 69 00 6f 00 6e 00 5c 00 52 00 75 00 6e 00 } //1 Software\Microsoft\Windows\CurrentVersion\Run
+	condition:
+		((#a_01_0  & 1)*3+(#a_01_1  & 1)*3+(#a_01_2  & 1)*1) >=7
+ 
+}
+rule Ransom_MSIL_Filecoder_PAB_MTB_2{
+	meta:
 		description = "Ransom:MSIL/Filecoder.PAB!MTB,SIGNATURE_TYPE_PEHSTR,05 00 05 00 03 00 00 "
 		
 	strings :

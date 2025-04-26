@@ -13,6 +13,16 @@ rule Trojan_BAT_AsyncRAT_ARAZ_MTB{
 }
 rule Trojan_BAT_AsyncRAT_ARAZ_MTB_2{
 	meta:
+		description = "Trojan:BAT/AsyncRAT.ARAZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {0d 16 13 04 2b 33 7e ?? ?? ?? 04 11 04 6f ?? ?? ?? 0a 09 33 1e 06 7e ?? ?? ?? 04 11 04 6f ?? ?? ?? 0a 13 05 12 05 28 ?? ?? ?? 0a 28 ?? ?? ?? 0a 0a 2b 14 11 04 17 58 13 04 11 04 7e ?? ?? ?? 04 6f ?? ?? ?? 0a 32 bf 08 17 58 0c 08 07 6f } //2
+	condition:
+		((#a_03_0  & 1)*2) >=2
+ 
+}
+rule Trojan_BAT_AsyncRAT_ARAZ_MTB_3{
+	meta:
 		description = "Trojan:BAT/AsyncRAT.ARAZ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 "
 		
 	strings :

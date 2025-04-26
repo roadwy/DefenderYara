@@ -22,3 +22,18 @@ rule Trojan_Win32_Lazy_NL_MTB_2{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2) >=6
  
 }
+rule Trojan_Win32_Lazy_NL_MTB_3{
+	meta:
+		description = "Trojan:Win32/Lazy.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 06 00 00 "
+		
+	strings :
+		$a_01_0 = {77 68 79 20 75 20 72 65 76 65 72 73 65 20 6d 79 20 73 74 75 62 3f 28 28 28 } //2 why u reverse my stub?(((
+		$a_01_1 = {28 20 69 20 64 6f 6e 74 20 6c 6f 76 65 20 75 2c 20 62 72 6f 28 28 28 } //1 ( i dont love u, bro(((
+		$a_01_2 = {4b 69 6c 6c 54 69 6d 65 72 } //1 KillTimer
+		$a_01_3 = {3c 20 69 20 6c 6f 76 65 20 75 2c 20 62 72 6f 29 } //1 < i love u, bro)
+		$a_01_4 = {4f 70 65 6e 50 72 6f 63 65 73 73 54 6f 6b 65 6e } //1 OpenProcessToken
+		$a_01_5 = {53 68 65 6c 6c 45 78 65 63 75 74 65 41 } //1 ShellExecuteA
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=7
+ 
+}

@@ -1,7 +1,7 @@
 
-rule Ransom_Win64_FileCoder_ARA_MTB{
+rule Ransom_Win64_Filecoder_ARA_MTB{
 	meta:
-		description = "Ransom:Win64/FileCoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 "
+		description = "Ransom:Win64/Filecoder.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 "
 		
 	strings :
 		$a_01_0 = {50 61 79 6d 65 6e 74 20 66 6f 72 20 74 68 65 20 64 65 63 72 79 70 74 69 6f 6e } //2 Payment for the decryption
