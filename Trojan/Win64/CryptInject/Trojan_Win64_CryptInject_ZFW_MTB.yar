@@ -1,0 +1,11 @@
+
+rule Trojan_Win64_CryptInject_ZFW_MTB{
+	meta:
+		description = "Trojan:Win64/CryptInject.ZFW!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {55 48 89 e5 48 83 ec 40 48 89 75 f8 48 89 f1 48 81 c1 ?? ?? ?? ?? e8 ?? ?? ?? ?? 48 89 c6 48 89 05 ?? ?? ?? ?? e8 ?? ?? ?? ?? e9 ?? ?? ?? ?? 55 48 89 e5 48 81 ec } //10
+	condition:
+		((#a_03_0  & 1)*10) >=10
+ 
+}

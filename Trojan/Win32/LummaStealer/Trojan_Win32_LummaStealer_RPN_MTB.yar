@@ -1,6 +1,16 @@
 
 rule Trojan_Win32_LummaStealer_RPN_MTB{
 	meta:
+		description = "Trojan:Win32/LummaStealer.RPN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_01_0 = {20 20 20 20 20 20 20 20 b5 be 04 00 00 10 00 00 00 2c 02 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 20 00 00 60 20 20 20 20 20 20 20 20 cd 1f 00 00 00 d0 04 00 00 10 00 00 00 30 02 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00 00 40 20 20 20 20 20 20 20 20 38 be 00 00 00 f0 04 00 00 1c 00 00 00 40 02 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00 00 c0 20 20 20 20 20 20 20 20 08 32 00 00 00 b0 05 00 00 1a 00 00 00 5c 02 00 00 00 00 00 00 00 00 00 00 00 00 00 40 00 00 42 } //1
+	condition:
+		((#a_01_0  & 1)*1) >=1
+ 
+}
+rule Trojan_Win32_LummaStealer_RPN_MTB_2{
+	meta:
 		description = "Trojan:Win32/LummaStealer.RPN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 03 00 00 "
 		
 	strings :

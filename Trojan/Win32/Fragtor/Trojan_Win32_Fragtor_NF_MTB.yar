@@ -37,6 +37,22 @@ rule Trojan_Win32_Fragtor_NF_MTB_3{
 }
 rule Trojan_Win32_Fragtor_NF_MTB_4{
 	meta:
+		description = "Trojan:Win32/Fragtor.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 07 00 00 "
+		
+	strings :
+		$a_01_0 = {4c 65 76 65 72 61 67 69 6e 67 20 44 4b 4f 4d 20 74 6f 20 61 63 68 69 65 76 65 20 4c 50 45 } //2 Leveraging DKOM to achieve LPE
+		$a_01_1 = {43 61 6c 6c 69 6e 67 20 57 72 69 74 65 36 34 20 77 72 61 70 70 65 72 20 74 6f 20 6f 76 65 72 77 72 69 74 65 20 63 75 72 72 65 6e 74 20 45 50 52 4f 43 45 53 53 2d 3e 54 6f 6b 65 6e } //2 Calling Write64 wrapper to overwrite current EPROCESS->Token
+		$a_01_2 = {44 00 65 00 76 00 69 00 63 00 65 00 5c 00 4d 00 75 00 70 00 5c 00 3b 00 43 00 73 00 63 00 5c 00 2e 00 5c 00 2e 00 } //1 Device\Mup\;Csc\.\.
+		$a_01_3 = {43 75 72 72 65 6e 74 20 45 50 52 4f 43 45 53 53 20 61 64 64 72 65 73 73 } //1 Current EPROCESS address
+		$a_01_4 = {43 75 72 72 65 6e 74 20 54 48 52 45 41 44 20 61 64 64 72 65 73 73 } //1 Current THREAD address
+		$a_01_5 = {53 79 73 74 65 6d 20 45 50 52 4f 43 45 53 53 20 61 64 64 72 65 73 73 } //1 System EPROCESS address
+		$a_01_6 = {63 6d 64 2e 65 78 65 } //1 cmd.exe
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=9
+ 
+}
+rule Trojan_Win32_Fragtor_NF_MTB_5{
+	meta:
 		description = "Trojan:Win32/Fragtor.NF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 05 00 00 "
 		
 	strings :

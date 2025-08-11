@@ -19,3 +19,23 @@ rule Trojan_Win32_Guloader_RPM_MTB{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1) >=11
  
 }
+rule Trojan_Win32_Guloader_RPM_MTB_2{
+	meta:
+		description = "Trojan:Win32/Guloader.RPM!MTB,SIGNATURE_TYPE_PEHSTR,1d 00 1d 00 0b 00 00 "
+		
+	strings :
+		$a_01_0 = {41 6e 61 6c 65 72 6f 74 69 6b 6b 65 6e 5c 63 61 79 2e 68 74 6d } //1 Analerotikken\cay.htm
+		$a_01_1 = {61 66 66 6c 64 69 67 73 74 5c 66 6c 79 6d 61 6e 2e 67 69 66 } //1 affldigst\flyman.gif
+		$a_01_2 = {4b 79 73 74 73 74 72 6b 6e 69 6e 67 65 72 2e 7a 69 70 } //1 Kyststrkninger.zip
+		$a_01_3 = {73 6b 6f 6c 65 67 61 61 72 64 65 2e 74 78 74 } //1 skolegaarde.txt
+		$a_01_4 = {74 6f 72 75 6c 61 73 2e 7a 69 70 } //10 torulas.zip
+		$a_01_5 = {73 6d 75 64 73 65 74 73 5c 64 6f 75 62 6c 65 68 65 61 72 74 65 64 6e 65 73 73 2e 62 69 6e } //1 smudsets\doubleheartedness.bin
+		$a_01_6 = {43 61 74 61 6c 65 70 74 69 7a 65 5c 68 6b 73 61 6b 73 65 6e 73 2e 69 6e 69 } //1 Cataleptize\hksaksens.ini
+		$a_01_7 = {66 75 72 66 75 72 2e 6c 6e 6b } //1 furfur.lnk
+		$a_01_8 = {68 75 6d 64 72 75 6d 6d 69 6e 65 73 73 5c 72 64 76 69 6e 65 73 2e 7a 69 70 } //1 humdrumminess\rdvines.zip
+		$a_01_9 = {6f 78 79 64 65 72 69 6e 67 65 72 6e 65 5c 6b 61 6c 6b 65 6e 65 73 5c 53 76 65 64 65 72 65 6d 6d 65 6e 65 73 } //10 oxyderingerne\kalkenes\Svederemmenes
+		$a_01_10 = {49 6e 64 74 61 70 70 65 73 2e 62 69 6e } //1 Indtappes.bin
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*10+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*10+(#a_01_10  & 1)*1) >=29
+ 
+}

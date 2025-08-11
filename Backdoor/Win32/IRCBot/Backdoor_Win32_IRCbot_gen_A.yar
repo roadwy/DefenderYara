@@ -1,7 +1,7 @@
 
 rule Backdoor_Win32_IRCbot_gen_A{
 	meta:
-		description = "Backdoor:Win32/IRCbot.gen!A,SIGNATURE_TYPE_PEHSTR,06 00 06 00 07 00 00 "
+		description = "Backdoor:Win32/IRCbot.gen!A,SIGNATURE_TYPE_PEHSTR,07 00 07 00 08 00 00 "
 		
 	strings :
 		$a_01_0 = {72 6f 6f 74 } //1 root
@@ -11,7 +11,8 @@ rule Backdoor_Win32_IRCbot_gen_A{
 		$a_01_4 = {25 73 5c 63 24 5c 77 69 6e 64 6f 77 73 5c 73 79 73 74 65 6d } //1 %s\c$\windows\system
 		$a_01_5 = {25 73 5c 41 64 6d 69 6e 24 5c 73 79 73 74 65 6d } //1 %s\Admin$\system
 		$a_01_6 = {25 73 5c 69 70 63 24 } //1 %s\ipc$
+		$a_01_7 = {50 52 49 56 4d 53 47 20 } //1 PRIVMSG 
 	condition:
-		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=6
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1) >=7
  
 }

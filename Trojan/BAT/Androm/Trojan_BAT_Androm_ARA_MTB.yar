@@ -19,3 +19,18 @@ rule Trojan_BAT_Androm_ARA_MTB_2{
 		((#a_03_0  & 1)*2) >=2
  
 }
+rule Trojan_BAT_Androm_ARA_MTB_3{
+	meta:
+		description = "Trojan:BAT/Androm.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 06 00 00 "
+		
+	strings :
+		$a_01_0 = {55 6e 69 74 43 6f 6e 76 65 72 74 65 72 2e 55 6e 69 74 43 6f 6e 76 65 72 74 65 72 2e 72 65 73 6f 75 72 63 65 73 } //2 UnitConverter.UnitConverter.resources
+		$a_01_1 = {55 6e 69 74 43 6f 6e 76 65 72 74 65 72 31 2e 4e 6f 64 65 73 43 6f 6e 74 72 6f 6c 2e 72 65 73 6f 75 72 63 65 73 } //2 UnitConverter1.NodesControl.resources
+		$a_01_2 = {55 6e 69 74 43 6f 6e 76 65 72 74 65 72 31 2e 50 72 6f 70 65 72 74 69 65 73 2e 52 65 73 6f 75 72 63 65 73 } //2 UnitConverter1.Properties.Resources
+		$a_01_3 = {6b 65 79 45 76 65 6e 74 41 72 67 73 } //1 keyEventArgs
+		$a_01_4 = {4e 6f 64 65 73 43 6f 6e 74 72 6f 6c 5f 4d 6f 75 73 65 4d 6f 76 65 } //1 NodesControl_MouseMove
+		$a_01_5 = {61 64 64 5f 4d 6f 75 73 65 43 6c 69 63 6b } //1 add_MouseClick
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=9
+ 
+}

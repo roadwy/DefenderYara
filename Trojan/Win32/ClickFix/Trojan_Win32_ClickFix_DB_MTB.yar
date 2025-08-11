@@ -1,7 +1,7 @@
 
 rule Trojan_Win32_ClickFix_DB_MTB{
 	meta:
-		description = "Trojan:Win32/ClickFix.DB!MTB,SIGNATURE_TYPE_CMDHSTR_EXT,05 00 05 00 05 00 00 "
+		description = "Trojan:Win32/ClickFix.DB!MTB,SIGNATURE_TYPE_CMDHSTR_EXT,05 00 05 00 07 00 00 "
 		
 	strings :
 		$a_00_0 = {6d 00 73 00 68 00 74 00 61 00 } //1 mshta
@@ -9,7 +9,9 @@ rule Trojan_Win32_ClickFix_DB_MTB{
 		$a_00_2 = {2e 00 68 00 74 00 6d 00 6c 00 20 00 23 00 } //1 .html #
 		$a_00_3 = {76 00 65 00 72 00 69 00 66 00 } //1 verif
 		$a_00_4 = {2d 00 20 00 72 00 61 00 79 00 } //1 - ray
+		$a_00_5 = {6d 00 73 00 65 00 64 00 67 00 65 00 77 00 65 00 62 00 76 00 69 00 65 00 77 00 32 00 2e 00 65 00 78 00 65 00 } //-1000 msedgewebview2.exe
+		$a_00_6 = {69 00 66 00 20 00 66 00 61 00 6c 00 73 00 65 00 20 00 3d 00 3d 00 20 00 66 00 61 00 6c 00 73 00 65 00 20 00 65 00 63 00 68 00 6f 00 } //-1000 if false == false echo
 	condition:
-		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=5
+		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*-1000+(#a_00_6  & 1)*-1000) >=5
  
 }

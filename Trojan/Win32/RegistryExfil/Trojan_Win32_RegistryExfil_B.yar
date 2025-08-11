@@ -1,7 +1,7 @@
 
 rule Trojan_Win32_RegistryExfil_B{
 	meta:
-		description = "Trojan:Win32/RegistryExfil.B,SIGNATURE_TYPE_CMDHSTR_EXT,15 00 15 00 05 00 00 "
+		description = "Trojan:Win32/RegistryExfil.B,SIGNATURE_TYPE_CMDHSTR_EXT,15 00 15 00 07 00 00 "
 		
 	strings :
 		$a_00_0 = {72 00 65 00 67 00 2e 00 65 00 78 00 65 00 } //10 reg.exe
@@ -9,7 +9,9 @@ rule Trojan_Win32_RegistryExfil_B{
 		$a_00_2 = {63 00 6f 00 70 00 79 00 } //1 copy
 		$a_00_3 = {73 00 61 00 76 00 65 00 } //1 save
 		$a_00_4 = {65 00 78 00 70 00 6f 00 72 00 74 00 } //1 export
+		$a_00_5 = {6d 00 73 00 65 00 64 00 67 00 65 00 77 00 65 00 62 00 76 00 69 00 65 00 77 00 32 00 2e 00 65 00 78 00 65 00 } //-1000 msedgewebview2.exe
+		$a_00_6 = {69 00 66 00 20 00 66 00 61 00 6c 00 73 00 65 00 20 00 3d 00 3d 00 20 00 66 00 61 00 6c 00 73 00 65 00 20 00 65 00 63 00 68 00 6f 00 } //-1000 if false == false echo
 	condition:
-		((#a_00_0  & 1)*10+(#a_00_1  & 1)*10+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1) >=21
+		((#a_00_0  & 1)*10+(#a_00_1  & 1)*10+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*-1000+(#a_00_6  & 1)*-1000) >=21
  
 }

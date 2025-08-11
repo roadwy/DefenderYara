@@ -1,6 +1,18 @@
 
 rule _#PUA_Block_OfferCore{
 	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
+		
+	strings :
+		$a_80_0 = {70 61 72 74 6e 65 72 73 2d 6f 66 66 61 70 69 2e 6e 65 74 2f 61 70 69 42 75 6e 64 6c 65 } //partners-offapi.net/apiBundle  2
+		$a_80_1 = {6f 66 66 65 72 69 6e 67 } //offering  1
+		$a_80_2 = {59 61 6e 64 65 78 49 6e 73 74 61 6c 6c 65 72 2e 70 64 62 } //YandexInstaller.pdb  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1) >=3
+ 
+}
+rule _#PUA_Block_OfferCore_2{
+	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
 		
 	strings :
@@ -12,7 +24,7 @@ rule _#PUA_Block_OfferCore{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*2+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=5
  
 }
-rule _#PUA_Block_OfferCore_2{
+rule _#PUA_Block_OfferCore_3{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -25,7 +37,7 @@ rule _#PUA_Block_OfferCore_2{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule _#PUA_Block_OfferCore_3{
+rule _#PUA_Block_OfferCore_4{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 06 00 00 "
 		
@@ -40,7 +52,7 @@ rule _#PUA_Block_OfferCore_3{
 		((#a_80_0  & 1)*5+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*5) >=12
  
 }
-rule _#PUA_Block_OfferCore_4{
+rule _#PUA_Block_OfferCore_5{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -55,7 +67,7 @@ rule _#PUA_Block_OfferCore_4{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=6
  
 }
-rule _#PUA_Block_OfferCore_5{
+rule _#PUA_Block_OfferCore_6{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -71,7 +83,7 @@ rule _#PUA_Block_OfferCore_5{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1) >=7
  
 }
-rule _#PUA_Block_OfferCore_6{
+rule _#PUA_Block_OfferCore_7{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -87,7 +99,7 @@ rule _#PUA_Block_OfferCore_6{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1) >=7
  
 }
-rule _#PUA_Block_OfferCore_7{
+rule _#PUA_Block_OfferCore_8{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -103,7 +115,7 @@ rule _#PUA_Block_OfferCore_7{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1) >=7
  
 }
-rule _#PUA_Block_OfferCore_8{
+rule _#PUA_Block_OfferCore_9{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 "
 		
@@ -121,7 +133,7 @@ rule _#PUA_Block_OfferCore_8{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1) >=7
  
 }
-rule _#PUA_Block_OfferCore_9{
+rule _#PUA_Block_OfferCore_10{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 "
 		
@@ -139,7 +151,7 @@ rule _#PUA_Block_OfferCore_9{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1) >=7
  
 }
-rule _#PUA_Block_OfferCore_10{
+rule _#PUA_Block_OfferCore_11{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 0a 00 00 "
 		
@@ -158,7 +170,7 @@ rule _#PUA_Block_OfferCore_10{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1) >=9
  
 }
-rule _#PUA_Block_OfferCore_11{
+rule _#PUA_Block_OfferCore_12{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 0b 00 00 "
 		

@@ -1,7 +1,7 @@
 
 rule Trojan_Win32_ClickFix_J_MTB{
 	meta:
-		description = "Trojan:Win32/ClickFix.J!MTB,SIGNATURE_TYPE_CMDHSTR_EXT,29 00 29 00 07 00 00 "
+		description = "Trojan:Win32/ClickFix.J!MTB,SIGNATURE_TYPE_CMDHSTR_EXT,29 00 29 00 08 00 00 "
 		
 	strings :
 		$a_00_0 = {68 00 74 00 74 00 70 00 } //10 http
@@ -11,7 +11,8 @@ rule Trojan_Win32_ClickFix_J_MTB{
 		$a_00_4 = {2e 00 6d 00 70 00 34 00 } //1 .mp4
 		$a_00_5 = {2e 00 6d 00 70 00 33 00 } //1 .mp3
 		$a_00_6 = {2e 00 66 00 6c 00 76 00 } //1 .flv
+		$a_00_7 = {6d 00 73 00 65 00 64 00 67 00 65 00 77 00 65 00 62 00 76 00 69 00 65 00 77 00 32 00 2e 00 65 00 78 00 65 00 } //-100 msedgewebview2.exe
 	condition:
-		((#a_00_0  & 1)*10+(#a_00_1  & 1)*10+(#a_00_2  & 1)*10+(#a_00_3  & 1)*10+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1) >=41
+		((#a_00_0  & 1)*10+(#a_00_1  & 1)*10+(#a_00_2  & 1)*10+(#a_00_3  & 1)*10+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*-100) >=41
  
 }

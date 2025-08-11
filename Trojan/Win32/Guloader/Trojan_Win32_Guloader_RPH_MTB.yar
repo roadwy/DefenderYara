@@ -1,6 +1,19 @@
 
 rule Trojan_Win32_Guloader_RPH_MTB{
 	meta:
+		description = "Trojan:Win32/Guloader.RPH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,79 00 79 00 04 00 00 "
+		
+	strings :
+		$a_00_0 = {63 00 61 00 74 00 20 00 2d 00 72 00 61 00 77 00 20 00 27 00 } //10 cat -raw '
+		$a_00_1 = {70 00 6f 00 77 00 65 00 72 00 73 00 68 00 65 00 6c 00 6c 00 2e 00 65 00 78 00 65 00 } //1 powershell.exe
+		$a_00_2 = {5c 00 54 00 65 00 6b 00 73 00 74 00 62 00 65 00 68 00 61 00 6e 00 64 00 6c 00 69 00 6e 00 67 00 73 00 64 00 6f 00 6b 00 75 00 6d 00 65 00 6e 00 74 00 65 00 72 00 5c 00 } //100 \Tekstbehandlingsdokumenter\
+		$a_02_3 = {2e 00 73 00 75 00 62 00 73 00 74 00 72 00 69 00 6e 00 67 00 28 00 [0-0c] 2c 00 33 00 29 00 3b 00 2e 00 24 00 } //10
+	condition:
+		((#a_00_0  & 1)*10+(#a_00_1  & 1)*1+(#a_00_2  & 1)*100+(#a_02_3  & 1)*10) >=121
+ 
+}
+rule Trojan_Win32_Guloader_RPH_MTB_2{
+	meta:
 		description = "Trojan:Win32/Guloader.RPH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 "
 		
 	strings :

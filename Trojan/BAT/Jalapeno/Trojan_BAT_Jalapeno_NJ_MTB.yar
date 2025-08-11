@@ -12,6 +12,17 @@ rule Trojan_BAT_Jalapeno_NJ_MTB{
 }
 rule Trojan_BAT_Jalapeno_NJ_MTB_2{
 	meta:
+		description = "Trojan:BAT/Jalapeno.NJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 "
+		
+	strings :
+		$a_01_0 = {08 94 13 09 11 04 11 09 19 5a 11 09 18 63 59 6a 58 13 04 11 04 11 04 1b 62 11 04 19 63 60 61 13 04 11 08 17 58 13 08 } //3
+		$a_01_1 = {4d 61 72 69 75 73 7a 20 4b 6f 6d 6f 72 6f 77 73 6b 69 } //1 Mariusz Komorowski
+	condition:
+		((#a_01_0  & 1)*3+(#a_01_1  & 1)*1) >=4
+ 
+}
+rule Trojan_BAT_Jalapeno_NJ_MTB_3{
+	meta:
 		description = "Trojan:BAT/Jalapeno.NJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 "
 		
 	strings :
@@ -21,7 +32,7 @@ rule Trojan_BAT_Jalapeno_NJ_MTB_2{
 		((#a_01_0  & 1)*3+(#a_01_1  & 1)*2) >=5
  
 }
-rule Trojan_BAT_Jalapeno_NJ_MTB_3{
+rule Trojan_BAT_Jalapeno_NJ_MTB_4{
 	meta:
 		description = "Trojan:BAT/Jalapeno.NJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 04 00 00 "
 		
@@ -34,7 +45,7 @@ rule Trojan_BAT_Jalapeno_NJ_MTB_3{
 		((#a_01_0  & 1)*3+(#a_01_1  & 1)*2+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=7
  
 }
-rule Trojan_BAT_Jalapeno_NJ_MTB_4{
+rule Trojan_BAT_Jalapeno_NJ_MTB_5{
 	meta:
 		description = "Trojan:BAT/Jalapeno.NJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 "
 		
@@ -45,7 +56,7 @@ rule Trojan_BAT_Jalapeno_NJ_MTB_4{
 		((#a_01_0  & 1)*3+(#a_01_1  & 1)*2) >=5
  
 }
-rule Trojan_BAT_Jalapeno_NJ_MTB_5{
+rule Trojan_BAT_Jalapeno_NJ_MTB_6{
 	meta:
 		description = "Trojan:BAT/Jalapeno.NJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 "
 		

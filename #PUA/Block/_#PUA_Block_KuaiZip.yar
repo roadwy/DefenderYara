@@ -12,6 +12,19 @@ rule _#PUA_Block_KuaiZip{
 }
 rule _#PUA_Block_KuaiZip_2{
 	meta:
+		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
+		
+	strings :
+		$a_80_0 = {6d 65 64 69 61 76 2e 73 68 7a 68 61 6e 6d 65 6e 67 2e 63 6f 6d } //mediav.shzhanmeng.com  2
+		$a_80_1 = {31 32 2e 67 69 66 } //12.gif  1
+		$a_80_2 = {75 70 5f 75 72 6c 73 2e 69 6e 69 } //up_urls.ini  1
+		$a_80_3 = {55 72 6c 52 65 70 6f 72 } //UrlRepor  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=5
+ 
+}
+rule _#PUA_Block_KuaiZip_3{
+	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
 	strings :
@@ -23,7 +36,19 @@ rule _#PUA_Block_KuaiZip_2{
 		((#a_80_0  & 1)*1+(#a_00_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=3
  
 }
-rule _#PUA_Block_KuaiZip_3{
+rule _#PUA_Block_KuaiZip_4{
+	meta:
+		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 "
+		
+	strings :
+		$a_80_0 = {68 6f 74 6e 65 77 73 2e 64 66 74 6f 75 74 69 61 6f 2e 63 6f 6d } //hotnews.dftoutiao.com  2
+		$a_80_1 = {6b 75 61 69 7a 69 70 72 65 70 6f 72 74 2f 6d 69 6e 69 6e 65 77 73 } //kuaizipreport/mininews  1
+		$a_80_2 = {74 69 61 6e 71 69 2e 65 61 73 74 64 61 79 2e 63 6f 6d } //tianqi.eastday.com  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1) >=4
+ 
+}
+rule _#PUA_Block_KuaiZip_5{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 05 00 00 "
 		
@@ -37,7 +62,7 @@ rule _#PUA_Block_KuaiZip_3{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*2+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=7
  
 }
-rule _#PUA_Block_KuaiZip_4{
+rule _#PUA_Block_KuaiZip_6{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -50,7 +75,7 @@ rule _#PUA_Block_KuaiZip_4{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule _#PUA_Block_KuaiZip_5{
+rule _#PUA_Block_KuaiZip_7{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -64,7 +89,7 @@ rule _#PUA_Block_KuaiZip_5{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_6{
+rule _#PUA_Block_KuaiZip_8{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -78,7 +103,7 @@ rule _#PUA_Block_KuaiZip_6{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_7{
+rule _#PUA_Block_KuaiZip_9{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -93,7 +118,19 @@ rule _#PUA_Block_KuaiZip_7{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=6
  
 }
-rule _#PUA_Block_KuaiZip_8{
+rule _#PUA_Block_KuaiZip_10{
+	meta:
+		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 "
+		
+	strings :
+		$a_80_0 = {44 3a 5c 77 6f 72 6b 73 70 61 63 65 5c 73 76 6e 5c 70 68 6f 74 6f 76 69 65 77 65 72 5c 62 69 6e 5c 52 65 6c 65 61 73 65 5c 72 65 63 65 6e 74 76 69 65 77 2e 70 64 62 } //D:\workspace\svn\photoviewer\bin\Release\recentview.pdb  2
+		$a_80_1 = {53 6f 66 74 77 61 72 65 5c 50 68 6f 74 6f 56 69 65 77 65 72 5c 55 70 64 61 74 65 43 68 65 63 6b 65 72 } //Software\PhotoViewer\UpdateChecker  1
+		$a_80_2 = {73 6b 69 6e 33 2e 6a 70 67 } //skin3.jpg  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1) >=4
+ 
+}
+rule _#PUA_Block_KuaiZip_11{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -107,7 +144,7 @@ rule _#PUA_Block_KuaiZip_8{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_9{
+rule _#PUA_Block_KuaiZip_12{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -123,7 +160,7 @@ rule _#PUA_Block_KuaiZip_9{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1) >=7
  
 }
-rule _#PUA_Block_KuaiZip_10{
+rule _#PUA_Block_KuaiZip_13{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -137,7 +174,7 @@ rule _#PUA_Block_KuaiZip_10{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_11{
+rule _#PUA_Block_KuaiZip_14{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -150,7 +187,7 @@ rule _#PUA_Block_KuaiZip_11{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule _#PUA_Block_KuaiZip_12{
+rule _#PUA_Block_KuaiZip_15{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
@@ -163,7 +200,7 @@ rule _#PUA_Block_KuaiZip_12{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=3
  
 }
-rule _#PUA_Block_KuaiZip_13{
+rule _#PUA_Block_KuaiZip_16{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -177,7 +214,7 @@ rule _#PUA_Block_KuaiZip_13{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_14{
+rule _#PUA_Block_KuaiZip_17{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -190,7 +227,7 @@ rule _#PUA_Block_KuaiZip_14{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule _#PUA_Block_KuaiZip_15{
+rule _#PUA_Block_KuaiZip_18{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -205,7 +242,7 @@ rule _#PUA_Block_KuaiZip_15{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=6
  
 }
-rule _#PUA_Block_KuaiZip_16{
+rule _#PUA_Block_KuaiZip_19{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -218,7 +255,7 @@ rule _#PUA_Block_KuaiZip_16{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule _#PUA_Block_KuaiZip_17{
+rule _#PUA_Block_KuaiZip_20{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -232,7 +269,7 @@ rule _#PUA_Block_KuaiZip_17{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_18{
+rule _#PUA_Block_KuaiZip_21{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 0a 00 00 "
 		
@@ -251,7 +288,7 @@ rule _#PUA_Block_KuaiZip_18{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_80_8  & 1)*-100+(#a_80_9  & 1)*-100) >=8
  
 }
-rule _#PUA_Block_KuaiZip_19{
+rule _#PUA_Block_KuaiZip_22{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -265,7 +302,7 @@ rule _#PUA_Block_KuaiZip_19{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_20{
+rule _#PUA_Block_KuaiZip_23{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 "
 		
@@ -281,7 +318,7 @@ rule _#PUA_Block_KuaiZip_20{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_02_5  & 1)*1+(#a_02_6  & 1)*1) >=6
  
 }
-rule _#PUA_Block_KuaiZip_21{
+rule _#PUA_Block_KuaiZip_24{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
 		
@@ -297,7 +334,7 @@ rule _#PUA_Block_KuaiZip_21{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*-100+(#a_80_6  & 1)*-100) >=5
  
 }
-rule _#PUA_Block_KuaiZip_22{
+rule _#PUA_Block_KuaiZip_25{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -313,7 +350,7 @@ rule _#PUA_Block_KuaiZip_22{
 		((#a_80_0  & 1)*1+(#a_00_1  & 1)*1+(#a_80_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_80_6  & 1)*1) >=7
  
 }
-rule _#PUA_Block_KuaiZip_23{
+rule _#PUA_Block_KuaiZip_26{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -327,7 +364,7 @@ rule _#PUA_Block_KuaiZip_23{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_24{
+rule _#PUA_Block_KuaiZip_27{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 09 00 00 "
 		
@@ -345,7 +382,7 @@ rule _#PUA_Block_KuaiZip_24{
 		((#a_00_0  & 1)*2+(#a_00_1  & 1)*2+(#a_00_2  & 1)*2+(#a_00_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_00_7  & 1)*2+(#a_80_8  & 1)*2) >=4
  
 }
-rule _#PUA_Block_KuaiZip_25{
+rule _#PUA_Block_KuaiZip_28{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 0a 00 00 "
 		
@@ -364,7 +401,7 @@ rule _#PUA_Block_KuaiZip_25{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*-100+(#a_80_8  & 1)*-100+(#a_80_9  & 1)*-100) >=6
  
 }
-rule _#PUA_Block_KuaiZip_26{
+rule _#PUA_Block_KuaiZip_29{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 06 00 00 "
 		
@@ -379,7 +416,7 @@ rule _#PUA_Block_KuaiZip_26{
 		((#a_80_0  & 1)*1+(#a_02_1  & 1)*1+(#a_02_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=4
  
 }
-rule _#PUA_Block_KuaiZip_27{
+rule _#PUA_Block_KuaiZip_30{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,05 00 05 00 06 00 00 "
 		
@@ -394,7 +431,7 @@ rule _#PUA_Block_KuaiZip_27{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_28{
+rule _#PUA_Block_KuaiZip_31{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,05 00 05 00 05 00 00 "
 		
@@ -408,7 +445,7 @@ rule _#PUA_Block_KuaiZip_28{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_KuaiZip_29{
+rule _#PUA_Block_KuaiZip_32{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,03 00 03 00 02 00 00 "
 		
@@ -419,7 +456,7 @@ rule _#PUA_Block_KuaiZip_29{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1) >=3
  
 }
-rule _#PUA_Block_KuaiZip_30{
+rule _#PUA_Block_KuaiZip_33{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,07 00 07 00 06 00 00 "
 		
@@ -434,7 +471,7 @@ rule _#PUA_Block_KuaiZip_30{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=7
  
 }
-rule _#PUA_Block_KuaiZip_31{
+rule _#PUA_Block_KuaiZip_34{
 	meta:
 		description = "!#PUA:Block:KuaiZip,SIGNATURE_TYPE_PEHSTR,05 00 05 00 05 00 00 "
 		

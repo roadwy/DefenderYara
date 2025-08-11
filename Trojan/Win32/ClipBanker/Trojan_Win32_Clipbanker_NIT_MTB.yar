@@ -1,7 +1,7 @@
 
-rule Trojan_Win32_Clipbanker_NIT_MTB{
+rule Trojan_Win32_ClipBanker_NIT_MTB{
 	meta:
-		description = "Trojan:Win32/Clipbanker.NIT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 04 00 00 "
+		description = "Trojan:Win32/ClipBanker.NIT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 04 00 00 "
 		
 	strings :
 		$a_01_0 = {73 68 65 63 76 62 7a } //2 shecvbz

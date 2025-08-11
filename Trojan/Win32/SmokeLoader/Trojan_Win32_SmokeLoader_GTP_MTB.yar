@@ -1,7 +1,7 @@
 
-rule Trojan_Win32_SmokeLoader_GTP_MTB{
+rule Trojan_Win32_Smokeloader_GTP_MTB{
 	meta:
-		description = "Trojan:Win32/SmokeLoader.GTP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 "
+		description = "Trojan:Win32/Smokeloader.GTP!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 "
 		
 	strings :
 		$a_03_0 = {8b c3 c1 e8 05 c7 05 ?? ?? ?? ?? 19 36 6b ff 89 45 ?? 8b 45 ?? 01 45 ?? ff 75 ?? 8b c3 c1 e0 ?? 03 c6 33 45 ?? 89 45 ?? 8d 45 ?? 50 e8 ?? ?? ?? ?? ff 75 ?? 8d 45 ?? 50 e8 ?? ?? ?? ?? 81 45 ?? 47 86 c8 61 ff 4d ?? 0f 85 } //10

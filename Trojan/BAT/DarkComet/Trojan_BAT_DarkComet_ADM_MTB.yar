@@ -14,7 +14,7 @@ rule Trojan_BAT_DarkComet_ADM_MTB_2{
 		description = "Trojan:BAT/DarkComet.ADM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {16 02 8e b7 17 da 13 06 13 05 2b 29 08 11 05 02 11 05 91 11 04 61 09 07 91 61 b4 9c 07 03 6f ?? 00 00 0a 17 da 33 04 16 0b 2b 04 07 17 d6 0b 11 05 17 d6 13 05 11 05 11 06 31 d1 } //1
+		$a_03_0 = {16 0c 2b 1d 07 08 8f ?? 00 00 01 25 71 ?? 00 00 01 02 08 06 5d 91 61 d2 81 ?? 00 00 01 08 17 58 0c 08 07 8e 69 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -24,7 +24,7 @@ rule Trojan_BAT_DarkComet_ADM_MTB_3{
 		description = "Trojan:BAT/DarkComet.ADM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {1f 20 17 19 15 28 ?? 00 00 0a 1a 13 0a 17 28 ?? 00 00 0a b7 28 ?? 00 00 0a 0b 1b 13 0a 17 28 ?? 00 00 0a b7 28 ?? 00 00 0a 13 05 1c 13 0a 17 28 ?? 00 00 0a b7 28 ?? 00 00 0a 13 06 1d 13 0a 17 28 } //1
+		$a_03_0 = {16 02 8e b7 17 da 13 06 13 05 2b 29 08 11 05 02 11 05 91 11 04 61 09 07 91 61 b4 9c 07 03 6f ?? 00 00 0a 17 da 33 04 16 0b 2b 04 07 17 d6 0b 11 05 17 d6 13 05 11 05 11 06 31 d1 } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
@@ -34,12 +34,32 @@ rule Trojan_BAT_DarkComet_ADM_MTB_4{
 		description = "Trojan:BAT/DarkComet.ADM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_03_0 = {13 05 0d 2b 52 72 ?? ?? ?? 70 02 09 18 6f ?? 00 00 0a 28 ?? 00 00 0a 28 ?? 00 00 0a 03 08 6f ?? 00 00 0a 28 ?? 00 00 0a 6a 61 69 28 ?? 00 00 0a 28 ?? 00 00 0a 13 04 06 11 04 6f ?? 00 00 0a 26 08 03 } //1
+		$a_03_0 = {16 0d 2b 1e 02 7b ?? 00 00 04 07 02 7b ?? 00 00 04 07 91 02 7b ?? 00 00 04 09 91 61 d2 9c 09 17 58 0d 09 02 7b ?? 00 00 04 8e 69 fe 04 13 04 11 04 2d d1 07 17 58 0b } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
 }
 rule Trojan_BAT_DarkComet_ADM_MTB_5{
+	meta:
+		description = "Trojan:BAT/DarkComet.ADM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {1f 20 17 19 15 28 ?? 00 00 0a 1a 13 0a 17 28 ?? 00 00 0a b7 28 ?? 00 00 0a 0b 1b 13 0a 17 28 ?? 00 00 0a b7 28 ?? 00 00 0a 13 05 1c 13 0a 17 28 ?? 00 00 0a b7 28 ?? 00 00 0a 13 06 1d 13 0a 17 28 } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}
+rule Trojan_BAT_DarkComet_ADM_MTB_6{
+	meta:
+		description = "Trojan:BAT/DarkComet.ADM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {13 05 0d 2b 52 72 ?? ?? ?? 70 02 09 18 6f ?? 00 00 0a 28 ?? 00 00 0a 28 ?? 00 00 0a 03 08 6f ?? 00 00 0a 28 ?? 00 00 0a 6a 61 69 28 ?? 00 00 0a 28 ?? 00 00 0a 13 04 06 11 04 6f ?? 00 00 0a 26 08 03 } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}
+rule Trojan_BAT_DarkComet_ADM_MTB_7{
 	meta:
 		description = "Trojan:BAT/DarkComet.ADM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -50,7 +70,7 @@ rule Trojan_BAT_DarkComet_ADM_MTB_5{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule Trojan_BAT_DarkComet_ADM_MTB_6{
+rule Trojan_BAT_DarkComet_ADM_MTB_8{
 	meta:
 		description = "Trojan:BAT/DarkComet.ADM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		

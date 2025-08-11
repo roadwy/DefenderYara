@@ -1,0 +1,11 @@
+
+rule Backdoor_Win32_Tofsee_GNR_MTB{
+	meta:
+		description = "Backdoor:Win32/Tofsee.GNR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {00 ff 30 e8 e4 6e 00 00 83 ec ?? c6 04 24 ?? 8d 1d ?? ?? ?? ?? 81 eb ?? ?? ?? ?? 53 8d 15 ?? ?? ?? ?? 81 ea ?? ?? ?? ?? 52 } //10
+	condition:
+		((#a_03_0  & 1)*10) >=10
+ 
+}

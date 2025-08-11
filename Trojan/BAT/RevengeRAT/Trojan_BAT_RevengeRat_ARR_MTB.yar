@@ -33,6 +33,18 @@ rule Trojan_BAT_RevengeRat_ARR_MTB_3{
 }
 rule Trojan_BAT_RevengeRat_ARR_MTB_4{
 	meta:
+		description = "Trojan:BAT/RevengeRat.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 "
+		
+	strings :
+		$a_03_0 = {13 06 09 28 ?? 00 00 0a 04 6f ?? 00 00 0a 6f ?? 00 00 0a 13 07 11 07 16 11 06 16 1f 10 28 ?? 00 00 0a 11 07 16 11 06 1f 0f 1f 10 28 ?? 00 00 0a 06 11 06 6f ?? 00 00 0a 06 18 6f ?? 00 00 0a 06 6f ?? 00 00 0a 13 05 03 13 04 11 05 11 04 16 11 04 8e b7 6f ?? 00 00 0a 0c 08 0b de 0f } //1
+		$a_01_1 = {43 00 41 00 43 00 41 00 4f 00 2e 00 74 00 72 00 6f 00 6c 00 6f 00 6c 00 6f 00 } //2 CACAO.trololo
+		$a_01_2 = {42 00 45 00 54 00 49 00 53 00 45 00 } //3 BETISE
+	condition:
+		((#a_03_0  & 1)*1+(#a_01_1  & 1)*2+(#a_01_2  & 1)*3) >=6
+ 
+}
+rule Trojan_BAT_RevengeRat_ARR_MTB_5{
+	meta:
 		description = "Trojan:BAT/RevengeRat.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
 		
 	strings :
@@ -42,5 +54,26 @@ rule Trojan_BAT_RevengeRat_ARR_MTB_4{
 		$a_01_3 = {74 00 61 00 73 00 6b 00 6b 00 69 00 6c 00 6c 00 20 00 2f 00 66 00 20 00 2f 00 49 00 4d 00 20 00 46 00 69 00 64 00 64 00 6c 00 65 00 72 00 2e 00 65 00 78 00 65 00 } //1 taskkill /f /IM Fiddler.exe
 	condition:
 		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=5
+ 
+}
+rule Trojan_BAT_RevengeRat_ARR_MTB_6{
+	meta:
+		description = "Trojan:BAT/RevengeRat.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 0c 00 00 "
+		
+	strings :
+		$a_03_0 = {16 0b 07 b5 1f 64 28 ?? ?? ?? 0a 0d 12 03 1f 64 14 13 04 12 04 1f 64 28 ?? ?? ?? 06 13 05 11 05 2c 08 ?? ?? ?? ?? ?? 0a de 28 00 00 07 17 d6 0b 07 1a 13 06 } //2
+		$a_01_1 = {52 00 75 00 6e 00 46 00 69 00 6c 00 65 00 46 00 72 00 6f 00 6d 00 4c 00 69 00 6e 00 6b 00 } //1 RunFileFromLink
+		$a_01_2 = {52 00 75 00 6e 00 46 00 69 00 6c 00 65 00 46 00 72 00 6f 00 6d 00 44 00 69 00 73 00 6b 00 } //1 RunFileFromDisk
+		$a_01_3 = {45 00 6e 00 63 00 72 00 79 00 70 00 74 00 48 00 6f 00 73 00 74 00 50 00 6f 00 72 00 74 00 } //1 EncryptHostPort
+		$a_01_4 = {4d 00 65 00 73 00 73 00 67 00 62 00 6f 00 78 00 46 00 61 00 6b 00 65 00 43 00 68 00 65 00 63 00 6b 00 } //1 MessgboxFakeCheck
+		$a_01_5 = {53 00 74 00 61 00 72 00 74 00 75 00 70 00 43 00 68 00 65 00 61 00 63 00 6b 00 } //1 StartupCheack
+		$a_01_6 = {49 00 6e 00 73 00 74 00 61 00 6c 00 6c 00 69 00 6e 00 53 00 68 00 75 00 6c 00 64 00 65 00 72 00 54 00 61 00 73 00 6b 00 } //1 InstallinShulderTask
+		$a_01_7 = {53 00 43 00 48 00 54 00 61 00 73 00 6b 00 54 00 69 00 65 00 6d 00 } //1 SCHTaskTiem
+		$a_01_8 = {48 00 69 00 64 00 65 00 41 00 66 00 74 00 65 00 72 00 52 00 75 00 6e 00 } //1 HideAfterRun
+		$a_01_9 = {49 00 6e 00 73 00 74 00 61 00 6c 00 6c 00 49 00 6e 00 6f 00 } //1 InstallIno
+		$a_01_10 = {49 00 6e 00 73 00 74 00 61 00 6c 00 6c 00 69 00 6e 00 6f 00 70 00 } //1 Installinop
+		$a_01_11 = {52 65 76 65 6e 67 65 2d 52 41 54 } //3 Revenge-RAT
+	condition:
+		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*3) >=15
  
 }

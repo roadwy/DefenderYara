@@ -16,6 +16,24 @@ rule BrowserModifier_MSIL_MediaArena{
 }
 rule BrowserModifier_MSIL_MediaArena_2{
 	meta:
+		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
+		
+	strings :
+		$a_80_0 = {67 65 74 5f 41 70 70 4e 61 6d 65 } //get_AppName  1
+		$a_80_1 = {67 65 74 5f 54 61 72 67 65 74 50 61 74 68 } //get_TargetPath  1
+		$a_80_2 = {73 65 74 5f 54 61 72 67 65 74 50 61 74 68 } //set_TargetPath  1
+		$a_80_3 = {67 65 74 5f 55 72 6c } //get_Url  1
+		$a_80_4 = {67 65 74 5f 44 6f 42 72 6f } //get_DoBro  1
+		$a_80_5 = {73 65 74 5f 53 6f 75 72 63 65 49 64 65 6e } //set_SourceIden  1
+		$a_80_6 = {6f 66 66 65 72 5f 69 64 } //offer_id  1
+		$a_80_7 = {50 44 46 53 6b 69 6c 6c 73 } //PDFSkills  1
+		$a_80_8 = {66 61 76 69 63 6f 6e } //favicon  1
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1) >=9
+ 
+}
+rule BrowserModifier_MSIL_MediaArena_3{
+	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0a 00 00 "
 		
 	strings :
@@ -33,7 +51,7 @@ rule BrowserModifier_MSIL_MediaArena_2{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1) >=10
  
 }
-rule BrowserModifier_MSIL_MediaArena_3{
+rule BrowserModifier_MSIL_MediaArena_4{
 	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
@@ -50,7 +68,7 @@ rule BrowserModifier_MSIL_MediaArena_3{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1) >=8
  
 }
-rule BrowserModifier_MSIL_MediaArena_4{
+rule BrowserModifier_MSIL_MediaArena_5{
 	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 "
 		
@@ -71,7 +89,7 @@ rule BrowserModifier_MSIL_MediaArena_4{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1) >=12
  
 }
-rule BrowserModifier_MSIL_MediaArena_5{
+rule BrowserModifier_MSIL_MediaArena_6{
 	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 "
 		
@@ -92,7 +110,7 @@ rule BrowserModifier_MSIL_MediaArena_5{
 		((#a_01_0  & 1)*3+(#a_01_1  & 1)*3+(#a_01_2  & 1)*3+(#a_01_3  & 1)*3+(#a_01_4  & 1)*2+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1) >=12
  
 }
-rule BrowserModifier_MSIL_MediaArena_6{
+rule BrowserModifier_MSIL_MediaArena_7{
 	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR,08 00 08 00 06 00 00 "
 		

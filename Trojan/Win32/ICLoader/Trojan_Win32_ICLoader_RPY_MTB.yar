@@ -1,16 +1,6 @@
 
 rule Trojan_Win32_ICLoader_RPY_MTB{
 	meta:
-		description = "Trojan:Win32/ICLoader.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
-		
-	strings :
-		$a_01_0 = {ff 30 8b 04 24 50 89 e0 05 04 00 00 00 51 b9 04 00 00 00 01 c8 59 33 04 24 31 04 24 33 04 24 } //1
-	condition:
-		((#a_01_0  & 1)*1) >=1
- 
-}
-rule Trojan_Win32_ICLoader_RPY_MTB_2{
-	meta:
 		description = "Trojan:Win32/ICLoader.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
@@ -20,7 +10,7 @@ rule Trojan_Win32_ICLoader_RPY_MTB_2{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule Trojan_Win32_ICLoader_RPY_MTB_3{
+rule Trojan_Win32_ICLoader_RPY_MTB_2{
 	meta:
 		description = "Trojan:Win32/ICLoader.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -31,7 +21,7 @@ rule Trojan_Win32_ICLoader_RPY_MTB_3{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule Trojan_Win32_ICLoader_RPY_MTB_4{
+rule Trojan_Win32_ICLoader_RPY_MTB_3{
 	meta:
 		description = "Trojan:Win32/ICLoader.RPY!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 03 00 00 "
 		

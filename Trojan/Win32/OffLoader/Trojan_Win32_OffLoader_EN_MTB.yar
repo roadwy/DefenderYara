@@ -1,6 +1,18 @@
 
 rule Trojan_Win32_OffLoader_EN_MTB{
 	meta:
+		description = "Trojan:Win32/OffLoader.EN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {74 00 65 00 65 00 74 00 68 00 62 00 75 00 62 00 62 00 6c 00 65 00 2e 00 69 00 63 00 75 00 2f 00 69 00 64 00 6f 00 2e 00 70 00 68 00 70 00 } //1 teethbubble.icu/ido.php
+		$a_01_1 = {69 00 64 00 6f 00 2e 00 65 00 78 00 65 00 } //1 ido.exe
+		$a_01_2 = {2f 00 73 00 69 00 6c 00 65 00 6e 00 74 00 } //1 /silent
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
+ 
+}
+rule Trojan_Win32_OffLoader_EN_MTB_2{
+	meta:
 		description = "Trojan:Win32/OffLoader.EN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 03 00 00 "
 		
 	strings :
@@ -11,7 +23,20 @@ rule Trojan_Win32_OffLoader_EN_MTB{
 		((#a_01_0  & 1)*10+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=12
  
 }
-rule Trojan_Win32_OffLoader_EN_MTB_2{
+rule Trojan_Win32_OffLoader_EN_MTB_3{
+	meta:
+		description = "Trojan:Win32/OffLoader.EN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
+		$a_01_0 = {70 00 6f 00 69 00 6e 00 74 00 64 00 69 00 6e 00 6f 00 73 00 61 00 75 00 72 00 73 00 2e 00 78 00 79 00 7a 00 2f 00 69 00 64 00 6f 00 2e 00 70 00 68 00 70 00 } //1 pointdinosaurs.xyz/ido.php
+		$a_01_1 = {73 00 74 00 72 00 65 00 65 00 74 00 70 00 61 00 67 00 65 00 2e 00 69 00 63 00 75 00 2f 00 69 00 64 00 6f 00 73 00 2e 00 70 00 68 00 70 00 } //1 streetpage.icu/idos.php
+		$a_01_2 = {69 00 64 00 6f 00 2e 00 65 00 78 00 65 00 } //1 ido.exe
+		$a_01_3 = {2f 00 73 00 69 00 6c 00 65 00 6e 00 74 00 } //1 /silent
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
+ 
+}
+rule Trojan_Win32_OffLoader_EN_MTB_4{
 	meta:
 		description = "Trojan:Win32/OffLoader.EN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 03 00 00 "
 		
@@ -23,7 +48,7 @@ rule Trojan_Win32_OffLoader_EN_MTB_2{
 		((#a_01_0  & 1)*9+(#a_01_1  & 1)*9+(#a_01_2  & 1)*1) >=10
  
 }
-rule Trojan_Win32_OffLoader_EN_MTB_3{
+rule Trojan_Win32_OffLoader_EN_MTB_5{
 	meta:
 		description = "Trojan:Win32/OffLoader.EN!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 04 00 00 "
 		

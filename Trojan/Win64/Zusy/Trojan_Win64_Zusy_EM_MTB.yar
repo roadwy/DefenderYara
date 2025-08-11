@@ -11,6 +11,17 @@ rule Trojan_Win64_Zusy_EM_MTB{
 }
 rule Trojan_Win64_Zusy_EM_MTB_2{
 	meta:
+		description = "Trojan:Win64/Zusy.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
+		
+	strings :
+		$a_01_0 = {47 00 61 00 6d 00 65 00 20 00 52 00 65 00 70 00 61 00 63 00 6b 00 20 00 49 00 6e 00 73 00 74 00 61 00 6c 00 6c 00 } //1 Game Repack Install
+		$a_01_1 = {2e 74 68 65 6d 69 64 61 00 a0 73 00 00 60 15 00 00 00 00 00 00 b2 0c } //1
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
+ 
+}
+rule Trojan_Win64_Zusy_EM_MTB_3{
+	meta:
 		description = "Trojan:Win64/Zusy.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
@@ -23,7 +34,7 @@ rule Trojan_Win64_Zusy_EM_MTB_2{
 		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1) >=5
  
 }
-rule Trojan_Win64_Zusy_EM_MTB_3{
+rule Trojan_Win64_Zusy_EM_MTB_4{
 	meta:
 		description = "Trojan:Win64/Zusy.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -39,7 +50,7 @@ rule Trojan_Win64_Zusy_EM_MTB_3{
 		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1+(#a_81_6  & 1)*1) >=7
  
 }
-rule Trojan_Win64_Zusy_EM_MTB_4{
+rule Trojan_Win64_Zusy_EM_MTB_5{
 	meta:
 		description = "Trojan:Win64/Zusy.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -54,7 +65,7 @@ rule Trojan_Win64_Zusy_EM_MTB_4{
 		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1) >=6
  
 }
-rule Trojan_Win64_Zusy_EM_MTB_5{
+rule Trojan_Win64_Zusy_EM_MTB_6{
 	meta:
 		description = "Trojan:Win64/Zusy.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		

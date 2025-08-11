@@ -1,6 +1,20 @@
 
 rule Trojan_Win32_GuLoader_RBB_MTB{
 	meta:
+		description = "Trojan:Win32/GuLoader.RBB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_81_0 = {23 5c 69 6d 70 72 67 6e 65 72 69 6e 67 65 72 5c 42 6f 74 69 6c 6c 61 5c 68 6a 6c 70 65 66 69 6c 65 6e 73 } //1 #\imprgneringer\Botilla\hjlpefilens
+		$a_81_1 = {71 75 61 72 74 65 72 6c 61 6e 64 } //1 quarterland
+		$a_81_2 = {67 61 73 74 72 6f 70 68 69 6c 75 73 20 74 69 6d 65 66 6f 72 62 72 75 67 65 6e 65 73 } //1 gastrophilus timeforbrugenes
+		$a_81_3 = {73 74 65 70 72 65 6c 61 74 69 6f 6e 73 68 69 70 } //1 steprelationship
+		$a_81_4 = {67 72 75 6e 64 6c 6f 76 73 74 61 6c 65 6e 73 20 72 65 64 68 61 6e 64 65 64 6e 65 73 73 2e 65 78 65 } //1 grundlovstalens redhandedness.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1) >=5
+ 
+}
+rule Trojan_Win32_GuLoader_RBB_MTB_2{
+	meta:
 		description = "Trojan:Win32/GuLoader.RBB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :

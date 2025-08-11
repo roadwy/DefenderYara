@@ -1,13 +1,15 @@
 
 rule HackTool_Win32_Nsudo_B{
 	meta:
-		description = "HackTool:Win32/Nsudo.B,SIGNATURE_TYPE_CMDHSTR_EXT,03 00 03 00 03 00 00 "
+		description = "HackTool:Win32/Nsudo.B,SIGNATURE_TYPE_CMDHSTR_EXT,03 00 03 00 05 00 00 "
 		
 	strings :
 		$a_00_0 = {75 00 3a 00 74 00 } //1 u:t
 		$a_00_1 = {75 00 3d 00 74 00 } //1 u=t
 		$a_00_2 = {6e 00 73 00 75 00 64 00 6f 00 } //2 nsudo
+		$a_00_3 = {6d 00 73 00 65 00 64 00 67 00 65 00 77 00 65 00 62 00 76 00 69 00 65 00 77 00 32 00 2e 00 65 00 78 00 65 00 } //-1000 msedgewebview2.exe
+		$a_00_4 = {69 00 66 00 20 00 66 00 61 00 6c 00 73 00 65 00 20 00 3d 00 3d 00 20 00 66 00 61 00 6c 00 73 00 65 00 20 00 65 00 63 00 68 00 6f 00 } //-1000 if false == false echo
 	condition:
-		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*2) >=3
+		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*2+(#a_00_3  & 1)*-1000+(#a_00_4  & 1)*-1000) >=3
  
 }

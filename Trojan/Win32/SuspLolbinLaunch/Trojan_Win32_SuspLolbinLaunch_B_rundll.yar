@@ -1,14 +1,16 @@
 
 rule Trojan_Win32_SuspLolbinLaunch_B_rundll{
 	meta:
-		description = "Trojan:Win32/SuspLolbinLaunch.B!rundll,SIGNATURE_TYPE_CMDHSTR_EXT,01 00 01 00 04 00 00 "
+		description = "Trojan:Win32/SuspLolbinLaunch.B!rundll,SIGNATURE_TYPE_CMDHSTR_EXT,01 00 01 00 06 00 00 "
 		
 	strings :
 		$a_02_0 = {72 00 75 00 6e 00 64 00 6c 00 6c 00 [0-40] 6d 00 73 00 68 00 74 00 6d 00 6c 00 } //1
 		$a_00_1 = {5c 00 66 00 69 00 6c 00 74 00 65 00 72 00 2e 00 65 00 78 00 65 00 } //-5 \filter.exe
 		$a_00_2 = {74 00 68 00 6f 00 72 00 5c 00 73 00 69 00 67 00 6e 00 61 00 74 00 75 00 72 00 65 00 73 00 } //-5 thor\signatures
 		$a_00_3 = {2e 00 79 00 6d 00 73 00 2d 00 74 00 65 00 78 00 74 00 66 00 69 00 6c 00 74 00 65 00 72 00 } //-5 .yms-textfilter
+		$a_00_4 = {6d 00 73 00 65 00 64 00 67 00 65 00 77 00 65 00 62 00 76 00 69 00 65 00 77 00 32 00 2e 00 65 00 78 00 65 00 } //-1000 msedgewebview2.exe
+		$a_00_5 = {69 00 66 00 20 00 66 00 61 00 6c 00 73 00 65 00 20 00 3d 00 3d 00 20 00 66 00 61 00 6c 00 73 00 65 00 20 00 65 00 63 00 68 00 6f 00 } //-1000 if false == false echo
 	condition:
-		((#a_02_0  & 1)*1+(#a_00_1  & 1)*-5+(#a_00_2  & 1)*-5+(#a_00_3  & 1)*-5) >=1
+		((#a_02_0  & 1)*1+(#a_00_1  & 1)*-5+(#a_00_2  & 1)*-5+(#a_00_3  & 1)*-5+(#a_00_4  & 1)*-1000+(#a_00_5  & 1)*-1000) >=1
  
 }

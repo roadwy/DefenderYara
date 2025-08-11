@@ -55,6 +55,29 @@ rule Trojan_BAT_FormBook_ABF_MTB_5{
 }
 rule Trojan_BAT_FormBook_ABF_MTB_6{
 	meta:
+		description = "Trojan:BAT/FormBook.ABF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {5a 05 6c 5b 28 ?? 00 00 0a 02 7b ?? 01 00 04 5a 13 05 04 2c 11 11 04 04 8e 69 2f 0a 11 05 04 11 04 98 6c 5a 13 05 06 7b ?? 01 00 04 11 04 11 05 28 ?? 00 00 0a a1 11 04 17 58 } //2
+		$a_03_1 = {0a 0a 12 01 fe 15 ?? 00 00 02 12 01 12 00 28 ?? 01 00 0a 7d ?? 01 00 04 12 01 12 00 28 ?? 01 00 0a 7d ?? 01 00 04 12 01 12 00 28 ?? 01 00 0a 7d ?? 01 00 04 0e 05 } //1
+	condition:
+		((#a_03_0  & 1)*2+(#a_03_1  & 1)*1) >=3
+ 
+}
+rule Trojan_BAT_FormBook_ABF_MTB_7{
+	meta:
+		description = "Trojan:BAT/FormBook.ABF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 03 00 00 "
+		
+	strings :
+		$a_03_0 = {16 30 04 11 0f 2b 02 11 11 2b 02 11 10 13 0f 11 0f 6f ?? 00 00 0a 00 11 06 72 ?? 01 00 70 6f ?? 00 00 0a 07 5f 13 12 11 12 2c 0a 00 11 05 6f ?? 00 00 0a 00 00 00 11 0d 17 } //3
+		$a_03_1 = {13 14 2b 15 12 14 28 ?? 00 00 0a 13 15 00 09 11 15 6f ?? 00 00 0a 61 0d 00 12 14 28 } //2
+		$a_01_2 = {41 00 73 00 73 00 69 00 67 00 6e 00 6d 00 65 00 6e 00 74 00 32 00 5f 00 57 00 69 00 6e 00 66 00 6f 00 72 00 6d 00 } //1 Assignment2_Winform
+	condition:
+		((#a_03_0  & 1)*3+(#a_03_1  & 1)*2+(#a_01_2  & 1)*1) >=6
+ 
+}
+rule Trojan_BAT_FormBook_ABF_MTB_8{
+	meta:
 		description = "Trojan:BAT/FormBook.ABF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 "
 		
 	strings :

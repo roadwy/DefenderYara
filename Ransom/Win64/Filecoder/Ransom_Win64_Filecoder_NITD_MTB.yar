@@ -15,6 +15,22 @@ rule Ransom_Win64_Filecoder_NITD_MTB{
 }
 rule Ransom_Win64_Filecoder_NITD_MTB_2{
 	meta:
+		description = "Ransom:Win64/Filecoder.NITD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 07 00 00 "
+		
+	strings :
+		$a_01_0 = {57 61 6e 6e 61 44 65 63 72 79 70 74 69 6f 6e 2e 70 64 62 } //2 WannaDecryption.pdb
+		$a_01_1 = {65 6e 63 72 79 70 74 65 64 20 66 69 6c 65 } //2 encrypted file
+		$a_01_2 = {59 6f 75 72 20 66 69 6c 65 73 20 61 72 65 20 65 6e 63 72 79 70 74 65 64 } //2 Your files are encrypted
+		$a_01_3 = {44 65 63 72 79 70 74 69 6f 6e 20 63 6f 6d 70 6c 65 74 65 64 21 } //2 Decryption completed!
+		$a_01_4 = {44 65 63 72 79 70 74 69 6e 67 20 66 69 6c 65 73 } //2 Decrypting files
+		$a_01_5 = {54 6f 20 64 65 63 72 79 70 74 20 79 6f 75 72 20 66 69 6c 65 73 } //1 To decrypt your files
+		$a_01_6 = {64 72 6f 70 20 6f 66 20 74 68 65 20 70 61 6e 69 63 20 70 61 79 6c 6f 61 64 20 70 61 6e 69 63 6b 65 64 } //1 drop of the panic payload panicked
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2+(#a_01_3  & 1)*2+(#a_01_4  & 1)*2+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=12
+ 
+}
+rule Ransom_Win64_Filecoder_NITD_MTB_3{
+	meta:
 		description = "Ransom:Win64/Filecoder.NITD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 0b 00 00 "
 		
 	strings :

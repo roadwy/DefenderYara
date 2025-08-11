@@ -1,6 +1,20 @@
 
 rule Trojan_Win32_GuLoader_RBF_MTB{
 	meta:
+		description = "Trojan:Win32/GuLoader.RBF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_81_0 = {46 6f 72 63 65 70 73 5c 72 65 73 74 69 67 6d 61 74 69 73 65 73 5c 54 6f 72 72 65 6e 63 65 } //1 Forceps\restigmatises\Torrence
+		$a_81_1 = {5c 44 65 6c 65 67 65 72 65 74 73 31 34 34 5c 64 61 6d 70 6e 69 6e 67 65 72 6e 65 2e 6b 69 6c } //1 \Delegerets144\dampningerne.kil
+		$a_81_2 = {5c 65 6e 74 65 72 6f 72 72 68 65 61 5c 6f 75 74 74 61 6b 65 2e 75 70 66 } //1 \enterorrhea\outtake.upf
+		$a_81_3 = {25 74 79 70 65 62 65 74 65 67 6e 65 6c 73 65 72 73 25 5c 63 68 6c 6f 72 69 6e 61 74 6f 72 5c 66 6f 67 65 64 72 65 74 74 65 72 6e 65 } //1 %typebetegnelsers%\chlorinator\fogedretterne
+		$a_81_4 = {6b 75 6e 73 74 67 64 6e 69 6e 67 65 72 73 20 6f 72 6b 65 73 74 65 72 67 72 61 76 65 6e 2e 65 78 65 } //1 kunstgdningers orkestergraven.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1) >=5
+ 
+}
+rule Trojan_Win32_GuLoader_RBF_MTB_2{
+	meta:
 		description = "Trojan:Win32/GuLoader.RBF!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
 	strings :

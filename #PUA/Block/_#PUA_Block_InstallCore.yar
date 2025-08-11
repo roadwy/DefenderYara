@@ -21,6 +21,19 @@ rule _#PUA_Block_InstallCore_2{
 }
 rule _#PUA_Block_InstallCore_3{
 	meta:
+		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
+		
+	strings :
+		$a_80_0 = {72 70 2e 44 61 64 61 66 61 72 61 64 61 2e 63 6f 6d } //rp.Dadafarada.com  2
+		$a_80_1 = {53 4b 49 50 5f 4f 46 46 45 52 } //SKIP_OFFER  1
+		$a_80_2 = {6f 66 66 65 72 5f 68 74 6d 6c 2e 68 74 6d 6c } //offer_html.html  1
+		$a_80_3 = {77 77 77 2e 78 73 34 61 6c 6c 2e 6e 6c } //www.xs4all.nl  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=5
+ 
+}
+rule _#PUA_Block_InstallCore_4{
+	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
 	strings :
@@ -31,7 +44,7 @@ rule _#PUA_Block_InstallCore_3{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1) >=3
  
 }
-rule _#PUA_Block_InstallCore_4{
+rule _#PUA_Block_InstallCore_5{
 	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -45,7 +58,7 @@ rule _#PUA_Block_InstallCore_4{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_InstallCore_5{
+rule _#PUA_Block_InstallCore_6{
 	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -58,7 +71,7 @@ rule _#PUA_Block_InstallCore_5{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule _#PUA_Block_InstallCore_6{
+rule _#PUA_Block_InstallCore_7{
 	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -72,7 +85,7 @@ rule _#PUA_Block_InstallCore_6{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_InstallCore_7{
+rule _#PUA_Block_InstallCore_8{
 	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 06 00 00 "
 		
@@ -87,7 +100,7 @@ rule _#PUA_Block_InstallCore_7{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=5
  
 }
-rule _#PUA_Block_InstallCore_8{
+rule _#PUA_Block_InstallCore_9{
 	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
 		
@@ -103,7 +116,7 @@ rule _#PUA_Block_InstallCore_8{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*-100+(#a_80_6  & 1)*-100) >=5
  
 }
-rule _#PUA_Block_InstallCore_9{
+rule _#PUA_Block_InstallCore_10{
 	meta:
 		description = "!#PUA:Block:InstallCore,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		

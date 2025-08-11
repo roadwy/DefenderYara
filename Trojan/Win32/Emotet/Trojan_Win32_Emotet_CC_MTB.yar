@@ -13,14 +13,3 @@ rule Trojan_Win32_Emotet_CC_MTB{
 		((#a_81_0  & 1)*3+(#a_81_1  & 1)*3+(#a_81_2  & 1)*3+(#a_81_3  & 1)*3+(#a_81_4  & 1)*3) >=15
  
 }
-rule Trojan_Win32_Emotet_CC_MTB_2{
-	meta:
-		description = "Trojan:Win32/Emotet.CC!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
-		
-	strings :
-		$a_02_0 = {81 e1 32 88 db 0e 33 c1 8b 55 ec c1 e2 1b c1 fa 1f 81 e2 64 10 b7 1d 33 c2 8b 4d ec c1 e1 1a c1 f9 1f 81 e1 c8 20 6e 3b 33 c1 8b 55 ec c1 e2 19 c1 fa 1f 81 e2 ?? 41 dc 76 33 c2 8b 4d ec c1 e1 18 c1 f9 1f 81 e1 20 83 b8 ed 33 c1 } //1
-		$a_02_1 = {20 83 b8 ed c7 45 ?? ?? 41 dc 76 c7 45 ?? c8 20 6e 3b c7 45 ?? 64 10 b7 1d c7 45 ?? 32 88 db 0e c7 45 ?? 19 c4 6d 07 c7 45 ?? 2c 61 0e ee c7 45 ?? 96 30 07 77 } //1
-	condition:
-		((#a_02_0  & 1)*1+(#a_02_1  & 1)*1) >=2
- 
-}

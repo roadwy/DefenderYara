@@ -1,7 +1,7 @@
 
 rule Trojan_Win32_ClickFix_AK_MTB{
 	meta:
-		description = "Trojan:Win32/ClickFix.AK!MTB,SIGNATURE_TYPE_CMDHSTR_EXT,06 00 06 00 06 00 00 "
+		description = "Trojan:Win32/ClickFix.AK!MTB,SIGNATURE_TYPE_CMDHSTR_EXT,06 00 06 00 07 00 00 "
 		
 	strings :
 		$a_00_0 = {77 00 73 00 63 00 72 00 69 00 70 00 74 00 2e 00 73 00 68 00 65 00 6c 00 6c 00 } //1 wscript.shell
@@ -10,7 +10,8 @@ rule Trojan_Win32_ClickFix_AK_MTB{
 		$a_00_3 = {66 00 6f 00 72 00 65 00 61 00 63 00 68 00 } //1 foreach
 		$a_00_4 = {68 00 74 00 74 00 70 00 } //1 http
 		$a_00_5 = {6e 00 65 00 77 00 2d 00 6f 00 62 00 6a 00 65 00 63 00 74 00 } //1 new-object
+		$a_00_6 = {79 00 6f 00 75 00 74 00 75 00 62 00 65 00 2e 00 63 00 6f 00 6d 00 } //-100 youtube.com
 	condition:
-		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1) >=6
+		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1+(#a_00_6  & 1)*-100) >=6
  
 }
