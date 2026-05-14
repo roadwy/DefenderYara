@@ -1,6 +1,28 @@
 
 rule Trojan_BAT_XWorm_BAM_MTB{
 	meta:
+		description = "Trojan:BAT/XWorm.BAM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 "
+		
+	strings :
+		$a_03_0 = {02 06 02 06 91 06 20 ff 00 00 00 5d 61 03 06 03 ?? ?? 00 00 0a 5d ?? ?? 00 00 0a 61 d2 9c 06 17 58 0a 06 02 8e 69 32 d8 } //2
+		$a_01_1 = {47 65 74 4d 65 74 68 6f 64 } //1 GetMethod
+		$a_81_2 = {49 6e 76 6f 6b 65 } //1 Invoke
+	condition:
+		((#a_03_0  & 1)*2+(#a_01_1  & 1)*1+(#a_81_2  & 1)*1) >=4
+ 
+}
+rule Trojan_BAT_XWorm_BAM_MTB_2{
+	meta:
+		description = "Trojan:BAT/XWorm.BAM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {00 07 14 fe 01 0d 09 2d 26 00 03 ?? ?? 00 00 0a 0c 00 07 08 ?? ?? 00 00 0a 00 00 de 10 08 14 fe 01 0d 09 2d 07 08 ?? ?? 00 00 0a 00 dc 00 00 00 de 10 07 14 fe 01 0d 09 2d 07 07 ?? ?? 00 00 0a 00 dc } //4
+	condition:
+		((#a_03_0  & 1)*4) >=4
+ 
+}
+rule Trojan_BAT_XWorm_BAM_MTB_3{
+	meta:
 		description = "Trojan:BAT/XWorm.BAM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,29 00 29 00 05 00 00 "
 		
 	strings :

@@ -155,22 +155,6 @@ rule Trojan_Win32_PonyStealer_VB_MTB_12{
 }
 rule Trojan_Win32_PonyStealer_VB_MTB_13{
 	meta:
-		description = "Trojan:Win32/PonyStealer.VB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 07 00 00 "
-		
-	strings :
-		$a_03_0 = {89 f9 81 ff [0-40] 90 13 [0-40] 90 13 [0-40] 90 13 [0-40] 90 13 8b 09 [0-40] 90 13 [0-40] 90 13 31 3c 24 [0-40] 90 13 [0-40] 90 13 [0-40] 8f 04 10 } //1
-		$a_03_1 = {89 f9 81 fa [0-40] 90 13 [0-40] 90 13 [0-40] 90 13 [0-40] 90 13 8b 09 [0-40] 90 13 [0-40] 90 13 31 3c 24 [0-40] 90 13 [0-40] 90 13 [0-40] 8f 04 10 } //1
-		$a_03_2 = {89 f9 81 fb [0-40] 90 13 [0-40] 90 13 [0-40] 90 13 [0-40] 90 13 8b 09 [0-40] 90 13 [0-40] 90 13 31 3c 24 [0-40] 90 13 [0-40] 90 13 [0-40] 8f 04 10 } //1
-		$a_03_3 = {89 f9 3d ea [0-40] 90 13 [0-40] 90 13 [0-40] 90 13 [0-40] 90 13 8b 09 [0-40] 90 13 [0-40] 90 13 31 3c 24 [0-40] 90 13 [0-40] 90 13 [0-40] 8f 04 10 } //1
-		$a_03_4 = {89 f9 3d 6e [0-40] 90 13 [0-40] 90 13 [0-40] 90 13 [0-40] 90 13 8b 09 [0-40] 90 13 [0-40] 90 13 31 3c 24 [0-40] 90 13 [0-40] 90 13 [0-40] 8f 04 10 } //1
-		$a_03_5 = {8b 09 81 fb [0-40] 90 13 [0-40] 90 13 31 3c 24 [0-40] 90 13 [0-40] 90 13 [0-40] 8f 04 10 } //1
-		$a_03_6 = {8b 09 81 fa [0-40] 90 13 [0-40] 90 13 31 3c 24 [0-40] 90 13 [0-40] 90 13 [0-40] 8f 04 10 } //1
-	condition:
-		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1+(#a_03_6  & 1)*1) >=1
- 
-}
-rule Trojan_Win32_PonyStealer_VB_MTB_14{
-	meta:
 		description = "Trojan:Win32/PonyStealer.VB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 08 00 00 "
 		
 	strings :
@@ -186,7 +170,7 @@ rule Trojan_Win32_PonyStealer_VB_MTB_14{
 		((#a_00_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1) >=5
  
 }
-rule Trojan_Win32_PonyStealer_VB_MTB_15{
+rule Trojan_Win32_PonyStealer_VB_MTB_14{
 	meta:
 		description = "Trojan:Win32/PonyStealer.VB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 07 00 00 "
 		
@@ -202,7 +186,7 @@ rule Trojan_Win32_PonyStealer_VB_MTB_15{
 		((#a_00_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=8
  
 }
-rule Trojan_Win32_PonyStealer_VB_MTB_16{
+rule Trojan_Win32_PonyStealer_VB_MTB_15{
 	meta:
 		description = "Trojan:Win32/PonyStealer.VB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 0b 00 00 "
 		

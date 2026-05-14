@@ -52,3 +52,66 @@ rule _#PUA_Block_AskToolbar_4{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
+rule _#PUA_Block_AskToolbar_5{
+	meta:
+		description = "!#PUA:Block:AskToolbar,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 05 00 00 "
+		
+	strings :
+		$a_81_0 = {50 6c 61 79 46 69 7a 7a 20 49 6e 73 74 61 6c 6c 65 72 } //1 PlayFizz Installer
+		$a_81_1 = {49 6e 73 74 61 6c 6c 69 6e 67 20 43 6f 6e 64 75 69 74 20 74 6f 6f 6c 62 61 72 } //1 Installing Conduit toolbar
+		$a_81_2 = {41 73 6b 20 69 6e 73 74 61 6c 6c 61 74 69 6f 6e 20 66 69 6e 69 73 68 65 64 } //1 Ask installation finished
+		$a_81_3 = {55 6e 69 6e 73 74 2e 65 78 65 } //-100 Uninst.exe
+		$a_81_4 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //-100 Uninstall.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*-100+(#a_81_4  & 1)*-100) >=3
+ 
+}
+rule _#PUA_Block_AskToolbar_6{
+	meta:
+		description = "!#PUA:Block:AskToolbar,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
+		
+	strings :
+		$a_81_0 = {53 65 74 75 70 20 2d 20 43 75 74 65 50 44 46 20 57 72 69 74 65 72 } //1 Setup - CutePDF Writer
+		$a_81_1 = {41 73 6b 20 54 6f 6f 6c 62 61 72 } //1 Ask Toolbar
+		$a_81_2 = {74 6f 6f 6c 62 61 72 } //1 toolbar
+		$a_81_3 = {6f 66 66 65 72 65 75 6c 61 } //1 offereula
+		$a_81_4 = {41 73 6b 49 6e 73 74 61 6c 6c 65 72 } //1 AskInstaller
+		$a_81_5 = {55 6e 69 6e 73 74 2e 65 78 65 } //-100 Uninst.exe
+		$a_81_6 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //-100 Uninstall.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*-100+(#a_81_6  & 1)*-100) >=5
+ 
+}
+rule _#PUA_Block_AskToolbar_7{
+	meta:
+		description = "!#PUA:Block:AskToolbar,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
+		
+	strings :
+		$a_81_0 = {45 78 61 63 74 20 41 75 64 69 6f 20 43 6f 70 79 } //1 Exact Audio Copy
+		$a_81_1 = {45 78 61 63 74 20 41 75 64 69 6f 20 43 6f 70 79 2e 6c 6e 6b } //1 Exact Audio Copy.lnk
+		$a_81_2 = {45 41 43 2e 65 78 65 } //1 EAC.exe
+		$a_81_3 = {61 73 6b 54 6f 6f 6c 62 61 72 49 6e 73 74 61 6c 6c 65 72 2d 31 2e 37 2e 30 2e 30 2e 65 78 65 } //1 askToolbarInstaller-1.7.0.0.exe
+		$a_81_4 = {41 73 6b 54 6f 6f 6c 62 61 72 32 2e 62 6d 70 } //1 AskToolbar2.bmp
+		$a_81_5 = {55 6e 69 6e 73 74 2e 65 78 65 } //-100 Uninst.exe
+		$a_81_6 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //-100 Uninstall.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*-100+(#a_81_6  & 1)*-100) >=5
+ 
+}
+rule _#PUA_Block_AskToolbar_8{
+	meta:
+		description = "!#PUA:Block:AskToolbar,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 08 00 00 "
+		
+	strings :
+		$a_81_0 = {65 6d 62 65 64 6f 66 66 65 72 32 78 74 65 6d 70 6c 61 74 65 2e 68 74 6d 55 54 } //1 embedoffer2xtemplate.htmUT
+		$a_81_1 = {6f 66 66 65 72 32 78 74 65 6d 70 6c 61 74 65 2e 68 74 6d 55 54 } //1 offer2xtemplate.htmUT
+		$a_81_2 = {6f 66 66 65 72 6c 69 73 74 2e 6a 73 55 54 } //1 offerlist.jsUT
+		$a_81_3 = {41 50 4e 49 6e 73 74 61 6c 6c 65 72 2e 65 78 65 } //1 APNInstaller.exe
+		$a_81_4 = {4f 66 66 65 72 63 61 73 74 20 2d 20 41 50 4e 20 49 6e 73 74 61 6c 6c 20 4d 61 6e 61 67 65 72 } //1 Offercast - APN Install Manager
+		$a_81_5 = {4f 43 50 61 63 6b 65 72 2e 70 64 62 } //1 OCPacker.pdb
+		$a_81_6 = {55 6e 69 6e 73 74 2e 65 78 65 } //-100 Uninst.exe
+		$a_81_7 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //-100 Uninstall.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1+(#a_81_6  & 1)*-100+(#a_81_7  & 1)*-100) >=6
+ 
+}

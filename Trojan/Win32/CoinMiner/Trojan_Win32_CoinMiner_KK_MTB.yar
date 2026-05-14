@@ -1,6 +1,17 @@
 
 rule Trojan_Win32_CoinMiner_KK_MTB{
 	meta:
+		description = "Trojan:Win32/CoinMiner.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,32 00 32 00 02 00 00 "
+		
+	strings :
+		$a_01_0 = {43 3a 5c 41 70 70 43 61 63 68 65 5c 78 38 36 5c 73 76 63 68 6f 73 74 2e 65 78 65 } //40 C:\AppCache\x86\svchost.exe
+		$a_03_1 = {5c 41 70 70 43 61 63 68 65 5c 78 38 36 5c 73 76 63 68 6f 73 74 2e 65 78 65 20 2d 61 20 63 72 79 70 74 6f 6e 69 67 68 74 20 2d 6f 20 73 74 72 61 74 75 6d 2b 74 63 70 3a 2f 2f [0-19] 20 2d 75 20 34 35 39 61 35 35 4b 51 31 5a 74 63 7a 48 52 58 74 64 56 63 6d 54 5a 56 66 39 35 4e 37 71 53 46 57 65 57 51 71 35 62 76 50 75 41 32 58 4a 32 4e 42 67 6a 61 6b 45 66 6a 65 71 76 37 54 39 37 59 44 6d 67 69 33 4b 45 68 44 66 48 54 70 32 36 66 4d 75 72 44 6e 57 76 36 48 51 67 59 34 4d 66 20 2d 70 20 78 20 2d 2d 64 6f 6e 61 74 65 2d 6c 65 76 65 6c 3d 31 20 2d 42 20 2d 2d 6d 61 78 2d 63 70 75 2d 75 73 61 67 65 3d 31 30 30 } //10
+	condition:
+		((#a_01_0  & 1)*40+(#a_03_1  & 1)*10) >=50
+ 
+}
+rule Trojan_Win32_CoinMiner_KK_MTB_2{
+	meta:
 		description = "Trojan:Win32/CoinMiner.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,32 00 32 00 05 00 00 "
 		
 	strings :

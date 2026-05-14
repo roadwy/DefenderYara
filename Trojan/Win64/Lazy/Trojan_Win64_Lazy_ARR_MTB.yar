@@ -1,6 +1,17 @@
 
 rule Trojan_Win64_Lazy_ARR_MTB{
 	meta:
+		description = "Trojan:Win64/Lazy.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 02 00 00 "
+		
+	strings :
+		$a_81_0 = {43 33 7a 77 33 76 66 31 62 6e 38 4a 61 51 79 31 } //15 C3zw3vf1bn8JaQy1
+		$a_81_1 = {4c 4c 49 65 6c 44 6d 45 53 33 31 4b 53 68 41 41 } //5 LLIelDmES31KShAA
+	condition:
+		((#a_81_0  & 1)*15+(#a_81_1  & 1)*5) >=20
+ 
+}
+rule Trojan_Win64_Lazy_ARR_MTB_2{
+	meta:
 		description = "Trojan:Win64/Lazy.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1e 00 1e 00 05 00 00 "
 		
 	strings :
@@ -13,7 +24,7 @@ rule Trojan_Win64_Lazy_ARR_MTB{
 		((#a_03_0  & 1)*12+(#a_01_1  & 1)*8+(#a_01_2  & 1)*5+(#a_01_3  & 1)*3+(#a_01_4  & 1)*2) >=30
  
 }
-rule Trojan_Win64_Lazy_ARR_MTB_2{
+rule Trojan_Win64_Lazy_ARR_MTB_3{
 	meta:
 		description = "Trojan:Win64/Lazy.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 03 00 00 "
 		
@@ -25,7 +36,7 @@ rule Trojan_Win64_Lazy_ARR_MTB_2{
 		((#a_03_0  & 1)*10+(#a_03_1  & 1)*8+(#a_03_2  & 1)*2) >=20
  
 }
-rule Trojan_Win64_Lazy_ARR_MTB_3{
+rule Trojan_Win64_Lazy_ARR_MTB_4{
 	meta:
 		description = "Trojan:Win64/Lazy.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,3c 00 3c 00 03 00 00 "
 		

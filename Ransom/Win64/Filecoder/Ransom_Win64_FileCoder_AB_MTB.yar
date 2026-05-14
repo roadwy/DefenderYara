@@ -1,6 +1,19 @@
 
 rule Ransom_Win64_FileCoder_AB_MTB{
 	meta:
+		description = "Ransom:Win64/FileCoder.AB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 04 00 00 "
+		
+	strings :
+		$a_81_0 = {73 20 68 61 76 65 20 62 65 65 6e 20 65 6e 63 72 79 70 74 65 64 2e 43 3a 5c 57 69 6e 64 6f 77 73 5c 53 79 73 74 65 6d 33 32 5c 73 76 63 68 6f 73 74 2e 65 78 65 } //3 s have been encrypted.C:\Windows\System32\svchost.exe
+		$a_81_1 = {2e 63 63 6c 2e 74 6d 70 } //3 .ccl.tmp
+		$a_81_2 = {42 65 73 74 20 52 65 67 61 72 64 73 20 2c 20 43 43 4c 61 6e 64 } //2 Best Regards , CCLand
+		$a_81_3 = {43 3a 5c 5c 50 72 6f 67 72 61 6d 20 46 69 6c 65 73 5c 5c 57 69 6e 64 6f 77 73 20 44 65 66 65 6e 64 65 72 } //2 C:\\Program Files\\Windows Defender
+	condition:
+		((#a_81_0  & 1)*3+(#a_81_1  & 1)*3+(#a_81_2  & 1)*2+(#a_81_3  & 1)*2) >=10
+ 
+}
+rule Ransom_Win64_FileCoder_AB_MTB_2{
+	meta:
 		description = "Ransom:Win64/FileCoder.AB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
 	strings :
@@ -16,7 +29,7 @@ rule Ransom_Win64_FileCoder_AB_MTB{
 		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1+(#a_81_6  & 1)*1+(#a_81_7  & 1)*1) >=8
  
 }
-rule Ransom_Win64_FileCoder_AB_MTB_2{
+rule Ransom_Win64_FileCoder_AB_MTB_3{
 	meta:
 		description = "Ransom:Win64/FileCoder.AB!MTB,SIGNATURE_TYPE_PEHSTR,05 00 04 00 05 00 00 "
 		

@@ -16,6 +16,38 @@ rule BrowserModifier_MSIL_MediaArena{
 }
 rule BrowserModifier_MSIL_MediaArena_2{
 	meta:
+		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
+		
+	strings :
+		$a_80_0 = {43 6f 6e 76 65 72 74 4d 61 74 65 } //ConvertMate  1
+		$a_80_1 = {42 72 69 65 66 6d 65 2e 6d 70 34 } //Briefme.mp4  1
+		$a_80_2 = {63 5f 68 5f 72 5f 6f 5f 6d 5f 65 5f 2e 5f 65 5f 78 5f 65 } //c_h_r_o_m_e_._e_x_e  1
+		$a_80_3 = {43 6f 6e 76 65 72 74 4d 61 74 65 2e 70 64 62 } //ConvertMate.pdb  1
+		$a_80_4 = {63 6c 69 6d 61 74 63 6f 6e 2e 63 6f 6d } //climatcon.com  1
+		$a_80_5 = {55 6e 69 6e 73 74 2e 65 78 65 } //Uninst.exe  -100
+		$a_80_6 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //Uninstall.exe  -100
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*-100+(#a_80_6  & 1)*-100) >=5
+ 
+}
+rule BrowserModifier_MSIL_MediaArena_3{
+	meta:
+		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 "
+		
+	strings :
+		$a_80_0 = {50 64 66 4d 61 67 69 63 41 70 70 2e 70 64 62 } //PdfMagicApp.pdb  2
+		$a_80_1 = {73 65 61 72 63 68 6d 61 67 69 63 6f 6e 6c 69 6e 65 } //searchmagiconline  2
+		$a_80_2 = {50 44 46 6d 61 67 69 63 } //PDFmagic  1
+		$a_80_3 = {4f 70 65 72 61 } //Opera  1
+		$a_80_4 = {65 64 67 65 3a 2f 2f 73 65 74 74 69 6e 67 73 2f 64 65 66 61 75 6c 74 42 72 6f 77 73 65 72 } //edge://settings/defaultBrowser  1
+		$a_81_5 = {55 6e 69 6e 73 74 2e 65 78 65 } //-100 Uninst.exe
+		$a_81_6 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //-100 Uninstall.exe
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*2+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_81_5  & 1)*-100+(#a_81_6  & 1)*-100) >=6
+ 
+}
+rule BrowserModifier_MSIL_MediaArena_4{
+	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :
@@ -32,7 +64,25 @@ rule BrowserModifier_MSIL_MediaArena_2{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1) >=9
  
 }
-rule BrowserModifier_MSIL_MediaArena_3{
+rule BrowserModifier_MSIL_MediaArena_5{
+	meta:
+		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 "
+		
+	strings :
+		$a_80_0 = {4f 70 65 6e 46 46 } //OpenFF  1
+		$a_80_1 = {67 65 74 5f 50 52 46 5f 55 52 4c } //get_PRF_URL  1
+		$a_80_2 = {67 65 74 5f 61 70 70 6c 69 63 61 74 69 6f 6e 49 6e 66 6f } //get_applicationInfo  1
+		$a_80_3 = {63 6f 6e 63 6c 69 65 2e 63 6f 6d } //conclie.com  1
+		$a_80_4 = {50 44 46 20 4d 61 73 74 65 72 } //PDF Master  1
+		$a_80_5 = {4d 61 73 74 65 72 41 6e 69 6d 61 74 69 6f 6e 2e 6d 70 34 } //MasterAnimation.mp4  1
+		$a_80_6 = {43 6f 6e 76 65 72 74 4d 61 73 74 65 72 2e 65 78 65 } //ConvertMaster.exe  1
+		$a_80_7 = {55 6e 69 6e 73 74 2e 65 78 65 } //Uninst.exe  -100
+		$a_80_8 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //Uninstall.exe  -100
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*-100+(#a_80_8  & 1)*-100) >=7
+ 
+}
+rule BrowserModifier_MSIL_MediaArena_6{
 	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 0a 00 00 "
 		
@@ -51,7 +101,7 @@ rule BrowserModifier_MSIL_MediaArena_3{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1) >=10
  
 }
-rule BrowserModifier_MSIL_MediaArena_4{
+rule BrowserModifier_MSIL_MediaArena_7{
 	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
@@ -68,7 +118,7 @@ rule BrowserModifier_MSIL_MediaArena_4{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1) >=8
  
 }
-rule BrowserModifier_MSIL_MediaArena_5{
+rule BrowserModifier_MSIL_MediaArena_8{
 	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 "
 		
@@ -89,7 +139,7 @@ rule BrowserModifier_MSIL_MediaArena_5{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1) >=12
  
 }
-rule BrowserModifier_MSIL_MediaArena_6{
+rule BrowserModifier_MSIL_MediaArena_9{
 	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 0c 00 00 "
 		
@@ -110,7 +160,21 @@ rule BrowserModifier_MSIL_MediaArena_6{
 		((#a_01_0  & 1)*3+(#a_01_1  & 1)*3+(#a_01_2  & 1)*3+(#a_01_3  & 1)*3+(#a_01_4  & 1)*2+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1) >=12
  
 }
-rule BrowserModifier_MSIL_MediaArena_7{
+rule BrowserModifier_MSIL_MediaArena_10{
+	meta:
+		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {4f 66 66 65 72 53 63 72 65 65 6e } //1 OfferScreen
+		$a_01_1 = {5f 6f 66 66 65 72 57 69 6e 64 6f 77 } //1 _offerWindow
+		$a_01_2 = {4d 79 50 64 66 4d 61 6e 61 67 65 72 2e 67 2e 72 65 73 6f 75 72 63 65 73 } //1 MyPdfManager.g.resources
+		$a_01_3 = {4f 66 66 65 72 44 65 73 63 } //1 OfferDesc
+		$a_01_4 = {4d 79 50 64 66 4d 61 6e 61 67 65 72 2e 65 78 65 } //1 MyPdfManager.exe
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
+ 
+}
+rule BrowserModifier_MSIL_MediaArena_11{
 	meta:
 		description = "BrowserModifier:MSIL/MediaArena,SIGNATURE_TYPE_PEHSTR,08 00 08 00 06 00 00 "
 		

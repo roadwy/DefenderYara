@@ -34,6 +34,20 @@ rule Trojan_BAT_Jalapeno_NJ_MTB_3{
 }
 rule Trojan_BAT_Jalapeno_NJ_MTB_4{
 	meta:
+		description = "Trojan:BAT/Jalapeno.NJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {11 02 16 11 00 17 11 02 8e 69 28 } //2
+		$a_03_1 = {26 20 00 00 00 00 38 ?? ?? ff ff 11 0a 2a 14 13 00 20 } //1
+		$a_01_2 = {64 00 63 00 2e 00 31 00 32 00 35 00 38 00 30 00 2e 00 68 00 6f 00 73 00 74 00 } //1 dc.12580.host
+		$a_01_3 = {31 00 32 00 37 00 2e 00 30 00 2e 00 30 00 2e 00 31 00 } //1 127.0.0.1
+		$a_01_4 = {69 00 6e 00 74 00 65 00 72 00 6e 00 61 00 6c 00 53 00 65 00 72 00 76 00 65 00 72 00 50 00 6f 00 72 00 74 00 } //1 internalServerPort
+	condition:
+		((#a_01_0  & 1)*2+(#a_03_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=6
+ 
+}
+rule Trojan_BAT_Jalapeno_NJ_MTB_5{
+	meta:
 		description = "Trojan:BAT/Jalapeno.NJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 04 00 00 "
 		
 	strings :
@@ -45,7 +59,7 @@ rule Trojan_BAT_Jalapeno_NJ_MTB_4{
 		((#a_01_0  & 1)*3+(#a_01_1  & 1)*2+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=7
  
 }
-rule Trojan_BAT_Jalapeno_NJ_MTB_5{
+rule Trojan_BAT_Jalapeno_NJ_MTB_6{
 	meta:
 		description = "Trojan:BAT/Jalapeno.NJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 "
 		
@@ -56,7 +70,7 @@ rule Trojan_BAT_Jalapeno_NJ_MTB_5{
 		((#a_01_0  & 1)*3+(#a_01_1  & 1)*2) >=5
  
 }
-rule Trojan_BAT_Jalapeno_NJ_MTB_6{
+rule Trojan_BAT_Jalapeno_NJ_MTB_7{
 	meta:
 		description = "Trojan:BAT/Jalapeno.NJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 "
 		

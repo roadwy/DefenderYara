@@ -23,3 +23,17 @@ rule Trojan_Win32_Small_EM_MTB_2{
 		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1) >=5
  
 }
+rule Trojan_Win32_Small_EM_MTB_3{
+	meta:
+		description = "Trojan:Win32/Small.EM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {4c 01 03 00 a0 43 e2 34 } //1
+		$a_81_1 = {55 6e 6d 61 70 56 69 65 77 4f 66 46 69 6c 65 } //1 UnmapViewOfFile
+		$a_81_2 = {4d 61 70 56 69 65 77 4f 66 46 69 6c 65 } //1 MapViewOfFile
+		$a_81_3 = {4f 70 65 6e 46 69 6c 65 4d 61 70 70 69 6e 67 41 } //1 OpenFileMappingA
+		$a_81_4 = {44 52 41 4d 4d 41 50 } //1 DRAMMAP
+	condition:
+		((#a_01_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1) >=5
+ 
+}

@@ -14,6 +14,20 @@ rule _#PUA_Block_Wews87{
 }
 rule _#PUA_Block_Wews87_2{
 	meta:
+		description = "!#PUA:Block:Wews87,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 05 00 00 "
+		
+	strings :
+		$a_81_0 = {3a 2f 2f 64 2e 77 61 6e 79 6f 75 78 69 37 2e 63 6f 6d 2f 33 37 2f 64 74 73 2f 6f 66 66 69 63 69 61 6c 2f 53 65 74 75 70 5f 33 37 64 74 73 2e 65 78 65 } //1 ://d.wanyouxi7.com/37/dts/official/Setup_37dts.exe
+		$a_81_1 = {6c 61 6e 64 65 72 2e 70 64 62 } //1 lander.pdb
+		$a_81_2 = {33 37 4c 61 6e 64 65 72 55 70 67 72 61 64 65 2e 65 78 65 } //1 37LanderUpgrade.exe
+		$a_80_3 = {55 6e 69 6e 73 74 2e 65 78 65 } //Uninst.exe  -100
+		$a_80_4 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //Uninstall.exe  -100
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_80_3  & 1)*-100+(#a_80_4  & 1)*-100) >=3
+ 
+}
+rule _#PUA_Block_Wews87_3{
+	meta:
 		description = "!#PUA:Block:Wews87,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
@@ -26,7 +40,7 @@ rule _#PUA_Block_Wews87_2{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_Wews87_3{
+rule _#PUA_Block_Wews87_4{
 	meta:
 		description = "!#PUA:Block:Wews87,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 06 00 00 "
 		
@@ -41,7 +55,7 @@ rule _#PUA_Block_Wews87_3{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=5
  
 }
-rule _#PUA_Block_Wews87_4{
+rule _#PUA_Block_Wews87_5{
 	meta:
 		description = "!#PUA:Block:Wews87,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -55,7 +69,7 @@ rule _#PUA_Block_Wews87_4{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_Wews87_5{
+rule _#PUA_Block_Wews87_6{
 	meta:
 		description = "!#PUA:Block:Wews87,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
@@ -69,7 +83,7 @@ rule _#PUA_Block_Wews87_5{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=4
  
 }
-rule _#PUA_Block_Wews87_6{
+rule _#PUA_Block_Wews87_7{
 	meta:
 		description = "!#PUA:Block:Wews87,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		

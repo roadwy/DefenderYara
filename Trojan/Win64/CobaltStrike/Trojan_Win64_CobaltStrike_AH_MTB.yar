@@ -1,6 +1,18 @@
 
 rule Trojan_Win64_CobaltStrike_AH_MTB{
 	meta:
+		description = "Trojan:Win64/CobaltStrike.AH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,5a 00 5a 00 03 00 00 "
+		
+	strings :
+		$a_03_0 = {8b 44 24 20 83 c8 ?? 89 44 24 20 48 8d 94 24 80 01 00 00 48 8b 4c 24 38 e8 ?? ?? ?? ?? 0f b6 c0 } //20
+		$a_81_1 = {56 49 52 54 5f 46 49 52 4d 57 41 52 45 3d } //30 VIRT_FIRMWARE=
+		$a_81_2 = {3b 20 54 70 6d 45 6e 61 62 6c 65 64 3d } //40 ; TpmEnabled=
+	condition:
+		((#a_03_0  & 1)*20+(#a_81_1  & 1)*30+(#a_81_2  & 1)*40) >=90
+ 
+}
+rule Trojan_Win64_CobaltStrike_AH_MTB_2{
+	meta:
 		description = "Trojan:Win64/CobaltStrike.AH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
@@ -9,7 +21,7 @@ rule Trojan_Win64_CobaltStrike_AH_MTB{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_Win64_CobaltStrike_AH_MTB_2{
+rule Trojan_Win64_CobaltStrike_AH_MTB_3{
 	meta:
 		description = "Trojan:Win64/CobaltStrike.AH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 03 00 00 "
 		
@@ -21,7 +33,7 @@ rule Trojan_Win64_CobaltStrike_AH_MTB_2{
 		((#a_03_0  & 1)*2+(#a_03_1  & 1)*2+(#a_03_2  & 1)*1) >=5
  
 }
-rule Trojan_Win64_CobaltStrike_AH_MTB_3{
+rule Trojan_Win64_CobaltStrike_AH_MTB_4{
 	meta:
 		description = "Trojan:Win64/CobaltStrike.AH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 04 00 00 "
 		
@@ -34,7 +46,7 @@ rule Trojan_Win64_CobaltStrike_AH_MTB_3{
 		((#a_03_0  & 1)*5+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=8
  
 }
-rule Trojan_Win64_CobaltStrike_AH_MTB_4{
+rule Trojan_Win64_CobaltStrike_AH_MTB_5{
 	meta:
 		description = "Trojan:Win64/CobaltStrike.AH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -44,7 +56,7 @@ rule Trojan_Win64_CobaltStrike_AH_MTB_4{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule Trojan_Win64_CobaltStrike_AH_MTB_5{
+rule Trojan_Win64_CobaltStrike_AH_MTB_6{
 	meta:
 		description = "Trojan:Win64/CobaltStrike.AH!MTB,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 "
 		

@@ -66,6 +66,19 @@ rule VirTool_Win32_BruterShell_A_5{
 }
 rule VirTool_Win32_BruterShell_A_6{
 	meta:
+		description = "VirTool:Win32/BruterShell.A,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
+		$a_03_0 = {80 78 05 e8 75 ?? 80 78 06 03 75 ?? 80 78 0d 8b 75 ?? 80 78 0e d4 75 ?? 0f b6 50 02 } //1
+		$a_03_1 = {83 c0 01 39 c2 74 ?? 80 38 0f 75 ?? 80 78 01 34 75 ?? 80 78 02 c3 75 } //1
+		$a_03_2 = {89 14 24 c7 44 24 ?? 50 4f 53 54 c6 44 24 ?? 00 c7 44 24 ?? ?? ?? ?? ?? c7 44 24 ?? ?? ?? ?? ?? c7 44 24 } //1
+		$a_01_3 = {b9 63 72 00 00 ba 77 69 00 00 bd 32 2e 00 00 57 56 53 bb 74 2e 00 00 } //1
+	condition:
+		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_01_3  & 1)*1) >=4
+ 
+}
+rule VirTool_Win32_BruterShell_A_7{
+	meta:
 		description = "VirTool:Win32/BruterShell.A,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
 	strings :
@@ -79,7 +92,34 @@ rule VirTool_Win32_BruterShell_A_6{
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=6
  
 }
-rule VirTool_Win32_BruterShell_A_7{
+rule VirTool_Win32_BruterShell_A_8{
+	meta:
+		description = "VirTool:Win32/BruterShell.A,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
+		$a_03_0 = {80 78 05 e8 75 ?? 80 78 06 03 75 ?? 80 78 0d 8b 75 ?? 80 78 0e d4 75 ?? 0f b6 50 02 } //1
+		$a_03_1 = {83 c0 01 39 c2 74 ?? 80 38 0f 75 ?? 80 78 01 34 75 ?? 80 78 02 c3 75 } //1
+		$a_03_2 = {bd 33 32 00 00 c7 44 24 08 00 00 00 00 c7 44 24 04 00 00 00 00 89 3c 24 c7 44 24 ?? 77 73 32 5f 66 89 6c 24 ?? c6 44 24 ?? 00 e8 } //1
+		$a_03_3 = {89 3c 24 c7 84 24 ?? ?? ?? ?? 61 64 76 61 c7 84 24 ?? ?? ?? ?? 70 69 33 32 c6 84 24 ?? ?? ?? ?? 00 e8 } //1
+	condition:
+		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1) >=4
+ 
+}
+rule VirTool_Win32_BruterShell_A_9{
+	meta:
+		description = "VirTool:Win32/BruterShell.A,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
+		
+	strings :
+		$a_03_0 = {48 b8 61 64 76 61 70 69 33 32 4c 89 e9 48 89 44 24 ?? e8 } //1
+		$a_03_1 = {41 b9 33 32 00 00 45 31 c0 31 d2 4c 89 e9 c7 44 24 ?? 77 73 32 5f 66 44 89 ?? ?? ?? c6 44 24 ?? 00 e8 } //1
+		$a_03_2 = {41 81 f8 e8 00 00 00 74 ?? 0f b6 41 01 89 c2 41 81 f8 ff 00 00 00 75 ?? 3c 15 74 ?? 83 e2 fd 80 fa d0 75 } //1
+		$a_03_3 = {80 79 01 8b 75 ?? 80 79 02 d1 75 ?? 41 80 f8 b8 75 ?? 80 79 06 00 75 } //1
+		$a_03_4 = {48 83 c1 01 48 39 c8 74 ?? 80 39 0f 75 ?? 80 79 01 05 75 ?? 80 79 02 c3 75 } //1
+	condition:
+		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1+(#a_03_4  & 1)*1) >=4
+ 
+}
+rule VirTool_Win32_BruterShell_A_10{
 	meta:
 		description = "VirTool:Win32/BruterShell.A,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		

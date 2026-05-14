@@ -1,6 +1,21 @@
 
 rule Trojan_Win64_Lazy_KK_MTB{
 	meta:
+		description = "Trojan:Win64/Lazy.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,2d 00 2d 00 06 00 00 "
+		
+	strings :
+		$a_03_0 = {8b 85 ec 00 00 00 48 8d 15 ?? ?? 00 00 0f b6 04 10 83 f0 ?? 89 c1 8b 85 ec 00 00 00 48 8d 15 ?? ?? 00 00 88 0c 10 83 85 ec 00 00 00 01 } //30
+		$a_01_1 = {43 3a 5c 57 69 6e 64 6f 48 } //5 C:\WindoH
+		$a_01_2 = {77 73 5c 53 79 73 74 65 48 } //4 ws\SysteH
+		$a_01_3 = {6d 33 32 5c 52 75 6e 74 48 } //3 m32\RuntH
+		$a_01_4 = {69 6d 65 42 72 6f 6b 65 48 } //2 imeBrokeH
+		$a_01_5 = {6b 65 72 2e 65 78 65 } //1 ker.exe
+	condition:
+		((#a_03_0  & 1)*30+(#a_01_1  & 1)*5+(#a_01_2  & 1)*4+(#a_01_3  & 1)*3+(#a_01_4  & 1)*2+(#a_01_5  & 1)*1) >=45
+ 
+}
+rule Trojan_Win64_Lazy_KK_MTB_2{
+	meta:
 		description = "Trojan:Win64/Lazy.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,23 00 23 00 03 00 00 "
 		
 	strings :
@@ -11,7 +26,7 @@ rule Trojan_Win64_Lazy_KK_MTB{
 		((#a_03_0  & 1)*20+(#a_01_1  & 1)*10+(#a_00_2  & 1)*5) >=35
  
 }
-rule Trojan_Win64_Lazy_KK_MTB_2{
+rule Trojan_Win64_Lazy_KK_MTB_3{
 	meta:
 		description = "Trojan:Win64/Lazy.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 05 00 00 "
 		

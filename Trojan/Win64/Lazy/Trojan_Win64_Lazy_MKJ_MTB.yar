@@ -1,0 +1,11 @@
+
+rule Trojan_Win64_Lazy_MKJ_MTB{
+	meta:
+		description = "Trojan:Win64/Lazy.MKJ!MTB,SIGNATURE_TYPE_PEHSTR_EXT,23 00 23 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {1f 00 8b 4c 24 ?? 48 63 c9 8b 54 24 ?? 41 b8 ?? ?? ?? ?? 41 29 d0 ff c2 45 89 c1 41 f7 d1 41 81 e0 ?? ?? ?? ?? 41 81 e1 ?? ?? ?? ?? 45 0f af c8 41 89 d0 41 81 e0 ?? ?? ?? ?? 81 ca ?? ?? ?? ?? 41 0f af d0 44 01 ca 66 33 54 4c ?? 8b 4c 24 ?? 48 63 c9 66 89 54 4c ?? ff 44 24 ?? 8b 4c 24 2c 83 f9 } //35
+	condition:
+		((#a_03_0  & 1)*35) >=35
+ 
+}

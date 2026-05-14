@@ -239,31 +239,6 @@ rule PWS_BAT_RedLine_GG_MTB_11{
 }
 rule PWS_BAT_RedLine_GG_MTB_12{
 	meta:
-		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1a 00 1a 00 10 00 00 "
-		
-	strings :
-		$a_80_0 = {54 65 6c 65 67 72 61 6d } //Telegram  10
-		$a_80_1 = {49 43 6c 69 65 6e 74 43 68 61 6e 6e 65 6c } //IClientChannel  10
-		$a_80_2 = {4f 70 65 6e 56 50 4e } //OpenVPN  1
-		$a_80_3 = {4e 6f 72 64 56 50 4e } //NordVPN  1
-		$a_80_4 = {44 6f 77 6e 6c 6f 61 64 } //Download  1
-		$a_80_5 = {44 69 73 63 6f 72 64 } //Discord  1
-		$a_80_6 = {53 63 61 6e } //Scan  1
-		$a_80_7 = {50 61 73 73 77 6f 72 64 } //Password  1
-		$a_80_8 = {77 61 6c 6c 65 74 } //wallet  1
-		$a_80_9 = {2a 73 73 66 6e 2a } //*ssfn*  1
-		$a_80_10 = {53 45 4c 45 43 54 20 2a 20 46 52 4f 4d } //SELECT * FROM  1
-		$a_80_11 = {42 72 6f 77 73 65 72 } //Browser  1
-		$a_80_12 = {3c 50 72 65 53 74 61 67 65 41 63 74 69 6f 6e } //<PreStageAction  1
-		$a_80_13 = {3c 50 61 73 73 65 64 50 61 74 68 } //<PassedPath  1
-		$a_80_14 = {3c 65 6e 63 72 79 70 74 } //<encrypt  1
-		$a_80_15 = {61 70 69 2e 69 70 2e 73 62 2f 69 70 } //api.ip.sb/ip  1
-	condition:
-		((#a_80_0  & 1)*10+(#a_80_1  & 1)*10+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1+(#a_80_12  & 1)*1+(#a_80_13  & 1)*1+(#a_80_14  & 1)*1+(#a_80_15  & 1)*1) >=26
- 
-}
-rule PWS_BAT_RedLine_GG_MTB_13{
-	meta:
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,4c 00 4c 00 10 00 00 "
 		
 	strings :
@@ -287,7 +262,7 @@ rule PWS_BAT_RedLine_GG_MTB_13{
 		((#a_80_0  & 1)*50+(#a_80_1  & 1)*20+(#a_01_2  & 1)*20+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1+(#a_80_12  & 1)*1+(#a_80_13  & 1)*1+(#a_80_14  & 1)*1+(#a_80_15  & 1)*1) >=76
  
 }
-rule PWS_BAT_RedLine_GG_MTB_14{
+rule PWS_BAT_RedLine_GG_MTB_13{
 	meta:
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1a 00 1a 00 10 00 00 "
 		
@@ -312,7 +287,7 @@ rule PWS_BAT_RedLine_GG_MTB_14{
 		((#a_80_0  & 1)*10+(#a_80_1  & 1)*10+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1+(#a_80_12  & 1)*1+(#a_80_13  & 1)*1+(#a_80_14  & 1)*1+(#a_80_15  & 1)*1) >=26
  
 }
-rule PWS_BAT_RedLine_GG_MTB_15{
+rule PWS_BAT_RedLine_GG_MTB_14{
 	meta:
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,4c 00 4c 00 10 00 00 "
 		
@@ -337,7 +312,7 @@ rule PWS_BAT_RedLine_GG_MTB_15{
 		((#a_80_0  & 1)*50+(#a_80_1  & 1)*20+(#a_80_2  & 1)*20+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1+(#a_80_12  & 1)*1+(#a_80_13  & 1)*1+(#a_80_14  & 1)*1+(#a_80_15  & 1)*1) >=76
  
 }
-rule PWS_BAT_RedLine_GG_MTB_16{
+rule PWS_BAT_RedLine_GG_MTB_15{
 	meta:
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1a 00 1a 00 0f 00 00 "
 		
@@ -361,7 +336,7 @@ rule PWS_BAT_RedLine_GG_MTB_16{
 		((#a_80_0  & 1)*10+(#a_80_1  & 1)*10+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_02_7  & 1)*1+(#a_02_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1+(#a_80_12  & 1)*1+(#a_80_13  & 1)*1+(#a_80_14  & 1)*1) >=26
  
 }
-rule PWS_BAT_RedLine_GG_MTB_17{
+rule PWS_BAT_RedLine_GG_MTB_16{
 	meta:
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1a 00 1a 00 10 00 00 "
 		
@@ -386,7 +361,7 @@ rule PWS_BAT_RedLine_GG_MTB_17{
 		((#a_80_0  & 1)*10+(#a_80_1  & 1)*10+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_02_6  & 1)*1+(#a_02_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1+(#a_80_12  & 1)*1+(#a_80_13  & 1)*1+(#a_80_14  & 1)*1+(#a_80_15  & 1)*1) >=26
  
 }
-rule PWS_BAT_RedLine_GG_MTB_18{
+rule PWS_BAT_RedLine_GG_MTB_17{
 	meta:
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1b 00 1b 00 10 00 00 "
 		
@@ -411,7 +386,7 @@ rule PWS_BAT_RedLine_GG_MTB_18{
 		((#a_80_0  & 1)*10+(#a_80_1  & 1)*10+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_02_6  & 1)*1+(#a_02_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1+(#a_80_12  & 1)*1+(#a_80_13  & 1)*1+(#a_80_14  & 1)*1+(#a_80_15  & 1)*1) >=27
  
 }
-rule PWS_BAT_RedLine_GG_MTB_19{
+rule PWS_BAT_RedLine_GG_MTB_18{
 	meta:
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1c 00 1c 00 10 00 00 "
 		
@@ -436,7 +411,7 @@ rule PWS_BAT_RedLine_GG_MTB_19{
 		((#a_80_0  & 1)*10+(#a_80_1  & 1)*10+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_02_6  & 1)*1+(#a_02_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1+(#a_80_12  & 1)*1+(#a_80_13  & 1)*1+(#a_80_14  & 1)*1+(#a_80_15  & 1)*1) >=28
  
 }
-rule PWS_BAT_RedLine_GG_MTB_20{
+rule PWS_BAT_RedLine_GG_MTB_19{
 	meta:
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1c 00 1c 00 11 00 00 "
 		
@@ -462,7 +437,7 @@ rule PWS_BAT_RedLine_GG_MTB_20{
 		((#a_80_0  & 1)*10+(#a_02_1  & 1)*1+(#a_02_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_02_7  & 1)*1+(#a_02_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1+(#a_80_12  & 1)*1+(#a_80_13  & 1)*1+(#a_80_14  & 1)*10+(#a_80_15  & 1)*1+(#a_80_16  & 1)*1) >=28
  
 }
-rule PWS_BAT_RedLine_GG_MTB_21{
+rule PWS_BAT_RedLine_GG_MTB_20{
 	meta:
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1c 00 1c 00 11 00 00 "
 		
@@ -488,7 +463,7 @@ rule PWS_BAT_RedLine_GG_MTB_21{
 		((#a_80_0  & 1)*10+(#a_80_1  & 1)*10+(#a_02_2  & 1)*1+(#a_02_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_02_7  & 1)*1+(#a_02_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1+(#a_80_11  & 1)*1+(#a_80_12  & 1)*1+(#a_80_13  & 1)*1+(#a_80_14  & 1)*1+(#a_80_15  & 1)*1+(#a_80_16  & 1)*1) >=28
  
 }
-rule PWS_BAT_RedLine_GG_MTB_22{
+rule PWS_BAT_RedLine_GG_MTB_21{
 	meta:
 		description = "PWS:BAT/RedLine.GG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1c 00 1c 00 11 00 00 "
 		

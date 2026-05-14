@@ -1,7 +1,7 @@
 
 rule Trojan_Win32_SuspLolbinLaunch_B_sc{
 	meta:
-		description = "Trojan:Win32/SuspLolbinLaunch.B!sc,SIGNATURE_TYPE_CMDHSTR_EXT,02 00 02 00 05 00 00 "
+		description = "Trojan:Win32/SuspLolbinLaunch.B!sc,SIGNATURE_TYPE_CMDHSTR_EXT,02 00 02 00 06 00 00 "
 		
 	strings :
 		$a_02_0 = {73 00 63 00 20 00 63 00 6f 00 6e 00 66 00 69 00 67 00 [0-50] 62 00 69 00 6e 00 70 00 61 00 74 00 68 00 3d 00 } //2
@@ -9,7 +9,8 @@ rule Trojan_Win32_SuspLolbinLaunch_B_sc{
 		$a_00_2 = {71 00 75 00 65 00 72 00 79 00 } //-10 query
 		$a_00_3 = {61 00 69 00 72 00 6c 00 6f 00 63 00 6b 00 } //-10 airlock
 		$a_00_4 = {41 00 44 00 53 00 79 00 6e 00 63 00 } //-10 ADSync
+		$a_00_5 = {5c 00 50 00 72 00 6f 00 67 00 72 00 61 00 6d 00 20 00 46 00 69 00 6c 00 65 00 73 00 5c 00 47 00 75 00 61 00 72 00 64 00 7a 00 20 00 41 00 67 00 65 00 6e 00 74 00 5c 00 } //-10 \Program Files\Guardz Agent\
 	condition:
-		((#a_02_0  & 1)*2+(#a_02_1  & 1)*2+(#a_00_2  & 1)*-10+(#a_00_3  & 1)*-10+(#a_00_4  & 1)*-10) >=2
+		((#a_02_0  & 1)*2+(#a_02_1  & 1)*2+(#a_00_2  & 1)*-10+(#a_00_3  & 1)*-10+(#a_00_4  & 1)*-10+(#a_00_5  & 1)*-10) >=2
  
 }

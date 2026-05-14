@@ -13,6 +13,62 @@ rule Trojan_Win32_Fragtor_ARR_MTB{
 }
 rule Trojan_Win32_Fragtor_ARR_MTB_2{
 	meta:
+		description = "Trojan:Win32/Fragtor.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {8a 14 06 30 14 39 47 3b 7d 0c 72 } //10
+		$a_81_1 = {72 4a 68 37 36 64 41 64 35 5a 59 68 4e 51 74 38 37 5a 51 56 45 76 41 77 } //8 rJh76dAd5ZYhNQt87ZQVEvAw
+		$a_81_2 = {73 64 73 64 70 6c 2e 65 78 65 } //2 sdsdpl.exe
+	condition:
+		((#a_01_0  & 1)*10+(#a_81_1  & 1)*8+(#a_81_2  & 1)*2) >=20
+ 
+}
+rule Trojan_Win32_Fragtor_ARR_MTB_3{
+	meta:
+		description = "Trojan:Win32/Fragtor.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {0f 57 c8 66 0f 6e c0 66 0f 7e 09 66 0f 70 c8 ?? 66 0f fe cb 66 0f 6e c2 0f 54 ca } //6
+		$a_01_1 = {66 0f fe cd 66 0f 6e c7 0f 54 cc 66 0f 7e 1a 66 0f 67 c9 66 0f 67 c9 0f 57 c8 } //4
+	condition:
+		((#a_03_0  & 1)*6+(#a_01_1  & 1)*4) >=10
+ 
+}
+rule Trojan_Win32_Fragtor_ARR_MTB_4{
+	meta:
+		description = "Trojan:Win32/Fragtor.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 02 00 00 "
+		
+	strings :
+		$a_01_0 = {0f b6 c2 03 c8 0f b6 c1 8a 84 05 fc fe ff ff 30 04 3e 46 8b 85 f4 fe ff ff 3b f3 } //12
+		$a_03_1 = {0f b6 ca 03 c8 0f b6 c9 89 8d ?? ?? ?? ?? 8a 04 0e 88 03 43 83 ad ?? ?? ?? ?? ?? 88 14 0e 75 } //8
+	condition:
+		((#a_01_0  & 1)*12+(#a_03_1  & 1)*8) >=20
+ 
+}
+rule Trojan_Win32_Fragtor_ARR_MTB_5{
+	meta:
+		description = "Trojan:Win32/Fragtor.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {8b cb 8d 55 d4 2b c8 be ?? ?? ?? ?? 3b ce 0f 42 f1 83 7d } //18
+		$a_81_1 = {30 4a 65 77 66 33 33 34 77 65 72 66 35 32 44 4b 34 38 39 53 45 56 35 36 37 45 46 47 46 44 47 77 59 5a 73 64 66 65 57 52 74 4e 64 31 32 33 41 42 43 65 75 76 77 7a } //2 0Jewf334werf52DK489SEV567EFGFDGwYZsdfeWRtNd123ABCeuvwz
+	condition:
+		((#a_03_0  & 1)*18+(#a_81_1  & 1)*2) >=20
+ 
+}
+rule Trojan_Win32_Fragtor_ARR_MTB_6{
+	meta:
+		description = "Trojan:Win32/Fragtor.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1e 00 1e 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {8a cb f6 d1 32 cb 80 e1 ?? 32 d9 8d 55 } //10
+		$a_01_1 = {4a 00 4a 00 56 00 31 00 33 00 4a 00 33 00 54 00 71 00 51 00 4e 00 6a 00 39 00 34 00 50 00 76 00 30 00 36 00 39 00 4b 00 77 00 61 00 6c 00 46 00 33 00 69 00 5a 00 76 00 44 00 39 00 38 } //20
+	condition:
+		((#a_03_0  & 1)*10+(#a_01_1  & 1)*20) >=30
+ 
+}
+rule Trojan_Win32_Fragtor_ARR_MTB_7{
+	meta:
 		description = "Trojan:Win32/Fragtor.ARR!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 04 00 00 "
 		
 	strings :

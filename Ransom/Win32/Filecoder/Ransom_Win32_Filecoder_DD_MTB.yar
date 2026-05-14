@@ -1,6 +1,18 @@
 
 rule Ransom_Win32_Filecoder_DD_MTB{
 	meta:
+		description = "Ransom:Win32/Filecoder.DD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {59 6f 75 72 20 64 6f 63 75 6d 65 6e 74 73 20 66 6f 6c 64 65 72 20 69 73 20 61 62 6f 75 74 20 74 6f 20 62 65 20 65 6e 63 72 79 70 74 65 64 } //1 Your documents folder is about to be encrypted
+		$a_01_1 = {59 6f 75 72 20 66 69 6c 65 73 20 72 65 6d 61 69 6e 20 65 6e 63 72 79 70 74 65 64 } //1 Your files remain encrypted
+		$a_01_2 = {45 6e 74 65 72 20 64 65 63 72 79 70 74 69 6f 6e 20 6b 65 79 20 74 6f 20 72 65 73 74 6f 72 65 20 79 6f 75 72 20 66 69 6c 65 73 } //1 Enter decryption key to restore your files
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
+ 
+}
+rule Ransom_Win32_Filecoder_DD_MTB_2{
+	meta:
 		description = "Ransom:Win32/Filecoder.DD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 05 00 00 "
 		
 	strings :
@@ -13,7 +25,7 @@ rule Ransom_Win32_Filecoder_DD_MTB{
 		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_03_4  & 1)*1) >=3
  
 }
-rule Ransom_Win32_Filecoder_DD_MTB_2{
+rule Ransom_Win32_Filecoder_DD_MTB_3{
 	meta:
 		description = "Ransom:Win32/Filecoder.DD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 06 00 00 "
 		
@@ -28,7 +40,7 @@ rule Ransom_Win32_Filecoder_DD_MTB_2{
 		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1) >=3
  
 }
-rule Ransom_Win32_Filecoder_DD_MTB_3{
+rule Ransom_Win32_Filecoder_DD_MTB_4{
 	meta:
 		description = "Ransom:Win32/Filecoder.DD!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 06 00 00 "
 		

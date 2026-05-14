@@ -1,6 +1,19 @@
 
 rule _#PUA_Block_Linkury{
 	meta:
+		description = "!#PUA:Block:Linkury,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
+		
+	strings :
+		$a_80_0 = {73 74 61 74 73 2e 68 6b 69 6a 6e 67 79 2e 6d 65 } //stats.hkijngy.me  2
+		$a_80_1 = {6d 61 64 6d 61 78 2e 68 6b 69 6a 6e 67 79 2e 6d 65 } //madmax.hkijngy.me  1
+		$a_80_2 = {4d 61 78 4d 69 6e 64 2e 61 73 6d 78 } //MaxMind.asmx  1
+		$a_80_3 = {41 50 53 46 52 65 63 2e 65 78 65 } //APSFRec.exe  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=5
+ 
+}
+rule _#PUA_Block_Linkury_2{
+	meta:
 		description = "!#PUA:Block:Linkury,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :
@@ -12,7 +25,7 @@ rule _#PUA_Block_Linkury{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule _#PUA_Block_Linkury_2{
+rule _#PUA_Block_Linkury_3{
 	meta:
 		description = "!#PUA:Block:Linkury,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
 		
@@ -25,7 +38,20 @@ rule _#PUA_Block_Linkury_2{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=5
  
 }
-rule _#PUA_Block_Linkury_3{
+rule _#PUA_Block_Linkury_4{
+	meta:
+		description = "!#PUA:Block:Linkury,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
+		
+	strings :
+		$a_80_0 = {68 6b 69 6a 6e 67 79 2e 6d 65 2f 53 74 61 74 69 73 74 69 63 73 53 65 72 76 69 63 65 2e 73 76 63 } //hkijngy.me/StatisticsService.svc  2
+		$a_80_1 = {6d 61 64 6d 61 78 2e 68 6b 69 6a 6e 67 79 2e 6d 65 } //madmax.hkijngy.me  1
+		$a_80_2 = {73 74 61 74 73 2e 68 6b 69 6a 6e 67 79 2e 6d 65 } //stats.hkijngy.me  1
+		$a_80_3 = {4e 65 74 74 72 61 6e 73 2e 65 78 65 } //Nettrans.exe  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=5
+ 
+}
+rule _#PUA_Block_Linkury_5{
 	meta:
 		description = "!#PUA:Block:Linkury,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -38,7 +64,7 @@ rule _#PUA_Block_Linkury_3{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule _#PUA_Block_Linkury_4{
+rule _#PUA_Block_Linkury_6{
 	meta:
 		description = "!#PUA:Block:Linkury,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 06 00 00 "
 		
@@ -53,7 +79,7 @@ rule _#PUA_Block_Linkury_4{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*2+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=7
  
 }
-rule _#PUA_Block_Linkury_5{
+rule _#PUA_Block_Linkury_7{
 	meta:
 		description = "!#PUA:Block:Linkury,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -66,7 +92,7 @@ rule _#PUA_Block_Linkury_5{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule _#PUA_Block_Linkury_6{
+rule _#PUA_Block_Linkury_8{
 	meta:
 		description = "!#PUA:Block:Linkury,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -80,7 +106,7 @@ rule _#PUA_Block_Linkury_6{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_Linkury_7{
+rule _#PUA_Block_Linkury_9{
 	meta:
 		description = "!#PUA:Block:Linkury,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
@@ -97,7 +123,7 @@ rule _#PUA_Block_Linkury_7{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1) >=8
  
 }
-rule _#PUA_Block_Linkury_8{
+rule _#PUA_Block_Linkury_10{
 	meta:
 		description = "!#PUA:Block:Linkury,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 0a 00 00 "
 		

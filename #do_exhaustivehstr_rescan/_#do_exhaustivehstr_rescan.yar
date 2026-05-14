@@ -616,12 +616,13 @@ rule _#do_exhaustivehstr_rescan_60{
 }
 rule _#do_exhaustivehstr_rescan_61{
 	meta:
-		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
 	strings :
-		$a_01_0 = {8a 00 32 01 8b 4d 08 03 4d f8 88 01 8b 45 fc 40 89 45 fc 8b 45 10 03 45 14 39 45 fc 72 08 8b 45 10 89 45 f4 eb 06 } //1
+		$a_01_0 = {5c 72 75 73 74 64 65 73 6b 2e 65 78 65 } //1 \rustdesk.exe
+		$a_01_1 = {73 74 64 5c 73 72 63 5c 69 6f 5c 63 75 72 73 6f 72 2e 72 73 } //1 std\src\io\cursor.rs
 	condition:
-		((#a_01_0  & 1)*1) >=1
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
 rule _#do_exhaustivehstr_rescan_62{
@@ -629,7 +630,7 @@ rule _#do_exhaustivehstr_rescan_62{
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_01_0 = {8d 50 02 66 8b 08 83 c0 02 66 3b cf 75 f5 2b c2 d1 f8 8b c8 74 1b 8d 04 4e 66 83 78 fe 5c 74 0f 6a 5c 5a 66 89 10 } //1
+		$a_01_0 = {8a 00 32 01 8b 4d 08 03 4d f8 88 01 8b 45 fc 40 89 45 fc 8b 45 10 03 45 14 39 45 fc 72 08 8b 45 10 89 45 f4 eb 06 } //1
 	condition:
 		((#a_01_0  & 1)*1) >=1
  
@@ -639,7 +640,7 @@ rule _#do_exhaustivehstr_rescan_63{
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_01_0 = {b0 f3 b6 a8 ce c4 bc fe d6 d0 a3 ac b6 c1 c8 a1 b5 da d2 bb b8 f6 d2 aa b0 f3 b6 a8 ce c4 bc fe ca b1 b3 f6 b4 ed 21 00 } //1
+		$a_01_0 = {8d 50 02 66 8b 08 83 c0 02 66 3b cf 75 f5 2b c2 d1 f8 8b c8 74 1b 8d 04 4e 66 83 78 fe 5c 74 0f 6a 5c 5a 66 89 10 } //1
 	condition:
 		((#a_01_0  & 1)*1) >=1
  
@@ -649,12 +650,22 @@ rule _#do_exhaustivehstr_rescan_64{
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
+		$a_01_0 = {b0 f3 b6 a8 ce c4 bc fe d6 d0 a3 ac b6 c1 c8 a1 b5 da d2 bb b8 f6 d2 aa b0 f3 b6 a8 ce c4 bc fe ca b1 b3 f6 b4 ed 21 00 } //1
+	condition:
+		((#a_01_0  & 1)*1) >=1
+ 
+}
+rule _#do_exhaustivehstr_rescan_65{
+	meta:
+		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
 		$a_03_0 = {8a 04 06 88 45 ?? 8b 45 ?? 8a 14 16 88 14 06 8b 45 ?? 8a 55 ?? 88 14 06 ff 45 ?? 81 7d } //1
 	condition:
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_65{
+rule _#do_exhaustivehstr_rescan_66{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -664,7 +675,7 @@ rule _#do_exhaustivehstr_rescan_65{
 		((#a_81_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_66{
+rule _#do_exhaustivehstr_rescan_67{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -674,7 +685,7 @@ rule _#do_exhaustivehstr_rescan_66{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_67{
+rule _#do_exhaustivehstr_rescan_68{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -685,7 +696,7 @@ rule _#do_exhaustivehstr_rescan_67{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_68{
+rule _#do_exhaustivehstr_rescan_69{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 05 00 00 "
 		
@@ -699,7 +710,7 @@ rule _#do_exhaustivehstr_rescan_68{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*2) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_69{
+rule _#do_exhaustivehstr_rescan_70{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -709,7 +720,7 @@ rule _#do_exhaustivehstr_rescan_69{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_70{
+rule _#do_exhaustivehstr_rescan_71{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -719,7 +730,7 @@ rule _#do_exhaustivehstr_rescan_70{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_71{
+rule _#do_exhaustivehstr_rescan_72{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -731,7 +742,7 @@ rule _#do_exhaustivehstr_rescan_71{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_72{
+rule _#do_exhaustivehstr_rescan_73{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -741,7 +752,7 @@ rule _#do_exhaustivehstr_rescan_72{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_73{
+rule _#do_exhaustivehstr_rescan_74{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -752,7 +763,7 @@ rule _#do_exhaustivehstr_rescan_73{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_74{
+rule _#do_exhaustivehstr_rescan_75{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -763,7 +774,7 @@ rule _#do_exhaustivehstr_rescan_74{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_75{
+rule _#do_exhaustivehstr_rescan_76{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 03 00 00 "
 		
@@ -775,7 +786,7 @@ rule _#do_exhaustivehstr_rescan_75{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_76{
+rule _#do_exhaustivehstr_rescan_77{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -786,7 +797,7 @@ rule _#do_exhaustivehstr_rescan_76{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_77{
+rule _#do_exhaustivehstr_rescan_78{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -796,7 +807,7 @@ rule _#do_exhaustivehstr_rescan_77{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_78{
+rule _#do_exhaustivehstr_rescan_79{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -807,7 +818,7 @@ rule _#do_exhaustivehstr_rescan_78{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_79{
+rule _#do_exhaustivehstr_rescan_80{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -817,7 +828,7 @@ rule _#do_exhaustivehstr_rescan_79{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_80{
+rule _#do_exhaustivehstr_rescan_81{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -829,7 +840,7 @@ rule _#do_exhaustivehstr_rescan_80{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_81{
+rule _#do_exhaustivehstr_rescan_82{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -841,7 +852,7 @@ rule _#do_exhaustivehstr_rescan_81{
 		((#a_00_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_82{
+rule _#do_exhaustivehstr_rescan_83{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -852,7 +863,7 @@ rule _#do_exhaustivehstr_rescan_82{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_83{
+rule _#do_exhaustivehstr_rescan_84{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -863,7 +874,7 @@ rule _#do_exhaustivehstr_rescan_83{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_84{
+rule _#do_exhaustivehstr_rescan_85{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -875,7 +886,7 @@ rule _#do_exhaustivehstr_rescan_84{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_85{
+rule _#do_exhaustivehstr_rescan_86{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -886,7 +897,7 @@ rule _#do_exhaustivehstr_rescan_85{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_86{
+rule _#do_exhaustivehstr_rescan_87{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -898,7 +909,7 @@ rule _#do_exhaustivehstr_rescan_86{
 		((#a_01_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_87{
+rule _#do_exhaustivehstr_rescan_88{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -909,7 +920,7 @@ rule _#do_exhaustivehstr_rescan_87{
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_88{
+rule _#do_exhaustivehstr_rescan_89{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -920,7 +931,7 @@ rule _#do_exhaustivehstr_rescan_88{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_89{
+rule _#do_exhaustivehstr_rescan_90{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -931,7 +942,7 @@ rule _#do_exhaustivehstr_rescan_89{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_90{
+rule _#do_exhaustivehstr_rescan_91{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -942,7 +953,7 @@ rule _#do_exhaustivehstr_rescan_90{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_91{
+rule _#do_exhaustivehstr_rescan_92{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -953,7 +964,7 @@ rule _#do_exhaustivehstr_rescan_91{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_92{
+rule _#do_exhaustivehstr_rescan_93{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -963,7 +974,7 @@ rule _#do_exhaustivehstr_rescan_92{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_93{
+rule _#do_exhaustivehstr_rescan_94{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -974,7 +985,7 @@ rule _#do_exhaustivehstr_rescan_93{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_94{
+rule _#do_exhaustivehstr_rescan_95{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -986,7 +997,7 @@ rule _#do_exhaustivehstr_rescan_94{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*2) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_95{
+rule _#do_exhaustivehstr_rescan_96{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -999,7 +1010,7 @@ rule _#do_exhaustivehstr_rescan_95{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
  
 }
-rule _#do_exhaustivehstr_rescan_96{
+rule _#do_exhaustivehstr_rescan_97{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -1009,7 +1020,7 @@ rule _#do_exhaustivehstr_rescan_96{
 		((#a_02_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_97{
+rule _#do_exhaustivehstr_rescan_98{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1021,7 +1032,7 @@ rule _#do_exhaustivehstr_rescan_97{
 		((#a_01_0  & 1)*1+(#a_00_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_98{
+rule _#do_exhaustivehstr_rescan_99{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -1032,7 +1043,7 @@ rule _#do_exhaustivehstr_rescan_98{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_99{
+rule _#do_exhaustivehstr_rescan_100{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -1044,7 +1055,7 @@ rule _#do_exhaustivehstr_rescan_99{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_100{
+rule _#do_exhaustivehstr_rescan_101{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
@@ -1058,7 +1069,7 @@ rule _#do_exhaustivehstr_rescan_100{
 		((#a_01_0  & 1)*1+(#a_00_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=4
  
 }
-rule _#do_exhaustivehstr_rescan_101{
+rule _#do_exhaustivehstr_rescan_102{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -1070,7 +1081,7 @@ rule _#do_exhaustivehstr_rescan_101{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_102{
+rule _#do_exhaustivehstr_rescan_103{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -1082,7 +1093,7 @@ rule _#do_exhaustivehstr_rescan_102{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_103{
+rule _#do_exhaustivehstr_rescan_104{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -1093,7 +1104,7 @@ rule _#do_exhaustivehstr_rescan_103{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_104{
+rule _#do_exhaustivehstr_rescan_105{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1105,7 +1116,7 @@ rule _#do_exhaustivehstr_rescan_104{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_105{
+rule _#do_exhaustivehstr_rescan_106{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 05 00 00 "
 		
@@ -1119,7 +1130,7 @@ rule _#do_exhaustivehstr_rescan_105{
 		((#a_01_0  & 1)*5+(#a_01_1  & 1)*5+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=6
  
 }
-rule _#do_exhaustivehstr_rescan_106{
+rule _#do_exhaustivehstr_rescan_107{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -1130,7 +1141,7 @@ rule _#do_exhaustivehstr_rescan_106{
 		((#a_00_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_107{
+rule _#do_exhaustivehstr_rescan_108{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -1143,7 +1154,7 @@ rule _#do_exhaustivehstr_rescan_107{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_00_2  & 1)*1+(#a_03_3  & 1)*1) >=4
  
 }
-rule _#do_exhaustivehstr_rescan_108{
+rule _#do_exhaustivehstr_rescan_109{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -1154,7 +1165,7 @@ rule _#do_exhaustivehstr_rescan_108{
 		((#a_02_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_109{
+rule _#do_exhaustivehstr_rescan_110{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 03 00 00 "
 		
@@ -1166,7 +1177,7 @@ rule _#do_exhaustivehstr_rescan_109{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_110{
+rule _#do_exhaustivehstr_rescan_111{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -1177,7 +1188,7 @@ rule _#do_exhaustivehstr_rescan_110{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_111{
+rule _#do_exhaustivehstr_rescan_112{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -1188,7 +1199,7 @@ rule _#do_exhaustivehstr_rescan_111{
 		((#a_02_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_112{
+rule _#do_exhaustivehstr_rescan_113{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -1198,7 +1209,7 @@ rule _#do_exhaustivehstr_rescan_112{
 		((#a_41_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_113{
+rule _#do_exhaustivehstr_rescan_114{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -1209,7 +1220,7 @@ rule _#do_exhaustivehstr_rescan_113{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_114{
+rule _#do_exhaustivehstr_rescan_115{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 06 00 00 "
 		
@@ -1224,7 +1235,7 @@ rule _#do_exhaustivehstr_rescan_114{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*5) >=8
  
 }
-rule _#do_exhaustivehstr_rescan_115{
+rule _#do_exhaustivehstr_rescan_116{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 04 00 00 "
 		
@@ -1237,7 +1248,7 @@ rule _#do_exhaustivehstr_rescan_115{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_116{
+rule _#do_exhaustivehstr_rescan_117{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -1251,7 +1262,7 @@ rule _#do_exhaustivehstr_rescan_116{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule _#do_exhaustivehstr_rescan_117{
+rule _#do_exhaustivehstr_rescan_118{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -1261,7 +1272,7 @@ rule _#do_exhaustivehstr_rescan_117{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_118{
+rule _#do_exhaustivehstr_rescan_119{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1273,7 +1284,7 @@ rule _#do_exhaustivehstr_rescan_118{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_119{
+rule _#do_exhaustivehstr_rescan_120{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -1284,7 +1295,7 @@ rule _#do_exhaustivehstr_rescan_119{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_120{
+rule _#do_exhaustivehstr_rescan_121{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -1296,7 +1307,7 @@ rule _#do_exhaustivehstr_rescan_120{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_121{
+rule _#do_exhaustivehstr_rescan_122{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 04 00 00 "
 		
@@ -1309,7 +1320,7 @@ rule _#do_exhaustivehstr_rescan_121{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_122{
+rule _#do_exhaustivehstr_rescan_123{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 03 00 00 "
 		
@@ -1321,7 +1332,7 @@ rule _#do_exhaustivehstr_rescan_122{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_123{
+rule _#do_exhaustivehstr_rescan_124{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -1333,7 +1344,7 @@ rule _#do_exhaustivehstr_rescan_123{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_124{
+rule _#do_exhaustivehstr_rescan_125{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 03 00 00 "
 		
@@ -1345,7 +1356,7 @@ rule _#do_exhaustivehstr_rescan_124{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_125{
+rule _#do_exhaustivehstr_rescan_126{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1357,7 +1368,7 @@ rule _#do_exhaustivehstr_rescan_125{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_126{
+rule _#do_exhaustivehstr_rescan_127{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1369,7 +1380,7 @@ rule _#do_exhaustivehstr_rescan_126{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_127{
+rule _#do_exhaustivehstr_rescan_128{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 03 00 00 "
 		
@@ -1381,7 +1392,7 @@ rule _#do_exhaustivehstr_rescan_127{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_128{
+rule _#do_exhaustivehstr_rescan_129{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -1393,7 +1404,7 @@ rule _#do_exhaustivehstr_rescan_128{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_129{
+rule _#do_exhaustivehstr_rescan_130{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -1405,7 +1416,7 @@ rule _#do_exhaustivehstr_rescan_129{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_02_2  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_130{
+rule _#do_exhaustivehstr_rescan_131{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -1417,7 +1428,7 @@ rule _#do_exhaustivehstr_rescan_130{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_131{
+rule _#do_exhaustivehstr_rescan_132{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -1428,7 +1439,7 @@ rule _#do_exhaustivehstr_rescan_131{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_132{
+rule _#do_exhaustivehstr_rescan_133{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 03 00 00 "
 		
@@ -1440,7 +1451,7 @@ rule _#do_exhaustivehstr_rescan_132{
 		((#a_03_0  & 1)*10+(#a_03_1  & 1)*10+(#a_03_2  & 1)*10) >=10
  
 }
-rule _#do_exhaustivehstr_rescan_133{
+rule _#do_exhaustivehstr_rescan_134{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -1454,7 +1465,7 @@ rule _#do_exhaustivehstr_rescan_133{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule _#do_exhaustivehstr_rescan_134{
+rule _#do_exhaustivehstr_rescan_135{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 05 00 00 "
 		
@@ -1468,7 +1479,7 @@ rule _#do_exhaustivehstr_rescan_134{
 		((#a_01_0  & 1)*5+(#a_01_1  & 1)*5+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=11
  
 }
-rule _#do_exhaustivehstr_rescan_135{
+rule _#do_exhaustivehstr_rescan_136{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -1479,7 +1490,7 @@ rule _#do_exhaustivehstr_rescan_135{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_136{
+rule _#do_exhaustivehstr_rescan_137{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -1489,7 +1500,7 @@ rule _#do_exhaustivehstr_rescan_136{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_137{
+rule _#do_exhaustivehstr_rescan_138{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 05 00 00 "
 		
@@ -1503,7 +1514,7 @@ rule _#do_exhaustivehstr_rescan_137{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_00_2  & 1)*1+(#a_01_3  & 1)*1+(#a_02_4  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_138{
+rule _#do_exhaustivehstr_rescan_139{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -1513,7 +1524,7 @@ rule _#do_exhaustivehstr_rescan_138{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_139{
+rule _#do_exhaustivehstr_rescan_140{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 03 00 00 "
 		
@@ -1525,7 +1536,7 @@ rule _#do_exhaustivehstr_rescan_139{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_140{
+rule _#do_exhaustivehstr_rescan_141{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 06 00 00 "
 		
@@ -1540,7 +1551,7 @@ rule _#do_exhaustivehstr_rescan_140{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_141{
+rule _#do_exhaustivehstr_rescan_142{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -1550,7 +1561,7 @@ rule _#do_exhaustivehstr_rescan_141{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_142{
+rule _#do_exhaustivehstr_rescan_143{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 06 00 00 "
 		
@@ -1565,7 +1576,7 @@ rule _#do_exhaustivehstr_rescan_142{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_143{
+rule _#do_exhaustivehstr_rescan_144{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -1575,7 +1586,7 @@ rule _#do_exhaustivehstr_rescan_143{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_144{
+rule _#do_exhaustivehstr_rescan_145{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 06 00 00 "
 		
@@ -1590,7 +1601,7 @@ rule _#do_exhaustivehstr_rescan_144{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_145{
+rule _#do_exhaustivehstr_rescan_146{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
 		
@@ -1606,7 +1617,7 @@ rule _#do_exhaustivehstr_rescan_145{
 		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_00_5  & 1)*1+(#a_01_6  & 1)*1) >=5
  
 }
-rule _#do_exhaustivehstr_rescan_146{
+rule _#do_exhaustivehstr_rescan_147{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 04 00 00 "
 		
@@ -1619,7 +1630,7 @@ rule _#do_exhaustivehstr_rescan_146{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_147{
+rule _#do_exhaustivehstr_rescan_148{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -1630,7 +1641,7 @@ rule _#do_exhaustivehstr_rescan_147{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_148{
+rule _#do_exhaustivehstr_rescan_149{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,64 00 0b 00 03 00 00 "
 		
@@ -1642,7 +1653,7 @@ rule _#do_exhaustivehstr_rescan_148{
 		((#a_01_0  & 1)*10+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=11
  
 }
-rule _#do_exhaustivehstr_rescan_149{
+rule _#do_exhaustivehstr_rescan_150{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 06 00 00 "
 		
@@ -1657,7 +1668,7 @@ rule _#do_exhaustivehstr_rescan_149{
 		((#a_03_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_150{
+rule _#do_exhaustivehstr_rescan_151{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 05 00 00 "
 		
@@ -1671,7 +1682,7 @@ rule _#do_exhaustivehstr_rescan_150{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_151{
+rule _#do_exhaustivehstr_rescan_152{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -1687,7 +1698,7 @@ rule _#do_exhaustivehstr_rescan_151{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=7
  
 }
-rule _#do_exhaustivehstr_rescan_152{
+rule _#do_exhaustivehstr_rescan_153{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 03 00 00 "
 		
@@ -1699,7 +1710,7 @@ rule _#do_exhaustivehstr_rescan_152{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_153{
+rule _#do_exhaustivehstr_rescan_154{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 05 00 00 "
 		
@@ -1713,7 +1724,7 @@ rule _#do_exhaustivehstr_rescan_153{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1+(#a_01_3  & 1)*1+(#a_03_4  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_154{
+rule _#do_exhaustivehstr_rescan_155{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 08 00 00 "
 		
@@ -1730,7 +1741,7 @@ rule _#do_exhaustivehstr_rescan_154{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*2+(#a_01_7  & 1)*2) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_155{
+rule _#do_exhaustivehstr_rescan_156{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 06 00 00 "
 		
@@ -1745,7 +1756,7 @@ rule _#do_exhaustivehstr_rescan_155{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_156{
+rule _#do_exhaustivehstr_rescan_157{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 04 00 00 "
 		
@@ -1758,7 +1769,7 @@ rule _#do_exhaustivehstr_rescan_156{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*2+(#a_01_3  & 1)*2) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_157{
+rule _#do_exhaustivehstr_rescan_158{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 04 00 00 "
 		
@@ -1771,7 +1782,7 @@ rule _#do_exhaustivehstr_rescan_157{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_158{
+rule _#do_exhaustivehstr_rescan_159{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 07 00 00 "
 		
@@ -1787,7 +1798,7 @@ rule _#do_exhaustivehstr_rescan_158{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=6
  
 }
-rule _#do_exhaustivehstr_rescan_159{
+rule _#do_exhaustivehstr_rescan_160{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 03 00 00 "
 		
@@ -1799,7 +1810,7 @@ rule _#do_exhaustivehstr_rescan_159{
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1+(#a_01_2  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_160{
+rule _#do_exhaustivehstr_rescan_161{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,15 00 15 00 0b 00 00 "
 		
@@ -1819,7 +1830,7 @@ rule _#do_exhaustivehstr_rescan_160{
 		((#a_02_0  & 1)*4+(#a_00_1  & 1)*4+(#a_00_2  & 1)*4+(#a_00_3  & 1)*2+(#a_00_4  & 1)*2+(#a_00_5  & 1)*4+(#a_00_6  & 1)*1+(#a_00_7  & 1)*1+(#a_00_8  & 1)*1+(#a_01_9  & 1)*10+(#a_01_10  & 1)*10) >=21
  
 }
-rule _#do_exhaustivehstr_rescan_161{
+rule _#do_exhaustivehstr_rescan_162{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 03 00 00 "
 		
@@ -1831,7 +1842,7 @@ rule _#do_exhaustivehstr_rescan_161{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_162{
+rule _#do_exhaustivehstr_rescan_163{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
@@ -1849,7 +1860,7 @@ rule _#do_exhaustivehstr_rescan_162{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1) >=9
  
 }
-rule _#do_exhaustivehstr_rescan_163{
+rule _#do_exhaustivehstr_rescan_164{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 0a 00 00 "
 		
@@ -1868,7 +1879,7 @@ rule _#do_exhaustivehstr_rescan_163{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_03_2  & 1)*1+(#a_01_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1+(#a_01_6  & 1)*1+(#a_03_7  & 1)*1+(#a_03_8  & 1)*1+(#a_03_9  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_164{
+rule _#do_exhaustivehstr_rescan_165{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -1882,7 +1893,7 @@ rule _#do_exhaustivehstr_rescan_164{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule _#do_exhaustivehstr_rescan_165{
+rule _#do_exhaustivehstr_rescan_166{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -1896,7 +1907,7 @@ rule _#do_exhaustivehstr_rescan_165{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_81_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule _#do_exhaustivehstr_rescan_166{
+rule _#do_exhaustivehstr_rescan_167{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 0c 00 00 "
 		
@@ -1917,7 +1928,7 @@ rule _#do_exhaustivehstr_rescan_166{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_167{
+rule _#do_exhaustivehstr_rescan_168{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 06 00 00 "
 		
@@ -1932,7 +1943,7 @@ rule _#do_exhaustivehstr_rescan_167{
 		((#a_01_0  & 1)*2+(#a_03_1  & 1)*2+(#a_00_2  & 1)*2+(#a_01_3  & 1)*2+(#a_00_4  & 1)*1+(#a_00_5  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_168{
+rule _#do_exhaustivehstr_rescan_169{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 04 00 00 "
 		
@@ -1945,7 +1956,7 @@ rule _#do_exhaustivehstr_rescan_168{
 		((#a_03_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_169{
+rule _#do_exhaustivehstr_rescan_170{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 06 00 00 "
 		
@@ -1960,7 +1971,7 @@ rule _#do_exhaustivehstr_rescan_169{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_170{
+rule _#do_exhaustivehstr_rescan_171{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 0a 00 00 "
 		
@@ -1979,7 +1990,7 @@ rule _#do_exhaustivehstr_rescan_170{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_81_6  & 1)*1+(#a_81_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_171{
+rule _#do_exhaustivehstr_rescan_172{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 09 00 00 "
 		
@@ -1997,7 +2008,7 @@ rule _#do_exhaustivehstr_rescan_171{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_03_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1+(#a_03_6  & 1)*1+(#a_03_7  & 1)*1+(#a_03_8  & 1)*2) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_172{
+rule _#do_exhaustivehstr_rescan_173{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 31 00 00 "
 		
@@ -2055,7 +2066,7 @@ rule _#do_exhaustivehstr_rescan_172{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_01_2  & 1)*1+(#a_03_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1+(#a_03_6  & 1)*1+(#a_03_7  & 1)*1+(#a_03_8  & 1)*1+(#a_03_9  & 1)*1+(#a_03_10  & 1)*1+(#a_01_11  & 1)*1+(#a_01_12  & 1)*1+(#a_03_13  & 1)*1+(#a_03_14  & 1)*1+(#a_03_15  & 1)*1+(#a_03_16  & 1)*1+(#a_03_17  & 1)*1+(#a_03_18  & 1)*1+(#a_01_19  & 1)*1+(#a_01_20  & 1)*1+(#a_01_21  & 1)*1+(#a_03_22  & 1)*1+(#a_01_23  & 1)*1+(#a_03_24  & 1)*1+(#a_03_25  & 1)*1+(#a_03_26  & 1)*1+(#a_03_27  & 1)*1+(#a_03_28  & 1)*1+(#a_03_29  & 1)*1+(#a_03_30  & 1)*1+(#a_03_31  & 1)*1+(#a_03_32  & 1)*1+(#a_03_33  & 1)*1+(#a_03_34  & 1)*1+(#a_03_35  & 1)*1+(#a_03_36  & 1)*1+(#a_03_37  & 1)*1+(#a_03_38  & 1)*1+(#a_03_39  & 1)*1+(#a_03_40  & 1)*1+(#a_03_41  & 1)*1+(#a_03_42  & 1)*1+(#a_01_43  & 1)*1+(#a_01_44  & 1)*1+(#a_03_45  & 1)*1+(#a_03_46  & 1)*1+(#a_03_47  & 1)*1+(#a_03_48  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_173{
+rule _#do_exhaustivehstr_rescan_174{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 28 00 00 "
 		
@@ -2104,7 +2115,7 @@ rule _#do_exhaustivehstr_rescan_173{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_03_3  & 1)*1+(#a_03_4  & 1)*1+(#a_03_5  & 1)*1+(#a_03_6  & 1)*1+(#a_03_7  & 1)*1+(#a_03_8  & 1)*1+(#a_03_9  & 1)*1+(#a_03_10  & 1)*1+(#a_03_11  & 1)*1+(#a_01_12  & 1)*1+(#a_01_13  & 1)*1+(#a_03_14  & 1)*1+(#a_03_15  & 1)*1+(#a_01_16  & 1)*1+(#a_03_17  & 1)*1+(#a_03_18  & 1)*1+(#a_01_19  & 1)*1+(#a_01_20  & 1)*1+(#a_01_21  & 1)*1+(#a_01_22  & 1)*1+(#a_01_23  & 1)*1+(#a_03_24  & 1)*1+(#a_03_25  & 1)*1+(#a_03_26  & 1)*1+(#a_03_27  & 1)*1+(#a_01_28  & 1)*1+(#a_01_29  & 1)*1+(#a_03_30  & 1)*1+(#a_01_31  & 1)*1+(#a_01_32  & 1)*1+(#a_01_33  & 1)*1+(#a_01_34  & 1)*1+(#a_01_35  & 1)*1+(#a_03_36  & 1)*1+(#a_03_37  & 1)*1+(#a_01_38  & 1)*1+(#a_03_39  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_174{
+rule _#do_exhaustivehstr_rescan_175{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2114,7 +2125,7 @@ rule _#do_exhaustivehstr_rescan_174{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_175{
+rule _#do_exhaustivehstr_rescan_176{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2124,7 +2135,7 @@ rule _#do_exhaustivehstr_rescan_175{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_176{
+rule _#do_exhaustivehstr_rescan_177{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2134,7 +2145,7 @@ rule _#do_exhaustivehstr_rescan_176{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_177{
+rule _#do_exhaustivehstr_rescan_178{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2144,7 +2155,7 @@ rule _#do_exhaustivehstr_rescan_177{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_178{
+rule _#do_exhaustivehstr_rescan_179{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2154,7 +2165,7 @@ rule _#do_exhaustivehstr_rescan_178{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_179{
+rule _#do_exhaustivehstr_rescan_180{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2164,7 +2175,7 @@ rule _#do_exhaustivehstr_rescan_179{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_180{
+rule _#do_exhaustivehstr_rescan_181{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2174,7 +2185,7 @@ rule _#do_exhaustivehstr_rescan_180{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_181{
+rule _#do_exhaustivehstr_rescan_182{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2184,7 +2195,7 @@ rule _#do_exhaustivehstr_rescan_181{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_182{
+rule _#do_exhaustivehstr_rescan_183{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2194,7 +2205,7 @@ rule _#do_exhaustivehstr_rescan_182{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_183{
+rule _#do_exhaustivehstr_rescan_184{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 "
 		
@@ -2205,7 +2216,7 @@ rule _#do_exhaustivehstr_rescan_183{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_184{
+rule _#do_exhaustivehstr_rescan_185{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 "
 		
@@ -2216,7 +2227,7 @@ rule _#do_exhaustivehstr_rescan_184{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_185{
+rule _#do_exhaustivehstr_rescan_186{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2226,7 +2237,7 @@ rule _#do_exhaustivehstr_rescan_185{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_186{
+rule _#do_exhaustivehstr_rescan_187{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2236,7 +2247,7 @@ rule _#do_exhaustivehstr_rescan_186{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_187{
+rule _#do_exhaustivehstr_rescan_188{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2246,7 +2257,7 @@ rule _#do_exhaustivehstr_rescan_187{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_188{
+rule _#do_exhaustivehstr_rescan_189{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2256,7 +2267,7 @@ rule _#do_exhaustivehstr_rescan_188{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_189{
+rule _#do_exhaustivehstr_rescan_190{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 "
 		
@@ -2267,7 +2278,7 @@ rule _#do_exhaustivehstr_rescan_189{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_190{
+rule _#do_exhaustivehstr_rescan_191{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2277,7 +2288,7 @@ rule _#do_exhaustivehstr_rescan_190{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_191{
+rule _#do_exhaustivehstr_rescan_192{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 "
 		
@@ -2288,7 +2299,7 @@ rule _#do_exhaustivehstr_rescan_191{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_192{
+rule _#do_exhaustivehstr_rescan_193{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,03 00 03 00 03 00 00 "
 		
@@ -2300,7 +2311,7 @@ rule _#do_exhaustivehstr_rescan_192{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_193{
+rule _#do_exhaustivehstr_rescan_194{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2310,7 +2321,7 @@ rule _#do_exhaustivehstr_rescan_193{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_194{
+rule _#do_exhaustivehstr_rescan_195{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 "
 		
@@ -2321,7 +2332,7 @@ rule _#do_exhaustivehstr_rescan_194{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_195{
+rule _#do_exhaustivehstr_rescan_196{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 02 00 00 "
 		
@@ -2332,7 +2343,7 @@ rule _#do_exhaustivehstr_rescan_195{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_196{
+rule _#do_exhaustivehstr_rescan_197{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2342,7 +2353,7 @@ rule _#do_exhaustivehstr_rescan_196{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_197{
+rule _#do_exhaustivehstr_rescan_198{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 "
 		
@@ -2353,7 +2364,7 @@ rule _#do_exhaustivehstr_rescan_197{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_198{
+rule _#do_exhaustivehstr_rescan_199{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,03 00 03 00 04 00 00 "
 		
@@ -2366,7 +2377,7 @@ rule _#do_exhaustivehstr_rescan_198{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_199{
+rule _#do_exhaustivehstr_rescan_200{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,03 00 03 00 03 00 00 "
 		
@@ -2378,7 +2389,7 @@ rule _#do_exhaustivehstr_rescan_199{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_200{
+rule _#do_exhaustivehstr_rescan_201{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 04 00 00 "
 		
@@ -2391,7 +2402,19 @@ rule _#do_exhaustivehstr_rescan_200{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_201{
+rule _#do_exhaustivehstr_rescan_202{
+	meta:
+		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,14 00 14 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {5c 70 72 6f 6a 65 63 74 5c 41 7a 75 72 65 5f 47 55 49 5c 44 65 62 75 67 5c 41 7a 75 72 65 5f 47 55 49 2e 70 64 62 } //10 \project\Azure_GUI\Debug\Azure_GUI.pdb
+		$a_01_1 = {68 65 6c 6c 6f 68 65 6c 6c 6f 68 65 6c 6c 6f 68 65 6c 6c 6f } //10 hellohellohellohello
+		$a_01_2 = {67 66 64 65 72 74 66 67 68 6a 6b 75 79 72 74 67 } //10 gfdertfghjkuyrtg
+	condition:
+		((#a_01_0  & 1)*10+(#a_01_1  & 1)*10+(#a_01_2  & 1)*10) >=20
+ 
+}
+rule _#do_exhaustivehstr_rescan_203{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 "
 		
@@ -2402,7 +2425,7 @@ rule _#do_exhaustivehstr_rescan_201{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_202{
+rule _#do_exhaustivehstr_rescan_204{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,02 00 02 00 03 00 00 "
 		
@@ -2414,7 +2437,7 @@ rule _#do_exhaustivehstr_rescan_202{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_203{
+rule _#do_exhaustivehstr_rescan_205{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,04 00 04 00 08 00 00 "
 		
@@ -2431,7 +2454,7 @@ rule _#do_exhaustivehstr_rescan_203{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1) >=4
  
 }
-rule _#do_exhaustivehstr_rescan_204{
+rule _#do_exhaustivehstr_rescan_206{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 02 00 00 "
 		
@@ -2442,7 +2465,7 @@ rule _#do_exhaustivehstr_rescan_204{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_205{
+rule _#do_exhaustivehstr_rescan_207{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -2452,7 +2475,7 @@ rule _#do_exhaustivehstr_rescan_205{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_rescan_206{
+rule _#do_exhaustivehstr_rescan_208{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,04 00 04 00 04 00 00 "
 		
@@ -2465,7 +2488,7 @@ rule _#do_exhaustivehstr_rescan_206{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
  
 }
-rule _#do_exhaustivehstr_rescan_207{
+rule _#do_exhaustivehstr_rescan_209{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,02 00 02 00 02 00 00 "
 		
@@ -2476,7 +2499,7 @@ rule _#do_exhaustivehstr_rescan_207{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_rescan_208{
+rule _#do_exhaustivehstr_rescan_210{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,03 00 03 00 04 00 00 "
 		
@@ -2489,7 +2512,7 @@ rule _#do_exhaustivehstr_rescan_208{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_rescan_209{
+rule _#do_exhaustivehstr_rescan_211{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,04 00 04 00 04 00 00 "
 		
@@ -2502,7 +2525,7 @@ rule _#do_exhaustivehstr_rescan_209{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
  
 }
-rule _#do_exhaustivehstr_rescan_210{
+rule _#do_exhaustivehstr_rescan_212{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,0f 00 0f 00 04 00 00 "
 		
@@ -2515,7 +2538,7 @@ rule _#do_exhaustivehstr_rescan_210{
 		((#a_01_0  & 1)*5+(#a_01_1  & 1)*5+(#a_01_2  & 1)*5+(#a_01_3  & 1)*5) >=15
  
 }
-rule _#do_exhaustivehstr_rescan_211{
+rule _#do_exhaustivehstr_rescan_213{
 	meta:
 		description = "!#do_exhaustivehstr_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 04 00 00 "
 		

@@ -1,7 +1,7 @@
 
 rule Trojan_Win32_MasqProcessLaunchLolbins_B_sync{
 	meta:
-		description = "Trojan:Win32/MasqProcessLaunchLolbins.B!sync,SIGNATURE_TYPE_CMDHSTR_EXT,01 00 01 00 0a 00 00 "
+		description = "Trojan:Win32/MasqProcessLaunchLolbins.B!sync,SIGNATURE_TYPE_CMDHSTR_EXT,01 00 01 00 0b 00 00 "
 		
 	strings :
 		$a_00_0 = {5c 00 73 00 63 00 68 00 74 00 61 00 73 00 6b 00 73 00 2e 00 65 00 78 00 65 00 00 00 } //1
@@ -14,7 +14,8 @@ rule Trojan_Win32_MasqProcessLaunchLolbins_B_sync{
 		$a_00_7 = {73 00 63 00 68 00 74 00 61 00 73 00 6b 00 73 00 2e 00 65 00 78 00 65 00 20 00 2f 00 64 00 65 00 6c 00 65 00 74 00 65 00 } //-10 schtasks.exe /delete
 		$a_00_8 = {5c 00 69 00 43 00 6c 00 6f 00 75 00 64 00 5c 00 } //-10 \iCloud\
 		$a_00_9 = {69 00 43 00 6c 00 6f 00 75 00 64 00 4d 00 69 00 67 00 72 00 61 00 74 00 65 00 2e 00 65 00 78 00 65 00 } //-10 iCloudMigrate.exe
+		$a_00_10 = {4c 00 76 00 66 00 49 00 6e 00 73 00 74 00 61 00 6c 00 6c 00 53 00 65 00 72 00 76 00 69 00 63 00 65 00 } //-10 LvfInstallService
 	condition:
-		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*-10+(#a_00_5  & 1)*-10+(#a_00_6  & 1)*-10+(#a_00_7  & 1)*-10+(#a_00_8  & 1)*-10+(#a_00_9  & 1)*-10) >=1
+		((#a_00_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_00_4  & 1)*-10+(#a_00_5  & 1)*-10+(#a_00_6  & 1)*-10+(#a_00_7  & 1)*-10+(#a_00_8  & 1)*-10+(#a_00_9  & 1)*-10+(#a_00_10  & 1)*-10) >=1
  
 }

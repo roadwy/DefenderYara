@@ -31,6 +31,17 @@ rule Trojan_Win32_Fragtor_AFG_MTB_3{
 }
 rule Trojan_Win32_Fragtor_AFG_MTB_4{
 	meta:
+		description = "Trojan:Win32/Fragtor.AFG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {68 84 71 40 00 e8 ?? ?? ?? ?? 50 68 ?? 71 40 00 e8 ?? ?? ?? ?? a3 c0 c8 40 00 68 a0 71 40 00 e8 ?? ?? ?? ?? 50 68 ac 71 40 00 } //2
+		$a_03_1 = {8b 43 04 a3 ?? ?? ?? ?? 8b 43 08 a3 ?? ?? ?? ?? 8b 43 0c a3 ?? ?? ?? ?? 8b 43 10 a3 ?? ?? ?? ?? b8 78 71 40 00 } //1
+	condition:
+		((#a_03_0  & 1)*2+(#a_03_1  & 1)*1) >=3
+ 
+}
+rule Trojan_Win32_Fragtor_AFG_MTB_5{
+	meta:
 		description = "Trojan:Win32/Fragtor.AFG!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 02 00 00 "
 		
 	strings :

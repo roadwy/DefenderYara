@@ -12,6 +12,16 @@ rule Trojan_Win64_Zusy_KK_MTB{
 }
 rule Trojan_Win64_Zusy_KK_MTB_2{
 	meta:
+		description = "Trojan:Win64/Zusy.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 01 00 00 "
+		
+	strings :
+		$a_01_0 = {48 8b 55 10 48 8b 45 f8 48 01 d0 44 0f b6 00 48 8b 45 28 0f b6 08 48 8b 55 18 48 8b 45 f8 48 01 d0 44 89 c2 31 ca 88 10 48 83 45 f8 } //20
+	condition:
+		((#a_01_0  & 1)*20) >=20
+ 
+}
+rule Trojan_Win64_Zusy_KK_MTB_3{
+	meta:
 		description = "Trojan:Win64/Zusy.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1e 00 1e 00 02 00 00 "
 		
 	strings :
@@ -21,7 +31,7 @@ rule Trojan_Win64_Zusy_KK_MTB_2{
 		((#a_01_0  & 1)*20+(#a_01_1  & 1)*10) >=30
  
 }
-rule Trojan_Win64_Zusy_KK_MTB_3{
+rule Trojan_Win64_Zusy_KK_MTB_4{
 	meta:
 		description = "Trojan:Win64/Zusy.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 03 00 00 "
 		
@@ -31,5 +41,19 @@ rule Trojan_Win64_Zusy_KK_MTB_3{
 		$a_01_2 = {54 75 6f 6e 69 41 67 65 6e 74 2e 64 6c 6c } //4 TuoniAgent.dll
 	condition:
 		((#a_01_0  & 1)*6+(#a_01_1  & 1)*10+(#a_01_2  & 1)*4) >=20
+ 
+}
+rule Trojan_Win64_Zusy_KK_MTB_5{
+	meta:
+		description = "Trojan:Win64/Zusy.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0e 00 0e 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {78 6f 72 5f 64 61 74 61 2e 64 61 74 } //10 xor_data.dat
+		$a_01_1 = {62 79 70 61 73 73 5c 62 79 70 61 73 73 2d 61 67 65 6e 74 5f 32 5c 77 6f 72 6b 73 70 61 63 65 5c 73 73 76 61 67 65 6e 74 5f 6d 75 6c 74 69 5f 78 6f 72 5f } //4 bypass\bypass-agent_2\workspace\ssvagent_multi_xor_
+		$a_01_2 = {62 79 70 61 73 73 5c 62 79 70 61 73 73 2d 61 67 65 6e 74 5f 32 5c 77 6f 72 6b 73 70 61 63 65 5c 73 73 76 61 67 65 6e 74 5f 6d 6f 64 75 6c 65 5f 6f 76 65 72 6c 6f 61 64 5f 78 6f 72 5f } //4 bypass\bypass-agent_2\workspace\ssvagent_module_overload_xor_
+		$a_01_3 = {62 79 70 61 73 73 5c 62 79 70 61 73 73 2d 61 67 65 6e 74 5c 77 6f 72 6b 73 70 61 63 65 5c 73 73 76 61 67 65 6e 74 5f 6d 75 6c 74 69 5f 78 6f 72 } //4 bypass\bypass-agent\workspace\ssvagent_multi_xor
+		$a_01_4 = {62 79 70 61 73 73 5c 62 79 70 61 73 73 2d 61 67 65 6e 74 5c 77 6f 72 6b 73 70 61 63 65 5c 73 73 76 61 67 65 6e 74 5f 63 6c 61 73 73 69 63 5f 78 6f 72 5f } //4 bypass\bypass-agent\workspace\ssvagent_classic_xor_
+	condition:
+		((#a_01_0  & 1)*10+(#a_01_1  & 1)*4+(#a_01_2  & 1)*4+(#a_01_3  & 1)*4+(#a_01_4  & 1)*4) >=14
  
 }

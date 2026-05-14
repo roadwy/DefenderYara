@@ -1,6 +1,18 @@
 
 rule Trojan_BAT_KeyLogger_NK_MTB{
 	meta:
+		description = "Trojan:BAT/KeyLogger.NK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {11 1f 6c 5a 28 2a 00 00 0a 13 31 1b 8d 0e 00 00 01 25 16 12 1f 28 4e 00 00 0a a2 25 17 72 ae 0a 00 70 a2 25 18 12 31 28 50 00 00 0a a2 25 19 72 ae 0a 00 70 a2 25 1a 11 1e 7b 02 00 00 04 6f 4f 00 00 0a a2 28 61 00 00 0a 28 05 00 00 0a 11 11 14 28 62 00 00 0a 26 11 1d 17 58 13 1d } //2
+		$a_01_1 = {43 00 3a 00 5c 00 77 00 69 00 6e 00 64 00 6f 00 77 00 73 00 5c 00 65 00 78 00 50 00 6c 00 6f 00 52 00 45 00 52 00 2e 00 65 00 78 00 45 00 } //1 C:\windows\exPloRER.exE
+		$a_01_2 = {6a 00 75 00 6e 00 6b 00 2e 00 74 00 78 00 74 00 } //1 junk.txt
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=4
+ 
+}
+rule Trojan_BAT_KeyLogger_NK_MTB_2{
+	meta:
 		description = "Trojan:BAT/KeyLogger.NK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 06 00 00 "
 		
 	strings :

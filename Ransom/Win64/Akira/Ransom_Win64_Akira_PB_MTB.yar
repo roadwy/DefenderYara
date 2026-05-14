@@ -1,6 +1,18 @@
 
 rule Ransom_Win64_Akira_PB_MTB{
 	meta:
+		description = "Ransom:Win64/Akira.PB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {61 00 6b 00 69 00 72 00 61 00 5f 00 72 00 65 00 61 00 64 00 6d 00 65 00 2e 00 74 00 78 00 74 00 } //3 akira_readme.txt
+		$a_01_1 = {41 00 4b 00 49 00 52 00 41 00 5f 00 } //1 AKIRA_
+		$a_01_2 = {73 00 65 00 74 00 74 00 69 00 6e 00 67 00 73 00 2e 00 64 00 61 00 74 00 2e 00 61 00 6b 00 69 00 72 00 61 00 } //1 settings.dat.akira
+	condition:
+		((#a_01_0  & 1)*3+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=5
+ 
+}
+rule Ransom_Win64_Akira_PB_MTB_2{
+	meta:
 		description = "Ransom:Win64/Akira.PB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 08 00 00 "
 		
 	strings :

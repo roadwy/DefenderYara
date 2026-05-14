@@ -14,6 +14,20 @@ rule _#PUA_Block_DownloadSponsor{
 }
 rule _#PUA_Block_DownloadSponsor_2{
 	meta:
+		description = "!#PUA:Block:DownloadSponsor,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 05 00 00 "
+		
+	strings :
+		$a_81_0 = {43 48 49 50 20 53 65 63 75 72 65 64 20 49 6e 73 74 61 6c 6c 65 72 } //1 CHIP Secured Installer
+		$a_81_1 = {44 4d 52 2e 65 78 65 } //1 DMR.exe
+		$a_81_2 = {44 4d 52 2e 70 64 62 } //1 DMR.pdb
+		$a_81_3 = {55 6e 69 6e 73 74 2e 65 78 65 } //-100 Uninst.exe
+		$a_81_4 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //-100 Uninstall.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*-100+(#a_81_4  & 1)*-100) >=3
+ 
+}
+rule _#PUA_Block_DownloadSponsor_3{
+	meta:
 		description = "!#PUA:Block:DownloadSponsor,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
 		
 	strings :
@@ -25,7 +39,7 @@ rule _#PUA_Block_DownloadSponsor_2{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=5
  
 }
-rule _#PUA_Block_DownloadSponsor_3{
+rule _#PUA_Block_DownloadSponsor_4{
 	meta:
 		description = "!#PUA:Block:DownloadSponsor,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
 		
@@ -38,7 +52,7 @@ rule _#PUA_Block_DownloadSponsor_3{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=5
  
 }
-rule _#PUA_Block_DownloadSponsor_4{
+rule _#PUA_Block_DownloadSponsor_5{
 	meta:
 		description = "!#PUA:Block:DownloadSponsor,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
 		

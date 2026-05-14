@@ -1,6 +1,20 @@
 
 rule Ransom_Win64_BQTLock_PA_MTB{
 	meta:
+		description = "Ransom:Win64/BQTLock.PA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {54 65 6d 70 5c 62 71 74 5f 70 61 79 6c 6f 61 64 2e 65 78 65 } //5 Temp\bqt_payload.exe
+		$a_01_1 = {54 65 6d 70 5c 62 71 74 5f 77 61 6c 6c 70 61 70 65 72 2e 62 6d 70 } //1 Temp\bqt_wallpaper.bmp
+		$a_01_2 = {54 65 6d 70 5c 62 71 74 5f 73 63 72 65 65 6e 73 68 6f 74 } //1 Temp\bqt_screenshot
+		$a_01_3 = {42 51 54 4c 6f 63 6b 20 50 61 79 6c 6f 61 64 20 73 74 61 72 74 65 64 } //1 BQTLock Payload started
+		$a_01_4 = {41 20 6e 65 77 20 73 79 73 74 65 6d 20 68 61 73 20 62 65 65 6e 20 69 6e 66 65 63 74 65 64 21 } //1 A new system has been infected!
+	condition:
+		((#a_01_0  & 1)*5+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=8
+ 
+}
+rule Ransom_Win64_BQTLock_PA_MTB_2{
+	meta:
 		description = "Ransom:Win64/BQTLock.PA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 06 00 00 "
 		
 	strings :

@@ -1,0 +1,12 @@
+
+rule Trojan_Win32_SmokeLoader_AHB_MTB{
+	meta:
+		description = "Trojan:Win32/SmokeLoader.AHB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,32 00 32 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {32 2b 2b c0 2e ?? c0 de ?? 83 c0 ?? a3 ?? ?? ?? ?? aa ed 10 78 ?? 2b c0 ?? e7 7f } //30
+		$a_03_1 = {d4 b8 83 2b 2b 2b a8 ?? ?? ?? ?? c0 c0 ?? 39 8b ?? ?? ?? ?? 30 2b 2b a0 ?? ?? ?? ?? 2f c0 2e ?? 76 } //20
+	condition:
+		((#a_03_0  & 1)*30+(#a_03_1  & 1)*20) >=50
+ 
+}

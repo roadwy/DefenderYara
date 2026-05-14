@@ -1,6 +1,19 @@
 
 rule _#PUA_Block_PornTool{
 	meta:
+		description = "!#PUA:Block:PornTool,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
+		$a_81_0 = {42 79 20 20 53 65 78 38 2e 43 43 } //1 By  Sex8.CC
+		$a_81_1 = {31 72 6f 6f 6d 2e 63 63 } //1 1room.cc
+		$a_81_2 = {79 6f 67 61 73 65 62 61 2e 63 6f 6d } //2 yogaseba.com
+		$a_81_3 = {54 6f 6f 6c 42 61 72 73 } //1 ToolBars
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*2+(#a_81_3  & 1)*1) >=4
+ 
+}
+rule _#PUA_Block_PornTool_2{
+	meta:
 		description = "!#PUA:Block:PornTool,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
 	strings :
@@ -13,7 +26,7 @@ rule _#PUA_Block_PornTool{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_PornTool_2{
+rule _#PUA_Block_PornTool_3{
 	meta:
 		description = "!#PUA:Block:PornTool,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
 		
@@ -27,7 +40,7 @@ rule _#PUA_Block_PornTool_2{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1) >=5
  
 }
-rule _#PUA_Block_PornTool_3{
+rule _#PUA_Block_PornTool_4{
 	meta:
 		description = "!#PUA:Block:PornTool,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -42,7 +55,7 @@ rule _#PUA_Block_PornTool_3{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=6
  
 }
-rule _#PUA_Block_PornTool_4{
+rule _#PUA_Block_PornTool_5{
 	meta:
 		description = "!#PUA:Block:PornTool,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
 		

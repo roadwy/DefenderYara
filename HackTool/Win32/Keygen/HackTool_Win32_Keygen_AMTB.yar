@@ -14,6 +14,33 @@ rule HackTool_Win32_Keygen_AMTB{
 }
 rule HackTool_Win32_Keygen_AMTB_2{
 	meta:
+		description = "HackTool:Win32/Keygen!AMTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
+		
+	strings :
+		$a_80_0 = {43 6f 64 65 64 20 62 79 20 4c 6f 72 64 20 42 6c 69 78 2f 54 53 5a } //Coded by Lord Blix/TSZ  2
+		$a_80_1 = {52 65 67 69 73 74 72 61 74 69 6f 6e 20 43 6f 64 65 } //Registration Code  1
+		$a_80_2 = {2d 4b 65 79 67 65 6e 2d } //-Keygen-  1
+		$a_80_3 = {47 65 6e 65 72 61 74 65 } //Generate  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=5
+ 
+}
+rule HackTool_Win32_Keygen_AMTB_3{
+	meta:
+		description = "HackTool:Win32/Keygen!AMTB,SIGNATURE_TYPE_PEHSTR_EXT,0f 00 0f 00 05 00 00 "
+		
+	strings :
+		$a_80_0 = {6c 64 72 5f 6b 65 79 67 65 6e } //ldr_keygen  3
+		$a_80_1 = {57 68 79 20 73 6f 20 73 65 72 69 6f 75 73 3f 21 } //Why so serious?!  3
+		$a_80_2 = {4c 69 6e 65 5a 65 72 30 } //LineZer0  3
+		$a_80_3 = {4c 7a 30 20 32 6f 6f 39 } //Lz0 2oo9  3
+		$a_80_4 = {41 20 50 72 6f 64 75 63 74 20 62 79 20 4c 7a 30 } //A Product by Lz0  3
+	condition:
+		((#a_80_0  & 1)*3+(#a_80_1  & 1)*3+(#a_80_2  & 1)*3+(#a_80_3  & 1)*3+(#a_80_4  & 1)*3) >=15
+ 
+}
+rule HackTool_Win32_Keygen_AMTB_4{
+	meta:
 		description = "HackTool:Win32/Keygen!AMTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
 	strings :
@@ -26,7 +53,50 @@ rule HackTool_Win32_Keygen_AMTB_2{
 		((#a_80_0  & 1)*2+(#a_80_1  & 1)*2+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_80_4  & 1)*1) >=4
  
 }
-rule HackTool_Win32_Keygen_AMTB_3{
+rule HackTool_Win32_Keygen_AMTB_5{
+	meta:
+		description = "HackTool:Win32/Keygen!AMTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
+		$a_80_0 = {4b 65 79 67 65 6e 20 66 6f 72 20 49 6d 61 67 65 63 72 61 66 74 20 49 43 43 41 56 52 20 56 36 } //Keygen for Imagecraft ICCAVR V6  1
+		$a_80_1 = {4b 65 79 67 65 6e 65 72 61 74 6f 72 20 6d 61 64 65 20 62 79 20 57 69 6e 42 69 6e 61 72 } //Keygenerator made by WinBinar  1
+		$a_80_2 = {57 69 6e 42 69 6e 61 72 20 2f 20 44 65 6d 6f 6e } //WinBinar / Demon  1
+		$a_80_3 = {59 6f 75 72 20 75 6e 6c 6f 63 6b 20 63 6f 64 65 20 68 65 72 65 3a } //Your unlock code here:  1
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
+ 
+}
+rule HackTool_Win32_Keygen_AMTB_6{
+	meta:
+		description = "HackTool:Win32/Keygen!AMTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
+		
+	strings :
+		$a_80_0 = {46 61 6b 65 20 4b 65 79 67 65 6e 2e 65 78 65 } //Fake Keygen.exe  1
+		$a_80_1 = {6b 65 79 67 65 6e } //keygen  1
+		$a_80_2 = {53 65 72 69 61 6c 20 4b 65 79 20 47 65 6e 65 72 61 74 6f 72 } //Serial Key Generator  1
+		$a_80_3 = {4d 69 73 73 69 6e 67 20 64 34 64 78 2e 64 6c 6c 21 20 50 6c 65 61 73 65 20 72 75 6e 20 53 65 74 75 70 2e 65 78 65 20 74 6f 20 69 6e 73 74 61 6c 6c } //Missing d4dx.dll! Please run Setup.exe to install  1
+		$a_80_4 = {70 69 72 61 74 65 5a } //pirateZ  1
+		$a_80_5 = {54 45 41 4d 20 41 57 54 } //TEAM AWT  1
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=6
+ 
+}
+rule HackTool_Win32_Keygen_AMTB_7{
+	meta:
+		description = "HackTool:Win32/Keygen!AMTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
+		
+	strings :
+		$a_80_0 = {44 49 5f 4b 65 79 67 65 6e 55 74 69 6c 73 } //DI_KeygenUtils  1
+		$a_80_1 = {54 68 65 20 66 69 6c 65 28 73 29 20 68 61 73 20 62 65 65 6e 20 70 61 74 63 68 65 64 20 73 75 63 63 65 73 73 66 75 6c 6c 79 21 } //The file(s) has been patched successfully!  1
+		$a_80_2 = {50 61 74 63 68 69 6e 67 20 69 6e 20 70 72 6f 67 72 65 73 73 2e 2e 2e } //Patching in progress...  1
+		$a_80_3 = {44 49 5f 4b 65 79 67 65 6e 43 6f 72 65 } //DI_KeygenCore  1
+		$a_80_4 = {44 49 5f 4b 65 79 67 65 6e 55 73 65 72 } //DI_KeygenUser  1
+		$a_80_5 = {40 44 49 5f 4b 65 79 67 65 6e 50 61 74 63 68 65 72 } //@DI_KeygenPatcher  1
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=6
+ 
+}
+rule HackTool_Win32_Keygen_AMTB_8{
 	meta:
 		description = "HackTool:Win32/Keygen!AMTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		

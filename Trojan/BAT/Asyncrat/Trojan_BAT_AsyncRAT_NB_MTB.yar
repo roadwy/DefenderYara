@@ -1,6 +1,18 @@
 
 rule Trojan_BAT_AsyncRAT_NB_MTB{
 	meta:
+		description = "Trojan:BAT/AsyncRAT.NB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {11 05 11 07 09 11 07 91 11 04 11 07 11 04 8e 69 5d 91 61 d2 9c 11 07 17 58 13 07 11 07 09 8e 69 32 de } //4
+		$a_03_1 = {13 0b 12 0b 28 ?? 00 00 0a 11 0c 6a 58 73 10 00 00 0a 11 0e 11 0e 8e 69 12 0f 28 ?? 00 00 06 26 11 04 17 58 13 04 11 07 7b 1a 00 00 04 1a 5f 1a 2e 26 11 07 7b 15 00 00 04 11 07 7b 18 00 00 04 13 0b 12 0b 28 ?? 00 00 0a 11 07 7b 1a 00 00 04 12 0d 28 ?? 00 00 06 26 11 0c 17 58 13 0c } //3
+		$a_00_2 = {65 6e 63 72 79 70 74 65 64 5f 65 78 65 63 } //2 encrypted_exec
+	condition:
+		((#a_01_0  & 1)*4+(#a_03_1  & 1)*3+(#a_00_2  & 1)*2) >=9
+ 
+}
+rule Trojan_BAT_AsyncRAT_NB_MTB_2{
+	meta:
 		description = "Trojan:BAT/AsyncRAT.NB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :

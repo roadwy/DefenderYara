@@ -1,7 +1,17 @@
 
-rule Trojan_Win64_Cobaltstrike_PAA_MTB{
+rule Trojan_Win64_CobaltStrike_PAA_MTB{
 	meta:
-		description = "Trojan:Win64/Cobaltstrike.PAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,11 00 11 00 11 00 00 "
+		description = "Trojan:Win64/CobaltStrike.PAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {48 83 ec 20 48 8b 1d [0-06] 31 ff 65 48 8b 04 25 30 00 00 00 48 8b 2d cd d0 00 00 48 8b 70 08 eb 17 } //1
+	condition:
+		((#a_03_0  & 1)*1) >=1
+ 
+}
+rule Trojan_Win64_CobaltStrike_PAA_MTB_2{
+	meta:
+		description = "Trojan:Win64/CobaltStrike.PAA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,11 00 11 00 11 00 00 "
 		
 	strings :
 		$a_81_0 = {6f 6b 75 77 77 67 65 66 71 65 67 2e 64 6c 6c } //1 okuwwgefqeg.dll

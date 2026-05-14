@@ -1,6 +1,24 @@
 
 rule Ransom_MSIL_HiddenTear_AHT_MTB{
 	meta:
+		description = "Ransom:MSIL/HiddenTear.AHT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,13 00 13 00 09 00 00 "
+		
+	strings :
+		$a_01_0 = {77 00 6f 00 72 00 6d 00 2e 00 6c 00 6f 00 67 00 } //4 worm.log
+		$a_01_1 = {55 00 70 00 64 00 61 00 74 00 65 00 2e 00 6c 00 6e 00 6b 00 } //1 Update.lnk
+		$a_01_2 = {5b 00 49 00 6e 00 74 00 65 00 72 00 6e 00 65 00 74 00 53 00 68 00 6f 00 72 00 74 00 63 00 75 00 74 00 5d 00 } //1 [InternetShortcut]
+		$a_01_3 = {6b 00 65 00 79 00 6c 00 6f 00 67 00 2e 00 74 00 78 00 74 00 } //1 keylog.txt
+		$a_01_4 = {5b 00 42 00 41 00 43 00 4b 00 53 00 50 00 41 00 43 00 45 00 5d 00 } //1 [BACKSPACE]
+		$a_01_5 = {5b 00 54 00 41 00 42 00 5d 00 } //1 [TAB]
+		$a_01_6 = {59 00 6f 00 75 00 72 00 20 00 66 00 69 00 6c 00 65 00 73 00 20 00 68 00 61 00 76 00 65 00 20 00 62 00 65 00 65 00 6e 00 20 00 65 00 6e 00 63 00 72 00 79 00 70 00 74 00 65 00 64 00 } //2 Your files have been encrypted
+		$a_01_7 = {43 00 68 00 65 00 63 00 6b 00 20 00 52 00 45 00 41 00 44 00 5f 00 4d 00 45 00 2e 00 74 00 78 00 74 00 20 00 6f 00 6e 00 20 00 79 00 6f 00 75 00 72 00 20 00 64 00 65 00 73 00 6b 00 74 00 6f 00 70 00 } //3 Check READ_ME.txt on your desktop
+		$a_01_8 = {54 00 52 00 55 00 45 00 57 00 30 00 52 00 4d 00 } //5 TRUEW0RM
+	condition:
+		((#a_01_0  & 1)*4+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*2+(#a_01_7  & 1)*3+(#a_01_8  & 1)*5) >=19
+ 
+}
+rule Ransom_MSIL_HiddenTear_AHT_MTB_2{
+	meta:
 		description = "Ransom:MSIL/HiddenTear.AHT!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 04 00 00 "
 		
 	strings :

@@ -1,6 +1,19 @@
 
 rule Trojan_Win64_Mikey_NM_MTB{
 	meta:
+		description = "Trojan:Win64/Mikey.NM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
+		
+	strings :
+		$a_01_0 = {48 85 c0 0f 84 59 01 00 00 48 8d 7d c8 48 8b 8d c8 05 00 00 48 89 0f 4c 89 6f 08 48 89 47 10 48 89 c1 } //2
+		$a_01_1 = {45 31 ff 4c 89 bd b8 04 00 00 48 89 85 c0 04 00 00 48 83 a5 c8 04 00 00 00 49 8d 87 00 04 00 00 89 c1 81 e1 ff 1f 00 00 4c 89 fa 48 29 ca 48 81 c2 00 24 00 00 48 39 c2 41 b8 00 20 00 00 4c 0f 43 c2 48 85 c9 4c 0f 44 c0 4c 89 85 00 06 00 00 } //1
+		$a_01_2 = {52 65 67 53 65 74 56 61 6c 75 65 45 78 57 } //1 RegSetValueExW
+		$a_01_3 = {56 69 72 74 75 61 6c 50 72 6f 74 65 63 74 } //1 VirtualProtect
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=5
+ 
+}
+rule Trojan_Win64_Mikey_NM_MTB_2{
+	meta:
 		description = "Trojan:Win64/Mikey.NM!MTB,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 05 00 00 "
 		
 	strings :

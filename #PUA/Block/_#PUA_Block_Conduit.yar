@@ -1,6 +1,20 @@
 
 rule _#PUA_Block_Conduit{
 	meta:
+		description = "!#PUA:Block:Conduit,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 05 00 00 "
+		
+	strings :
+		$a_81_0 = {48 65 72 6f 20 46 69 67 68 74 65 72 20 49 6e 73 74 61 6c 6c 20 50 72 6f 67 72 61 6d } //1 Hero Fighter Install Program
+		$a_81_1 = {48 65 72 6f 46 69 67 68 74 65 72 54 6f 6f 6c 62 61 72 2e 65 78 65 } //1 HeroFighterToolbar.exe
+		$a_81_2 = {50 6c 65 61 73 65 20 73 75 70 70 6f 72 74 20 75 73 20 62 79 20 69 6e 73 74 61 6c 6c 69 6e 67 20 74 68 65 20 48 65 72 6f 20 46 69 67 68 74 65 72 20 74 6f 6f 6c 62 61 72 } //1 Please support us by installing the Hero Fighter toolbar
+		$a_81_3 = {55 6e 69 6e 73 74 2e 65 78 65 } //-100 Uninst.exe
+		$a_81_4 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //-100 Uninstall.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*-100+(#a_81_4  & 1)*-100) >=3
+ 
+}
+rule _#PUA_Block_Conduit_2{
+	meta:
 		description = "!#PUA:Block:Conduit,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 09 00 00 "
 		
 	strings :

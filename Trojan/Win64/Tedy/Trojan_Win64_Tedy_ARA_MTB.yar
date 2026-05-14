@@ -35,13 +35,34 @@ rule Trojan_Win64_Tedy_ARA_MTB_4{
 		description = "Trojan:Win64/Tedy.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 "
 		
 	strings :
+		$a_01_0 = {0f b6 14 01 83 f2 7b 41 88 14 04 48 83 c0 01 48 83 f8 0d 75 eb } //2
+		$a_01_1 = {48 89 c1 45 89 c2 83 e1 03 48 c1 e1 03 41 d3 ea 45 30 14 01 48 83 c0 01 48 39 c2 75 e3 } //2
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2) >=4
+ 
+}
+rule Trojan_Win64_Tedy_ARA_MTB_5{
+	meta:
+		description = "Trojan:Win64/Tedy.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {48 31 c2 8b 84 24 ?? ?? 00 00 48 98 48 31 c2 8b 84 24 ?? ?? 00 00 48 98 48 89 94 c4 ?? ?? 00 00 83 ac 24 ?? ?? 00 00 01 83 bc 24 ?? ?? 00 00 00 79 91 } //2
+	condition:
+		((#a_03_0  & 1)*2) >=2
+ 
+}
+rule Trojan_Win64_Tedy_ARA_MTB_6{
+	meta:
+		description = "Trojan:Win64/Tedy.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 02 00 00 "
+		
+	strings :
 		$a_01_0 = {5c 53 74 61 72 74 75 70 5c 4e 56 49 44 49 41 47 72 61 70 68 69 63 73 2e 6c 6e 6b } //2 \Startup\NVIDIAGraphics.lnk
 		$a_01_1 = {5c 53 74 61 72 74 75 70 5c 4d 69 63 72 6f 73 6f 66 74 44 65 66 65 6e 64 65 72 2e 6c 6e 6b } //2 \Startup\MicrosoftDefender.lnk
 	condition:
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2) >=4
  
 }
-rule Trojan_Win64_Tedy_ARA_MTB_5{
+rule Trojan_Win64_Tedy_ARA_MTB_7{
 	meta:
 		description = "Trojan:Win64/Tedy.ARA!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		

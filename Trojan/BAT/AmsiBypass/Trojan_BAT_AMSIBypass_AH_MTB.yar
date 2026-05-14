@@ -1,0 +1,11 @@
+
+rule Trojan_BAT_AMSIBypass_AH_MTB{
+	meta:
+		description = "Trojan:BAT/AMSIBypass.AH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1e 00 1e 00 01 00 00 "
+		
+	strings :
+		$a_03_0 = {06 08 9a 12 03 28 ?? ?? ?? 0a 2c 16 07 08 09 28 ?? ?? ?? 0a 03 28 ?? ?? ?? 0a 28 ?? ?? ?? 0a 9c 2b 13 72 ?? ?? ?? 70 06 08 9a 28 ?? ?? ?? 0a 73 ?? ?? ?? 0a 7a 08 17 58 0c 08 06 8e 69 32 c1 } //30
+	condition:
+		((#a_03_0  & 1)*30) >=30
+ 
+}

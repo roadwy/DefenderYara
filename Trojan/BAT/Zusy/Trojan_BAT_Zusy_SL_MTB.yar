@@ -22,3 +22,21 @@ rule Trojan_BAT_Zusy_SL_MTB_2{
 		((#a_01_0  & 1)*2+(#a_01_1  & 1)*2+(#a_01_2  & 1)*2) >=6
  
 }
+rule Trojan_BAT_Zusy_SL_MTB_3{
+	meta:
+		description = "Trojan:BAT/Zusy.SL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
+		
+	strings :
+		$a_81_0 = {46 52 50 57 72 61 70 70 65 72 2e 6d 79 61 70 70 2e 64 6c 6c 2e 65 6e 63 72 79 70 74 65 64 } //1 FRPWrapper.myapp.dll.encrypted
+		$a_81_1 = {65 5f 72 65 73 32 65 } //1 e_res2e
+		$a_81_2 = {4c 6f 61 64 45 6d 62 65 64 64 65 64 52 65 73 6f 75 72 63 65 } //1 LoadEmbeddedResource
+		$a_81_3 = {4c 6f 61 64 41 6e 64 44 65 63 72 79 70 74 45 6d 62 65 64 64 65 64 52 65 73 6f 75 72 63 65 } //1 LoadAndDecryptEmbeddedResource
+		$a_81_4 = {46 72 6f 6d 42 61 73 65 36 34 53 74 72 69 6e 67 } //1 FromBase64String
+		$a_81_5 = {46 52 50 57 72 61 70 70 65 72 2e 50 72 6f 70 65 72 74 69 65 73 2e 52 65 73 6f 75 72 63 65 73 2e 72 65 73 6f 75 72 63 65 73 } //1 FRPWrapper.Properties.Resources.resources
+		$a_81_6 = {24 30 66 38 37 64 65 38 32 2d 30 32 36 36 2d 34 38 63 33 2d 61 65 64 38 2d 31 65 62 35 36 32 38 38 39 30 35 33 } //1 $0f87de82-0266-48c3-aed8-1eb562889053
+		$a_81_7 = {44 4c 4c 46 72 6f 6d 4d 65 6d 6f 72 79 } //1 DLLFromMemory
+		$a_81_8 = {43 3a 5c 50 72 6f 67 72 61 6d 44 61 74 61 5c 66 72 70 5c 66 72 70 63 2e 74 6f 6d 6c } //1 C:\ProgramData\frp\frpc.toml
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1+(#a_81_6  & 1)*1+(#a_81_7  & 1)*1+(#a_81_8  & 1)*1) >=9
+ 
+}

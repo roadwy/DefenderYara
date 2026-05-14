@@ -1,6 +1,20 @@
 
 rule _#PUA_Block_OpenInstaller{
 	meta:
+		description = "!#PUA:Block:OpenInstaller,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {67 65 74 5f 6f 66 66 65 72 73 } //1 get_offers
+		$a_01_1 = {73 68 6f 77 6e 4f 66 66 65 72 73 } //1 shownOffers
+		$a_01_2 = {61 63 63 65 70 74 65 64 4f 66 66 65 72 73 } //1 acceptedOffers
+		$a_01_3 = {6d 61 72 6b 65 74 2e 6f 69 63 64 6e 2e 63 6f 6d } //1 market.oicdn.com
+		$a_00_4 = {4f 00 70 00 65 00 6e 00 49 00 6e 00 73 00 74 00 61 00 6c 00 6c 00 } //1 OpenInstall
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_00_4  & 1)*1) >=5
+ 
+}
+rule _#PUA_Block_OpenInstaller_2{
+	meta:
 		description = "!#PUA:Block:OpenInstaller,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 09 00 00 "
 		
 	strings :

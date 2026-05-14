@@ -40,6 +40,21 @@ rule _#PUA_Block_OfferCore_3{
 }
 rule _#PUA_Block_OfferCore_4{
 	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
+		
+	strings :
+		$a_80_0 = {72 61 6e 64 6f 6d 69 7a 65 2d 6f 66 66 65 72 73 } //randomize-offers  1
+		$a_80_1 = {61 70 70 2d 6f 66 66 65 72 73 } //app-offers  1
+		$a_80_2 = {6f 66 66 65 72 2d 65 78 69 73 74 73 } //offer-exists  1
+		$a_80_3 = {6f 66 66 65 72 2d 73 68 6f 77 6e } //offer-shown  1
+		$a_80_4 = {6f 66 66 65 72 73 63 72 65 65 6e 73 } //offerscreens  1
+		$a_80_5 = {73 6f 66 74 70 72 65 63 64 6e 2e 72 75 } //softprecdn.ru  1
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=6
+ 
+}
+rule _#PUA_Block_OfferCore_5{
+	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :
@@ -51,7 +66,7 @@ rule _#PUA_Block_OfferCore_4{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule _#PUA_Block_OfferCore_5{
+rule _#PUA_Block_OfferCore_6{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -67,7 +82,7 @@ rule _#PUA_Block_OfferCore_5{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1) >=7
  
 }
-rule _#PUA_Block_OfferCore_6{
+rule _#PUA_Block_OfferCore_7{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
@@ -84,7 +99,7 @@ rule _#PUA_Block_OfferCore_6{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1) >=8
  
 }
-rule _#PUA_Block_OfferCore_7{
+rule _#PUA_Block_OfferCore_8{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 06 00 00 "
 		
@@ -99,7 +114,23 @@ rule _#PUA_Block_OfferCore_7{
 		((#a_80_0  & 1)*5+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*5) >=12
  
 }
-rule _#PUA_Block_OfferCore_8{
+rule _#PUA_Block_OfferCore_9{
+	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
+		
+	strings :
+		$a_81_0 = {6f 66 66 65 72 73 } //1 offers
+		$a_81_1 = {4f 70 65 72 61 20 4f 6e 65 } //1 Opera One
+		$a_81_2 = {49 6e 73 74 61 6c 6c 65 72 2e 70 64 62 } //1 Installer.pdb
+		$a_81_3 = {44 6f 77 6e 6c 6f 61 64 20 4d 61 6e 61 67 65 72 } //1 Download Manager
+		$a_81_4 = {3a 2f 2f 67 65 74 6d 79 66 69 6c 65 6e 6f 77 2e 63 6f 6d 2f 73 65 74 75 70 } //1 ://getmyfilenow.com/setup
+		$a_81_5 = {55 6e 69 6e 73 74 2e 65 78 65 } //-100 Uninst.exe
+		$a_81_6 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //-100 Uninstall.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*-100+(#a_81_6  & 1)*-100) >=5
+ 
+}
+rule _#PUA_Block_OfferCore_10{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 06 00 00 "
 		
@@ -114,7 +145,23 @@ rule _#PUA_Block_OfferCore_8{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1) >=6
  
 }
-rule _#PUA_Block_OfferCore_9{
+rule _#PUA_Block_OfferCore_11{
+	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 07 00 00 "
+		
+	strings :
+		$a_81_0 = {4d 65 6e 74 61 6c 4d 65 6e 74 6f 72 2e 65 78 65 } //1 MentalMentor.exe
+		$a_81_1 = {53 45 54 42 55 4e 44 4c 45 4f 46 46 45 52 45 44 } //1 SETBUNDLEOFFERED
+		$a_81_2 = {42 44 56 50 4e 5f 4f 4e 4c 49 4e 4b 4f 50 54 49 4f 4e 41 4c 4f 46 46 45 52 } //1 BDVPN_ONLINKOPTIONALOFFER
+		$a_81_3 = {44 4f 57 4e 4c 4f 41 44 42 55 4e 44 4c 45 } //1 DOWNLOADBUNDLE
+		$a_81_4 = {4c 49 4e 4b 42 52 49 47 48 54 44 41 54 41 43 4c 49 43 4b 45 44 } //1 LINKBRIGHTDATACLICKED
+		$a_81_5 = {55 6e 69 6e 73 74 2e 65 78 65 } //-100 Uninst.exe
+		$a_81_6 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //-100 Uninstall.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*-100+(#a_81_6  & 1)*-100) >=5
+ 
+}
+rule _#PUA_Block_OfferCore_12{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -130,7 +177,7 @@ rule _#PUA_Block_OfferCore_9{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1) >=7
  
 }
-rule _#PUA_Block_OfferCore_10{
+rule _#PUA_Block_OfferCore_13{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -146,7 +193,7 @@ rule _#PUA_Block_OfferCore_10{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1) >=7
  
 }
-rule _#PUA_Block_OfferCore_11{
+rule _#PUA_Block_OfferCore_14{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 07 00 00 "
 		
@@ -162,7 +209,7 @@ rule _#PUA_Block_OfferCore_11{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1) >=7
  
 }
-rule _#PUA_Block_OfferCore_12{
+rule _#PUA_Block_OfferCore_15{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 "
 		
@@ -180,7 +227,25 @@ rule _#PUA_Block_OfferCore_12{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1) >=7
  
 }
-rule _#PUA_Block_OfferCore_13{
+rule _#PUA_Block_OfferCore_16{
+	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 "
+		
+	strings :
+		$a_80_0 = {4f 66 66 65 72 49 6e 73 74 61 6c 6c 65 72 43 6f 6e 66 69 67 } //OfferInstallerConfig  1
+		$a_80_1 = {4f 66 66 65 72 49 6e 73 74 61 6c 6c 65 72 2e 65 78 65 } //OfferInstaller.exe  1
+		$a_80_2 = {4f 66 66 65 72 49 6e 73 74 61 6c 6c 44 61 74 61 } //OfferInstallData  1
+		$a_80_3 = {4f 6e 4f 66 66 65 72 49 6e 73 74 61 6c 6c 65 64 } //OnOfferInstalled  1
+		$a_80_4 = {42 75 6e 64 6c 65 49 6e 73 74 61 6c 6c 45 72 72 6f 72 } //BundleInstallError  1
+		$a_80_5 = {67 65 74 5f 4f 66 66 65 72 73 } //get_Offers  1
+		$a_80_6 = {4f 66 66 65 72 49 6e 73 74 61 6c 6c 65 72 2e 70 64 62 } //OfferInstaller.pdb  1
+		$a_80_7 = {55 6e 69 6e 73 74 2e 65 78 65 } //Uninst.exe  -100
+		$a_80_8 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //Uninstall.exe  -100
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*-100+(#a_80_8  & 1)*-100) >=7
+ 
+}
+rule _#PUA_Block_OfferCore_17{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 "
 		
@@ -198,7 +263,27 @@ rule _#PUA_Block_OfferCore_13{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1) >=7
  
 }
-rule _#PUA_Block_OfferCore_14{
+rule _#PUA_Block_OfferCore_18{
+	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,09 00 09 00 0b 00 00 "
+		
+	strings :
+		$a_81_0 = {6f 70 65 6e 70 64 66 2e 65 78 65 } //1 openpdf.exe
+		$a_81_1 = {50 72 6f 67 72 61 6d 73 5c 4f 70 65 72 61 5c 6f 70 65 72 61 2e 65 78 65 } //1 Programs\Opera\opera.exe
+		$a_81_2 = {42 72 69 67 68 74 20 56 50 4e 5c 42 72 69 67 68 74 20 56 50 4e 2e 65 78 65 } //1 Bright VPN\Bright VPN.exe
+		$a_81_3 = {33 36 30 54 6f 74 61 6c 53 65 63 75 72 69 74 79 } //1 360TotalSecurity
+		$a_81_4 = {70 61 67 65 73 5f 6f 66 66 65 72 65 64 } //1 pages_offered
+		$a_81_5 = {6f 66 66 65 72 65 64 } //1 offered
+		$a_81_6 = {65 78 74 65 72 6e 61 6c 5f 6f 66 66 65 72 5f 73 63 72 65 65 6e } //1 external_offer_screen
+		$a_81_7 = {65 78 74 65 72 6e 61 6c 5f 6f 66 66 65 72 5f 63 6f 64 65 5f 61 63 63 65 70 74 65 64 } //1 external_offer_code_accepted
+		$a_81_8 = {65 78 74 65 72 6e 61 6c 5f 6f 66 66 65 72 5f 63 6f 64 65 5f 63 61 6e 63 65 6c 65 64 } //1 external_offer_code_canceled
+		$a_81_9 = {55 6e 69 6e 73 74 2e 65 78 65 } //-100 Uninst.exe
+		$a_81_10 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //-100 Uninstall.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1+(#a_81_6  & 1)*1+(#a_81_7  & 1)*1+(#a_81_8  & 1)*1+(#a_81_9  & 1)*-100+(#a_81_10  & 1)*-100) >=9
+ 
+}
+rule _#PUA_Block_OfferCore_19{
 	meta:
 		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,0b 00 0b 00 0b 00 00 "
 		
@@ -216,5 +301,87 @@ rule _#PUA_Block_OfferCore_14{
 		$a_80_10 = {6d 65 6e 74 61 6c 6d 65 6e 74 6f 72 2e 65 78 65 } //mentalmentor.exe  1
 	condition:
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*1+(#a_80_9  & 1)*1+(#a_80_10  & 1)*1) >=11
+ 
+}
+rule _#PUA_Block_OfferCore_20{
+	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,10 00 10 00 12 00 00 "
+		
+	strings :
+		$a_81_0 = {41 70 70 69 6e 73 74 61 6c 6c 65 72 } //1 Appinstaller
+		$a_81_1 = {41 70 70 64 61 74 65 72 } //1 Appdater
+		$a_81_2 = {41 70 70 49 6e 73 74 2e 65 78 65 } //1 AppInst.exe
+		$a_81_3 = {73 6f 66 74 70 72 65 63 64 6e 2e 72 75 } //1 softprecdn.ru
+		$a_81_4 = {61 70 70 2d 6f 66 66 65 72 73 } //1 app-offers
+		$a_81_5 = {6f 66 66 65 72 2d 65 78 69 73 74 73 } //1 offer-exists
+		$a_81_6 = {6f 66 66 65 72 2d 73 68 6f 77 6e } //1 offer-shown
+		$a_81_7 = {6f 66 66 65 72 2d 69 6e 73 74 61 6c 6c 69 6e 67 } //1 offer-installing
+		$a_81_8 = {6f 66 66 65 72 2d 63 61 6e 63 65 6c 6c 65 64 } //1 offer-cancelled
+		$a_81_9 = {6f 66 66 65 72 2d 61 62 6f 72 74 65 64 } //1 offer-aborted
+		$a_81_10 = {6f 66 66 65 72 2d 61 63 74 69 76 61 74 69 6e 67 } //1 offer-activating
+		$a_81_11 = {6f 66 66 65 72 2d 66 61 6c 73 65 70 6f 73 69 74 69 76 65 } //1 offer-falsepositive
+		$a_81_12 = {6f 66 66 65 72 2d 69 6e 73 74 61 6c 6c 65 64 } //1 offer-installed
+		$a_81_13 = {6f 66 66 65 72 2d 61 63 74 69 76 61 74 65 64 } //1 offer-activated
+		$a_81_14 = {6f 66 66 65 72 2d 66 61 69 6c 65 64 } //1 offer-failed
+		$a_81_15 = {6f 66 66 65 72 73 } //1 offers
+		$a_81_16 = {55 6e 69 6e 73 74 2e 65 78 65 } //-100 Uninst.exe
+		$a_81_17 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //-100 Uninstall.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1+(#a_81_6  & 1)*1+(#a_81_7  & 1)*1+(#a_81_8  & 1)*1+(#a_81_9  & 1)*1+(#a_81_10  & 1)*1+(#a_81_11  & 1)*1+(#a_81_12  & 1)*1+(#a_81_13  & 1)*1+(#a_81_14  & 1)*1+(#a_81_15  & 1)*1+(#a_81_16  & 1)*-100+(#a_81_17  & 1)*-100) >=16
+ 
+}
+rule _#PUA_Block_OfferCore_21{
+	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR_EXT,14 00 14 00 16 00 00 "
+		
+	strings :
+		$a_81_0 = {41 70 70 69 6e 73 74 61 6c 6c 65 72 } //1 Appinstaller
+		$a_81_1 = {61 70 70 64 61 74 65 72 } //1 appdater
+		$a_81_2 = {3a 2f 2f 73 6f 66 74 70 72 65 63 64 6e 2e 72 75 2f 6f 66 66 65 72 73 63 72 65 65 6e 73 2f 61 76 61 73 74 2d 69 63 6f 6e 2e 70 6e 67 } //1 ://softprecdn.ru/offerscreens/avast-icon.png
+		$a_81_3 = {3a 2f 2f 73 6f 66 74 70 72 65 63 64 6e 2e 72 75 2f 6f 66 66 65 72 73 63 72 65 65 6e 73 2f 61 76 61 73 74 2d 63 68 65 63 6b 62 6f 78 2e 70 6e 67 } //1 ://softprecdn.ru/offerscreens/avast-checkbox.png
+		$a_81_4 = {3a 2f 2f 73 6f 66 74 70 72 65 63 64 6e 2e 72 75 2f 6f 66 66 65 72 73 63 72 65 65 6e 73 2f 6b 69 73 2d 69 63 6f 6e 2e 70 6e 67 } //1 ://softprecdn.ru/offerscreens/kis-icon.png
+		$a_81_5 = {3a 2f 2f 73 6f 66 74 70 72 65 63 64 6e 2e 72 75 2f 6f 66 66 65 72 73 63 72 65 65 6e 73 2f 6f 6e 6c 79 5f 6f 66 66 65 72 5f 6b 69 73 5f 32 30 30 2e 70 6e 67 } //1 ://softprecdn.ru/offerscreens/only_offer_kis_200.png
+		$a_81_6 = {3a 2f 2f 73 6f 66 74 70 72 65 63 64 6e 2e 72 75 2f 6f 66 66 65 72 73 63 72 65 65 6e 73 2f 6f 70 65 72 61 2d 69 63 6f 6e 2e 70 6e 67 } //1 ://softprecdn.ru/offerscreens/opera-icon.png
+		$a_81_7 = {3a 2f 2f 73 6f 66 74 70 72 65 63 64 6e 2e 72 75 2f 6f 66 66 65 72 73 63 72 65 65 6e 73 2f 79 61 6e 64 65 78 2d 69 63 6f 6e 2e 70 6e 67 } //1 ://softprecdn.ru/offerscreens/yandex-icon.png
+		$a_81_8 = {3a 2f 2f 73 6f 66 74 70 72 65 63 64 6e 2e 72 75 2f 6f 66 66 65 72 73 63 72 65 65 6e 73 2f 6f 6e 6c 79 5f 6f 66 66 65 72 5f 79 61 5f 32 30 30 2e 70 6e 67 } //1 ://softprecdn.ru/offerscreens/only_offer_ya_200.png
+		$a_81_9 = {61 70 70 2d 6f 66 66 65 72 73 } //1 app-offers
+		$a_81_10 = {6f 66 66 65 72 2d 65 78 69 73 74 73 } //1 offer-exists
+		$a_81_11 = {6f 66 66 65 72 2d 73 68 6f 77 6e } //1 offer-shown
+		$a_81_12 = {6f 66 66 65 72 2d 61 62 6f 72 74 65 64 } //1 offer-aborted
+		$a_81_13 = {6f 66 66 65 72 2d 63 61 6e 63 65 6c 6c 65 64 } //1 offer-cancelled
+		$a_81_14 = {6f 66 66 65 72 2d 69 6e 73 74 61 6c 6c 69 6e 67 } //1 offer-installing
+		$a_81_15 = {6f 66 66 65 72 2d 61 63 74 69 76 61 74 69 6e 67 } //1 offer-activating
+		$a_81_16 = {6f 66 66 65 72 2d 69 6e 73 74 61 6c 6c 65 64 } //1 offer-installed
+		$a_81_17 = {6f 66 66 65 72 2d 61 63 74 69 76 61 74 65 64 } //1 offer-activated
+		$a_81_18 = {6f 66 66 65 72 2d 66 61 69 6c 65 64 } //1 offer-failed
+		$a_81_19 = {6f 66 66 65 72 73 } //1 offers
+		$a_81_20 = {55 6e 69 6e 73 74 2e 65 78 65 } //-100 Uninst.exe
+		$a_81_21 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //-100 Uninstall.exe
+	condition:
+		((#a_81_0  & 1)*1+(#a_81_1  & 1)*1+(#a_81_2  & 1)*1+(#a_81_3  & 1)*1+(#a_81_4  & 1)*1+(#a_81_5  & 1)*1+(#a_81_6  & 1)*1+(#a_81_7  & 1)*1+(#a_81_8  & 1)*1+(#a_81_9  & 1)*1+(#a_81_10  & 1)*1+(#a_81_11  & 1)*1+(#a_81_12  & 1)*1+(#a_81_13  & 1)*1+(#a_81_14  & 1)*1+(#a_81_15  & 1)*1+(#a_81_16  & 1)*1+(#a_81_17  & 1)*1+(#a_81_18  & 1)*1+(#a_81_19  & 1)*1+(#a_81_20  & 1)*-100+(#a_81_21  & 1)*-100) >=20
+ 
+}
+rule _#PUA_Block_OfferCore_22{
+	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR,04 00 04 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {54 68 65 20 57 65 62 73 68 6f 74 73 20 44 65 73 6b 74 6f 70 20 49 6e 73 74 61 6c 6c 61 74 69 6f 6e } //1 The Webshots Desktop Installation
+		$a_01_1 = {49 4e 53 54 41 4c 4c 47 41 54 4f 52 } //2 INSTALLGATOR
+		$a_01_2 = {66 73 67 2e 65 78 65 } //1 fsg.exe
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*2+(#a_01_2  & 1)*1) >=4
+ 
+}
+rule _#PUA_Block_OfferCore_23{
+	meta:
+		description = "!#PUA:Block:OfferCore,SIGNATURE_TYPE_PEHSTR,04 00 04 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {65 61 73 79 64 6f 77 6e 6c 6f 61 64 2e 65 78 65 } //1 easydownload.exe
+		$a_01_1 = {42 61 62 79 6c 6f 6e 20 54 6f 6f 6c 62 61 72 } //2 Babylon Toolbar
+		$a_01_2 = {3a 2f 2f 64 32 7a 30 39 35 76 65 78 62 74 66 76 69 2e 63 6c 6f 75 64 66 72 6f 6e 74 2e 6e 65 74 2f 76 66 64 2d 6f 62 2e 65 78 65 } //1 ://d2z095vexbtfvi.cloudfront.net/vfd-ob.exe
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*2+(#a_01_2  & 1)*1) >=4
  
 }

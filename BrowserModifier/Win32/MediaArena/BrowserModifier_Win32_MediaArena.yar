@@ -24,3 +24,21 @@ rule BrowserModifier_Win32_MediaArena_2{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
+rule BrowserModifier_Win32_MediaArena_3{
+	meta:
+		description = "BrowserModifier:Win32/MediaArena,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 09 00 00 "
+		
+	strings :
+		$a_80_0 = {43 72 61 63 6b 55 72 6c } //CrackUrl  1
+		$a_80_1 = {41 63 63 65 70 74 } //Accept  1
+		$a_80_2 = {44 65 63 6c 69 6e 65 } //Decline  1
+		$a_80_3 = {54 68 69 73 20 61 70 70 6c 69 63 61 74 69 6f 6e 20 69 73 20 70 6f 77 65 72 65 64 20 62 79 20 73 65 61 72 63 68 } //This application is powered by search  1
+		$a_80_4 = {44 65 66 61 75 6c 74 20 42 72 6f 77 73 65 72 20 69 73 3a 20 } //Default Browser is:   1
+		$a_80_5 = {73 65 61 72 63 68 } //search  1
+		$a_80_6 = {50 44 46 48 75 62 } //PDFHub  1
+		$a_80_7 = {55 6e 69 6e 73 74 2e 65 78 65 } //Uninst.exe  -100
+		$a_80_8 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //Uninstall.exe  -100
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*-100+(#a_80_8  & 1)*-100) >=7
+ 
+}

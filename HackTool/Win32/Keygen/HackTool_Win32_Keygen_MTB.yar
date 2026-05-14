@@ -4,6 +4,32 @@ rule HackTool_Win32_Keygen_MTB{
 		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
 	strings :
+		$a_01_0 = {77 61 20 5b 46 41 4c 4c 45 4e 5d } //1 wa [FALLEN]
+		$a_01_1 = {52 65 67 69 73 74 72 61 74 69 6f 6e 20 43 6f 64 65 20 3a } //1 Registration Code :
+		$a_01_2 = {47 26 65 6e 65 72 61 74 65 } //1 G&enerate
+		$a_01_3 = {6b 65 79 6d 61 6b 65 72 } //1 keymaker
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
+ 
+}
+rule HackTool_Win32_Keygen_MTB_2{
+	meta:
+		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 04 00 00 "
+		
+	strings :
+		$a_80_0 = {54 72 65 65 41 67 65 20 50 72 6f 20 53 75 69 74 65 } //TreeAge Pro Suite  2
+		$a_80_1 = {4b 65 79 47 65 6e 65 72 61 74 6f 72 } //KeyGenerator  1
+		$a_80_2 = {53 65 72 69 61 6c 20 4e 75 6d 62 65 72 } //Serial Number  1
+		$a_80_3 = {47 65 6e 65 72 61 74 65 } //Generate  1
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=5
+ 
+}
+rule HackTool_Win32_Keygen_MTB_3{
+	meta:
+		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
 		$a_80_0 = {47 65 6e 65 72 61 74 65 } //Generate  1
 		$a_80_1 = {6b 65 79 67 65 6e 6e 65 64 20 62 79 20 69 63 65 2f 42 52 44 } //keygenned by ice/BRD  1
 		$a_80_2 = {2d 20 4b 65 79 67 65 6e 20 62 79 20 42 52 44 } //- Keygen by BRD  1
@@ -12,7 +38,7 @@ rule HackTool_Win32_Keygen_MTB{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=4
  
 }
-rule HackTool_Win32_Keygen_MTB_2{
+rule HackTool_Win32_Keygen_MTB_4{
 	meta:
 		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 05 00 00 "
 		
@@ -26,7 +52,46 @@ rule HackTool_Win32_Keygen_MTB_2{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_00_4  & 1)*1) >=4
  
 }
-rule HackTool_Win32_Keygen_MTB_3{
+rule HackTool_Win32_Keygen_MTB_5{
+	meta:
+		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {50 72 65 73 73 20 67 65 6e 65 72 61 74 65 20 6f 72 20 70 61 73 74 65 20 73 65 72 69 61 6c } //1 Press generate or paste serial
+		$a_01_1 = {50 61 73 74 65 20 72 65 71 75 65 73 74 20 63 6f 64 65 20 68 65 72 65 } //1 Paste request code here
+		$a_01_2 = {49 6e 76 61 6c 69 64 20 72 65 71 75 65 73 74 20 63 6f 64 65 } //1 Invalid request code
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
+ 
+}
+rule HackTool_Win32_Keygen_MTB_6{
+	meta:
+		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
+		$a_01_0 = {53 79 6d 62 69 61 6e 20 49 6e 73 74 61 6c 6c 61 74 69 6f 6e 20 46 69 6c 65 } //1 Symbian Installation File
+		$a_01_1 = {55 6e 6b 6e 6f 77 6e 20 73 65 63 75 72 69 74 79 20 66 61 69 6c 75 72 65 20 64 65 74 65 63 74 65 64 } //1 Unknown security failure detected
+		$a_01_2 = {45 33 32 55 53 45 52 2d 43 42 61 73 65 } //1 E32USER-CBase
+		$a_01_3 = {42 61 64 20 4e 75 6d 62 65 72 20 69 6e 20 49 4d 45 49 } //1 Bad Number in IMEI
+	condition:
+		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
+ 
+}
+rule HackTool_Win32_Keygen_MTB_7{
+	meta:
+		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {43 6c 69 63 6b 20 70 41 54 43 48 2c 20 73 65 6c 65 63 74 20 74 61 72 67 65 74 20 69 6e 20 69 6e 73 74 61 6c 6c 20 64 69 72 20 61 6e 64 20 61 70 70 6c 79 2e } //1 Click pATCH, select target in install dir and apply.
+		$a_00_1 = {70 00 41 00 54 00 43 00 48 00 21 00 } //1 pATCH!
+		$a_00_2 = {62 00 41 00 43 00 4b 00 55 00 50 00 3f 00 } //1 bACKUP?
+		$a_01_3 = {42 79 20 77 77 77 2e 44 65 76 69 6e 43 6f 6f 6b 2e 63 6f 6d 2e 20 54 68 69 73 20 66 6f 6e 74 20 69 73 20 66 72 65 65 77 61 72 65 2e 20 45 6e 6a 6f 79 } //1 By www.DevinCook.com. This font is freeware. Enjoy
+		$a_01_4 = {63 48 4f 4f 53 45 20 54 41 52 47 45 54 20 46 69 4c 45 } //1 cHOOSE TARGET FiLE
+	condition:
+		((#a_01_0  & 1)*1+(#a_00_1  & 1)*1+(#a_00_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
+ 
+}
+rule HackTool_Win32_Keygen_MTB_8{
 	meta:
 		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR,05 00 05 00 05 00 00 "
 		
@@ -40,7 +105,7 @@ rule HackTool_Win32_Keygen_MTB_3{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
-rule HackTool_Win32_Keygen_MTB_4{
+rule HackTool_Win32_Keygen_MTB_9{
 	meta:
 		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR,06 00 06 00 06 00 00 "
 		
@@ -55,7 +120,7 @@ rule HackTool_Win32_Keygen_MTB_4{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=6
  
 }
-rule HackTool_Win32_Keygen_MTB_5{
+rule HackTool_Win32_Keygen_MTB_10{
 	meta:
 		description = "HackTool:Win32/Keygen!MTB,SIGNATURE_TYPE_PEHSTR,07 00 07 00 07 00 00 "
 		
@@ -71,7 +136,7 @@ rule HackTool_Win32_Keygen_MTB_5{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1) >=7
  
 }
-rule HackTool_Win32_Keygen_MTB_6{
+rule HackTool_Win32_Keygen_MTB_11{
 	meta:
 		description = "HackTool:Win32/Keygen.MTB,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		

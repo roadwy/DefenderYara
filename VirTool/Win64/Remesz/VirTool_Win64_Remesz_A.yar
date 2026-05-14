@@ -1,0 +1,12 @@
+
+rule VirTool_Win64_Remesz_A{
+	meta:
+		description = "VirTool:Win64/Remesz.A,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {4c 89 c7 48 89 d3 [0-12] 41 b8 0a 00 00 00 4c 89 f1 e8 ?? ?? ?? ?? 48 8b 53 08 4c 8b 43 10 4c 89 f1 e8 ?? ?? ?? ?? 48 8b 97 e8 00 00 00 4c 8b 87 f0 00 00 00 4c 89 f1 e8 } //1
+		$a_03_1 = {89 c2 c1 ea 08 48 83 c1 fe 3d 00 01 00 00 89 d0 ?? ?? ?? ?? ?? ?? 31 c9 31 d2 ff ?? ?? ?? ?? ?? 48 85 c0 ?? ?? ?? ?? ?? ?? 48 89 c1 31 c0 f0 48 0f b1 0d b5 ca 0a 00 ?? ?? ?? ?? ?? ?? 49 89 c7 ff } //1
+	condition:
+		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=2
+ 
+}

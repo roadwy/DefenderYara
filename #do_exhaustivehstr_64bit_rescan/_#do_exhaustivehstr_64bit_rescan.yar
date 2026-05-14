@@ -54,7 +54,7 @@ rule _#do_exhaustivehstr_64bit_rescan_6{
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_01_0 = {4e 55 49 54 4b 41 5f 4f 4e 45 46 49 4c 45 5f 50 41 52 45 4e 54 } //1 NUITKA_ONEFILE_PARENT
+		$a_01_0 = {20 48 41 43 4b 45 44 20 42 59 20 48 41 4e 44 41 4c 41 0d 0a 20 } //1
 	condition:
 		((#a_01_0  & 1)*1) >=1
  
@@ -64,12 +64,22 @@ rule _#do_exhaustivehstr_64bit_rescan_7{
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
 	strings :
-		$a_01_0 = {63 68 61 74 67 70 74 2e 70 64 62 00 09 00 00 00 28 00 00 00 28 } //1
+		$a_01_0 = {4e 55 49 54 4b 41 5f 4f 4e 45 46 49 4c 45 5f 50 41 52 45 4e 54 } //1 NUITKA_ONEFILE_PARENT
 	condition:
 		((#a_01_0  & 1)*1) >=1
  
 }
 rule _#do_exhaustivehstr_64bit_rescan_8{
+	meta:
+		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
+		
+	strings :
+		$a_01_0 = {63 68 61 74 67 70 74 2e 70 64 62 00 09 00 00 00 28 00 00 00 28 } //1
+	condition:
+		((#a_01_0  & 1)*1) >=1
+ 
+}
+rule _#do_exhaustivehstr_64bit_rescan_9{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -80,7 +90,7 @@ rule _#do_exhaustivehstr_64bit_rescan_8{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_9{
+rule _#do_exhaustivehstr_64bit_rescan_10{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -90,7 +100,7 @@ rule _#do_exhaustivehstr_64bit_rescan_9{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_10{
+rule _#do_exhaustivehstr_64bit_rescan_11{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -102,7 +112,7 @@ rule _#do_exhaustivehstr_64bit_rescan_10{
 		((#a_01_0  & 1)*2+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_11{
+rule _#do_exhaustivehstr_64bit_rescan_12{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -112,7 +122,7 @@ rule _#do_exhaustivehstr_64bit_rescan_11{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_12{
+rule _#do_exhaustivehstr_64bit_rescan_13{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -123,7 +133,7 @@ rule _#do_exhaustivehstr_64bit_rescan_12{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_13{
+rule _#do_exhaustivehstr_64bit_rescan_14{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -133,7 +143,7 @@ rule _#do_exhaustivehstr_64bit_rescan_13{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_14{
+rule _#do_exhaustivehstr_64bit_rescan_15{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -144,7 +154,7 @@ rule _#do_exhaustivehstr_64bit_rescan_14{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_15{
+rule _#do_exhaustivehstr_64bit_rescan_16{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -154,7 +164,7 @@ rule _#do_exhaustivehstr_64bit_rescan_15{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_16{
+rule _#do_exhaustivehstr_64bit_rescan_17{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
@@ -167,7 +177,7 @@ rule _#do_exhaustivehstr_64bit_rescan_16{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_17{
+rule _#do_exhaustivehstr_64bit_rescan_18{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -178,7 +188,7 @@ rule _#do_exhaustivehstr_64bit_rescan_17{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_18{
+rule _#do_exhaustivehstr_64bit_rescan_19{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -188,7 +198,7 @@ rule _#do_exhaustivehstr_64bit_rescan_18{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_19{
+rule _#do_exhaustivehstr_64bit_rescan_20{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -200,7 +210,7 @@ rule _#do_exhaustivehstr_64bit_rescan_19{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_20{
+rule _#do_exhaustivehstr_64bit_rescan_21{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -211,7 +221,7 @@ rule _#do_exhaustivehstr_64bit_rescan_20{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_21{
+rule _#do_exhaustivehstr_64bit_rescan_22{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -221,7 +231,7 @@ rule _#do_exhaustivehstr_64bit_rescan_21{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_22{
+rule _#do_exhaustivehstr_64bit_rescan_23{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -231,7 +241,7 @@ rule _#do_exhaustivehstr_64bit_rescan_22{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_23{
+rule _#do_exhaustivehstr_64bit_rescan_24{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -243,7 +253,7 @@ rule _#do_exhaustivehstr_64bit_rescan_23{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_24{
+rule _#do_exhaustivehstr_64bit_rescan_25{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -255,7 +265,7 @@ rule _#do_exhaustivehstr_64bit_rescan_24{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_25{
+rule _#do_exhaustivehstr_64bit_rescan_26{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -267,7 +277,7 @@ rule _#do_exhaustivehstr_64bit_rescan_25{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_26{
+rule _#do_exhaustivehstr_64bit_rescan_27{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -277,7 +287,7 @@ rule _#do_exhaustivehstr_64bit_rescan_26{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_27{
+rule _#do_exhaustivehstr_64bit_rescan_28{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -288,7 +298,7 @@ rule _#do_exhaustivehstr_64bit_rescan_27{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_28{
+rule _#do_exhaustivehstr_64bit_rescan_29{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -299,7 +309,7 @@ rule _#do_exhaustivehstr_64bit_rescan_28{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_29{
+rule _#do_exhaustivehstr_64bit_rescan_30{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -310,7 +320,7 @@ rule _#do_exhaustivehstr_64bit_rescan_29{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_30{
+rule _#do_exhaustivehstr_64bit_rescan_31{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
@@ -323,7 +333,7 @@ rule _#do_exhaustivehstr_64bit_rescan_30{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_31{
+rule _#do_exhaustivehstr_64bit_rescan_32{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -334,7 +344,7 @@ rule _#do_exhaustivehstr_64bit_rescan_31{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_32{
+rule _#do_exhaustivehstr_64bit_rescan_33{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -347,7 +357,7 @@ rule _#do_exhaustivehstr_64bit_rescan_32{
 		((#a_01_0  & 1)*3+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_33{
+rule _#do_exhaustivehstr_64bit_rescan_34{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -357,7 +367,7 @@ rule _#do_exhaustivehstr_64bit_rescan_33{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_34{
+rule _#do_exhaustivehstr_64bit_rescan_35{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -370,7 +380,7 @@ rule _#do_exhaustivehstr_64bit_rescan_34{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_35{
+rule _#do_exhaustivehstr_64bit_rescan_36{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,ffffffc8 00 ffffffc8 00 02 00 00 "
 		
@@ -381,7 +391,7 @@ rule _#do_exhaustivehstr_64bit_rescan_35{
 		((#a_01_0  & 1)*100+(#a_01_1  & 1)*100) >=200
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_36{
+rule _#do_exhaustivehstr_64bit_rescan_37{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -393,7 +403,7 @@ rule _#do_exhaustivehstr_64bit_rescan_36{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_37{
+rule _#do_exhaustivehstr_64bit_rescan_38{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -403,7 +413,7 @@ rule _#do_exhaustivehstr_64bit_rescan_37{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_38{
+rule _#do_exhaustivehstr_64bit_rescan_39{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -416,7 +426,7 @@ rule _#do_exhaustivehstr_64bit_rescan_38{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_39{
+rule _#do_exhaustivehstr_64bit_rescan_40{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 02 00 00 "
 		
@@ -427,7 +437,7 @@ rule _#do_exhaustivehstr_64bit_rescan_39{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_40{
+rule _#do_exhaustivehstr_64bit_rescan_41{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
@@ -440,7 +450,7 @@ rule _#do_exhaustivehstr_64bit_rescan_40{
 		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_41{
+rule _#do_exhaustivehstr_64bit_rescan_42{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,ffffffc8 00 ffffffc8 00 02 00 00 "
 		
@@ -451,7 +461,7 @@ rule _#do_exhaustivehstr_64bit_rescan_41{
 		((#a_01_0  & 1)*100+(#a_01_1  & 1)*100) >=200
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_42{
+rule _#do_exhaustivehstr_64bit_rescan_43{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -463,7 +473,7 @@ rule _#do_exhaustivehstr_64bit_rescan_42{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_43{
+rule _#do_exhaustivehstr_64bit_rescan_44{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -473,7 +483,7 @@ rule _#do_exhaustivehstr_64bit_rescan_43{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_44{
+rule _#do_exhaustivehstr_64bit_rescan_45{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 03 00 00 "
 		
@@ -485,7 +495,7 @@ rule _#do_exhaustivehstr_64bit_rescan_44{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_45{
+rule _#do_exhaustivehstr_64bit_rescan_46{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 08 00 00 "
 		
@@ -502,7 +512,7 @@ rule _#do_exhaustivehstr_64bit_rescan_45{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1) >=8
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_46{
+rule _#do_exhaustivehstr_64bit_rescan_47{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,02 00 02 00 02 00 00 "
 		
@@ -513,7 +523,7 @@ rule _#do_exhaustivehstr_64bit_rescan_46{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_47{
+rule _#do_exhaustivehstr_64bit_rescan_48{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 04 00 00 "
 		
@@ -526,7 +536,7 @@ rule _#do_exhaustivehstr_64bit_rescan_47{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_48{
+rule _#do_exhaustivehstr_64bit_rescan_49{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
 		
@@ -539,7 +549,7 @@ rule _#do_exhaustivehstr_64bit_rescan_48{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_40_2  & 1)*1+(#a_44_3  & 1)*3584) >=4
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_49{
+rule _#do_exhaustivehstr_64bit_rescan_50{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 01 00 00 "
 		
@@ -549,7 +559,7 @@ rule _#do_exhaustivehstr_64bit_rescan_49{
 		((#a_03_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_50{
+rule _#do_exhaustivehstr_64bit_rescan_51{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 03 00 00 "
 		
@@ -561,7 +571,7 @@ rule _#do_exhaustivehstr_64bit_rescan_50{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_51{
+rule _#do_exhaustivehstr_64bit_rescan_52{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,03 00 03 00 06 00 00 "
 		
@@ -576,7 +586,7 @@ rule _#do_exhaustivehstr_64bit_rescan_51{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=3
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_52{
+rule _#do_exhaustivehstr_64bit_rescan_53{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,01 00 01 00 06 00 00 "
 		
@@ -591,7 +601,7 @@ rule _#do_exhaustivehstr_64bit_rescan_52{
 		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1+(#a_01_2  & 1)*1+(#a_03_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_53{
+rule _#do_exhaustivehstr_64bit_rescan_54{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,6d 00 6d 00 13 00 00 "
 		
@@ -619,7 +629,7 @@ rule _#do_exhaustivehstr_64bit_rescan_53{
 		((#a_01_0  & 1)*100+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1+(#a_01_12  & 1)*1+(#a_01_13  & 1)*1+(#a_01_14  & 1)*1+(#a_01_15  & 1)*1+(#a_01_16  & 1)*1+(#a_01_17  & 1)*1+(#a_01_18  & 1)*1) >=109
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_54{
+rule _#do_exhaustivehstr_64bit_rescan_55{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 49 00 00 "
 		
@@ -701,7 +711,7 @@ rule _#do_exhaustivehstr_64bit_rescan_54{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1+(#a_01_6  & 1)*1+(#a_01_7  & 1)*1+(#a_01_8  & 1)*1+(#a_01_9  & 1)*1+(#a_01_10  & 1)*1+(#a_01_11  & 1)*1+(#a_01_12  & 1)*1+(#a_01_13  & 1)*1+(#a_01_14  & 1)*1+(#a_01_15  & 1)*1+(#a_01_16  & 1)*1+(#a_01_17  & 1)*1+(#a_01_18  & 1)*1+(#a_01_19  & 1)*1+(#a_01_20  & 1)*1+(#a_01_21  & 1)*1+(#a_01_22  & 1)*1+(#a_01_23  & 1)*1+(#a_01_24  & 1)*1+(#a_01_25  & 1)*1+(#a_01_26  & 1)*1+(#a_01_27  & 1)*1+(#a_01_28  & 1)*1+(#a_01_29  & 1)*1+(#a_01_30  & 1)*1+(#a_01_31  & 1)*1+(#a_01_32  & 1)*1+(#a_01_33  & 1)*1+(#a_01_34  & 1)*1+(#a_01_35  & 1)*1+(#a_01_36  & 1)*1+(#a_01_37  & 1)*1+(#a_01_38  & 1)*1+(#a_01_39  & 1)*1+(#a_01_40  & 1)*1+(#a_01_41  & 1)*1+(#a_01_42  & 1)*1+(#a_01_43  & 1)*1+(#a_01_44  & 1)*1+(#a_01_45  & 1)*1+(#a_01_46  & 1)*1+(#a_01_47  & 1)*1+(#a_01_48  & 1)*1+(#a_01_49  & 1)*1+(#a_01_50  & 1)*1+(#a_01_51  & 1)*1+(#a_01_52  & 1)*1+(#a_01_53  & 1)*1+(#a_01_54  & 1)*1+(#a_01_55  & 1)*1+(#a_01_56  & 1)*1+(#a_01_57  & 1)*1+(#a_01_58  & 1)*1+(#a_01_59  & 1)*1+(#a_01_60  & 1)*1+(#a_01_61  & 1)*1+(#a_01_62  & 1)*1+(#a_01_63  & 1)*1+(#a_01_64  & 1)*1+(#a_01_65  & 1)*1+(#a_01_66  & 1)*1+(#a_01_67  & 1)*1+(#a_01_68  & 1)*1+(#a_01_69  & 1)*1+(#a_01_70  & 1)*1+(#a_01_71  & 1)*1+(#a_01_72  & 1)*1) >=10
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_55{
+rule _#do_exhaustivehstr_64bit_rescan_56{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -711,7 +721,7 @@ rule _#do_exhaustivehstr_64bit_rescan_55{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_56{
+rule _#do_exhaustivehstr_64bit_rescan_57{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -721,7 +731,7 @@ rule _#do_exhaustivehstr_64bit_rescan_56{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_57{
+rule _#do_exhaustivehstr_64bit_rescan_58{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
@@ -731,7 +741,7 @@ rule _#do_exhaustivehstr_64bit_rescan_57{
 		((#a_01_0  & 1)*1) >=1
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_58{
+rule _#do_exhaustivehstr_64bit_rescan_59{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR,02 00 02 00 03 00 00 "
 		
@@ -743,7 +753,7 @@ rule _#do_exhaustivehstr_64bit_rescan_58{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1) >=2
  
 }
-rule _#do_exhaustivehstr_64bit_rescan_59{
+rule _#do_exhaustivehstr_64bit_rescan_60{
 	meta:
 		description = "!#do_exhaustivehstr_64bit_rescan,SIGNATURE_TYPE_PEHSTR,01 00 01 00 02 00 00 "
 		

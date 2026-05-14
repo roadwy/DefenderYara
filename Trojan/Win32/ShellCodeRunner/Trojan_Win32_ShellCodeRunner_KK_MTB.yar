@@ -1,6 +1,29 @@
 
 rule Trojan_Win32_ShellCodeRunner_KK_MTB{
 	meta:
+		description = "Trojan:Win32/ShellCodeRunner.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,1e 00 1e 00 02 00 00 "
+		
+	strings :
+		$a_03_0 = {83 c0 23 6a 02 59 6b c9 2f 66 89 81 ?? ?? ?? ?? 6a 02 58 6b c0 2f 0f b7 80 ?? ?? ?? ?? 83 e8 07 6a 02 59 6b c9 30 } //20
+		$a_01_1 = {79 79 78 66 5f 70 6c 61 79 2e 64 6c 6c } //10 yyxf_play.dll
+	condition:
+		((#a_03_0  & 1)*20+(#a_01_1  & 1)*10) >=30
+ 
+}
+rule Trojan_Win32_ShellCodeRunner_KK_MTB_2{
+	meta:
+		description = "Trojan:Win32/ShellCodeRunner.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,23 00 23 00 03 00 00 "
+		
+	strings :
+		$a_01_0 = {8b 44 8c 2c 03 44 24 0c 41 89 44 24 0c 83 f9 04 7c ee } //20
+		$a_01_1 = {8b 44 24 10 23 c7 01 44 24 14 d1 7c 24 10 83 7c 24 14 03 } //10
+		$a_01_2 = {8b 44 8c 24 03 44 24 10 41 89 44 24 10 83 f9 03 7c ee } //5
+	condition:
+		((#a_01_0  & 1)*20+(#a_01_1  & 1)*10+(#a_01_2  & 1)*5) >=35
+ 
+}
+rule Trojan_Win32_ShellCodeRunner_KK_MTB_3{
+	meta:
 		description = "Trojan:Win32/ShellCodeRunner.KK!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0a 00 0a 00 03 00 00 "
 		
 	strings :

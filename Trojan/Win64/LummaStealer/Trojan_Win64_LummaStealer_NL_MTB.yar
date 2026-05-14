@@ -35,3 +35,18 @@ rule Trojan_Win64_LummaStealer_NL_MTB_3{
 		((#a_01_0  & 1)*1+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
  
 }
+rule Trojan_Win64_LummaStealer_NL_MTB_4{
+	meta:
+		description = "Trojan:Win64/LummaStealer.NL!MTB,SIGNATURE_TYPE_PEHSTR_EXT,07 00 07 00 06 00 00 "
+		
+	strings :
+		$a_01_0 = {48 89 11 49 89 d6 48 8b 62 38 48 89 fa 48 8b 3f ff d7 48 8b 0d 00 ff 40 00 65 48 8b 09 48 8b 01 48 8b 58 30 48 8b 83 90 00 00 00 } //2
+		$a_01_1 = {45 0f 57 ff 4c 8b 35 0a 42 44 00 65 4d 8b 36 4d 8b 36 0f b6 44 24 1f 84 c0 74 12 } //1
+		$a_01_2 = {57 72 69 74 65 5f 50 72 6f 63 65 73 73 4d 65 6d 6f 72 79 } //1 Write_ProcessMemory
+		$a_01_3 = {56 69 72 74 75 61 6c 5f 41 6c 6c 6f 63 45 78 } //1 Virtual_AllocEx
+		$a_01_4 = {47 65 74 52 65 6d 6f 74 65 50 65 62 41 64 64 72 } //1 GetRemotePebAddr
+		$a_01_5 = {52 65 64 69 72 65 63 74 54 6f 50 61 79 6c 6f 61 64 } //1 RedirectToPayload
+	condition:
+		((#a_01_0  & 1)*2+(#a_01_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1+(#a_01_5  & 1)*1) >=7
+ 
+}

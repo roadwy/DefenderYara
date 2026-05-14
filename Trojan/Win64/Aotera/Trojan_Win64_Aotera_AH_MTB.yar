@@ -1,0 +1,13 @@
+
+rule Trojan_Win64_Aotera_AH_MTB{
+	meta:
+		description = "Trojan:Win64/Aotera.AH!MTB,SIGNATURE_TYPE_PEHSTR_EXT,3c 00 3c 00 03 00 00 "
+		
+	strings :
+		$a_81_0 = {66 77 49 35 43 59 59 38 65 6c 63 58 69 39 72 4f 46 33 69 44 34 73 74 47 4b 4d 4d 5a 65 30 42 73 74 4d 38 47 5a 44 49 4f 33 78 57 67 58 49 43 4d 38 52 35 58 71 58 48 75 4a 59 77 } //10 fwI5CYY8elcXi9rOF3iD4stGKMMZe0BstM8GZDIO3xWgXICM8R5XqXHuJYw
+		$a_81_1 = {66 67 55 67 48 49 51 37 66 31 41 65 7a 4a 66 68 43 6b 66 57 38 39 46 4e 42 4d 77 62 4e 46 52 75 70 35 73 63 59 7a 6b 79 77 52 6d 73 58 5a 62 66 74 41 35 64 70 57 2b 30 59 73 32 31 77 45 37 } //20 fgUgHIQ7f1AezJfhCkfW89FNBMwbNFRup5scYzkywRmsXZbftA5dpW+0Ys21wE7
+		$a_81_2 = {65 77 30 6a 45 38 63 6b 66 6b 77 63 6a 5a 36 67 45 55 79 46 38 74 52 61 42 59 30 57 65 68 4a 67 75 64 34 64 66 7a 30 38 77 52 2f 6a 53 70 2b 61 74 41 59 59 71 6e 57 76 65 77 3d } //30 ew0jE8ckfkwcjZ6gEUyF8tRaBY0WehJgud4dfz08wR/jSp+atAYYqnWvew=
+	condition:
+		((#a_81_0  & 1)*10+(#a_81_1  & 1)*20+(#a_81_2  & 1)*30) >=60
+ 
+}

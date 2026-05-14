@@ -12,3 +12,17 @@ rule TrojanDownloader_O97M_Powdow_RVCM_MTB{
 		((#a_03_0  & 1)*1+(#a_03_1  & 1)*1+(#a_01_2  & 1)*1+(#a_01_3  & 1)*1) >=4
  
 }
+rule TrojanDownloader_O97M_Powdow_RVCM_MTB_2{
+	meta:
+		description = "TrojanDownloader:O97M/Powdow.RVCM!MTB,SIGNATURE_TYPE_MACROHSTR_EXT,05 00 05 00 05 00 00 "
+		
+	strings :
+		$a_01_0 = {3d 20 43 72 65 61 74 65 4f 62 6a 65 63 74 28 22 57 53 63 72 69 70 74 2e 53 68 65 6c 6c 22 29 } //1 = CreateObject("WScript.Shell")
+		$a_03_1 = {2e 4f 70 65 6e 20 22 67 65 74 22 2c 20 [0-64] 28 22 68 ?? ?? ?? ?? 3a 2f 2f 6a ?? 2d 68 ?? ?? 6c ?? ?? 67 2e ?? ?? 6d 2f } //1
+		$a_03_2 = {49 6e 53 74 72 28 [0-64] 2c 20 4d 69 64 28 [0-64] 2c 20 69 2c 20 31 29 29 } //1
+		$a_01_3 = {3d 20 43 68 72 28 35 30 29 20 2b 20 43 68 72 28 34 38 29 20 2b 20 43 68 72 28 34 38 29 } //1 = Chr(50) + Chr(48) + Chr(48)
+		$a_01_4 = {20 3d 20 22 50 6c 65 61 73 65 20 77 61 69 74 22 } //1  = "Please wait"
+	condition:
+		((#a_01_0  & 1)*1+(#a_03_1  & 1)*1+(#a_03_2  & 1)*1+(#a_01_3  & 1)*1+(#a_01_4  & 1)*1) >=5
+ 
+}

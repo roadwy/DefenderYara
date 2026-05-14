@@ -31,3 +31,16 @@ rule Virus_Win32_Sality_3{
 		((#a_09_0  & 1)*1+(#a_09_1  & 1)*1+(#a_03_2  & 1)*1) >=3
  
 }
+rule Virus_Win32_Sality_4{
+	meta:
+		description = "Virus:Win32/Sality,SIGNATURE_TYPE_PEHSTR_EXT,04 00 04 00 04 00 00 "
+		
+	strings :
+		$a_80_0 = {68 74 74 70 3a 2f 2f 38 39 2e 31 31 39 2e 36 37 2e 31 35 34 2f 74 65 73 74 6f 35 2f } //http://89.119.67.154/testo5/  2
+		$a_80_1 = {68 74 74 70 3a 2f 2f 6b 75 6b 75 74 72 75 73 74 6e 65 74 37 37 37 2e 69 6e 66 6f 2f 68 6f 6d 65 2e 67 69 66 } //http://kukutrustnet777.info/home.gif  2
+		$a_80_2 = {68 74 74 70 3a 2f 2f 6b 75 6b 75 74 72 75 73 74 6e 65 74 38 38 38 2e 69 6e 66 6f 2f 68 6f 6d 65 2e 67 69 66 } //http://kukutrustnet888.info/home.gif  2
+		$a_80_3 = {68 74 74 70 3a 2f 2f 6b 75 6b 75 74 72 75 73 74 6e 65 74 39 38 37 2e 69 6e 66 6f 2f 68 6f 6d 65 2e 67 69 66 } //http://kukutrustnet987.info/home.gif  2
+	condition:
+		((#a_80_0  & 1)*2+(#a_80_1  & 1)*2+(#a_80_2  & 1)*2+(#a_80_3  & 1)*2) >=4
+ 
+}

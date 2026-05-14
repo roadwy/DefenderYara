@@ -1,6 +1,17 @@
 
 rule Trojan_Win64_ShellCodeRunner_AB_MTB{
 	meta:
+		description = "Trojan:Win64/ShellCodeRunner.AB!MTB,SIGNATURE_TYPE_PEHSTR_EXT,0c 00 0c 00 02 00 00 "
+		
+	strings :
+		$a_01_0 = {66 89 44 24 7c c6 84 24 80 05 00 00 d7 c6 84 24 81 05 00 00 03 c6 84 24 82 05 00 00 c2 c6 84 24 83 05 00 00 bd c6 84 24 84 05 00 00 2b c6 84 24 85 05 00 00 f8 c6 84 24 86 05 00 00 5f c6 84 24 87 05 00 00 c1 c6 84 24 88 05 00 00 25 c6 84 24 89 05 00 00 07 c6 84 24 8a 05 00 00 63 c6 84 24 8b 05 00 00 b9 c6 84 24 8c 05 00 00 ec c7 84 24 74 06 00 00 03 00 00 00 c7 84 24 e8 01 00 00 70 0b 00 00 c7 84 24 20 07 00 00 00 00 00 00 8b 84 24 74 06 00 00 89 84 24 ec 08 00 00 8b 84 24 74 06 00 00 ff c8 } //6
+		$a_01_1 = {89 84 24 74 06 00 00 83 bc 24 ec 08 00 00 00 7e 50 8b 84 24 e8 01 00 00 6b c0 0b 25 14 b2 00 00 89 84 24 20 07 00 00 8b 84 24 e8 01 00 00 d1 e8 8b 8c 24 20 07 00 00 33 c1 89 84 24 e8 01 00 00 8b 84 24 e8 01 00 00 83 e0 78 85 c0 75 11 8b 84 24 e8 01 00 00 83 c8 7c 89 84 24 e8 01 00 00 eb 88 } //6
+	condition:
+		((#a_01_0  & 1)*6+(#a_01_1  & 1)*6) >=12
+ 
+}
+rule Trojan_Win64_ShellCodeRunner_AB_MTB_2{
+	meta:
 		description = "Trojan:Win64/ShellCodeRunner.AB!MTB,SIGNATURE_TYPE_PEHSTR,01 00 01 00 01 00 00 "
 		
 	strings :

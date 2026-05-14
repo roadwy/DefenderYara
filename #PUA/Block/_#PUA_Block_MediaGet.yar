@@ -75,6 +75,25 @@ rule _#PUA_Block_MediaGet_5{
 }
 rule _#PUA_Block_MediaGet_6{
 	meta:
+		description = "!#PUA:Block:MediaGet,SIGNATURE_TYPE_PEHSTR_EXT,08 00 08 00 0a 00 00 "
+		
+	strings :
+		$a_80_0 = {6f 66 66 65 72 5f 73 69 7a 65 } //offer_size  1
+		$a_80_1 = {6e 6f 5f 6f 66 66 65 72 } //no_offer  1
+		$a_80_2 = {79 61 6f 66 66 65 72 2c } //yaoffer,  1
+		$a_80_3 = {4d 65 64 69 61 47 65 74 20 69 6e 73 74 61 6c 6c 65 72 } //MediaGet installer  1
+		$a_80_4 = {6d 65 64 69 61 67 65 74 2e 65 78 65 } //mediaget.exe  1
+		$a_80_5 = {79 61 6f 66 66 65 72 } //yaoffer  1
+		$a_80_6 = {4d 65 64 69 61 47 65 74 32 2e 65 78 65 } //MediaGet2.exe  1
+		$a_80_7 = {4d 65 64 69 61 47 65 74 } //MediaGet  1
+		$a_80_8 = {55 6e 69 6e 73 74 2e 65 78 65 } //Uninst.exe  -100
+		$a_80_9 = {55 6e 69 6e 73 74 61 6c 6c 2e 65 78 65 } //Uninstall.exe  -100
+	condition:
+		((#a_80_0  & 1)*1+(#a_80_1  & 1)*1+(#a_80_2  & 1)*1+(#a_80_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*1+(#a_80_6  & 1)*1+(#a_80_7  & 1)*1+(#a_80_8  & 1)*-100+(#a_80_9  & 1)*-100) >=8
+ 
+}
+rule _#PUA_Block_MediaGet_7{
+	meta:
 		description = "!#PUA:Block:MediaGet,SIGNATURE_TYPE_PEHSTR_EXT,06 00 06 00 09 00 00 "
 		
 	strings :
@@ -91,7 +110,7 @@ rule _#PUA_Block_MediaGet_6{
 		((#a_00_0  & 1)*3+(#a_00_1  & 1)*2+(#a_00_2  & 1)*1+(#a_00_3  & 1)*1+(#a_80_4  & 1)*1+(#a_80_5  & 1)*2+(#a_80_6  & 1)*-100+(#a_80_7  & 1)*-100+(#a_80_8  & 1)*-100) >=6
  
 }
-rule _#PUA_Block_MediaGet_7{
+rule _#PUA_Block_MediaGet_8{
 	meta:
 		description = "!#PUA:Block:MediaGet,SIGNATURE_TYPE_PEHSTR,04 00 04 00 05 00 00 "
 		
